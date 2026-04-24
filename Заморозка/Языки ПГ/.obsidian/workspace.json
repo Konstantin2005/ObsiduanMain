@@ -1,0 +1,192 @@
+{
+  "main": {
+    "id": "798814aa9373ba1c",
+    "type": "split",
+    "children": [
+      {
+        "id": "f870cefcd7cb47b1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4aeed126b9c79db7",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Новая вкладка"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "356613dd3a46161a",
+    "type": "split",
+    "children": [
+      {
+        "id": "3040b2003c6cf05b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed5f411049057bc6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "bdcfea5a36e0d001",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "1ade0f6c1931c634",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 211.5
+  },
+  "right": {
+    "id": "8c2d6b7dae97328a",
+    "type": "split",
+    "children": [
+      {
+        "id": "57f0b1d9ccac4d6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88ebeda164163c12",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Добро пожаловать.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для Добро пожаловать"
+            }
+          },
+          {
+            "id": "78797b72ca3e74e6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Добро пожаловать.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из Добро пожаловать"
+            }
+          },
+          {
+            "id": "8a157382b1ce115c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "912926a128b78a17",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Добро пожаловать.md"
+              },
+              "icon": "lucide-list",
+              "title": "Структура Добро пожаловать"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Создать новую базу": false,
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "4aeed126b9c79db7",
+  "lastOpenFiles": [
+    "паттерны.md",
+    "Без названия 1.md",
+    "call stack.md",
+    "event loop.md",
+    "Без названия.md",
+    "специальные типы.md",
+    "типы данных.md",
+    "config.md",
+    "webpack.md",
+    "javaSteak.md",
+    "Движок V8.md",
+    "база javaSteak.md",
+    "СSS.md",
+    "практика.md",
+    "URL-path.md",
+    "HTTP.md",
+    "события.md",
+    "файловая система.md",
+    "потоки.md",
+    "стримы.md",
+    "node js.md",
+    "вопросы на собес.md",
+    "npm.md",
+    "архитектруа браузера.md",
+    "Libuv.md",
+    "rendering egine.md"
+  ]
+}
