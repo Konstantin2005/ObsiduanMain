@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "361a80c1c0c293e7",
+        "id": "8639e4a05a8c0c76",
         "type": "tabs",
         "children": [
           {
-            "id": "aed5686e3459bfc8",
+            "id": "e886ccb14df8cd90",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Progect Notes/Excalidraw/Англиский.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -211,8 +209,10 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "aed5686e3459bfc8",
+  "active": "e886ccb14df8cd90",
   "lastOpenFiles": [
+    "Linded List.md",
+    "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Two Pointer.md",
     "Progect Notes/Excalidraw/Java.md",
     "Progect Notes/Excalidraw/Deltaав.md",
@@ -233,12 +233,10 @@
     "Progect Notes/Excalidraw/Планировщики.md",
     "Progect Notes/Excalidraw/Планирование.md",
     "Progect Notes/Excalidraw/Как писать заметки.md",
-    "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Slading Window.md",
     "Progect Notes/Excalidraw/Алгоритмы.md",
     "Progect Notes/Написать/Простые мысли.md",
     "Progect Notes/Написать/Промты.md",
-    "0 Indox/Простые обсуждения.md",
     "Pasted Image 20260512220101_946.png",
     "chad_21faf557974d4a7d96b055372799deb1.png",
     "chad_cf037d522c1d4eab8336aaf5cdefef64.png",
