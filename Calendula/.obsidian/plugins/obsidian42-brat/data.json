@@ -1,8 +1,13 @@
 {
   "pluginList": [
+    "HananoshikaYomaru/obsidian-3d-graph",
     "delta-dashed/obsidianella-delink"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "HananoshikaYomaru/obsidian-3d-graph",
+      "version": ""
+    },
     {
       "repo": "delta-dashed/obsidianella-delink",
       "version": ""

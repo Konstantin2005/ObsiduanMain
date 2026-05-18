@@ -8,45 +8,16 @@
         "type": "tabs",
         "children": [
           {
-            "id": "54738630755106c2",
+            "id": "6b1071cf02e53295",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "3d-graph-view-global",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "5ae9c813e2bdfb43",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2026-03-21.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-03-21"
-            }
-          },
-          {
-            "id": "b864826d461cd294",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2026-03-26.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-03-26"
+              "icon": "orbit",
+              "title": "Global 3D Graph"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -78,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Продуктивная_скукота",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,13 +70,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -209,44 +178,48 @@
       "command-palette:Открыть палитру команд": false,
       "bases:Создать новую базу": false,
       "obsidian42-brat:BRAT": false,
-      "obsidianella-delink:Copy delinked note": false
+      "obsidianella-delink:Copy delinked note": false,
+      "3d-graph-new:Global 3D Graph": false
     }
   },
-  "active": "5ae9c813e2bdfb43",
+  "active": "6b1071cf02e53295",
   "lastOpenFiles": [
-    "2026-03-26.md",
-    "Calendula/2024/2024-12-28.md",
-    "2026-03-22.md",
-    "Danil.md",
-    "2026-04-22.md",
-    "Calendula/2024/2024-12-29.md",
-    "2026-04-10.md",
-    "Romio.md",
-    "Nikita.md",
-    "2026-01-14.md",
-    "2026-01-06.md",
-    "2026-04-25.md",
-    "Сано.md",
-    "2026-03-05.md",
-    "2026-04-04.md",
-    "Calendula/2025/январь/2025-01-07.md",
-    "2025-06-27.md",
-    "2026-04-27.md",
-    "Calendula/2025/январь/2025-01-08.md",
-    "2026-03-10.md",
-    "2026-03-18.md",
-    "2026-04-16.md",
-    "Temozarela.md",
-    "2026-03-15.md",
-    "2026-03-19.md",
-    "Calendula/2025/январь/2025-01-09.md",
-    "Calendula/2025/Май",
-    "Calendula/2025/март",
-    "Calendula/2025/январь",
-    "Calendula/2022",
-    "Calendula/2023",
-    "Calendula/2024",
-    "Calendula/2025",
+    "Calendula/2022/2022.md",
+    "Deltaав.md",
+    "Calendula/2036/Ноябрь/19-11-36.md",
+    "Calendula/2042/Декабрь/31-12-42.md",
+    "Calendula/2042/Декабрь/30-12-42.md",
+    "Calendula/2042/Декабрь/29-12-42.md",
+    "Calendula/2042/Декабрь/28-12-42.md",
+    "Calendula/2042/Декабрь/27-12-42.md",
+    "Calendula/2042/Декабрь/26-12-42.md",
+    "Calendula/2042/Декабрь/25-12-42.md",
+    "Calendula/2042/Декабрь/24-12-42.md",
+    "Calendula/2042/Декабрь/23-12-42.md",
+    "Calendula/2042/Декабрь/22-12-42.md",
+    "Calendula/2042/Декабрь/21-12-42.md",
+    "Calendula/2042/Декабрь/20-12-42.md",
+    "Calendula/2042/Декабрь/19-12-42.md",
+    "Calendula/2042/Декабрь/18-12-42.md",
+    "Calendula/2042/Декабрь/17-12-42.md",
+    "Calendula/2042/Декабрь/16-12-42.md",
+    "Calendula/2042/Декабрь/15-12-42.md",
+    "Calendula/2042/Декабрь/14-12-42.md",
+    "Calendula/2042/Декабрь/13-12-42.md",
+    "Calendula/2042/Декабрь/12-12-42.md",
+    "Calendula/2042/Декабрь/11-12-42.md",
+    "Calendula/2042/Декабрь/10-12-42.md",
+    "Calendula/2042/Декабрь/09-12-42.md",
+    "Calendula/2042/Январь",
+    "Calendula/2042/Февраль",
+    "Calendula/2042/Сентябрь",
+    "Calendula/2042/Октябрь",
+    "Calendula/2042/Ноябрь",
+    "Calendula/2042/Март",
+    "Calendula/2042/Май",
+    "Calendula/2042/Июнь",
+    "Calendula/2042/Июль",
+    "Calendula/2042/Декабрь",
     "photo_2026-03-23_17-36-59.jpg",
     "photo_2026-03-23_14-28-36.jpg",
     "photo_2026-03-23_14-24-16.jpg",
@@ -257,9 +230,6 @@
     "photo_2025-05-21_19-35-00.jpg",
     "photo_2025-05-18_19-46-43.jpg",
     "photo_2025-05-18_19-46-43 1.jpg",
-    "Calendula/3036",
-    "Calendula/3035",
-    "Calendula/3034",
     "Untitled.canvas"
   ]
 }

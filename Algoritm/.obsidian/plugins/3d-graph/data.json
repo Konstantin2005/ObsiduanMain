@@ -1,0 +1,20 @@
+{
+  "filters": {
+    "doShowOrphans": true,
+    "doShowAttachments": false
+  },
+  "groups": {
+    "groups": [
+      {
+        "query": "",
+        "color": "#b3b3b3"
+      }
+    ]
+  },
+  "display": {
+    "nodeSize": 3,
+    "linkThickness": 3,
+    "particleSize": 6,
+    "particleCount": 4
+  }
+}

@@ -1,11 +1,11 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": true,
+  "showTags": false,
   "showAttachments": true,
   "hideUnresolved": true,
-  "showOrphans": true,
-  "collapse-color-groups": false,
+  "showOrphans": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "#Дни",
@@ -106,16 +106,16 @@
       }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": -1.3,
   "nodeSizeMultiplier": 0.7890625,
-  "lineSizeMultiplier": 0.508333333333333,
+  "lineSizeMultiplier": 0.738020833333333,
   "collapse-forces": false,
-  "centerStrength": 0.25,
-  "repelStrength": 20,
+  "centerStrength": 0.208333333333333,
+  "repelStrength": 16.0416666666667,
   "linkStrength": 0.822916666666667,
-  "linkDistance": 263,
-  "scale": 0.2292013594174908,
-  "close": false
+  "linkDistance": 373,
+  "scale": 0.11660891579457217,
+  "close": true
 }
