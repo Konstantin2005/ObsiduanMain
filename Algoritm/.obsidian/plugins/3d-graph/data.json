@@ -12,9 +12,9 @@
     ]
   },
   "display": {
-    "nodeSize": 3,
+    "nodeSize": 2,
     "linkThickness": 3,
-    "particleSize": 6,
-    "particleCount": 4
+    "particleSize": 17,
+    "particleCount": 11
   }
 }

@@ -29,8 +29,8 @@
   "temporaryGlobalGraphSetting": {
     "filter": {
       "searchQuery": "",
-      "showOrphans": true,
-      "showAttachments": false
+      "showOrphans": false,
+      "showAttachments": true
     },
     "groups": [],
     "display": {
