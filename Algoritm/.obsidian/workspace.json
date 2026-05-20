@@ -11,15 +11,46 @@
             "id": "07ab01044ad90b04",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Progect Notes/Excalidraw/Тех Радар.md"
+                "file": "Progect Notes/Написать/Промты.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Тех Радар"
+              "icon": "lucide-file",
+              "title": "Промты"
+            }
+          },
+          {
+            "id": "97f615ec2da98473",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Progect Notes/Написать/Простые мысли.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Простые мысли"
+            }
+          },
+          {
+            "id": "92ad5283633e6a29",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "0 Indox/Простые обсуждения.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Простые обсуждения"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -51,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "riven_learnings",
+                "query": "Простые",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,15 +100,14 @@
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "Закладки"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -214,11 +244,14 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "07ab01044ad90b04",
+  "active": "f321edb367d90dc1",
   "lastOpenFiles": [
+    "Progect Notes/Написать/Промты.md",
+    "0 Indox/Простые обсуждения.md",
+    "Progect Notes/Excalidraw/Тех Радар.md",
+    "Pasted Image 20260519235227_886.png",
     "Pasted Image 20260519220703_098.png",
     "Pasted Image 20260519220556_483.png",
-    "Progect Notes/Excalidraw/Тех Радар.md",
     "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Презы.md",
     "Progect Notes/Excalidraw/Поиск людей и Синк.md",
@@ -238,8 +271,6 @@
     "Excalidraw/Drawing 2026-05-18 23.26.42_2.excalidraw.md",
     "Excalidraw",
     "0 Indox/Golang ООП.md",
-    "Progect Notes/Написать/Промты.md",
-    "0 Indox/Простые обсуждения.md",
     "Deltaав.md",
     "Progect Notes/Написать/Простые мысли.md",
     "Без названия.md",

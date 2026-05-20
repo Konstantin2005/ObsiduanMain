@@ -1,14 +1,32 @@
 {
   "main": {
-    "id": "2d11afaab4c4425e",
+    "id": "3bf04eee21d62dda",
     "type": "split",
     "children": [
       {
-        "id": "e22fd183b1f90b24",
+        "id": "3c6a9dab7b337fa1",
         "type": "tabs",
+        "dimension": 33.25358851674641,
         "children": [
           {
-            "id": "0450d39baafaf687",
+            "id": "cc6fc72750c35683",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Новая вкладка"
+            }
+          }
+        ]
+      },
+      {
+        "id": "0d52bb195c0bdf73",
+        "type": "tabs",
+        "dimension": 66.74641148325358,
+        "children": [
+          {
+            "id": "390cb604e098f7f0",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -16,22 +34,37 @@
               "icon": "lucide-git-fork",
               "title": "Граф"
             }
+          },
+          {
+            "id": "8ebb5d43795c4a54",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Проекты.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Проекты"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "f752c77ede8eeae4",
+    "id": "3807d4f75038a55b",
     "type": "split",
     "children": [
       {
-        "id": "54f991c64dd68aea",
+        "id": "65a3de4d12796dbe",
         "type": "tabs",
         "children": [
           {
-            "id": "4d16c9d5dea68ca4",
+            "id": "653657a1c730a7bb",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,12 +77,12 @@
             }
           },
           {
-            "id": "b0bc6477cc46546d",
+            "id": "d11e8a91877db79d",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "Про",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,36 +94,36 @@
             }
           },
           {
-            "id": "b539e32ccbfb16d9",
+            "id": "e731f4e75c042a34",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "Закладки"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 203.5
   },
   "right": {
-    "id": "5756aa4194a281ff",
+    "id": "8642a95f1437d5f2",
     "type": "split",
     "children": [
       {
-        "id": "eaa717c53aa8187e",
+        "id": "5e79904142418e1d",
         "type": "tabs",
         "children": [
           {
-            "id": "341392f845dcd032",
+            "id": "e016fa295f1e60ba",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2026-05-14.md",
+                "file": "Капитал/IT/Java.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,25 +133,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-05-14"
+              "title": "Обратные ссылки для Java"
             }
           },
           {
-            "id": "c2df7db501cd5f4c",
+            "id": "5af04512591b0888",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2026-05-14.md",
+                "file": "Капитал/IT/Java.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2026-05-14"
+              "title": "Исходящие ссылки из Java"
             }
           },
           {
-            "id": "bfcdbfc3d58153b1",
+            "id": "5a6e1a2d7452fd2b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -129,11 +162,11 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "Теги"
             }
           },
           {
-            "id": "f99e630944eccaad",
+            "id": "a1a254a4ebfa5bcc",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -143,22 +176,22 @@
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
-              "title": "All properties"
+              "title": "Все свойства"
             }
           },
           {
-            "id": "2c1ce20b41569214",
+            "id": "bf6f2aec11099593",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "2026-05-14.md",
+                "file": "Капитал/IT/Java.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-05-14"
+              "title": "Структура Java"
             }
           }
         ]
@@ -176,59 +209,36 @@
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
       "command-palette:Открыть палитру команд": false,
-      "bases:Создать новую базу": false,
-      "obsidian42-brat:BRAT": false,
-      "obsidianella-delink:Copy delinked note": false,
-      "3d-graph-new:Global 3D Graph": false
+      "bases:Создать новую базу": false
     }
   },
-  "active": "0450d39baafaf687",
+  "active": "cc6fc72750c35683",
   "lastOpenFiles": [
-    "Люди/Инструменты/Общение.md",
-    "Люди/Инструменты",
-    "Люди/Инструменты/Люди.md",
-    "Calendula/2026/Май/2026-05-20.md",
-    "Люди/Инструменты/Поиск людей.md",
-    "Капитал/Капитал/Капитал.md",
-    "Капитал/Английский/Английский.md",
-    "Капитал/IT/TexРадар.md",
     "Капитал/IT/Java.md",
+    "Проекты.md",
     "Капитал/IT/IT.md",
-    "Капитал/Финансы.md",
+    "Капитал/Капитал/Капитал.md",
+    "Капитал/IT/TexРадар.md",
+    "Day/2026-05-20.md",
+    "Seting/Templetes/Ежедневная рутина.md",
+    "Seting/Templetes",
+    "Seting",
+    "Люди/Общение.md",
+    "Day",
+    "Без названия.md",
+    "Project",
+    "Здоровье/Здоровье.md",
+    "Что-то другое/Что-то другое.md",
+    "Люди/Поиск людей.md",
+    "Люди/Люди.md",
     "Капитал/Капитал",
     "Капитал/Английский",
     "Капитал/IT",
-    "Капитал",
-    "Здоровье/Здоровье.md",
-    "Здоровье",
-    "Calendula/2026/Май/2026-05-21.md",
-    "Calendula/2026/Апрель/2026-04-16.md",
-    "Люди/1_круг/Hold.md",
-    "Alexander B.md",
-    "Calendula/2026/Май/2026-05-19.md",
-    "Calendula/2026/Май/2026-05-18.md",
-    "Calendula/2026/Май/2026-05-18 1.md",
-    "Calendula/2026/Май/2026-05-01.md",
-    "Calendula/2026/Май/2026-05-02.md",
-    "Calendula/2026/Май/2026-05-03.md",
-    "Calendula/2026/Май/2026-05-04.md",
-    "Calendula/2026/Май/2026-05-05.md",
-    "Calendula/2026/Май/2026-05-06.md",
-    "Calendula/2026/Май/2026-05-07.md",
-    "Calendula/2042/Январь",
-    "Calendula/2042/Февраль",
-    "Calendula/2042/Сентябрь",
-    "Calendula/2042/Октябрь",
-    "photo_2026-03-23_17-36-59.jpg",
-    "photo_2026-03-23_14-28-36.jpg",
-    "photo_2026-03-23_14-24-16.jpg",
-    "photo_2026-03-23_01-30-17.jpg",
-    "photo_2026-03-23_01-21-38.jpg",
-    "photo_2026-03-23_01-15-25.jpg",
-    "photo_2026-03-23_01-15-25 1.jpg",
-    "photo_2025-05-21_19-35-00.jpg",
-    "photo_2025-05-18_19-46-43.jpg",
-    "photo_2025-05-18_19-46-43 1.jpg",
-    "Untitled.canvas"
+    "Капитал/Финансы.md",
+    "Капитал/Английский/Английский.md",
+    "Что-то другое",
+    "Без названия 1.md",
+    "Люди",
+    "Здоровье"
   ]
 }
