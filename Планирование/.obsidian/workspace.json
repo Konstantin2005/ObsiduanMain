@@ -6,16 +6,20 @@
       {
         "id": "3c6a9dab7b337fa1",
         "type": "tabs",
-        "dimension": 33.25358851674641,
+        "dimension": 48.803827751196174,
         "children": [
           {
             "id": "cc6fc72750c35683",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Day/2026-05-20.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "2026-05-20"
             }
           }
         ]
@@ -23,7 +27,7 @@
       {
         "id": "0d52bb195c0bdf73",
         "type": "tabs",
-        "dimension": 66.74641148325358,
+        "dimension": 51.196172248803826,
         "children": [
           {
             "id": "390cb604e098f7f0",

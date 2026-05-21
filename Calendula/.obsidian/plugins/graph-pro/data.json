@@ -1,0 +1,13 @@
+{
+  "showIcons": false,
+  "showNeighborLabels": false,
+  "showGrid": false,
+  "snapToGrid": false,
+  "currentPositionsHistoryKey": null,
+  "automaticallyRestoreNodePositions": true,
+  "labelRegex": "4",
+  "frontmatterField": "34",
+  "selectionWidth": 1004,
+  "maxArrangeCircleRadius": 20023,
+  "searchSelectionMode": false
+}

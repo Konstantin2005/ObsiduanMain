@@ -4,53 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "8639e4a05a8c0c76",
+        "id": "644ae2445e2d3c3b",
         "type": "tabs",
         "children": [
           {
             "id": "07ab01044ad90b04",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "Progect Notes/Написать/Промты.md",
-                "mode": "source",
-                "source": false
+                "file": "Progect Notes/Excalidraw/Люди.md"
               },
-              "icon": "lucide-file",
-              "title": "Промты"
+              "icon": "excalidraw-icon",
+              "title": "Люди"
             }
           },
           {
-            "id": "97f615ec2da98473",
+            "id": "5453af0dc86cafc1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Progect Notes/Написать/Простые мысли.md",
+                "file": "1 Remember/regex.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Простые мысли"
-            }
-          },
-          {
-            "id": "92ad5283633e6a29",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "0 Indox/Простые обсуждения.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Простые обсуждения"
+              "title": "regex"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +65,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Простые",
+                "query": "tag:#excalidraw",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +90,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 236.5,
+    "collapsed": true
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -244,41 +228,43 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "f321edb367d90dc1",
+  "active": "07ab01044ad90b04",
   "lastOpenFiles": [
-    "Progect Notes/Написать/Промты.md",
-    "0 Indox/Простые обсуждения.md",
-    "Progect Notes/Excalidraw/Тех Радар.md",
-    "Pasted Image 20260519235227_886.png",
-    "Pasted Image 20260519220703_098.png",
-    "Pasted Image 20260519220556_483.png",
-    "Progect Notes/Excalidraw/Англиский.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Презы.md",
     "Progect Notes/Excalidraw/Поиск людей и Синк.md",
-    "Progect Notes/Excalidraw/Алгоритмы.md",
-    "Progect Notes/Excalidraw/Люди.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Планировщики.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Планирование.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Как писать заметки.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Как думать Алгоритмичеси.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
+    "1 Remember/regex.md",
     "Progect Notes/Excalidraw/Deltaав.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Two Pointer.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42_0.excalidraw.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42_1.excalidraw.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42_3.excalidraw.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
+    "Setings/Excalidraw/Drawing 2026-04-08 19.30.07.excalidraw.md",
+    "Setings/Excalidraw/Drawing 2026-04-08 19.30.06.excalidraw.md",
+    "Setings/Онбординг.md",
+    "Progect Notes/Excalidraw/Тех Радар.md",
+    "Setings/Excalidraw/Drawing 2026-04-08 19.30.08.excalidraw.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42_2.excalidraw.md",
+    "Excalidraw/Drawing 2026-05-18 23.26.42_3.excalidraw.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Two Pointer.md",
+    "Setings/Кемпинг.md",
+    "Setings/Excalidraw/Drawing 2026-04-08 19.30.05.excalidraw.md",
+    "Progect Notes/Книги/Практическое мышление.md",
+    "0 Indox/Разобрать/Базы данных.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
+    "1 Remember/Untitled.md",
+    "Excalidraw/Drawing 2026-05-18 23.26.42_0.excalidraw.md",
+    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
+    "Setings/Мышка.md",
+    "0 Indox/Экранирование.md",
+    "0 Indox/Фрейм группы.md",
+    "0 Indox/Тестирование.md",
+    "2 Understand/Структуры данных Java.md",
+    "0 Indox/Алгоритм написания людям.canvas",
+    "Setings/pichers/chad_21faf557974d4a7d96b055372799deb1.png",
+    "Setings/pichers/Pasted Image 20260519235227_886.png",
+    "Setings/pichers/Pasted Image 20260519220703_098.png",
+    "Setings/pichers/Pasted Image 20260519220556_483.png",
     "Excalidraw",
-    "0 Indox/Golang ООП.md",
-    "Deltaав.md",
-    "Progect Notes/Написать/Простые мысли.md",
-    "Без названия.md",
-    "0 Indox/девочки для Nexus.md",
-    "Pasted Image 20260512220101_946.png",
-    "chad_21faf557974d4a7d96b055372799deb1.png",
-    "chad_cf037d522c1d4eab8336aaf5cdefef64.png",
-    "Pasted Image 20260511135711_746.png",
-    "Pasted Image 20260511134900_382.png"
+    "Setings/pichers/Pasted Image 20260512220101_946.png",
+    "Setings/pichers/chad_cf037d522c1d4eab8336aaf5cdefef64.png",
+    "Setings/pichers/Pasted Image 20260511135711_746.png",
+    "Setings/pichers/Pasted Image 20260511134900_382.png"
   ]
 }

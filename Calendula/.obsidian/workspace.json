@@ -4,17 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "e22fd183b1f90b24",
+        "id": "b6e8d711d4c8b8e8",
         "type": "tabs",
+        "dimension": 37.71771771771772,
         "children": [
           {
-            "id": "0450d39baafaf687",
+            "id": "697614baecac0b31",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Апрель/2026-04-29.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-29"
+            }
+          }
+        ]
+      },
+      {
+        "id": "f72a2c95a3d7892d",
+        "type": "tabs",
+        "dimension": 62.28228228228229,
+        "children": [
+          {
+            "id": "ba4f279d70be989a",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Граф"
+            }
+          },
+          {
+            "id": "3eadc9dfb4823022",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Март/2026-03-23.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-03-23"
             }
           }
         ]
@@ -49,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Про",
+                "query": "tag:#IT",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +110,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 210.5,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -90,7 +127,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2026-05-14.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +136,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-05-14"
+              "title": "Обратные ссылки"
             }
           },
           {
@@ -143,7 +179,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
-              "title": "All properties"
+              "title": "Все свойства"
             }
           },
           {
@@ -160,65 +196,89 @@
               "icon": "lucide-list",
               "title": "Outline of 2026-05-14"
             }
+          },
+          {
+            "id": "2733c56829d415f7",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "17910527efd2c8eb",
+            "type": "leaf",
+            "state": {
+              "type": "smart-lookup-view-connections",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-lookup-view-connections"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 437.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "smart-lookup:Smart Lookup: Open lookup view": false,
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
+      "3d-graph:3D Graph": false,
       "canvas:Создать новый холст": false,
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
       "command-palette:Открыть палитру команд": false,
       "bases:Создать новую базу": false,
       "obsidian42-brat:BRAT": false,
-      "obsidianella-delink:Copy delinked note": false,
-      "3d-graph-new:Global 3D Graph": false
+      "obsidianella-delink:Copy delinked note": false
     }
   },
-  "active": "0450d39baafaf687",
+  "active": "ba4f279d70be989a",
   "lastOpenFiles": [
-    "Люди/Инструменты/Общение.md",
-    "Люди/Инструменты",
-    "Люди/Инструменты/Люди.md",
-    "Calendula/2026/Май/2026-05-20.md",
-    "Люди/Инструменты/Поиск людей.md",
-    "Капитал/Капитал/Капитал.md",
-    "Капитал/Английский/Английский.md",
-    "Капитал/IT/TexРадар.md",
-    "Капитал/IT/Java.md",
-    "Капитал/IT/IT.md",
-    "Капитал/Финансы.md",
-    "Капитал/Капитал",
-    "Капитал/Английский",
-    "Капитал/IT",
-    "Капитал",
-    "Здоровье/Здоровье.md",
-    "Здоровье",
-    "Calendula/2026/Май/2026-05-21.md",
-    "Calendula/2026/Апрель/2026-04-16.md",
-    "Люди/1_круг/Hold.md",
-    "Alexander B.md",
-    "Calendula/2026/Май/2026-05-19.md",
-    "Calendula/2026/Май/2026-05-18.md",
-    "Calendula/2026/Май/2026-05-18 1.md",
-    "Calendula/2026/Май/2026-05-01.md",
-    "Calendula/2026/Май/2026-05-02.md",
-    "Calendula/2026/Май/2026-05-03.md",
-    "Calendula/2026/Май/2026-05-04.md",
-    "Calendula/2026/Май/2026-05-05.md",
-    "Calendula/2026/Май/2026-05-06.md",
-    "Calendula/2026/Май/2026-05-07.md",
-    "Calendula/2042/Январь",
-    "Calendula/2042/Февраль",
-    "Calendula/2042/Сентябрь",
-    "Calendula/2042/Октябрь",
+    "Соц Капитал/Особеные/Delta.md",
+    "Calendula/2026/Март/2026-03-23.md",
+    "Calendula/2024/2024-12-30.md",
+    "Calendula/2026/Апрель/2026-04-29.md",
+    "Calendula/2026/Март/2026-03-17.md",
+    "Calendula/2026/Апрель/2026-04-23.md",
+    "Calendula/2026/Апрель/2026-04-14.md",
+    "Calendula/2026/Апрель/2026-04-10.md",
+    "Calendula/2026/Январь/2026-01-06.md",
+    "Calendula/2026/Апрель/2026-04-24.md",
+    "Calendula/2024/2024-12-28.md",
+    "Calendula/2026/Март/2026-03-06.md",
+    "Calendula/2026/Апрель/2026-04-01.md",
+    "Calendula/2024/2024-12-27.md",
+    "Calendula/2026/Апрель/2026-04-12.md",
+    "Calendula/2026/Март/2026-03-28.md",
+    "Calendula/2026/Март/2026-03-05.md",
+    "Calendula/2026/Январь/2026-01-07.md",
+    "Calendula/2026/Март/2026-03-30.md",
+    "Calendula/2026/Март/2026-03-19.md",
+    "Calendula/2026/Январь/2026-01-12.md",
+    "Calendula/2026/Апрель/2026-04-05.md",
+    "Влад Доленко.md",
+    "Calendula/2026/Март/2026-03-25.md",
+    "Calendula/2026/Апрель/2026-04-06.md",
+    "Calendula/2026/Январь/2026-01-08.md",
+    "Без названия 2.base",
+    "Без названия.canvas",
+    "Без названия.base",
+    "Без названия 1.base",
+    "Капитал/IT/Проджекты/Без названия",
+    "Капитал/IT/Проджекты",
+    "Без названия",
+    "Здоровье/Без названия",
+    "Люди/Нетворкинг",
+    "Соц Капитал/Познакомились",
+    "Соц Капитал/Особеные",
     "photo_2026-03-23_17-36-59.jpg",
     "photo_2026-03-23_14-28-36.jpg",
     "photo_2026-03-23_14-24-16.jpg",

@@ -1,4 +1,4 @@
-[[System design]]
+[[System design]] 
 
 #One 
 ![[Pasted image 20260312164138.png]]
