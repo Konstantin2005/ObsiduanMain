@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Progect Notes/Excalidraw/Люди.md"
+                "file": "Progect Notes/Excalidraw/Доска.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Люди"
+              "title": "Доска"
             }
           },
           {
@@ -90,8 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 236.5,
-    "collapsed": true
+    "width": 236.5
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -230,6 +229,18 @@
   },
   "active": "07ab01044ad90b04",
   "lastOpenFiles": [
+    "Progect Notes/Excalidraw/Люди.md",
+    "Pasted Image 20260522212641_333.png",
+    "Pasted Image 20260522212641_323.png",
+    "Pasted Image 20260522212641_284.png",
+    "Progect Notes/Excalidraw/Англиский.md",
+    "Setings/pichers/Pasted Image 20260522151237_389.png",
+    "Setings/pichers/Pasted Image 20260522151237_352.png",
+    "Setings/pichers/Pasted Image 20260522151237_334.png",
+    "Setings/pichers/Pasted Image 20260522151237_308.png",
+    "Setings/pichers/Pasted Image 20260522151237_291.png",
+    "Setings/pichers/Pasted Image 20260522151237_258.png",
+    "Setings/pichers/Pasted Image 20260522151237_243.png",
     "Progect Notes/Excalidraw/Поиск людей и Синк.md",
     "1 Remember/regex.md",
     "Progect Notes/Excalidraw/Deltaав.md",
@@ -249,22 +260,11 @@
     "0 Indox/Разобрать/Базы данных.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
     "1 Remember/Untitled.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42_0.excalidraw.md",
+    "Progect Notes/Excalidraw/Доска.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Setings/Мышка.md",
     "0 Indox/Экранирование.md",
-    "0 Indox/Фрейм группы.md",
-    "0 Indox/Тестирование.md",
-    "2 Understand/Структуры данных Java.md",
     "0 Indox/Алгоритм написания людям.canvas",
-    "Setings/pichers/chad_21faf557974d4a7d96b055372799deb1.png",
-    "Setings/pichers/Pasted Image 20260519235227_886.png",
-    "Setings/pichers/Pasted Image 20260519220703_098.png",
-    "Setings/pichers/Pasted Image 20260519220556_483.png",
-    "Excalidraw",
-    "Setings/pichers/Pasted Image 20260512220101_946.png",
-    "Setings/pichers/chad_cf037d522c1d4eab8336aaf5cdefef64.png",
-    "Setings/pichers/Pasted Image 20260511135711_746.png",
-    "Setings/pichers/Pasted Image 20260511134900_382.png"
+    "Excalidraw"
   ]
 }
