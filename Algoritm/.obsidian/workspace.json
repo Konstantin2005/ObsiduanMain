@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "07ab01044ad90b04",
+            "id": "9583fad4856bbe73",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -17,20 +17,6 @@
               },
               "icon": "excalidraw-icon",
               "title": "Доска"
-            }
-          },
-          {
-            "id": "5453af0dc86cafc1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1 Remember/regex.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "regex"
             }
           }
         ]
@@ -65,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#excalidraw",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 236.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -227,29 +214,33 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "07ab01044ad90b04",
+  "active": "9583fad4856bbe73",
   "lastOpenFiles": [
-    "Progect Notes/Excalidraw/Люди.md",
-    "Pasted Image 20260522212641_333.png",
-    "Pasted Image 20260522212641_323.png",
-    "Pasted Image 20260522212641_284.png",
+    "Progect Notes/Excalidraw/План.md",
+    "Setings/pichers/Pasted Image 20260524163118_139.png",
+    "Setings/pichers/Pasted Image 20260524163053_109.png",
+    "Setings/Pasted Image 20260524162947_768.png",
     "Progect Notes/Excalidraw/Англиский.md",
-    "Setings/pichers/Pasted Image 20260522151237_389.png",
-    "Setings/pichers/Pasted Image 20260522151237_352.png",
-    "Setings/pichers/Pasted Image 20260522151237_334.png",
-    "Setings/pichers/Pasted Image 20260522151237_308.png",
-    "Setings/pichers/Pasted Image 20260522151237_291.png",
-    "Setings/pichers/Pasted Image 20260522151237_258.png",
-    "Setings/pichers/Pasted Image 20260522151237_243.png",
     "Progect Notes/Excalidraw/Поиск людей и Синк.md",
-    "1 Remember/regex.md",
+    "Progect Notes/Excalidraw/Люди.md",
+    "Progect Notes/Excalidraw/Доска.md",
     "Progect Notes/Excalidraw/Deltaав.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42_1.excalidraw.md",
+    "Progect Notes/Excalidraw/Deltaав 1.md",
+    "Progect Notes/Excalidraw/Алгоритмы.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Тех Радар.md",
+    "Progect Notes/Написать/Промты.md",
+    "1 Remember/regex.md",
+    "Setings/pichers/Pasted Image 20260522225004_395.png",
+    "Setings/pichers/Pasted Image 20260522225004_380.png",
+    "Setings/pichers/Pasted Image 20260522225004_339.png",
+    "Setings/pichers/Pasted Image 20260522212641_333.png",
+    "Setings/pichers/Pasted Image 20260522212641_323.png",
+    "Setings/pichers/Pasted Image 20260522212641_284.png",
+    "Setings/pichers/Pasted Image 20260522151237_389.png",
     "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
     "Setings/Excalidraw/Drawing 2026-04-08 19.30.07.excalidraw.md",
     "Setings/Excalidraw/Drawing 2026-04-08 19.30.06.excalidraw.md",
     "Setings/Онбординг.md",
-    "Progect Notes/Excalidraw/Тех Радар.md",
     "Setings/Excalidraw/Drawing 2026-04-08 19.30.08.excalidraw.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42_2.excalidraw.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42_3.excalidraw.md",
@@ -260,10 +251,6 @@
     "0 Indox/Разобрать/Базы данных.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
     "1 Remember/Untitled.md",
-    "Progect Notes/Excalidraw/Доска.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
-    "Setings/Мышка.md",
-    "0 Indox/Экранирование.md",
     "0 Indox/Алгоритм написания людям.canvas",
     "Excalidraw"
   ]
