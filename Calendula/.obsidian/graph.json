@@ -5,27 +5,27 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": false,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "#Дни",
       "color": {
         "a": 1,
-        "rgb": 0
+        "rgb": 11870497
       }
     },
     {
       "query": "#Мясорубка",
       "color": {
         "a": 1,
-        "rgb": 6313985
+        "rgb": 14538259
       }
     },
     {
       "query": "#Продуктивная_скукота",
       "color": {
         "a": 1,
-        "rgb": 8738309
+        "rgb": 7438336
       }
     },
     {
@@ -53,7 +53,7 @@
       "query": "#Думал",
       "color": {
         "a": 1,
-        "rgb": 7169052
+        "rgb": 1862997
       }
     },
     {
@@ -123,6 +123,6 @@
   "repelStrength": 12.1875,
   "linkStrength": 1,
   "linkDistance": 302,
-  "scale": 0.08317427835927374,
+  "scale": 0.2292013594174914,
   "close": true
 }
