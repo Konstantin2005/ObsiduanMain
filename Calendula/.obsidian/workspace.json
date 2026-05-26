@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a9ff8dc7a5634e8f",
+            "id": "e351c0a77ff78dcf",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210.5
+    "width": 210.5,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -195,8 +196,10 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "a9ff8dc7a5634e8f",
+  "active": "e351c0a77ff78dcf",
   "lastOpenFiles": [
+    "Calendula/2026/Май/2026-05-25.md",
+    "Кирилл Смеляк.md",
     "Calendula/2026/Апрель/2026-04-25.md",
     "Соц Капитал/2_круг/Миша Бадигин.md",
     "Соц Капитал/3_круг/Ilayr.md",
@@ -222,8 +225,6 @@
     "Тренировка.md",
     "Соц Капитал/2_круг/Влад Доленко.md",
     "Задачка_11.md",
-    "Англиский_Репетитор.md",
-    "Соц Капитал/Особеные/Obsidian.md",
     "Без названия 2.base",
     "Без названия 1.base",
     "Без названия.base",

@@ -76,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -216,6 +215,7 @@
   },
   "active": "b359177ec7436298",
   "lastOpenFiles": [
+    "Progect Notes/Excalidraw/Доска.md",
     "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.svg",
     "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.md",
     "Excalidraw/Scripts/Downloaded/Repeat Elements.svg",
@@ -229,7 +229,6 @@
     "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Алгоритмы.md",
     "Progect Notes/Excalidraw/Deltaав.md",
-    "Progect Notes/Excalidraw/Доска.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Тех Радар.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Презы.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Преза Big O.md",
@@ -253,7 +252,6 @@
     "Setings/pichers/Pasted Image 20260522225004_339.png",
     "Setings/pichers/Pasted Image 20260522212641_333.png",
     "Setings/pichers/Pasted Image 20260522212641_323.png",
-    "Setings/pichers/Pasted Image 20260522212641_284.png",
     "0 Indox/Алгоритм написания людям.canvas",
     "Excalidraw"
   ]
