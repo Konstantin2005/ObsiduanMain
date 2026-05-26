@@ -17,6 +17,12 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
+git pull --rebase --autostash origin main | Out-Null
+if ($LASTEXITCODE -ne 0) {
+    Write-Log "git pull --rebase --autostash failed with code $LASTEXITCODE"
+    exit $LASTEXITCODE
+}
+
 $status = git status --porcelain
 if ($LASTEXITCODE -ne 0) {
     Write-Log "git status --porcelain failed with code $LASTEXITCODE"
