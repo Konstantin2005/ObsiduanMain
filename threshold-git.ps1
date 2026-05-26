@@ -17,9 +17,9 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
-git pull --rebase --autostash origin main | Out-Null
+git pull --no-rebase --autostash -X ours origin main | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    Write-Log "git pull --rebase --autostash failed with code $LASTEXITCODE"
+    Write-Log "git pull --no-rebase --autostash -X ours failed with code $LASTEXITCODE"
     exit $LASTEXITCODE
 }
 
