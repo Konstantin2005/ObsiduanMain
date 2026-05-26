@@ -11,12 +11,10 @@
             "id": "b359177ec7436298",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Progect Notes/Excalidraw/Доска.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Доска"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -76,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -216,34 +215,35 @@
   "active": "b359177ec7436298",
   "lastOpenFiles": [
     "Progect Notes/Excalidraw/Доска.md",
-    "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.svg",
-    "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.md",
-    "Excalidraw/Scripts/Downloaded/Repeat Elements.svg",
-    "Excalidraw/Scripts/Downloaded/Repeat Elements.md",
-    "Excalidraw/Scripts/Downloaded",
-    "Excalidraw/Scripts",
-    "Progect Notes/Excalidraw/Люди.md",
-    "Progect Notes/Excalidraw/План.md",
-    "Progect Notes/Excalidraw/Поиск людей и Синк.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Как писать заметки.md",
+    "Progect Notes/Excalidraw/Stack.md",
+    "Без названия.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
     "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Алгоритмы.md",
+    "Progect Notes/Excalidraw/Люди.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Two Pointer.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/System design.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/GC.md",
     "Progect Notes/Excalidraw/Deltaав.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Тех Радар.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Презы.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Преза Big O.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Планировщики.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Планирование.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Многопоточка.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Как писать заметки.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Как думать Алгоритмичеси.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Как думать LeetCode.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Знания.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Гайд на жизнь.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Two Pointer.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/System design.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/GC.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Как думать Алгоритмичеси.md",
+    "Progect Notes/Excalidraw/План.md",
+    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
+    "Excalidraw/Drawing 2026-05-18 23.26.42_2.excalidraw.md",
+    "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.md",
+    "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.svg",
+    "Excalidraw/Scripts/Downloaded/Repeat Elements.md",
+    "Excalidraw/Scripts/Downloaded/Repeat Elements.svg",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
     "Setings/pichers/Pasted Image 20260524163118_139.png",
     "Setings/pichers/Pasted Image 20260524163053_109.png",
     "Setings/Pasted Image 20260524162947_768.png",

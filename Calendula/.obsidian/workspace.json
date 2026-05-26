@@ -74,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210.5,
-    "collapsed": true
+    "width": 210.5
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -196,7 +195,7 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "181bd6fc5e3c8d62",
+  "active": "4d16c9d5dea68ca4",
   "lastOpenFiles": [
     "Calendula/2026/Май/2026-05-25.md",
     "Calendula/2026/Май/2026-05-20.md",
