@@ -8,13 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b359177ec7436298",
+            "id": "7e199fba03e6e32e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "excalidraw",
+              "state": {
+                "file": "Progect Notes/Excalidraw/Доска.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Доска"
             }
           }
         ]
@@ -187,8 +189,19 @@
               "icon": "ag-style",
               "title": "Juggl style"
             }
+          },
+          {
+            "id": "f3f20c8d837da9a4",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
           }
-        ]
+        ],
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
@@ -209,18 +222,21 @@
       "obsidian-git:Open Git source control": false,
       "juggl:Juggl global graph": false,
       "obsidian-excalidraw-plugin:Создать новый чертеж": false,
-      "obsidian42-brat:BRAT": false
+      "obsidian42-brat:BRAT": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "b359177ec7436298",
+  "active": "7e199fba03e6e32e",
   "lastOpenFiles": [
-    "Progect Notes/Excalidraw/Доска.md",
-    "Progect Notes/Excalidraw/Stack.md",
+    "Без названия 1.md",
     "Без названия.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
-    "Progect Notes/Excalidraw/Англиский.md",
+    "Progect Notes/Excalidraw/Доска.md",
+    "Progect Notes/Excalidraw/План.md",
+    "Progect Notes/Excalidraw/Stack.md",
     "Progect Notes/Excalidraw/Алгоритмы.md",
+    "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Люди.md",
+    "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Two Pointer.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/System design.md",
@@ -235,12 +251,10 @@
     "Progect Notes/Excalidraw/Архив Excalidraw/Как думать LeetCode.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Знания.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Гайд на жизнь.md",
-    "Progect Notes/Excalidraw/План.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42_2.excalidraw.md",
     "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.md",
     "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.svg",
-    "Excalidraw/Scripts/Downloaded/Repeat Elements.md",
     "Excalidraw/Scripts/Downloaded/Repeat Elements.svg",
     "Excalidraw/Scripts/Downloaded",
     "Excalidraw/Scripts",
