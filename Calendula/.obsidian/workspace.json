@@ -4,24 +4,92 @@
     "type": "split",
     "children": [
       {
-        "id": "29d0a403ba627dc0",
-        "type": "tabs",
+        "id": "28e30ed987ce64a8",
+        "type": "split",
         "children": [
           {
-            "id": "6e255e05a499b2bc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Соц Капитал/2_круг/TopQuark.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "TopQuark"
-            }
+            "id": "529743563f02aa94",
+            "type": "tabs",
+            "dimension": 36.45640074211503,
+            "children": [
+              {
+                "id": "8cdc31391485af21",
+                "type": "leaf",
+                "state": {
+                  "type": "kanban",
+                  "state": {
+                    "file": "План/2026/2026.md",
+                    "kanbanViewState": {
+                      "kanban-plugin": "board",
+                      "list-collapse": []
+                    }
+                  },
+                  "icon": "lucide-trello",
+                  "title": "2026"
+                }
+              }
+            ]
+          },
+          {
+            "id": "45d7499978b587b8",
+            "type": "tabs",
+            "dimension": 21.243042671614102,
+            "children": [
+              {
+                "id": "d151c92af423a669",
+                "type": "leaf",
+                "state": {
+                  "type": "kanban",
+                  "state": {
+                    "file": "План/2026/2026 - Июнь.md",
+                    "kanbanViewState": {
+                      "kanban-plugin": "board",
+                      "list-collapse": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                      ]
+                    }
+                  },
+                  "icon": "lucide-trello",
+                  "title": "2026 - Июнь"
+                }
+              }
+            ]
+          },
+          {
+            "id": "c5826ec8dc582505",
+            "type": "tabs",
+            "dimension": 42.30055658627087,
+            "children": [
+              {
+                "id": "ff7fc8a96eb0c0c5",
+                "type": "leaf",
+                "state": {
+                  "type": "kanban",
+                  "state": {
+                    "file": "План/2026/2026 - Май.md",
+                    "kanbanViewState": {
+                      "kanban-plugin": "board",
+                      "list-collapse": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                      ]
+                    }
+                  },
+                  "icon": "lucide-trello",
+                  "title": "2026 - Май"
+                }
+              }
+            ]
           }
-        ]
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -78,7 +146,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210.5
+    "width": 200
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -113,8 +181,18 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "6e255e05a499b2bc",
+  "active": "ff7fc8a96eb0c0c5",
   "lastOpenFiles": [
+    "План/2026/2026 - Июнь.md",
+    "План/2026/2026 - Май.md",
+    "План/2026/2026.md",
+    "План/2033/2033 - Декабрь.md",
+    "Соц Капитал/3_круг/Ilayr.md",
+    "Соц Капитал/3_круг/Nett.md",
+    "Соц Капитал/1_круг/Vano.md",
+    "Соц Капитал/1_круг/Костяк.md",
+    "План/2026/2026 - Ноябрь.md",
+    "Соц Капитал/2_круг/TopQuark.md",
     "Соц Капитал/2_круг/Eliza.md",
     "Соц Капитал/2_круг/Dima Garbatenko.md",
     "Соц Капитал/2_круг/Danil.md",
@@ -123,8 +201,6 @@
     "Соц Капитал/2_круг/Resusfactor_228.md",
     "Соц Капитал/2_круг/Влад Доленко.md",
     "Соц Капитал/1_круг/Yogg.md",
-    "Соц Капитал/1_круг/Vano.md",
-    "Соц Капитал/1_круг/Костяк.md",
     "Соц Капитал/Особеные/Глебуса.md",
     "Соц Капитал/Особеные/Obsidian.md",
     "Соц Капитал/Особеные/Impetus.md",
@@ -133,24 +209,16 @@
     "Соц Капитал/3_круг/DeenMarchal.md",
     "Соц Капитал/3_круг/Marakya.md",
     "Соц Капитал/3_круг/Lirik.md",
-    "Соц Капитал/3_круг/Ivar.md",
-    "Соц Капитал/3_круг/Ilayr.md",
-    "Соц Капитал/3_круг/Zero.md",
-    "Соц Капитал/3_круг/Temozarela.md",
-    "Соц Капитал/3_круг/Nett.md",
-    "Соц Капитал/3_круг/Murat.md",
-    "Соц Капитал/3_круг/Maybe beibe.md",
-    "Соц Капитал/3_круг/Кирилл Смеляк.md",
-    "Планирование/2036",
-    "Планирование/2035",
-    "Планирование/2034",
-    "Планирование/2033",
-    "Планирование/2032",
-    "Планирование/2031",
-    "Планирование/2030",
-    "Планирование/2029",
-    "Планирование/2028",
-    "Планирование/2027",
+    "План/2036",
+    "План/2035",
+    "План/2034",
+    "План/2033",
+    "План/2032",
+    "План/2031",
+    "План/2030",
+    "План/2029",
+    "План/2028",
+    "План/2027",
     "Без названия.canvas",
     "Без названия 1.canvas",
     "photo_2026-03-23_17-36-59.jpg",

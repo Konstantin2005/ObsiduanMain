@@ -1,10 +1,10 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": true,
+  "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
-  "showOrphans": true,
+  "showOrphans": false,
   "collapse-color-groups": false,
   "colorGroups": [
     {
@@ -67,7 +67,7 @@
       "query": "#Kanban",
       "color": {
         "a": 1,
-        "rgb": 14701233
+        "rgb": 2556443
       }
     }
   ],
@@ -81,6 +81,6 @@
   "repelStrength": 16.0416666666667,
   "linkStrength": 1,
   "linkDistance": 255,
-  "scale": 0.3692465245171584,
-  "close": false
+  "scale": 0.11660891579457297,
+  "close": true
 }

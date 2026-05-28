@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Progect Notes/Excalidraw/Англиский.md"
+                "file": "Progect Notes/Excalidraw/План.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "title": "План"
             }
           }
         ]
@@ -76,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -227,9 +228,9 @@
   },
   "active": "7e199fba03e6e32e",
   "lastOpenFiles": [
-    "Progect Notes/Excalidraw/План.md",
-    "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Доска.md",
+    "Progect Notes/Excalidraw/Англиский.md",
+    "Progect Notes/Excalidraw/План.md",
     "Без названия 1.md",
     "Без названия.md",
     "Progect Notes/Excalidraw/Stack.md",
