@@ -11,6 +11,13 @@ function Write-Log {
     Add-Content -Path $logPath -Value "[$timestamp] $Message"
 }
 
+$mentionsScript = Join-Path $RepoPath "collect-mentions.ps1"
+if (Test-Path $mentionsScript) {
+    Write-Log "Running collect-mentions.ps1..."
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $mentionsScript 2>&1 | Out-Null
+    Write-Log "collect-mentions.ps1 finished"
+}
+
 git fetch --all --prune | Out-Null
 if ($LASTEXITCODE -ne 0) {
     Write-Log "git fetch failed with code $LASTEXITCODE"

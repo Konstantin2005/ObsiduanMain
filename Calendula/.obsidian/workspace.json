@@ -4,59 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b6e8d711d4c8b8e8",
+        "id": "29d0a403ba627dc0",
         "type": "tabs",
         "children": [
           {
-            "id": "181bd6fc5e3c8d62",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "3cb2f91b5de7233d",
+            "id": "6e255e05a499b2bc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Соц Капитал/3_круг/Кирилл Смеляк.md",
+                "file": "Соц Капитал/2_круг/TopQuark.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Кирилл Смеляк"
-            }
-          },
-          {
-            "id": "0c4606c09c79af4f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Calendula/2026/Май/2026-05-26.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-05-26"
-            }
-          },
-          {
-            "id": "3560894dc56896cc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Skuli Dropek.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Skuli Dropek"
+              "title": "TopQuark"
             }
           }
         ]
@@ -78,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -86,7 +48,17 @@
             }
           },
           {
-            "id": "b0bc6477cc46546d",
+            "id": "84035a52ff4cda2b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          },
+          {
+            "id": "928debb3f5854d22",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -100,16 +72,6 @@
               },
               "icon": "lucide-search",
               "title": "Поиск"
-            }
-          },
-          {
-            "id": "b539e32ccbfb16d9",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
             }
           }
         ]
@@ -127,155 +89,70 @@
         "type": "tabs",
         "children": [
           {
-            "id": "341392f845dcd032",
+            "id": "7bd4be687d6d0c6d",
             "type": "leaf",
             "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Calendula/2026/Май/2026-05-22.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Обратные ссылки для 2026-05-22"
-            }
-          },
-          {
-            "id": "c2df7db501cd5f4c",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Calendula/2026/Май/2026-05-22.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Исходящие ссылки из 2026-05-22"
-            }
-          },
-          {
-            "id": "bfcdbfc3d58153b1",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Теги"
-            }
-          },
-          {
-            "id": "f99e630944eccaad",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "Все свойства"
-            }
-          },
-          {
-            "id": "2c1ce20b41569214",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Calendula/2026/Май/2026-05-22.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Структура 2026-05-22"
-            }
-          },
-          {
-            "id": "4ecca05cb9026d5a",
-            "type": "leaf",
-            "state": {
-              "type": "timer-view",
+              "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "timer-view"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 437.5,
+    "width": 369.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "graph:Граф": false,
-      "daily-notes:Сегодняшняя заметка": false,
-      "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false,
-      "obsidianella-delink:Copy delinked note": false,
-      "bases:Создать новую базу": false,
-      "switcher:Меню быстрого перехода": false,
-      "canvas:Создать новый холст": false,
-      "obsidian42-brat:BRAT": false,
       "3d-graph:3D Graph": false,
-      "eisenhower-matrix:Eisenhower Matrix": false,
-      "pomodoro-timer:Toggle timer panel": false
+      "obsidian-kanban:Создать новую доску": false,
+      "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "181bd6fc5e3c8d62",
+  "active": "6e255e05a499b2bc",
   "lastOpenFiles": [
-    "Соц Капитал/3_круг/Кирилл Смеляк.md",
-    "Skuli Dropek.md",
-    "Calendula/2026/Май/2026-05-26.md",
-    "Calendula/2026/Май/2026-05-25.md",
-    "Calendula/2026/Май/2026-05-20.md",
-    "Calendula/2026/Май/2026-05-19.md",
-    "Соц Капитал/Познакомились/Сано.md",
-    "Соц Капитал/Познакомились/TED.md",
-    "Соц Капитал/Познакомились/Romio.md",
-    "Соц Капитал/Познакомились/Paul.md",
-    "Соц Капитал/Познакомились/Nikita.md",
-    "Соц Капитал/Познакомились/Mercau.md",
-    "Соц Капитал/Познакомились/JuliaTsvetkova.md",
-    "Соц Капитал/Познакомились/Glasik.md",
-    "Соц Капитал/Познакомились/Almaz.md",
-    "Соц Капитал/Познакомились/Alexander B.md",
+    "Соц Капитал/2_круг/Eliza.md",
+    "Соц Капитал/2_круг/Dima Garbatenko.md",
+    "Соц Капитал/2_круг/Danil.md",
+    "Соц Капитал/2_круг/Luna.md",
+    "Соц Капитал/2_круг/Радий.md",
+    "Соц Капитал/2_круг/Resusfactor_228.md",
+    "Соц Капитал/2_круг/Влад Доленко.md",
+    "Соц Капитал/1_круг/Yogg.md",
+    "Соц Капитал/1_круг/Vano.md",
+    "Соц Капитал/1_круг/Костяк.md",
     "Соц Капитал/Особеные/Глебуса.md",
     "Соц Капитал/Особеные/Obsidian.md",
     "Соц Капитал/Особеные/Impetus.md",
-    "Соц Капитал/Особеные/Delta.md",
+    "Соц Капитал/3_круг/Efie.md",
+    "Соц Капитал/3_круг/Denis Groas.md",
+    "Соц Капитал/3_круг/DeenMarchal.md",
+    "Соц Капитал/3_круг/Marakya.md",
+    "Соц Капитал/3_круг/Lirik.md",
+    "Соц Капитал/3_круг/Ivar.md",
+    "Соц Капитал/3_круг/Ilayr.md",
     "Соц Капитал/3_круг/Zero.md",
     "Соц Капитал/3_круг/Temozarela.md",
     "Соц Капитал/3_круг/Nett.md",
     "Соц Капитал/3_круг/Murat.md",
     "Соц Капитал/3_круг/Maybe beibe.md",
-    "Соц Капитал/3_круг/Marakya.md",
-    "Соц Капитал/Познакомились",
-    "Соц Капитал/Особеные",
-    "Соц Капитал/3_круг",
-    "Соц Капитал/2_круг",
-    "Соц Капитал/1_круг",
-    "Соц Капитал",
-    "Люди/3_круг",
-    "Люди/2_круг",
-    "Люди/1_круг",
-    "Люди",
+    "Соц Капитал/3_круг/Кирилл Смеляк.md",
+    "Планирование/2036",
+    "Планирование/2035",
+    "Планирование/2034",
+    "Планирование/2033",
+    "Планирование/2032",
+    "Планирование/2031",
+    "Планирование/2030",
+    "Планирование/2029",
+    "Планирование/2028",
+    "Планирование/2027",
     "Без названия.canvas",
+    "Без названия 1.canvas",
     "photo_2026-03-23_17-36-59.jpg",
     "photo_2026-03-23_14-28-36.jpg",
     "photo_2026-03-23_14-24-16.jpg",

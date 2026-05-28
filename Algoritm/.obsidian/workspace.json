@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Progect Notes/Excalidraw/Доска.md"
+                "file": "Progect Notes/Excalidraw/Англиский.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Доска"
+              "title": "Англиский"
             }
           }
         ]
@@ -76,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -191,7 +190,7 @@
             }
           },
           {
-            "id": "f3f20c8d837da9a4",
+            "id": "ad1fe7b556215858",
             "type": "leaf",
             "state": {
               "type": "mermaid-toolbar-view",
@@ -228,13 +227,13 @@
   },
   "active": "7e199fba03e6e32e",
   "lastOpenFiles": [
+    "Progect Notes/Excalidraw/План.md",
+    "Progect Notes/Excalidraw/Англиский.md",
+    "Progect Notes/Excalidraw/Доска.md",
     "Без названия 1.md",
     "Без названия.md",
-    "Progect Notes/Excalidraw/Доска.md",
-    "Progect Notes/Excalidraw/План.md",
     "Progect Notes/Excalidraw/Stack.md",
     "Progect Notes/Excalidraw/Алгоритмы.md",
-    "Progect Notes/Excalidraw/Англиский.md",
     "Progect Notes/Excalidraw/Люди.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",

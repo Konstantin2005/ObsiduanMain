@@ -1,56 +1,41 @@
 {
   "main": {
-    "id": "3bf04eee21d62dda",
+    "id": "2d62d8a1dce23bb3",
     "type": "split",
     "children": [
       {
-        "id": "3c6a9dab7b337fa1",
+        "id": "c24cdf7f1b2ed66b",
         "type": "tabs",
-        "dimension": 48.803827751196174,
         "children": [
           {
-            "id": "cc6fc72750c35683",
+            "id": "b3175c740225de60",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "Day/2026-05-20.md",
-                "mode": "source",
-                "source": false
+                "file": "Безымянная Kanban-доска.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "2026-05-20"
+              "icon": "lucide-trello",
+              "title": "Безымянная Kanban-доска"
             }
-          }
-        ]
-      },
-      {
-        "id": "0d52bb195c0bdf73",
-        "type": "tabs",
-        "dimension": 51.196172248803826,
-        "children": [
+          },
           {
-            "id": "390cb604e098f7f0",
+            "id": "e40a8bfeaad63c1b",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Граф"
-            }
-          },
-          {
-            "id": "8ebb5d43795c4a54",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Проекты.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Проекты"
             }
           }
         ],
@@ -60,15 +45,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "3807d4f75038a55b",
+    "id": "2cdb2e644b830648",
     "type": "split",
     "children": [
       {
-        "id": "65a3de4d12796dbe",
+        "id": "da023aa2326db0b7",
         "type": "tabs",
         "children": [
           {
-            "id": "653657a1c730a7bb",
+            "id": "3a2b321baad59c92",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -81,7 +66,7 @@
             }
           },
           {
-            "id": "d11e8a91877db79d",
+            "id": "adb5e24dcf2bd044",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -98,7 +83,7 @@
             }
           },
           {
-            "id": "e731f4e75c042a34",
+            "id": "dfd690a63302a447",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -111,23 +96,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 203.5
+    "width": 200
   },
   "right": {
-    "id": "8642a95f1437d5f2",
+    "id": "308799dc724060e7",
     "type": "split",
     "children": [
       {
-        "id": "5e79904142418e1d",
+        "id": "d896a68a902da071",
         "type": "tabs",
         "children": [
           {
-            "id": "e016fa295f1e60ba",
+            "id": "4166737abfc44c04",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Капитал/IT/Java.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,25 +121,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для Java"
+              "title": "Обратные ссылки"
             }
           },
           {
-            "id": "5af04512591b0888",
+            "id": "b96a674d83f00555",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Капитал/IT/Java.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из Java"
+              "title": "Исходящие ссылки"
             }
           },
           {
-            "id": "5a6e1a2d7452fd2b",
+            "id": "cfc28819c02b11b5",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -170,7 +153,7 @@
             }
           },
           {
-            "id": "a1a254a4ebfa5bcc",
+            "id": "819c530415589cbe",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -184,18 +167,17 @@
             }
           },
           {
-            "id": "bf6f2aec11099593",
+            "id": "0a2c7a82b353406e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Капитал/IT/Java.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура Java"
+              "title": "Структура"
             }
           }
         ]
@@ -213,36 +195,20 @@
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
       "command-palette:Открыть палитру команд": false,
-      "bases:Создать новую базу": false
+      "bases:Создать новую базу": false,
+      "obsidian-kanban:Создать новую доску": false
     }
   },
-  "active": "cc6fc72750c35683",
+  "active": "e40a8bfeaad63c1b",
   "lastOpenFiles": [
-    "Капитал/IT/Java.md",
-    "Проекты.md",
-    "Капитал/IT/IT.md",
-    "Капитал/Капитал/Капитал.md",
-    "Капитал/IT/TexРадар.md",
-    "Day/2026-05-20.md",
-    "Seting/Templetes/Ежедневная рутина.md",
-    "Seting/Templetes",
-    "Seting",
-    "Люди/Общение.md",
-    "Day",
+    "Безымянная Kanban-доска 6.md",
+    "Безымянная Kanban-доска 5.md",
+    "Безымянная Kanban-доска 4.md",
+    "Безымянная Kanban-доска 3.md",
+    "Безымянная Kanban-доска 2.md",
+    "Безымянная Kanban-доска 1.md",
+    "Безымянная Kanban-доска.md",
     "Без названия.md",
-    "Project",
-    "Здоровье/Здоровье.md",
-    "Что-то другое/Что-то другое.md",
-    "Люди/Поиск людей.md",
-    "Люди/Люди.md",
-    "Капитал/Капитал",
-    "Капитал/Английский",
-    "Капитал/IT",
-    "Капитал/Финансы.md",
-    "Капитал/Английский/Английский.md",
-    "Что-то другое",
-    "Без названия 1.md",
-    "Люди",
-    "Здоровье"
+    "Добро пожаловать.md"
   ]
 }

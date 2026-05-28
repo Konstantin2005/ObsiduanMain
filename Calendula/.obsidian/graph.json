@@ -1,128 +1,86 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": false,
+  "showTags": true,
   "showAttachments": false,
-  "hideUnresolved": false,
-  "showOrphans": false,
-  "collapse-color-groups": true,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
   "colorGroups": [
-    {
-      "query": "#Дни",
-      "color": {
-        "a": 1,
-        "rgb": 11870497
-      }
-    },
-    {
-      "query": "#Мясорубка",
-      "color": {
-        "a": 1,
-        "rgb": 14538259
-      }
-    },
-    {
-      "query": "#Продуктивная_скукота",
-      "color": {
-        "a": 1,
-        "rgb": 7438336
-      }
-    },
-    {
-      "query": "#Интересный",
-      "color": {
-        "a": 1,
-        "rgb": 9333254
-      }
-    },
-    {
-      "query": "#Отдых",
-      "color": {
-        "a": 1,
-        "rgb": 7695360
-      }
-    },
-    {
-      "query": "#Обычный",
-      "color": {
-        "a": 1,
-        "rgb": 4934912
-      }
-    },
-    {
-      "query": "#Думал",
-      "color": {
-        "a": 1,
-        "rgb": 1862997
-      }
-    },
-    {
-      "query": "#Ничего_не_делал",
-      "color": {
-        "a": 1,
-        "rgb": 4603445
-      }
-    },
-    {
-      "query": "#Не_задокоментирован",
-      "color": {
-        "a": 1,
-        "rgb": 4677633
-      }
-    },
-    {
-      "query": "#Соц_Капитал",
-      "color": {
-        "a": 1,
-        "rgb": 0
-      }
-    },
-    {
-      "query": "#Особенные",
-      "color": {
-        "a": 1,
-        "rgb": 9240320
-      }
-    },
     {
       "query": "#Ближний_круг",
       "color": {
         "a": 1,
-        "rgb": 65310
+        "rgb": 4846848
       }
     },
     {
       "query": "#Средний_Круг",
       "color": {
         "a": 1,
-        "rgb": 3060500
+        "rgb": 6019921
       }
     },
     {
       "query": "#Дальний_Круг",
       "color": {
         "a": 1,
-        "rgb": 293906
+        "rgb": 3908117
       }
     },
     {
-      "query": "#Познакомились",
+      "query": "#Дниии",
       "color": {
         "a": 1,
-        "rgb": 14342
+        "rgb": 0
+      }
+    },
+    {
+      "query": " #Продуктивная_скукота ",
+      "color": {
+        "a": 1,
+        "rgb": 15320076
+      }
+    },
+    {
+      "query": "#Обычный ",
+      "color": {
+        "a": 1,
+        "rgb": 9538834
+      }
+    },
+    {
+      "query": "#Мясорубка",
+      "color": {
+        "a": 1,
+        "rgb": 6119170
+      }
+    },
+    {
+      "query": " #Не_задокоментирован ",
+      "color": {
+        "a": 1,
+        "rgb": 8891649
+      }
+    },
+    {
+      "query": "#Kanban",
+      "color": {
+        "a": 1,
+        "rgb": 14701233
       }
     }
   ],
   "collapse-display": true,
-  "showArrow": true,
-  "textFadeMultiplier": 0.8,
-  "nodeSizeMultiplier": 0.6359375,
+  "showArrow": false,
+  "textFadeMultiplier": -0.2,
+  "nodeSizeMultiplier": 0.584895833333333,
   "lineSizeMultiplier": 0.1,
   "collapse-forces": true,
-  "centerStrength": 0.0416666666666667,
-  "repelStrength": 12.1875,
+  "centerStrength": 0.0572916666666667,
+  "repelStrength": 16.0416666666667,
   "linkStrength": 1,
-  "linkDistance": 302,
-  "scale": 0.3213363860503536,
+  "linkDistance": 255,
+  "scale": 0.3692465245171584,
   "close": false
 }
