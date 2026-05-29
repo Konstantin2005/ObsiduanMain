@@ -1,10 +1,11 @@
 ﻿<#
 .SYNOPSIS
-  Collects mentions of people from diary entries and appends them to person files.
+  Collects mentions of people from diary entries and updates person files.
 .DESCRIPTION
-  Scans all diary entries in Calendula/Calendula/ for mentions ([[Name]] or plain text)
-  of people from Соц Капитал/. Extracts the full paragraph and appends it to the person's file.
-  Skips paragraphs that are just a list of names with no real content.
+  Scans diary entries for mentions ([[Name]] or plain text) of people from
+  Соц Капитал/. Maintains a single ## Упоминания в дневниках section in each
+  person file, replacing it entirely on every run with all deduplicated mentions.
+  Strips specified noise tags from quoted text.
 #>
 
 param([string]$VaultPath = "C:\obsidian\Main")
@@ -23,16 +24,24 @@ if (-not [System.IO.Directory]::Exists($scPath)) {
 
 $utf8 = [System.Text.UTF8Encoding]::new($false)
 
+$tagPattern = @(
+    '#Продуктивна_скукота',
+    '#Продуктивная_скукота',
+    '#Обычный',
+    '#Мясорубка',
+    '#Ничего_не_делал'
+) -join '|'
+
+function StripNoiseTags($text) {
+    $result = $text -replace $tagPattern, ''
+    return $result.Trim()
+}
+
 function IsMeaningfulParagraph($text) {
     $stripped = $text -replace '\[\[.*?\]\]', ''
     $stripped = $stripped -replace '[#*>_\-\[\]()]', ''
-    $stripped = $stripped.Trim()
-    return $stripped.Length -ge 15
+    return $stripped.Trim().Length -ge 15
 }
-
-Write-Output "Diary entries: $diaryRoot"
-Write-Output "People files: $scPath"
-Write-Output ""
 
 $personFiles = [System.IO.Directory]::GetFiles($scPath, "*.md", [System.IO.SearchOption]::AllDirectories)
 Write-Output "Found $($personFiles.Length) person files"
@@ -42,13 +51,12 @@ $diaryFiles = [System.IO.Directory]::GetFiles($diaryRoot, "*.md", [System.IO.Sea
     $dirName = [System.IO.Directory]::GetParent($_).Name
     $fName -notmatch '^\d{4}$' -and $dirName -match '^[А-Яа-яЁё]'
 }
-Write-Output "Found $($diaryFiles.Length) diary files"
-Write-Output ""
+Write-Output "Found $($diaryFiles.Length) diary files`n"
 
 $personMap = @{}
 foreach ($pf in $personFiles) {
     $name = [System.IO.Path]::GetFileNameWithoutExtension($pf)
-    $personMap[$name] = @{ File = $pf; Paragraphs = @() }
+    $personMap[$name] = @{ File = $pf; Mentions = @{} }
 }
 
 $personPatterns = @{}
@@ -72,13 +80,18 @@ foreach ($df in $diaryFiles) {
         if ($trimmed -match '^#\w+$') { continue }
         if (-not (IsMeaningfulParagraph $trimmed)) { $skippedNamesOnly++; continue }
 
+        $cleanText = StripNoiseTags($trimmed)
+
         foreach ($name in $personMap.Keys) {
-            if ($trimmed -match $personPatterns[$name]) {
+            if ($cleanText -match $personPatterns[$name]) {
                 $parentDir = [System.IO.Directory]::GetParent($df).Name
                 $grandParent = [System.IO.Directory]::GetParent([System.IO.Directory]::GetParent($df)).Name
                 $fname = [System.IO.Path]::GetFileName($df)
                 $rel = "$grandParent/$parentDir/$fname"
-                $personMap[$name].Paragraphs += @{ Text = $trimmed; Source = $rel }
+                $key = "$rel|$cleanText"
+                if (-not $personMap[$name].Mentions.ContainsKey($key)) {
+                    $personMap[$name].Mentions[$key] = @{ Text = $cleanText; Source = $rel }
+                }
                 $totalMatches++
             }
         }
@@ -86,38 +99,35 @@ foreach ($df in $diaryFiles) {
 }
 
 Write-Output "Total mentions found: $totalMatches"
-Write-Output "Skipped (names only): $skippedNamesOnly"
-Write-Output ""
+Write-Output "Skipped (names only): $skippedNamesOnly`n"
 
-$sectionHeader = "`n---`n## Упоминания в дневниках`n`n"
+$sectionHeader = "## Упоминания в дневниках"
 
 foreach ($name in $personMap.Keys) {
     $data = $personMap[$name]
-    if ($data.Paragraphs.Count -eq 0) { continue }
+    if ($data.Mentions.Count -eq 0) { continue }
 
-    $existingContent = [System.IO.File]::ReadAllText($data.File, $utf8)
-    $seen = @{}
-    $newEntries = @()
+    $content = [System.IO.File]::ReadAllText($data.File, $utf8)
 
-    foreach ($p in $data.Paragraphs) {
-        $key = $p.Text.GetHashCode()
-        if ($seen.ContainsKey($key)) { continue }
-        $preview = if ($p.Text.Length -gt 60) { $p.Text.Substring(0, 60) } else { $p.Text }
-        if ($existingContent -match [Regex]::Escape($preview)) { continue }
-        $seen[$key] = $true
-        $newEntries += $p
+    $idx = $content.IndexOf($sectionHeader)
+    if ($idx -ge 0) {
+        $contentBefore = $content.Substring(0, $idx).TrimEnd()
+        $contentBefore = $contentBefore -replace '(?:\r?\n---)*$', ''
+        $contentBefore = $contentBefore.TrimEnd()
+    } else {
+        $contentBefore = $content.TrimEnd()
     }
 
-    if ($newEntries.Count -eq 0) { continue }
-
-    $quoted = $newEntries | ForEach-Object {
+    $formatted = $data.Mentions.Values | Sort-Object {
+        if ($_.Source -match '(\d{4}-\d{2}-\d{2})') { $matches[1] } else { $_.Source }
+    } | ForEach-Object {
         "**$($_.Source)**:`n> $($_.Text -replace "`n", "`n> ")"
     }
 
-    $section = "$sectionHeader$($quoted -join "`n`n")"
-    [System.IO.File]::AppendAllText($data.File, $section, $utf8)
-    Write-Output "  -> $name ($($newEntries.Count) new)"
+    $sectionText = "`n---`n$sectionHeader`n`n" + ($formatted -join "`n`n")
+
+    [System.IO.File]::WriteAllText($data.File, $contentBefore + $sectionText, $utf8)
+    Write-Output "  -> $name ($($data.Mentions.Count) mentions)"
 }
 
-Write-Output ""
-Write-Output "Done!"
+Write-Output "`nDone!"
