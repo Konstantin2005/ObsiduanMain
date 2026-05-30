@@ -1,0 +1,39 @@
+Задача: Автоматизировать загрузку решённых задач LeetCode в Obsidian
+
+ДАННЫЕ ДЛЯ РАБОТЫ:
+1. Профиль LeetCode: https://leetcode.com/u/Mr_Kefir/
+2. Извлечь полный список всех решённых (ACCEPTED) задач с:
+   - Названием задачи
+   - номером задачи (problem ID)
+   - Сложностью (Easy, Medium, Hard)
+   - Основным топиком (Array, String, Dynamic Programming и т.д.)
+
+СТРУКТУРА ФАЙЛА В OBSIDIAN:
+
+type: problem
+difficulty: [Easy/Medium/Hard]
+topic: [[Array]]
+leetcode_id: 1234
+Problem Name
+Difficulty
+Easy / Medium / Hard
+Topic
+[[Array]]
+LeetCode Link
+https://leetcode.com/problems/problem-name
+Status
+✅ Solved
+
+Копировать код
+
+ПРОЦЕСС:
+1. Получить все решённые задачи с профиля Mr_Kefir
+2. Для каждой задачи создать отдельный файл в папке "Problems"
+3. Заполнить поля: название, сложность, топик, ID задачи
+4. Каждый файл должен иметь тег сложности: #Easy, #Medium или #Hard
+5. Каждый файл ссылается на два топика через [[Topic]]
+
+ВАЖНО:
+- Топики не должны ссылаться ни на что
+- Каждая задача ссылается на два топика максимум
+- Теги для сложности обязательны для фильтрации

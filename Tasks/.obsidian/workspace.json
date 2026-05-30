@@ -169,17 +169,14 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
-      "canvas:Создать новый холст": false,
-      "daily-notes:Сегодняшняя заметка": false,
-      "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false,
-      "bases:Создать новую базу": false
+      "command-palette:Открыть палитру команд": false
     }
   },
   "active": "2863690a99c7db95",
   "lastOpenFiles": [
+    "Task.txt",
+    "New Text Document.txt",
     "LeetCode/136. Single Number.md",
     "448. Find All Numbers Disappeared in an Array.md",
     "LeetCode/70. Climbing Stairs.md",
@@ -205,7 +202,6 @@
     "LeetCode/141. Linked List Cycle.md",
     "LeetCode/3190. Find Minimum Operations to Make All Elements Divisible by Three.md",
     "LeetCode/876. Middle of the Linked List.md",
-    "LeetCode/2558. Take Gifts From the Richest Pile.md",
     "Data structures",
     "Pichers/Pasted image 20260419113852.png",
     "Сodingame",
@@ -224,7 +220,6 @@
     "LP/Golang",
     "System Design",
     "LP",
-    "CodeBatle",
-    "CodeWars"
+    "CodeBatle"
   ]
 }
