@@ -8,58 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2f82f5028dc8def1",
-            "type": "leaf",
-            "state": {
-              "type": "3d_graph_view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "3D-Graph"
-            }
-          },
-          {
-            "id": "a1329a0d4871b4a3",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "План/2026/2026 - Май.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "2026 - Май"
-            }
-          },
-          {
-            "id": "0e36014a29335b8f",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "План/Проекты/Люди.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "Люди"
-            }
-          },
-          {
             "id": "f9cd01aba81a97ac",
             "type": "leaf",
             "state": {
@@ -73,8 +21,7 @@
               "title": "2026-05-30"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -230,10 +177,11 @@
   },
   "active": "f9cd01aba81a97ac",
   "lastOpenFiles": [
+    "План/Проекты/Люди.md",
+    "Calendula/2026/Май/2026-05-30.md",
     "План/2026/2026 - Май.md",
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Декабрь.md",
-    "План/Проекты/Люди.md",
     "Calendula/2026/Май/2026-05-29.md",
     "План/Проекты/LeetCode Easy.md",
     "План/Проекты/LeetCode Hard.md",
@@ -255,7 +203,6 @@
     "План/2026/2026.md",
     "План/2035/2035.md",
     "План/2032/2032.md",
-    "План/2033/2033.md",
     "План/Проекты",
     "План/2036",
     "План/2035",
