@@ -4,26 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "e43530a06d4d482c",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "1d76ee52d4041587",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Data structures/Queue.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Queue"
-            }
-          }
-        ]
-      },
-      {
         "id": "f04e64c8debc8eee",
         "type": "tabs",
         "children": [
@@ -31,10 +11,14 @@
             "id": "2863690a99c7db95",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Queue.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Queue"
             }
           }
         ]
@@ -193,10 +177,16 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "1d76ee52d4041587",
+  "active": "cfa30ed686374668",
   "lastOpenFiles": [
-    "Queue.md",
+    "AGENTS.md",
+    "Pichers/content.png",
+    "LeetCode/LeetCode-All/448. Find All Numbers Disappeared in an Array.md",
+    "Data structures/Database.md",
+    "Unsolved Tasks.md",
+    "Data structures/Array.md",
     "Data structures/Queue.md",
+    "Queue.md",
     "LeetCode/933. Number of Recent Calls.md",
     "LeetCode/921. Minimum Add to Make Parentheses Valid.md",
     "LeetCode/916. Word Subsets.md",
@@ -215,20 +205,14 @@
     "LeetCode/771. Jewels and Stones.md",
     "LeetCode/763. Partition Labels.md",
     "LeetCode/744. Find Smallest Letter Greater Than Target.md",
-    "LeetCode/739. Daily Temperatures.md",
-    "LeetCode/709. To Lower Case.md",
-    "LeetCode/705. Design HashSet.md",
-    "LeetCode/704. Binary Search.md",
-    "LeetCode/700. Search in a Binary Search Tree.md",
-    "LeetCode/682. Baseball Game.md",
     "Move-TodayTasks.ps1",
-    "LeetCode-All/2890. Reshape Data",
-    "LeetCode-All/2889. Reshape Data",
-    "LeetCode-All/2888. Reshape Data",
-    "LeetCode-All/615. Average Salary",
-    "LeetCode-All/602. Friend Requests II",
-    "LeetCode-All/597. Friend Requests I",
-    "LeetCode-All",
+    "LeetCode/LeetCode-All/2890. Reshape Data",
+    "LeetCode/LeetCode-All/2889. Reshape Data",
+    "LeetCode/LeetCode-All/2888. Reshape Data",
+    "LeetCode/LeetCode-All/615. Average Salary",
+    "LeetCode/LeetCode-All/602. Friend Requests II",
+    "LeetCode/LeetCode-All/597. Friend Requests I",
+    "LeetCode/LeetCode-All",
     "leetcode_problems_cache.json",
     "Task.txt",
     "Pichers/Pasted image 20260419113852.png",
@@ -238,7 +222,6 @@
     "Pichers/Pasted image 20260415012721.png",
     "Pichers/Pasted image 20260415010613.png",
     "Pichers/Pasted image 20260415010610.png",
-    "Pichers/content.png",
     "Pichers/Pasted image 20260403185935.png",
     "Pichers/Pasted image 20260403185908.png"
   ]

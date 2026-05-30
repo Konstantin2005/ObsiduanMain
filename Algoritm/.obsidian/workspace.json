@@ -11,14 +11,12 @@
             "id": "374bd63eec88e7c9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "Progect Notes/Написать/Промты.md",
-                "mode": "source",
-                "source": false
+                "file": "Progect Notes/Excalidraw/Общаться с людьми.md"
               },
-              "icon": "lucide-file",
-              "title": "Промты"
+              "icon": "excalidraw-icon",
+              "title": "Общаться с людьми"
             }
           }
         ]
@@ -74,8 +72,7 @@
               "title": "Закладки"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -231,6 +228,9 @@
   },
   "active": "374bd63eec88e7c9",
   "lastOpenFiles": [
+    "Progect Notes/Excalidraw/Поиск людей и Синк.md",
+    "Progect Notes/Excalidraw/Люди.md",
+    "Progect Notes/Написать/Промты.md",
     "Progect Notes/Написать/Промт 2.md",
     "2 Understand/Промты.md",
     "0 Indox/Простые обсуждения.md",
@@ -241,7 +241,6 @@
     "Без названия.md",
     "Progect Notes/Excalidraw/Stack.md",
     "Progect Notes/Excalidraw/Алгоритмы.md",
-    "Progect Notes/Excalidraw/Люди.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Two Pointer.md",
@@ -255,8 +254,6 @@
     "Progect Notes/Excalidraw/Архив Excalidraw/Как писать заметки.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Как думать Алгоритмичеси.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Как думать LeetCode.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Знания.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Гайд на жизнь.md",
     "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.svg",
     "Excalidraw/Scripts/Downloaded/Repeat Elements.svg",
     "Excalidraw/Scripts/Downloaded",
