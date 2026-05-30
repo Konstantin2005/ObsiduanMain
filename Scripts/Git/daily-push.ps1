@@ -4,7 +4,7 @@ param(
 
 Set-Location $RepoPath
 
-$logPath = Join-Path $RepoPath "daily-push.log"
+$logPath = Join-Path $RepoPath "Scripts\Logs\daily-push.log"
 function Write-Log {
     param([string]$Message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"

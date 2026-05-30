@@ -4,7 +4,7 @@ param(
 
 Set-Location $RepoPath
 
-$logPath = Join-Path $RepoPath "hourly-git.log"
+$logPath = Join-Path $RepoPath "Scripts\Logs\hourly-git.log"
 function Write-Log {
     param([string]$Message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
@@ -13,18 +13,25 @@ function Write-Log {
 
 Write-Log "Starting hourly sync..."
 
-$syncScript = Join-Path $RepoPath "sync_leetcode.ps1"
+$syncScript = Join-Path $RepoPath "Scripts\Vault\sync_leetcode.ps1"
 if (Test-Path $syncScript) {
     Write-Log "Running sync_leetcode.ps1..."
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $syncScript 2>&1 | Out-Null
     Write-Log "sync_leetcode.ps1 finished"
 }
 
-$mentionsScript = Join-Path $RepoPath "collect-mentions.ps1"
+$mentionsScript = Join-Path $RepoPath "Scripts\Vault\collect-mentions.ps1"
 if (Test-Path $mentionsScript) {
     Write-Log "Running collect-mentions.ps1..."
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $mentionsScript 2>&1 | Out-Null
     Write-Log "collect-mentions.ps1 finished"
+}
+
+$sortScript = Join-Path $RepoPath "Scripts\Vault\Sort-BoardTasks.ps1"
+if (Test-Path $sortScript) {
+    Write-Log "Running Sort-BoardTasks.ps1..."
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $sortScript 2>&1 | Out-Null
+    Write-Log "Sort-BoardTasks.ps1 finished"
 }
 
 $changes = git status --porcelain

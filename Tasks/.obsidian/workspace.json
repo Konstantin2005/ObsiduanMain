@@ -8,21 +8,27 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2863690a99c7db95",
+            "id": "1d76ee52d4041587",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeetCode/46. Permutations.md",
+                "file": "LeetCode/441. Arranging Coins.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "46. Permutations"
+              "title": "441. Arranging Coins"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "f04e64c8debc8eee",
+        "type": "tabs",
+        "children": [
           {
-            "id": "1d76ee52d4041587",
+            "id": "2863690a99c7db95",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -31,8 +37,7 @@
               "title": "Граф"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -188,34 +193,35 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "1d76ee52d4041587",
+  "active": "2863690a99c7db95",
   "lastOpenFiles": [
-    "Data structures/Graph.md",
-    "Data structures/Tree.md",
-    "Data structures/Backtracking.md",
-    "LeetCode/46. Permutations.md",
-    "LeetCode/40. Combination Sum II.md",
-    "LeetCode/39. Combination Sum.md",
-    "LeetCode/38. Count and Say.md",
-    "LeetCode/36. Valid Sudoku.md",
-    "LeetCode/35. Search Insert Position.md",
-    "LeetCode/34. Find First and Last Position of Element in Sorted Array.md",
-    "LeetCode/33. Search in Rotated Sorted Array.md",
-    "LeetCode/31. Next Permutation.md",
-    "LeetCode/28. Find the Index of the First Occurrence in a String.md",
-    "LeetCode/27. Remove Element.md",
-    "LeetCode/26. Remove Duplicates from Sorted Array.md",
-    "LeetCode/24. Swap Nodes in Pairs.md",
-    "LeetCode/22. Generate Parentheses.md",
-    "LeetCode/21. Merge Two Sorted Lists.md",
-    "LeetCode/20. Valid Parentheses.md",
-    "LeetCode/17. Letter Combinations of a Phone Number.md",
-    "LeetCode/16. 3Sum Closest.md",
-    "LeetCode/15. 3Sum.md",
-    "LeetCode/14. Longest Common Prefix.md",
-    "LeetCode/13. Roman to Integer.md",
-    "LeetCode/12. Integer to Roman.md",
-    "LeetCode/11. Container With Most Water.md",
+    "LeetCode/441. Arranging Coins.md",
+    "LeetCode/424. Longest Repeating Character Replacement.md",
+    "LeetCode/416. Partition Equal Subset Sum.md",
+    "LeetCode/409. Longest Palindrome.md",
+    "LeetCode/402. Remove K Digits.md",
+    "LeetCode/389. Find the Difference.md",
+    "Data structures/BitManipulation.md",
+    "LeetCode/387. First Unique Character in a String.md",
+    "LeetCode/383. Ransom Note.md",
+    "LeetCode/374. Guess Number Higher or Lower.md",
+    "LeetCode/373. Find K Pairs with Smallest Sums.md",
+    "LeetCode/368. Largest Divisible Subset.md",
+    "LeetCode/367. Valid Perfect Square.md",
+    "LeetCode/350. Intersection of Two Arrays II.md",
+    "LeetCode/349. Intersection of Two Arrays.md",
+    "LeetCode/347. Top K Frequent Elements.md",
+    "LeetCode/344. Reverse String.md",
+    "LeetCode/342. Power of Four.md",
+    "LeetCode/338. Counting Bits.md",
+    "LeetCode/326. Power of Three.md",
+    "LeetCode/322. Coin Change.md",
+    "LeetCode/290. Word Pattern.md",
+    "LeetCode/287. Find the Duplicate Number.md",
+    "LeetCode/283. Move Zeroes.md",
+    "LeetCode/278. First Bad Version.md",
+    "LeetCode/268. Missing Number.md",
+    "Move-TodayTasks.ps1",
     "LeetCode-All/2890. Reshape Data",
     "LeetCode-All/2889. Reshape Data",
     "LeetCode-All/2888. Reshape Data",
@@ -225,7 +231,6 @@
     "LeetCode-All",
     "leetcode_problems_cache.json",
     "Task.txt",
-    "New Text Document.txt",
     "Pichers/Pasted image 20260419113852.png",
     "Pichers/Pasted image 20260416214312.png",
     "Pichers/Pasted image 20260416211413.png",

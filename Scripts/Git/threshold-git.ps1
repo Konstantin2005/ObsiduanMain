@@ -4,14 +4,14 @@ param(
 
 Set-Location $RepoPath
 
-$logPath = Join-Path $RepoPath "threshold-git.log"
+$logPath = Join-Path $RepoPath "Scripts\Logs\threshold-git.log"
 function Write-Log {
     param([string]$Message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     Add-Content -Path $logPath -Value "[$timestamp] $Message"
 }
 
-$mentionsScript = Join-Path $RepoPath "collect-mentions.ps1"
+$mentionsScript = Join-Path $RepoPath "Scripts\Vault\collect-mentions.ps1"
 if (Test-Path $mentionsScript) {
     Write-Log "Running collect-mentions.ps1..."
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $mentionsScript 2>&1 | Out-Null
