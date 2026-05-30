@@ -1,0 +1,8 @@
+---
+type: term
+---
+
+# {{title}}
+
+## Abstractions
+[[]]

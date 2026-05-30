@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 425.5
+    "width": 233.5
   },
   "right": {
     "id": "cf408392f5fbb0e2",
@@ -175,6 +175,7 @@
   },
   "active": "2863690a99c7db95",
   "lastOpenFiles": [
+    "leetcode_problems_cache.json",
     "Task.txt",
     "New Text Document.txt",
     "LeetCode/136. Single Number.md",
@@ -219,7 +220,6 @@
     "Pichers",
     "LP/Golang",
     "System Design",
-    "LP",
-    "CodeBatle"
+    "LP"
   ]
 }
