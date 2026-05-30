@@ -11,10 +11,14 @@
             "id": "374bd63eec88e7c9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Progect Notes/Написать/Промты.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "Промты"
             }
           }
         ]
@@ -70,7 +74,8 @@
               "title": "Закладки"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -223,8 +228,9 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "f321edb367d90dc1",
+  "active": "374bd63eec88e7c9",
   "lastOpenFiles": [
+    "Progect Notes/Написать/Промт 2.md",
     "2 Understand/Промты.md",
     "0 Indox/Простые обсуждения.md",
     "Progect Notes/Excalidraw/План.md",
@@ -250,7 +256,6 @@
     "Progect Notes/Excalidraw/Архив Excalidraw/Как думать LeetCode.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Знания.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Гайд на жизнь.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.svg",
     "Excalidraw/Scripts/Downloaded/Repeat Elements.svg",
     "Excalidraw/Scripts/Downloaded",

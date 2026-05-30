@@ -21,10 +21,23 @@
             "id": "a1329a0d4871b4a3",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "kanban",
+              "state": {
+                "file": "План/2026/2026 - Май.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "2026 - Май"
             }
           }
         ],
