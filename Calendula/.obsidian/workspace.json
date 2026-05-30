@@ -60,17 +60,21 @@
             }
           },
           {
-            "id": "7d8b3e49c3869327",
+            "id": "f9cd01aba81a97ac",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Май/2026-05-30.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-05-30"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -127,7 +131,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -223,10 +228,10 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "a1329a0d4871b4a3",
+  "active": "f9cd01aba81a97ac",
   "lastOpenFiles": [
-    "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Май.md",
+    "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Декабрь.md",
     "План/Проекты/Люди.md",
     "Calendula/2026/Май/2026-05-29.md",
