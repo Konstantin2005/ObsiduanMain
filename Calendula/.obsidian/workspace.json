@@ -11,26 +11,24 @@
             "id": "2f82f5028dc8def1",
             "type": "leaf",
             "state": {
-              "type": "kanban",
-              "state": {
-                "file": "План/2026/2026 - Май.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "2026 - Май"
+              "type": "3d_graph_view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "3D-Graph"
+            }
+          },
+          {
+            "id": "a1329a0d4871b4a3",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,14 +181,14 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "2f82f5028dc8def1",
+  "active": "a1329a0d4871b4a3",
   "lastOpenFiles": [
+    "План/2026/2026 - Май.md",
     "Calendula/2026/Май/2026-05-29.md",
     "План/Проекты/LeetCode Easy.md",
     "План/Проекты/LeetCode Hard.md",
     "План/Проекты/Английский.md",
     "A1-A2 (30-50 часов).md",
-    "План/2026/2026 - Май.md",
     "Calendula/2026/Май/2026-05-22.md",
     "План/2026/2026 - Декабрь.md",
     "План/2026/2026 - Июль.md",
