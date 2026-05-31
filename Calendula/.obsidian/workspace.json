@@ -8,27 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f9cd01aba81a97ac",
-            "type": "leaf",
-            "state": {
-              "type": "3d_graph_view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "3D-Graph"
-            }
-          },
-          {
             "id": "786c11a8c5cb9ef7",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Май/2026-05-31.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-05-31"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -47,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -184,14 +177,18 @@
   },
   "active": "786c11a8c5cb9ef7",
   "lastOpenFiles": [
-    "План/Проекты/LeetCode Hard.md",
-    "Calendula/2026/Май/2026-05-31.md",
-    "Calendula/2026/Май/2026-05-25.md",
+    "План/2026/2026 - Май.md",
+    "План/2026/2026.md",
     "Calendula/2026/Май/2026-05-30.md",
     "Calendula/2026/Май/2026-05-29.md",
     "Calendula/2026/Май/2026-05-28.md",
     "Calendula/2026/Май/2026-05-27.md",
+    "Calendula/2026/Май/2026-05-31.md",
+    "Calendula/2026/Май/2026-05-07.md",
+    "Calendula/2026/Май/2026-05-10.md",
     "Calendula/2026/Май/2026-05-26.md",
+    "План/Проекты/LeetCode Hard.md",
+    "Calendula/2026/Май/2026-05-25.md",
     "Calendula/2026/Май/2026-05-20.md",
     "Calendula/2026/Май/2026-05-21.md",
     "Calendula/2026/Май/2026-05-13.md",
@@ -200,16 +197,12 @@
     "План/2026/2026 - Февраль.md",
     "План/2028/2028.md",
     "План/2031/2031.md",
-    "План/2026/2026.md",
     "План/2029/2029.md",
     "План/2027/2027.md",
     "Соц Капитал/1_круг/Hold.md",
     "Соц Капитал/1_круг/Костяк.md",
     "Соц Капитал/1_круг/Yogg.md",
     "Соц Капитал/1_круг/Vano.md",
-    "Соц Капитал/2_круг/Duma gardenco.md",
-    "Соц Капитал/2_круг/Bebra_dev.md",
-    "Соц Капитал/2_круг/Миша Бадигин.md",
     "План/Проекты",
     "План/2036",
     "План/2035",
