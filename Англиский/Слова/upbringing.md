@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Childhood]]
-[[Family]]
-[[Teaching]]

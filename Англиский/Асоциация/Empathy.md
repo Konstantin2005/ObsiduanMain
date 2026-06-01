@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[compassion]]
-[[compassionate]]
-[[considerate]]

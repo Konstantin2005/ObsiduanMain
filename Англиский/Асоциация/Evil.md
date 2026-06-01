@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[corrupt]]
-[[depraved]]
-[[malevolent]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[apparition]]
-[[design]]
-[[dream]]

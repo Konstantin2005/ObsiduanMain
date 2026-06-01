@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Invention]]
-[[Innovation]]
-[[Law]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Luck]]
-[[Fate]]
-[[Opportunity]]

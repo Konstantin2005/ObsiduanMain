@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Humility]]
-[[Modesty]]
-[[Simplicity]]

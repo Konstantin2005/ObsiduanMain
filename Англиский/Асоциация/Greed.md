@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[coveting]]
-[[greedy]]
-[[selfish]]

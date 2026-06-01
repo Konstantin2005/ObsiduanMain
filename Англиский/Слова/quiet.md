@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Silence]]
-[[Quiet]]
-[[Silence]]

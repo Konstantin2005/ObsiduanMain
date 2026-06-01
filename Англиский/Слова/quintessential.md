@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Essence]]
-[[Excellence]]
-[[Perfection]]

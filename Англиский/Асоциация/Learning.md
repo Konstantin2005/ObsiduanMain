@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[academic]]
-[[apply]]
-[[curriculum]]

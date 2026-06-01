@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Dedication]]
-[[Commitment]]
-[[Loyalty]]

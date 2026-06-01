@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Indulgence]]
-[[Food]]
-[[Pleasure]]

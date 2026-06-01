@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Memory]]
-[[Time]]
-[[Perspective]]

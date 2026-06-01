@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[coequality]]
-[[egalitarian]]
-[[equalized]]

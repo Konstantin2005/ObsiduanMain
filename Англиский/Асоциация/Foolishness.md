@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[absurd]]
-[[absurdity]]
-[[frivolous]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Childhood]]
-[[Youth]]
-[[Energy]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Gentleness]]
-[[Humility]]
-[[Peace]]

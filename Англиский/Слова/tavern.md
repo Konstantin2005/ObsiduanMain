@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Community]]
-[[Food]]
-[[Celebration]]

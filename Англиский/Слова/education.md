@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Knowledge]]
-[[Education]]
-[[Learning]]

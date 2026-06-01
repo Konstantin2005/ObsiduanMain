@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bubbling]]
-[[canoe]]
-[[current]]

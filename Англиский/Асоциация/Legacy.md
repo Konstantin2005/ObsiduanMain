@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[ancestry]]
-[[bicentennial]]
-[[birthright]]

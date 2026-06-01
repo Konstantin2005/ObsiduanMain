@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Knowledge]]
-[[Health]]
-[[Truth]]

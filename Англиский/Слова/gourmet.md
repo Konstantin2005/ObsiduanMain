@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Food]]
-[[Taste]]
-[[Excellence]]

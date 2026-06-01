@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Forgiveness]]
-[[Justice]]
-[[Freedom]]

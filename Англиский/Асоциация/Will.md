@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[choosing]]
-[[obstinate]]
-[[resolute]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Fire]]
-[[Passion]]
-[[Anger]]

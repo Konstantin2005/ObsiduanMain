@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Work]]
-[[Reward]]
-[[Justice]]

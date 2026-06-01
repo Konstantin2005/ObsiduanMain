@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Consistency]]
-[[Order]]
-[[Stability]]

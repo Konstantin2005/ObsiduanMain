@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Teaching]]
-[[Leadership]]
-[[Wisdom]]

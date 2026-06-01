@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Connection]]
-[[Unity]]
-[[Peace]]

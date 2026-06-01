@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[auspicious]]
-[[chance]]
-[[coincidence]]

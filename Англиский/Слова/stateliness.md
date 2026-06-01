@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Dignity]]
-[[Elegance]]
-[[Respect]]

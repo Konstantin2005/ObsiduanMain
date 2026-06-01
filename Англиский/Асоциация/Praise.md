@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adulation]]
-[[adulatory]]
-[[praising]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[arrange]]
-[[plan]]
-[[preliminary]]

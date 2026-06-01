@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Humanity]]
-[[Unity]]
-[[Existence]]

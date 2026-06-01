@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Discipline]]
-[[Will]]
-[[Moderation]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Community]]
-[[Friendship]]
-[[Relationships]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Belonging]]
-[[Community]]
-[[Acceptance]]

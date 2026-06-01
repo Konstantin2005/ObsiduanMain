@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Disappointment]]
-[[Contentment]]
-[[Change]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adjoining]]
-[[near]]
-[[neighbor]]

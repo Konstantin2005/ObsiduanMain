@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[credibility]]
-[[notorious]]
-[[prestige]]

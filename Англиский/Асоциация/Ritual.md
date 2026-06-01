@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[annual]]
-[[brew]]
-[[ceremonial]]

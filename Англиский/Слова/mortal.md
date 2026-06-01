@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Death]]
-[[Mortality]]
-[[Life]]

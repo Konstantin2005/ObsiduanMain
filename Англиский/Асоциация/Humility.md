@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[ashamed]]
-[[humble]]
-[[humility]]

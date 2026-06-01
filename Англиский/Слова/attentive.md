@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Listening]]
-[[Focus]]
-[[Respect]]

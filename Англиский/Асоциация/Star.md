@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[asteroid]]
-[[comet]]
-[[galaxy]]

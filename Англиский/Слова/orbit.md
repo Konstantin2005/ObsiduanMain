@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Star]]
-[[Space]]
-[[Journey]]

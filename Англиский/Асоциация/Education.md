@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[academic]]
-[[course]]
-[[cultured]]

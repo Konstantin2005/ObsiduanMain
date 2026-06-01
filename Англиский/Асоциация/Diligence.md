@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[assiduous]]
-[[conscientious]]
-[[industrious]]

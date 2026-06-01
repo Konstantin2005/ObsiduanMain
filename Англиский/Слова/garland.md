@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Flower]]
-[[Celebration]]
-[[Honor]]

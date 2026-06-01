@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Pride]]
-[[Confidence]]
-[[Achievement]]

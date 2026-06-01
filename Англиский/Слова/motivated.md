@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Motivation]]
-[[Ambition]]
-[[Determination]]

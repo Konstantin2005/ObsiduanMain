@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Forgiveness]]
-[[Mercy]]
-[[Health]]

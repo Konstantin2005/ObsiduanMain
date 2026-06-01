@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bubbling]]
-[[cascade]]
-[[crystalline]]

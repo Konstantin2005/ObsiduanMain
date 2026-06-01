@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Embrace]]
-[[Affection]]
-[[Love]]

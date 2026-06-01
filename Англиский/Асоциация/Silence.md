@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cypress]]
-[[hush]]
-[[noiseless]]

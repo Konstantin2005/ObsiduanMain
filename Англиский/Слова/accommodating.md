@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Hospitality]]
-[[Kindness]]
-[[Service]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[candy]]
-[[chocolate]]
-[[decadent]]

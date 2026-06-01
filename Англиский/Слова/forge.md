@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Creation]]
-[[Strength]]
-[[Skill]]

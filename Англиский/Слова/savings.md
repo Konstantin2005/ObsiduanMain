@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Wealth]]
-[[Security]]
-[[Future]]

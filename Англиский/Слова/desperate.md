@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Despair]]
-[[Desire]]
-[[Suffering]]

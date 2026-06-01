@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[assertive]]
-[[assured]]
-[[certainty]]

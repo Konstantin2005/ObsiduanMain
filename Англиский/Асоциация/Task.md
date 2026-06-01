@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[assignment]]
-[[chore]]
-[[errand]]

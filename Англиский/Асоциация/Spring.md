@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bloom]]
-[[blooming]]
-[[blossom]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Devotion]]
-[[Sincerity]]
-[[Love]]

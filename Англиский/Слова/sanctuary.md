@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Peace]]
-[[Safety]]
-[[Spirituality]]

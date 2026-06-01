@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[apply]]
-[[assemble]]
-[[commute]]

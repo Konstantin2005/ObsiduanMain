@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[clasping]]
-[[cuddling]]
-[[enveloping]]

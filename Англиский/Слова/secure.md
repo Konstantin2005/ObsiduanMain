@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Security]]
-[[Safety]]
-[[Trust]]

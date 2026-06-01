@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Fulfillment]]
-[[Purpose]]

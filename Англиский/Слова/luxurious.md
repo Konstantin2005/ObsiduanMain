@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Luxury]]
-[[Comfort]]
-[[Elegance]]

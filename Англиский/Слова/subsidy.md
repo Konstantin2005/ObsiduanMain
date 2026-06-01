@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Support]]
-[[Community]]
-[[Growth]]

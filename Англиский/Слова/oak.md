@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Tree]]
-[[Strength]]
-[[Forest]]

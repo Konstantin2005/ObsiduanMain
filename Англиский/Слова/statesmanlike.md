@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Diplomacy]]
-[[Leadership]]
-[[Wisdom]]

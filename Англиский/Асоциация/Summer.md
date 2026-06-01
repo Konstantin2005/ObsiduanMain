@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[balmy]]
-[[blazing]]
-[[breezy]]

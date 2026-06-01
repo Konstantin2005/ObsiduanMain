@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[clairvoyant]]
-[[foreboding]]
-[[gutfeeling]]

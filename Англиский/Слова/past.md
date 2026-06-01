@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Legacy]]
-[[History]]
-[[Memory]]

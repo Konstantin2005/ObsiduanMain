@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[softhearted]]
-[[sympathetic]]
-[[sympathizing]]

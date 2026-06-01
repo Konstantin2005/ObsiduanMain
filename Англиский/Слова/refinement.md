@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Manners]]
-[[Elegance]]
-[[Culture]]

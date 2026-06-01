@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[deprivation]]
-[[essential]]
-[[hunger]]

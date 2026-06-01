@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[accepting]]
-[[condonation]]
-[[embrace]]

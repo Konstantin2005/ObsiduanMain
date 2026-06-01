@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Strength]]
-[[Courage]]
-[[Victory]]

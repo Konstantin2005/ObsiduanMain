@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[affiliated]]
-[[attached]]
-[[bond]]

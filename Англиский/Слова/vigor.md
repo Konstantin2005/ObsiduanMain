@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Health]]
-[[Energy]]
-[[Strength]]

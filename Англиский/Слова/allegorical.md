@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Fable]]
-[[Literature]]
-[[Meaning]]

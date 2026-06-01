@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[attentive]]
-[[auditory]]
-[[eavesdrop]]

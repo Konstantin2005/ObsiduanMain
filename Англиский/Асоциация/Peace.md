@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[abode]]
-[[accepting]]
-[[amicable]]

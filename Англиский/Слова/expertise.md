@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Knowledge]]
-[[Skill]]
-[[Experience]]

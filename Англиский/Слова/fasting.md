@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Hunger]]
-[[Discipline]]
-[[Health]]

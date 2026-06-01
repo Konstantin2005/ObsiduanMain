@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bazaar]]
-[[civilization]]
-[[civilized]]

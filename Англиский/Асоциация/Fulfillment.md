@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[accomplishment]]
-[[attainment]]
-[[completion]]

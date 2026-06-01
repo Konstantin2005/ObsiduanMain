@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Integrity]]
-[[Health]]
-[[Goodness]]

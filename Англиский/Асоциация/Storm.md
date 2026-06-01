@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[downpour]]
-[[gust]]
-[[monsoon]]

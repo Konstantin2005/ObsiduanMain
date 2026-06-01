@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Exercise]]
-[[Dance]]
-[[Energy]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[creativity]]
-[[eclectic]]
-[[inventive]]

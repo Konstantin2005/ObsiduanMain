@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Mystery]]
-[[Journey]]
-[[Confusion]]

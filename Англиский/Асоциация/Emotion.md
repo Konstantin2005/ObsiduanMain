@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[affect]]
-[[drama]]
-[[dramatic]]

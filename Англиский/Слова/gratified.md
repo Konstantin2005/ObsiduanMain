@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Contentment]]
-[[Satisfaction]]
-[[Gratitude]]

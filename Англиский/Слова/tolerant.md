@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Acceptance]]
-[[Diversity]]
-[[Peace]]

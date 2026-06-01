@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Freedom]]
-[[Choice]]
-[[Destiny]]

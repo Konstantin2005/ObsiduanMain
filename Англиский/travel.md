@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[archipelago]]
-[[bicycle]]
-[[cab]]

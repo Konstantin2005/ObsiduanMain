@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[ballroom]]
-[[choreographed]]
-[[choreography]]

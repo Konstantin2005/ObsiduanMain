@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Truth]]
-[[Discovery]]
-[[Faith]]

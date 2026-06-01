@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Amusement]]
-[[Laughter]]
-[[Joy]]

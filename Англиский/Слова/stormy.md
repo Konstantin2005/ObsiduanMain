@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Storm]]
-[[Weather]]
-[[Chaos]]

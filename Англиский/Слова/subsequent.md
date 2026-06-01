@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Future]]
-[[Time]]
-[[Progress]]

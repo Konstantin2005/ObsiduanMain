@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Laughter]]
-[[Humor]]
-[[Secrecy]]

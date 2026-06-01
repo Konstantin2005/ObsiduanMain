@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Humility]]
-[[Submission]]
-[[Service]]

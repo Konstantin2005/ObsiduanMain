@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[consummate]]
-[[faultless]]
-[[flawless]]

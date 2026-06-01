@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Cooperation]]
-[[Unity]]
-[[Peace]]

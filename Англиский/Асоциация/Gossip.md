@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[hearsay]]
-[[rumor]]
-[[rumormongering]]

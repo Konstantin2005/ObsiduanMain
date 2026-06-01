@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Despair]]
-[[Sorrow]]
-[[Compassion]]

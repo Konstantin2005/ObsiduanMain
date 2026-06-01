@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Loyalty]]
-[[Honor]]
-[[Duty]]

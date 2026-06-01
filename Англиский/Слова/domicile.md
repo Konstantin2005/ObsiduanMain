@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Welcome]]
-[[Venture]]

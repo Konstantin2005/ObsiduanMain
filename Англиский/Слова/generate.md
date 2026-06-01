@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Creation]]
-[[Energy]]
-[[Life]]

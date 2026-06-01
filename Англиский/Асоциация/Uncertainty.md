@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[ambiguity]]
-[[apprehensive]]
-[[confused]]

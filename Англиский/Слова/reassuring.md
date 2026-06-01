@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Comfort]]
-[[Trust]]
-[[Safety]]

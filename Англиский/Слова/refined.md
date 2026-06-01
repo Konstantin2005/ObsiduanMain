@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Elegance]]
-[[Perfection]]
-[[Taste]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[alive]]
-[[aliveness]]
-[[animate]]

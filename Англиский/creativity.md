@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[artistry]]
-[[brainstorm]]
-[[creative]]

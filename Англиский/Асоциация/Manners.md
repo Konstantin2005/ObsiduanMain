@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[civil]]
-[[civility]]
-[[cordial]]

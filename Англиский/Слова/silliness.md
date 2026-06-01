@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Folly]]
-[[Amusement]]
-[[Fun]]

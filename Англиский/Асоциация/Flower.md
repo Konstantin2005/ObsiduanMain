@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[aromatic]]
-[[blooming]]
-[[blossom]]

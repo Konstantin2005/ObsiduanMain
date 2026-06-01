@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Legacy]]
-[[Family]]
-[[Freedom]]

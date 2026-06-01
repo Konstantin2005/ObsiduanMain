@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Travel]]
-[[Journey]]
-[[Nature]]

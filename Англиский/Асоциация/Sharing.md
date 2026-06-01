@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[allocate]]
-[[apportion]]
-[[communal]]

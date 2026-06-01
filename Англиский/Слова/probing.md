@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Curiosity]]
-[[Exploration]]
-[[Knowledge]]

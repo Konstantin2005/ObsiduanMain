@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Judgment]]
-[[Value]]
-[[Perception]]

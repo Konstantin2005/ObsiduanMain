@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Music]]
-[[Poetry]]
-[[Expression]]

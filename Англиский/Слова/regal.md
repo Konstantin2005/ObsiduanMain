@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Majesty]]
-[[Nobility]]
-[[Power]]

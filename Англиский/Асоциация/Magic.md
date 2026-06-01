@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[alchemy]]
-[[bewitching]]
-[[enchanting]]

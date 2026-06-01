@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Fashion]]
-[[Time]]
-[[Change]]

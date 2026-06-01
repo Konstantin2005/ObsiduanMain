@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Ignorance]]
-[[Uncertainty]]
-[[Innocence]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Quest]]
-[[Curiosity]]
-[[Journey]]

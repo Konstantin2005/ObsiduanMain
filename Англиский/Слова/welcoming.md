@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Acceptance]]
-[[Hospitality]]
-[[Openness]]

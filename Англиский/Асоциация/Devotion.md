@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adore]]
-[[adoring]]
-[[allegiance]]

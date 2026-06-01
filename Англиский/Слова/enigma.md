@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Mystery]]
-[[Secrecy]]
-[[Wonder]]

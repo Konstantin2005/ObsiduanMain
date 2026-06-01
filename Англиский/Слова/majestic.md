@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Mountain]]
-[[Ocean]]
-[[Awe]]

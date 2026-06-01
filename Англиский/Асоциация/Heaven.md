@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bliss]]
-[[ecstasy]]
-[[firmament]]

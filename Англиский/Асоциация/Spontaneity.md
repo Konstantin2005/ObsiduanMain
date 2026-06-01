@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[extempore]]
-[[impromptu]]
-[[improvisation]]

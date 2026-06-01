@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Gratitude]]
-[[Thankfulness]]
-[[Appreciation]]

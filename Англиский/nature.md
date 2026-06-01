@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[alpine]]
-[[aptitude]]
-[[arboretum]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[abstemious]]
-[[abstinence]]
-[[abstinent]]

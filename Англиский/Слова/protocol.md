@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Manners]]
-[[Rules]]
-[[Diplomacy]]

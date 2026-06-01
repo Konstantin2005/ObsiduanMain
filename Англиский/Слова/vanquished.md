@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Death]]
-[[Defeat]]
-[[Victory]]

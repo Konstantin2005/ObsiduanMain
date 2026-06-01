@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[conscientious]]
-[[ethical]]
-[[ethos]]

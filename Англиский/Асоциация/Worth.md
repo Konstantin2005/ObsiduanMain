@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[merit]]
-[[valuable]]
-[[value]]

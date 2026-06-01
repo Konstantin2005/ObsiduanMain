@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Strength]]
-[[Speed]]
-[[Health]]

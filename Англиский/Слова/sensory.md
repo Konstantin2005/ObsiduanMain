@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Feeling]]
-[[Perception]]
-[[Experience]]

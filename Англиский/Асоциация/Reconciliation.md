@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[forgive]]
-[[forgiveness]]
-[[mend]]

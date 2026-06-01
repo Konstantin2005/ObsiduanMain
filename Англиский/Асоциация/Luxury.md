@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[decadent]]
-[[extravagant]]
-[[fancy]]

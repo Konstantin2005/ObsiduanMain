@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Innovation]]
-[[Future]]
-[[Vision]]

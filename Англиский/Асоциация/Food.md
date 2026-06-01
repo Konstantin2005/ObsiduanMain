@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bake]]
-[[chestnut]]
-[[chocolate]]

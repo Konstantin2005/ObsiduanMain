@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Faith]]
-[[Devotion]]
-[[Spirituality]]

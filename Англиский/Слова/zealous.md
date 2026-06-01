@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Zeal]]
-[[Enthusiasm]]
-[[Passion]]

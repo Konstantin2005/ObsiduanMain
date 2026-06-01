@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[agony]]
-[[anguished]]
-[[defeated]]

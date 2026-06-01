@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[friction]]
-[[insurgent]]
-[[insurrection]]

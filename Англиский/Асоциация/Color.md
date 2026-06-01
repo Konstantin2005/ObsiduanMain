@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[hearth]]
-[[palette]]
-[[vibrant]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Genius]]
-[[Knowledge]]
-[[Learning]]

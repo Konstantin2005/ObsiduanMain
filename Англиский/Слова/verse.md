@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Poetry]]
-[[Rhythm]]
-[[Literature]]

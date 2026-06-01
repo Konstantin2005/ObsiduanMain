@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Beginnings]]
-[[Initiative]]
-[[Adventure]]

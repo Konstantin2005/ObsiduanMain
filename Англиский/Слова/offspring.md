@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Family]]
-[[Future]]
-[[Life]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[caress]]
-[[cuddle]]
-[[cuddling]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Surprise]]
-[[Change]]
-[[Fate]]

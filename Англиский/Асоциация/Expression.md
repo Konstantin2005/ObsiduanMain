@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[animated]]
-[[articulating]]
-[[articulation]]

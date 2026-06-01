@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Relaxation]]
-[[Rest]]
-[[Peace]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Nature]]
-[[Purity]]
-[[Beauty]]

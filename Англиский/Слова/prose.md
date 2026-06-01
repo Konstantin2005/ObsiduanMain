@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Literature]]
-[[Writing]]
-[[Expression]]

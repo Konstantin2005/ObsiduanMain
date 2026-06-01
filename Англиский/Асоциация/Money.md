@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[borrowing]]
-[[budget]]
-[[bullion]]

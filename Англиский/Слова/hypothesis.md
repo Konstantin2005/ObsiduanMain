@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Idea]]
-[[Discovery]]
-[[Reason]]

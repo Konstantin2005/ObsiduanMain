@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Loneliness]]
-[[Isolation]]

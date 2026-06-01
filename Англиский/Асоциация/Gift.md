@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[blessed]]
-[[boon]]
-[[donation]]

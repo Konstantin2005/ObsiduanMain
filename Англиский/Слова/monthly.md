@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Routine]]
-[[Time]]
-[[Rhythm]]

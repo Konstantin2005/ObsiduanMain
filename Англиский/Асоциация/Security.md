@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[asset]]
-[[confidence]]
-[[cushion]]

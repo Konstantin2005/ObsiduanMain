@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Protection]]
-[[Safety]]
-[[Family]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Future]]
-[[Hope]]
-[[Exploration]]

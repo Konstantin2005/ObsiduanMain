@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[estate]]
-[[household]]
-[[observer]]

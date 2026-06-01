@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Honesty]]
-[[Integrity]]
-[[Virtue]]

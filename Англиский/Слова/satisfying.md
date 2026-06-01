@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Fulfillment]]
-[[Contentment]]
-[[Pleasure]]

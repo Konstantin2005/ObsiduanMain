@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Ease]]
-[[Calm]]
-[[Patience]]

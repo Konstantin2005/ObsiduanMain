@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Tenderness]]
-[[Touch]]

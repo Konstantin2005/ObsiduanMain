@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Meaning]]
-[[Understanding]]
-[[Art]]

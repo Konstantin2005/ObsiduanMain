@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Charity]]
-[[Generosity]]
-[[Sharing]]

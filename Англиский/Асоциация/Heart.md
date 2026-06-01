@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[courage]]
-[[slothful]]
-[[submission]]

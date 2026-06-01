@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Generosity]]
-[[Wealth]]
-[[Kindness]]

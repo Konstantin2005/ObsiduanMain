@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[capital]]
-[[conqueror]]
-[[corrupt]]

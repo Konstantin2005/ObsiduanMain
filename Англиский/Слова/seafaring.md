@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Ocean]]
-[[Travel]]
-[[Adventure]]

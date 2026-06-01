@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[brave]]
-[[chivalrous]]
-[[courageous]]

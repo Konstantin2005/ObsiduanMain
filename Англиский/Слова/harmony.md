@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Balance]]
-[[Peace]]
-[[Unity]]

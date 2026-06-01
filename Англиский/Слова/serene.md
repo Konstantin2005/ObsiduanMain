@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Serenity]]
-[[Calm]]
-[[Peace]]

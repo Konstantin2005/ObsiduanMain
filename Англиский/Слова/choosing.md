@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Choice]]
-[[Decision]]
-[[Will]]

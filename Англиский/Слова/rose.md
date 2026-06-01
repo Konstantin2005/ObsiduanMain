@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Flower]]
-[[Love]]
-[[Beauty]]

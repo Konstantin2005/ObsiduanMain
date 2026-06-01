@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[death]]
-[[departed]]
-[[disappearance]]

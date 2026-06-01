@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Encouragement]]
-[[Hope]]
-[[Comfort]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Change]]
-[[Survival]]
-[[Flexibility]]

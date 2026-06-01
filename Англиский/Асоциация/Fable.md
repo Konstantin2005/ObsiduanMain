@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[allegorical]]
-[[folklore]]
-[[legendary]]

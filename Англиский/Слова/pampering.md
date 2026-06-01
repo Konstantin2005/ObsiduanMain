@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Indulgence]]
-[[Luxury]]
-[[Pleasure]]

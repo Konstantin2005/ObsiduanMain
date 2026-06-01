@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adversity]]
-[[challenge]]
-[[conflict]]

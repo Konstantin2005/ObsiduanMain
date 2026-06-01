@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Travel]]
-[[Water]]
-[[Adventure]]

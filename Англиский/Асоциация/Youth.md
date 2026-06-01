@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adolescence]]
-[[childhood]]
-[[flexible]]

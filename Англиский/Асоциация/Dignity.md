@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[ceremonial]]
-[[composure]]
-[[courtly]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[aptitude]]
-[[endowed]]
-[[exceptional]]

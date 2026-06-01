@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Enthusiasm]]
-[[Excitement]]
-[[Passion]]

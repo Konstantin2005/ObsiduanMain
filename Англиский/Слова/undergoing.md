@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Experience]]
-[[Change]]
-[[Growth]]

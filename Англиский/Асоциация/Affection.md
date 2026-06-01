@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adoring]]
-[[affectionate]]
-[[beloved]]

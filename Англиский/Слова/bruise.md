@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Wound]]
-[[Vulnerability]]

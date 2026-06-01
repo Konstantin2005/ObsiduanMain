@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[capture]]
-[[fleeting]]
-[[initiate]]

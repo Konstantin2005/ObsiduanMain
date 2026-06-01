@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[asylum]]
-[[conserve]]
-[[defend]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Encouragement]]
-[[Energy]]
-[[Enthusiasm]]

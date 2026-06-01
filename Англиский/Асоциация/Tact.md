@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[consideration]]
-[[diplomatic]]
-[[discreet]]

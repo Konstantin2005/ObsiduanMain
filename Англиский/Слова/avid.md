@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Eagerness]]
-[[Passion]]
-[[Dedication]]

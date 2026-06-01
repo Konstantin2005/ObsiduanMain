@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[downtime]]
-[[freetime]]
-[[hobby]]

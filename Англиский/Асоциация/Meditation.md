@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[breathe]]
-[[cogitation]]
-[[concentrate]]

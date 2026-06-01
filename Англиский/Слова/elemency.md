@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Mercy]]
-[[Forgiveness]]
-[[Kindness]]

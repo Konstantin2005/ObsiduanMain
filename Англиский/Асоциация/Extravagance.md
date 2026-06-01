@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[decadent]]
-[[excessive]]
-[[lavish]]

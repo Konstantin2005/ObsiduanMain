@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Life]]
-[[Existence]]
-[[Vitality]]

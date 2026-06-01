@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Flower]]
-[[Nature]]
-[[Calm]]

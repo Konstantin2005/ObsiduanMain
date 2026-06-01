@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Order]]
-[[Leadership]]
-[[Creation]]

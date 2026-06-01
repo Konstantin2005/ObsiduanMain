@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adapt]]
-[[adaptable]]
-[[amenable]]

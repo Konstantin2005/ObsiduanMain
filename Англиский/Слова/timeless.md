@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Eternity]]
-[[Beauty]]
-[[Peace]]

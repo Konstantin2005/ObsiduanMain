@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[allegiance]]
-[[committed]]
-[[comrade]]

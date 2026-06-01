@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cellar]]
-[[grandiose]]
-[[magnanimous]]

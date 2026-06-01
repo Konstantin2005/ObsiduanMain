@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Summer]]
-[[Weather]]
-[[Rain]]

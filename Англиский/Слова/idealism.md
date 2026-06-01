@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Perfection]]
-[[Hope]]
-[[Vision]]

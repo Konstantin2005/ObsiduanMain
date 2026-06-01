@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cottage]]
-[[domicile]]
-[[venturer]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[compliance]]
-[[comply]]
-[[conform]]

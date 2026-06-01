@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Energy]]
-[[Excitement]]
-[[Fun]]

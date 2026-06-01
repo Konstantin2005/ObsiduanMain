@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Writing]]
-[[Memory]]
-[[History]]

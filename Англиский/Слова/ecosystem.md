@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Nature]]
-[[Balance]]
-[[Life]]

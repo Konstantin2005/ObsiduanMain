@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Diplomacy]]
-[[Tact]]
-[[Peace]]

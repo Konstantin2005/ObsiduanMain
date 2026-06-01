@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[circumspect]]
-[[discretion]]
-[[forethought]]

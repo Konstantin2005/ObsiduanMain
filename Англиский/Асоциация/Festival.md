@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[carnival]]
-[[expo]]
-[[fiesta]]

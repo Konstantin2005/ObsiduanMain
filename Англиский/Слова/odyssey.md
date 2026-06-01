@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Journey]]
-[[Adventure]]
-[[Discovery]]

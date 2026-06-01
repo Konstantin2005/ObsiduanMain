@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Reverence]]
-[[Respect]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[breakthrough]]
-[[groundbreaking]]
-[[innovation]]

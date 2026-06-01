@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[etiquette]]
-[[polite]]
-[[politeness]]

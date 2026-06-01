@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[chronological]]
-[[command]]
-[[decree]]

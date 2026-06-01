@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Flattery]]
-[[Deception]]
-[[Selfishness]]

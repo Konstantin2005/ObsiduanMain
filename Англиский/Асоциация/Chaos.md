@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[disorderly]]
-[[disorienting]]
-[[rambunctious]]

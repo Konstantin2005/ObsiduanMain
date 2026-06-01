@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[coaching]]
-[[doctrine]]
-[[educate]]

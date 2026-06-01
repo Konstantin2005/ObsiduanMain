@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Fear]]
-[[Fate]]
-[[Intuition]]

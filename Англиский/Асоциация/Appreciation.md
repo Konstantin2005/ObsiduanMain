@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[admiring]]
-[[appreciation]]
-[[appreciative]]

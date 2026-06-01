@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Winter]]
-[[Nature]]
-[[Survival]]

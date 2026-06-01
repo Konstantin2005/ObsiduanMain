@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Market]]
-[[Trade]]
-[[Culture]]

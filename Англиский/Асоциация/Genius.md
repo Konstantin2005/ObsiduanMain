@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[brilliance]]
-[[brilliant]]
-[[exceptionally]]

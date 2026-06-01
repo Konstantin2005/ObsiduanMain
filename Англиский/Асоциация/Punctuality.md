@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[prompt]]
-[[punctual]]
-[[speedy]]

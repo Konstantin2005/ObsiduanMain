@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[affluent]]
-[[feasting]]
-[[fertile]]

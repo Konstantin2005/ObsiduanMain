@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cardio]]
-[[dogged]]
-[[endurance]]

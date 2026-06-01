@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Decision]]
-[[Peace]]
-[[Acceptance]]

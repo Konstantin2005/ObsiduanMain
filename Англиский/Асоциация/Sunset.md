@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cabin]]
-[[courtyard]]
-[[sundown]]

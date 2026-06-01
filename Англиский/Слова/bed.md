@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Rest]]
-[[Sleep]]
-[[Comfort]]

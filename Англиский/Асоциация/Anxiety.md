@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[agitation]]
-[[alarmed]]
-[[anxiety]]

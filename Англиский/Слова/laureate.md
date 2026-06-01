@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Glory]]
-[[Honor]]
-[[Achievement]]

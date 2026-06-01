@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Nobility]]
-[[Honor]]
-[[Virtue]]

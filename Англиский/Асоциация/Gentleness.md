@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[benign]]
-[[docile]]
-[[gentle]]

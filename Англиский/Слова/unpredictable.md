@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Chaos]]
-[[Uncertainty]]
-[[Change]]

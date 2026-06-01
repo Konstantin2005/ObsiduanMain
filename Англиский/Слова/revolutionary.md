@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Innovation]]
-[[Change]]
-[[Progress]]

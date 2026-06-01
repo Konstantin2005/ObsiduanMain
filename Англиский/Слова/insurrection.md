@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Revolution]]
-[[Resistance]]

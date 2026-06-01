@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Forest]]
-[[Adventure]]
-[[Nature]]

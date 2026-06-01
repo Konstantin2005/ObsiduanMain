@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Health]]
-[[Pain]]
-[[Suffering]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Curiosity]]
-[[Learning]]
-[[Intelligence]]

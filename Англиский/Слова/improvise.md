@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Creativity]]
-[[Flexibility]]
-[[Spontaneity]]

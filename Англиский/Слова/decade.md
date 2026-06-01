@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Time]]
-[[Change]]
-[[Growth]]

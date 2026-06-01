@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Leisure]]
-[[Rest]]
-[[Sleep]]

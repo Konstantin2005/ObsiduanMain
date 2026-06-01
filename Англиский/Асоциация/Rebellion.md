@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[insurgent]]
-[[mutiny]]
-[[rebel]]

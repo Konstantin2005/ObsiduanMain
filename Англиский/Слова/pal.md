@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Friendship]]
-[[Companionship]]
-[[Loyalty]]

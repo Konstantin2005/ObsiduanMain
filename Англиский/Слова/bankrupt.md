@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Poverty]]
-[[Failure]]
-[[Loss]]

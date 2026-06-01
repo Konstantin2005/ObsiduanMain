@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[avenge]]
-[[exact]]
-[[requital]]

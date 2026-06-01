@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[acquaintance]]
-[[affection]]
-[[alliance]]

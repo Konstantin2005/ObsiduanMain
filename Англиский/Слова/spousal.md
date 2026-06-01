@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Marriage]]
-[[Love]]
-[[Commitment]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Expression]]
-[[Democracy]]
-[[Art]]

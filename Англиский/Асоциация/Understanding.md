@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[accepting]]
-[[clarity]]
-[[coherent]]

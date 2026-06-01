@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[autumnal]]
-[[damp]]
-[[dismal]]

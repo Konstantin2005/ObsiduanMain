@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Mountain]]
-[[Adventure]]
-[[Beauty]]

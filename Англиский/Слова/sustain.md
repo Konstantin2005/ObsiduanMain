@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Endurance]]
-[[Life]]
-[[Balance]]

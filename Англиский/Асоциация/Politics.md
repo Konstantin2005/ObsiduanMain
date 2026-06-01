@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[electoral]]
-[[political]]
-[[relinquish]]

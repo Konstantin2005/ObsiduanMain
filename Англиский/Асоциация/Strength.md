@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[agile]]
-[[assertive]]
-[[athletic]]

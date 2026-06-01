@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[celebrity]]
-[[distinguished]]
-[[eminence]]

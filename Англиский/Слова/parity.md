@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Equality]]
-[[Justice]]
-[[Balance]]

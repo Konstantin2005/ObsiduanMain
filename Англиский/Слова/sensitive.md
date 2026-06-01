@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Sensitivity]]
-[[Empathy]]
-[[Emotion]]

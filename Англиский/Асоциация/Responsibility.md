@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[civic]]
-[[conscientious]]
-[[consequence]]

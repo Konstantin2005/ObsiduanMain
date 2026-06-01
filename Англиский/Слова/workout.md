@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Exercise]]
-[[Health]]
-[[Training]]

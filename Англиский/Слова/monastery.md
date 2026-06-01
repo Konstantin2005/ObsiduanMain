@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Peace]]
-[[Spirituality]]
-[[Solitude]]

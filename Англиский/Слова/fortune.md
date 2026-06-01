@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Luck]]
-[[Wealth]]
-[[Destiny]]

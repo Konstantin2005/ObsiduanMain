@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Fable]]
-[[Teaching]]
-[[Ethics]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[consistent]]
-[[dependable]]
-[[reliable]]

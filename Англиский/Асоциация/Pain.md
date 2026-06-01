@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[affliction]]
-[[agony]]
-[[ailment]]

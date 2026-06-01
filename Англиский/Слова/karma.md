@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Justice]]
-[[Destiny]]
-[[Balance]]

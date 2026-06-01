@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[conjugal]]
-[[couple]]
-[[espoused]]

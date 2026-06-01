@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[basking]]
-[[delighting]]
-[[enjoy]]

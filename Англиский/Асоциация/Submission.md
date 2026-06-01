@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[docility]]
-[[fawning]]
-[[obedience]]

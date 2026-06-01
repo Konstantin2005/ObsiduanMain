@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Compassion]]
-[[Love]]
-[[Empathy]]

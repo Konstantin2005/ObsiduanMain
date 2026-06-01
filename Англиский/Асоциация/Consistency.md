@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[regular]]
-[[sameness]]
-[[steadfastness]]

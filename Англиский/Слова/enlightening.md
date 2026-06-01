@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Enlightenment]]
-[[Wisdom]]
-[[Learning]]

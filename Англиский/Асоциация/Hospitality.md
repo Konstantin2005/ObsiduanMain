@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[accommodating]]
-[[amiable]]
-[[hospitable]]

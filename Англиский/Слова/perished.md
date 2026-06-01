@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Death]]
-[[Suffering]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[chilly]]
-[[evergreen]]
-[[fir]]

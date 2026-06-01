@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Maturity]]
-[[Success]]
-[[Abundance]]

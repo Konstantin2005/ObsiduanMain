@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Ignorance]]
-[[Learning]]
-[[Poverty]]

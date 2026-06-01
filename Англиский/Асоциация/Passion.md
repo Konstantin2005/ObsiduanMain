@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[avid]]
-[[craving]]
-[[eagerness]]

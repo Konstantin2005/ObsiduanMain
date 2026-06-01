@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Wisdom]]
-[[Thought]]
-[[Meaning]]

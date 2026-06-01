@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Ambition]]
-[[Desire]]
-[[Journey]]

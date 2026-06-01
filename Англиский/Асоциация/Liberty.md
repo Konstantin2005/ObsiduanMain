@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[autonomous]]
-[[emancipate]]
-[[emancipated]]

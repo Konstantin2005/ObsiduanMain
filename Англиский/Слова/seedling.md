@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Growth]]
-[[Tree]]
-[[Spring]]

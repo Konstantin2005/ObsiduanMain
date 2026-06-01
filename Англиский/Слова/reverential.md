@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Awe]]
-[[Reverence]]
-[[Spirituality]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Intensity]]
-[[Strength]]
-[[Power]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[betrayed]]
-[[deceitful]]
-[[duplicity]]

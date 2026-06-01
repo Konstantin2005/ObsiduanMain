@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Independence]]
-[[Solitude]]

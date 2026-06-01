@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Feeling]]
-[[Emotion]]
-[[Motivation]]

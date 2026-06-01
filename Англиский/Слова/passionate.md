@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Passion]]
-[[Love]]
-[[Desire]]

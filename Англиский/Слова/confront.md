@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Courage]]
-[[Truth]]
-[[Conflict]]

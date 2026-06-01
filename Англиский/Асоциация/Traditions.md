@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[conventional]]
-[[custom]]
-[[customary]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[River]]
-[[Water]]
-[[Journey]]

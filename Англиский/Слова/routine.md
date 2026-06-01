@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Exercise]]
-[[Discipline]]
-[[Routine]]

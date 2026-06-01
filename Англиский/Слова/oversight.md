@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Leadership]]
-[[Responsibility]]
-[[Guidance]]

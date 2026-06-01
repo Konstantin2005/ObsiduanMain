@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Embrace]]
-[[Love]]
-[[Comfort]]

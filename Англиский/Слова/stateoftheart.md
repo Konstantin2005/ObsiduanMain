@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Innovation]]
-[[Excellence]]

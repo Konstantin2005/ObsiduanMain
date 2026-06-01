@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[infuriated]]
-[[malicious]]
-[[spite]]

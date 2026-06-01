@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Hunger]]
-[[Desire]]
-[[Necessity]]

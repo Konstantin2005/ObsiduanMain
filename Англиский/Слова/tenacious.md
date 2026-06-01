@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Determination]]
-[[Strength]]
-[[Endurance]]

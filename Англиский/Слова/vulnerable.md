@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Vulnerability]]
-[[Fear]]
-[[Trust]]

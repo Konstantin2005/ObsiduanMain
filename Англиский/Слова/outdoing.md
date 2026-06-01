@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Competition]]
-[[Achievement]]
-[[Success]]

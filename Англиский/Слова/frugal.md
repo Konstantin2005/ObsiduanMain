@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Frugality]]
-[[Simplicity]]
-[[Moderation]]

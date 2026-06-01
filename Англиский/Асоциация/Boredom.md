@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bored]]
-[[listless]]
-[[monotonous]]

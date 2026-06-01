@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[accommodating]]
-[[affectionate]]
-[[altruistic]]

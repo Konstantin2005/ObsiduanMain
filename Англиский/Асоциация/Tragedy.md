@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[calamity]]
-[[cataclysm]]
-[[catastrophe]]

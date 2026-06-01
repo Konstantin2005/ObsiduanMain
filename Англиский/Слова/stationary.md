@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Idleness]]
-[[Rest]]
-[[Stillness]]

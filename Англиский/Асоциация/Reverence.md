@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[admiration]]
-[[dread]]
-[[honor]]

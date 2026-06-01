@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Diligence]]
-[[Persistence]]
-[[Focus]]

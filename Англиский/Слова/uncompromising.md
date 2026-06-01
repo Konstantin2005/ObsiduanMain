@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Integrity]]
-[[Determination]]
-[[Will]]

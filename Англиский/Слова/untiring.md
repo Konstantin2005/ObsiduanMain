@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Diligence]]
-[[Endurance]]
-[[Patience]]

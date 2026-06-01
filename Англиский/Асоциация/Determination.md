@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[achieve]]
-[[confident]]
-[[determined]]

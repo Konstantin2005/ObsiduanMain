@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Goodness]]
-[[Justice]]
-[[Faith]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[consistent]]
-[[failproof]]
-[[proven]]

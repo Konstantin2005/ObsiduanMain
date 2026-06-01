@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Defeat]]
-[[Revolution]]
-[[Power]]

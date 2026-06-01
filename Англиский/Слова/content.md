@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Contentment]]
-[[Peace]]
-[[Happiness]]

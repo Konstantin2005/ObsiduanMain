@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Boldness]]
-[[Courage]]
-[[Bravery]]

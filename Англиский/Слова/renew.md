@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Renewal]]
-[[Restoration]]
-[[Hope]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[avid]]
-[[commitment]]
-[[committed]]

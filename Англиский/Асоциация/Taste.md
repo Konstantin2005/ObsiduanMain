@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cuisine]]
-[[delectable]]
-[[delicacy]]

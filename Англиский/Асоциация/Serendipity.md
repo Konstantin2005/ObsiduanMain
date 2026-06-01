@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[felicity]]
-[[fortunate]]
-[[luck]]

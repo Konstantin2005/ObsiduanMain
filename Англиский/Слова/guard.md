@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Discretion]]
-[[Protection]]
-[[Safety]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Summer]]
-[[Nature]]
-[[Travel]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Determination]]
-[[Persistence]]
-[[Strength]]

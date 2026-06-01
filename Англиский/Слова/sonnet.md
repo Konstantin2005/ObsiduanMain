@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Poetry]]
-[[Romance]]
-[[Literature]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[reborn]]
-[[rejuvenate]]
-[[renaissance]]

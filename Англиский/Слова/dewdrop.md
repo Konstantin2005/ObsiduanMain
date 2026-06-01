@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Morning]]
-[[Flower]]
-[[Nature]]

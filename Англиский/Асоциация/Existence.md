@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[actuality]]
-[[alive]]
-[[aliveness]]

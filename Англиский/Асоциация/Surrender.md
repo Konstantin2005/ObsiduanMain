@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[abdicate]]
-[[capitulation]]
-[[cede]]

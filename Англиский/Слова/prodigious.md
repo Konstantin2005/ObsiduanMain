@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Genius]]
-[[Talent]]
-[[Excellence]]

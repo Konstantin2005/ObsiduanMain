@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[foolhardy]]
-[[foolishness]]
-[[harebrained]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[animate]]
-[[apparition]]
-[[ethereal]]

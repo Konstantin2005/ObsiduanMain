@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Hunger]]
-[[Taste]]
-[[Anticipation]]

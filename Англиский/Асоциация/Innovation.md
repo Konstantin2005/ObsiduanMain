@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[advanced]]
-[[brainstorm]]
-[[cuttingedge]]

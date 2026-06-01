@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Despair]]
-[[Philosophy]]
-[[Meaning]]

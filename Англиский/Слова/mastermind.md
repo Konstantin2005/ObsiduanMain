@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Genius]]
-[[Intelligence]]
-[[Creation]]

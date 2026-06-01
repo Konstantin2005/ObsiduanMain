@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Discretion]]
-[[Judgment]]
-[[Wisdom]]

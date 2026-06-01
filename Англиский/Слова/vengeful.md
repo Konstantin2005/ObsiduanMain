@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Vengeance]]
-[[Hate]]
-[[Anger]]

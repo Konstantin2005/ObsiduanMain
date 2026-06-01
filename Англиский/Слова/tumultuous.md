@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Chaos]]
-[[Confusion]]
-[[Storm]]

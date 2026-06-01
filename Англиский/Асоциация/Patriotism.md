@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[dwelling]]
-[[patriotic]]
-[[shiftless]]

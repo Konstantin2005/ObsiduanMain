@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[binding]]
-[[committed]]
-[[dedicate]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Existence]]
-[[Reality]]
-[[Truth]]

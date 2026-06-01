@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Pleasure]]
-[[Joy]]
-[[Contentment]]

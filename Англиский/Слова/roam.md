@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Travel]]
-[[Freedom]]
-[[Journey]]

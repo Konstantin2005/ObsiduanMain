@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Dedication]]
-[[Spirituality]]
-[[Reverence]]

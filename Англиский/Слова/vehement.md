@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Intensity]]
-[[Passion]]

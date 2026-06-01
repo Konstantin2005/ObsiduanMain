@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Cleverness]]
-[[Intuition]]

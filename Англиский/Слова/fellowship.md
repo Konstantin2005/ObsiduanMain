@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Empathy]]
-[[Companionship]]
-[[Community]]

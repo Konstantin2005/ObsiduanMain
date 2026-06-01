@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Motivation]]
-[[Motivation]]
-[[Reward]]

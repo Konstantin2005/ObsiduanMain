@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[adventure]]
-[[ascertaining]]
-[[breakthrough]]

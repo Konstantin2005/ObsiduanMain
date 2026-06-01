@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[allure]]
-[[desire]]
-[[enticement]]

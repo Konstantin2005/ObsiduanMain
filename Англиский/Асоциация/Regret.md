@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[bitter]]
-[[disappointed]]
-[[guilty]]

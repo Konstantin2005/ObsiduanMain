@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[compete]]
-[[contending]]
-[[match]]

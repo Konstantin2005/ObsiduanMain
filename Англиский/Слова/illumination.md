@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Enlightenment]]
-[[Light]]
-[[Understanding]]

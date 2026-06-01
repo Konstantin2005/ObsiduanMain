@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Religion]]
-[[Worship]]
-[[Praise]]

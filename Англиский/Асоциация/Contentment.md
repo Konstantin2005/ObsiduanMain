@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[basking]]
-[[blissful]]
-[[comforted]]

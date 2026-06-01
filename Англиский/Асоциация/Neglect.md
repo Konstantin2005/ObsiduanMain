@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[abandon]]
-[[ignore]]
-[[neglected]]

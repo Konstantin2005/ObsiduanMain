@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cadence]]
-[[choreographed]]
-[[flow]]

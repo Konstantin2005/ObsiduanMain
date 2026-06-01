@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[cabin]]
-[[greedy]]
-[[homeland]]

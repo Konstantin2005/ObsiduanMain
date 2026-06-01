@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Emotion]]
-[[Feeling]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[athletic]]
-[[coaching]]
-[[drill]]

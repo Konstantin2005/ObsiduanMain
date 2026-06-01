@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[fireside]]
-[[household]]
-[[rustic]]

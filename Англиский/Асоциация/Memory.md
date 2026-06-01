@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[attic]]
-[[basement]]
-[[bygone]]

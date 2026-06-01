@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Confusion]]
-[[Focus]]
-[[Mind]]

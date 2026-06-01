@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Gossip]]
-[[Childhood]]
-[[Secrecy]]

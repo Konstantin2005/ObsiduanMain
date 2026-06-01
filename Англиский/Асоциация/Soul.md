@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[breath]]
-[[consciousness]]
-[[essence]]

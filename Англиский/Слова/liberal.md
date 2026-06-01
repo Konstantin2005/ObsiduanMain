@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Generosity]]
-[[Openness]]
-[[Abundance]]

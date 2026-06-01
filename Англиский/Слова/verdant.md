@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Forest]]
-[[Nature]]
-[[Growth]]

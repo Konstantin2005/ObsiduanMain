@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[desolate]]
-[[forlorn]]
-[[friendless]]

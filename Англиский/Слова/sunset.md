@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Evening]]
-[[Beauty]]
-[[Peace]]

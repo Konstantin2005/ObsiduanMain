@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[elastic]]
-[[resilient]]
-[[withstanding]]

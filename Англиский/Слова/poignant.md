@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Emotion]]
-[[Memory]]
-[[Melancholy]]

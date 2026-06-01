@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Rain]]
-[[Weather]]
-[[Melancholy]]

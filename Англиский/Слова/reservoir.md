@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Water]]
-[[Nature]]
-[[Protection]]

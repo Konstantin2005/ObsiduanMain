@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Learning]]
-[[Focus]]
-[[Knowledge]]

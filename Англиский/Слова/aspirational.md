@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Hope]]
-[[Ambition]]
-[[Dreams]]

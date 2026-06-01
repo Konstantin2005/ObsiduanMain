@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Anticipation]]
-[[Excitement]]
-[[Hope]]

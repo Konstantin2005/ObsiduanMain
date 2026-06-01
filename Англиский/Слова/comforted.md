@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Comfort]]
-[[Contentment]]

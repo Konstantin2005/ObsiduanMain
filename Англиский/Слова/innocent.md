@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Innocence]]
-[[Purity]]
-[[Goodness]]

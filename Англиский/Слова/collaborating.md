@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Cooperation]]
-[[Teamwork]]
-[[Unity]]

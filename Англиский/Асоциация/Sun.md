@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[blazing]]
-[[scorching]]
-[[shining]]

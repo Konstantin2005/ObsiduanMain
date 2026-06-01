@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[assured]]
-[[belief]]
-[[betrayed]]

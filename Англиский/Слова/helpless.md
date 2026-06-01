@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Despair]]
-[[Vulnerability]]
-[[Fear]]

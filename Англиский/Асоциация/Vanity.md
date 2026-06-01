@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[pride]]
-[[slothful]]
-[[unloved]]

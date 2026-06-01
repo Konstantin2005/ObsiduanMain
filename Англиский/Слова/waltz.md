@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Dance]]
-[[Music]]
-[[Rhythm]]

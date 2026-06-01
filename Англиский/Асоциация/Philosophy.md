@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[abstract]]
-[[contradiction]]
-[[dialectic]]

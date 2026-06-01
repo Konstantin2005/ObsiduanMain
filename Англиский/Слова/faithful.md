@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Faith]]
-[[Loyalty]]
-[[Trust]]

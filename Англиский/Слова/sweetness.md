@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Kindness]]
-[[Tenderness]]
-[[Love]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[continence]]
-[[inhibition]]
-[[moderation]]

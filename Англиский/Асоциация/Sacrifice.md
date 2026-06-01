@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[consecration]]
-[[forfeiture]]
-[[immolation]]

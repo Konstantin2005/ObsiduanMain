@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[contemplate]]
-[[contemplation]]
-[[melancholic]]

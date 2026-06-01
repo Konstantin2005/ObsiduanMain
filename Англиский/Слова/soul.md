@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Spirit]]
-[[Existence]]
-[[Eternity]]

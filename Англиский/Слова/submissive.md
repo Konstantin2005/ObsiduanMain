@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Humility]]
-[[Obedience]]
-[[Submission]]

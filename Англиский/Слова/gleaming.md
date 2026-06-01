@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Light]]
-[[Beauty]]
-[[Purity]]

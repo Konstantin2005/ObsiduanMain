@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Sharing]]
-[[Generosity]]
-[[Community]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[assuming]]
-[[complacency]]
-[[haughty]]

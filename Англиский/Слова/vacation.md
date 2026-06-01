@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Leisure]]
-[[Travel]]
-[[Rest]]

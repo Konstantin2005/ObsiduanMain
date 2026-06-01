@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[audacious]]
-[[daring]]
-[[fearless]]

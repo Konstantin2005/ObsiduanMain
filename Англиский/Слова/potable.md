@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Drink]]
-[[Water]]
-[[Health]]

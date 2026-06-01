@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[encountering]]
-[[enduring]]
-[[enriching]]

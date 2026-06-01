@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Surprise]]
-[[Awe]]
-[[Beauty]]

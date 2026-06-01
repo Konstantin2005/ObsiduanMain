@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[assorted]]
-[[assortment]]
-[[choosing]]

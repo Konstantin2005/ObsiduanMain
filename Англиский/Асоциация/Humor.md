@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[absurdity]]
-[[banter]]
-[[comedy]]

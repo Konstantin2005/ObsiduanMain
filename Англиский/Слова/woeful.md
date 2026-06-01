@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Depression]]
-[[Sorrow]]
-[[Grief]]

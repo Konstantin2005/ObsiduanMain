@@ -1,4 +1,0 @@
-#Cсловова
-
-[[Focus]]
-[[Discipline]]

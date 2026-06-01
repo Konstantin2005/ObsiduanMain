@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Melancholy]]
-[[Thought]]
-[[Reflection]]

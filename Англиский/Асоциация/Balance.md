@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[compromise]]
-[[coordination]]
-[[duality]]

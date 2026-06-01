@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Respect]]
-[[Discipline]]
-[[Duty]]

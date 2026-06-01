@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[calmness]]
-[[immobility]]
-[[inert]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[amusing]]
-[[chuckling]]
-[[circus]]

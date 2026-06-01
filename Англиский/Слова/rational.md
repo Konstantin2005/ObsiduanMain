@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Intelligence]]
-[[Logic]]
-[[Reason]]

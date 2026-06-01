@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[hearth]]
-[[homeland]]
-[[potential]]

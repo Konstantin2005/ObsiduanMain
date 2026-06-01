@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Drink]]
-[[Desire]]
-[[Necessity]]

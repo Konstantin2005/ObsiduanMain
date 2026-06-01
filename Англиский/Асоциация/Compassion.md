@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[benevolence]]
-[[caregiver]]
-[[caring]]

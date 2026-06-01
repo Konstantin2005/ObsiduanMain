@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[artisan]]
-[[assemble]]
-[[bake]]

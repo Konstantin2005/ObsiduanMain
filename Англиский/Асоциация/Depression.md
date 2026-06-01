@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[depressed]]
-[[despondent]]
-[[gloom]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Boredom]]
-[[Apathy]]
-[[Laziness]]

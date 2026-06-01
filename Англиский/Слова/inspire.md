@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Inspiration]]
-[[Hope]]
-[[Motivation]]

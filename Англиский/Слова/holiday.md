@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Leisure]]
-[[Celebration]]
-[[Traditions]]

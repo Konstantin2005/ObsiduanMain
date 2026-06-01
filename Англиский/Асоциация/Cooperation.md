@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[collaborate]]
-[[collaborating]]
-[[compromise]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Boredom]]
-[[Patience]]
-[[Endurance]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[extremity]]
-[[fever]]
-[[feverish]]

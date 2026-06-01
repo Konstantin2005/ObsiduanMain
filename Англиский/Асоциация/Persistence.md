@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[diligent]]
-[[dogged]]
-[[perseverance]]

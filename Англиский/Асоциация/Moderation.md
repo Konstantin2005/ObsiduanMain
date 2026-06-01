@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[abstention]]
-[[frugal]]
-[[frugality]]

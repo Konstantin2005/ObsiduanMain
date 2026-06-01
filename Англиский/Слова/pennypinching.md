@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Frugality]]
-[[Money]]
-[[Frugality]]

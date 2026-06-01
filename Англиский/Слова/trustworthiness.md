@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Loyalty]]
-[[Trust]]
-[[Reliability]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Food]]
-[[Health]]
-[[Growth]]

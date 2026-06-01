@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Humanity]]
-[[Culture]]
-[[Progress]]

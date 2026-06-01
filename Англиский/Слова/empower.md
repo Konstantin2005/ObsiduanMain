@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Freedom]]
-[[Confidence]]
-[[Strength]]

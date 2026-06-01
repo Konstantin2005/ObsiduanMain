@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[chortle]]
-[[complacency]]
-[[enjoyment]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Diversity]]
-[[Variety]]
-[[Abundance]]

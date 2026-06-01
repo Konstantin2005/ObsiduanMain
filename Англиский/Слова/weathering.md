@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Weather]]
-[[Time]]
-[[Change]]

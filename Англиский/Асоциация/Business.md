@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[entrepreneurial]]
-[[exchange]]
-[[mercantile]]

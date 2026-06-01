@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Fatherhood]]
-[[Protection]]
-[[Love]]

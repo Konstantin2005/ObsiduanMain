@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Evening]]
-[[Mystery]]
-[[Beauty]]

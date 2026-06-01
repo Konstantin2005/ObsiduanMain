@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[appetite]]
-[[craving]]
-[[famished]]

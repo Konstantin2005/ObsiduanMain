@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Integrity]]
-[[Law]]
-[[Justice]]

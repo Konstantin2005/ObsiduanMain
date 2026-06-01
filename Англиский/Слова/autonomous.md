@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Independence]]
-[[Freedom]]
-[[Liberty]]

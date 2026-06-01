@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Experience]]
-[[Learning]]
-[[Work]]

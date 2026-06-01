@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[champion]]
-[[conquered]]
-[[conqueror]]

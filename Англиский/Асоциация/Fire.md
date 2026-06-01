@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[arson]]
-[[blazing]]
-[[charred]]

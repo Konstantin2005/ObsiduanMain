@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Initiative]]
-[[Creativity]]
-[[Leadership]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Beginnings]]
-[[Creation]]
-[[Innovation]]

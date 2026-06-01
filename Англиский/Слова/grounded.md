@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Earth]]
-[[Nature]]
-[[Stability]]

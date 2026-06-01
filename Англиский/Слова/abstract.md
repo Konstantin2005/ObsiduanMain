@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Idea]]
-[[Philosophy]]
-[[Thought]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Calm]]
-[[Peace]]
-[[Comfort]]

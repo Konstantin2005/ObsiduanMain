@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Joy]]
-[[Celebration]]
-[[Gratitude]]

@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Truth]]
-[[Mystery]]
-[[Logic]]

@@ -1,5 +1,0 @@
-#Ассоциации
-
-[[awaken]]
-[[awakening]]
-[[beginning]]

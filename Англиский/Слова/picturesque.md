@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Beauty]]
-[[Nature]]
-[[Travel]]

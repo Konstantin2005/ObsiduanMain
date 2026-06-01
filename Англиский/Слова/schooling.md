@@ -1,5 +1,0 @@
-#Cсловова
-
-[[Education]]
-[[Learning]]
-[[Discipline]]
