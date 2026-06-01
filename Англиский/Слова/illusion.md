@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Perception]]
+[[Reality]]
+[[Deception]]

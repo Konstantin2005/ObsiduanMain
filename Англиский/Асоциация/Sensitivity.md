@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[allergic]]
+[[feel]]
+[[reactivity]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[booty]]
+[[buried]]
+[[collect]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Dependability]]
+[[Reliability]]
+[[Stability]]

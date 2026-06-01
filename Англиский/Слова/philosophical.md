@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Philosophy]]
+[[Wisdom]]
+[[Thought]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[intolerance]]
+[[malevolent]]
+[[malicious]]

@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Laziness]]
+[[Leisure]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Evil]]
+[[Fear]]
+[[Darkness]]

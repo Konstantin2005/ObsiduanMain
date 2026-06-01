@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Joy]]
+[[Excitement]]
+[[Happiness]]

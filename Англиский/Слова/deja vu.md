@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Memory]]
+[[Time]]
+[[Mystery]]

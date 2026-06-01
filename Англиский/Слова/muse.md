@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Inspiration]]
+[[Art]]
+[[Imagination]]

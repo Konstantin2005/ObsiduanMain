@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[baffling]]
+[[bewildering]]
+[[clueless]]

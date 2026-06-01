@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[aspirational]]
+[[aspiring]]
+[[daydream]]

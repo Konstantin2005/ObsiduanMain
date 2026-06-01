@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Simplicity]]
+[[Peace]]
+[[Order]]

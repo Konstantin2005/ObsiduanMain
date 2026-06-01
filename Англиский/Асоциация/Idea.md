@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[abstract]]
+[[brainstorm]]
+[[concept]]

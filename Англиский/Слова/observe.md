@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Learning]]
+[[Patience]]

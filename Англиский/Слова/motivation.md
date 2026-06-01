@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Inspiration]]
+[[Motivation]]

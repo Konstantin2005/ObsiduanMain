@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Gentleness]]
+[[Calm]]
+[[Kindness]]

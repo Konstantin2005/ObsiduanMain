@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[bankrupt]]
+[[bust]]
+[[founder]]

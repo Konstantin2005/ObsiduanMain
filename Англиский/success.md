@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[accomplish]]
+[[accomplishment]]
+[[achieve]]

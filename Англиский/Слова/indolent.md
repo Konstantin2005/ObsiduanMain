@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Laziness]]
+[[Idleness]]
+[[Rest]]

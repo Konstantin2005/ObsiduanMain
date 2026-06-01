@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[direction]]
+[[guiding]]
+[[lighthouse]]

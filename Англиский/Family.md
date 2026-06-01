@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[ancestor]]
+[[ancestry]]
+[[birthright]]

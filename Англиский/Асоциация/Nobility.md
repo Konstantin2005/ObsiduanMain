@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[aristocrat]]
+[[gentry]]
+[[lady]]

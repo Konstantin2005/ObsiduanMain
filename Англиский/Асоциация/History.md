@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[ancestor]]
+[[ancient]]
+[[antiquity]]

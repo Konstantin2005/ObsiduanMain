@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Duty]]
+[[Responsibility]]
+[[Commitment]]

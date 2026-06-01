@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Mind]]
+[[Intelligence]]

@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[balmy]]
+[[blazing]]
+[[breezy]]

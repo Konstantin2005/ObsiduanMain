@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Moderation]]
+[[Balance]]
+[[Wisdom]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Destiny]]
+[[Fate]]
+[[Faith]]

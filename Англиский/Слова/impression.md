@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Feeling]]
+[[Perception]]
+[[Memory]]

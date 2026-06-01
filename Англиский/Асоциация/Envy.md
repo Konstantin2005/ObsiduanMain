@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[begrudging]]
+[[coveting]]
+[[envious]]

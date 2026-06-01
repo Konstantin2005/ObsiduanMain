@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[anxiety]]
+[[anxious]]
+[[disquiet]]

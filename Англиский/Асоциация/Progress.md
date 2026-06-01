@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[advanced]]
+[[civilization]]
+[[civilized]]

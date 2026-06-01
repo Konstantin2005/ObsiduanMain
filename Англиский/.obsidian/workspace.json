@@ -8,13 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2c401961f0394f4a",
+            "id": "5b15195cc2b66063",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Граф"
+            }
+          },
+          {
+            "id": "2bc881d7a6b1f816",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Слова/stamina.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "stamina"
+            }
+          },
+          {
+            "id": "30baff93cde88088",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Слова/paradox.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "paradox"
+            }
+          },
+          {
+            "id": "3946bf55b54b8790",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Асоциация/Health.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Health"
             }
           }
         ]
@@ -49,7 +91,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Cсловова",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,11 +112,13 @@
               "title": "Закладки"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "e67c64f1ff03de04",
@@ -176,6 +220,34 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "2c401961f0394f4a",
-  "lastOpenFiles": []
+  "active": "5b15195cc2b66063",
+  "lastOpenFiles": [
+    "Слова/gardening.md",
+    "Слова/animate.md",
+    "Слова/anguished.md",
+    "Слова/adolescence.md",
+    "Слова/admiring.md",
+    "Слова/admiration.md",
+    "Слова/adjoining.md",
+    "Слова/adapting.md",
+    "Слова/adaptable.md",
+    "Слова/actuality.md",
+    "Слова/acquittal.md",
+    "Слова/acquaintance.md",
+    "Слова/acknowledgment.md",
+    "Слова/accomplishment.md",
+    "Слова/accommodating.md",
+    "Слова/accessible.md",
+    "Слова/accepting.md",
+    "Слова/accelerate.md",
+    "Слова/academic.md",
+    "Слова/absurdity.md",
+    "Слова/abstinence.md",
+    "Слова/abstention.md",
+    "Слова/abstemious.md",
+    "Слова/absorption.md",
+    "Слова/absolving.md",
+    "Слова/abrupt.md",
+    "Асоциация/_zero_words.txt"
+  ]
 }

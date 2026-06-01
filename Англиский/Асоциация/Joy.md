@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[amusing]]
+[[bliss]]
+[[blissful]]

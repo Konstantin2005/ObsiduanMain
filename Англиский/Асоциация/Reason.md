@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[deduce]]
+[[deductive]]
+[[dialectic]]

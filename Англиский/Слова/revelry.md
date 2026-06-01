@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Fun]]
+[[Celebration]]
+[[Joy]]

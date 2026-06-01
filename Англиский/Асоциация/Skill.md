@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[artisan]]
+[[artistry]]
+[[capability]]

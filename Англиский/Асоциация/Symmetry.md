@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[balance]]
+[[coordination]]
+[[correspondence]]

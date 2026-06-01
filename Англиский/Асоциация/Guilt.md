@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[absolving]]
+[[ashamed]]
+[[guilty]]

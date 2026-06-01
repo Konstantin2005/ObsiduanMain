@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Cleverness]]
+[[Intelligence]]
+[[Skill]]

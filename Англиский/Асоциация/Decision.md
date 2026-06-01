@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[choice]]
+[[choosing]]
+[[concluding]]

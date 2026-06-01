@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Gossip]]
+[[Shame]]
+[[Reputation]]

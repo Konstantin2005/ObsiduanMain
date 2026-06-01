@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Wealth]]
+[[Value]]
+[[Security]]

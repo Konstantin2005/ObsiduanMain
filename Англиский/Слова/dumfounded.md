@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Awe]]
+[[Surprise]]
+[[Wonder]]

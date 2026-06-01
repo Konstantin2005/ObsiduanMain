@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Hunger]]
+[[Poverty]]
+[[Suffering]]

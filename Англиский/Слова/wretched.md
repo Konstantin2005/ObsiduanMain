@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Despair]]
+[[Pain]]
+[[Depression]]

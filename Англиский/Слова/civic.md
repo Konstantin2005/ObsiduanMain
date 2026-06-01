@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Responsibility]]
+[[Democracy]]

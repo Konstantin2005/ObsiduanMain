@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[dormant]]
+[[idler]]
+[[inactive]]

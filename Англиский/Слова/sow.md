@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Growth]]
+[[Patience]]
+[[Abundance]]

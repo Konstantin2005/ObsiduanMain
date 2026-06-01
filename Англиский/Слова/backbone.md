@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Resolve]]
+[[Courage]]

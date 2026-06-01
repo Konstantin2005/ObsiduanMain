@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Ethics]]
+[[Goodness]]
+[[Virtue]]

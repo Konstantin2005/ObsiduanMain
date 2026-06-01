@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[axiom]]
+[[doctrine]]
+[[fundamental]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[adoration]]
+[[adore]]
+[[adulation]]

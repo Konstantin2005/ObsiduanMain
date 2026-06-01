@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[borrowing]]
+[[creditworthy]]
+[[indebted]]

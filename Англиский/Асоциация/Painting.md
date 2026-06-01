@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[landscape]]
+[[palette]]
+[[stillife]]

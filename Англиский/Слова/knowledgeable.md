@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Intelligence]]
+[[Knowledge]]
+[[Wisdom]]

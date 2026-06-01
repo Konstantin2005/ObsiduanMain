@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[assemble]]
+[[collaborate]]
+[[collaborating]]

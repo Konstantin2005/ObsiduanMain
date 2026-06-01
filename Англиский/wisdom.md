@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[astute]]
+[[cautious]]
+[[contemplate]]

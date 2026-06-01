@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[continental]]
+[[cultivated]]
+[[dryland]]

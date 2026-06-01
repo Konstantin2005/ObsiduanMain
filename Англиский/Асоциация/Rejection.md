@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[denial]]
+[[rebuff]]
+[[refusal]]

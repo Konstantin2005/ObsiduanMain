@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Trust]]
+[[Deception]]
+[[Sorrow]]

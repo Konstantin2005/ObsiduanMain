@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[absorption]]
+[[attentive]]
+[[attentiveness]]

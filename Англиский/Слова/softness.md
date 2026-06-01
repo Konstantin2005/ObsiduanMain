@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Gentleness]]
+[[Kindness]]

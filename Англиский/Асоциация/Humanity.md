@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[civilization]]
+[[civilized]]
+[[hominid]]

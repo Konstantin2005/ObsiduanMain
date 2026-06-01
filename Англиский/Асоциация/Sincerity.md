@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[authentic]]
+[[earnest]]
+[[genuine]]

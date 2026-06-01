@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[buddy]]
+[[camaraderie]]
+[[chummy]]

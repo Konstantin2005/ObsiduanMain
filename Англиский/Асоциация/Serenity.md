@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[calm]]
+[[peaceful]]
+[[placid]]

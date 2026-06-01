@@ -80,7 +80,7 @@ foreach ($df in $diaryFiles) {
         if ($trimmed -match '^#\w+$') { continue }
         if (-not (IsMeaningfulParagraph $trimmed)) { $skippedNamesOnly++; continue }
 
-        $cleanText = StripNoiseTags($trimmed)
+        $cleanText = StripNoiseTags($trimmed).Replace('[[', '').Replace(']]', '')
 
         foreach ($name in $personMap.Keys) {
             if ($cleanText -match $personPatterns[$name]) {
@@ -121,7 +121,7 @@ foreach ($name in $personMap.Keys) {
     $formatted = $data.Mentions.Values | Sort-Object {
         if ($_.Source -match '(\d{4}-\d{2}-\d{2})') { $matches[1] } else { $_.Source }
     } | ForEach-Object {
-        "**$($_.Source)**:`n> $($_.Text -replace "`n", "`n> ")"
+        "**$($_.Source)**:`n> $(($_.Text -replace "`n", "`n> ").Replace('[[', '').Replace(']]', ''))"
     }
 
     $sectionText = "`n---`n$sectionHeader`n`n" + ($formatted -join "`n`n")

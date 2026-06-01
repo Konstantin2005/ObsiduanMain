@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[coup]]
+[[insurrection]]
+[[overthrow]]

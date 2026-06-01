@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[belief]]
+[[church]]
+[[consecration]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[core]]
+[[fundamental]]
+[[intrinsic]]

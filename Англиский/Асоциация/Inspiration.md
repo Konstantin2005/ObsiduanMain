@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[creative]]
+[[encouragement]]
+[[influence]]

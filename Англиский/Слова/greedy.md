@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Greed]]
+[[Materialism]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[bias]]
+[[intolerance]]
+[[narrow]]

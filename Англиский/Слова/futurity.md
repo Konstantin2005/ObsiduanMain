@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Future]]
+[[Time]]
+[[Existence]]

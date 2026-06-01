@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[accessible]]
+[[amenable]]
+[[candid]]

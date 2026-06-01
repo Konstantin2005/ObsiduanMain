@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Majesty]]
+[[Beauty]]
+[[Excellence]]

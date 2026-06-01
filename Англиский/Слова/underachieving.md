@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Failure]]
+[[Disappointment]]
+[[Regret]]

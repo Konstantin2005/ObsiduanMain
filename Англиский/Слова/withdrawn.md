@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Isolation]]
+[[Solitude]]

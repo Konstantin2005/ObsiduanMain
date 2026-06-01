@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Charity]]
+[[Generosity]]
+[[Humanity]]

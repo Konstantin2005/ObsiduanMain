@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[awareness]]
+[[brain]]
+[[cerebral]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[amazed]]
+[[astonished]]
+[[awestruck]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[childlike]]
+[[curious]]
+[[detecting]]

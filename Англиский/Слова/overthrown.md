@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Defeat]]
+[[Revolution]]
+[[Power]]

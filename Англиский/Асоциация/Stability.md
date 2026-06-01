@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[consistent]]
+[[equilibrium]]
+[[freestanding]]

@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Truth]]
+[[Discovery]]

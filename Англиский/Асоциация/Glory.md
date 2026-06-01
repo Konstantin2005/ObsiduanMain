@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[champion]]
+[[conqueror]]
+[[fame]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Shame]]
+[[Guilt]]
+[[Humility]]

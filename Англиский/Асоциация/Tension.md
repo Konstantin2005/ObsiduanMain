@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[anxiety]]
+[[pression]]
+[[stress]]

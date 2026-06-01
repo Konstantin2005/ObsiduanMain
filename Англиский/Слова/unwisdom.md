@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Folly]]
+[[Foolishness]]
+[[Ignorance]]

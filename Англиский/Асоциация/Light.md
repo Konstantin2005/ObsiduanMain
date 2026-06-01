@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[afternoon]]
+[[blinding]]
+[[bright]]

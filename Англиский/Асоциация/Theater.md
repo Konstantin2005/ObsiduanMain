@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[cinematic]]
+[[drama]]
+[[dramatic]]

@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Death]]
+[[Acceptance]]

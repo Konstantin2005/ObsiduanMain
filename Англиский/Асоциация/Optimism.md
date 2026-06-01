@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[cheerful]]
+[[expectant]]
+[[hopeful]]

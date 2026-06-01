@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[allegorical]]
+[[allegory]]
+[[anthology]]

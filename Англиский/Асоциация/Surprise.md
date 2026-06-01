@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[abrupt]]
+[[alarmed]]
+[[amazed]]

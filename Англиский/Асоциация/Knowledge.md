@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[acquire]]
+[[analysis]]
+[[analyze]]

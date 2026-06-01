@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Anxiety]]
+[[Impatience]]
+[[Worry]]

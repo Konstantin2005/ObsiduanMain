@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[acquire]]
+[[ascend]]
+[[bloom]]

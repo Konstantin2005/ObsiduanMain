@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Practice]]
+[[Work]]
+[[Learning]]

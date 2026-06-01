@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[acquaintance]]
+[[affiliated]]
+[[barter]]

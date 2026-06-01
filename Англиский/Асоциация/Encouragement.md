@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[animation]]
+[[cheer]]
+[[encouraged]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[accelerate]]
+[[accelerate]]
+[[agile]]

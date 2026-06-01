@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Compassion]]
+[[Humanity]]
+[[Kindness]]

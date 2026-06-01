@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Confusion]]
+[[Curiosity]]
+[[Mystery]]

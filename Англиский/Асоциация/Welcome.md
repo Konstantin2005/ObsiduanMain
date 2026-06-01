@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[domicile]]
+[[greeting]]
+[[inviting]]

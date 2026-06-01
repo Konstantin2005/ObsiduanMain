@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[archipelago]]
+[[bluff]]
+[[coastal]]

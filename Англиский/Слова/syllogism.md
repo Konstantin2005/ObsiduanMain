@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Logic]]
+[[Reason]]
+[[Philosophy]]

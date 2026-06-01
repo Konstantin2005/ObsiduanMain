@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[deposit]]
+[[descendant]]
+[[destiny]]

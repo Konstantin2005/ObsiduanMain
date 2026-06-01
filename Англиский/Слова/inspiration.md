@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Idea]]
+[[Creativity]]
+[[Motivation]]

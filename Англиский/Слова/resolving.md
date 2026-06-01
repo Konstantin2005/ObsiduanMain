@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Decision]]
+[[Determination]]
+[[Will]]

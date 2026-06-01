@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[ambitious]]
+[[aspiration]]
+[[aspirational]]

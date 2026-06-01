@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[learner]]
+[[pupil]]
+[[scholar]]

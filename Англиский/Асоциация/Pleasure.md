@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[delighted]]
+[[delighting]]
+[[enjoy]]

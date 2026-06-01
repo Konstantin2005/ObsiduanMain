@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Flattery]]
+[[Praise]]

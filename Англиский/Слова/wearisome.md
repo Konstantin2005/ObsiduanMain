@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Boredom]]
+[[Laziness]]

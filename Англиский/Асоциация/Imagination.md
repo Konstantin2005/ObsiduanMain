@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[collage]]
+[[daydream]]
+[[dream]]

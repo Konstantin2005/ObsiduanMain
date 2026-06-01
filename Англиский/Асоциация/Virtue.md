@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[chaste]]
+[[decent]]
+[[integrity]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Idleness]]
+[[Stability]]
+[[Stillness]]

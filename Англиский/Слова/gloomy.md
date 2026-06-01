@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Depression]]
+[[Melancholy]]

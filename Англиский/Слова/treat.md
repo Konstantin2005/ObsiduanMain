@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Indulgence]]
+[[Reward]]
+[[Celebration]]

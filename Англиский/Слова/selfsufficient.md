@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Independence]]
+[[Strength]]
+[[Confidence]]

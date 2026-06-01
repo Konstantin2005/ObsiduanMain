@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Poverty]]
+[[Necessity]]

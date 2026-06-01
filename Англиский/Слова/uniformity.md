@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Equality]]
+[[Consistency]]
+[[Order]]

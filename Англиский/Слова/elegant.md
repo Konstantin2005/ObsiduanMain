@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Beauty]]
+[[Elegance]]

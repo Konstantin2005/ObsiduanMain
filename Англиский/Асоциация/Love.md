@@ -1,5 +1,5 @@
 #Ассоциации
 
-[[forever]]
-[[heart]]
-[[together]]
+[[adore]]
+[[adoring]]
+[[affection]]

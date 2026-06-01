@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[estate]]
+[[fireside]]
+[[reader]]

@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Liberty]]
+[[Freedom]]

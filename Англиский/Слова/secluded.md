@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Isolation]]
+[[Privacy]]
+[[Peace]]

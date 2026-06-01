@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[assiduous]]
+[[budget]]
+[[calisthenics]]

@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Pain]]
+[[Vulnerability]]

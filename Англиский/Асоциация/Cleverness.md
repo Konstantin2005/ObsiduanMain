@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[astute]]
+[[bright]]
+[[clever]]

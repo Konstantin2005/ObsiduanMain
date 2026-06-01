@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[appraising]]
+[[asset]]
+[[bargain]]

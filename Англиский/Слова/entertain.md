@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Fun]]
+[[Amusement]]
+[[Pleasure]]

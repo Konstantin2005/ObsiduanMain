@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[angry]]
+[[annoyed]]
+[[bitter]]

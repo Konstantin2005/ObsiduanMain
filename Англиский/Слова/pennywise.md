@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Frugality]]
+[[Wisdom]]
+[[Value]]

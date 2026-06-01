@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Acceptance]]
+[[Diversity]]
+[[Unity]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[charitable]]
+[[donating]]
+[[donation]]

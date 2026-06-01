@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Creation]]
+[[Skill]]
+[[Art]]

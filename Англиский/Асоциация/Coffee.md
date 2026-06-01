@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[comfort]]
+[[energy]]
+[[morning]]

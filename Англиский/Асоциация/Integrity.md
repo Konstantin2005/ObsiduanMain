@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[honorable]]
+[[incorrupt]]
+[[incorruptible]]

@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Survival]]
+[[Struggle]]

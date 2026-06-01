@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[acceptance]]
+[[forbearing]]
+[[longsuffering]]

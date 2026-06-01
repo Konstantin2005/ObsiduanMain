@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[adapt]]
+[[adaptable]]
+[[adapting]]

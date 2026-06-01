@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[affiliated]]
+[[attached]]
+[[bond]]

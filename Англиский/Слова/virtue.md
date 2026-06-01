@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Goodness]]
+[[Integrity]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Impatience]]
+[[Spontaneity]]
+[[Decision]]

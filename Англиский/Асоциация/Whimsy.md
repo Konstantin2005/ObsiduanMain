@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[fanciful]]
+[[playfulness]]
+[[whimsical]]

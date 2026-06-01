@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Beauty]]
+[[Peace]]
+[[Serenity]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[anticipate]]
+[[cliffhanger]]
+[[suspenseful]]

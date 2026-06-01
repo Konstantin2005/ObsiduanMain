@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Drink]]
+[[Rest]]
+[[Pleasure]]

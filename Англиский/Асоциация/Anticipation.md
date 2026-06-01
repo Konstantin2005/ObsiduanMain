@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[anticipating]]
+[[awaiting]]
+[[eager]]

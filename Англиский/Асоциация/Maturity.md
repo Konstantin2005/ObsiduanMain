@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[adult]]
+[[developed]]
+[[experience]]

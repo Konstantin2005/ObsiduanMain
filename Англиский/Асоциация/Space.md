@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[asteroid]]
+[[astronomy]]
+[[boundless]]

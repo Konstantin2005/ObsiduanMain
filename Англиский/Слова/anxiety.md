@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Tension]]
+[[Anxiety]]
+[[Worry]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Star]]
+[[Space]]
+[[Mystery]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[bed]]
+[[comfortable]]
+[[comforted]]

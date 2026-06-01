@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[bazaar]]
+[[borrowing]]
+[[exchange]]

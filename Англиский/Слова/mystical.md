@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Magic]]
+[[Spirituality]]
+[[Mystery]]

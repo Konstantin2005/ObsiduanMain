@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Wealth]]
+[[Knowledge]]
+[[Growth]]

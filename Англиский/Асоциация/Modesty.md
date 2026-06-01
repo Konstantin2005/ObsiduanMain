@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[bashful]]
+[[humble]]
+[[humility]]

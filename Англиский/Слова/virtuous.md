@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Virtue]]
+[[Goodness]]

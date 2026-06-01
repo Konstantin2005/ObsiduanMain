@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Tolerance]]
+[[Patience]]

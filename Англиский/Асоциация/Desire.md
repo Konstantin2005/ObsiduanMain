@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[appetite]]
+[[avidity]]
+[[coveting]]

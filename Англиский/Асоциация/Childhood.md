@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[childhood]]
+[[daddy]]
+[[mama]]

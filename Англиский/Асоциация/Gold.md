@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[brightness]]
+[[bullion]]
+[[gilded]]

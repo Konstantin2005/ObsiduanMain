@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Competition]]
+[[Ambition]]
+[[Conflict]]

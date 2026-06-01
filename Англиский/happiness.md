@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[blissful]]
+[[bluebird]]
+[[cheerful]]

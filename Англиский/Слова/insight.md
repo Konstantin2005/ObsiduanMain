@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Wisdom]]
+[[Understanding]]
+[[Vision]]

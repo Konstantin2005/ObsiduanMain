@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[bleeding]]
+[[bruise]]
+[[fracture]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Freedom]]
+[[Justice]]
+[[Peace]]

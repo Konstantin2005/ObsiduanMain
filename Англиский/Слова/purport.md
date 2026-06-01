@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Meaning]]
+[[Purpose]]

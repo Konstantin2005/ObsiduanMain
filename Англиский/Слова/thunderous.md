@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Thunder]]
+[[Storm]]
+[[Power]]

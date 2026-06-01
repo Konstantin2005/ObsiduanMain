@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[comet]]
+[[cosmos]]
+[[infinity]]

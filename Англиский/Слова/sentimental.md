@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Emotion]]
+[[Memory]]
+[[Affection]]

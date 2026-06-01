@@ -3,6 +3,6 @@
 ## Упоминания в дневниках
 
 **2026/Май/2026-05-26.md**:
-> [[Marakya]]
-> [[Skuli Dropek]] 
-> [[Hold]]
+> Marakya
+> Skuli Dropek 
+> Hold

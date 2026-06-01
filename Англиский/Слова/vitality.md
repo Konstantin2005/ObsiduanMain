@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Energy]]
+[[Strength]]
+[[Life]]

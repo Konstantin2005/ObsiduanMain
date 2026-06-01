@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Discipline]]
+[[Will]]
+[[Moderation]]

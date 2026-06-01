@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Time]]
+[[Mortality]]
+[[Change]]

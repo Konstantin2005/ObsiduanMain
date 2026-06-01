@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Choice]]
+[[Fate]]
+[[Struggle]]

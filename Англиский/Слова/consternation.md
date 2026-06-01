@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Fear]]
+[[Surprise]]
+[[Anxiety]]

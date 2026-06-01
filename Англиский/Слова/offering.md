@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Gift]]
+[[Religion]]
+[[Sacrifice]]

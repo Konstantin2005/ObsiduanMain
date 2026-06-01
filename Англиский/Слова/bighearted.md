@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Generosity]]
+[[Kindness]]
+[[Love]]

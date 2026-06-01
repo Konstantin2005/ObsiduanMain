@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[ashamed]]
+[[guilty]]
+[[remorseful]]

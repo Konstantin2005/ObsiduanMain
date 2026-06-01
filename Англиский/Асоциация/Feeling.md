@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[affect]]
+[[feel]]
+[[gutfeeling]]

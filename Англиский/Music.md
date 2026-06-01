@@ -1,1 +1,15 @@
 #Ассоциации
+
+[[acoustic]]
+[[ballad]]
+[[compose]]
+[[composition]]
+[[folk]]
+[[harmonious]]
+[[improvisation]]
+[[instrument]]
+[[lyrical]]
+[[melodic]]
+[[orchestra]]
+[[rhythmic]]
+[[symphony]]

@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[invocation]]
+[[petition]]
+[[pray]]

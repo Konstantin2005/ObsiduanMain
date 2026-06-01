@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Mind]]
+[[Knowledge]]
+[[Thought]]

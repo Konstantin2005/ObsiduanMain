@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[amusing]]
+[[bicycle]]
+[[circus]]

@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Flexibility]]
+[[Change]]

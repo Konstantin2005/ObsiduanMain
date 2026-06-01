@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[angle]]
+[[outlook]]
+[[paradigm]]

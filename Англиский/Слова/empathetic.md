@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Empathy]]
+[[Compassion]]
+[[Understanding]]

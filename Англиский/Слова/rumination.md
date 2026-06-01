@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Meditation]]
+[[Thought]]
+[[Memory]]

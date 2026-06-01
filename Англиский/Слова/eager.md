@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Eagerness]]
+[[Excitement]]
+[[Anticipation]]

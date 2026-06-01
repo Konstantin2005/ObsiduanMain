@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Foolishness]]
+[[Amusement]]
+[[Humor]]

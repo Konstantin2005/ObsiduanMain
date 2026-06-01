@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Time]]
+[[Eternity]]
+[[Change]]

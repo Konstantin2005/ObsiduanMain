@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Manners]]
+[[Respect]]
+[[Kindness]]

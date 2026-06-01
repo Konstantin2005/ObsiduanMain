@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[altruistic]]
+[[beneficent]]
+[[benevolent]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Health]]
+[[Peace]]
+[[Balance]]

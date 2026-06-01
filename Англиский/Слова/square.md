@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Honesty]]
+[[Justice]]
+[[Equality]]

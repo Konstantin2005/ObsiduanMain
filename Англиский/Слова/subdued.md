@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Defeat]]
+[[Peace]]
+[[Submission]]

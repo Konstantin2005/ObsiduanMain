@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Friendship]]
+[[Kindness]]
+[[Warmth]]

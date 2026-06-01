@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Respect]]
+[[Honor]]
+[[Courtesy]]

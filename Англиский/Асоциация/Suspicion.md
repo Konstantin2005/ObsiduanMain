@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[distrustful]]
+[[hunch]]
+[[mistrust]]

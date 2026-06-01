@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[adorning]]
+[[aesthetic]]
+[[avenue]]

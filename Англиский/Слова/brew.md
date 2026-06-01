@@ -1,0 +1,4 @@
+#Cсловова
+
+[[Patience]]
+[[Ritual]]

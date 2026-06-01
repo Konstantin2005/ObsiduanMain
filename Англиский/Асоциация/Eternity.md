@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[endless]]
+[[eternal]]
+[[eternity]]

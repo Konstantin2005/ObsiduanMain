@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Perception]]
+[[Opinion]]
+[[Truth]]

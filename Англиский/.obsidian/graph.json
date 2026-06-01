@@ -1,22 +1,37 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
-  "collapse-display": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "#Cлова",
+      "color": {
+        "a": 1,
+        "rgb": 887823
+      }
+    },
+    {
+      "query": "#Ассоциации",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    }
+  ],
+  "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
+  "lineSizeMultiplier": 0.1,
   "collapse-forces": false,
-  "centerStrength": 0.401041666666667,
-  "repelStrength": 8.85416666666667,
-  "linkStrength": 0.296875,
-  "linkDistance": 50,
-  "scale": 0.5087618855792575,
-  "close": false
+  "centerStrength": 0.151041666666667,
+  "repelStrength": 10.4166666666667,
+  "linkStrength": 0.859375,
+  "linkDistance": 436,
+  "scale": 0.03408574896699992,
+  "close": true
 }

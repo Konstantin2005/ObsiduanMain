@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[acoustic]]
+[[audio]]
+[[auditory]]

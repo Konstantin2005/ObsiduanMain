@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Uncertainty]]
+[[Perception]]
+[[Mystery]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Intelligence]]
+[[Light]]
+[[Cleverness]]

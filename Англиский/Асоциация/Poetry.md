@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[anthology]]
+[[ballad]]
+[[epic]]

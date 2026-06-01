@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[analysis]]
+[[analyze]]
+[[coherent]]

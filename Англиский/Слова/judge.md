@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Judgment]]
+[[Justice]]
+[[Wisdom]]

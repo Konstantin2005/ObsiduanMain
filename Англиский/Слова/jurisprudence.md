@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Law]]
+[[Justice]]
+[[Philosophy]]

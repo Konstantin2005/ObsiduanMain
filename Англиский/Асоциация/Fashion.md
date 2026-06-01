@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[chic]]
+[[couture]]
+[[faddish]]

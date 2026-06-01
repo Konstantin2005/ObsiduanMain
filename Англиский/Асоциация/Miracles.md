@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[cottage]]
+[[dwelling]]
+[[wonder]]

@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Pain]]
+[[Vulnerability]]
+[[Suffering]]

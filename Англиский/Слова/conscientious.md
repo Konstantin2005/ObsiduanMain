@@ -1,0 +1,5 @@
+#Cсловова
+
+[[Responsibility]]
+[[Diligence]]
+[[Ethics]]

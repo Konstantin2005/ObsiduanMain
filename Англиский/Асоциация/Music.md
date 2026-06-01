@@ -1,1 +1,5 @@
 #Ассоциации
+
+[[acoustic]]
+[[auditory]]
+[[ballad]]
