@@ -1,8 +1,1 @@
-﻿---
-type: term
----
-
-# growth
-
-## Abstractions
-[[Relation]]
+#Ассоциации

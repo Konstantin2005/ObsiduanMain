@@ -1,8 +1,1 @@
-﻿---
-type: term
----
-
-# freedom
-
-## Abstractions
-[[Change]]
+#Ассоциации

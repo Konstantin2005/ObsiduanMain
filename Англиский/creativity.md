@@ -1,8 +1,1 @@
-﻿---
-type: term
----
-
-# creativity
-
-## Abstractions
-[[Quality]]
+#Ассоциации

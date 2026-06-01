@@ -1,0 +1,5 @@
+#Ассоциации
+
+[[forever]]
+[[heart]]
+[[together]]

@@ -1,8 +1,1 @@
-﻿---
-type: term
----
-
-# nature
-
-## Abstractions
-[[Cognition]]
+#Ассоциации

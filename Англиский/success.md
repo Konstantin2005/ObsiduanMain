@@ -1,8 +1,1 @@
-﻿---
-type: term
----
-
-# success
-
-## Abstractions
-[[Change]]
+#Ассоциации
