@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "2d11afaab4c4425e",
+    "id": "3c6af5ef649b3716",
     "type": "split",
     "children": [
       {
-        "id": "3bf2dffd25399e5e",
+        "id": "2250548aa4097278",
         "type": "tabs",
         "children": [
           {
-            "id": "2e6325b17573e318",
+            "id": "2c401961f0394f4a",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "f752c77ede8eeae4",
+    "id": "c312897a51d00e51",
     "type": "split",
     "children": [
       {
-        "id": "54f991c64dd68aea",
+        "id": "7f903c097b9f64c6",
         "type": "tabs",
         "children": [
           {
-            "id": "4d16c9d5dea68ca4",
+            "id": "3996311c9b7e5584",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,17 +44,7 @@
             }
           },
           {
-            "id": "84035a52ff4cda2b",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Закладки"
-            }
-          },
-          {
-            "id": "928debb3f5854d22",
+            "id": "06a32514d9499fca",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -69,38 +59,37 @@
               "icon": "lucide-search",
               "title": "Поиск"
             }
+          },
+          {
+            "id": "ce091a328ce910ff",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "5756aa4194a281ff",
+    "id": "e67c64f1ff03de04",
     "type": "split",
     "children": [
       {
-        "id": "eaa717c53aa8187e",
+        "id": "aab05e395d9d64ca",
         "type": "tabs",
         "children": [
           {
-            "id": "15f201b952b12f45",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
-            }
-          },
-          {
-            "id": "0a1e1de690272ddc",
+            "id": "3bd3873f69cc3250",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "План/Проекты/LeetCode Easy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,11 +99,11 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для LeetCode Easy"
+              "title": "Обратные ссылки"
             }
           },
           {
-            "id": "2bf4905a73ec29fd",
+            "id": "509a8927b63d2762",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -127,7 +116,7 @@
             }
           },
           {
-            "id": "d26593020f2d65c0",
+            "id": "ca18fc34cdca88c8",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -142,7 +131,7 @@
             }
           },
           {
-            "id": "0c742d223088c62b",
+            "id": "e2af24e37e8ecb60",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -154,72 +143,39 @@
               "icon": "lucide-archive",
               "title": "Все свойства"
             }
+          },
+          {
+            "id": "7c1742e60bb5d4fb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 377.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
-      "3d-graph:3D Graph": false,
-      "obsidian-kanban:Создать новую доску": false,
-      "command-palette:Открыть палитру команд": false
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
     }
   },
-  "active": "2e6325b17573e318",
-  "lastOpenFiles": [
-    "Соц Капитал/3_круг/Marakya.md",
-    "Calendula/2026/Апрель/2026-04-17.md",
-    "Соц Капитал/2_круг/Dima Garbatenko.md",
-    "План/2026/2026 - Июнь.md",
-    "План/2026/2026 - Май.md",
-    "План/2026/2026 - Март.md",
-    "План/2026/2026.md",
-    "Calendula/2026/Май/2026-05-31.md",
-    "Calendula/2026/Май/2026-05-30.md",
-    "Соц Капитал/1_круг/Hold.md",
-    "Calendula/2026/Апрель/2026-04-05.md",
-    "Юра Ларме.md",
-    "Рувим Канин.md",
-    "Calendula/2026/Май/2026-05-29.md",
-    "Calendula/2026/Май/2026-05-28.md",
-    "Calendula/2026/Май/2026-05-27.md",
-    "Calendula/2026/Май/2026-05-07.md",
-    "Calendula/2026/Май/2026-05-10.md",
-    "Calendula/2026/Май/2026-05-26.md",
-    "План/Проекты/LeetCode Hard.md",
-    "Calendula/2026/Май/2026-05-25.md",
-    "Calendula/2026/Май/2026-05-20.md",
-    "Calendula/2026/Май/2026-05-21.md",
-    "Calendula/2026/Май/2026-05-13.md",
-    "Calendula/2026/Май/2026-05-22.md",
-    "План/2026/2026 - Сентябрь.md",
-    "План/Проекты",
-    "План/2036",
-    "План/2035",
-    "План/2034",
-    "План/2033",
-    "План/2032",
-    "План/2031",
-    "План/2030",
-    "План/2029",
-    "План/2028",
-    "Без названия.canvas",
-    "Без названия 1.canvas",
-    "photo_2026-03-23_17-36-59.jpg",
-    "photo_2026-03-23_14-28-36.jpg",
-    "photo_2026-03-23_14-24-16.jpg",
-    "photo_2026-03-23_01-30-17.jpg",
-    "photo_2026-03-23_01-21-38.jpg",
-    "photo_2026-03-23_01-15-25.jpg",
-    "photo_2026-03-23_01-15-25 1.jpg",
-    "photo_2025-05-21_19-35-00.jpg",
-    "photo_2025-05-18_19-46-43.jpg",
-    "photo_2025-05-18_19-46-43 1.jpg",
-    "Untitled.canvas"
-  ]
+  "active": "2c401961f0394f4a",
+  "lastOpenFiles": []
 }
