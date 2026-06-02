@@ -8,10 +8,66 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "#Cлова",
+      "query": "#Чачти речи",
+      "color": {
+        "a": 1,
+        "rgb": 0
+      }
+    },
+    {
+      "query": "#Noun",
       "color": {
         "a": 1,
         "rgb": 887823
+      }
+    },
+    {
+      "query": "#Verb",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "#Adjective",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    },
+    {
+      "query": "#Adverb",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "#Pronoun",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "#Preposition",
+      "color": {
+        "a": 1,
+        "rgb": 5395168
+      }
+    },
+    {
+      "query": "#Conjunction",
+      "color": {
+        "a": 1,
+        "rgb": 11621088
+      }
+    },
+    {
+      "query": "#Article",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
       }
     },
     {
