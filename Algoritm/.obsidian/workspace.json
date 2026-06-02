@@ -25,12 +25,10 @@
             "id": "3b1c96f6478c46ad",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Progect Notes/Excalidraw/Англиский.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           },
           {
@@ -105,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -254,7 +253,7 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "7473463c308a6647",
+  "active": "3b1c96f6478c46ad",
   "lastOpenFiles": [
     "Progect Notes/Excalidraw/Англиский.md",
     "0 Indox/Курс молодого бойца.md",

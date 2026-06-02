@@ -52,7 +52,8 @@
               "title": "Печать"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -109,8 +110,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -207,11 +207,11 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "92d05cc6516da8dd",
+  "active": "fbd855e3a760424b",
   "lastOpenFiles": [
+    "Excalidraw/Доска.md",
     "Excalidraw/Stack.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
-    "Excalidraw/Доска.md",
     "Акцент.md",
     "Excalidraw/Deltaав.md",
     "План/2026/2026 - Июль.md",
