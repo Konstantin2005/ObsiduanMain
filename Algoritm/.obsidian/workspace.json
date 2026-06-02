@@ -25,10 +25,12 @@
             "id": "3b1c96f6478c46ad",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "excalidraw",
+              "state": {
+                "file": "Progect Notes/Excalidraw/Англиский.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Англиский"
             }
           },
           {
@@ -103,8 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0b900aa46113dc54",
