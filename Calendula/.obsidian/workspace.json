@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Stack.md"
+                "file": "Excalidraw/Доска.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Stack"
+              "title": "Доска"
             }
           },
           {
@@ -109,7 +109,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -208,6 +209,7 @@
   },
   "active": "92d05cc6516da8dd",
   "lastOpenFiles": [
+    "Excalidraw/Stack.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Excalidraw/Доска.md",
     "Акцент.md",
@@ -244,7 +246,6 @@
     "Excalidraw/Поиск людей и Синк.md",
     "Excalidraw/План.md",
     "Excalidraw/Общаться с людьми.md",
-    "Excalidraw/Люди.md",
     "Excalidraw/Архив Excalidraw",
     "Excalidraw",
     "План/Проекты",
