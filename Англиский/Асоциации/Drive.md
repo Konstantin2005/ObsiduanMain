@@ -1,0 +1,5 @@
+#Syntagmatic
+
+
+[[Car]]
+[[Bus]]

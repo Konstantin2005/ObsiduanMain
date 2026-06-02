@@ -8,16 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5b15195cc2b66063",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
             "id": "10638ffafb94e526",
             "type": "leaf",
             "state": {
@@ -28,63 +18,48 @@
             }
           },
           {
-            "id": "5c810c0dfb9a22c9",
+            "id": "c409fd5f85fa2a3c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Drive.md",
+                "file": "Асоциации/Green.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Drive"
+              "title": "Green"
             }
           },
           {
-            "id": "54448ca3624b5755",
+            "id": "c1fdf4db7e556d0d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ride.md",
+                "file": "Асоциации/Green.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ride"
+              "title": "Green"
             }
           },
           {
-            "id": "d235cb61f858e252",
+            "id": "9e0d1ba97ccd2673",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Horse.md",
+                "file": "Слова/forest.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Horse"
-            }
-          },
-          {
-            "id": "0bcdc662cdafce63",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Ride.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Ride"
+              "title": "forest"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -141,7 +116,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "e67c64f1ff03de04",
@@ -245,14 +220,25 @@
   },
   "active": "10638ffafb94e526",
   "lastOpenFiles": [
-    "Drive.md",
-    "Bus.md",
-    "Car.md",
-    "Horse.md",
-    "Ride.md",
-    "Skateboarding.md",
-    "Scooter.md",
-    "Bicycle.md",
+    "Асоциации/Green.md",
+    "Слова/green.md",
+    "Слова/forest.md",
+    "Слова/bus.md",
+    "Слова/car.md",
+    "Слова/skateboard.md",
+    "Слова/horse.md",
+    "Слова/scooter.md",
+    "Асоциации/Drive.md",
+    "Асоциации/Ride.md",
+    "Слова/bicycle.md",
+    "Слова",
+    "Асоциации",
+    "Слова/Bus.md",
+    "Слова/Car.md",
+    "Слова/Horse.md",
+    "Слова/Skateboarding.md",
+    "Слова/Scooter.md",
+    "Слова/Bicycle.md",
     "Слова/frost.md",
     "Асоциация/Hazel.md",
     "Асоциация/Hawthorn.md",
@@ -262,15 +248,6 @@
     "Асоциация/Ginseng.md",
     "Асоциация/Ginkgo.md",
     "Асоциация/Geranium.md",
-    "Асоциация/Gardenia.md",
-    "Асоциация/Fungus.md",
-    "Асоциация/Forsythia.md",
-    "Асоциация/ForgetMeNot.md",
-    "Асоциация/Flax.md",
-    "Асоциация/Fir.md",
-    "Асоциация/Fern.md",
-    "Асоциация/Evergreen.md",
-    "Асоциация/Eucalyptus.md",
     "Асоциация/_zero_words.txt"
   ]
 }

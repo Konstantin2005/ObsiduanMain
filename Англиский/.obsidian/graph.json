@@ -71,10 +71,45 @@
       }
     },
     {
-      "query": "#Ассоциации",
+      "query": "#Ассоциация",
+      "color": {
+        "a": 1,
+        "rgb": 0
+      }
+    },
+    {
+      "query": "#Strong",
       "color": {
         "a": 1,
         "rgb": 14725458
+      }
+    },
+    {
+      "query": "#Similar",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "#Semantic",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "#Syntagmatic",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "#Paradigmatic",
+      "color": {
+        "a": 1,
+        "rgb": 5395168
       }
     }
   ],
@@ -84,10 +119,10 @@
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 0.1,
   "collapse-forces": false,
-  "centerStrength": 0.151041666666667,
-  "repelStrength": 10.4166666666667,
-  "linkStrength": 0.859375,
+  "centerStrength": 0.354166666666667,
+  "repelStrength": 16.1458333333333,
+  "linkStrength": 0.9375,
   "linkDistance": 436,
-  "scale": 0.508761885579242,
+  "scale": 0.7132754626224158,
   "close": false
 }
