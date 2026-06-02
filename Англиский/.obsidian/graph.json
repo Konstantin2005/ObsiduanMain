@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "#Чачти речи",
@@ -18,28 +18,28 @@
       "query": "#Noun",
       "color": {
         "a": 1,
-        "rgb": 9202189
+        "rgb": 13868035
       }
     },
     {
       "query": "#Verb",
       "color": {
         "a": 1,
-        "rgb": 9801993
+        "rgb": 15261969
       }
     },
     {
       "query": "#Adjective",
       "color": {
         "a": 1,
-        "rgb": 5194243
+        "rgb": 13676299
       }
     },
     {
       "query": "#Adverb",
       "color": {
         "a": 1,
-        "rgb": 11243267
+        "rgb": 12624657
       }
     },
     {
@@ -53,7 +53,7 @@
       "query": "#Preposition",
       "color": {
         "a": 1,
-        "rgb": 6312966
+        "rgb": 14401290
       }
     },
     {
@@ -119,10 +119,10 @@
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 0.1,
   "collapse-forces": false,
-  "centerStrength": 0.213541666666667,
-  "repelStrength": 9.89583333333333,
-  "linkStrength": 1,
-  "linkDistance": 343,
-  "scale": 0.3628873693011962,
-  "close": true
+  "centerStrength": 0.1875,
+  "repelStrength": 11.875,
+  "linkStrength": 0.895833333333333,
+  "linkDistance": 160,
+  "scale": 0.13168724279834748,
+  "close": false
 }

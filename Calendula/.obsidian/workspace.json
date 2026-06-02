@@ -4,19 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "3bf2dffd25399e5e",
+        "id": "8d55cdd24ba68013",
         "type": "tabs",
         "children": [
           {
-            "id": "7710b91f19e1afce",
+            "id": "92d05cc6516da8dd",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Англиский.md"
+                "file": "Excalidraw/Доска.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "title": "Доска"
+            }
+          },
+          {
+            "id": "b2bba6f4ef4997cc",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "План/Проекты/Печать.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Печать"
             }
           }
         ]
@@ -76,7 +95,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -173,10 +193,27 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "7710b91f19e1afce",
+  "active": "92d05cc6516da8dd",
   "lastOpenFiles": [
-    "Excalidraw/Алгоритмы.md",
     "Excalidraw/Deltaав.md",
+    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
+    "План/2026/2026 - Июль.md",
+    "План/2026/2026 - Июнь.md",
+    "План/Проекты/Люди.md",
+    "План/Проекты/Печать.md",
+    "План/2026/2026 - Декабрь.md",
+    "План/2026/2026 - Апрель.md",
+    "План/2026/2026 - Август.md",
+    "План/2026/2026.md",
+    "План/2026/2026 - Январь.md",
+    "План/2026/2026 - Сентябрь.md",
+    "План/2026/2026 - Февраль.md",
+    "План/2026/2026 - Октябрь.md",
+    "План/2026/2026 - Ноябрь.md",
+    "План/2026/2026 - Март.md",
+    "План/2026/2026 - Май.md",
+    "Excalidraw/Англиский.md",
+    "Excalidraw/Алгоритмы.md",
     "Excalidraw/pichers/ДЗ.md",
     "Excalidraw/pichers/photo_2026-05-06_20-16-01.jpg",
     "Excalidraw/pichers/photo_2026-04-22_02-11-22.jpg",
@@ -194,24 +231,7 @@
     "Excalidraw/Общаться с людьми.md",
     "Excalidraw/Люди.md",
     "Excalidraw/Доска.md",
-    "Excalidraw/Англиский.md",
     "Excalidraw/Stack.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
-    "Excalidraw/Архив Excalidraw/Тех Радар.md",
-    "Excalidraw/Архив Excalidraw/Презы.md",
-    "Excalidraw/Архив Excalidraw/Преза Big O.md",
-    "Excalidraw/Архив Excalidraw/Планировщики.md",
-    "Excalidraw/Архив Excalidraw/Планирование.md",
-    "Excalidraw/Архив Excalidraw/Многопоточка.md",
-    "Excalidraw/Архив Excalidraw/Как писать заметки.md",
-    "Excalidraw/Архив Excalidraw/Как думать Алгоритмичеси.md",
-    "Excalidraw/Архив Excalidraw/Как думать LeetCode.md",
-    "Excalidraw/Архив Excalidraw/Знания.md",
-    "Excalidraw/Архив Excalidraw/Two Pointer.md",
-    "Excalidraw/Архив Excalidraw/Гайд на жизнь.md",
-    "Excalidraw/Архив Excalidraw/System design.md",
-    "Excalidraw/Архив Excalidraw/GC.md",
-    "Excalidraw/Архив Excalidraw/Slading Window.md",
     "Excalidraw/Архив Excalidraw",
     "Excalidraw",
     "План/Проекты",

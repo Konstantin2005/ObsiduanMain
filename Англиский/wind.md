@@ -1,0 +1,5 @@
+#Semantic 
+ветер
+
+[[blow]]
+[[air]]

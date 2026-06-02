@@ -1,0 +1,5 @@
+#Semantic
+
+[[travel]]
+[[adventure]]
+[[begin]]
