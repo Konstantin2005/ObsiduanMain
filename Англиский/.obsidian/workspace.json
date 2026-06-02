@@ -18,45 +18,45 @@
             }
           },
           {
-            "id": "c409fd5f85fa2a3c",
+            "id": "ba94dfbd9b738dba",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Асоциации/Green.md",
+                "file": "Die.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Green"
+              "title": "Die"
             }
           },
           {
-            "id": "c1fdf4db7e556d0d",
+            "id": "49cc63f0bfb7e496",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Асоциации/Green.md",
+                "file": "Die.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Green"
+              "title": "Die"
             }
           },
           {
-            "id": "9e0d1ba97ccd2673",
+            "id": "6351af1d4f168973",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Слова/forest.md",
+                "file": "kill.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "forest"
+              "title": "kill"
             }
           }
         ]
@@ -220,14 +220,20 @@
   },
   "active": "10638ffafb94e526",
   "lastOpenFiles": [
-    "Асоциации/Green.md",
+    "Die.md",
+    "kill.md",
     "Слова/green.md",
+    "Слова/tea.md",
+    "Асоциации/Green.md",
+    "Асоциации/Transport.md",
+    "Слова/red.md",
+    "Слова/scooter.md",
+    "Асоциации/Color.md",
     "Слова/forest.md",
     "Слова/bus.md",
     "Слова/car.md",
     "Слова/skateboard.md",
     "Слова/horse.md",
-    "Слова/scooter.md",
     "Асоциации/Drive.md",
     "Асоциации/Ride.md",
     "Слова/bicycle.md",
@@ -242,12 +248,6 @@
     "Слова/frost.md",
     "Асоциация/Hazel.md",
     "Асоциация/Hawthorn.md",
-    "Асоциация/Grass.md",
-    "Асоциация/Grapevine.md",
-    "Асоциация/Gladiolus.md",
-    "Асоциация/Ginseng.md",
-    "Асоциация/Ginkgo.md",
-    "Асоциация/Geranium.md",
     "Асоциация/_zero_words.txt"
   ]
 }

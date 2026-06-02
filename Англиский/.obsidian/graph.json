@@ -18,56 +18,56 @@
       "query": "#Noun",
       "color": {
         "a": 1,
-        "rgb": 887823
+        "rgb": 9202189
       }
     },
     {
       "query": "#Verb",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 9801993
       }
     },
     {
       "query": "#Adjective",
       "color": {
         "a": 1,
-        "rgb": 5431378
+        "rgb": 5194243
       }
     },
     {
       "query": "#Adverb",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 11243267
       }
     },
     {
       "query": "#Pronoun",
       "color": {
         "a": 1,
-        "rgb": 5419488
+        "rgb": 7240708
       }
     },
     {
       "query": "#Preposition",
       "color": {
         "a": 1,
-        "rgb": 5395168
+        "rgb": 6312966
       }
     },
     {
       "query": "#Conjunction",
       "color": {
         "a": 1,
-        "rgb": 11621088
+        "rgb": 9206541
       }
     },
     {
       "query": "#Article",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 10649607
       }
     },
     {
@@ -81,41 +81,41 @@
       "query": "#Strong",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 5431425
       }
     },
     {
       "query": "#Similar",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 10543186
       }
     },
     {
       "query": "#Semantic",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 8183890
       }
     },
     {
       "query": "#Syntagmatic",
       "color": {
         "a": 1,
-        "rgb": 5419488
+        "rgb": 6021202
       }
     },
     {
       "query": "#Paradigmatic",
       "color": {
         "a": 1,
-        "rgb": 5395168
+        "rgb": 11788370
       }
     }
   ],
   "collapse-display": false,
   "showArrow": false,
-  "textFadeMultiplier": 0,
+  "textFadeMultiplier": -1.1,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 0.1,
   "collapse-forces": false,
@@ -123,6 +123,6 @@
   "repelStrength": 16.1458333333333,
   "linkStrength": 0.9375,
   "linkDistance": 436,
-  "scale": 0.7132754626224158,
+  "scale": 0.25883865621815205,
   "close": false
 }

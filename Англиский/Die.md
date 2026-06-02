@@ -1,0 +1,5 @@
+#Semantic
+
+Умри
+[[red]]
+[[kill]]
