@@ -1,0 +1,3 @@
+#Paradigmatic
+[[happen]] 
+[[be]]

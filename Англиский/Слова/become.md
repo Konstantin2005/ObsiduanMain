@@ -1,0 +1,6 @@
+#Verb 
+
+Становиться 
+
+Became
+Become

@@ -1,0 +1,5 @@
+#Paradigmatic
+существование
+
+[[became]] 
+[[was]] 
