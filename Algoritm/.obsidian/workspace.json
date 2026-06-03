@@ -74,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -102,20 +101,6 @@
               },
               "icon": "links-coming-in",
               "title": "Backlinks for 2026-05-10"
-            }
-          },
-          {
-            "id": "ca820e260bb59f4c",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Progect Notes/Calendula/2026-05-10.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from 2026-05-10"
             }
           },
           {
@@ -147,59 +132,9 @@
               "icon": "lucide-list",
               "title": "Outline of 2026-05-10"
             }
-          },
-          {
-            "id": "5d5d83e60e811c6b",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_nodes",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "juggl_nodes"
-            }
-          },
-          {
-            "id": "347bbea2f3901aa1",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_style",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "juggl_style"
-            }
-          },
-          {
-            "id": "61dfc7d305980a2b",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_nodes",
-              "state": {},
-              "icon": "ag-node-list",
-              "title": "Juggl nodes"
-            }
-          },
-          {
-            "id": "dbac01514cacc3b9",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_style",
-              "state": {},
-              "icon": "ag-style",
-              "title": "Juggl style"
-            }
-          },
-          {
-            "id": "ad1fe7b556215858",
-            "type": "leaf",
-            "state": {
-              "type": "mermaid-toolbar-view",
-              "state": {},
-              "icon": "trident-custom",
-              "title": "Mermaid Toolbar"
-            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -211,21 +146,26 @@
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
       "3d-graph:3D Graph": false,
-      "canvas:Создать новый холст": false,
-      "daily-notes:Сегодняшняя заметка": false,
-      "templates:Вставить шаблон": false,
       "command-palette:Открыть палитру команд": false,
       "bases:Создать новую базу": false,
-      "zettelflow:Create a new Zettel Note": false,
       "obsidian-git:Open Git source control": false,
-      "juggl:Juggl global graph": false,
-      "obsidian-excalidraw-plugin:Создать новый чертеж": false,
-      "obsidian42-brat:BRAT": false,
-      "mermaid-tools:Open Mermaid Toolbar": false
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
   "active": "3b1c96f6478c46ad",
   "lastOpenFiles": [
+    "logseq/bak/logseq/config/2026-06-03T15_54_11.482Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_54_07.769Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_54_02.807Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_53_56.548Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_53_55.615Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_53_55.353Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_53_53.277Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_52_36.427Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_52_23.603Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_52_21.751Z.Desktop.edn",
+    "logseq/bak/logseq/config/2026-06-03T15_52_20.684Z.Desktop.edn",
+    "pages/contents.md",
     "Без названия 1.md",
     "Progect Notes/Excalidraw/Англиский.md",
     "0 Indox/Курс молодого бойца.md",
@@ -250,12 +190,8 @@
     "Progect Notes/Написать/Промты.md",
     "Progect Notes/Написать/Промт 2.md",
     "2 Understand/Промты.md",
-    "0 Indox/Простые обсуждения.md",
-    "Progect Notes/Excalidraw/Архив Excalidraw/Slading Window.md",
     "Excalidraw/Scripts/Downloaded/Excalidraw Collaboration Frame.svg",
     "Excalidraw/Scripts/Downloaded/Repeat Elements.svg",
-    "Excalidraw/Scripts/Downloaded",
-    "Excalidraw/Scripts",
     "Setings/pichers/Pasted Image 20260524163118_139.png",
     "Setings/pichers/Pasted Image 20260524163053_109.png",
     "Setings/Pasted Image 20260524162947_768.png",
@@ -264,7 +200,6 @@
     "Setings/pichers/Pasted Image 20260522225004_339.png",
     "Setings/pichers/Pasted Image 20260522212641_333.png",
     "Setings/pichers/Pasted Image 20260522212641_323.png",
-    "0 Indox/Алгоритм написания людям.canvas",
-    "Excalidraw"
+    "0 Indox/Алгоритм написания людям.canvas"
   ]
 }

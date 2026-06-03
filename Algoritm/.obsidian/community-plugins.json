@@ -1,14 +1,9 @@
 [
-  "zettelflow",
-  "obsidian-state-switcher",
-  "excalibrain",
   "dataview",
   "obsidian-git",
   "obsidian-view-mode-by-frontmatter",
-  "juggl",
   "obsidian-excalidraw-plugin",
-  "vim-im-select",
-  "obsidian42-brat",
   "3d-graph",
-  "mermaid-tools"
+  "excalibrain",
+  "extended-graph"
 ]

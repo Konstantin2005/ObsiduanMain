@@ -2,25 +2,6 @@
   "enableFeatures": {
     "graph": {
       "auto-enabled": false,
-      "tags": true,
-      "properties": true,
-      "property-key": false,
-      "links": true,
-      "linksSameColorAsNode": false,
-      "folders": true,
-      "imagesFromProperty": false,
-      "imagesFromEmbeds": false,
-      "imagesForAttachments": false,
-      "focus": true,
-      "shapes": true,
-      "elements-stats": true,
-      "names": true,
-      "icons": true,
-      "arrows": true,
-      "layers": true
-    },
-    "localgraph": {
-      "auto-enabled": false,
       "tags": false,
       "properties": false,
       "property-key": false,
@@ -30,13 +11,32 @@
       "imagesFromProperty": false,
       "imagesFromEmbeds": false,
       "imagesForAttachments": false,
-      "focus": false,
-      "shapes": false,
+      "focus": true,
+      "shapes": true,
       "elements-stats": true,
       "names": true,
-      "icons": false,
+      "icons": true,
       "arrows": false,
       "layers": true
+    },
+    "localgraph": {
+      "auto-enabled": false,
+      "tags": true,
+      "properties": true,
+      "property-key": false,
+      "links": true,
+      "linksSameColorAsNode": false,
+      "folders": true,
+      "imagesFromProperty": false,
+      "imagesFromEmbeds": false,
+      "imagesForAttachments": false,
+      "focus": false,
+      "shapes": false,
+      "elements-stats": false,
+      "names": true,
+      "icons": false,
+      "arrows": true,
+      "layers": false
     }
   },
   "interactiveSettings": {
@@ -84,133 +84,84 @@
     "showTags": false,
     "showAttachments": false,
     "hideUnresolved": true,
-    "showOrphans": false,
-    "collapse-color-groups": true,
+    "showOrphans": true,
+    "collapse-color-groups": false,
     "colorGroups": [
       {
-        "query": "#Дниии",
+        "query": "#Zero",
         "color": {
           "a": 1,
-          "rgb": 0
+          "rgb": 1260545
         }
       },
       {
-        "query": "#Мясорубка",
+        "query": "#One",
         "color": {
           "a": 1,
-          "rgb": 16731392
+          "rgb": 155904
         }
       },
       {
-        "query": " #Продуктивная_скукота ",
+        "query": "#Two",
         "color": {
           "a": 1,
-          "rgb": 16753152
+          "rgb": 2593792
         }
       },
       {
-        "query": "#Интересный",
+        "query": "#Tre",
         "color": {
           "a": 1,
-          "rgb": 15785497
+          "rgb": 113665
         }
       },
       {
-        "query": "#Думал ",
+        "query": "#Four",
         "color": {
           "a": 1,
-          "rgb": 11649582
+          "rgb": 65322
         }
       },
       {
-        "query": "#Обычный ",
+        "query": "#Доски",
         "color": {
           "a": 1,
-          "rgb": 12163152
+          "rgb": 788491
         }
       },
       {
-        "query": "#Ничего_не_делал ",
+        "query": "#Complete",
         "color": {
           "a": 1,
-          "rgb": 5393152
+          "rgb": 162435
         }
       },
       {
-        "query": " #Не_задокоментирован ",
+        "query": "#Developing",
         "color": {
           "a": 1,
-          "rgb": 4272897
+          "rgb": 884055
         }
       },
       {
-        "query": "#Отдых",
+        "query": "#The_idea",
         "color": {
           "a": 1,
-          "rgb": 8489477
-        }
-      },
-      {
-        "query": "#Люди",
-        "color": {
-          "a": 1,
-          "rgb": 0
-        }
-      },
-      {
-        "query": "#Ближний_круг",
-        "color": {
-          "a": 1,
-          "rgb": 5308165
-        }
-      },
-      {
-        "query": "#Дальний_Круг",
-        "color": {
-          "a": 1,
-          "rgb": 6276665
-        }
-      },
-      {
-        "query": "#Средний_Круг",
-        "color": {
-          "a": 1,
-          "rgb": 5882449
-        }
-      },
-      {
-        "query": "#Познакомились ",
-        "color": {
-          "a": 1,
-          "rgb": 9224000
-        }
-      },
-      {
-        "query": "#Особенные",
-        "color": {
-          "a": 1,
-          "rgb": 8430647
-        }
-      },
-      {
-        "query": "#Kanban",
-        "color": {
-          "a": 1,
-          "rgb": 2556443
+          "rgb": 158830
         }
       }
     ],
-    "collapse-display": true,
+    "collapse-display": false,
     "showArrow": false,
-    "textFadeMultiplier": -0.2,
-    "nodeSizeMultiplier": 0.584895833333333,
+    "textFadeMultiplier": -1.7,
+    "nodeSizeMultiplier": 0.705322265625,
     "lineSizeMultiplier": 0.1,
     "collapse-forces": true,
-    "centerStrength": 0.0572916666666667,
-    "repelStrength": 16.0416666666667,
+    "centerStrength": 0.260416666666667,
+    "repelStrength": 14.8958333333333,
     "linkStrength": 1,
-    "linkDistance": 255,
-    "scale": 0.02561319860492535,
+    "linkDistance": 30,
+    "scale": 0.05034417736651763,
     "close": true
   },
   "openInNewTab": false,
@@ -226,30 +177,23 @@
         "showAttachments": false,
         "showOrphans": true,
         "showTags": false,
+        "localBacklinks": true,
+        "localForelinks": true,
+        "localInterlinks": false,
+        "localJumps": 1,
         "lineSizeMultiplier": 1,
         "nodeSizeMultiplier": 1,
         "showArrow": false,
         "textFadeMultiplier": 0,
-        "centerStrength": 0.182291666666667,
+        "centerStrength": 0.5187132489703118,
         "linkDistance": 250,
         "linkStrength": 1,
         "repelStrength": 10
       },
-      "toggleTypes": {
-        "tag": [],
-        "link": [],
-        "folder": []
-      },
-      "logicTypes": {
-        "tag": "OR",
-        "link": "OR",
-        "folder": "OR"
-      },
+      "toggleTypes": {},
+      "logicTypes": {},
       "enableLayers": false,
-      "currentLayerLevel": 0,
-      "pinNodes": {},
-      "hiddenLegendRows": [],
-      "collapsedLegendRows": []
+      "currentLayerLevel": 0
     }
   ],
   "startingStateID": "default-vault",
@@ -468,9 +412,9 @@
     "useCurvedLinks": false,
     "useModifiedArrows": true,
     "useNodesShapes": false,
-    "showArcs": true,
+    "showArcs": false,
     "showFolders": true,
-    "useModifiedNames": false,
+    "useModifiedNames": true,
     "showIcons": false
   },
   "multipleNodesData": {}
