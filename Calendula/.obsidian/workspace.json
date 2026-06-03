@@ -11,23 +11,12 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "excalidraw",
               "state": {
-                "file": "План/2026/2026 - Июнь.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Excalidraw/Англиский.md"
               },
-              "icon": "lucide-trello",
-              "title": "2026 - Июнь"
+              "icon": "excalidraw-icon",
+              "title": "Англиский"
             }
           }
         ]
@@ -87,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -187,8 +175,9 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
-    "План/2026/2026 - Июль.md",
+    "Excalidraw/Алгоритмы.md",
     "План/2026/2026 - Июнь.md",
+    "План/2026/2026 - Июль.md",
     "Соц Капитал/3_круг/Ivar.md",
     "Соц Капитал/3_круг/Юра Ларме.md",
     "Соц Капитал/3_круг/Рувим Канин.md",
@@ -212,7 +201,6 @@
     "План/Проекты/Люди.md",
     "План/Проекты/Печать.md",
     "План/2026/2026 - Декабрь.md",
-    "План/2026/2026 - Апрель.md",
     "Excalidraw/pichers/photo_2026-05-06_20-16-01.jpg",
     "Excalidraw/pichers/photo_2026-04-22_02-11-22.jpg",
     "Excalidraw/pichers/Pasted Image 20260529021426_423.png",

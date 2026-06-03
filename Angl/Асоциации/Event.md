@@ -1,3 +1,4 @@
 #Paradigmatic
 [[happen]] 
 [[be]]
+Событие

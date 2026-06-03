@@ -1,5 +1,5 @@
 #Syntagmatic
 
 
-[[Car]]
+
 [[Bus]]

@@ -1,0 +1,5 @@
+#Syntagmatic 
+
+поездка
+[[car]]
+[[travel]]
