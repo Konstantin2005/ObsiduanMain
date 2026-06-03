@@ -139,7 +139,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 200
   },
   "right": {
     "id": "0685e666711754de",
@@ -278,11 +278,11 @@
   },
   "active": "886847ffdd494735",
   "lastOpenFiles": [
+    "Inbox/Murka Sensei.md",
     "Nexus.md",
     "Delta.md",
     "Отбел кадров.md",
     "Сообщества Delta.md",
-    "Inbox/Murka Sensei.md",
     "Relevanti.md",
     "Без названия.md",
     "Inbox/Casandra.md",
