@@ -1,5 +1,6 @@
 #Semantic 
 ветер
 
-[[blow]]
-[[air]]
+[[blow]] wind
+[[air]] 
+[[fresh]] wind

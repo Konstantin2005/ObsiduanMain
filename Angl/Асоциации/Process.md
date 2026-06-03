@@ -1,4 +1,6 @@
 #Paradigmatic 
+процесс
+
 
 [[went]]
 [[became]]
