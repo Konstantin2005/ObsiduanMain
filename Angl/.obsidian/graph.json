@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "#Чачти речи",
@@ -119,10 +119,10 @@
   "nodeSizeMultiplier": 0.7125,
   "lineSizeMultiplier": 0.1765625,
   "collapse-forces": false,
-  "centerStrength": 0.192708333333333,
-  "repelStrength": 11.875,
+  "centerStrength": 0.505208333333333,
+  "repelStrength": 15.4166666666667,
   "linkStrength": 1,
-  "linkDistance": 160,
-  "scale": 0.5087618855792237,
+  "linkDistance": 30,
+  "scale": 0.2588386562181413,
   "close": true
 }

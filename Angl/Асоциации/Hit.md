@@ -1,5 +1,5 @@
 #Semantic 
 
-
+[[kill]]
 [[fast]]
 [[target]]

@@ -2,5 +2,4 @@
 
 [[Bicycle]] 
 [[Scooter]]
-[[skateboard]] 
 [[Horse]]
