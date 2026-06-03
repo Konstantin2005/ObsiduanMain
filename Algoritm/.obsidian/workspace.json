@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "374bd63eec88e7c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Без названия 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Без названия 1"
-            }
-          },
-          {
             "id": "3b1c96f6478c46ad",
             "type": "leaf",
             "state": {
@@ -30,23 +16,8 @@
               "icon": "lucide-git-fork",
               "title": "Граф"
             }
-          },
-          {
-            "id": "4857350d18d6f16c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "0 Indox/Курс молодого бойца.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Курс молодого бойца"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0b900aa46113dc54",
@@ -255,9 +225,9 @@
   },
   "active": "3b1c96f6478c46ad",
   "lastOpenFiles": [
+    "Без названия 1.md",
     "Progect Notes/Excalidraw/Англиский.md",
     "0 Indox/Курс молодого бойца.md",
-    "Без названия 1.md",
     "Без названия.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
     "Не думай о белых обезъянах.md",

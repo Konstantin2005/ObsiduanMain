@@ -1,34 +1,40 @@
 {
   "main": {
-    "id": "3c6af5ef649b3716",
+    "id": "5f0d219ef0ca550c",
     "type": "split",
     "children": [
       {
-        "id": "10ba5a2e9026cb04",
+        "id": "19406f35ab6d47b4",
         "type": "tabs",
         "children": [
           {
-            "id": "e86a5a5dcca96fe0",
+            "id": "591320e200be399d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Task.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Task"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d9201fd6f224628c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db97f8177d48a896",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Граф"
-            }
-          },
-          {
-            "id": "6a4fc93177070038",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Journey.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Journey"
             }
           }
         ]
@@ -37,15 +43,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c312897a51d00e51",
+    "id": "aa73d62f63593481",
     "type": "split",
     "children": [
       {
-        "id": "7f903c097b9f64c6",
+        "id": "7898ce2f324a6fcf",
         "type": "tabs",
         "children": [
           {
-            "id": "3996311c9b7e5584",
+            "id": "bac67b9f261fc3f1",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -58,7 +64,7 @@
             }
           },
           {
-            "id": "06a32514d9499fca",
+            "id": "c4ddbbcdf96d360d",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -75,7 +81,7 @@
             }
           },
           {
-            "id": "ce091a328ce910ff",
+            "id": "315bb613db58334c",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -88,18 +94,18 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "e67c64f1ff03de04",
+    "id": "aa198361a84d115b",
     "type": "split",
     "children": [
       {
-        "id": "aab05e395d9d64ca",
+        "id": "d449fbdb54f7c632",
         "type": "tabs",
         "children": [
           {
-            "id": "3bd3873f69cc3250",
+            "id": "3e8a3c76d49b96f1",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -117,7 +123,7 @@
             }
           },
           {
-            "id": "509a8927b63d2762",
+            "id": "36c1acbb29307e5a",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -130,7 +136,7 @@
             }
           },
           {
-            "id": "ca18fc34cdca88c8",
+            "id": "3f8fa295a74ddcd0",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -145,7 +151,7 @@
             }
           },
           {
-            "id": "e2af24e37e8ecb60",
+            "id": "e592d00bc4c732d7",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -159,7 +165,7 @@
             }
           },
           {
-            "id": "7c1742e60bb5d4fb",
+            "id": "e9f61d58fe8eb9df",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -190,36 +196,8 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "e86a5a5dcca96fe0",
+  "active": "db97f8177d48a896",
   "lastOpenFiles": [
-    "Асоциации/Journey.md",
-    "Слова/Journey.md",
-    "Слова/gone.md",
-    "Асоциации/Finished.md",
-    "Слова/fresh.md",
-    "Асоциации/Mountain.md",
-    "Слова/grow.md",
-    "Асоциации/Bite.md",
-    "Слова/home.md",
-    "Слова/return.md",
-    "Слова/Wind.md",
-    "Асоциации/Trail.md",
-    "Асоциации/Task.md",
-    "Слова/began.md",
-    "Без названия 3.md",
-    "Слова/life.md",
-    "Слова/done.md",
-    "Асоциации/Process.md",
-    "Асоциации/Existence.md",
-    "Слова/became.md",
-    "Асоциации/Curve.md",
-    "Асоциации/Tree.md",
-    "Слова/blown.md",
-    "Асоциации/Die.md",
-    "Асоциации/Ride.md",
-    "Слова/Forward.md",
-    "Слова",
-    "Асоциации",
-    "Асоциация/_zero_words.txt"
+    "Task.md"
   ]
 }
