@@ -11,12 +11,10 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Англиский.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -76,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -175,8 +174,10 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
-    "Excalidraw/Алгоритмы.md",
     "План/2026/2026 - Июнь.md",
+    "План/2026/2026.md",
+    "Excalidraw/Англиский.md",
+    "Excalidraw/Алгоритмы.md",
     "План/2026/2026 - Июль.md",
     "Соц Капитал/3_круг/Ivar.md",
     "Соц Капитал/3_круг/Юра Ларме.md",
@@ -199,8 +200,6 @@
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Excalidraw/Deltaав.md",
     "План/Проекты/Люди.md",
-    "План/Проекты/Печать.md",
-    "План/2026/2026 - Декабрь.md",
     "Excalidraw/pichers/photo_2026-05-06_20-16-01.jpg",
     "Excalidraw/pichers/photo_2026-04-22_02-11-22.jpg",
     "Excalidraw/pichers/Pasted Image 20260529021426_423.png",
