@@ -11,23 +11,10 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
-              "type": "kanban",
-              "state": {
-                "file": "План/2026/2026 - Июнь.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "2026 - Июнь"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -87,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -187,14 +173,14 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
+    "Excalidraw/Англиский.md",
+    "План/2026/2026 - Июнь.md",
     "Calendula/2026/Март/2026-03-29.md",
     "Calendula/2026/Июнь/03-06-26.md",
     "Соц Капитал/Особеные/Impetus.md",
     "Calendula/2026/Июнь/02-06-26.md",
     "Calendula/2026/Июнь/1.5-06-26.md",
-    "План/2026/2026 - Июнь.md",
     "План/2026/2026.md",
-    "Excalidraw/Англиский.md",
     "Excalidraw/Алгоритмы.md",
     "План/2026/2026 - Июль.md",
     "Соц Капитал/3_круг/Ivar.md",
