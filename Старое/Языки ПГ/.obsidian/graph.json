@@ -1,0 +1,51 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "#typeSctipt",
+      "color": {
+        "a": 1,
+        "rgb": 4695807
+      }
+    },
+    {
+      "query": "#javaSctipt",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "#Nest_JS ",
+      "color": {
+        "a": 1,
+        "rgb": 13772891
+      }
+    },
+    {
+      "query": "#node_JS",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -1.9,
+  "nodeSizeMultiplier": 1.12083333333333,
+  "lineSizeMultiplier": 0.916666666666667,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 20,
+  "linkStrength": 1,
+  "linkDistance": 30,
+  "scale": 0.22920135941749573,
+  "close": true
+}

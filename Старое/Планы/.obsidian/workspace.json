@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "3b0c5add8b8fbcbd",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b812506ad1cf38b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "701f6e320f6c41e2",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          },
+          {
+            "id": "2479050305a3665a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IT Переезд.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "IT Переезд"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6ade436a54c41a75",
+    "type": "split",
+    "children": [
+      {
+        "id": "a643522f23948187",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce6097852e486c52",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "f434c2d3e36a3831",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#ITнадо",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "16b0971446b71095",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "455e9025b975ab6d",
+    "type": "split",
+    "children": [
+      {
+        "id": "cae0724f3a05f271",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "76538a6c937001e7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Переезд.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для Переезд"
+            }
+          },
+          {
+            "id": "58ddaaa1e6f804e3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Переезд.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из Переезд"
+            }
+          },
+          {
+            "id": "792ebcfb50d39acc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "5a7a70e18843edd7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Переезд.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура Переезд"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Создать новую базу": false,
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "701f6e320f6c41e2",
+  "lastOpenFiles": [
+    "IT Переезд.md",
+    "что нужно.md",
+    "портфолио.md",
+    "что надо уметьь.md",
+    "опыт.md",
+    "стражировки.md",
+    "за еду.md",
+    "Без названия",
+    "цели.md",
+    "тест.md",
+    "Ноут.md",
+    "что надо.md",
+    "Переезд.md",
+    "готовить.md",
+    "что надо уметь.md",
+    "паника.md",
+    "план Б.md",
+    "найду.md",
+    "а тут.md",
+    "жизнь.md",
+    "IT.md",
+    "психика.md",
+    "деньги.md"
+  ]
+}

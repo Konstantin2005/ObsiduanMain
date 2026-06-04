@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "23c0ae9243805d68",
+    "type": "split",
+    "children": [
+      {
+        "id": "901742a923657361",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e7a46dd17518f3f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "чугун.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "чугун"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e6462162845cd863",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc4f675cc2074191",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8880e5d3151ac9f1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "c6cef7334090a908",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "fc9a75b3a55e880e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 221.5
+  },
+  "right": {
+    "id": "85c4598596950841",
+    "type": "split",
+    "children": [
+      {
+        "id": "9063d5715e860c9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6c20ec5c13187103",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Добро пожаловать.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для Добро пожаловать"
+            }
+          },
+          {
+            "id": "d7dfdab80ad06f47",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Добро пожаловать.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из Добро пожаловать"
+            }
+          },
+          {
+            "id": "41ac42ab77fac7bc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "b7a0827dba0f7207",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Добро пожаловать.md"
+              },
+              "icon": "lucide-list",
+              "title": "Структура Добро пожаловать"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Создать новую базу": false,
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "8e7a46dd17518f3f",
+  "lastOpenFiles": [
+    "патерны.md",
+    "Big O.md",
+    "2025-01-01.md",
+    "2024-12-30.md",
+    "2024-12-29.md",
+    "2024-12-28.md",
+    "2024-12-27.md",
+    "257.md",
+    "238.md",
+    "220.md",
+    "128.md",
+    "123.md",
+    "100.md",
+    "53.md",
+    "51.md",
+    "10-19 lessons.md",
+    "6 Нормальная форма.md",
+    "5 тир.md",
+    "5 Нормальная форма.md",
+    "4 тир.md",
+    "3 If.md",
+    "3 тир.md",
+    "3 Нормальная форма.md",
+    "2 условия.md",
+    "2 Нормальная форма.md",
+    "1-9 lessons.md",
+    "Untitled.canvas",
+    "Screenshot_2фыва.png",
+    "ыфвафвыавфаыфываывфа.png",
+    "Без имени.png",
+    "Без названия.canvas"
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "46db17679f3a1ba6",
+    "type": "split",
+    "children": [
+      {
+        "id": "bada295c9d97d0d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7f07d699dd5dd193",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "a7311ac7a1f3231b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Низкая самооценка.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Низкая самооценка"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b11aeed04101a599",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b22d414ee24bb4f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c01d542c2884391a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "da568d35cc79932f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#Противоречия",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "10f387c1c989ff13",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "50a95d57ca430686",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4736042fece54f8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "01d6bf8ae2407299",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Добро пожаловать.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для Добро пожаловать"
+            }
+          },
+          {
+            "id": "3a7bc74deef16bc6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Добро пожаловать.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из Добро пожаловать"
+            }
+          },
+          {
+            "id": "de2308a497451bbc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "1e89e3efe5018263",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Добро пожаловать.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура Добро пожаловать"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "c01d542c2884391a",
+  "lastOpenFiles": [
+    "люди.md",
+    "Низкая самооценка.md",
+    "2026-04-02.md",
+    "беды с башкой.md",
+    "а.md",
+    "Аделина.md",
+    "закономерности.md",
+    "помочь тому кто не просит.md",
+    "нытье.md",
+    "некий отстань.md",
+    "молчиливость.md",
+    "ревнивость.md",
+    "Говорить или не Говорить.md",
+    "Жить а не Проживать.md",
+    "писать или нет.md",
+    "я теряю себя.md",
+    "я немного странный.md",
+    "смысл проживать прожитую жизнь.md",
+    "зачем.md",
+    "Любить или не Любить.md",
+    "зачем это все.md",
+    "Аделинаа.md",
+    "Жить или не жить.md",
+    "Противоречия.md",
+    "паника.md",
+    "бои в башке.md",
+    "Без названия 1.base",
+    "Без названия.base"
+  ]
+}

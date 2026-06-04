@@ -1,0 +1,65 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": " #typeSctipt",
+      "color": {
+        "a": 1,
+        "rgb": 53498
+      }
+    },
+    {
+      "query": "#Англиский_язык ",
+      "color": {
+        "a": 1,
+        "rgb": 15313195
+      }
+    },
+    {
+      "query": "#Русский_язык",
+      "color": {
+        "a": 1,
+        "rgb": 11926812
+      }
+    },
+    {
+      "query": "#менеджмент",
+      "color": {
+        "a": 1,
+        "rgb": 14417245
+      }
+    },
+    {
+      "query": "#мотивация",
+      "color": {
+        "a": 1,
+        "rgb": 15214167
+      }
+    },
+    {
+      "query": "#сварка",
+      "color": {
+        "a": 1,
+        "rgb": 14761277
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -0.8,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 20,
+  "linkStrength": 1,
+  "linkDistance": 30,
+  "scale": 0.3628873693012567,
+  "close": true
+}

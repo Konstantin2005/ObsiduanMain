@@ -1,0 +1,253 @@
+{
+  "main": {
+    "id": "0ea15b2661818018",
+    "type": "split",
+    "children": [
+      {
+        "id": "f04e64c8debc8eee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2863690a99c7db95",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          },
+          {
+            "id": "3e4ef9c9435ac6c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LeetCode/1823. Find the Winner of the Circular Game.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1823. Find the Winner of the Circular Game"
+            }
+          },
+          {
+            "id": "69835eb150f5f57b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LeetCode/LeetCode-All/1696. Jump Game VI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1696. Jump Game VI"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "76f748fe04d780c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "afbf857fe0b118c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cfa30ed686374668",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "5de327d80b35e075",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "e8477e300b387be1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 233.5
+  },
+  "right": {
+    "id": "cf408392f5fbb0e2",
+    "type": "split",
+    "children": [
+      {
+        "id": "89ba934e4a0b6fcb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "57860e535497f874",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "LeetCode/3. Longest Substring Without Repeating Characters.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 3. Longest Substring Without Repeating Characters"
+            }
+          },
+          {
+            "id": "b4eb74fa62c0392e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "LeetCode/3. Longest Substring Without Repeating Characters.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 3. Longest Substring Without Repeating Characters"
+            }
+          },
+          {
+            "id": "6dfaa8c7c7afd723",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "712ac50b67ba8187",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "eec553b14f0d8d0c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "graph:Граф": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "2863690a99c7db95",
+  "lastOpenFiles": [
+    "Data structures/Sorting.md",
+    "Data structures/Two Pointer.md",
+    "LeetCode/1823. Find the Winner of the Circular Game.md",
+    "LeetCode/LeetCode-All/1696. Jump Game VI.md",
+    "Queue.md",
+    "AGENTS.md",
+    "Pichers/content.png",
+    "LeetCode/LeetCode-All/448. Find All Numbers Disappeared in an Array.md",
+    "Data structures/Database.md",
+    "Unsolved Tasks.md",
+    "Data structures/Array.md",
+    "Data structures/Queue.md",
+    "LeetCode/933. Number of Recent Calls.md",
+    "LeetCode/921. Minimum Add to Make Parentheses Valid.md",
+    "LeetCode/916. Word Subsets.md",
+    "LeetCode/896. Monotonic Array.md",
+    "LeetCode/889. Construct Binary Tree from Preorder and Postorder Traversal.md",
+    "LeetCode/888. Fair Candy Swap.md",
+    "LeetCode/876. Middle of the Linked List.md",
+    "LeetCode/873. Length of Longest Fibonacci Subsequence.md",
+    "LeetCode/872. Leaf-Similar Trees.md",
+    "LeetCode/869. Reordered Power of 2.md",
+    "LeetCode/844. Backspace String Compare.md",
+    "LeetCode/838. Push Dominoes.md",
+    "LeetCode/790. Domino and Tromino Tiling.md",
+    "LeetCode/784. Letter Case Permutation.md",
+    "LeetCode/781. Rabbits in Forest.md",
+    "Move-TodayTasks.ps1",
+    "LeetCode/LeetCode-All/2890. Reshape Data",
+    "LeetCode/LeetCode-All/2889. Reshape Data",
+    "LeetCode/LeetCode-All/2888. Reshape Data",
+    "LeetCode/LeetCode-All/615. Average Salary",
+    "LeetCode/LeetCode-All/602. Friend Requests II",
+    "LeetCode/LeetCode-All/597. Friend Requests I",
+    "LeetCode/LeetCode-All",
+    "leetcode_problems_cache.json",
+    "Task.txt",
+    "Pichers/Pasted image 20260419113852.png",
+    "Pichers/Pasted image 20260416214312.png",
+    "Pichers/Pasted image 20260416211413.png",
+    "Pichers/Pasted image 20260416211123.png",
+    "Pichers/Pasted image 20260415012721.png",
+    "Pichers/Pasted image 20260415010613.png",
+    "Pichers/Pasted image 20260415010610.png",
+    "Pichers/Pasted image 20260403185935.png",
+    "Pichers/Pasted image 20260403185908.png"
+  ]
+}
