@@ -14,15 +14,58 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия 1.md",
+                "file": "GC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия 1"
+              "title": "GC"
+            }
+          },
+          {
+            "id": "f6155a222fca0adb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Правило бойскайтов.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Правило бойскайтов"
+            }
+          },
+          {
+            "id": "d6126dcb2e4859cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Чистый код.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Чистый код"
+            }
+          },
+          {
+            "id": "a09b4e3935ad985b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Сокрытие реализации.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Сокрытие реализации"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       },
       {
         "id": "bceca386849bccc3",
@@ -233,11 +276,15 @@
       "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
-  "active": "02187db87275a170",
+  "active": "a09b4e3935ad985b",
   "lastOpenFiles": [
+    "Сокрытие реализации.md",
+    "Чистый код.md",
+    "Правило бойскайтов.md",
+    "GC.md",
+    "Память.md",
     "Inbox/Самое важное качество в человеке.md",
     "Inbox/Сон мини смерть.md",
-    "Без названия 1.md",
     "Inbox/Живи день как последний.md",
     "Inbox/Murka Sensei.md",
     "Inbox/Nexus.md",
