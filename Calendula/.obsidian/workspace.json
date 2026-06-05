@@ -11,6 +11,16 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          },
+          {
+            "id": "632f415d2149035c",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
                 "file": "Calendula/2026/Июнь/05-06-26.md",
@@ -178,6 +188,7 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/05-06-26.md",
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Май.md",
     "Excalidraw/Англиский.md",
@@ -200,7 +211,6 @@
     "Calendula/2026/Июнь/0.5-06-26.md",
     "Calendula/2026/Май/2026-05-30.md",
     "Calendula/2026/Июнь/04-06-26.md",
-    "Calendula/2026/Июнь/05-06-26.md",
     "Акцент.md",
     "Excalidraw/Доска.md",
     "Excalidraw/Stack.md",
