@@ -11,10 +11,14 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Июнь/05-06-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05-06-26"
             }
           }
         ]
@@ -173,14 +177,19 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/04-06-26.md",
+    "Calendula/2026/Июнь/05-06-26.md",
+    "Calendula/2026/Июнь/03-06-26.md",
+    "Calendula/2026/Июль/03-07-26.md",
+    "Calendula/2026/Июль/04-07-26.md",
+    "Calendula/2026/Июль/05-07-26.md",
+    "Calendula/2026/Май/2026-05-09.md",
     "Акцент.md",
     "План/2026/2026 - Июнь.md",
     "Соц Капитал/1_круг/Hold.md",
-    "Calendula/2026/Июнь/05-06-26.md",
     "План/2026/2026 - Май.md",
     "Excalidraw/Англиский.md",
     "Calendula/2026/Март/2026-03-29.md",
-    "Calendula/2026/Июнь/03-06-26.md",
     "Соц Капитал/Особеные/Impetus.md",
     "Calendula/2026/Июнь/02-06-26.md",
     "Calendula/2026/Июнь/1.5-06-26.md",
@@ -194,11 +203,6 @@
     "Calendula/2026/Июнь/01-06-26.md",
     "Соц Капитал/Познакомились/Светлый кот.md",
     "Calendula/2026/Май/2026-05-23.md",
-    "Calendula/2026/Январь/2026-01-07.md",
-    "Calendula/2026/Июнь/0.5-06-26.md",
-    "Calendula/2026/Май/2026-05-30.md",
-    "Calendula/2026/Июнь/04-06-26.md",
-    "Excalidraw/Доска.md",
     "Excalidraw/pichers/photo_2026-05-06_20-16-01.jpg",
     "Excalidraw/pichers/photo_2026-04-22_02-11-22.jpg",
     "Excalidraw/pichers/Pasted Image 20260529021426_423.png",
