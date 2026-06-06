@@ -11,12 +11,23 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "kanban",
               "state": {
-                "file": "Excalidraw/Англиский.md"
+                "file": "План/2026/2026 - Июнь.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
               },
-              "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "icon": "lucide-trello",
+              "title": "2026 - Июнь"
             }
           }
         ]
@@ -76,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -176,6 +186,8 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/06-06-26.md",
+    "Calendula/2026/Июнь/05-06-26.md",
     "Excalidraw/Англиский.md",
     "Pasted Image 20260606154953_614.png",
     "Pasted Image 20260606154953_573.png",
@@ -185,7 +197,6 @@
     "Excalidraw/Люди.md",
     "Excalidraw/Доска.md",
     "Excalidraw/Алгоритмы.md",
-    "Calendula/2026/Июнь/05-06-26.md",
     "Calendula/2026/Июнь/04-06-26.md",
     "Calendula/2026/Июнь/03-06-26.md",
     "Calendula/2026/Июль/03-07-26.md",
