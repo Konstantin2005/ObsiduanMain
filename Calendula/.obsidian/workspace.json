@@ -11,14 +11,12 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "Calendula/2026/Июнь/05-06-26.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/Англиский.md"
               },
-              "icon": "lucide-file",
-              "title": "05-06-26"
+              "icon": "excalidraw-icon",
+              "title": "Англиский"
             }
           }
         ]
@@ -177,8 +175,8 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
-    "Calendula/2026/Июнь/04-06-26.md",
     "Calendula/2026/Июнь/05-06-26.md",
+    "Calendula/2026/Июнь/04-06-26.md",
     "Calendula/2026/Июнь/03-06-26.md",
     "Calendula/2026/Июль/03-07-26.md",
     "Calendula/2026/Июль/04-07-26.md",
