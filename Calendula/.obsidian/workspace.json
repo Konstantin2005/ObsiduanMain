@@ -11,23 +11,14 @@
             "id": "185588964e5d8ac6",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "План/2026/2026 - Июнь.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Calendula/2026/Июнь/06-06-26.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "2026 - Июнь"
+              "icon": "lucide-file",
+              "title": "06-06-26"
             }
           }
         ]
@@ -87,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -186,8 +178,10 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/06.5-06-2026.md",
     "Calendula/2026/Июнь/06-06-26.md",
     "Calendula/2026/Июнь/05-06-26.md",
+    "План/2026/2026 - Июнь.md",
     "Excalidraw/Англиский.md",
     "Pasted Image 20260606154953_614.png",
     "Pasted Image 20260606154953_573.png",
@@ -204,7 +198,6 @@
     "Calendula/2026/Июль/05-07-26.md",
     "Calendula/2026/Май/2026-05-09.md",
     "Акцент.md",
-    "План/2026/2026 - Июнь.md",
     "Соц Капитал/1_круг/Hold.md",
     "План/2026/2026 - Май.md",
     "Calendula/2026/Март/2026-03-29.md",
@@ -213,7 +206,6 @@
     "Calendula/2026/Июнь/1.5-06-26.md",
     "План/2026/2026.md",
     "План/2026/2026 - Июль.md",
-    "Соц Капитал/3_круг/Ivar.md",
     "Excalidraw/pichers/photo_2026-05-06_20-16-01.jpg",
     "Excalidraw/pichers/photo_2026-04-22_02-11-22.jpg",
     "Excalidraw/pichers/Pasted Image 20260529021426_423.png",
