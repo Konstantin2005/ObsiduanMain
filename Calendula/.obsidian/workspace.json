@@ -76,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -175,6 +176,7 @@
   },
   "active": "185588964e5d8ac6",
   "lastOpenFiles": [
+    "Excalidraw/Англиский.md",
     "Pasted Image 20260606154953_614.png",
     "Pasted Image 20260606154953_573.png",
     "Excalidraw/Поиск людей и Синк.md",
@@ -183,7 +185,6 @@
     "Excalidraw/Люди.md",
     "Excalidraw/Доска.md",
     "Excalidraw/Алгоритмы.md",
-    "Excalidraw/Англиский.md",
     "Calendula/2026/Июнь/05-06-26.md",
     "Calendula/2026/Июнь/04-06-26.md",
     "Calendula/2026/Июнь/03-06-26.md",
@@ -210,7 +211,6 @@
     "Excalidraw/pichers/Pasted Image 20260522225004_395.png",
     "Excalidraw/pichers/Pasted Image 20260522225004_380.png",
     "Excalidraw/pichers/Pasted Image 20260522225004_339.png",
-    "Excalidraw/pichers/Pasted Image 20260522212641_333.png",
     "Excalidraw/pichers",
     "Excalidraw/Архив Excalidraw",
     "Excalidraw",

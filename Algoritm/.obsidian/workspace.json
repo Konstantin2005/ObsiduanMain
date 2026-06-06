@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Каша из всего.md",
+                "file": "Вопросики.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Каша из всего"
+              "title": "Вопросики"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "промт",
+                "query": "Вопросы 1",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Закладки"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -157,15 +156,16 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "adfd53e7de4702da",
+  "active": "f321edb367d90dc1",
   "lastOpenFiles": [
-    "2 Understand/Промты.md",
+    "pages/contents.md",
     "Вопросики.md",
-    "Жеский Промпт.md",
+    "Вопросы 2.md",
+    "2 Understand/Промты.md",
     "Каша из всего.md",
+    "Жеский Промпт.md",
     "Дружелюбный промт.md",
     "Вопросы 3.md",
-    "Вопросы 2.md",
     "Фидбек.md",
     "Без названия 1.md",
     "Не думай о белых обезъянах.md",
@@ -179,7 +179,6 @@
     "logseq/bak/logseq/config/2026-06-03T15_52_36.427Z.Desktop.edn",
     "logseq/bak/logseq/config/2026-06-03T15_52_23.603Z.Desktop.edn",
     "logseq/bak/logseq/config/2026-06-03T15_52_21.751Z.Desktop.edn",
-    "pages/contents.md",
     "Progect Notes/Excalidraw/Англиский.md",
     "0 Indox/Курс молодого бойца.md",
     "Progect Notes/Excalidraw/Архив Excalidraw/Array.md",
