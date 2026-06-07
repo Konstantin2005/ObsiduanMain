@@ -11,12 +11,14 @@
             "id": "a09cdb2f84b7ffe6",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Deltaав.md"
+                "file": "Соц Капитал/2_круг/TopQuark.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Deltaав"
+              "icon": "lucide-file",
+              "title": "TopQuark"
             }
           }
         ]
@@ -76,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "5756aa4194a281ff",
@@ -87,22 +90,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "15f201b952b12f45",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
-            }
-          },
-          {
             "id": "0a1e1de690272ddc",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "План/Проекты/LeetCode Easy.md",
+                "file": "Соц Капитал/2_круг/TopQuark.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для LeetCode Easy"
+              "title": "Обратные ссылки для TopQuark"
             }
           },
           {
@@ -156,13 +149,23 @@
               "icon": "lucide-archive",
               "title": "Все свойства"
             }
+          },
+          {
+            "id": "4bea3b3baa5e6d7d",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 377.5,
-    "collapsed": true
+    "width": 377.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,32 +178,32 @@
   },
   "active": "a09cdb2f84b7ffe6",
   "lastOpenFiles": [
-    "План/2026/2026 - Июль.md",
-    "План/2026/2026.md",
-    "План/2026/2026 - Июнь.md",
-    "План/2026/2026 - Март.md",
-    "План/2026/2026 - Май.md",
-    "План/2034/2034.md",
-    "Excalidraw/Deltaав.md",
-    "Excalidraw/Доска.md",
-    "Excalidraw/Люди.md",
-    "Excalidraw/План.md",
-    "Excalidraw/Общаться с людьми.md",
-    "Excalidraw/Англиский.md",
-    "Excalidraw/Алгоритмы.md",
-    "Excalidraw/Stack.md",
-    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
-    "Calendula/2026/Июнь/06-06-26.md",
-    "Calendula/2026/Июнь/06.5-06-2026.md",
-    "Calendula/2026/Июнь/06.6-06-2026.md",
-    "Calendula/2026/Май/2026-05-04.md",
-    "Calendula/2026/Май/2026-05-08.md",
-    "Соц Капитал/1_круг/Hold.md",
-    "Calendula/2026/Март/2026-03-30.md",
+    "Соц Капитал/2_круг/Ruslan.md",
+    "Соц Капитал/2_круг/Eliza.md",
+    "Соц Капитал/3_круг/Zero.md",
+    "Соц Капитал/3_круг/Ilayr.md",
+    "Соц Капитал/3_круг/Efie.md",
+    "Соц Капитал/3_круг/Denis Groas.md",
+    "Соц Капитал/2_круг/Радий.md",
+    "Соц Капитал/2_круг/Никита Малек.md",
+    "Соц Капитал/2_круг/Никита Гуцу.md",
+    "Соц Капитал/2_круг/Миша Бадигин.md",
+    "Соц Капитал/2_круг/Влад Доленко.md",
+    "Соц Капитал/2_круг/TopQuark.md",
+    "Соц Капитал/2_круг/Resusfactor_228.md",
     "Соц Капитал/2_круг/Luna.md",
-    "Calendula/2033/Январь/18-01-33.md",
-    "Calendula/2026/Июнь/05-06-26.md",
+    "Соц Капитал/2_круг/Duma gardenco.md",
+    "Соц Капитал/2_круг/Dima Garbatenko.md",
+    "Соц Капитал/2_круг/Danil.md",
+    "Соц Капитал/2_круг/Bebra_dev.md",
+    "Соц Капитал/2_круг/Ashard.md",
+    "Соц Капитал/1_круг/Yogg.md",
+    "Соц Капитал/1_круг/Костяк.md",
+    "Соц Капитал/1_круг/Vano.md",
+    "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/04-06-26.md",
+    "Calendula/2026/Июнь/05-06-26.md",
+    "Calendula/2026/Июнь/06-06-26.md",
     "Pasted Image 20260606154953_614.png",
     "Pasted Image 20260606154953_573.png",
     "Excalidraw/pichers/photo_2026-05-06_20-16-01.jpg",
