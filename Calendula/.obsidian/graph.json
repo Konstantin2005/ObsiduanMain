@@ -4,8 +4,8 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
-  "showOrphans": false,
-  "collapse-color-groups": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "#Дниии",
@@ -81,14 +81,14 @@
       "query": "#Ближний_круг",
       "color": {
         "a": 1,
-        "rgb": 5308165
+        "rgb": 4783872
       }
     },
     {
       "query": "#Дальний_Круг",
       "color": {
         "a": 1,
-        "rgb": 6276665
+        "rgb": 4704536
       }
     },
     {
@@ -102,14 +102,14 @@
       "query": "#Познакомились ",
       "color": {
         "a": 1,
-        "rgb": 9224000
+        "rgb": 4815360
       }
     },
     {
       "query": "#Особенные",
       "color": {
         "a": 1,
-        "rgb": 8430647
+        "rgb": 5920514
       }
     },
     {
@@ -130,6 +130,6 @@
   "repelStrength": 16.0416666666667,
   "linkStrength": 1,
   "linkDistance": 255,
-  "scale": 0.09895430218636495,
-  "close": true
+  "scale": 0.05034417736651321,
+  "close": false
 }
