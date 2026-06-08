@@ -44,7 +44,13 @@ for ($i = 0; $i -lt $Days; $i++) {
     $fileName = $date.ToString('yyyy-MM-dd') + '.md'
     $filePath = Join-Path $OutputDir $fileName
 
-    if (-not (Test-Path -LiteralPath $filePath)) {
+    $needsContent = $true
+    if (Test-Path -LiteralPath $filePath) {
+        $existing = Get-Item -LiteralPath $filePath
+        $needsContent = $existing.Length -le 0
+    }
+
+    if ($needsContent) {
         Set-Content -LiteralPath $filePath -Value (New-DayContent -Date $date) -Encoding utf8
     }
 }
