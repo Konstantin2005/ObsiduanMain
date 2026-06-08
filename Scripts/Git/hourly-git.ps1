@@ -13,45 +13,23 @@ function Write-Log {
 
 Write-Log "Starting hourly sync..."
 
-$syncScript = Join-Path $RepoPath "Scripts\Vault\sync_leetcode.ps1"
-if (Test-Path $syncScript) {
-    Write-Log "Running sync_leetcode.ps1..."
-    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $syncScript 2>&1 | Out-Null
-    Write-Log "sync_leetcode.ps1 finished"
-}
-
-$mentionsScript = Join-Path $RepoPath "Scripts\Vault\collect-mentions.ps1"
-if (Test-Path $mentionsScript) {
-    Write-Log "Running collect-mentions.ps1..."
-    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $mentionsScript 2>&1 | Out-Null
-    Write-Log "collect-mentions.ps1 finished"
-}
-
-$sortScript = Join-Path $RepoPath "Scripts\Vault\Sort-BoardTasks.ps1"
-if (Test-Path $sortScript) {
-    Write-Log "Running Sort-BoardTasks.ps1..."
-    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $sortScript 2>&1 | Out-Null
-    Write-Log "Sort-BoardTasks.ps1 finished"
-}
-
-$changes = git status --porcelain
-if (-not $changes) {
-    Write-Log "No changes found. Nothing to commit."
-    exit 0
-}
-
-$date = Get-Date -Format "yyyy-MM-dd HH:mm"
-git add -A
+git fetch --all --prune | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    Write-Log "git add -A failed with code $LASTEXITCODE"
+    Write-Log "git fetch failed with code $LASTEXITCODE"
     exit $LASTEXITCODE
 }
 
-git commit -m $date
+git pull --no-rebase --autostash -X ours origin main | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    Write-Log "git commit failed with code $LASTEXITCODE"
+    Write-Log "git pull failed with code $LASTEXITCODE"
     exit $LASTEXITCODE
 }
 
-Write-Log "Committed: $date"
+git push
+if ($LASTEXITCODE -ne 0) {
+    Write-Log "git push failed with code $LASTEXITCODE"
+    exit $LASTEXITCODE
+}
+
+Write-Log "Push completed successfully."
 exit 0

@@ -11,25 +11,6 @@ function Write-Log {
     Add-Content -Path $logPath -Value "[$timestamp] $Message"
 }
 
-$mentionsScript = Join-Path $RepoPath "Scripts\Vault\collect-mentions.ps1"
-if (Test-Path $mentionsScript) {
-    Write-Log "Running collect-mentions.ps1..."
-    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $mentionsScript 2>&1 | Out-Null
-    Write-Log "collect-mentions.ps1 finished"
-}
-
-git fetch --all --prune | Out-Null
-if ($LASTEXITCODE -ne 0) {
-    Write-Log "git fetch failed with code $LASTEXITCODE"
-    exit $LASTEXITCODE
-}
-
-git pull --no-rebase --autostash -X ours origin main | Out-Null
-if ($LASTEXITCODE -ne 0) {
-    Write-Log "git pull --no-rebase --autostash -X ours failed with code $LASTEXITCODE"
-    exit $LASTEXITCODE
-}
-
 $status = git status --porcelain
 if ($LASTEXITCODE -ne 0) {
     Write-Log "git status --porcelain failed with code $LASTEXITCODE"
@@ -56,11 +37,5 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
-git push
-if ($LASTEXITCODE -ne 0) {
-    Write-Log "git push failed with code $LASTEXITCODE"
-    exit $LASTEXITCODE
-}
-
-Write-Log "Success. Commit: $date. Push completed."
+Write-Log "Success. Commit: $date."
 exit 0
