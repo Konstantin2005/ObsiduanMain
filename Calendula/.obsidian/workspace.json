@@ -11,12 +11,23 @@
             "id": "715f73dcd594cc76",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "kanban",
               "state": {
-                "file": "Excalidraw/Англиский.md"
+                "file": "План/2026/2026 - Июнь.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
               },
-              "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "icon": "lucide-trello",
+              "title": "2026 - Июнь"
             }
           }
         ]
@@ -176,6 +187,8 @@
   },
   "active": "715f73dcd594cc76",
   "lastOpenFiles": [
+    "План/2026/2026 - Июль.md",
+    "Excalidraw/Англиский.md",
     "Excalidraw/Stack.md",
     "Excalidraw/Deltaав.md",
     "Calendula/2026/Июнь/0.5-06-26.md",
@@ -200,8 +213,6 @@
     "Финансы/Days/2027-02-04.md",
     "Финансы/Days/2027-02-03.md",
     "Финансы/Days/2027-02-02.md",
-    "Финансы/Days/2027-02-01.md",
-    "Финансы/Days/2027-01-31.md",
     "Финансы/Summaries",
     "Финансы/Scripts/собрать-год.ps1",
     "Финансы/Scripts/создать-дни-год.ps1",
