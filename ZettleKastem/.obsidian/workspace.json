@@ -203,6 +203,20 @@
               "icon": "inbox",
               "title": "Zettelkasten Inbox"
             }
+          },
+          {
+            "id": "0fadd3a2b5ede29f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
           }
         ],
         "currentTab": 4
@@ -217,8 +231,6 @@
       "graph:Граф": false,
       "command-palette:Открыть палитру команд": false,
       "zettelkasten-navigation:open zk-index-graph": false,
-      "zettelgpt:Insert Question Template": false,
-      "zettelgpt:Generate ChatGPT Answer": false,
       "zettelkasten-branch-tracker:Zettelkasten Branch Tracker": false,
       "zettelkasten-core:Zettelkasten Inbox": false,
       "zettelkasten-navigation:open zk-local-graph": false,
