@@ -11,10 +11,14 @@
             "id": "adfd53e7de4702da",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Не думай о белых обезъянах.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Не думай о белых обезъянах"
             }
           }
         ]
@@ -154,10 +158,10 @@
   },
   "active": "adfd53e7de4702da",
   "lastOpenFiles": [
+    "Фидбек.md",
     "Не думай о белых обезъянах.md",
     "Каша из всего.md",
     "2 Understand/Промты.md",
-    "Фидбек.md",
     "Жеский Промпт.md",
     "Дружелюбный промт.md",
     "Вопросы 3.md",
