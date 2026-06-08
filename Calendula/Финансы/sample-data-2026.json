@@ -1,0 +1,1373 @@
+﻿{
+    "currency":  "RUB",
+    "entries":  [
+                    {
+                        "id":  "sample-1",
+                        "date":  "2026-01-05",
+                        "type":  "income",
+                        "amount":  123867,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-01-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-9",
+                        "date":  "2026-01-07",
+                        "type":  "expense",
+                        "amount":  34895,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-01-07T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-5",
+                        "date":  "2026-01-15",
+                        "type":  "expense",
+                        "amount":  3698,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-01-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-2",
+                        "date":  "2026-01-20",
+                        "type":  "income",
+                        "amount":  32888,
+                        "category":  "Фриланс",
+                        "note":  "Дополнительный проект",
+                        "createdAt":  "2026-01-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-8",
+                        "date":  "2026-01-20",
+                        "type":  "expense",
+                        "amount":  536,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-01-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-3",
+                        "date":  "2026-01-21",
+                        "type":  "expense",
+                        "amount":  10715,
+                        "category":  "Обучение",
+                        "note":  "Курс или книга",
+                        "createdAt":  "2026-01-21T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-7",
+                        "date":  "2026-01-22",
+                        "type":  "expense",
+                        "amount":  6571,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-01-22T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-4",
+                        "date":  "2026-01-25",
+                        "type":  "expense",
+                        "amount":  36889,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-01-25T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-10",
+                        "date":  "2026-01-26",
+                        "type":  "expense",
+                        "amount":  622,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-01-26T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-11",
+                        "date":  "2026-01-27",
+                        "type":  "expense",
+                        "amount":  814,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-01-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-6",
+                        "date":  "2026-01-27",
+                        "type":  "expense",
+                        "amount":  11347,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-01-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-19",
+                        "date":  "2026-02-03",
+                        "type":  "expense",
+                        "amount":  16583,
+                        "category":  "Обучение",
+                        "note":  "Курс или книга",
+                        "createdAt":  "2026-02-03T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-18",
+                        "date":  "2026-02-05",
+                        "type":  "expense",
+                        "amount":  3400,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-02-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-12",
+                        "date":  "2026-02-05",
+                        "type":  "income",
+                        "amount":  152231,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-02-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-16",
+                        "date":  "2026-02-06",
+                        "type":  "expense",
+                        "amount":  1722,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-02-06T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-13",
+                        "date":  "2026-02-15",
+                        "type":  "income",
+                        "amount":  20910,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-02-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-22",
+                        "date":  "2026-02-18",
+                        "type":  "expense",
+                        "amount":  2526,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-02-18T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-14",
+                        "date":  "2026-02-20",
+                        "type":  "income",
+                        "amount":  49224,
+                        "category":  "Фриланс",
+                        "note":  "Дополнительный проект",
+                        "createdAt":  "2026-02-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-24",
+                        "date":  "2026-02-21",
+                        "type":  "expense",
+                        "amount":  8600,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-02-21T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-21",
+                        "date":  "2026-02-22",
+                        "type":  "expense",
+                        "amount":  2857,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-02-22T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-15",
+                        "date":  "2026-02-23",
+                        "type":  "income",
+                        "amount":  12137,
+                        "category":  "Продажа",
+                        "note":  "Продажа вещи / возврат средств",
+                        "createdAt":  "2026-02-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-20",
+                        "date":  "2026-02-24",
+                        "type":  "expense",
+                        "amount":  33834,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-02-24T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-23",
+                        "date":  "2026-02-25",
+                        "type":  "expense",
+                        "amount":  1838,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-02-25T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-17",
+                        "date":  "2026-02-28",
+                        "type":  "expense",
+                        "amount":  4809,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-02-28T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-29",
+                        "date":  "2026-03-02",
+                        "type":  "expense",
+                        "amount":  1715,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-03-02T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-25",
+                        "date":  "2026-03-05",
+                        "type":  "income",
+                        "amount":  148252,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-03-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-32",
+                        "date":  "2026-03-07",
+                        "type":  "expense",
+                        "amount":  4354,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-03-07T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-26",
+                        "date":  "2026-03-15",
+                        "type":  "income",
+                        "amount":  25592,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-03-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-27",
+                        "date":  "2026-03-15",
+                        "type":  "expense",
+                        "amount":  29271,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-03-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-35",
+                        "date":  "2026-03-20",
+                        "type":  "expense",
+                        "amount":  2151,
+                        "category":  "Обучение",
+                        "note":  "Курс или книга",
+                        "createdAt":  "2026-03-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-33",
+                        "date":  "2026-03-20",
+                        "type":  "expense",
+                        "amount":  1638,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-03-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-30",
+                        "date":  "2026-03-20",
+                        "type":  "expense",
+                        "amount":  28554,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-03-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-31",
+                        "date":  "2026-03-21",
+                        "type":  "expense",
+                        "amount":  9905,
+                        "category":  "Обучение",
+                        "note":  "Курс или книга",
+                        "createdAt":  "2026-03-21T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-28",
+                        "date":  "2026-03-23",
+                        "type":  "expense",
+                        "amount":  32656,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-03-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-34",
+                        "date":  "2026-03-25",
+                        "type":  "expense",
+                        "amount":  3464,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-03-25T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-36",
+                        "date":  "2026-04-05",
+                        "type":  "income",
+                        "amount":  147235,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-04-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-40",
+                        "date":  "2026-04-06",
+                        "type":  "expense",
+                        "amount":  1235,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-04-06T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-45",
+                        "date":  "2026-04-06",
+                        "type":  "expense",
+                        "amount":  32676,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-04-06T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-41",
+                        "date":  "2026-04-11",
+                        "type":  "expense",
+                        "amount":  1853,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-04-11T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-42",
+                        "date":  "2026-04-13",
+                        "type":  "expense",
+                        "amount":  5675,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-04-13T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-37",
+                        "date":  "2026-04-15",
+                        "type":  "income",
+                        "amount":  13136,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-04-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-43",
+                        "date":  "2026-04-16",
+                        "type":  "expense",
+                        "amount":  12855,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-04-16T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-39",
+                        "date":  "2026-04-16",
+                        "type":  "expense",
+                        "amount":  1818,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-04-16T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-44",
+                        "date":  "2026-04-17",
+                        "type":  "expense",
+                        "amount":  1659,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-04-17T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-47",
+                        "date":  "2026-04-19",
+                        "type":  "expense",
+                        "amount":  1627,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-04-19T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-38",
+                        "date":  "2026-04-23",
+                        "type":  "income",
+                        "amount":  7727,
+                        "category":  "Продажа",
+                        "note":  "Продажа вещи / возврат средств",
+                        "createdAt":  "2026-04-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-46",
+                        "date":  "2026-04-23",
+                        "type":  "expense",
+                        "amount":  640,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-04-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-48",
+                        "date":  "2026-04-27",
+                        "type":  "expense",
+                        "amount":  6560,
+                        "category":  "Быт",
+                        "note":  "Непредвиденные расходы",
+                        "createdAt":  "2026-04-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-53",
+                        "date":  "2026-05-03",
+                        "type":  "expense",
+                        "amount":  1498,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-05-03T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-49",
+                        "date":  "2026-05-05",
+                        "type":  "income",
+                        "amount":  117607,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-05-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-58",
+                        "date":  "2026-05-05",
+                        "type":  "expense",
+                        "amount":  1337,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-05-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-54",
+                        "date":  "2026-05-09",
+                        "type":  "expense",
+                        "amount":  1949,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-05-09T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-56",
+                        "date":  "2026-05-09",
+                        "type":  "expense",
+                        "amount":  990,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-05-09T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-57",
+                        "date":  "2026-05-10",
+                        "type":  "expense",
+                        "amount":  11238,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-05-10T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-55",
+                        "date":  "2026-05-12",
+                        "type":  "expense",
+                        "amount":  1591,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-05-12T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-52",
+                        "date":  "2026-05-13",
+                        "type":  "expense",
+                        "amount":  4865,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-05-13T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-50",
+                        "date":  "2026-05-15",
+                        "type":  "income",
+                        "amount":  11209,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-05-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-51",
+                        "date":  "2026-05-20",
+                        "type":  "income",
+                        "amount":  36247,
+                        "category":  "Фриланс",
+                        "note":  "Дополнительный проект",
+                        "createdAt":  "2026-05-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-59",
+                        "date":  "2026-05-28",
+                        "type":  "expense",
+                        "amount":  469,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-05-28T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-70",
+                        "date":  "2026-06-02",
+                        "type":  "expense",
+                        "amount":  4254,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-06-02T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-60",
+                        "date":  "2026-06-05",
+                        "type":  "income",
+                        "amount":  150555,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-06-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-63",
+                        "date":  "2026-06-07",
+                        "type":  "expense",
+                        "amount":  1666,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-06-07T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-73",
+                        "date":  "2026-06-14",
+                        "type":  "expense",
+                        "amount":  4644,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-06-14T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-74",
+                        "date":  "2026-06-14",
+                        "type":  "expense",
+                        "amount":  9209,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-06-14T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-61",
+                        "date":  "2026-06-15",
+                        "type":  "income",
+                        "amount":  4592,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-06-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-67",
+                        "date":  "2026-06-18",
+                        "type":  "expense",
+                        "amount":  9462,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-06-18T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-72",
+                        "date":  "2026-06-19",
+                        "type":  "expense",
+                        "amount":  4986,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-06-19T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-62",
+                        "date":  "2026-06-23",
+                        "type":  "income",
+                        "amount":  7198,
+                        "category":  "Продажа",
+                        "note":  "Продажа вещи / возврат средств",
+                        "createdAt":  "2026-06-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-66",
+                        "date":  "2026-06-23",
+                        "type":  "expense",
+                        "amount":  286,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-06-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-68",
+                        "date":  "2026-06-23",
+                        "type":  "expense",
+                        "amount":  1448,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-06-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-65",
+                        "date":  "2026-06-26",
+                        "type":  "expense",
+                        "amount":  339,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-06-26T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-64",
+                        "date":  "2026-06-28",
+                        "type":  "expense",
+                        "amount":  823,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-06-28T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-69",
+                        "date":  "2026-06-28",
+                        "type":  "expense",
+                        "amount":  1409,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-06-28T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-71",
+                        "date":  "2026-06-28",
+                        "type":  "expense",
+                        "amount":  1918,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-06-28T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-79",
+                        "date":  "2026-07-01",
+                        "type":  "expense",
+                        "amount":  34824,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-07-01T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-75",
+                        "date":  "2026-07-05",
+                        "type":  "income",
+                        "amount":  130953,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-07-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-80",
+                        "date":  "2026-07-09",
+                        "type":  "expense",
+                        "amount":  396,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-07-09T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-86",
+                        "date":  "2026-07-10",
+                        "type":  "expense",
+                        "amount":  1273,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-07-10T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-82",
+                        "date":  "2026-07-14",
+                        "type":  "expense",
+                        "amount":  16022,
+                        "category":  "Обучение",
+                        "note":  "Курс или книга",
+                        "createdAt":  "2026-07-14T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-76",
+                        "date":  "2026-07-15",
+                        "type":  "income",
+                        "amount":  15888,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-07-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-83",
+                        "date":  "2026-07-16",
+                        "type":  "expense",
+                        "amount":  936,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-07-16T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-84",
+                        "date":  "2026-07-17",
+                        "type":  "expense",
+                        "amount":  730,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-07-17T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-77",
+                        "date":  "2026-07-25",
+                        "type":  "expense",
+                        "amount":  5143,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-07-25T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-78",
+                        "date":  "2026-07-26",
+                        "type":  "expense",
+                        "amount":  2402,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-07-26T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-87",
+                        "date":  "2026-07-27",
+                        "type":  "expense",
+                        "amount":  6730,
+                        "category":  "Быт",
+                        "note":  "Непредвиденные расходы",
+                        "createdAt":  "2026-07-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-81",
+                        "date":  "2026-07-27",
+                        "type":  "expense",
+                        "amount":  2451,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-07-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-85",
+                        "date":  "2026-07-27",
+                        "type":  "expense",
+                        "amount":  3882,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-07-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-100",
+                        "date":  "2026-08-01",
+                        "type":  "expense",
+                        "amount":  1282,
+                        "category":  "Подписки",
+                        "note":  "Сервис / подписка",
+                        "createdAt":  "2026-08-01T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-88",
+                        "date":  "2026-08-05",
+                        "type":  "income",
+                        "amount":  121891,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-08-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-99",
+                        "date":  "2026-08-07",
+                        "type":  "expense",
+                        "amount":  6111,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-08-07T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-91",
+                        "date":  "2026-08-07",
+                        "type":  "expense",
+                        "amount":  9409,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-08-07T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-94",
+                        "date":  "2026-08-09",
+                        "type":  "expense",
+                        "amount":  1059,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-08-09T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-98",
+                        "date":  "2026-08-12",
+                        "type":  "expense",
+                        "amount":  1448,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-08-12T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-89",
+                        "date":  "2026-08-15",
+                        "type":  "income",
+                        "amount":  7050,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-08-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-90",
+                        "date":  "2026-08-15",
+                        "type":  "expense",
+                        "amount":  6512,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-08-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-96",
+                        "date":  "2026-08-17",
+                        "type":  "expense",
+                        "amount":  634,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-08-17T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-95",
+                        "date":  "2026-08-20",
+                        "type":  "expense",
+                        "amount":  1537,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-08-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-93",
+                        "date":  "2026-08-24",
+                        "type":  "expense",
+                        "amount":  13407,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-08-24T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-92",
+                        "date":  "2026-08-26",
+                        "type":  "expense",
+                        "amount":  1158,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-08-26T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-97",
+                        "date":  "2026-08-28",
+                        "type":  "expense",
+                        "amount":  12187,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-08-28T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-109",
+                        "date":  "2026-09-04",
+                        "type":  "expense",
+                        "amount":  2560,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-09-04T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-110",
+                        "date":  "2026-09-04",
+                        "type":  "expense",
+                        "amount":  1883,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-09-04T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-101",
+                        "date":  "2026-09-05",
+                        "type":  "income",
+                        "amount":  132632,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-09-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-103",
+                        "date":  "2026-09-06",
+                        "type":  "expense",
+                        "amount":  9571,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-09-06T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-107",
+                        "date":  "2026-09-06",
+                        "type":  "expense",
+                        "amount":  4725,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-09-06T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-105",
+                        "date":  "2026-09-14",
+                        "type":  "expense",
+                        "amount":  1860,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-09-14T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-111",
+                        "date":  "2026-09-17",
+                        "type":  "expense",
+                        "amount":  2170,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-09-17T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-106",
+                        "date":  "2026-09-17",
+                        "type":  "expense",
+                        "amount":  4208,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-09-17T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-104",
+                        "date":  "2026-09-22",
+                        "type":  "expense",
+                        "amount":  1638,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-09-22T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-102",
+                        "date":  "2026-09-25",
+                        "type":  "expense",
+                        "amount":  309,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-09-25T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-108",
+                        "date":  "2026-09-26",
+                        "type":  "expense",
+                        "amount":  28541,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-09-26T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-112",
+                        "date":  "2026-09-27",
+                        "type":  "expense",
+                        "amount":  6407,
+                        "category":  "Быт",
+                        "note":  "Непредвиденные расходы",
+                        "createdAt":  "2026-09-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-121",
+                        "date":  "2026-10-01",
+                        "type":  "expense",
+                        "amount":  771,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-10-01T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-120",
+                        "date":  "2026-10-01",
+                        "type":  "expense",
+                        "amount":  2956,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-10-01T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-115",
+                        "date":  "2026-10-02",
+                        "type":  "expense",
+                        "amount":  1447,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-10-02T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-123",
+                        "date":  "2026-10-05",
+                        "type":  "expense",
+                        "amount":  1616,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-10-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-114",
+                        "date":  "2026-10-05",
+                        "type":  "expense",
+                        "amount":  4872,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-10-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-113",
+                        "date":  "2026-10-05",
+                        "type":  "income",
+                        "amount":  113264,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-10-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-119",
+                        "date":  "2026-10-06",
+                        "type":  "expense",
+                        "amount":  179,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-10-06T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-122",
+                        "date":  "2026-10-08",
+                        "type":  "expense",
+                        "amount":  4635,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-10-08T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-117",
+                        "date":  "2026-10-12",
+                        "type":  "expense",
+                        "amount":  5541,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-10-12T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-126",
+                        "date":  "2026-10-12",
+                        "type":  "expense",
+                        "amount":  1594,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-10-12T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-124",
+                        "date":  "2026-10-17",
+                        "type":  "expense",
+                        "amount":  2836,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-10-17T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-116",
+                        "date":  "2026-10-21",
+                        "type":  "expense",
+                        "amount":  8070,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-10-21T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-125",
+                        "date":  "2026-10-24",
+                        "type":  "expense",
+                        "amount":  944,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-10-24T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-127",
+                        "date":  "2026-10-27",
+                        "type":  "expense",
+                        "amount":  8994,
+                        "category":  "Быт",
+                        "note":  "Непредвиденные расходы",
+                        "createdAt":  "2026-10-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-118",
+                        "date":  "2026-10-27",
+                        "type":  "expense",
+                        "amount":  1986,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-10-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-133",
+                        "date":  "2026-11-03",
+                        "type":  "expense",
+                        "amount":  447,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-11-03T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-128",
+                        "date":  "2026-11-05",
+                        "type":  "income",
+                        "amount":  112086,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-11-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-132",
+                        "date":  "2026-11-08",
+                        "type":  "expense",
+                        "amount":  3314,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-11-08T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-136",
+                        "date":  "2026-11-09",
+                        "type":  "expense",
+                        "amount":  3888,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-11-09T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-137",
+                        "date":  "2026-11-12",
+                        "type":  "expense",
+                        "amount":  9762,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-11-12T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-131",
+                        "date":  "2026-11-13",
+                        "type":  "expense",
+                        "amount":  3466,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-11-13T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-140",
+                        "date":  "2026-11-14",
+                        "type":  "expense",
+                        "amount":  1957,
+                        "category":  "Связь",
+                        "note":  "Интернет / телефон",
+                        "createdAt":  "2026-11-14T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-135",
+                        "date":  "2026-11-14",
+                        "type":  "expense",
+                        "amount":  1125,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-11-14T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-129",
+                        "date":  "2026-11-15",
+                        "type":  "income",
+                        "amount":  20937,
+                        "category":  "Премия",
+                        "note":  "Бонус или премия",
+                        "createdAt":  "2026-11-15T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-134",
+                        "date":  "2026-11-19",
+                        "type":  "expense",
+                        "amount":  14651,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-11-19T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-130",
+                        "date":  "2026-11-20",
+                        "type":  "income",
+                        "amount":  32926,
+                        "category":  "Фриланс",
+                        "note":  "Дополнительный проект",
+                        "createdAt":  "2026-11-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-139",
+                        "date":  "2026-11-21",
+                        "type":  "expense",
+                        "amount":  3328,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-11-21T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-138",
+                        "date":  "2026-11-21",
+                        "type":  "expense",
+                        "amount":  2876,
+                        "category":  "Развлечения",
+                        "note":  "Кино / отдых",
+                        "createdAt":  "2026-11-21T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-146",
+                        "date":  "2026-12-01",
+                        "type":  "expense",
+                        "amount":  3154,
+                        "category":  "Быт",
+                        "note":  "Домашние расходы",
+                        "createdAt":  "2026-12-01T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-141",
+                        "date":  "2026-12-05",
+                        "type":  "income",
+                        "amount":  122295,
+                        "category":  "Зарплата",
+                        "note":  "Основной доход месяца",
+                        "createdAt":  "2026-12-05T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-151",
+                        "date":  "2026-12-10",
+                        "type":  "expense",
+                        "amount":  29604,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-12-10T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-149",
+                        "date":  "2026-12-16",
+                        "type":  "expense",
+                        "amount":  4591,
+                        "category":  "Подарки",
+                        "note":  "Подарок или помощь",
+                        "createdAt":  "2026-12-16T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-150",
+                        "date":  "2026-12-19",
+                        "type":  "expense",
+                        "amount":  2846,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-12-19T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-142",
+                        "date":  "2026-12-20",
+                        "type":  "income",
+                        "amount":  7856,
+                        "category":  "Фриланс",
+                        "note":  "Дополнительный проект",
+                        "createdAt":  "2026-12-20T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-145",
+                        "date":  "2026-12-21",
+                        "type":  "expense",
+                        "amount":  848,
+                        "category":  "Транспорт",
+                        "note":  "Такси / проезд",
+                        "createdAt":  "2026-12-21T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-148",
+                        "date":  "2026-12-23",
+                        "type":  "expense",
+                        "amount":  5521,
+                        "category":  "Еда",
+                        "note":  "Покупки и кафе",
+                        "createdAt":  "2026-12-23T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-152",
+                        "date":  "2026-12-27",
+                        "type":  "expense",
+                        "amount":  7191,
+                        "category":  "Быт",
+                        "note":  "Непредвиденные расходы",
+                        "createdAt":  "2026-12-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-144",
+                        "date":  "2026-12-27",
+                        "type":  "expense",
+                        "amount":  32231,
+                        "category":  "Аренда",
+                        "note":  "Платёж за жильё",
+                        "createdAt":  "2026-12-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-147",
+                        "date":  "2026-12-27",
+                        "type":  "expense",
+                        "amount":  10841,
+                        "category":  "Здоровье",
+                        "note":  "Лекарства или врач",
+                        "createdAt":  "2026-12-27T12:00:00Z"
+                    },
+                    {
+                        "id":  "sample-143",
+                        "date":  "2026-12-28",
+                        "type":  "expense",
+                        "amount":  4170,
+                        "category":  "Обучение",
+                        "note":  "Курс или книга",
+                        "createdAt":  "2026-12-28T12:00:00Z"
+                    }
+                ]
+}
