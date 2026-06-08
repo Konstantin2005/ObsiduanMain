@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "750bc0010a1d049d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Живи день как последний.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Живи день как последний"
-            }
-          },
-          {
             "id": "dac5458fe71aa4d2",
             "type": "leaf",
             "state": {
@@ -34,89 +20,8 @@
               "icon": "lucide-file",
               "title": "Index"
             }
-          },
-          {
-            "id": "bb93d76f7ef395af",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inbox/Отбел кадров.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Отбел кадров"
-            }
-          },
-          {
-            "id": "b5992e229c75d92b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Пиковая форма.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Пиковая форма"
-            }
-          },
-          {
-            "id": "15235bfb28680a03",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Нейронки.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Нейронки"
-            }
-          },
-          {
-            "id": "9f88faaf1865dcc0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inbox/ZeettleKasten.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ZeettleKasten"
-            }
-          },
-          {
-            "id": "9dd3067fd4018c12",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Новая вкладка"
-            }
-          },
-          {
-            "id": "b6f4cd3961e295cc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inbox/Уметь требовать решения от своих подчиненых.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Уметь требовать решения от своих подчиненых"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -309,20 +214,20 @@
       "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
-  "active": "67c49c3a2388086b",
+  "active": "dac5458fe71aa4d2",
   "lastOpenFiles": [
-    "Index",
     "Notes/Живи день как последний.md",
     "Index.md",
+    "Inbox/Уметь требовать решения от своих подчиненых.md",
+    "Inbox/ZeettleKasten.md",
+    "Нейронки.md",
+    "Пиковая форма.md",
     "Inbox/Отбел кадров.md",
+    "Index",
     "Inbox/Relevanti.md",
     "Inbox/Impetus.md",
     "Inbox/Murka Sensei сообщество.md",
     "Notes/Не лезь в другое голову пока в своей не разобрался.md",
-    "Пиковая форма.md",
-    "Нейронки.md",
-    "Inbox/ZeettleKasten.md",
-    "Inbox/Уметь требовать решения от своих подчиненых.md",
     "Inbox/Читай свои заметки как чужие.md",
     "Inbox/Чистый код.md",
     "Inbox/Сон мини смерть.md",
