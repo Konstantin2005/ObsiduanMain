@@ -155,7 +155,8 @@
               "title": "Закладки"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -295,7 +296,7 @@
       "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
-  "active": "3cde782dd6f6639f",
+  "active": "524fc40d7c69b38e",
   "lastOpenFiles": [
     "Inbox/Relevanti.md",
     "Inbox/Impetus.md",
