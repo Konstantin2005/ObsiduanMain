@@ -18,17 +18,17 @@
             }
           },
           {
-            "id": "1f224763fde7f8bd",
+            "id": "83dab96030572f01",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Index/Програмирование/BD/0 Casandra.md",
+                "file": "Index/Програмирование/BD/0 Redis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0 Casandra"
+              "title": "0 Redis"
             }
           }
         ]
@@ -213,9 +213,10 @@
   },
   "active": "02209ca3e92389b6",
   "lastOpenFiles": [
+    "Index/Програмирование/BD/0 Redis.md",
+    "Node/Вертикальное масштабирование.md",
     "Index/Програмирование/BD/0 Casandra.md",
     "Node/Распределённая.md",
-    "Index/Програмирование/BD/0 Redis.md",
     "Index/Програмирование/BD/0 Prometheus.md",
     "Index/Програмирование/BD/0 Postgres.md",
     "Index/Програмирование/BD/0 Neo4j.md",
@@ -238,7 +239,6 @@
     "Node/SPARQL.md",
     "Node/В памяти (RAM).md",
     "Node/CQL.md",
-    "Node/Живи день как последний.md",
     "Node",
     "Index/Програмирование/LeetCode",
     "Index/Програмирование/Языки",

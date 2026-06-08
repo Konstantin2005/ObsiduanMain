@@ -11,10 +11,12 @@
             "id": "715f73dcd594cc76",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Доска.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Доска"
             }
           },
           {
@@ -118,6 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Excalidraw/Доска.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки"
+              "title": "Обратные ссылки для Доска"
             }
           },
           {
