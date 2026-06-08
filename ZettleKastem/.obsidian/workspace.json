@@ -8,16 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "886847ffdd494735",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
             "id": "750bc0010a1d049d",
             "type": "leaf",
             "state": {
@@ -37,26 +27,64 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inbox/Уметь требовать решения от своих подчиненых.md",
+                "file": "Inbox/Отбел кадров.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Уметь требовать решения от своих подчиненых"
+              "title": "Отбел кадров"
+            }
+          },
+          {
+            "id": "b5992e229c75d92b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Пиковая форма.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Пиковая форма"
+            }
+          },
+          {
+            "id": "15235bfb28680a03",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Нейронки.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Нейронки"
+            }
+          },
+          {
+            "id": "9f88faaf1865dcc0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Inbox/ZeettleKasten.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ZeettleKasten"
             }
           },
           {
             "id": "9dd3067fd4018c12",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Переход от частного к целому.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Переход от частного к целому"
+              "title": "Новая вкладка"
             }
           },
           {
@@ -74,7 +102,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -253,8 +281,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 419.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -268,32 +295,34 @@
       "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
-  "active": "bb93d76f7ef395af",
+  "active": "3cde782dd6f6639f",
   "lastOpenFiles": [
-    "Inbox/Сон мини смерть.md",
-    "Inbox/Каждый день важен.md",
-    "Notes/Живи день как последний.md",
     "Inbox/Relevanti.md",
-    "Inbox/Nexus.md",
-    "Inbox/Murka Sensei сообщество.md",
     "Inbox/Impetus.md",
+    "Inbox/Murka Sensei сообщество.md",
+    "Notes/Не лезь в другое голову пока в своей не разобрался.md",
+    "Notes/Живи день как последний.md",
+    "Пиковая форма.md",
+    "Нейронки.md",
+    "Inbox/ZeettleKasten.md",
+    "Inbox/Уметь требовать решения от своих подчиненых.md",
+    "Inbox/Читай свои заметки как чужие.md",
+    "Inbox/Чистый код.md",
+    "Inbox/Сон мини смерть.md",
+    "Inbox/Сокрытие реализации.md",
+    "Inbox/Самое важное качество в человеке.md",
+    "Inbox/Правило бойскайтов.md",
+    "Inbox/Переход от частного к целому.md",
+    "Inbox/Память.md",
+    "Inbox/Отбел кадров.md",
+    "Inbox/Капитал.md",
+    "Inbox/Каждый день важен.md",
+    "Inbox/Nexus.md",
     "Inbox/GC.md",
     "Inbox/Fire.md",
     "Inbox/Delta.md",
-    "Notes/Casandra.md",
+    "Inbox/Casandra.md",
     "Inbox/3 столба.md",
-    "Archive/Не лезь в другое голову пока в своей не разобрался.md",
-    "Inbox/Уметь требовать решения от своих подчиненых.md",
-    "Inbox/Переход от частного к целому.md",
-    "Inbox/Сокрытие реализации.md",
-    "Inbox/Чистый код.md",
-    "Inbox/Правило бойскайтов.md",
-    "Inbox/Память.md",
-    "Inbox/Самое важное качество в человеке.md",
-    "Inbox/Отбел кадров.md",
-    "Сообщества Delta.md",
-    "Inbox/Капитал.md",
-    "Inbox/Читай свои заметки как чужие.md",
     "Archive",
     "Projects",
     "Sources",
