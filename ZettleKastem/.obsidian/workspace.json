@@ -6,19 +6,51 @@
       {
         "id": "bceca386849bccc3",
         "type": "tabs",
+        "dimension": 43.01909307875895,
         "children": [
           {
-            "id": "dac5458fe71aa4d2",
+            "id": "3aac684c5232cbcb",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          },
+          {
+            "id": "62c8b94c16bc3384",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Index.md",
+                "file": "Inbox/Casandra.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Index"
+              "title": "Casandra"
+            }
+          }
+        ]
+      },
+      {
+        "id": "601e40309c9cfea2",
+        "type": "tabs",
+        "dimension": 56.98090692124105,
+        "children": [
+          {
+            "id": "02209ca3e92389b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Index/Програмирование/BD/Casandra.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Casandra"
             }
           }
         ]
@@ -53,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Програмирование",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,12 +105,22 @@
               "icon": "lucide-bookmark",
               "title": "Закладки"
             }
+          },
+          {
+            "id": "3cde782dd6f6639f",
+            "type": "leaf",
+            "state": {
+              "type": "zettelkasten-branch-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Zettelkasten Branch Tracker"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 255.5
   },
   "right": {
     "id": "0685e666711754de",
@@ -151,21 +193,6 @@
             }
           },
           {
-            "id": "44593b3083c3311f",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Без названия.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Структура Без названия"
-            }
-          },
-          {
             "id": "ea49cba384beca61",
             "type": "leaf",
             "state": {
@@ -173,16 +200,6 @@
               "state": {},
               "icon": "network",
               "title": "zk-local-graph"
-            }
-          },
-          {
-            "id": "3cde782dd6f6639f",
-            "type": "leaf",
-            "state": {
-              "type": "zettelkasten-branch-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Zettelkasten Branch Tracker"
             }
           },
           {
@@ -196,28 +213,55 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 419.5
+    "width": 419.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "graph:Граф": false,
       "command-palette:Открыть палитру команд": false,
       "zettelkasten-navigation:open zk-index-graph": false,
-      "zettelkasten-navigation:open zk-local-graph": false,
       "zettelgpt:Insert Question Template": false,
       "zettelgpt:Generate ChatGPT Answer": false,
       "zettelkasten-branch-tracker:Zettelkasten Branch Tracker": false,
-      "zettelkasten-core:Zettelkasten Inbox": false
+      "zettelkasten-core:Zettelkasten Inbox": false,
+      "zettelkasten-navigation:open zk-local-graph": false,
+      "templates:Вставить шаблон": false
     }
   },
-  "active": "dac5458fe71aa4d2",
+  "active": "3aac684c5232cbcb",
   "lastOpenFiles": [
-    "Notes/Живи день как последний.md",
+    "Inbox/Casandra.md",
+    "Index/Програмирование/BD/Casandra.md",
+    "Index/Програмирование/BD/Redis.md",
+    "Index/Програмирование/BD/Postgres.md",
+    "Index/Програмирование/BD/LiteSql.md",
+    "Горизонтальное масштабирование.md",
+    "Вертикальное масштабирование.md",
+    "CQL.md",
+    "RESP.md",
+    "SQL.md",
+    "Setengs/Templete/Просто.md",
+    "Index/Програмирование/Без названия.md",
+    "Node",
+    "Index/Програмирование/LeetCode",
+    "Index/Програмирование/Языки",
+    "Index/Програмирование",
+    "Index/BD/Без названия",
+    "Index/Програмирование/BD",
+    "Index/Не лезь в другое голову пока в своей не разобрался.md",
+    "Index/Живи день как последний.md",
+    "Без названия.md",
     "Index.md",
+    "Setengs/Templete",
+    "Setengs",
+    "Inbox/Капитал.md",
+    "Inbox/Fire.md",
+    "Inbox/Murka Sensei сообщество.md",
     "Inbox/Уметь требовать решения от своих подчиненых.md",
     "Inbox/ZeettleKasten.md",
     "Нейронки.md",
@@ -226,26 +270,6 @@
     "Index",
     "Inbox/Relevanti.md",
     "Inbox/Impetus.md",
-    "Inbox/Murka Sensei сообщество.md",
-    "Notes/Не лезь в другое голову пока в своей не разобрался.md",
-    "Inbox/Читай свои заметки как чужие.md",
-    "Inbox/Чистый код.md",
-    "Inbox/Сон мини смерть.md",
-    "Inbox/Сокрытие реализации.md",
-    "Inbox/Самое важное качество в человеке.md",
-    "Inbox/Правило бойскайтов.md",
-    "Inbox/Переход от частного к целому.md",
-    "Inbox/Память.md",
-    "Inbox/Капитал.md",
-    "Inbox/Каждый день важен.md",
-    "Inbox/Nexus.md",
-    "Inbox/GC.md",
-    "Inbox/Fire.md",
-    "Inbox/Delta.md",
-    "Archive",
-    "Projects",
-    "Sources",
-    "Inbox",
-    "Notes"
+    "Archive"
   ]
 }

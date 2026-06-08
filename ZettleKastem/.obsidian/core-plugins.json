@@ -2,7 +2,7 @@
   "file-explorer": true,
   "global-search": true,
   "switcher": false,
-  "graph": false,
+  "graph": true,
   "backlink": true,
   "canvas": false,
   "outgoing-link": true,
@@ -11,7 +11,7 @@
   "properties": true,
   "page-preview": true,
   "daily-notes": false,
-  "templates": false,
+  "templates": true,
   "note-composer": true,
   "command-palette": true,
   "slash-command": false,
@@ -27,7 +27,7 @@
   "workspaces": false,
   "file-recovery": true,
   "publish": false,
-  "sync": true,
+  "sync": false,
   "bases": false,
   "webviewer": false
 }
