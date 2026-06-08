@@ -20,6 +20,13 @@
         "a": 1,
         "rgb": 9048757
       }
+    },
+    {
+      "query": "#Базы_Данных",
+      "color": {
+        "a": 1,
+        "rgb": 6902496
+      }
     }
   ],
   "collapse-display": true,
@@ -32,6 +39,6 @@
   "repelStrength": 14.1666666666667,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.5087618855792355,
+  "scale": 1.401982897776003,
   "close": true
 }
