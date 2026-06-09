@@ -18,6 +18,18 @@
               "icon": "excalidraw-icon",
               "title": "Stack"
             }
+          },
+          {
+            "id": "c5a39271cb5411a8",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Pasted Image 20260609231219_906.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted Image 20260609231219_906"
+            }
           }
         ]
       }
@@ -177,6 +189,8 @@
   },
   "active": "715f73dcd594cc76",
   "lastOpenFiles": [
+    "Pasted Image 20260609231219_906.png",
+    "Excalidraw/Stack.md",
     "Pasted Image 20260609231156_502.png",
     "Pasted Image 20260609231013_778.png",
     "Pasted Image 20260609230527_198.png",
@@ -196,7 +210,6 @@
     "Финансы/README.md",
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Июль.md",
-    "Excalidraw/Stack.md",
     "Calendula/2026/Июнь/0.5-06-26.md",
     "Финансы/Days/2027-02-22.md",
     "Финансы/Days/2027-02-21.md",
