@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Англиский.md"
+                "file": "Excalidraw/Deltaав.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "title": "Deltaав"
             }
           }
         ]
@@ -76,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
