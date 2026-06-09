@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3e5958914c830d21",
+        "id": "8ffe2c7b2b4293e9",
         "type": "tabs",
         "children": [
           {
-            "id": "715f73dcd594cc76",
+            "id": "de72db943b4e717e",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Stack.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Stack"
-            }
-          },
-          {
-            "id": "c5a39271cb5411a8",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Pasted Image 20260609231219_906.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted Image 20260609231219_906"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Новая вкладка"
             }
           }
         ]
@@ -88,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -187,11 +172,13 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "715f73dcd594cc76",
+  "active": "de72db943b4e717e",
   "lastOpenFiles": [
-    "Pasted Image 20260609231556_859.png",
     "Pasted Image 20260609231219_906.png",
+    "План/2026/2026 - Июнь.md",
+    "План/2026/2026 - Июль.md",
     "Excalidraw/Stack.md",
+    "Pasted Image 20260609231556_859.png",
     "Pasted Image 20260609231156_502.png",
     "Pasted Image 20260609231013_778.png",
     "Pasted Image 20260609230527_198.png",
@@ -209,8 +196,6 @@
     "Финансы/sample-data-2026.md",
     "Финансы/Система учёта.md",
     "Финансы/README.md",
-    "План/2026/2026 - Июнь.md",
-    "План/2026/2026 - Июль.md",
     "Calendula/2026/Июнь/0.5-06-26.md",
     "Финансы/Days/2027-02-22.md",
     "Финансы/Days/2027-02-21.md",
