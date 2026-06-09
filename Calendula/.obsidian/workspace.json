@@ -76,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -176,6 +177,7 @@
   },
   "active": "715f73dcd594cc76",
   "lastOpenFiles": [
+    "Pasted Image 20260609230527_198.png",
     "Excalidraw/Алгоритмы.md",
     "Excalidraw/Англиский.md",
     "Excalidraw/Доска.md",
@@ -201,7 +203,6 @@
     "Финансы/Days/2027-02-18.md",
     "Финансы/Days/2027-02-17.md",
     "Финансы/Days/2027-02-16.md",
-    "Финансы/Days/2027-02-15.md",
     "Финансы/Summaries",
     "Финансы/Scripts/собрать-год.ps1",
     "Финансы/Scripts/создать-дни-год.ps1",
