@@ -11,10 +11,23 @@
             "id": "de72db943b4e717e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "type": "kanban",
+              "state": {
+                "file": "План/2026/2026 - Июнь.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "2026 - Июнь"
             }
           }
         ]
@@ -174,9 +187,9 @@
   },
   "active": "de72db943b4e717e",
   "lastOpenFiles": [
+    "План/2026/2026 - Июль.md",
     "Pasted Image 20260609231219_906.png",
     "План/2026/2026 - Июнь.md",
-    "План/2026/2026 - Июль.md",
     "Excalidraw/Stack.md",
     "Pasted Image 20260609231556_859.png",
     "Pasted Image 20260609231156_502.png",
