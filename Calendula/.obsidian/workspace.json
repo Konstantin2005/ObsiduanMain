@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Deltaав.md"
+                "file": "Excalidraw/Люди.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Deltaав"
+              "title": "Люди"
             }
           }
         ]
@@ -176,7 +176,9 @@
   },
   "active": "715f73dcd594cc76",
   "lastOpenFiles": [
+    "Excalidraw/Доска.md",
     "Excalidraw/Англиский.md",
+    "Excalidraw/Deltaав.md",
     "Calendula/2026/Июнь/08-06-26.md",
     "Calendula/2026/Июнь/08.5-06-26.md",
     "Calendula/2026/Июнь/07.5-06-26.md",
@@ -186,7 +188,6 @@
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Июль.md",
     "Excalidraw/Stack.md",
-    "Excalidraw/Deltaав.md",
     "Calendula/2026/Июнь/0.5-06-26.md",
     "Финансы/Days/2027-02-22.md",
     "Финансы/Days/2027-02-21.md",
@@ -201,7 +202,6 @@
     "Финансы/Days/2027-02-12.md",
     "Финансы/Days/2027-02-11.md",
     "Финансы/Days/2027-02-10.md",
-    "Финансы/Days/2027-02-09.md",
     "Финансы/Summaries",
     "Финансы/Scripts/собрать-год.ps1",
     "Финансы/Scripts/создать-дни-год.ps1",
