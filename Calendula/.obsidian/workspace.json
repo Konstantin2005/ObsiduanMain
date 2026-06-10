@@ -198,10 +198,7 @@
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Меню быстрого перехода": false,
-      "obsidian42-brat:BRAT": false,
-      "copilot:Open Copilot Chat": false,
       "obsidianella-delink:Copy delinked note": false,
-      "pomodoro-timer:Toggle timer panel": false,
       "graph:Граф": false,
       "command-palette:Открыть палитру команд": false,
       "obsidian-kanban:Создать новую доску": false,

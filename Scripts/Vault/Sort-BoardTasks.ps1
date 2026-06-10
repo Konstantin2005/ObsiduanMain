@@ -1,4 +1,4 @@
-param(
+﻿param(
     [Parameter(Mandatory=$false)]
     [string]$KanbanDir = "C:\obsidian\Main\Calendula\План",
     [switch]$DryRun,

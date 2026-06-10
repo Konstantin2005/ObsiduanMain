@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Collects mentions of people from diary entries and updates person files.
 #>

@@ -30,8 +30,7 @@ Describe 'Scripts' {
             $logPath = Join-Path $repo 'Scripts\Logs\daily-push.log'
 
             Write-Utf8File $fakeGit @"
-param([string[]]`$Args)
-Add-Content -LiteralPath '$gitCalls' -Value (`$Args -join ' ')
+Add-Content -LiteralPath '$gitCalls' -Value (`$args -join ' ')
 exit 0
 "@
 
@@ -46,7 +45,7 @@ exit 0
         }
         finally {
             if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }
@@ -71,14 +70,14 @@ exit 0
 
             & (Join-Path $repoRoot 'Scripts\Vault\Move-TodayTasks.ps1') -Date '2026-06-10' -KanbanDir $plan
 
-            $content = Get-Content -LiteralPath $file -Raw
+            $content = Get-Content -LiteralPath $file -Raw -Encoding UTF8
             $content | Should Match '## Сегодня[\s\S]*Сделать тест @\{2026-06-10\}'
             $content | Should Not Match '## Запланировано[\s\S]*Сделать тест @\{2026-06-10\}'
             $content | Should Match '## Запланировано[\s\S]*Остаться здесь @\{2026-06-11\}'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }
@@ -106,12 +105,12 @@ exit 0
 
             & (Join-Path $repoRoot 'Scripts\Vault\Sort-BoardTasks.ps1') -KanbanDir $plan
 
-            (Get-Content -LiteralPath $june -Raw) | Should Not Match 'Перенести в июль'
-            (Get-Content -LiteralPath $july -Raw) | Should Match 'Перенести в июль @\{2026-07-01\}'
+            (Get-Content -LiteralPath $june -Raw -Encoding UTF8) | Should Not Match 'Перенести в июль'
+            (Get-Content -LiteralPath $july -Raw -Encoding UTF8) | Should Match 'Перенести в июль @\{2026-07-01\}'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }
@@ -137,14 +136,14 @@ name: John
 
             & (Join-Path $repoRoot 'Scripts\Vault\collect-mentions.ps1') -VaultPath $root -DiaryRoot $diaryRoot -SocialCapitalRoot $socialRoot
 
-            $personContent = Get-Content -LiteralPath $personFile -Raw
+            $personContent = Get-Content -LiteralPath $personFile -Raw -Encoding UTF8
             $personContent | Should Match '## Упоминания в дневниках'
             $personContent | Should Match '\*\*2026/Июнь/01-06-26\.md\*\*'
             $personContent | Should Not Match '#Обычный'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }
@@ -170,7 +169,7 @@ name: John
         }
         finally {
             if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }
@@ -189,7 +188,7 @@ name: John
         }
         finally {
             if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }
@@ -225,7 +224,7 @@ name: John
 
             $problemFile = Join-Path $problemsDir '1. Two Sum.md'
             Test-Path -LiteralPath $problemFile | Should Be $true
-            $content = Get-Content -LiteralPath $problemFile -Raw
+            $content = Get-Content -LiteralPath $problemFile -Raw -Encoding UTF8
             $content | Should Match 'type: problem'
             $content | Should Match 'leetcode_id: 1'
             $content | Should Match '\*\*Status:\*\* Solved'
@@ -233,7 +232,7 @@ name: John
         }
         finally {
             if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }

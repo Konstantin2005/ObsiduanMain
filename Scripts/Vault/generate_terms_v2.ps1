@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$VaultPath = "C:\obsidian\Main\0E2A~1",
     [string]$VaultFull = "C:\obsidian\Main\Англиский",
     [switch]$DryRun,

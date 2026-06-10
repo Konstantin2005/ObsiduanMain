@@ -1,4 +1,4 @@
-param(
+﻿param(
     [Parameter(Mandatory=$false)]
     [string]$Date = (Get-Date -Format "yyyy-MM-dd"),
     [Parameter(Mandatory=$false)]
