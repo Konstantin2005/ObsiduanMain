@@ -113,11 +113,9 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         this.addSettingTab(new GraphSettingsTab(this.app, this));
 
         this.app.workspace.onLayoutReady(() => {
-          if (this.settings.autoOpen) {
-            void this.openBuiltInGraph().catch((error) => {
-              console.error(`[${PLUGIN_LABEL}] auto-open failed`, error);
-            });
-          }
+          void this.openBuiltInGraph(true).catch((error) => {
+            console.error(`[${PLUGIN_LABEL}] auto-open failed`, error);
+          });
         });
       } catch (error) {
         console.error(`[${PLUGIN_LABEL}] failed to load`, error);
@@ -125,7 +123,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
     }
 
-    async openBuiltInGraph() {
+    async openBuiltInGraph(showNotice = false) {
       try {
         let leaf = this.app.workspace.getLeavesOfType(GRAPH_VIEW_TYPE)[0];
         if (!leaf) {
@@ -138,6 +136,9 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         });
         if (typeof this.app.workspace.revealLeaf === "function") {
           this.app.workspace.revealLeaf(leaf);
+        }
+        if (showNotice) {
+          new Notice(`${PLUGIN_LABEL}: opened built-in Graph`);
         }
       } catch (error) {
         console.error(`[${PLUGIN_LABEL}] failed to open graph view`, error);
