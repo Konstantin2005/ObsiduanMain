@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -190,7 +189,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "32b6236491d6341e",
+  "active": "3d4caad4ab4f03b5",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/10-06-26.md",
     "Pasted image 20260611033205.png",
