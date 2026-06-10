@@ -1,12 +1,20 @@
+const path = require("path");
 const { ItemView, Plugin } = require("obsidian");
 
+const {
+  CanvasBackend,
+  GraphStoreClient,
+  buildCriticalRenderPlan,
+} = require(path.resolve(__dirname, "..", "..", "..", "..", "Scripts", "Obsidian", "graph-critical-frame.js"));
+
 const VIEW_TYPE = "calendula-ultra-graph";
-const NODE_COUNT = 20000;
 const BASE_FRAME_BUDGET_MS = 8;
 const INTERACTIVE_FRAME_BUDGET_MS = 4;
 const MAX_DEVICE_PIXEL_RATIO = 2;
 const INTERACTION_COOLDOWN_MS = 180;
 const HEALTH_UPDATE_INTERVAL_MS = 250;
+const STEADY_NODE_BUDGET = 3000;
+const STEADY_EDGE_BUDGET = 1000;
 
 function requestFrame(callback) {
   const raf = window.requestAnimationFrame || globalThis.requestAnimationFrame;
@@ -23,17 +31,8 @@ function cancelFrame(id) {
   window.clearTimeout?.(id);
 }
 
-function makeSyntheticNodes(count, width, height) {
-  const nodes = new Float32Array(count * 2);
-  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-  const maxRadius = Math.max(160, Math.min(width, height) * 0.46);
-  for (let i = 0; i < count; i += 1) {
-    const radius = maxRadius * Math.sqrt((i + 0.5) / count);
-    const angle = i * goldenAngle;
-    nodes[i * 2] = Math.cos(angle) * radius;
-    nodes[i * 2 + 1] = Math.sin(angle) * radius;
-  }
-  return nodes;
+function resolveGraphStoreRoot() {
+  return path.resolve(__dirname, "..", "..", "graph-store");
 }
 
 class UltraGraphView extends ItemView {
@@ -41,15 +40,22 @@ class UltraGraphView extends ItemView {
     super(leaf);
     this.canvas = null;
     this.ctx = null;
+    this.backend = null;
     this.statusEl = null;
     this.healthEl = null;
-    this.nodes = null;
+    this.storeClient = null;
+    this.snapshot = null;
+    this.failureState = null;
+    this.lastPlan = null;
+    this.frameStats = null;
     this.frameId = null;
+    this.localFrameId = 0;
     this.camera = { x: 0, y: 0, zoom: 1 };
     this.drag = null;
-    this.cursor = 0;
     this.drawn = 0;
     this.visited = 0;
+    this.visibleNodes = 0;
+    this.visibleEdges = 0;
     this.lastFrameAt = performance.now();
     this.fps = 0;
     this.frameBudgetMs = BASE_FRAME_BUDGET_MS;
@@ -83,24 +89,57 @@ class UltraGraphView extends ItemView {
     const shell = this.containerEl.createDiv({ cls: "calendula-ultra-shell" });
     const toolbar = shell.createDiv({ cls: "calendula-ultra-toolbar" });
     toolbar.createEl("strong", { text: "Calendula Ultra Graph" });
-    this.statusEl = toolbar.createDiv({ cls: "calendula-ultra-status", text: "warming up" });
-    this.healthEl = shell.createDiv({ cls: "calendula-ultra-health", text: "Health: warming up" });
+    this.statusEl = toolbar.createDiv({ cls: "calendula-ultra-status", text: "loading graph store" });
+    this.healthEl = shell.createDiv({ cls: "calendula-ultra-health", text: "Health: loading graph store" });
     this.canvas = shell.createEl("canvas", { cls: "calendula-ultra-canvas" });
     this.ctx = this.canvas.getContext("2d");
+    this.backend = new CanvasBackend({ canvas: this.canvas, ctx: this.ctx });
+    this.storeClient = new GraphStoreClient({ storeRoot: resolveGraphStoreRoot(), includeEdges: true });
     this.attachInput();
     this.resize();
-    this.nodes = makeSyntheticNodes(NODE_COUNT, this.canvas.width, this.canvas.height);
+    this.loadGraphSnapshot();
     this.start();
   }
 
   async onClose() {
     this.stop();
     this.detachInput();
-    this.nodes = null;
+    this.backend?.dispose();
+    this.backend = null;
+    this.storeClient = null;
+    this.snapshot = null;
+    this.failureState = null;
+    this.lastPlan = null;
+    this.frameStats = null;
     this.ctx = null;
     this.canvas = null;
     this.statusEl = null;
     this.healthEl = null;
+  }
+
+  loadGraphSnapshot() {
+    try {
+      const loaded = this.storeClient.loadSnapshot({ includeEdges: true });
+      if (!loaded.ok) {
+        this.snapshot = null;
+        this.failureState = loaded.failureState;
+        return;
+      }
+      this.snapshot = loaded.snapshot;
+      this.failureState = null;
+      this.restartProgressivePaint();
+    } catch (error) {
+      this.snapshot = null;
+      this.failureState = Object.freeze({
+        contract: "FailureState/v9.0",
+        severity: "blocking",
+        code: "STORE_CLIENT_THROW",
+        message: String(error?.message || error),
+        activeDir: null,
+        failures: Object.freeze([]),
+        cause: String(error?.stack || error),
+      });
+    }
   }
 
   resize() {
@@ -169,9 +208,10 @@ class UltraGraphView extends ItemView {
   }
 
   restartProgressivePaint() {
-    this.cursor = 0;
     this.drawn = 0;
     this.visited = 0;
+    this.visibleNodes = 0;
+    this.visibleEdges = 0;
   }
 
   start() {
@@ -190,44 +230,66 @@ class UltraGraphView extends ItemView {
     }
   }
 
+  makeFrameBudgets() {
+    if (this.mode === "emergency") {
+      return { nodeBudget: 500, edgeBudget: 0, frameBudgetMs: this.frameBudgetMs };
+    }
+    if (this.mode === "degraded") {
+      return { nodeBudget: 1200, edgeBudget: 250, frameBudgetMs: this.frameBudgetMs };
+    }
+    if (this.mode === "interactive") {
+      return { nodeBudget: 2200, edgeBudget: 0, frameBudgetMs: this.frameBudgetMs };
+    }
+    return { nodeBudget: STEADY_NODE_BUDGET, edgeBudget: STEADY_EDGE_BUDGET, frameBudgetMs: this.frameBudgetMs };
+  }
+
   renderFrame() {
-    if (!this.ctx || !this.nodes) return;
+    if (!this.ctx) return;
     const now = performance.now();
     const delta = Math.max(1, now - this.lastFrameAt);
     this.lastFrameAt = now;
     this.fps = this.fps ? this.fps * 0.9 + (1000 / delta) * 0.1 : 1000 / delta;
     this.updateFrameBudget(now);
 
-    if (this.cursor === 0) {
+    this.ctx.clearRect(0, 0, this.width, this.height);
+    this.drawBackground();
+
+    if (!this.snapshot || this.failureState) {
       this.drawn = 0;
       this.visited = 0;
-      this.ctx.clearRect(0, 0, this.width, this.height);
-      this.drawBackground();
+      this.visibleNodes = 0;
+      this.visibleEdges = 0;
+      this.updateStatus();
+      this.updateHealthPanel(now);
+      return;
     }
 
-    const start = performance.now();
-    const centerX = this.width / 2;
-    const centerY = this.height / 2;
-    const zoom = this.camera.zoom;
-    const radius = zoom < 0.45 ? 1.1 : 1.8;
-    this.ctx.fillStyle = zoom < 0.45 ? "rgba(96, 180, 255, 0.52)" : "rgba(96, 180, 255, 0.74)";
-    this.ctx.beginPath();
-
-    const stride = this.renderStride;
-    while (this.cursor < NODE_COUNT && performance.now() - start < this.frameBudgetMs) {
-      const x = (this.nodes[this.cursor * 2] - this.camera.x) * zoom + centerX;
-      const y = (this.nodes[this.cursor * 2 + 1] - this.camera.y) * zoom + centerY;
-      this.cursor += stride;
-      this.visited += stride;
-      if (x < -8 || x > this.width + 8 || y < -8 || y > this.height + 8) continue;
-      this.ctx.rect(x - radius, y - radius, radius * 2, radius * 2);
-      this.drawn += 1;
+    this.localFrameId += 1;
+    const plan = buildCriticalRenderPlan({
+      snapshot: this.snapshot,
+      camera: {
+        x: this.camera.x,
+        y: this.camera.y,
+        width: this.width,
+        height: this.height,
+        zoom: this.camera.zoom,
+      },
+      budgets: this.makeFrameBudgets(),
+      frameId: this.localFrameId,
+      profileId: "calendula-ultra-v9",
+      mode: this.mode,
+      reason: this.degradationReason,
+    });
+    this.lastPlan = plan;
+    this.frameStats = this.backend.draw(plan);
+    if (this.frameStats.failureState) {
+      this.failureState = this.frameStats.failureState;
     }
-    this.ctx.fill();
 
-    if (this.cursor >= NODE_COUNT) {
-      this.cursor = 0;
-    }
+    this.drawn = this.frameStats.drawn.nodes;
+    this.visited = this.snapshot.nodeCount;
+    this.visibleNodes = plan.nodes.length;
+    this.visibleEdges = plan.edges.length;
     this.updateStatus();
     this.updateHealthPanel(now);
   }
@@ -264,18 +326,34 @@ class UltraGraphView extends ItemView {
   }
 
   getHealthSnapshot() {
+    const stats = this.frameStats;
     return Object.freeze({
-      nodeCount: NODE_COUNT,
+      nodeCount: this.snapshot?.nodeCount || 0,
+      edgeCount: this.snapshot?.edgeCount || 0,
+      visibleNodes: this.visibleNodes,
+      visibleEdges: this.visibleEdges,
       drawn: this.drawn,
-      visited: Math.min(NODE_COUNT, this.visited),
-      cursor: this.cursor,
+      visited: this.visited,
       fps: Number(this.fps.toFixed(1)),
       mode: this.mode,
-      reason: this.degradationReason,
+      reason: this.failureState?.code || this.degradationReason,
       frameBudgetMs: Number(this.frameBudgetMs.toFixed(2)),
       renderStride: this.renderStride,
       zoom: Number(this.camera.zoom.toFixed(3)),
       devicePixelRatio: Math.max(1, Math.min(MAX_DEVICE_PIXEL_RATIO, window.devicePixelRatio || 1)),
+      timingsMs: Object.freeze({
+        renderPlan: Number(stats?.timingsMs?.renderPlan || 0),
+        visibleSet: Number(stats?.timingsMs?.visibleSet || 0),
+        edgeBatch: Number(stats?.timingsMs?.edgeBatch || 0),
+        draw: Number(stats?.timingsMs?.draw || 0),
+      }),
+      failure: this.failureState
+        ? Object.freeze({
+            severity: this.failureState.severity,
+            code: this.failureState.code,
+            message: this.failureState.message,
+          })
+        : null,
     });
   }
 
@@ -289,8 +367,16 @@ class UltraGraphView extends ItemView {
 
   updateStatus() {
     if (!this.statusEl) return;
+    if (this.failureState) {
+      this.statusEl.setText(`store failure | ${this.failureState.severity} | ${this.failureState.code}`);
+      return;
+    }
+    const nodeCount = this.snapshot?.nodeCount || 0;
+    const edgeCount = this.snapshot?.edgeCount || 0;
+    const planMs = Number(this.frameStats?.timingsMs?.renderPlan || 0).toFixed(2);
+    const drawMs = Number(this.frameStats?.timingsMs?.draw || 0).toFixed(2);
     this.statusEl.setText(
-      `synthetic ${NODE_COUNT.toLocaleString()} nodes | drawn ${this.drawn.toLocaleString()} | zoom ${this.camera.zoom.toFixed(2)} | ${this.fps.toFixed(0)} fps | ${this.mode} | budget ${this.frameBudgetMs.toFixed(1)}ms | stride ${this.renderStride}`,
+      `real ${nodeCount.toLocaleString()} nodes / ${edgeCount.toLocaleString()} edges | visible ${this.visibleNodes.toLocaleString()} nodes, ${this.visibleEdges.toLocaleString()} edges | zoom ${this.camera.zoom.toFixed(2)} | ${this.fps.toFixed(0)} fps | ${this.mode} | plan ${planMs}ms | draw ${drawMs}ms`,
     );
   }
 
@@ -298,8 +384,9 @@ class UltraGraphView extends ItemView {
     if (!this.healthEl || now - this.lastHealthUpdateAt < HEALTH_UPDATE_INTERVAL_MS) return;
     this.lastHealthUpdateAt = now;
     const health = this.getHealthSnapshot();
+    const failure = health.failure ? ` | failure ${health.failure.severity}/${health.failure.code}` : "";
     this.healthEl.setText(
-      `Health: ${health.mode} (${health.reason}) | budget ${health.frameBudgetMs}ms | stride ${health.renderStride} | visited ${health.visited.toLocaleString()}/${health.nodeCount.toLocaleString()} | DPR ${health.devicePixelRatio}`,
+      `Health: ${health.mode} (${health.reason}) | budget ${health.frameBudgetMs}ms | stride ${health.renderStride} | visible ${health.visibleNodes.toLocaleString()}/${health.nodeCount.toLocaleString()} | edges ${health.visibleEdges.toLocaleString()} | plan ${health.timingsMs.renderPlan}ms | draw ${health.timingsMs.draw}ms | DPR ${health.devicePixelRatio}${failure}`,
     );
   }
 }
