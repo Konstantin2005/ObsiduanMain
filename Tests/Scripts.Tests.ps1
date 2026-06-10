@@ -579,7 +579,7 @@ Describe 'Calendula-20K rendering profile' {
         try {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const fs = require('fs');
   const path = require('path');
   const root = path.join(__REPO_ROOT__, 'Calendula-20K');
@@ -1245,6 +1245,9 @@ Describe 'Calendula Evidence Engine v12' {
 
             $output = & node $scriptPath 2>&1
 
+            if ($LASTEXITCODE -ne 0) {
+                throw ($output -join [Environment]::NewLine)
+            }
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'evidence-engine:v12-ok'
         }
