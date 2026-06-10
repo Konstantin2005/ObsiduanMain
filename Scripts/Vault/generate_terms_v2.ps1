@@ -1,5 +1,13 @@
-$vaultPath = "C:\obsidian\Main\0E2A~1"
-$vaultFull = "C:\obsidian\Main\Англиский"
+param(
+    [string]$VaultPath = "C:\obsidian\Main\0E2A~1",
+    [string]$VaultFull = "C:\obsidian\Main\Англиский",
+    [switch]$DryRun,
+    [int]$MaxWords = 0
+)
+
+$ErrorActionPreference = 'Stop'
+$vaultPath = $VaultPath
+$vaultFull = $VaultFull
 
 $abstractions = @{
     "Emotion" = @("positive_emotions", "negative_emotions")
@@ -289,6 +297,7 @@ $abstractionNames = @($abstractions.Keys)
 $abstractionNamesLower = $abstractionNames | ForEach-Object { $_.ToLower() }
 
 $rng = [System.Random]::new(42)
+$generatedWords = 0
 
 foreach ($cat in $words.Keys) {
     $availableAbstractions = @()
@@ -307,17 +316,26 @@ foreach ($cat in $words.Keys) {
         $pool = @($availableAbstractions)
         for ($i = 0; $i -lt $count -and $pool.Count -gt 0; $i++) {
             $idx = $rng.Next(0, $pool.Count)
-        $selected += $pool[$idx]
-        $pool = @($pool | Where-Object { $_ -ne $pool[$idx] })
+            $selected += $pool[$idx]
+            $pool = @($pool | Where-Object { $_ -ne $pool[$idx] })
         }
         $wordToAbstractions[$w] = $selected
+        $generatedWords++
+        if ($MaxWords -gt 0 -and $generatedWords -ge $MaxWords) {
+            break
+        }
+    }
+    if ($MaxWords -gt 0 -and $generatedWords -ge $MaxWords) {
+        break
     }
 }
 $abstractionFiles = $abstractionNames | ForEach-Object { $_ + ".md" }
 $oldFiles = Get-ChildItem -LiteralPath $vaultPath -Filter "*.md" | Where-Object { $_.Name -notin $abstractionFiles }
 
 foreach ($f in $oldFiles) {
-    Remove-Item -LiteralPath $f.FullName -Force
+    if (-not $DryRun) {
+        Remove-Item -LiteralPath $f.FullName -Force
+    }
 }
 
 $count = 0
@@ -339,7 +357,9 @@ foreach ($word in ($wordToAbstractions.Keys | Sort-Object)) {
 
     $content = $lines -join "`n"
     $fileName = "$vaultPath\$word.md"
-    [System.IO.File]::WriteAllText($fileName, $content, [System.Text.Encoding]::UTF8)
+    if (-not $DryRun) {
+        [System.IO.File]::WriteAllText($fileName, $content, [System.Text.Encoding]::UTF8)
+    }
 
     $count++
     if ($count % 100 -eq 0) {

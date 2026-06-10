@@ -216,6 +216,23 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         .filter((file) => !file.path.startsWith("."));
     }
 
+    getLinkedMarkdownFiles(files) {
+      const resolved = this.plugin.app.metadataCache.resolvedLinks || {};
+      const fileSet = new Set(files.map((file) => file.path));
+      const linkedPaths = new Set();
+
+      for (const file of files) {
+        const outgoing = resolved[file.path] || {};
+        for (const target of Object.keys(outgoing)) {
+          if (target === file.path || !fileSet.has(target)) continue;
+          linkedPaths.add(file.path);
+          linkedPaths.add(target);
+        }
+      }
+
+      return files.filter((file) => linkedPaths.has(file.path));
+    }
+
     makeSample(files, maxNodes, forceReseed) {
       const existingPaths = new Set(this.sample.map((file) => file.path));
       const byPath = new Map(files.map((file) => [file.path, file]));
@@ -325,14 +342,21 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         return;
       }
 
+      const linkedFiles = this.getLinkedMarkdownFiles(files);
+      if (linkedFiles.length < 2) {
+        this.showEmpty("No linked notes found.");
+        this.svgEl.innerHTML = "";
+        return;
+      }
+
       const rect = this.graphEl.getBoundingClientRect();
       const width = Math.max(700, Math.floor(rect.width || 1000));
       const height = Math.max(460, Math.floor(rect.height || 700));
       this.svgEl.setAttribute("viewBox", `0 0 ${width} ${height}`);
       this.svgEl.innerHTML = "";
 
-      const maxNodes = Math.min(this.plugin.settings.maxNodes, files.length);
-      const sample = this.makeSample(files, maxNodes, forceReseed);
+      const maxNodes = Math.min(this.plugin.settings.maxNodes, linkedFiles.length);
+      const sample = this.makeSample(linkedFiles, maxNodes, forceReseed);
       const sampleSignature = sample.map((file) => file.path).join("|");
       const { edges, degree, signature } = this.buildEdges(sample);
 
