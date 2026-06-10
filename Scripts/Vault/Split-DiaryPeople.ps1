@@ -4,10 +4,10 @@
 .DESCRIPTION
   Scans markdown diary files, counts unique person wikilinks like [[Danil]],
   and when the count is greater than the threshold, creates a new note with the
-  people-related blocks moved into it.
+  whole block where the threshold is exceeded and every block after it.
 
   Default output file name format:
-    03.3-06-2026.md
+    03.03-06-26.md
   where the leading number is the amount of unique people mentions in that note.
 #>
 
@@ -49,20 +49,17 @@ function Split-IntoBlocks {
         Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
 }
 
-function Test-BlockHasPerson {
+function Get-BlockMentions {
     param(
-        [string]$Block,
-        [System.Collections.Generic.HashSet[string]]$PersonNames
+        [string]$Block
     )
 
-    foreach ($name in $PersonNames) {
-        $escaped = [Regex]::Escape($name)
-        if ($Block -match "\[\[$escaped\]\]") {
-            return $true
-        }
+    $names = New-Object System.Collections.Generic.HashSet[string]
+    foreach ($match in [Regex]::Matches($Block, '\[\[([^\]]+)\]\]')) {
+        [void]$names.Add($match.Groups[1].Value.Trim())
     }
 
-    return $false
+    return $names
 }
 
 function Get-SplitFileName {
@@ -76,14 +73,14 @@ function Get-SplitFileName {
 
     if ($baseName -match '(\d{4}-\d{2}-\d{2})') {
         $date = [datetime]::ParseExact($matches[1], 'yyyy-MM-dd', $null)
-        $datePart = $date.ToString('d-MM-yyyy')
+        $datePart = $date.ToString('dd-MM-yy')
     }
     elseif ($baseName -match '(\d{1,2})-(\d{1,2})-(\d{2,4})') {
         $day = [int]$matches[1]
         $month = [int]$matches[2]
         $yearText = $matches[3]
         $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
-        $datePart = ('{0}-{1:00}-{2}' -f $day, $month, $year)
+        $datePart = ('{0:00}-{1:00}-{2:00}' -f $day, $month, ($year % 100))
     }
 
     return ('{0:D2}.{1}.md' -f $PeopleCount, $datePart)
@@ -104,16 +101,31 @@ foreach ($file in $files) {
     if ($people.Count -le $Threshold) { continue }
 
     $blocks = Split-IntoBlocks -Text $content
-    $personBlocks = New-Object System.Collections.Generic.List[string]
-    $otherBlocks = New-Object System.Collections.Generic.List[string]
+    $splitStartIndex = $null
+    $seenNames = New-Object System.Collections.Generic.HashSet[string]
 
-    foreach ($block in $blocks) {
-        if (Test-BlockHasPerson -Block $block -PersonNames $people) {
-            [void]$personBlocks.Add($block)
-        } else {
-            [void]$otherBlocks.Add($block)
+    for ($i = 0; $i -lt $blocks.Count; $i++) {
+        $blockNames = Get-BlockMentions -Block $blocks[$i]
+        foreach ($name in $blockNames) {
+            [void]$seenNames.Add($name)
+        }
+
+        if ($seenNames.Count -gt $Threshold) {
+            $splitStartIndex = $i
+            break
         }
     }
+
+    if ($null -eq $splitStartIndex) {
+        continue
+    }
+
+    $originalBlocks = @()
+    if ($splitStartIndex -gt 0) {
+        $originalBlocks = $blocks[0..($splitStartIndex - 1)]
+    }
+
+    $splitBlocks = $blocks[$splitStartIndex..($blocks.Count - 1)]
 
     $splitFileName = Get-SplitFileName -SourceFile $file -PeopleCount $people.Count
     $splitPath = Join-Path ([System.IO.Directory]::GetParent($file).FullName) $splitFileName
@@ -125,12 +137,10 @@ foreach ($file in $files) {
         "threshold: $Threshold"
         "---"
         ""
-        "# People split"
-        ""
-        ($personBlocks -join "`n`n")
+        ($splitBlocks -join "`n`n")
     ) -join "`n"
 
-    $updatedOriginal = $otherBlocks -join "`n`n"
+    $updatedOriginal = $originalBlocks -join "`n`n"
 
     Write-Host ""
     Write-Host "File: $file"

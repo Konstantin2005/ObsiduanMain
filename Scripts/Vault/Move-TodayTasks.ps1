@@ -25,7 +25,7 @@ if (-not (Test-Path -LiteralPath $filePath)) {
 }
 
 $rawContent = Read-Utf8Text -Path $filePath
-$lines = Split-Lines $rawContent
+$lines = @((Split-Lines $rawContent))
 $todayTag = "@{$Date}"
 
 $zRange = Get-SectionRange -Lines $lines -Heading "Запланировано"

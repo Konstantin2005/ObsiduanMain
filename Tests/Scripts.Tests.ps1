@@ -8,7 +8,7 @@ function New-TempRoot {
 }
 
 Describe 'Scripts' {
-    Describe 'VaultHelpers' {
+    Context 'VaultHelpers' {
         It 'maps month numbers to Russian names' {
             Get-MonthName -Month 6 | Should Be 'Июнь'
         }
@@ -313,7 +313,7 @@ name: John
 
             Write-Utf8Text -Path $mainNote -Content 'main'
             Write-Utf8Text -Path $numberedNote -Content 'numbered'
-            Write-Utf8Text -Path $conflict -Content 'conflict'
+            New-Item -ItemType Directory -Path $conflict -Force | Out-Null
 
             { & (Join-Path $repoRoot 'Scripts\Vault\Normalize-DayNoteNumbers.ps1') -VaultPath $root -DiaryRoot $diaryRoot } | Should Throw
         }

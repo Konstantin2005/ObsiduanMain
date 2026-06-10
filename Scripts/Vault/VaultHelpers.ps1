@@ -66,8 +66,8 @@ function Get-TrailingNewline {
 
 function Get-SectionRange {
     param(
-        [Parameter(Mandatory = $true)][string[]]$Lines,
-        [Parameter(Mandatory = $true)][string]$Heading
+        [string[]]$Lines,
+        [string]$Heading
     )
 
     $start = $null
