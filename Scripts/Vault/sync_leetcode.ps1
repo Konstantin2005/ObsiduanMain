@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$ProblemsDir = (Join-Path $VaultPath "Problems"),
     [string]$CachePath = (Join-Path $VaultPath "Tasks\leetcode_problems_cache.json"),
