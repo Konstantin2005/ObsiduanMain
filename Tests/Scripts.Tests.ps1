@@ -886,7 +886,7 @@ Describe 'Calendula-20K rendering profile' {
         }
     }
 
-    It 'loads the ultra graph plugin with budgeted canvas rendering and cleanup' {
+    It 'loads the ultra graph plugin with real graph store rendering and cleanup' {
         $root = New-TempRoot
         try {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
@@ -907,6 +907,8 @@ Describe 'Calendula-20K rendering profile' {
   let now = 0;
   let rectCalls = 0;
   let fillCalls = 0;
+  let lineCalls = 0;
+  let strokeCalls = 0;
   let removedCanvasListeners = 0;
 
   global.performance = {
@@ -924,6 +926,9 @@ Describe 'Calendula-20K rendering profile' {
     fillRect() {},
     beginPath() {},
     rect() { rectCalls += 1; },
+    moveTo() { lineCalls += 1; },
+    lineTo() { lineCalls += 1; },
+    stroke() { strokeCalls += 1; },
     fill() { fillCalls += 1; },
   };
 
@@ -1057,20 +1062,24 @@ Describe 'Calendula-20K rendering profile' {
 
     const view = viewFactory({});
     await view.onOpen();
-    if (!(view.nodes instanceof Float32Array) || view.nodes.length !== 40000) throw new Error('Expected 20K synthetic node coordinates');
+    if (!view.snapshot || view.snapshot.nodeCount < 30000) throw new Error(`Expected real graph snapshot, got ${JSON.stringify(view.failureState)}`);
+    if (view.snapshot.arrays.nodePathStrings) throw new Error('Critical first frame should not load string arrays');
     if (resizeHandlers.size !== 1) throw new Error(`Expected one resize handler, got ${resizeHandlers.size}`);
 
     const firstFrame = frameQueue.shift();
     if (typeof firstFrame !== 'function') throw new Error('No animation frame was scheduled');
     firstFrame();
 
-    if (view.cursor <= 0 || view.cursor >= 20000) throw new Error(`Expected chunked progressive draw cursor, got ${view.cursor}`);
+    if (view.visibleNodes <= 0 || view.visibleNodes > 3000) throw new Error(`Expected budgeted real visible nodes, got ${view.visibleNodes}`);
+    if (view.visibleEdges > 1000) throw new Error(`Expected small idle edge budget, got ${view.visibleEdges}`);
     if (rectCalls <= 0 || fillCalls <= 0) throw new Error('Expected batched canvas draw calls');
-    if (!/synthetic 20[\s,.]?000 nodes/.test(view.statusEl.textContent)) {
+    if (!/real [\d\s,.]+ nodes/.test(view.statusEl.textContent)) {
       throw new Error(`Unexpected status text: ${view.statusEl.textContent}`);
     }
     const steadyHealth = view.getHealthSnapshot();
     if (!Object.isFrozen(steadyHealth)) throw new Error('Health snapshot should be frozen');
+    if (steadyHealth.nodeCount < 30000 || steadyHealth.visibleNodes <= 0) throw new Error(`Expected real health counts, got ${JSON.stringify(steadyHealth)}`);
+    if (steadyHealth.timingsMs.renderPlan <= 0) throw new Error(`Expected render plan timings, got ${JSON.stringify(steadyHealth.timingsMs)}`);
     if (steadyHealth.mode !== 'steady' || steadyHealth.renderStride !== 1) {
       throw new Error(`Expected steady health mode, got ${JSON.stringify(steadyHealth)}`);
     }
@@ -1172,6 +1181,90 @@ Describe 'Calendula graph store' {
 
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'graph-store:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula Critical Real Frame contracts' {
+    It 'loads a shallow GraphSnapshot, builds an immutable RenderPlan, and degrades bad stores safely' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const fs = require('fs');
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(tempRoot, 'Vault');
+  const outRoot = path.join(tempRoot, 'graph-store');
+  fs.mkdirSync(vaultRoot, { recursive: true });
+  fs.writeFileSync(path.join(vaultRoot, 'A.md'), 'type: diary\n[[B]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'B.md'), 'type: person\n[[C]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'C.md'), 'type: diary\n[[A]]\n', 'utf8');
+
+  const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
+  const critical = require(path.join(repoRoot, 'Scripts/Obsidian/graph-critical-frame.js'));
+
+  const graph = store.buildGraph(vaultRoot);
+  store.writeStore(vaultRoot, outRoot, graph);
+  store.writeStore(vaultRoot, outRoot, graph);
+
+  const client = new critical.GraphStoreClient({ storeRoot: outRoot, includeEdges: true });
+  const loaded = client.loadSnapshot();
+  if (!loaded.ok) throw new Error(`Expected snapshot load, got ${JSON.stringify(loaded.failureState)}`);
+  const snapshot = loaded.snapshot;
+  if (!Object.isFrozen(snapshot) || !Object.isFrozen(snapshot.arrays)) throw new Error('GraphSnapshot should be frozen');
+  if (!(snapshot.arrays.nodeIds instanceof Uint32Array)) throw new Error('Expected node id array');
+  if (!(snapshot.arrays.nodeTypes instanceof Uint16Array)) throw new Error('Expected node type array');
+  if (!(snapshot.arrays.nodeFlags instanceof Uint32Array)) throw new Error('Expected node flag array');
+  if (!(snapshot.arrays.layoutX instanceof Float32Array) || !(snapshot.arrays.layoutY instanceof Float32Array)) throw new Error('Expected layout arrays');
+  if (snapshot.arrays.nodePathStrings || snapshot.arrays.nodeBasenameStrings) throw new Error('Critical snapshot must not load strings');
+  if (snapshot.validation.errors.length !== 0) throw new Error(`Unexpected shallow validation errors: ${snapshot.validation.errors.join(',')}`);
+
+  const plan = critical.buildCriticalRenderPlan({
+    snapshot,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    budgets: { nodeBudget: 2, edgeBudget: 1, frameBudgetMs: 16 },
+    frameId: 42,
+  });
+  if (!Object.isFrozen(plan) || !Object.isFrozen(plan.budgets) || !Object.isFrozen(plan.skipped)) throw new Error('RenderPlan should be frozen');
+  if (plan.contract !== 'RenderPlan/v9.0') throw new Error(`Unexpected plan contract: ${plan.contract}`);
+  if (plan.nodes.length > 2 || plan.edges.length > 1) throw new Error('Critical plan exceeded node/edge budget');
+  if (plan.labels.length !== 0 || plan.skipReasons.LABELS_DISABLED_FIRST_FRAME === undefined) throw new Error('First frame must disable labels with aggregate reason');
+  if (Array.isArray(plan.skipReasons)) throw new Error('Skip reasons must be aggregate object, not per-object records');
+
+  const nullStats = new critical.NullBackend().draw(plan);
+  if (nullStats.contract !== 'FrameStats/v9.0') throw new Error(`Unexpected FrameStats contract: ${nullStats.contract}`);
+  if (!Object.isFrozen(nullStats) || nullStats.counts.nodes !== plan.nodes.length) throw new Error('NullBackend should return aggregate frozen stats');
+
+  const missing = new critical.GraphStoreClient({ storeRoot: path.join(tempRoot, 'missing-store') }).loadSnapshot();
+  if (missing.ok || missing.failureState.severity !== 'blocking') throw new Error(`Missing store should block safely, got ${JSON.stringify(missing)}`);
+
+  const manifest = JSON.parse(fs.readFileSync(path.join(outRoot, 'graph.manifest.json'), 'utf8'));
+  fs.writeFileSync(path.join(outRoot, 'graph.current', manifest.files.nodesIds), 'bad-current', 'utf8');
+  const recovered = client.loadSnapshot();
+  if (!recovered.ok || !recovered.recoveredFromPrevious || recovered.snapshot.activeDir !== 'graph.previous') {
+    throw new Error(`Expected previous-store recovery, got ${JSON.stringify(recovered.failureState || recovered)}`);
+  }
+
+  process.stdout.write(`critical-frame:ok ${JSON.stringify({ nodes: plan.nodes.length, edges: plan.edges.length, recovered: recovered.recoveredFromPrevious })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'critical-frame-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'critical-frame:ok'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
