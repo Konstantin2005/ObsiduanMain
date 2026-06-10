@@ -81,3 +81,4 @@
 - Evidence benchmark: `50K` evidence records `41.687ms`, `50K` decisions `42.107ms`, mentions/edges `12.493ms`, total `96.287ms`, generated edges `15,000`.
 - Pester status after `V12-S1A`: `43 passed, 0 failed`.
 - Added v13 Trust-Aware Storage Indexer plan after review: storage indexing now prioritizes trust states, versioned note records, rename detection, resolver cache invalidation, published/staging isolation, cache recovery states, and Node indexing tests over optimistic `path + size + mtime` assumptions.
+- Added v14 Incremental Graph Compiler plan after review: v13 remains the warm-index trust layer, while v14 adds operation logs, trust reason/action codes, read amplification budgets, record address tables, shard manifests, dependency indexes, resolver compilation, post-build manifest verification, partial success policy, indexing modes, and external/plugin parity tests.

@@ -2,6 +2,8 @@
 
 Status values: `TODO`, `DOING`, `DONE`, `BUG`, `REGRESSION`, `BLOCKED`.
 
+Evolution note: v13 remains the warm-index and trust-model layer. It makes cached indexing safer, but it is still allowed to materialize a full snapshot from cached records. The next layer, `v14 Incremental Graph Compiler`, adds dependency tracking, operation logs, read amplification budgets, record addressing, and publish verification so the system can update graph facts rather than rebuild every derived structure.
+
 ## Main Verdict
 
 The previous storage-indexing plan had the right direction:
