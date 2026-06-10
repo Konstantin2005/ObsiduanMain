@@ -9,7 +9,7 @@ source: consolidated-mini-diaries
 
 - date_key: 2026-06-05
 
-- mini_source: 05.5-06-26.md
+- mini_source: 05.4-06-26.md
 - source: 05.5-06-2026.md
 - people_count: 5
 - threshold: 4
@@ -58,12 +58,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-13.2.md
+## 2026-05-13.1.md
 
 - date_key: 2026-05-13
 
-- mini_source: 2026-05-13.2.md
-- source: 2026-05-13.2.md
+- mini_source: 2026-05-13.1.md
+- source: 2026-05-13.1.md
 - people_count: 5
 - threshold: 4
 
@@ -84,12 +84,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-31.2.md
+## 2026-05-31.1.md
 
 - date_key: 2026-05-31
 
-- mini_source: 2026-05-31.2.md
-- source: 2026-05-31.2.md
+- mini_source: 2026-05-31.1.md
+- source: 2026-05-31.1.md
 - people_count: 5
 - threshold: 4
 
@@ -101,12 +101,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-07.3.md
+## 2026-05-07.2.md
 
 - date_key: 2026-05-07
 
-- mini_source: 2026-05-07.3.md
-- source: 2026-05-07.3.md
+- mini_source: 2026-05-07.2.md
+- source: 2026-05-07.2.md
 - people_count: 5
 - threshold: 4
 
@@ -118,12 +118,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-22.2.md
+## 2026-05-22.1.md
 
 - date_key: 2026-05-22
 
-- mini_source: 2026-05-22.2.md
-- source: 2026-05-22.2.md
+- mini_source: 2026-05-22.1.md
+- source: 2026-05-22.1.md
 - people_count: 6
 - threshold: 4
 
@@ -144,12 +144,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-16.2.md
+## 2026-05-16.1.md
 
 - date_key: 2026-05-16
 
-- mini_source: 2026-05-16.2.md
-- source: 2026-05-16.2.md
+- mini_source: 2026-05-16.1.md
+- source: 2026-05-16.1.md
 - people_count: 7
 - threshold: 4
 
@@ -177,12 +177,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-15.2.md
+## 2026-05-15.1.md
 
 - date_key: 2026-05-15
 
-- mini_source: 2026-05-15.2.md
-- source: 2026-05-15.2.md
+- mini_source: 2026-05-15.1.md
+- source: 2026-05-15.1.md
 - people_count: 8
 - threshold: 4
 
@@ -213,12 +213,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-17.2.md
+## 2026-05-17.1.md
 
 - date_key: 2026-05-17
 
-- mini_source: 2026-05-17.2.md
-- source: 2026-05-17.2.md
+- mini_source: 2026-05-17.1.md
+- source: 2026-05-17.1.md
 - people_count: 9
 - threshold: 4
 

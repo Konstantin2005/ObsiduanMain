@@ -129,7 +129,7 @@ foreach ($group in $groups) {
     })
     $mainNote = $mainExists | Select-Object -First 1
 
-    $startIndex = if ($mainExists.Count -gt 0) { 2 } else { 1 }
+    $startIndex = 1
     $ordered = @($groupNotes | Sort-Object Number, BaseName)
     $style = if ($mainNote -and $mainNote.PatternKind -eq 'MainYearFirst') {
         'Suffix'
@@ -146,7 +146,8 @@ foreach ($group in $groups) {
             $dayText = ('{0:00}' -f [int]$note.DayText)
             $newBaseName = ('{0}-{1}-{2}.{3}.md' -f $note.YearText, $note.MonthText, $dayText, $newPrefix)
         } else {
-            $newBaseName = ('{0:00}.{1}-{2}-{3}.md' -f $newPrefix, $note.DayText, $note.MonthText, $note.YearText)
+            $dayText = ('{0:00}' -f [int]$note.DayText)
+            $newBaseName = ('{0}.{1}-{2}-{3}.md' -f $dayText, $newPrefix, $note.MonthText, $note.YearText)
         }
 
         if ($newBaseName -eq ($note.BaseName + ".md")) {
@@ -178,8 +179,7 @@ foreach ($item in $renamePlan) {
     [System.IO.File]::Move($item.OldPath, $item.NewPath)
 }
 
-$markdownFiles = Get-ChildItem -LiteralPath $VaultPath -Recurse -File -Filter "*.md" |
-    Where-Object { $_.FullName -ne $archivePath }
+$markdownFiles = Get-ChildItem -LiteralPath $VaultPath -Recurse -File -Filter "*.md"
 
 foreach ($file in $markdownFiles) {
     $original = [System.IO.File]::ReadAllText($file.FullName, $utf8)
