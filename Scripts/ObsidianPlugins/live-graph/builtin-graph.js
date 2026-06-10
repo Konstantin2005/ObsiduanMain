@@ -283,6 +283,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         return "Equalize";
       case "regrow":
         return "Regrow";
+      case "cascade-one":
+        return "To One";
       default:
         return "Prune Hubs";
     }
@@ -296,6 +298,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         return "Push highly connected notes down until the graph feels even.";
       case "regrow":
         return "Restore the latest detached batch and let the graph breathe back in.";
+      case "cascade-one":
+        return "Gradually reduce every note to one connected link, then bring the links back.";
       default:
         return "Remove links from the most connected notes first.";
     }
@@ -585,7 +589,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
 
       const mode = this.settings.cycleMode || "prune-heavy";
-      if (mode === "regrow") {
+      if (mode === "regrow" || mode === "cascade-one") {
         return [];
       }
 
@@ -610,6 +614,28 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         return overloaded.slice(0, batchSize);
       }
       return ranked.slice(0, batchSize);
+    }
+
+    async chooseCascadeCandidates() {
+      const files = shuffle(this.app.vault.getMarkdownFiles().filter((file) => !file.path.startsWith(".")));
+      const ranked = [];
+      for (const file of files) {
+        const { text, links } = await this.readFileLinkStats(file);
+        const connectedLinks = links.filter((link) => this.resolveLinkedTarget(file, link));
+        if (connectedLinks.length <= 1) continue;
+        ranked.push({
+          path: file.path,
+          original: text,
+          links: connectedLinks,
+          linkCount: connectedLinks.length,
+          detached: this.detachOneLink(text, "cascade-one", connectedLinks),
+        });
+      }
+
+      return ranked.sort((left, right) => {
+        if (left.linkCount !== right.linkCount) return right.linkCount - left.linkCount;
+        return left.path.localeCompare(right.path);
+      });
     }
 
     detachOneLink(text, mode, links = null) {
@@ -694,6 +720,23 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       liveToggle.addEventListener("click", async () => {
         await this.setLiveMovement(!this.settings.autoCycleLinks);
       });
+
+      if (!view) {
+        const modeSetting = new Setting(containerEl)
+          .setName("\u0420\u0435\u0436\u0438\u043c")
+          .setDesc("\u041f\u043b\u0430\u0432\u043d\u043e \u0443\u0431\u0438\u0440\u0430\u0435\u0442 \u043b\u0438\u0448\u043d\u0438\u0435 \u0441\u0441\u044b\u043b\u043a\u0438 \u0434\u043e \u043e\u0434\u043d\u043e\u0439, \u0430 \u043f\u043e\u0442\u043e\u043c \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0438\u0445 \u043e\u0431\u0440\u0430\u0442\u043d\u043e.");
+        modeSetting.addDropdown((dropdown) =>
+          dropdown
+            .addOption("prune-heavy", "Prune hubs")
+            .addOption("equalize", "Equalize")
+            .addOption("regrow", "Regrow")
+            .addOption("cascade-one", "To one")
+            .setValue(this.settings.cycleMode)
+            .onChange(async (value) => {
+              await this.setCycleMode(value);
+            }),
+        );
+      }
     }
 
     async recordDetachedBatch(files) {
@@ -765,6 +808,45 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           if (this.stopRequested) break;
           const batchSize = Math.max(1, Number(this.settings.batchSize) || 5);
           const mode = this.settings.cycleMode || "prune-heavy";
+          if (mode === "cascade-one") {
+            const drainHoldMs = Math.max(0, Number(this.settings.detachHoldMs) || 0);
+            let drainedAny = false;
+            while (!this.stopRequested) {
+              const candidates = await this.chooseCascadeCandidates();
+              if (!candidates.length) {
+                break;
+              }
+
+              for (const snapshot of candidates) {
+                const file = this.app.vault.getAbstractFileByPath(snapshot.path);
+                if (!file) continue;
+                const current = await this.app.vault.read(file);
+                if (current !== snapshot.original) continue;
+                await this.app.vault.modify(file, snapshot.detached);
+              }
+
+              await this.recordDetachedBatch(candidates);
+              await this.openLifePanel();
+              completed += 1;
+              drainedAny = true;
+
+              if (!(await sleepWithStop(drainHoldMs, () => this.stopRequested))) {
+                break;
+              }
+            }
+
+            if (!drainedAny) {
+              break;
+            }
+            if (this.stopRequested) break;
+            if (!(await sleepWithStop(Math.max(0, Number(this.settings.restoreHoldMs) || 0), () => this.stopRequested))) {
+              break;
+            }
+            await this.recoverFromBuffer(false);
+            await this.refreshPanelViews();
+            break;
+          }
+
           if (mode === "regrow") {
             const regrown = await this.recoverFromBuffer(true);
             if (!regrown || this.stopRequested) return completed;
