@@ -1423,6 +1423,156 @@ Describe 'Calendula Incremental Graph Compiler v14' {
     }
 }
 
+Describe 'Calendula Autonomous Graph Build Runtime v16' {
+    It 'schedules, estimates, throttles, quality-gates, and remembers builds' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const fs = require('fs');
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const runtime = require(path.join(root, 'Scripts/Obsidian/graph-build-runtime.js'));
+
+  const intent = runtime.createBuildIntent({
+    buildId: 'build-v16',
+    changedFiles: 10000,
+    changedBytes: 200 * 1024 * 1024,
+    totalFiles: 50000,
+    syncStorm: true,
+    userActive: true,
+  });
+
+  const scheduled = runtime.scheduleBuild({
+    intent,
+    runtime: { syncStorm: true, quietMs: 100 },
+  });
+  if (scheduled.decision !== runtime.SCHEDULER_DECISION.DELAY || !scheduled.reasons.includes('sync-storm')) {
+    throw new Error(`Expected sync storm delay, got ${JSON.stringify(scheduled)}`);
+  }
+
+  const cost = runtime.estimateBuildCost({
+    affectedFiles: intent.changedFiles,
+    affectedBytes: intent.changedBytes,
+    historySummary: { slowdownMultiplier: 1.5 },
+  });
+  if (cost.contract !== 'GraphBuildCostEstimate/v16.0' || cost.estimatedMs <= 0 || cost.estimatedReadMb !== 200) {
+    throw new Error(`Invalid cost estimate: ${JSON.stringify(cost)}`);
+  }
+
+  const governor = new runtime.AdaptiveResourceGovernor({
+    policy: { workerCount: 6, maxInFlightChunks: 12, targetChunkBytes: 8 * 1024 * 1024, maxInFlightBytes: 64 * 1024 * 1024, maxReadConcurrency: 6 },
+  });
+  const throttled = governor.observe({
+    eventLoopDelayP95: 60,
+    serializationMs: 900,
+    queuePressure: 'HIGH',
+    diskPressure: 'HIGH',
+  });
+  if (!throttled.actions.includes(runtime.RESOURCE_ACTION.REDUCE_WORKERS) || throttled.nextPolicy.workerCount >= 6) {
+    throw new Error(`Expected worker reduction, got ${JSON.stringify(throttled)}`);
+  }
+  if (!throttled.actions.includes(runtime.RESOURCE_ACTION.REDUCE_CHUNK_SIZE) || throttled.nextPolicy.targetChunkBytes >= 8 * 1024 * 1024) {
+    throw new Error(`Expected chunk reduction, got ${JSON.stringify(throttled)}`);
+  }
+
+  const quality = runtime.evaluateSnapshotQuality({
+    previousStats: { nodes: 1000, edges: 1000, unresolved: 0 },
+    nextStats: { nodes: 990, edges: 700, unresolved: 100 },
+    coverage: 0.9,
+    failedFiles: 5,
+  });
+  if (quality.decision !== runtime.QUALITY_DECISION.KEEP_PREVIOUS || !quality.reasons.includes('LOW_COVERAGE')) {
+    throw new Error(`Expected suspicious snapshot to keep previous, got ${JSON.stringify(quality)}`);
+  }
+
+  const goodQuality = runtime.evaluateSnapshotQuality({
+    previousStats: { nodes: 1000, edges: 1000, unresolved: 0 },
+    nextStats: { nodes: 1001, edges: 1003, unresolved: 0 },
+    coverage: 1,
+  });
+  if (goodQuality.decision !== runtime.QUALITY_DECISION.PUBLISH) {
+    throw new Error(`Expected publish for good snapshot, got ${JSON.stringify(goodQuality)}`);
+  }
+
+  const trace = new runtime.ExecutionTrace({ buildId: intent.buildId, schedulerDecision: scheduled, resourcePolicy: throttled.nextPolicy });
+  trace.record('RESOURCE_THROTTLED', { reasons: throttled.reasons });
+  trace.record('QUALITY_DECIDED', { decision: quality.decision });
+  const traceSnapshot = trace.snapshot({ quality });
+  if (traceSnapshot.eventCounts.RESOURCE_THROTTLED !== 1 || traceSnapshot.quality.decision !== runtime.QUALITY_DECISION.KEEP_PREVIOUS) {
+    throw new Error(`Trace did not record build decisions: ${JSON.stringify(traceSnapshot)}`);
+  }
+
+  const serialization = runtime.measureSerializationOverhead({ records: Array.from({ length: 100 }, (_, i) => ({ i, text: 'x'.repeat(20) })) });
+  if (serialization.bytes <= 0 || serialization.serializationMs < 0) {
+    throw new Error(`Invalid serialization measurement: ${JSON.stringify(serialization)}`);
+  }
+
+  const historyPath = path.join(tempRoot, 'build-history.jsonl');
+  const history = new runtime.BuildHistoryStore({ filePath: historyPath, maxEntries: 5 });
+  history.record({
+    buildId: intent.buildId,
+    mode: scheduled.mode,
+    workers: 8,
+    durationMs: 12000,
+    diskPressure: 'HIGH',
+    eventLoopDelayP95: 45,
+    serializationMs: 900,
+    snapshotDecision: quality.decision,
+  });
+  history.record({
+    buildId: 'build-v16-2',
+    mode: scheduled.mode,
+    workers: 6,
+    durationMs: 9000,
+    diskPressure: 'HIGH',
+    eventLoopDelayP95: 50,
+    serializationMs: 500,
+    snapshotDecision: runtime.QUALITY_DECISION.PUBLISH,
+  });
+  if (!fs.existsSync(historyPath) || fs.readFileSync(historyPath, 'utf8').trim().split(/\r?\n/).length !== 2) {
+    throw new Error('Build history JSONL was not written');
+  }
+  const recommended = history.recommend({ workerCount: 8, targetChunkBytes: 8 * 1024 * 1024 });
+  if (recommended.workerCount >= 8 || recommended.targetChunkBytes >= 8 * 1024 * 1024) {
+    throw new Error(`Expected build memory to recommend lower pressure settings, got ${JSON.stringify(recommended)}`);
+  }
+
+  const priority = runtime.buildPriorityPlan([
+    { path: 'Archive/2017.md', archive: true },
+    { path: 'Current.md', currentWorkspace: true },
+    { path: 'Backbone.md', backbone: true },
+  ]);
+  if (priority.items[0].path !== 'Current.md' || priority.items[priority.items.length - 1].path !== 'Archive/2017.md') {
+    throw new Error(`Priority queue order is wrong: ${JSON.stringify(priority)}`);
+  }
+
+  process.stdout.write(`build-runtime:v16-ok ${JSON.stringify({ decision: scheduled.decision, quality: quality.decision, workers: recommended.workerCount })}\n`);
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'build-runtime-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'build-runtime:v16-ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula graph store' {
     It 'builds an atomic graph store with forward and reverse CSR recovery' {
         $root = New-TempRoot
