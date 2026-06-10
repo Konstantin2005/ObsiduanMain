@@ -16,8 +16,19 @@
               "icon": "lucide-git-fork",
               "title": "Граф"
             }
+          },
+          {
+            "id": "20d21b3d685c3683",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -176,7 +187,7 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "cb1a52c74fbc87b1",
+  "active": "20d21b3d685c3683",
   "lastOpenFiles": [
     "Calendula/Люди/Познакомились/Сано.md",
     "Calendula/Люди/Познакомились/TED.md",
