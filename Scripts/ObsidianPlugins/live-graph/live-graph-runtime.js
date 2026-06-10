@@ -1359,9 +1359,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     async openNativeGraph() {
       try {
         let leaf = this.app.workspace.getLeavesOfType(NATIVE_GRAPH_VIEW_TYPE)[0];
-        if (!leaf) {
-          leaf = this.app.workspace.getLeaf(true);
-        }
+        if (!leaf) return;
         await leaf.setViewState({
           type: NATIVE_GRAPH_VIEW_TYPE,
           active: true,
@@ -1384,13 +1382,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       try {
         let leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
-        if (!leaf) {
-          const rightLeaf =
-            typeof this.app.workspace.getRightLeaf === "function"
-              ? this.app.workspace.getRightLeaf(false)
-              : null;
-          leaf = rightLeaf || this.app.workspace.getLeaf(true);
-        }
+        if (!leaf) return;
         await leaf.setViewState({ type: VIEW_TYPE, active: true });
         if (typeof this.app.workspace.revealLeaf === "function") {
           this.app.workspace.revealLeaf(leaf);
