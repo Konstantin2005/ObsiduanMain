@@ -26,6 +26,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     autoOpen: true,
     maxNodes: 64,
     tickMs: 1600,
+    liveMotion: true,
+    motionIntensity: 0.85,
+    motionTether: 0.06,
+    motionNoise: 0.22,
     keepRatio: 0.72,
     randomEdgeRatio: 0.18,
     maxRandomEdges: 24,
@@ -496,9 +500,73 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         const y = existing
           ? clamp(existing.y + (Math.random() - 0.5) * jitter, margin, height - margin)
           : 80 + Math.random() * (height - 160);
-        next.set(file.path, { x, y });
+        next.set(file.path, {
+          x,
+          y,
+          vx: existing?.vx ?? (Math.random() - 0.5) * 0.8,
+          vy: existing?.vy ?? (Math.random() - 0.5) * 0.8,
+          homeX: existing?.homeX ?? x,
+          homeY: existing?.homeY ?? y,
+          phase: existing?.phase ?? Math.random() * Math.PI * 2,
+          life: existing?.life ?? Math.random() < 0.68,
+        });
       }
       this.positions = next;
+    }
+
+    advanceNodeMotion(sample, degree, width, height, profile) {
+      if (!this.plugin.settings.liveMotion || this.paused) return;
+      const intensity = Math.max(0, Number(this.plugin.settings.motionIntensity) || 0);
+      const tether = Math.max(0, Number(this.plugin.settings.motionTether) || 0);
+      const noise = Math.max(0, Number(this.plugin.settings.motionNoise) || 0);
+      const margin = profile ? profile.positionMargin : 46;
+      const now = Date.now() / 1000;
+      const focusX = width * (0.5 + Math.sin(now * 0.28) * 0.26);
+      const focusY = height * (0.5 + Math.cos(now * 0.19 + 0.8) * 0.2);
+
+      for (const file of sample) {
+        const pos = this.positions.get(file.path);
+        if (!pos) continue;
+
+        if (typeof pos.homeX !== "number") pos.homeX = pos.x;
+        if (typeof pos.homeY !== "number") pos.homeY = pos.y;
+        if (typeof pos.vx !== "number") pos.vx = 0;
+        if (typeof pos.vy !== "number") pos.vy = 0;
+        if (typeof pos.phase !== "number") pos.phase = Math.random() * Math.PI * 2;
+        if (typeof pos.life !== "boolean") pos.life = Math.random() < 0.68;
+
+        const degreeWeight = clamp((degree.get(file.path) || 0) / Math.max(1, sample.length), 0, 1);
+        const lifeWeight = pos.life ? 1 : 0.35;
+        const wander = intensity * lifeWeight;
+        const wave = Math.sin(now * 0.9 + pos.phase);
+        const swirl = Math.cos(now * 0.7 + pos.phase * 1.7);
+        const cursorDx = pos.x - focusX;
+        const cursorDy = pos.y - focusY;
+        const cursorDistance = Math.hypot(cursorDx, cursorDy) || 1;
+        const cursorRadius = 170;
+        if (cursorDistance < cursorRadius) {
+          const cursorForce = ((cursorRadius - cursorDistance) / cursorRadius) * (0.45 + wander * 0.45);
+          pos.vx += (cursorDx / cursorDistance) * cursorForce;
+          pos.vy += (cursorDy / cursorDistance) * cursorForce;
+        }
+
+        pos.vx += (pos.homeX - pos.x) * tether;
+        pos.vy += (pos.homeY - pos.y) * tether;
+        pos.vx += wave * wander * (1.2 + degreeWeight) * 0.12;
+        pos.vy += swirl * wander * (1.2 - degreeWeight * 0.4) * 0.12;
+        pos.vx += (Math.random() - 0.5) * noise * 0.14;
+        pos.vy += (Math.random() - 0.5) * noise * 0.14;
+
+        const maxSpeed = 1.2 + wander * 2.2;
+        pos.vx = clamp(pos.vx * 0.92, -maxSpeed, maxSpeed);
+        pos.vy = clamp(pos.vy * 0.92, -maxSpeed, maxSpeed);
+
+        pos.x = clamp(pos.x + pos.vx, margin, width - margin);
+        pos.y = clamp(pos.y + pos.vy, margin, height - margin);
+
+        if (pos.x <= margin || pos.x >= width - margin) pos.vx *= -0.8;
+        if (pos.y <= margin || pos.y >= height - margin) pos.vy *= -0.8;
+      }
     }
 
     getTextColor() {
@@ -986,6 +1054,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       }
 
       this.ensurePositions(this.sample, width, height, forceReseed, profile);
+      this.advanceNodeMotion(this.sample, degree, width, height, profile);
       const disabledKeys = this.disabledKeysForCycle(profile);
       this.drawCanvasGraphOptimized(width, height, this.sample, edges, degree, disabledKeys, profile);
       this.showEmpty("");
@@ -1047,6 +1116,44 @@ module.exports = function createLiveGraphPlugin(obsidian) {
             .setDynamicTooltip()
             .onChange(async (value) => {
               this.plugin.settings.tickMs = value;
+              await this.plugin.saveSettings();
+            }),
+        );
+
+      new Setting(containerEl)
+        .setName("Living motion")
+        .setDesc("Let notes drift and breathe on their own between graph updates.")
+        .addToggle((toggle) =>
+          toggle.setValue(this.plugin.settings.liveMotion).onChange(async (value) => {
+            this.plugin.settings.liveMotion = value;
+            await this.plugin.saveSettings();
+          }),
+        );
+
+      new Setting(containerEl)
+        .setName("Motion intensity")
+        .setDesc("How strongly the notes wander on their own.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(0, 2, 0.05)
+            .setValue(this.plugin.settings.motionIntensity)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.plugin.settings.motionIntensity = value;
+              await this.plugin.saveSettings();
+            }),
+        );
+
+      new Setting(containerEl)
+        .setName("Motion tether")
+        .setDesc("How strongly each note returns to its own home position.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(0, 0.2, 0.005)
+            .setValue(this.plugin.settings.motionTether)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.plugin.settings.motionTether = value;
               await this.plugin.saveSettings();
             }),
         );
