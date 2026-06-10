@@ -30,8 +30,16 @@ function Get-DiaryFiles {
     [System.IO.Directory]::GetFiles($Root, "*.md", [System.IO.SearchOption]::AllDirectories) |
         Where-Object {
             $name = [System.IO.Path]::GetFileNameWithoutExtension($_)
-            $name -notmatch '^\d{4}$' -and
-            $name -notmatch '^\d{2}\.\d+-.+$'
+            if ($name -match '^\d{4}$' -or $name -match '^\d{2}\.\d+-.+$') {
+                return $false
+            }
+
+            $head = [System.IO.File]::ReadAllText($_, [System.Text.UTF8Encoding]::new($false))
+            if ($head -match '(?m)^chunk_index:\s*\d+\s*$') {
+                return $false
+            }
+
+            return $true
         }
 }
 
