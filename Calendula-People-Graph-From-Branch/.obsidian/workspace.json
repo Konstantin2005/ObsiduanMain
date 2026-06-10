@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "fa21431de093809c",
+    "type": "split",
+    "children": [
+      {
+        "id": "e55916e09c9be826",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb1a52c74fbc87b1",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6e8082d81dce68e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "c24ec44591e8acf1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a19b0f19013c9e13",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "ebfca535e7a90109",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "73fe8a4aae78c099",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4b89321ca4c833cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "bade7d969dcfc3e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "326535861b8b8e88",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки"
+            }
+          },
+          {
+            "id": "16a1d39a39c33a34",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки"
+            }
+          },
+          {
+            "id": "ece21c4b6a916255",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "77653c70c71b3f00",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "4b2a943ef38e7e8d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "cb1a52c74fbc87b1",
+  "lastOpenFiles": [
+    "Calendula/Calendula/2030/Октябрь/30-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/29-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/28-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/27-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/26-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/25-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/24-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/23-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/22-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/21-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/20-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/19-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/18-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/17-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/16-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/15-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/14-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/13-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/12-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/11-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/10-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/09-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/08-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/07-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/06-10-30.md",
+    "Calendula/Calendula/2030/Октябрь/05-10-30.md",
+    "Calendula/Calendula/2030/Октябрь",
+    "Calendula/Calendula/2030/Ноябрь",
+    "Calendula/Calendula/2030/Март",
+    "Calendula/Calendula/2030/Май",
+    "Calendula/Calendula/2030/Июнь",
+    "Calendula/Calendula/2030/Июль",
+    "Calendula/Calendula/2030/Декабрь",
+    "Calendula/Calendula/2030/Апрель",
+    "Calendula/Calendula/2030/Август",
+    "Calendula/Calendula/2030"
+  ]
+}
