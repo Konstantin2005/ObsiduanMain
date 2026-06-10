@@ -14,6 +14,24 @@ function Get-NoteMeta {
     $baseName = [System.IO.Path]::GetFileNameWithoutExtension($Path)
     $directory = [System.IO.Path]::GetDirectoryName($Path)
 
+    if ($baseName -match '^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})\.(?<number>\d{1,2})$') {
+        $yearText = $matches.year
+        $year = [int]$yearText
+
+        return [pscustomobject]@{
+            Path = $Path
+            Directory = $directory
+            BaseName = $baseName
+            IsNumbered = $true
+            PatternKind = 'Suffix'
+            Number = [int]$matches.number
+            DayText = $matches.day
+            MonthText = $matches.month
+            YearText = $yearText
+            DateKey = ('{0:0000}-{1:00}-{2:00}' -f $year, [int]$matches.month, [int]$matches.day)
+        }
+    }
+
     if ($baseName -match '^(?<prefix>\d{1,2})\.(?<day>\d{1,2})-(?<month>\d{1,2})-(?<year>\d{2,4})$') {
         $yearText = $matches.year
         $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
@@ -23,7 +41,26 @@ function Get-NoteMeta {
             Directory = $directory
             BaseName = $baseName
             IsNumbered = $true
-            Prefix = [int]$matches.prefix
+            PatternKind = 'Prefix'
+            Number = [int]$matches.prefix
+            DayText = $matches.day
+            MonthText = $matches.month
+            YearText = $yearText
+            DateKey = ('{0:0000}-{1:00}-{2:00}' -f $year, [int]$matches.month, [int]$matches.day)
+        }
+    }
+
+    if ($baseName -match '^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})$') {
+        $yearText = $matches.year
+        $year = [int]$yearText
+
+        return [pscustomobject]@{
+            Path = $Path
+            Directory = $directory
+            BaseName = $baseName
+            IsNumbered = $false
+            PatternKind = 'MainYearFirst'
+            Number = $null
             DayText = $matches.day
             MonthText = $matches.month
             YearText = $yearText
@@ -40,7 +77,8 @@ function Get-NoteMeta {
             Directory = $directory
             BaseName = $baseName
             IsNumbered = $false
-            Prefix = $null
+            PatternKind = 'MainDayFirst'
+            Number = $null
             DayText = $matches.day
             MonthText = $matches.month
             YearText = $yearText
@@ -89,14 +127,26 @@ foreach ($group in $groups) {
     $mainExists = @($allNotes | Where-Object {
         (-not $_.IsNumbered) -and $_.Directory -eq $groupNotes[0].Directory -and $_.DateKey -eq $groupNotes[0].DateKey
     })
+    $mainNote = $mainExists | Select-Object -First 1
 
     $startIndex = if ($mainExists.Count -gt 0) { 2 } else { 1 }
-    $ordered = @($groupNotes | Sort-Object Prefix, BaseName)
+    $ordered = @($groupNotes | Sort-Object Number, BaseName)
+    $style = if ($mainNote -and $mainNote.PatternKind -eq 'MainYearFirst') {
+        'Suffix'
+    } elseif ($mainNote) {
+        'Prefix'
+    } else {
+        $ordered[0].PatternKind
+    }
 
     for ($i = 0; $i -lt $ordered.Count; $i++) {
         $note = $ordered[$i]
         $newPrefix = $startIndex + $i
-        $newBaseName = ('{0:00}.{1}-{2}-{3}.md' -f $newPrefix, $note.DayText, $note.MonthText, $note.YearText)
+        if ($style -eq 'Suffix') {
+            $newBaseName = ('{0}-{1}-{2}.{3}.md' -f $note.YearText, $note.MonthText, $note.DayText, $newPrefix)
+        } else {
+            $newBaseName = ('{0:00}.{1}-{2}-{3}.md' -f $newPrefix, $note.DayText, $note.MonthText, $note.YearText)
+        }
 
         if ($newBaseName -eq ($note.BaseName + ".md")) {
             continue

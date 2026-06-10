@@ -11,23 +11,14 @@
             "id": "de72db943b4e717e",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "План/2026/2026 - Июнь.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Финансы/README.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "2026 - Июнь"
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -187,6 +178,19 @@
   },
   "active": "de72db943b4e717e",
   "lastOpenFiles": [
+    "Финансы/Days/2026-06-19.md",
+    "Финансы/Days/2026-06-17.md",
+    "Финансы/Days/2026-06-13.md",
+    "Финансы/Days/2026-06-11.md",
+    "Финансы/Days/2026-06-10.md",
+    "Финансы/Days/2026-06-09.md",
+    "Финансы/Days/2026-06-08.md",
+    "Excalidraw/pichers/Pasted Image 20260609231556_859.png",
+    "Excalidraw/pichers/Pasted Image 20260609231219_906.png",
+    "Excalidraw/pichers/Pasted Image 20260609231156_502.png",
+    "Excalidraw/pichers/Pasted Image 20260609230527_198.png",
+    "Excalidraw/pichers/Pasted Image 20260609231013_778.png",
+    "План/2026/2026 - Июнь.md",
     "Calendula/2026/Июнь/02-06-26.md",
     "Calendula/2026/Июнь/1.5-06-26.md",
     "Calendula/2026/Июнь/01-06-26.md",
@@ -205,19 +209,6 @@
     "Calendula/2026/Июнь/08-06-26.md",
     "Calendula/2026/Июнь/07.9-06-26.md",
     "Calendula/2026/Июнь/07-06-26.md",
-    "Calendula/2026/Июнь/07.5-06-26.md",
-    "Calendula/2026/Июнь/07.9-06-2026.md",
-    "Calendula/2026/Июнь/05.5-06-2026.md",
-    "King.md",
-    "Calendula/2026/Май/09.17-05-26.md",
-    "Calendula/2026/Май/08.15-05-26.md",
-    "Calendula/2026/Май/07.16-05-26.md",
-    "Calendula/2026/Май/06.22-05-26.md",
-    "Pasted Image 20260609231219_906.png",
-    "Pasted Image 20260609231556_859.png",
-    "Pasted Image 20260609231156_502.png",
-    "Pasted Image 20260609231013_778.png",
-    "Pasted Image 20260609230527_198.png",
     "Финансы/Summaries",
     "Финансы/Scripts/собрать-год.ps1",
     "Финансы/Scripts/создать-дни-год.ps1",
