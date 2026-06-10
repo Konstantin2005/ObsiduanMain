@@ -162,8 +162,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -172,8 +172,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -182,8 +182,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -192,8 +192,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -202,8 +202,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -212,8 +212,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -222,8 +222,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -232,8 +232,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -242,8 +242,8 @@
             "state": {
               "type": "life-panel",
               "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
+              "icon": "lucide-ghost",
+              "title": "life-panel"
             }
           },
           {
@@ -252,12 +252,22 @@
             "state": {
               "type": "life-panel",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "life-panel"
+            }
+          },
+          {
+            "id": "a3dcb31bf9dbcd6e",
+            "type": "leaf",
+            "state": {
+              "type": "live-graph-view",
+              "state": {},
               "icon": "activity",
-              "title": "Жизнь"
+              "title": "Live Graph"
             }
           }
         ],
-        "currentTab": 14
+        "currentTab": 15
       }
     ],
     "direction": "horizontal",
@@ -265,16 +275,16 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "live-graph:Open Live Graph": false,
       "switcher:Меню быстрого перехода": false,
       "obsidianella-delink:Copy delinked note": false,
       "graph:Граф": false,
       "command-palette:Открыть палитру команд": false,
       "obsidian-kanban:Создать новую доску": false,
-      "obsidian-excalidraw-plugin:Создать новый чертеж": false,
-      "live-graph:Open Жизнь panel": false
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "03eda48af3c1cecf",
+  "active": "a3dcb31bf9dbcd6e",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/07.1-06-26.md",
