@@ -43,26 +43,25 @@ for (let c = 0; c < circleDirs.length; c++) {
     const dayFile = path.join(dayRoot, String(d.getUTCFullYear()), monthName(d), `${dayName(d)}.md`);
     ensureDir(path.dirname(dayFile));
 
+    const nextCircle = circleDirs[(c + 1) % circleDirs.length];
     const content = [
       `# ${name}`,
       '',
       `Круг: ${circle}`,
-      `День: [[Calendula/${d.getUTCFullYear()}/${monthName(d)}/${dayName(d)}|${dayName(d)}]]`,
-      `Связь: [[Люди/${other}/${`Доп${((c + 1) % circleDirs.length) + 1}_${pad(i, 4)}`}|соседний круг]]`,
+      `День: [[Calendula/Calendula/${d.getUTCFullYear()}/${monthName(d)}/${dayName(d)}|${dayName(d)}]]`,
+      `Связь: [[Calendula/Люди/${nextCircle}/${`Доп${((c + 1) % circleDirs.length) + 1}_${pad(i, 4)}`}|соседний круг]]`,
       '',
     ].join('\r\n');
 
     fs.writeFileSync(path.join(dir, `${name}.md`), content, 'utf8');
 
-    const dayContent = [
-      `[[Люди/${circle}/${name}|${name}]]`,
-      `[[Люди/${other}/${`Доп${((c + 1) % circleDirs.length) + 1}_${pad(i, 4)}`}|${name}-${other}]]`,
-      '',
-    ].join('\r\n');
+    const dayLinks = circleDirs.map((circleName, idx) => {
+      const person = idx === c ? name : `Доп${idx + 1}_${pad(i, 4)}`;
+      return `[[Calendula/Люди/${circleName}/${person}|${person}]]`;
+    }).join('\r\n');
+    const dayContent = `${dayLinks}\r\n`;
 
-    if (!fs.existsSync(dayFile)) {
-      fs.writeFileSync(dayFile, dayContent, 'utf8');
-    }
+    fs.writeFileSync(dayFile, dayContent, 'utf8');
   }
 }
 
@@ -73,7 +72,11 @@ for (let i = 0; i < dayCount; i++) {
     ensureDir(path.dirname(dayFile));
     const circle = circleDirs[i % circleDirs.length];
     const name = `Доп${(i % circleDirs.length) + 1}_${pad((i % totalPerCircle) + 1, 4)}`;
-    fs.writeFileSync(dayFile, `[[Люди/${circle}/${name}|${name}]]\r\n`, 'utf8');
+    const links = circleDirs.map((circleName, idx) => {
+      const person = `Доп${idx + 1}_${pad(((i + idx) % totalPerCircle) + 1, 4)}`;
+      return `[[Calendula/Люди/${circleName}/${person}|${person}]]`;
+    }).join('\r\n');
+    fs.writeFileSync(dayFile, `${links}\r\n`, 'utf8');
   }
 }
 
@@ -90,4 +93,3 @@ fs.writeFileSync(path.join(root, 'Люди.md'), [
   '- [[Calendula-People-Graph/Calendula/Люди|People graph: Люди]]',
   '- [[Calendula-People-Graph-From-Branch/Calendula/Люди|Branch graph: Люди]]',
 ].join('\r\n'), 'utf8');
-
