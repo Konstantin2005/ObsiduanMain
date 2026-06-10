@@ -27,3 +27,6 @@
 - Completed repeatable benchmark tooling: `Measure-CalendulaGraphPerformance.ps1` + Node JSON report.
 - Pester status after benchmark tooling: `34 passed, 0 failed`.
 - Real Calendula-20K benchmark: `33,900` nodes, `35,948` edges, `0` unresolved, graph build `1854.11ms`, store write `38.18ms`, render plan `9.54ms`, scheduler `7.72ms`.
+- Replaced v7 execution plan with v8 Complex Graph Systems Plan after review.
+- v7 is now marked superseded; active first slice is `V8-S1 Contracted Real Renderer`.
+- New v8 standard: contract, budget, benchmark, fallback, and reason code for every production feature.

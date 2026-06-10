@@ -48,3 +48,14 @@ Status values: `TODO`, `DOING`, `DONE`, `BUG`, `REGRESSION`, `BLOCKED`.
 | --- | --- | --- | --- |
 | GP-M001 | Repeatable performance benchmark | DONE | temp-store benchmark validates graph store, render plan, scheduler, and outputs JSON |
 | TEST-M005 | Benchmark and safety tests | DONE | Pester covers safety policy and benchmark wrapper |
+
+## Active Next Plan
+
+The next active plan is `v8 Complex Graph Systems Plan`.
+
+| ID | Task | Status | Done Criteria |
+| --- | --- | --- | --- |
+| V8-S1 | Contracted Real Renderer | TODO | real graph opens through contracts, validation, backend boundary, benchmark, reason codes |
+| V8-0 | Contract layer | TODO | GraphStoreClient, GraphSnapshot, RenderPlan, BudgetPolicy, FailureState, Benchmark schema |
+| V8-1 | Real Data Canvas | TODO | real nodes draw from Graph Store with validation and viewport visible set |
+| V8-2 | Degradation Ladder | TODO | L0-L6 fallback ladder with incident logging |
