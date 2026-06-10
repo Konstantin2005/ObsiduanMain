@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Calendula/2026/Июнь/07-06-26.md",
+                "file": "Calendula/2026/Июнь/07.1-06-26.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-06-26"
+              "title": "07.1-06-26"
             }
           }
         ]
@@ -48,16 +48,6 @@
             }
           },
           {
-            "id": "e88fdffd1c08380b",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
             "id": "00b5e93228fbda91",
             "type": "leaf",
             "state": {
@@ -84,8 +74,7 @@
               "title": "Поиск"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -180,6 +169,16 @@
               "icon": "lucide-git-fork",
               "title": "Граф"
             }
+          },
+          {
+            "id": "e88fdffd1c08380b",
+            "type": "leaf",
+            "state": {
+              "type": "life-panel",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
           }
         ],
         "currentTab": 5
@@ -201,8 +200,8 @@
   },
   "active": "b5517bbc85ce0e4e",
   "lastOpenFiles": [
-    "Calendula/2026/Июнь/07-06-26.md",
     "Calendula/2026/Июнь/07.1-06-26.md",
+    "Calendula/2026/Июнь/07-06-26.md",
     "Calendula/2026/Май/02.1-05-26.md",
     "Calendula/2026/Май/07-05-26.md",
     "Calendula/2026/Июнь/08-06-26.md",

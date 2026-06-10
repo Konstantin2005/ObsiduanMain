@@ -1,5 +1,5 @@
 module.exports = function createBuiltInGraphPlugin(obsidian) {
-  const { ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon } = obsidian;
+  const { ItemView, Plugin, PluginSettingTab, Setting, setIcon } = obsidian;
 
   const PLUGIN_LABEL = "\u0416\u0438\u0437\u043d\u044c";
   const PANEL_VIEW_TYPE = "life-panel";
@@ -15,6 +15,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     detachHoldMs: 15000,
     restoreHoldMs: 5000,
     bufferLimit: 12,
+    cycleMode: "prune-heavy",
   };
 
   function svgEl(tag, attrs = {}) {
@@ -174,6 +175,20 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         padding-top: 0.55em;
         padding-bottom: 0.55em;
       }
+      .life-panel-banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .life-panel-pill {
+        border-radius: 999px;
+        padding: 5px 10px;
+        border: 1px solid var(--background-modifier-border);
+        background: var(--background-primary);
+        font-size: 0.8em;
+      }
     `;
     document.head.appendChild(style);
   }
@@ -274,6 +289,19 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     return "Gentle";
   }
 
+  function pickModeLabel(mode) {
+    switch (mode) {
+      case "prune-heavy":
+        return "Prune Hubs";
+      case "equalize":
+        return "Equalize";
+      case "regrow":
+        return "Regrow";
+      default:
+        return "Prune Hubs";
+    }
+  }
+
   class LifePanelView extends ItemView {
     constructor(leaf, plugin) {
       super(leaf);
@@ -320,7 +348,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       const metrics = hero.createDiv({ cls: "life-panel-metrics" });
       metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Tempo</span><span class="life-panel-metric-value">${pickTempoLabel(this.plugin.settings)}</span>`;
       metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Batch</span><span class="life-panel-metric-value">${this.plugin.settings.batchSize}</span>`;
-      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Pulse</span><span class="life-panel-metric-value">${this.plugin.settings.pulseCount}</span>`;
+      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Mode</span><span class="life-panel-metric-value">${pickModeLabel(this.plugin.settings.cycleMode)}</span>`;
       this.refreshStatus();
 
       const controls = this.rootEl.createDiv({ cls: "life-panel-card" });
@@ -355,15 +383,15 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       const presetDefs = [
         {
           label: "Gentle",
-          settings: { batchSize: 2, pulseCount: 2, detachHoldMs: 15000, restoreHoldMs: 8000, cycleIntervalMs: 420000 },
+          settings: { cycleMode: "equalize", batchSize: 2, pulseCount: 2, detachHoldMs: 15000, restoreHoldMs: 8000, cycleIntervalMs: 420000 },
         },
         {
           label: "Balanced",
-          settings: { batchSize: 5, pulseCount: 3, detachHoldMs: 15000, restoreHoldMs: 5000, cycleIntervalMs: 300000 },
+          settings: { cycleMode: "prune-heavy", batchSize: 5, pulseCount: 3, detachHoldMs: 15000, restoreHoldMs: 5000, cycleIntervalMs: 300000 },
         },
         {
           label: "Lively",
-          settings: { batchSize: 8, pulseCount: 5, detachHoldMs: 9000, restoreHoldMs: 2500, cycleIntervalMs: 180000 },
+          settings: { cycleMode: "regrow", batchSize: 8, pulseCount: 5, detachHoldMs: 9000, restoreHoldMs: 2500, cycleIntervalMs: 180000 },
         },
       ];
       for (const preset of presetDefs) {
@@ -379,6 +407,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           this.plugin.refreshPanelViews();
         });
       }
+
+      const banner = controls.createDiv({ cls: "life-panel-banner" });
+      banner.createDiv({ cls: "life-panel-pill", text: `Mode: ${pickModeLabel(this.plugin.settings.cycleMode)}` });
+      banner.createDiv({ cls: "life-panel-pill", text: `Hold: ${formatMs(this.plugin.settings.detachHoldMs)} / ${formatMs(this.plugin.settings.restoreHoldMs)}` });
 
       this.plugin.renderSettingsBlock(this.rootEl, this);
     }
@@ -595,6 +627,80 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           view.render();
         }
       }
+    }
+
+    async readFileLinkStats(file) {
+      const text = await this.app.vault.read(file);
+      return {
+        text,
+        links: extractWikiLinkCandidates(text),
+      };
+    }
+
+    async chooseCandidates(batchSize) {
+      const files = shuffle(this.app.vault.getMarkdownFiles().filter((file) => !file.path.startsWith(".")));
+      const stats = [];
+      for (const file of files) {
+        const { text, links } = await this.readFileLinkStats(file);
+        if (!links.length) continue;
+        stats.push({ file, text, links, linkCount: links.length });
+      }
+
+      if (!stats.length) {
+        return [];
+      }
+
+      const mode = this.settings.cycleMode || "prune-heavy";
+      if (mode === "regrow") {
+        const detached = this.safetyBuffer.filter((entry) => entry.status === "detached");
+        if (detached.length) {
+          const newest = detached[detached.length - 1];
+          return newest.files.slice(0, batchSize);
+        }
+      }
+
+      stats.sort((left, right) => {
+        if (mode === "equalize") {
+          if (left.linkCount !== right.linkCount) return left.linkCount - right.linkCount;
+        } else {
+          if (left.linkCount !== right.linkCount) return right.linkCount - left.linkCount;
+        }
+        return left.file.path.localeCompare(right.file.path);
+      });
+
+      const chosen = [];
+      for (const item of stats) {
+        if (chosen.length >= batchSize) break;
+        chosen.push({
+          path: item.file.path,
+          original: item.text,
+          detached: this.detachOneLink(item.text, mode),
+          linkCount: item.linkCount,
+        });
+      }
+      return chosen;
+    }
+
+    detachOneLink(text, mode) {
+      const links = extractWikiLinkCandidates(text);
+      if (!links.length) return text;
+
+      let link = links[0];
+      if (mode === "prune-heavy") {
+        link = links.reduce((best, candidate) => {
+          const bestScore = best.detached.length + best.original.length;
+          const candidateScore = candidate.detached.length + candidate.original.length;
+          return candidateScore > bestScore ? candidate : best;
+        }, links[0]);
+      } else if (mode === "equalize" && links.length > 1) {
+        link = links[links.length - 1];
+      } else if (mode === "regrow") {
+        return text;
+      } else {
+        link = links[Math.floor(Math.random() * links.length)];
+      }
+
+      return replaceRange(text, link.start, link.end, link.detached);
     }
 
     renderSettingsBlock(containerEl) {
