@@ -124,6 +124,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.sample = [];
       this.edgeOrder = [];
       this.edgeCursor = 0;
+      this.sampleVaultVersion = -1;
+      this.sampleAge = 0;
+      this.cachedFiles = [];
+      this.cachedFilesVersion = -1;
       this.positions = new Map();
       this.graphEl = null;
       this.shellEl = null;
@@ -226,9 +230,26 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     getMarkdownFiles() {
-      return this.plugin.app.vault
-        .getMarkdownFiles()
-        .filter((file) => !file.path.startsWith("."));
+      const version = this.plugin.graphVersion || 0;
+      if (this.cachedFilesVersion !== version) {
+        this.cachedFiles = this.plugin.app.vault
+          .getMarkdownFiles()
+          .filter((file) => !file.path.startsWith("."));
+        this.cachedFilesVersion = version;
+      }
+      return this.cachedFiles;
+    }
+
+    randomSubset(files, maxNodes) {
+      const limit = Math.min(maxNodes, files.length);
+      const sample = files.slice(0, limit);
+      for (let i = limit; i < files.length; i += 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        if (j < limit) {
+          sample[j] = files[i];
+        }
+      }
+      return sample;
     }
 
     makeSample(files, maxNodes, forceReseed) {
@@ -236,7 +257,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       const byPath = new Map(files.map((file) => [file.path, file]));
 
       if (forceReseed || !this.sample.length) {
-        return shuffle(files).slice(0, maxNodes);
+        return this.randomSubset(files, maxNodes);
       }
 
       const keepTarget = Math.min(
@@ -251,13 +272,11 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         if (kept.length >= keepTarget) break;
       }
 
-      const rest = shuffle(files.filter((file) => !kept.some((item) => item.path === file.path)));
-      const sample = kept.concat(rest.slice(0, maxNodes - kept.length));
+      const rest = files.filter((file) => !kept.some((item) => item.path === file.path));
+      const sample = kept.concat(this.randomSubset(rest, maxNodes - kept.length));
       if (sample.length < maxNodes) {
-        const filler = shuffle(files).filter(
-          (file) => !sample.some((item) => item.path === file.path),
-        );
-        sample.push(...filler.slice(0, maxNodes - sample.length));
+        const filler = files.filter((file) => !sample.some((item) => item.path === file.path));
+        sample.push(...this.randomSubset(filler, maxNodes - sample.length));
       }
       return sample.slice(0, maxNodes);
     }
@@ -347,21 +366,26 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.svgEl.innerHTML = "";
 
       const maxNodes = Math.min(this.plugin.settings.maxNodes, files.length);
-      const sample = this.makeSample(files, maxNodes, forceReseed);
+      const vaultVersion = this.cachedFilesVersion;
+      const reseedInterval = files.length >= 5000 ? 8 : files.length >= 2000 ? 5 : 3;
+      const shouldReseed =
+        forceReseed ||
+        !this.sample.length ||
+        this.sampleVaultVersion !== vaultVersion ||
+        this.sampleAge >= reseedInterval ||
+        this.sample.length !== maxNodes;
+      const sample = shouldReseed ? this.makeSample(files, maxNodes, true) : this.sample;
       const sampleSignature = sample.map((file) => file.path).join("|");
       const { edges, degree, signature } = this.buildEdges(sample);
 
-      if (
-        forceReseed ||
-        !this.sample.length ||
-        this.sample.length !== sample.length ||
-        this.sampleSignature !== sampleSignature
-      ) {
+      if (shouldReseed || this.sampleSignature !== sampleSignature) {
         this.sample = sample;
         this.sampleSignature = sampleSignature;
         this.edgeCursor = 0;
         this.positions.clear();
       }
+      this.sampleVaultVersion = vaultVersion;
+      this.sampleAge = shouldReseed ? 0 : this.sampleAge + 1;
 
       const topologyChanged = this.edgeSignature !== signature;
       this.edgeSignature = signature;
@@ -559,6 +583,13 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         return;
       }
       this.settings = Object.assign({}, DEFAULT_SETTINGS, (await this.loadData()) || {});
+      this.graphVersion = 0;
+      const bumpGraphVersion = () => {
+        this.graphVersion += 1;
+      };
+      this.registerEvent(this.app.vault.on("create", bumpGraphVersion));
+      this.registerEvent(this.app.vault.on("delete", bumpGraphVersion));
+      this.registerEvent(this.app.vault.on("rename", bumpGraphVersion));
       this.registerView(VIEW_TYPE, (leaf) => new LiveGraphView(leaf, this));
       this.addCommand({
         id: "open-live-graph",

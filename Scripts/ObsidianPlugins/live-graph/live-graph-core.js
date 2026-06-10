@@ -78,6 +78,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.interval = null;
       this.paused = false;
       this.sample = [];
+      this.sampleVaultVersion = -1;
+      this.sampleAge = 0;
+      this.cachedFiles = [];
+      this.cachedFilesVersion = -1;
       this.positions = new Map();
       this.shellEl = null;
       this.statusEl = null;
@@ -178,10 +182,31 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       }
     }
 
+    getMarkdownFiles() {
+      const version = this.plugin.graphVersion || 0;
+      if (this.cachedFilesVersion !== version) {
+        this.cachedFiles = this.plugin.app.vault
+          .getMarkdownFiles()
+          .filter((file) => !file.path.startsWith("."));
+        this.cachedFilesVersion = version;
+      }
+      return this.cachedFiles;
+    }
+
+    randomSubset(files, maxNodes) {
+      const limit = Math.min(maxNodes, files.length);
+      const sample = files.slice(0, limit);
+      for (let i = limit; i < files.length; i += 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        if (j < limit) {
+          sample[j] = files[i];
+        }
+      }
+      return sample;
+    }
+
     renderGraph(forceReseed = false) {
-      const files = this.plugin.app.vault
-        .getMarkdownFiles()
-        .filter((file) => !file.path.startsWith("."));
+      const files = this.getMarkdownFiles();
 
       if (!files.length) {
         this.showEmpty("No markdown files found.");
@@ -197,8 +222,18 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.graphEl.removeClass("live-graph-empty-state");
 
       const maxNodes = Math.min(this.plugin.settings.maxNodes, files.length);
-      const nextSample = this.pickSample(files, maxNodes, forceReseed);
+      const vaultVersion = this.cachedFilesVersion;
+      const reseedInterval = files.length >= 5000 ? 8 : files.length >= 2000 ? 5 : 3;
+      const shouldReseed =
+        forceReseed ||
+        !this.sample.length ||
+        this.sampleVaultVersion !== vaultVersion ||
+        this.sampleAge >= reseedInterval ||
+        this.sample.length !== maxNodes;
+      const nextSample = shouldReseed ? this.pickSample(files, maxNodes, true) : this.sample;
       this.sample = nextSample;
+      this.sampleVaultVersion = vaultVersion;
+      this.sampleAge = shouldReseed ? 0 : this.sampleAge + 1;
 
       const sampleSet = new Set(nextSample.map((file) => file.path));
       const resolved = this.plugin.app.metadataCache.resolvedLinks || {};
@@ -346,7 +381,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     pickSample(files, maxNodes, forceReseed) {
       const byPath = new Map(files.map((file) => [file.path, file]));
       if (forceReseed || !this.sample.length) {
-        return shuffle(files).slice(0, maxNodes);
+        return this.randomSubset(files, maxNodes);
       }
 
       const keepTarget = Math.min(
@@ -361,13 +396,11 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         if (kept.length >= keepTarget) break;
       }
 
-      const rest = shuffle(files.filter((file) => !kept.some((item) => item.path === file.path)));
-      const sample = kept.concat(rest.slice(0, maxNodes - kept.length));
+      const rest = files.filter((file) => !kept.some((item) => item.path === file.path));
+      const sample = kept.concat(this.randomSubset(rest, maxNodes - kept.length));
       if (sample.length < maxNodes) {
-        const filler = shuffle(files).filter(
-          (file) => !sample.some((item) => item.path === file.path),
-        );
-        sample.push(...filler.slice(0, maxNodes - sample.length));
+        const filler = files.filter((file) => !sample.some((item) => item.path === file.path));
+        sample.push(...this.randomSubset(filler, maxNodes - sample.length));
       }
       return sample;
     }
@@ -445,6 +478,13 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         return;
       }
       this.settings = Object.assign({}, DEFAULT_SETTINGS, (await this.loadData()) || {});
+      this.graphVersion = 0;
+      const bumpGraphVersion = () => {
+        this.graphVersion += 1;
+      };
+      this.registerEvent(this.app.vault.on("create", bumpGraphVersion));
+      this.registerEvent(this.app.vault.on("delete", bumpGraphVersion));
+      this.registerEvent(this.app.vault.on("rename", bumpGraphVersion));
       this.registerView(VIEW_TYPE, (leaf) => new LiveGraphView(leaf, this));
       this.addCommand({
         id: "open-live-graph",
