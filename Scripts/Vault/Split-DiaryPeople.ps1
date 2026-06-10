@@ -15,7 +15,6 @@ param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$DiaryRoot = (Join-Path $VaultPath "Calendula\Calendula"),
     [int]$Threshold = 4,
-    [switch]$MoveOverflow,
     [switch]$DryRun
 )
 
@@ -150,16 +149,10 @@ foreach ($file in $files) {
         ($overflowBlocks -join "`n`n")
     ) -join "`n"
 
-    $updatedOriginal = $keepBlocks -join "`n`n"
-
     Write-Host ""
     Write-Host "File: $file"
     Write-Host "People: $($orderedPeople.Count) -> split file: $splitPath"
-    if ($MoveOverflow) {
-        Write-Host "Mode: move overflow out of original"
-    } else {
-        Write-Host "Mode: copy overflow only, keep original intact"
-    }
+    Write-Host "Mode: copy overflow only, keep original intact"
 
     if ($DryRun) {
         Write-Host "Dry run: no files written"
@@ -167,9 +160,6 @@ foreach ($file in $files) {
     }
 
     [System.IO.File]::WriteAllText($splitPath, $splitContent, $utf8)
-    if ($MoveOverflow) {
-        [System.IO.File]::WriteAllText($file, $updatedOriginal, $utf8)
-    }
 }
 
 Write-Host ""
