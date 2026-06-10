@@ -9,36 +9,7 @@
 
 $ErrorActionPreference = "Stop"
 
-function Get-MonthName {
-    param([int]$Month)
-    switch ($Month) {
-        1 { "Январь" }
-        2 { "Февраль" }
-        3 { "Март" }
-        4 { "Апрель" }
-        5 { "Май" }
-        6 { "Июнь" }
-        7 { "Июль" }
-        8 { "Август" }
-        9 { "Сентябрь" }
-        10 { "Октябрь" }
-        11 { "Ноябрь" }
-        12 { "Декабрь" }
-    }
-}
-
-function Get-SectionRange {
-    param([string[]]$Lines, [string]$Heading)
-    $start = $null
-    $end = $null
-    for ($i = 0; $i -lt $Lines.Count; $i++) {
-        if ($Lines[$i] -match "^## $([regex]::Escape($Heading))$") { $start = $i; continue }
-        if ($start -ne $null -and $end -eq $null -and $Lines[$i] -match "^## " -and $i -gt $start) { $end = $i; break }
-    }
-    if ($start -eq $null) { return $null }
-    if ($end -eq $null) { $end = $Lines.Count }
-    return ,@($start, $end)
-}
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
 
 if ($Date -notmatch '^\d{4}-\d{2}-\d{2}$') {
     throw "Invalid date format: $Date"
@@ -53,8 +24,8 @@ if (-not (Test-Path -LiteralPath $filePath)) {
     throw "File not found: $filePath"
 }
 
-$rawContent = Get-Content -LiteralPath $filePath -Raw -Encoding UTF8
-$lines = $rawContent -split "`r?`n"
+$rawContent = Read-Utf8Text -Path $filePath
+$lines = Split-Lines $rawContent
 $todayTag = "@{$Date}"
 
 $zRange = Get-SectionRange -Lines $lines -Heading "Запланировано"
@@ -117,10 +88,10 @@ for ($i = 0; $i -lt $lines.Count; $i++) {
     }
 }
 
-$trailingNewline = if ($rawContent.EndsWith("`r`n")) { "`r`n" } elseif ($rawContent.EndsWith("`n")) { "`n" } else { "" }
+$trailingNewline = Get-TrailingNewline $rawContent
 $newContent = ($output -join "`r`n").TrimEnd() + $trailingNewline
 if (-not $DryRun) {
-    [System.IO.File]::WriteAllText($filePath, $newContent, [System.Text.UTF8Encoding]::new($false))
+    Write-Utf8Text -Path $filePath -Content $newContent
 }
 
 Write-Host "Moved $($tasksToMove.Count) task(s) from 'Запланировано' to 'Сегодня'"

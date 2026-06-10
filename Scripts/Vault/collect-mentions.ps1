@@ -12,7 +12,8 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$utf8 = [System.Text.UTF8Encoding]::new($false)
+
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
 
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
     throw "Diary path not found: $DiaryRoot"
@@ -75,7 +76,7 @@ $totalMatches = 0
 $skippedNamesOnly = 0
 
 foreach ($df in $diaryFiles) {
-    $content = [System.IO.File]::ReadAllText($df, $utf8)
+    $content = Read-Utf8Text -Path $df
     if ([string]::IsNullOrEmpty($content)) { continue }
 
     $paragraphs = [Regex]::Split($content, "(\r?\n\s*\r?\n)+")
@@ -111,7 +112,7 @@ foreach ($name in $personMap.Keys) {
     $data = $personMap[$name]
     if ($data.Mentions.Count -eq 0) { continue }
 
-    $content = [System.IO.File]::ReadAllText($data.File, $utf8)
+    $content = Read-Utf8Text -Path $data.File
     $idx = $content.IndexOf($sectionHeader)
     if ($idx -ge 0) {
         $contentBefore = $content.Substring(0, $idx).TrimEnd()
@@ -130,7 +131,7 @@ foreach ($name in $personMap.Keys) {
     $sectionText = "`n---`n$sectionHeader`n`n" + ($formatted -join "`n`n")
     $newContent = $contentBefore + $sectionText
     if (-not $DryRun) {
-        [System.IO.File]::WriteAllText($data.File, $newContent, $utf8)
+        Write-Utf8Text -Path $data.File -Content $newContent
     }
 
     $updatedPeople += [pscustomobject]@{

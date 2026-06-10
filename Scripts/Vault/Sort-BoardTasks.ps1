@@ -7,6 +7,8 @@
 
 $ErrorActionPreference = "Stop"
 
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
+
 if (-not (Test-Path -LiteralPath $KanbanDir)) {
     throw "Kanban path not found: $KanbanDir"
 }
@@ -57,7 +59,7 @@ foreach ($yearDir in $yearDirs) {
         if ($modified) {
             $newContent = ($newLines -join "`r`n").TrimEnd() + "`r`n"
             if (-not $DryRun) {
-                [System.IO.File]::WriteAllText($file.FullName, $newContent, [System.Text.UTF8Encoding]::new($false))
+                Write-Utf8Text -Path $file.FullName -Content $newContent
             }
             $moves[$file.FullName] = $fileMoves
         }
@@ -154,7 +156,7 @@ foreach ($targetPath in $incoming.Keys) {
 
     $out = ($newContent -join "`r`n").TrimEnd() + "`r`n"
     if (-not $DryRun) {
-        [System.IO.File]::WriteAllText($targetPath, $out, [System.Text.UTF8Encoding]::new($false))
+        Write-Utf8Text -Path $targetPath -Content $out
     }
 }
 
