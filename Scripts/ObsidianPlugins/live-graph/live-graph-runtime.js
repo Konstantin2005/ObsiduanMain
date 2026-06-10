@@ -706,7 +706,8 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     getFileCount() {
-      return this.app?.vault?.getMarkdownFiles?.().length || 0;
+      const files = this.app?.vault?.getMarkdownFiles?.() || [];
+      return files.length;
     }
 
     async openNativeGraph() {
