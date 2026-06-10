@@ -30,6 +30,8 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     maxRandomEdges: 24,
   };
 
+  const PLUGIN_LABEL = "Live Graph";
+
   function shuffle(items) {
     const out = items.slice();
     for (let i = out.length - 1; i > 0; i -= 1) {
@@ -469,10 +471,16 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     async openLiveGraph() {
       let leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
       if (!leaf) {
-        leaf = this.app.workspace.getRightLeaf(false) || this.app.workspace.getLeaf(true);
+        const rightLeaf =
+          typeof this.app.workspace.getRightLeaf === "function"
+            ? this.app.workspace.getRightLeaf(false)
+            : null;
+        leaf = rightLeaf || this.app.workspace.getLeaf(true);
       }
       await leaf.setViewState({ type: VIEW_TYPE, active: true });
-      this.app.workspace.revealLeaf(leaf);
+      if (typeof this.app.workspace.revealLeaf === "function") {
+        this.app.workspace.revealLeaf(leaf);
+      }
     }
 
     async saveSettings() {

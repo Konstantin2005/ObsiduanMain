@@ -1,25 +1,28 @@
 <#
 .SYNOPSIS
-  Splits diary notes by people mentions when the daily count exceeds a threshold.
+  Splits diary notes by people mentions into chunks.
 .DESCRIPTION
   Scans markdown diary files, counts unique person wikilinks like [[Danil]],
-  and when the count is greater than the threshold, creates a new note with the
-  whole block where the threshold is exceeded and every block after it.
+  and when the count is greater than the main limit, splits the note into
+  chunks. The original note keeps up to 4 unique people, and later mini notes
+  keep up to 3 unique people each.
 
   Default output file name format:
-    03.03-06-26.md
-  where the leading number is the amount of unique people mentions in that note.
+    03.07-06-26.md
+  where the leading number is the amount of unique people mentions in that chunk.
 #>
 
 param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$DiaryRoot = (Join-Path $VaultPath "Calendula\Calendula"),
     [int]$Threshold = 4,
+    [int]$MiniChunkLimit = 3,
     [switch]$DryRun
 )
 
 $ErrorActionPreference = 'Stop'
 $utf8 = [System.Text.UTF8Encoding]::new($false)
+$MainChunkLimit = $Threshold
 
 function Get-DiaryFiles {
     param([string]$Root)
@@ -27,7 +30,8 @@ function Get-DiaryFiles {
     [System.IO.Directory]::GetFiles($Root, "*.md", [System.IO.SearchOption]::AllDirectories) |
         Where-Object {
             $name = [System.IO.Path]::GetFileNameWithoutExtension($_)
-            $name -notmatch '^\d{4}$'
+            $name -notmatch '^\d{4}$' -and
+            $name -notmatch '^\d{2}\.\d{2}-\d{2}-\d{2}(?:\.\d+)?$'
         }
 }
 
@@ -50,9 +54,7 @@ function Split-IntoBlocks {
 }
 
 function Get-BlockMentions {
-    param(
-        [string]$Block
-    )
+    param([string]$Block)
 
     $names = New-Object System.Collections.Generic.HashSet[string]
     foreach ($match in [Regex]::Matches($Block, '\[\[([^\]]+)\]\]')) {
@@ -65,7 +67,8 @@ function Get-BlockMentions {
 function Get-SplitFileName {
     param(
         [string]$SourceFile,
-        [int]$PeopleCount
+        [int]$PeopleCount,
+        [int]$ChunkIndex
     )
 
     $baseName = [System.IO.Path]::GetFileNameWithoutExtension($SourceFile)
@@ -83,7 +86,11 @@ function Get-SplitFileName {
         $datePart = ('{0:00}-{1:00}-{2:00}' -f $day, $month, ($year % 100))
     }
 
-    return ('{0:D2}.{1}.md' -f $PeopleCount, $datePart)
+    if ($ChunkIndex -le 1) {
+        return ('{0:D2}.{1}.md' -f $PeopleCount, $datePart)
+    }
+
+    return ('{0:D2}.{1}.{2}.md' -f $PeopleCount, $datePart, $ChunkIndex)
 }
 
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
@@ -98,61 +105,81 @@ foreach ($file in $files) {
     if ([string]::IsNullOrWhiteSpace($content)) { continue }
 
     $people = Get-PersonMentions -Text $content
-    if ($people.Count -le $Threshold) { continue }
+    if ($people.Count -le $MainChunkLimit) { continue }
 
     $blocks = Split-IntoBlocks -Text $content
-    $splitStartIndex = $null
-    $seenNames = New-Object System.Collections.Generic.HashSet[string]
+    if ($blocks.Count -eq 0) { continue }
 
-    for ($i = 0; $i -lt $blocks.Count; $i++) {
-        $blockNames = Get-BlockMentions -Block $blocks[$i]
-        foreach ($name in $blockNames) {
-            [void]$seenNames.Add($name)
+    $chunks = New-Object System.Collections.Generic.List[object]
+    $currentBlocks = New-Object System.Collections.Generic.List[string]
+    $currentNames = New-Object System.Collections.Generic.HashSet[string]
+    $currentLimit = $MainChunkLimit
+
+    foreach ($block in $blocks) {
+        $blockNames = Get-BlockMentions -Block $block
+        $newNames = @($blockNames | Where-Object { -not $currentNames.Contains($_) })
+        $wouldExceed = (($currentNames.Count + $newNames.Count) -gt $currentLimit)
+
+        if ($wouldExceed -and $currentBlocks.Count -gt 0) {
+            [void]$chunks.Add([pscustomobject]@{
+                Blocks = @($currentBlocks)
+                PeopleCount = $currentNames.Count
+            })
+
+            $currentBlocks = New-Object System.Collections.Generic.List[string]
+            $currentNames = New-Object System.Collections.Generic.HashSet[string]
+            $currentLimit = $MiniChunkLimit
         }
 
-        if ($seenNames.Count -gt $Threshold) {
-            $splitStartIndex = $i
-            break
+        [void]$currentBlocks.Add($block)
+        foreach ($name in $blockNames) {
+            [void]$currentNames.Add($name)
         }
     }
 
-    if ($null -eq $splitStartIndex) {
+    if ($currentBlocks.Count -gt 0) {
+        [void]$chunks.Add([pscustomobject]@{
+            Blocks = @($currentBlocks)
+            PeopleCount = $currentNames.Count
+        })
+    }
+
+    if ($chunks.Count -le 1) {
         continue
     }
 
-    $originalBlocks = @()
-    if ($splitStartIndex -gt 0) {
-        $originalBlocks = $blocks[0..($splitStartIndex - 1)]
-    }
-
-    $splitBlocks = $blocks[$splitStartIndex..($blocks.Count - 1)]
-
-    $splitFileName = Get-SplitFileName -SourceFile $file -PeopleCount $people.Count
-    $splitPath = Join-Path ([System.IO.Directory]::GetParent($file).FullName) $splitFileName
-
-    $splitContent = @(
-        "---"
-        "source: $([System.IO.Path]::GetFileName($file))"
-        "people_count: $($people.Count)"
-        "threshold: $Threshold"
-        "---"
-        ""
-        ($splitBlocks -join "`n`n")
-    ) -join "`n"
-
-    $updatedOriginal = $originalBlocks -join "`n`n"
+    $updatedOriginal = $chunks[0].Blocks -join "`n`n"
 
     Write-Host ""
     Write-Host "File: $file"
-    Write-Host "People: $($people.Count) -> split file: $splitPath"
+    Write-Host "Chunks: $($chunks.Count)"
 
     if ($DryRun) {
         Write-Host "Dry run: no files written"
         continue
     }
 
-    [System.IO.File]::WriteAllText($splitPath, $splitContent, $utf8)
     [System.IO.File]::WriteAllText($file, $updatedOriginal, $utf8)
+
+    for ($chunkIndex = 1; $chunkIndex -lt $chunks.Count; $chunkIndex++) {
+        $chunk = $chunks[$chunkIndex]
+        $splitFileName = Get-SplitFileName -SourceFile $file -PeopleCount $chunk.PeopleCount -ChunkIndex $chunkIndex
+        $splitPath = Join-Path ([System.IO.Directory]::GetParent($file).FullName) $splitFileName
+        $splitContent = @(
+            "---"
+            "source: $([System.IO.Path]::GetFileName($file))"
+            "people_count: $($chunk.PeopleCount)"
+            "chunk_index: $chunkIndex"
+            "main_limit: $MainChunkLimit"
+            "mini_limit: $MiniChunkLimit"
+            "---"
+            ""
+            ($chunk.Blocks -join "`n`n")
+        ) -join "`n"
+
+        [System.IO.File]::WriteAllText($splitPath, $splitContent, $utf8)
+        Write-Host "  -> $splitPath"
+    }
 }
 
 Write-Host ""
