@@ -2547,6 +2547,24 @@ Describe 'Calendula graph benchmark tooling' {
         [int]$report.readAmplification.counters.resolverKeysRecomputed | Should Be 6
         ([int]$report.operationEvents -gt 0) | Should Be $true
     }
+
+    It 'produces a validated graph build runtime benchmark report' {
+        $output = & node (Join-Path $repoRoot 'Scripts\Obsidian\measure-graph-build-runtime.js') --changed-files 1000 --total-files 50000 --changed-mb 100 --workers 6 --event-loop-delay 45 --serialization-ms 900 --unresolved-delta 50 2>&1
+
+        $LASTEXITCODE | Should Be 0
+        $report = ($output -join [Environment]::NewLine) | ConvertFrom-Json
+        $report.ok | Should Be $true
+        $report.contract | Should Be 'GraphBuildRuntimeBenchmark/v16.0'
+        [int]$report.input.changedFiles | Should Be 1000
+        ([double]$report.timingsMs.total -ge 0) | Should Be $true
+        ([int]$report.resourcePolicy.finalWorkers -lt [int]$report.resourcePolicy.initialWorkers) | Should Be $true
+        ($report.resourcePolicy.actions -contains 'REDUCE_WORKERS') | Should Be $true
+        ($report.resourcePolicy.actions -contains 'REDUCE_CHUNK_SIZE') | Should Be $true
+        $report.qualityGate.decision | Should Be 'KEEP_PREVIOUS'
+        [int]$report.buildHistory.count | Should Be 2
+        $report.priorityPlan.firstPath | Should Be 'Calendula/Today.md'
+        ([int]$report.serializationOverhead.bytes -gt 0) | Should Be $true
+    }
 }
 
 Describe 'LiveGraph' {

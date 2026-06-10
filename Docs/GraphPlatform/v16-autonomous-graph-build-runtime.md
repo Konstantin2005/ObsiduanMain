@@ -476,6 +476,58 @@ System refuses suspicious snapshots.
 System can improve future builds.
 ```
 
+## Implementation Progress
+
+### V16-S1A Self Observing Build Runtime Foundation - DONE
+
+Implemented:
+
+- `GraphBuildIntent/v16.0`;
+- `GraphBuildSchedulerDecision/v16.0`;
+- `GraphBuildCostEstimate/v16.0`;
+- `GraphBuildExecutionTrace/v16.0`;
+- `GraphBuildResourcePolicy/v16.0`;
+- `GraphBuildRuntimeHealth/v16.0`;
+- `GraphSnapshotQualityReport/v16.0`;
+- `GraphBuildHistoryRecord/v16.0`;
+- `GraphBuildPriorityPlan/v16.0`;
+- `BuildHistoryStore` with JSONL append support;
+- `AdaptiveResourceGovernor` with event-loop, serialization, disk, memory, and queue pressure reactions;
+- suspicious snapshot quality gate with `KEEP_PREVIOUS` fallback;
+- benchmark tool: `Scripts/Obsidian/measure-graph-build-runtime.js`.
+
+Closed:
+
+- `V16-B001`: build history now gives the runtime memory across builds.
+- `V16-B002`: static worker policy now has an adaptive runtime governor.
+- `V16-B003`: serialization overhead is measured and can reduce chunk size.
+- `V16-B005`: priority plan orders current workspace/backbone/people before archives.
+- `V16-B007`: suspicious snapshot deltas now produce explicit quality decisions.
+- `V16-B008`: build memory can recommend lower worker/chunk pressure.
+
+Current benchmark baseline:
+
+```txt
+Scenario: 10K changed files, 50K total files, 1024MB changed data, 6 initial workers
+Total runtime decision layer: 2.13ms
+Scheduler: 1.117ms
+Cost estimator: 0.08ms
+Resource governor: 0.145ms
+Quality gate: 0.097ms
+Build history: 0.199ms
+Priority plan: 0.065ms
+Serialization measurement: 0.427ms
+Workers: 6 -> 4
+Snapshot decision: KEEP_PREVIOUS
+Next recommendation: workers=5, targetChunkBytes=4194304
+```
+
+Test status:
+
+```txt
+Pester: 47 passed, 0 failed
+```
+
 ## What To Lower From v15
 
 Lower priority:
@@ -600,4 +652,15 @@ V16-B005: no priority system treats current workspace and old archive equally.
 V16-B006: all-or-nothing snapshot publish blocks useful partial freshness.
 V16-B007: validation without quality score can publish suspicious graph deltas.
 V16-B008: no build history prevents real auto-tuning.
+```
+
+Closed bugs:
+
+```txt
+V16-B001: fixed in V16-S1A by BuildHistoryStore and recommendation policy.
+V16-B002: fixed in V16-S1A by AdaptiveResourceGovernor.
+V16-B003: fixed in V16-S1A by serialization overhead measurement and chunk-size reaction.
+V16-B005: fixed in V16-S1A by GraphBuildPriorityPlan.
+V16-B007: fixed in V16-S1A by GraphSnapshotQualityReport and KEEP_PREVIOUS fallback.
+V16-B008: fixed in V16-S1A by build-history JSONL records.
 ```
