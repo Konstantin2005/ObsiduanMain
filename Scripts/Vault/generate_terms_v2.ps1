@@ -2,6 +2,7 @@
     [string]$VaultPath = "C:\obsidian\Main\0E2A~1",
     [string]$VaultFull = "C:\obsidian\Main\Англиский",
     [switch]$DryRun,
+    [switch]$Force,
     [int]$MaxWords = 0
 )
 
@@ -333,6 +334,10 @@ foreach ($cat in $words.Keys) {
 }
 $abstractionFiles = $abstractionNames | ForEach-Object { $_ + ".md" }
 $oldFiles = Get-ChildItem -LiteralPath $vaultPath -Filter "*.md" | Where-Object { $_.Name -notin $abstractionFiles }
+$targetFiles = @($wordToAbstractions.Keys | Sort-Object | ForEach-Object { Join-Path $vaultPath "$_.md" })
+
+Assert-SafeBulkOperation -Operation 'generate_terms_v2 cleanup' -Root $vaultPath -TargetPaths $oldFiles -DryRun:$DryRun -Force:$Force -Destructive
+Assert-SafeBulkOperation -Operation 'generate_terms_v2 generation' -Root $vaultPath -TargetPaths $targetFiles -DryRun:$DryRun -Force:$Force -MaxWriteCount 5000
 
 foreach ($f in $oldFiles) {
     if (-not $DryRun) {
@@ -360,6 +365,7 @@ foreach ($word in ($wordToAbstractions.Keys | Sort-Object)) {
     $content = $lines -join "`n"
     $fileName = "$vaultPath\$word.md"
     if (-not $DryRun) {
+        Assert-SafeBulkOperation -Operation 'generate_terms_v2 term write' -Root $vaultPath -TargetPaths @($fileName) -DryRun:$DryRun -Force:$Force -MaxWriteCount 5000
         Write-Utf8Text -Path $fileName -Content $content -Bom
     }
 

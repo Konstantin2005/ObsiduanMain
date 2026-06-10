@@ -7,6 +7,8 @@ $ErrorActionPreference = 'Stop'
 $utf8 = [System.Text.UTF8Encoding]::new($false)
 $root = Join-Path $VaultPath "Calendula\Calendula"
 
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
+
 function Get-AllMarkdownFiles {
     param([string]$RootPath)
 
@@ -144,6 +146,7 @@ foreach ($split in $splitFiles) {
             $newText += "`r`n"
         }
         $newText += $appendText
+        Assert-SafeBulkOperation -Operation 'Restore-PeopleSplit original write' -Root $root -TargetPaths @($original.Path) -DryRun:$DryRun
         [System.IO.File]::WriteAllText($original.Path, $newText, $utf8)
     }
 

@@ -1,1 +1,10 @@
-{}
+{
+  "cssSnippets": [
+    "graph-performance"
+  ],
+  "promptDelete": false,
+  "alwaysUpdateLinks": false,
+  "showLineNumber": false,
+  "spellcheck": false,
+  "strictLineBreaks": true
+}

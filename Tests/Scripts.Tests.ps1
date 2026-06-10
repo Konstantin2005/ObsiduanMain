@@ -71,6 +71,40 @@ Describe 'Scripts' {
         It 'detects trailing newline style' {
             Get-TrailingNewline "hello`r`n" | Should Be "`r`n"
         }
+
+        It 'guards writes so they stay inside the declared root' {
+            $root = New-TempRoot
+            try {
+                $inside = Join-Path $root 'inside\note.md'
+                $outside = Join-Path ([System.IO.Directory]::GetParent($root).FullName) 'outside-note.md'
+
+                (Test-PathInsideRoot -Root $root -Path $inside) | Should Be $true
+                (Test-PathInsideRoot -Root $root -Path $outside) | Should Be $false
+                { Assert-PathInsideRoot -Root $root -Path $outside -Operation 'test operation' } | Should Throw
+            }
+            finally {
+                if (Test-Path -LiteralPath $root) {
+                    Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+                }
+            }
+        }
+
+        It 'requires Force for destructive bulk operations' {
+            $root = New-TempRoot
+            try {
+                $file = Join-Path $root 'delete-me.md'
+                Write-Utf8Text -Path $file -Content 'delete me'
+
+                { Assert-SafeBulkOperation -Operation 'test cleanup' -Root $root -TargetPaths @($file) -Destructive } | Should Throw
+                { Assert-SafeBulkOperation -Operation 'test cleanup' -Root $root -TargetPaths @($file) -Destructive -Force } | Should Not Throw
+                { Assert-SafeBulkOperation -Operation 'test cleanup' -Root $root -TargetPaths @($file) -Destructive -DryRun } | Should Not Throw
+            }
+            finally {
+                if (Test-Path -LiteralPath $root) {
+                    Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+                }
+            }
+        }
     }
 
     It 'daily-push invokes git steps in order and writes a success log' {
@@ -438,6 +472,26 @@ name: John
         }
     }
 
+    It 'generate_terms_v2 refuses destructive cleanup without Force' {
+        $root = New-TempRoot
+        try {
+            $existing = Join-Path $root 'keep.md'
+            Write-Utf8Text -Path $existing -Content 'keep'
+
+            { & (Join-Path $repoRoot 'Scripts\Vault\generate_terms_v2.ps1') -VaultPath $root -MaxWords 1 } | Should Throw
+
+            & (Join-Path $repoRoot 'Scripts\Vault\generate_terms_v2.ps1') -VaultPath $root -MaxWords 1 -Force
+
+            Test-Path -LiteralPath $existing | Should Be $false
+            (Get-ChildItem -LiteralPath $root -File -Filter '*.md').Count | Should Be 1
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
     It 'sync_leetcode generates problem notes from solved slugs and cache' {
         $root = New-TempRoot
         try {
@@ -510,6 +564,815 @@ name: John
             $result.Generated | Should Be 0
             $result.Skipped | Should Be 1
             (Read-Utf8Text -Path (Join-Path $problemsDir '1. Two Sum.md')) | Should Be 'existing'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula-20K rendering profile' {
+    It 'keeps the generated graph resolved, balanced, and startup-safe' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const fs = require('fs');
+  const path = require('path');
+  const root = path.join(__REPO_ROOT__, 'Calendula-20K');
+  const linkRe = /\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]/g;
+
+  function walk(dir) {
+    const out = [];
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        out.push(...walk(full));
+      } else if (entry.isFile() && entry.name.endsWith('.md')) {
+        out.push(full);
+      }
+    }
+    return out;
+  }
+
+  function vaultPath(file) {
+    return path.relative(root, file).replace(/\\/g, '/');
+  }
+
+  function basename(file) {
+    return path.basename(file, '.md');
+  }
+
+  const files = walk(root).filter((file) => !vaultPath(file).startsWith('.obsidian/')).sort();
+  const byPath = new Map(files.map((file) => [vaultPath(file).replace(/\.md$/i, ''), file]));
+  const byBase = new Map();
+  const duplicateBasenames = new Set();
+
+  for (const file of files) {
+    const base = basename(file);
+    if (byBase.has(base)) {
+      duplicateBasenames.add(base);
+    } else {
+      byBase.set(base, file);
+    }
+  }
+
+  const outDegree = new Map(files.map((file) => [vaultPath(file), 0]));
+  const inDegree = new Map(files.map((file) => [vaultPath(file), 0]));
+  let edgeCount = 0;
+  let unresolved = 0;
+  let backboneCount = 0;
+  let backboneEdges = 0;
+
+  for (const file of files) {
+    const source = vaultPath(file);
+    const text = fs.readFileSync(file, 'utf8');
+    const isBackbone = text.includes('#graph/backbone');
+    if (isBackbone) {
+      backboneCount += 1;
+      if (text.includes('Backbone link: [[')) {
+        backboneEdges += 1;
+      }
+    }
+    let match;
+    while ((match = linkRe.exec(text))) {
+      edgeCount += 1;
+      outDegree.set(source, outDegree.get(source) + 1);
+      const target = match[1].trim().replace(/\.md$/i, '');
+      const resolved = byPath.get(target) || byBase.get(path.basename(target));
+      if (resolved) {
+        const resolvedPath = vaultPath(resolved);
+        inDegree.set(resolvedPath, inDegree.get(resolvedPath) + 1);
+      } else {
+        unresolved += 1;
+      }
+    }
+  }
+
+  const zeroOut = [...outDegree.values()].filter((value) => value === 0).length;
+  const zeroIn = [...inDegree.values()].filter((value) => value === 0).length;
+  const graph = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'graph.json'), 'utf8'));
+  const profiles = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'graph-profiles.json'), 'utf8'));
+  const workspace = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'workspace.json'), 'utf8'));
+  const plugins = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'core-plugins.json'), 'utf8'));
+  const communityPlugins = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'community-plugins.json'), 'utf8'));
+  const enabledPlugins = Object.entries(plugins).filter(([, enabled]) => enabled).map(([name]) => name).sort();
+  const expectedPlugins = ['command-palette', 'editor-status', 'file-explorer', 'graph', 'switcher'];
+  const mainTabs = workspace.main.children[0].children.map((child) => child.state.type);
+  const guardManifestPath = path.join(root, '.obsidian', 'plugins', 'calendula-graph-guard', 'manifest.json');
+  const guardMainPath = path.join(root, '.obsidian', 'plugins', 'calendula-graph-guard', 'main.js');
+  const ultraManifestPath = path.join(root, '.obsidian', 'plugins', 'calendula-ultra-graph', 'manifest.json');
+  const ultraMainPath = path.join(root, '.obsidian', 'plugins', 'calendula-ultra-graph', 'main.js');
+  const ultraStylesPath = path.join(root, '.obsidian', 'plugins', 'calendula-ultra-graph', 'styles.css');
+
+  if (files.length < 30000) throw new Error(`Expected at least 30000 notes, got ${files.length}`);
+  if (duplicateBasenames.size) throw new Error(`Duplicate basenames: ${[...duplicateBasenames].slice(0, 5).join(', ')}`);
+  if (backboneCount < 1000 || backboneCount > 2500) throw new Error(`Unexpected backbone size: ${backboneCount}`);
+  if (backboneEdges !== backboneCount) throw new Error(`Expected one backbone edge per backbone node, got ${backboneEdges}/${backboneCount}`);
+  if (edgeCount !== files.length + backboneCount) throw new Error(`Expected ring plus backbone edges, got ${edgeCount} for ${files.length} files and ${backboneCount} backbone nodes`);
+  if (unresolved !== 0) throw new Error(`Expected no unresolved links, got ${unresolved}`);
+  if (zeroOut !== 0 || zeroIn !== 0) throw new Error(`Expected balanced graph, got zeroOut=${zeroOut}, zeroIn=${zeroIn}`);
+  if (profiles.schemaVersion !== 6) throw new Error(`Expected graph profile schema v6, got ${profiles.schemaVersion}`);
+  if (profiles.startupProfile !== 'fast-backbone') throw new Error(`Expected fast-backbone startup profile, got ${profiles.startupProfile}`);
+  if (!profiles.profiles['fast-backbone']?.startupAllowed) throw new Error('fast-backbone must be startupAllowed');
+  if (profiles.profiles['fast-backbone']?.graphSettings?.search !== 'tag:#graph/backbone') throw new Error('fast-backbone graph settings are invalid');
+  if (profiles.profiles['full-danger']?.startupAllowed) throw new Error('full-danger cannot be startupAllowed');
+  if (!profiles.profiles['full-danger']?.danger) throw new Error('full-danger must be marked dangerous');
+  if (!graph.hideUnresolved || graph.showOrphans) throw new Error('Graph settings should hide unresolved links and orphans');
+  if (graph.search !== 'tag:#graph/backbone') throw new Error(`Expected fast backbone graph search, got ${graph.search}`);
+  if (workspace.active !== 'calendula-20k-fast-graph') throw new Error(`Workspace active pane is ${workspace.active}`);
+  if (mainTabs.length !== 1 || mainTabs[0] !== 'graph') throw new Error(`Workspace should open one filtered graph tab, got ${mainTabs.join(', ')}`);
+  if (!communityPlugins.includes('calendula-graph-guard')) throw new Error('Calendula graph guard plugin should be enabled');
+  if (!communityPlugins.includes('calendula-ultra-graph')) throw new Error('Calendula ultra graph plugin should be enabled');
+  if (!fs.existsSync(guardManifestPath) || !fs.existsSync(guardMainPath)) throw new Error('Calendula graph guard plugin files are missing');
+  if (!fs.existsSync(ultraManifestPath) || !fs.existsSync(ultraMainPath) || !fs.existsSync(ultraStylesPath)) throw new Error('Calendula ultra graph plugin files are missing');
+  if (JSON.stringify(enabledPlugins) !== JSON.stringify(expectedPlugins)) {
+    throw new Error(`Unexpected enabled plugins: ${enabledPlugins.join(', ')}`);
+  }
+
+  process.stdout.write(`calendula-20k-topology:ok ${JSON.stringify({ files: files.length, edgeCount, backboneCount, unresolved, zeroOut, zeroIn })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'calendula-20k-topology-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'calendula-20k-topology:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
+    It 'rejects dangerous profiles unless explicitly allowed' {
+        $root = New-TempRoot
+        try {
+            $vault = Join-Path $root 'Vault'
+            $obsidian = Join-Path $vault '.obsidian'
+            $diaryDir = Join-Path $vault 'Calendula\2026\Июнь'
+            $peopleDir = Join-Path $vault 'People'
+            New-Item -ItemType Directory -Path $obsidian, $diaryDir, $peopleDir -Force | Out-Null
+            Copy-Item -LiteralPath (Join-Path $repoRoot 'Calendula-20K\.obsidian\graph-profiles.json') -Destination (Join-Path $obsidian 'graph-profiles.json')
+            Write-Utf8Text -Path (Join-Path $diaryDir '01-06-26.md') -Content '# Test diary'
+            Write-Utf8Text -Path (Join-Path $peopleDir 'Person-0001.md') -Content '# Person'
+            Write-Utf8Text -Path (Join-Path $obsidian 'core-plugins.json') -Content @'
+{
+  "file-explorer": true,
+  "switcher": true,
+  "graph": true,
+  "command-palette": true,
+  "editor-status": true,
+  "backlink": true
+}
+'@
+            Write-Utf8Text -Path (Join-Path $obsidian 'workspace.json') -Content @'
+{
+  "main": {},
+  "left": {},
+  "right": {},
+  "left-ribbon": {},
+  "active": "",
+  "lastOpenFiles": []
+}
+'@
+
+            $output = & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $repoRoot 'Scripts/Obsidian/Set-Calendula20KGraphProfile.ps1') -Profile full-danger -VaultPath $vault 2>&1
+            $LASTEXITCODE | Should Not Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'requires -AllowDanger'
+
+            $output = & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $repoRoot 'Scripts/Obsidian/Set-Calendula20KGraphProfile.ps1') -Profile fast-backbone -VaultPath $vault 2>&1
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'Applied Calendula-20K graph profile'
+            $communityPlugins = Get-Content -LiteralPath (Join-Path $obsidian 'community-plugins.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+            ($communityPlugins -contains 'calendula-graph-guard') | Should Be $true
+            ($communityPlugins -contains 'calendula-ultra-graph') | Should Be $true
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
+    It 'repairs graph and workspace drift through the guard quarantine mode' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const fs = require('fs');
+  const path = require('path');
+  const Module = require('module');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(tempRoot, 'Vault');
+  const obsidianRoot = path.join(vaultRoot, '.obsidian');
+  fs.mkdirSync(obsidianRoot, { recursive: true });
+  fs.copyFileSync(path.join(repoRoot, 'Calendula-20K/.obsidian/graph-profiles.json'), path.join(obsidianRoot, 'graph-profiles.json'));
+  fs.writeFileSync(path.join(obsidianRoot, 'graph.json'), JSON.stringify({
+    search: '',
+    hideUnresolved: false,
+    showOrphans: true,
+    repelStrength: 20,
+    linkDistance: 250,
+    nodeSizeMultiplier: 2
+  }, null, 2));
+
+  let graphDetached = 0;
+  let heavyDetached = 0;
+  const graphLeaves = [
+    { detach: async () => { graphDetached += 1; } },
+    { detach: async () => { graphDetached += 1; } },
+    { detach: async () => { graphDetached += 1; } },
+  ];
+  const heavyLeaf = {
+    view: { getViewType() { return 'backlink'; } },
+    detach: async () => { heavyDetached += 1; },
+  };
+
+  class Plugin {
+    constructor() {
+      this.app = {
+        vault: {
+          adapter: {
+            async read(filePath) {
+              return fs.readFileSync(path.join(vaultRoot, filePath), 'utf8');
+            },
+            async write(filePath, value) {
+              const full = path.join(vaultRoot, filePath);
+              fs.mkdirSync(path.dirname(full), { recursive: true });
+              fs.writeFileSync(full, value, 'utf8');
+            },
+          },
+        },
+        workspace: {
+          getLeavesOfType(type) {
+            return type === 'graph' ? graphLeaves : [];
+          },
+          iterateAllLeaves(callback) {
+            callback(heavyLeaf);
+          },
+          getLeaf() {
+            return {
+              setViewState: async () => {},
+            };
+          },
+          revealLeaf() {},
+          onLayoutReady() {},
+        },
+      };
+    }
+    addCommand() {}
+    registerInterval() {}
+  }
+  class Notice {
+    constructor(message) {
+      this.message = message;
+    }
+  }
+
+  const originalLoad = Module._load;
+  Module._load = function patchedLoad(request, parent, isMain) {
+    if (request === 'obsidian') {
+      return { Plugin, Notice };
+    }
+    return originalLoad.call(this, request, parent, isMain);
+  };
+
+  try {
+    const Guard = require(path.join(repoRoot, 'Calendula-20K/.obsidian/plugins/calendula-graph-guard/main.js'));
+    const guard = new Guard();
+    const result = await guard.guardFastProfile('test-drift');
+    const repairedGraph = JSON.parse(fs.readFileSync(path.join(obsidianRoot, 'graph.json'), 'utf8'));
+    const guardData = JSON.parse(fs.readFileSync(path.join(obsidianRoot, 'calendula-graph-guard-data.json'), 'utf8'));
+
+    if (!result.repaired) throw new Error('Expected guard to repair drift');
+    if (repairedGraph.search !== 'tag:#graph/backbone') throw new Error(`Graph search was not repaired: ${repairedGraph.search}`);
+    if (repairedGraph.repelStrength > 1.5 || repairedGraph.linkDistance > 30) throw new Error('Graph physics were not repaired');
+    if (graphDetached !== 2) throw new Error(`Expected 2 extra graph leaves detached, got ${graphDetached}`);
+    if (heavyDetached !== 1) throw new Error(`Expected 1 heavy leaf detached, got ${heavyDetached}`);
+    if (!guardData.incidents?.some((entry) => entry.type === 'quarantine-repair')) throw new Error('Missing quarantine incident');
+    process.stdout.write('guard-quarantine:ok\n');
+  } finally {
+    Module._load = originalLoad;
+  }
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'guard-quarantine-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'guard-quarantine:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
+    It 'loads the ultra graph plugin with budgeted canvas rendering and cleanup' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const Module = require('module');
+  const repoRoot = __REPO_ROOT__;
+  let registeredType = null;
+  let viewFactory = null;
+  const commands = [];
+  const frameQueue = [];
+  const resizeHandlers = new Set();
+  let openedState = null;
+  let revealed = false;
+  let detachedType = null;
+  let frameId = 0;
+  let now = 0;
+  let rectCalls = 0;
+  let fillCalls = 0;
+  let removedCanvasListeners = 0;
+
+  global.performance = {
+    now() {
+      now += 0.5;
+      return now;
+    },
+  };
+
+  const gradient = { addColorStop() {} };
+  const ctx = {
+    setTransform() {},
+    clearRect() {},
+    createLinearGradient() { return gradient; },
+    fillRect() {},
+    beginPath() {},
+    rect() { rectCalls += 1; },
+    fill() { fillCalls += 1; },
+  };
+
+  function makeEl(tag = 'div') {
+    return {
+      tagName: tag,
+      children: [],
+      style: {},
+      textContent: '',
+      empty() {
+        this.children = [];
+        this.textContent = '';
+      },
+      addClass() {},
+      createDiv(options = {}) {
+        const child = makeEl('div');
+        if (options.text) child.textContent = options.text;
+        this.children.push(child);
+        return child;
+      },
+      createEl(tagName, options = {}) {
+        const child = tagName === 'canvas' ? makeCanvas() : makeEl(tagName);
+        if (options.text) child.textContent = options.text;
+        this.children.push(child);
+        return child;
+      },
+      setText(text) {
+        this.textContent = text;
+      },
+      appendChild(child) {
+        this.children.push(child);
+        return child;
+      },
+      getBoundingClientRect() {
+        return { width: 1280, height: 720 };
+      },
+      addEventListener() {},
+      removeEventListener() {},
+    };
+  }
+
+  function makeCanvas() {
+    const canvas = makeEl('canvas');
+    canvas.getContext = (kind) => (kind === '2d' ? ctx : null);
+    canvas.addEventListener = () => {};
+    canvas.removeEventListener = () => {
+      removedCanvasListeners += 1;
+    };
+    canvas.setPointerCapture = () => {};
+    return canvas;
+  }
+
+  global.window = {
+    devicePixelRatio: 1,
+    requestAnimationFrame(callback) {
+      frameId += 1;
+      frameQueue.push(callback);
+      return frameId;
+    },
+    cancelAnimationFrame() {},
+    addEventListener(type, handler) {
+      if (type === 'resize') resizeHandlers.add(handler);
+    },
+    removeEventListener(type, handler) {
+      if (type === 'resize') resizeHandlers.delete(handler);
+    },
+    setTimeout,
+    clearTimeout,
+  };
+  global.requestAnimationFrame = global.window.requestAnimationFrame;
+  global.cancelAnimationFrame = global.window.cancelAnimationFrame;
+  global.document = {
+    createElement(tag) { return makeEl(tag); },
+    body: makeEl('body'),
+  };
+
+  class ItemView {
+    constructor(leaf) {
+      this.leaf = leaf;
+      this.containerEl = makeEl('div');
+    }
+  }
+
+  class Plugin {
+    constructor() {
+      this.app = {
+        workspace: {
+          getLeaf() {
+            return {
+              setViewState: async (state) => {
+                openedState = state;
+              },
+            };
+          },
+          revealLeaf() {
+            revealed = true;
+          },
+          detachLeavesOfType(type) {
+            detachedType = type;
+          },
+        },
+      };
+    }
+    registerView(type, factory) {
+      registeredType = type;
+      viewFactory = factory;
+    }
+    addCommand(command) {
+      commands.push(command);
+    }
+  }
+
+  const originalLoad = Module._load;
+  Module._load = function patchedLoad(request, parent, isMain) {
+    if (request === 'obsidian') {
+      return { ItemView, Plugin };
+    }
+    return originalLoad.call(this, request, parent, isMain);
+  };
+
+  try {
+    const UltraGraphPlugin = require(path.join(repoRoot, 'Calendula-20K/.obsidian/plugins/calendula-ultra-graph/main.js'));
+    const plugin = new UltraGraphPlugin();
+    await plugin.onload();
+
+    if (registeredType !== 'calendula-ultra-graph') throw new Error(`Unexpected view type: ${registeredType}`);
+    const command = commands.find((item) => item.id === 'open-calendula-ultra-graph');
+    if (!command) throw new Error('Missing open ultra graph command');
+    await command.callback();
+    if (!openedState || openedState.type !== 'calendula-ultra-graph' || !revealed) throw new Error('Ultra graph command did not open the view');
+
+    const view = viewFactory({});
+    await view.onOpen();
+    if (!(view.nodes instanceof Float32Array) || view.nodes.length !== 40000) throw new Error('Expected 20K synthetic node coordinates');
+    if (resizeHandlers.size !== 1) throw new Error(`Expected one resize handler, got ${resizeHandlers.size}`);
+
+    const firstFrame = frameQueue.shift();
+    if (typeof firstFrame !== 'function') throw new Error('No animation frame was scheduled');
+    firstFrame();
+
+    if (view.cursor <= 0 || view.cursor >= 20000) throw new Error(`Expected chunked progressive draw cursor, got ${view.cursor}`);
+    if (rectCalls <= 0 || fillCalls <= 0) throw new Error('Expected batched canvas draw calls');
+    if (!/synthetic 20[\s,.]?000 nodes/.test(view.statusEl.textContent)) {
+      throw new Error(`Unexpected status text: ${view.statusEl.textContent}`);
+    }
+    const steadyHealth = view.getHealthSnapshot();
+    if (!Object.isFrozen(steadyHealth)) throw new Error('Health snapshot should be frozen');
+    if (steadyHealth.mode !== 'steady' || steadyHealth.renderStride !== 1) {
+      throw new Error(`Expected steady health mode, got ${JSON.stringify(steadyHealth)}`);
+    }
+
+    view.fps = 20;
+    view.lastInteractionAt = -10000;
+    view.updateFrameBudget(performance.now());
+    const emergencyHealth = view.getHealthSnapshot();
+    if (emergencyHealth.mode !== 'emergency' || emergencyHealth.renderStride < 4) {
+      throw new Error(`Expected emergency degradation, got ${JSON.stringify(emergencyHealth)}`);
+    }
+
+    await view.onClose();
+    if (resizeHandlers.size !== 0) throw new Error('Resize handler was not removed on close');
+    if (removedCanvasListeners < 5) throw new Error(`Expected canvas listeners cleanup, got ${removedCanvasListeners}`);
+
+    await plugin.onunload();
+    if (detachedType !== 'calendula-ultra-graph') throw new Error('Plugin unload did not detach ultra graph leaves');
+
+    process.stdout.write('ultra-graph:ok\n');
+  } finally {
+    Module._load = originalLoad;
+  }
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'ultra-graph-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'ultra-graph:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula graph store' {
+    It 'builds an atomic graph store with forward and reverse CSR recovery' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const fs = require('fs');
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(repoRoot, 'Calendula-20K');
+  const outRoot = path.join(tempRoot, 'graph-store');
+  const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
+
+  const graph = store.buildGraph(vaultRoot);
+  const first = store.writeStore(vaultRoot, outRoot, graph);
+  const second = store.writeStore(vaultRoot, outRoot, graph);
+  const currentDir = path.join(outRoot, 'graph.current');
+  const previousDir = path.join(outRoot, 'graph.previous');
+  const rootManifest = JSON.parse(fs.readFileSync(path.join(outRoot, 'graph.manifest.json'), 'utf8'));
+
+  function size(fileName) {
+    return fs.statSync(path.join(currentDir, fileName)).size;
+  }
+
+  if (!first.validation.ok || !second.validation.ok) throw new Error('Manifest validation failed');
+  if (!fs.existsSync(currentDir)) throw new Error('Missing graph.current');
+  if (!fs.existsSync(previousDir)) throw new Error('Missing graph.previous after second write');
+  if (fs.existsSync(path.join(outRoot, 'graph.lock'))) throw new Error('graph.lock should be removed after build');
+  if (rootManifest.schemaVersion !== 6) throw new Error(`Expected schema v6, got ${rootManifest.schemaVersion}`);
+  if (rootManifest.stats.nodes < 30000) throw new Error(`Expected high-load node count, got ${rootManifest.stats.nodes}`);
+  if (rootManifest.stats.unresolved !== 0) throw new Error(`Expected no unresolved links, got ${rootManifest.stats.unresolved}`);
+  if (size(rootManifest.files.outOffsets) !== (rootManifest.stats.nodes + 1) * 4) throw new Error('Forward CSR offsets size mismatch');
+  if (size(rootManifest.files.inOffsets) !== (rootManifest.stats.nodes + 1) * 4) throw new Error('Reverse CSR offsets size mismatch');
+  if (size(rootManifest.files.outTargets) !== rootManifest.stats.edges * 4) throw new Error('Forward CSR target size mismatch');
+  if (size(rootManifest.files.inSources) !== rootManifest.stats.edges * 4) throw new Error('Reverse CSR source size mismatch');
+
+  fs.writeFileSync(path.join(currentDir, rootManifest.files.edgesSource), 'corrupt-current');
+  const loaded = store.loadGraphStore(outRoot);
+  if (!loaded.ok || !loaded.recoveredFromPrevious || loaded.activeDir !== 'graph.previous') {
+    throw new Error(`Expected recovery from previous store, got ${JSON.stringify(loaded)}`);
+  }
+
+  process.stdout.write(`graph-store:ok ${JSON.stringify({ nodes: rootManifest.stats.nodes, edges: rootManifest.stats.edges, recovered: loaded.recoveredFromPrevious })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'graph-store-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'graph-store:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula RenderPlan' {
+    It 'builds budgeted immutable render plans from the graph store' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(repoRoot, 'Calendula-20K');
+  const outRoot = path.join(tempRoot, 'graph-store');
+  const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
+  const renderPlan = require(path.join(repoRoot, 'Scripts/Obsidian/graph-render-plan.js'));
+
+  const graph = store.buildGraph(vaultRoot);
+  store.writeStore(vaultRoot, outRoot, graph);
+
+  const profile = {
+    name: 'ultra-indexed-test',
+    maxVisibleNodes: 1200,
+    maxVisibleEdges: 1800,
+    labelPolicy: 'selected-only',
+    edgePolicy: 'aggregated',
+    lodPolicy: 'aggressive',
+  };
+
+  const normal = renderPlan.buildRenderPlan({
+    storeRoot: outRoot,
+    profile,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    frameId: 7,
+  });
+
+  if (!Object.isFrozen(normal) || !Object.isFrozen(normal.budgets) || !Object.isFrozen(normal.skipped)) {
+    throw new Error('RenderPlan should be frozen');
+  }
+  if (!(normal.nodes instanceof Uint32Array) || !(normal.edges instanceof Uint32Array)) {
+    throw new Error('RenderPlan should use typed arrays');
+  }
+  if (normal.nodes.length > normal.budgets.nodeBudget) throw new Error('Node budget exceeded');
+  if (normal.edges.length > normal.budgets.edgeBudget) throw new Error('Edge budget exceeded');
+  if (normal.edges.length >= normal.stats.edges) throw new Error('RenderPlan should not draw every edge by default');
+  if (normal.labels.length !== 0) throw new Error('Labels should be skipped before LOD 4');
+
+  const memory = renderPlan.buildRenderPlan({
+    storeRoot: outRoot,
+    profile,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 0.1 },
+    memoryPressure: true,
+    frameId: 8,
+  });
+
+  if (memory.mode !== 'memory-pressure') throw new Error(`Expected memory-pressure mode, got ${memory.mode}`);
+  if (memory.edges.length !== 0 || memory.labels.length !== 0) throw new Error('Memory-pressure mode should disable edges and labels');
+  if (memory.nodes.length > 500) throw new Error('Memory-pressure mode should cap visible nodes');
+
+  const degraded = renderPlan.buildRenderPlan({
+    storeRoot: outRoot,
+    profile,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    frameHistory: { p95FrameMs: 30 },
+    frameId: 9,
+  });
+  if (degraded.mode !== 'degraded') throw new Error(`Expected degraded mode, got ${degraded.mode}`);
+  if (degraded.budgets.edgeBudget >= normal.budgets.edgeBudget) throw new Error('Degraded mode should reduce edge budget');
+
+  process.stdout.write(`render-plan:ok ${JSON.stringify({ nodes: normal.nodes.length, edges: normal.edges.length, memoryMode: memory.mode, degradedEdges: degraded.budgets.edgeBudget })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'render-plan-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'render-plan:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula GraphScheduler' {
+    It 'turns backpressure signals into reduced render budgets' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(repoRoot, 'Calendula-20K');
+  const outRoot = path.join(tempRoot, 'graph-store');
+  const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
+  const { GraphScheduler } = require(path.join(repoRoot, 'Scripts/Obsidian/graph-scheduler.js'));
+
+  const graph = store.buildGraph(vaultRoot);
+  store.writeStore(vaultRoot, outRoot, graph);
+
+  const scheduler = new GraphScheduler();
+  const profile = {
+    name: 'scheduler-test',
+    maxVisibleNodes: 3000,
+    maxVisibleEdges: 5000,
+    labelPolicy: 'selected-only',
+    lodPolicy: 'aggressive',
+  };
+  const camera = { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 };
+
+  const normal = scheduler.scheduleFrame({ storeRoot: outRoot, profile, camera });
+  if (normal.signals.frameOverBudget) throw new Error('Normal frame should not be over budget');
+  if (normal.plan.edges.length > normal.plan.budgets.edgeBudget) throw new Error('Normal plan exceeded edge budget');
+
+  for (let i = 0; i < 20; i += 1) scheduler.recordFrame(35);
+  const degraded = scheduler.scheduleFrame({ storeRoot: outRoot, profile, camera });
+  if (!degraded.signals.frameOverBudget) throw new Error('Expected frameOverBudget signal');
+  if (!degraded.actions.includes('increase-lod')) throw new Error('Expected increase-lod action');
+  if (degraded.plan.mode !== 'degraded' && degraded.plan.mode !== 'emergency') throw new Error(`Expected degraded/emergency plan, got ${degraded.plan.mode}`);
+  if (degraded.adaptiveProfile.maxVisibleEdges >= profile.maxVisibleEdges) throw new Error('Expected reduced edge budget');
+
+  const burst = scheduler.scheduleFrame({
+    storeRoot: outRoot,
+    profile,
+    camera,
+    input: { inputBurst: true, rendererQueueLength: 5, profileSwitch: true },
+  });
+  if (!burst.signals.inputBurst || !burst.signals.rendererQueueTooLong) throw new Error('Expected inputBurst and rendererQueueTooLong');
+  if (!burst.actions.includes('drop-stale-frames')) throw new Error('Expected stale frame drop action');
+  if (burst.adaptiveProfile.labelPolicy !== 'none') throw new Error('Input burst should disable labels');
+
+  const memory = scheduler.scheduleFrame({
+    storeRoot: outRoot,
+    profile,
+    camera,
+    input: { memoryPressure: true },
+  });
+  if (memory.plan.mode !== 'memory-pressure') throw new Error(`Expected memory-pressure plan, got ${memory.plan.mode}`);
+  if (memory.plan.edges.length !== 0 || memory.plan.labels.length !== 0) throw new Error('Memory-pressure plan should not draw edges or labels');
+
+  if (!Object.isFrozen(memory) || !Object.isFrozen(memory.signals) || !Object.isFrozen(memory.actions)) {
+    throw new Error('Scheduler result should be frozen');
+  }
+
+  process.stdout.write(`scheduler:ok ${JSON.stringify({ normalEdges: normal.plan.edges.length, degradedMode: degraded.plan.mode, memoryMode: memory.plan.mode })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'scheduler-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'scheduler:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula graph benchmark tooling' {
+    It 'produces a validated graph performance report on a temp vault' {
+        $root = New-TempRoot
+        try {
+            $vault = Join-Path $root 'Vault'
+            $storeRoot = Join-Path $root 'graph-store'
+            New-Item -ItemType Directory -Path $vault -Force | Out-Null
+            Write-Utf8Text -Path (Join-Path $vault 'A.md') -Content "# A`n[[B]]`n"
+            Write-Utf8Text -Path (Join-Path $vault 'B.md') -Content "# B`n[[C]]`n"
+            Write-Utf8Text -Path (Join-Path $vault 'C.md') -Content "# C`n[[A]]`n"
+
+            $report = & (Join-Path $repoRoot 'Scripts\Obsidian\Measure-CalendulaGraphPerformance.ps1') -VaultPath $vault -StoreRoot $storeRoot -MinimumNodes 3 -NodeBudget 2 -EdgeBudget 2 -PassThru
+
+            $report.ok | Should Be $true
+            [int]$report.stats.nodes | Should Be 3
+            [int]$report.stats.unresolved | Should Be 0
+            ([int]$report.renderPlan.nodes -le 2) | Should Be $true
+            ([int]$report.renderPlan.edges -le 2) | Should Be $true
+            (Test-Path -LiteralPath (Join-Path $storeRoot 'graph.manifest.json')) | Should Be $true
+
+            { & (Join-Path $repoRoot 'Scripts\Obsidian\Measure-CalendulaGraphPerformance.ps1') -VaultPath $vault -StoreRoot (Join-Path $root 'too-small-store') -MinimumNodes 4 } | Should Throw
         }
         finally {
             if (Test-Path -LiteralPath $root) {
@@ -1278,13 +2141,14 @@ Describe 'LiveGraph' {
         }
     }
 
-    It 'compresses live-graph snapshots before persisting them' {
+    It 'persists live-graph recovery batches outside the main state file' {
         $root = New-TempRoot
         try {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $scriptContent = @'
 (async () => {
   const path = require('path');
+  const fs = require('fs');
   const root = __REPO_ROOT__;
   const create = require(path.join(root, 'Scripts/ObsidianPlugins/live-graph/builtin-graph.js'));
 
@@ -1327,6 +2191,12 @@ Describe 'LiveGraph' {
   };
 
   let savedState = null;
+  const vaultRoot = path.join(root, 'vault');
+  const recoveryDir = path.join(vaultRoot, '.obsidian', 'plugins', 'live-graph', 'live-graph-recovery');
+  fs.mkdirSync(recoveryDir, { recursive: true });
+  const fileStore = new Map();
+  const original = 'Alpha beta '.repeat(2000);
+  const detached = original + 'x';
 
   class Plugin {
     constructor() {
@@ -1338,9 +2208,10 @@ Describe 'LiveGraph' {
           revealLeaf() {},
         },
         vault: {
-          read: async () => '',
-          modify: async () => {},
-          getAbstractFileByPath: () => null,
+          adapter: { basePath: vaultRoot },
+          read: async (file) => fileStore.get(file.path) || '',
+          modify: async (file, content) => { fileStore.set(file.path, content); },
+          getAbstractFileByPath: (filePath) => ({ path: filePath }),
         },
         metadataCache: { getFirstLinkpathDest: () => true },
       };
@@ -1369,12 +2240,11 @@ Describe 'LiveGraph' {
   const plugin = new (create({ ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon }))();
   await plugin.onload();
 
-  const big = 'Alpha beta '.repeat(2000);
   plugin.activeBatch = {
     cycleId: 'cycle-1',
     files: [
-      { path: 'A.md', original: big, detached: big + 'x' },
-      { path: 'B.md', original: big + 'y', detached: big + 'z' },
+      { path: 'A.md', original, detached },
+      { path: 'B.md', original: `${original}y`, detached: `${detached}z` },
     ],
   };
   plugin.safetyBuffer = [
@@ -1383,35 +2253,26 @@ Describe 'LiveGraph' {
       createdAt: '2026-06-10T00:00:00.000Z',
       status: 'detached',
       files: [
-        { path: 'A.md', original: big, detached: big + 'x' },
-        { path: 'B.md', original: big + 'y', detached: big + 'z' },
+        { path: 'A.md', original, detached },
+        { path: 'B.md', original: `${original}y`, detached: `${detached}z` },
       ],
     },
   ];
 
   await plugin.saveState();
 
-  if (!savedState || !savedState.activeBatch) {
+  if (!savedState || !savedState.persistedDetached || !savedState.persistedDetached.length) {
     throw new Error('State was not saved');
   }
 
-  const rawSize = Buffer.byteLength(JSON.stringify({
-    activeBatch: {
-      cycleId: 'cycle-1',
-      files: [
-        { path: 'A.md', original: big, detached: big + 'x' },
-        { path: 'B.md', original: big + 'y', detached: big + 'z' },
-      ],
-    },
-  }), 'utf8');
   const savedSize = Buffer.byteLength(JSON.stringify(savedState), 'utf8');
-
-  if (savedSize >= rawSize / 4) {
-    throw new Error(`Expected compact state, raw=${rawSize}, saved=${savedSize}`);
+  if (savedSize > 2000) {
+    throw new Error(`Expected compact state, got ${savedSize} bytes`);
   }
 
-  if (typeof savedState.activeBatch.files[0].original !== 'string' || !savedState.activeBatch.files[0].original.startsWith('~z~')) {
-    throw new Error('Active batch original was not compressed');
+  const recoveryFile = path.join(recoveryDir, 'entry-1.json');
+  if (!fs.existsSync(recoveryFile)) {
+    throw new Error('Recovery cache file was not written');
   }
 
   const createReloaded = require(path.join(root, 'Scripts/ObsidianPlugins/live-graph/builtin-graph.js'));
@@ -1424,28 +2285,36 @@ Describe 'LiveGraph' {
   const reloaded = new (createReloaded({ ItemView, Notice, Plugin: ReloadPlugin, PluginSettingTab, Setting, setIcon }))();
   await reloaded.onload();
 
-  if (reloaded.activeBatch.files[0].original !== big) {
-    throw new Error('Active batch did not decompress on load');
+  if (reloaded.activeBatch !== null) {
+    throw new Error('Active batch should stay unloaded until recovery');
   }
 
-  if (reloaded.safetyBuffer.length !== 1 || reloaded.safetyBuffer[0].files[1].detached !== big + 'z') {
-    throw new Error('Safety buffer did not initialize from active batch');
+  if (reloaded.safetyBuffer.length !== 1 || reloaded.safetyBuffer[0].fileRef !== 'live-graph-recovery/entry-1.json') {
+    throw new Error('Safety buffer metadata was not restored');
   }
 
-  process.stdout.write('compact-state:ok\\n');
+  fileStore.set('A.md', detached);
+  fileStore.set('B.md', `${detached}z`);
+  await reloaded.recoverFromBuffer(true);
+
+  if (fileStore.get('A.md') !== original || fileStore.get('B.md') !== `${original}y`) {
+    throw new Error('Recovery cache did not restore the original file contents');
+  }
+
+  process.stdout.write('recovery-cache:ok\\n');
 })().catch((error) => {
   console.error(error);
   process.exit(1);
 });
 '@
             $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
-            $scriptPath = Join-Path $root 'live-graph-compact-state-check.js'
+            $scriptPath = Join-Path $root 'live-graph-recovery-cache-check.js'
             Write-Utf8Text -Path $scriptPath -Content $scriptContent
 
             $output = & node $scriptPath 2>&1
 
             $LASTEXITCODE | Should Be 0
-            ($output -join [Environment]::NewLine) | Should Match 'compact-state:ok'
+            ($output -join [Environment]::NewLine) | Should Match 'recovery-cache:ok'
         }
         finally {
             if (Test-Path -LiteralPath $root) {

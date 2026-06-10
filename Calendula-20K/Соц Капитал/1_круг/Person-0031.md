@@ -2,6 +2,9 @@
 type: person
 circle: 1_круг
 index: 31
+graphProfile: ultra-20k-ring
 ---
 # Person-0031
-Short person card.
+
+Load-test person card for Calendula-20K.
+Graph link: [[25-03-26]].

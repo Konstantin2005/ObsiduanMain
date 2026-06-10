@@ -13,6 +13,10 @@ $ErrorActionPreference = "Stop"
 
 . (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
 
+Assert-PathInsideRoot -Root $VaultPath -Path $ProblemsDir -Operation 'sync_leetcode problems directory'
+Assert-PathInsideRoot -Root $VaultPath -Path $CachePath -Operation 'sync_leetcode cache read'
+Assert-PathInsideRoot -Root $VaultPath -Path $ExistingDir -Operation 'sync_leetcode existing directory'
+
 $topicMap = @{
     "Array" = "Array"
     "Hash Table" = "Hash_Map"
@@ -190,6 +194,7 @@ foreach ($slug in $sortedSlugs) {
 
     $content = $lines -join "`n"
     if (-not $DryRun) {
+        Assert-SafeBulkOperation -Operation 'sync_leetcode problem write' -Root $VaultPath -TargetPaths @($filePath) -DryRun:$DryRun
         Write-Utf8Text -Path $filePath -Content $content
     }
     $generated++

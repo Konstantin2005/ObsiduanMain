@@ -59,6 +59,7 @@ foreach ($yearDir in $yearDirs) {
         if ($modified) {
             $newContent = ($newLines -join "`r`n").TrimEnd() + "`r`n"
             if (-not $DryRun) {
+                Assert-SafeBulkOperation -Operation 'Sort-BoardTasks source write' -Root $KanbanDir -TargetPaths @($file.FullName) -DryRun:$DryRun
                 Write-Utf8Text -Path $file.FullName -Content $newContent
             }
             $moves[$file.FullName] = $fileMoves
@@ -156,6 +157,7 @@ foreach ($targetPath in $incoming.Keys) {
 
     $out = ($newContent -join "`r`n").TrimEnd() + "`r`n"
     if (-not $DryRun) {
+        Assert-SafeBulkOperation -Operation 'Sort-BoardTasks target write' -Root $KanbanDir -TargetPaths @($targetPath) -DryRun:$DryRun
         Write-Utf8Text -Path $targetPath -Content $out
     }
 }

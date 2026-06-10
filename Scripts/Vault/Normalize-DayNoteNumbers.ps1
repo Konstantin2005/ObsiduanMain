@@ -105,6 +105,13 @@ if ($DryRun -or $renamePlan.Count -eq 0) {
     return
 }
 
+$renameTargets = @()
+foreach ($item in $renamePlan) {
+    $renameTargets += $item.OldPath
+    $renameTargets += $item.NewPath
+}
+Assert-SafeBulkOperation -Operation 'Normalize-DayNoteNumbers rename' -Root $DiaryRoot -TargetPaths $renameTargets -DryRun:$DryRun -MaxWriteCount 500
+
 foreach ($item in $renamePlan) {
     [System.IO.File]::Move($item.OldPath, $item.NewPath)
 }
@@ -122,6 +129,7 @@ foreach ($file in $markdownFiles) {
     }
 
     if ($updated -ne $original) {
+        Assert-SafeBulkOperation -Operation 'Normalize-DayNoteNumbers reference write' -Root $DiaryRoot -TargetPaths @($file.FullName) -DryRun:$DryRun -MaxWriteCount 500
         Write-Utf8Text -Path $file.FullName -Content $updated
     }
 }

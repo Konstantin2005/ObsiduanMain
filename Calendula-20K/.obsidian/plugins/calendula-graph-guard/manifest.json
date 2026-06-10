@@ -1,0 +1,9 @@
+{
+  "id": "calendula-graph-guard",
+  "name": "Calendula Graph Guard",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Keeps the Calendula-20K vault in a fast graph profile and prevents accidental full-graph startup freezes.",
+  "author": "Codex",
+  "isDesktopOnly": false
+}

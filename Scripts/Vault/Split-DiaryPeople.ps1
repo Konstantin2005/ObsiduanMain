@@ -25,6 +25,8 @@ $ErrorActionPreference = 'Stop'
 $utf8 = [System.Text.UTF8Encoding]::new($false)
 $MainChunkLimit = $Threshold
 
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
+
 function Get-DiaryFiles {
     param([string]$Root)
 
@@ -206,6 +208,7 @@ foreach ($file in $files) {
         continue
     }
 
+    Assert-SafeBulkOperation -Operation 'Split-DiaryPeople original write' -Root $DiaryRoot -TargetPaths @($file) -DryRun:$DryRun
     [System.IO.File]::WriteAllText($file, $updatedOriginal, $utf8)
 
     for ($chunkIndex = 1; $chunkIndex -lt $chunks.Count; $chunkIndex++) {
@@ -219,6 +222,7 @@ foreach ($file in $files) {
         $splitSections += ($chunk.Blocks -join "`n`n")
         $splitContent = $splitSections -join "`n`n"
 
+        Assert-SafeBulkOperation -Operation 'Split-DiaryPeople split write' -Root $DiaryRoot -TargetPaths @($splitPath) -DryRun:$DryRun
         [System.IO.File]::WriteAllText($splitPath, $splitContent, $utf8)
         Write-Host "  -> $splitPath"
     }

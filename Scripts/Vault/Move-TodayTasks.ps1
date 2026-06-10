@@ -91,6 +91,7 @@ for ($i = 0; $i -lt $lines.Count; $i++) {
 $trailingNewline = Get-TrailingNewline $rawContent
 $newContent = ($output -join "`r`n").TrimEnd() + $trailingNewline
 if (-not $DryRun) {
+    Assert-SafeBulkOperation -Operation 'Move-TodayTasks write' -Root $KanbanDir -TargetPaths @($filePath) -DryRun:$DryRun
     Write-Utf8Text -Path $filePath -Content $newContent
 }
 

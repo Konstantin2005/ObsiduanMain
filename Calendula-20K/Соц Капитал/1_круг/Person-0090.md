@@ -2,7 +2,9 @@
 type: person
 circle: 1_круг
 index: 90
+graphProfile: ultra-20k-ring
 ---
 # Person-0090
-Short person card.
-Diary: [[Calendula/2033/Февраль/23-02-33.md|23-02-33]].
+
+Load-test person card for Calendula-20K.
+Graph link: [[25-11-27]].

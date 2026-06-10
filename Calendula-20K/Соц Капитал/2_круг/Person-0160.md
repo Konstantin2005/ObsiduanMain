@@ -2,7 +2,9 @@
 type: person
 circle: 2_круг
 index: 160
+graphProfile: ultra-20k-ring
 ---
 # Person-0160
-Short person card.
-Diary: [[Calendula/2038/Сентябрь/15-09-38.md|15-09-38]].
+
+Load-test person card for Calendula-20K.
+Graph link: [[09-01-28]].

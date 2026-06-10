@@ -1,7 +1,13 @@
 ---
 type: person
 circle: Познакомились
-index: 357
+index: 4357
+graphProfile: fast-backbone
 ---
 # Person-0357
-Short person card.
+
+Load-test person card for Calendula-20K.
+Graph link: [[25-01-05]].
+
+Graph scope: #graph/backbone
+Backbone link: [[08-08-06]].

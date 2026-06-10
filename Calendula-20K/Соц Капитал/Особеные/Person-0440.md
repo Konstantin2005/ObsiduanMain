@@ -1,8 +1,10 @@
 ---
 type: person
 circle: Особеные
-index: 440
+index: 4240
+graphProfile: ultra-20k-ring
 ---
 # Person-0440
-Short person card.
-Diary: [[Calendula/2060/Декабрь/08-12-60.md|08-12-60]].
+
+Load-test person card for Calendula-20K.
+Graph link: [[30-09-03]].

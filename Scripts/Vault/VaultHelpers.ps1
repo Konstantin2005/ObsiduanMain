@@ -45,6 +45,71 @@ function Write-Utf8Text {
     [System.IO.File]::WriteAllText($Path, $Content, $encoding)
 }
 
+function Test-PathInsideRoot {
+    param(
+        [Parameter(Mandatory = $true)][string]$Root,
+        [Parameter(Mandatory = $true)][string]$Path
+    )
+
+    $rootFull = [System.IO.Path]::GetFullPath($Root)
+    $pathFull = [System.IO.Path]::GetFullPath($Path)
+    $comparison = [System.StringComparison]::OrdinalIgnoreCase
+
+    if ($pathFull.Equals($rootFull, $comparison)) {
+        return $true
+    }
+
+    if (-not $rootFull.EndsWith([System.IO.Path]::DirectorySeparatorChar)) {
+        $rootFull += [System.IO.Path]::DirectorySeparatorChar
+    }
+
+    return $pathFull.StartsWith($rootFull, $comparison)
+}
+
+function Assert-PathInsideRoot {
+    param(
+        [Parameter(Mandatory = $true)][string]$Root,
+        [Parameter(Mandatory = $true)][string]$Path,
+        [string]$Operation = 'vault operation'
+    )
+
+    if (-not (Test-PathInsideRoot -Root $Root -Path $Path)) {
+        throw "$Operation refused to touch path outside root. Root='$Root' Path='$Path'"
+    }
+}
+
+function Assert-SafeBulkOperation {
+    param(
+        [Parameter(Mandatory = $true)][string]$Operation,
+        [Parameter(Mandatory = $true)][string]$Root,
+        [AllowNull()][object[]]$TargetPaths = @(),
+        [switch]$DryRun,
+        [switch]$Force,
+        [int]$MaxWriteCount = 1000,
+        [switch]$Destructive
+    )
+
+    $paths = @($TargetPaths) | Where-Object { $null -ne $_ } | ForEach-Object {
+        if ($_ -is [System.IO.FileSystemInfo]) { $_.FullName } else { [string]$_ }
+    }
+
+    foreach ($path in $paths) {
+        Assert-PathInsideRoot -Root $Root -Path $path -Operation $Operation
+    }
+
+    if ($DryRun) {
+        return
+    }
+
+    if ($Destructive -and $paths.Count -gt 0 -and -not $Force) {
+        throw "$Operation is destructive for $($paths.Count) path(s). Re-run with -DryRun first or pass -Force."
+    }
+
+    if ($paths.Count -gt $MaxWriteCount -and -not $Force) {
+        throw "$Operation affects $($paths.Count) path(s), above safe limit $MaxWriteCount. Re-run with -DryRun first or pass -Force."
+    }
+}
+
 function Split-Lines {
     param([AllowNull()][string]$Text)
 

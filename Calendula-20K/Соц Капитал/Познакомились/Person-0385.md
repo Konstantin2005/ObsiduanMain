@@ -1,8 +1,13 @@
 ---
 type: person
 circle: Познакомились
-index: 385
+index: 4385
+graphProfile: fast-backbone
 ---
 # Person-0385
-Short person card.
-Diary: [[Calendula/2056/Июль/27-07-56.md|27-07-56]].
+
+Load-test person card for Calendula-20K.
+Graph link: [[29-03-06]].
+
+Graph scope: #graph/backbone
+Backbone link: [[03-09-06]].

@@ -6,7 +6,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     Setting,
     setIcon,
   } = obsidian;
+  const fs = require("fs");
+  const path = require("path");
   const zlib = require("zlib");
+  const fsp = fs.promises;
 
   const BaseItemView = typeof ItemView === "function" ? ItemView : class {};
   const BasePluginSettingTab =
@@ -21,6 +24,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
   const PLUGIN_LABEL = "\u0416\u0438\u0437\u043d\u044c";
   const PANEL_VIEW_TYPE = "life-panel";
+  const RECOVERY_DIR_NAME = "live-graph-recovery";
+  const RECOVERY_FILE_NAME = "active-batch.json";
 
   const DEFAULT_SETTINGS = {
     autoOpenPanel: true,
@@ -106,6 +111,86 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       ...entry,
       files: Array.isArray(entry?.files) ? entry.files.map(unpackSnapshot) : [],
     };
+  }
+
+  function getVaultBasePath(plugin) {
+    const adapter = plugin?.app?.vault?.adapter;
+    if (!adapter || typeof adapter.basePath !== "string" || !adapter.basePath) {
+      return null;
+    }
+    return adapter.basePath;
+  }
+
+  function getRecoveryDir(plugin) {
+    const basePath = getVaultBasePath(plugin);
+    if (!basePath) return null;
+    return path.join(basePath, ".obsidian", "plugins", "live-graph", RECOVERY_DIR_NAME);
+  }
+
+  function getRecoveryFilePath(plugin, fileName = RECOVERY_FILE_NAME) {
+    const dir = getRecoveryDir(plugin);
+    return dir ? path.join(dir, fileName) : null;
+  }
+
+  function getRecoveryFileRef(fileName = RECOVERY_FILE_NAME) {
+    return `${RECOVERY_DIR_NAME}/${fileName}`;
+  }
+
+  function sanitizeStateEntry(entry) {
+    if (!entry) return null;
+    return {
+      id: entry.id || entry.cycleId || null,
+      cycleId: entry.cycleId || entry.id || null,
+      createdAt: entry.createdAt || null,
+      restoredAt: entry.restoredAt || null,
+      status: entry.status || "detached",
+      fileRef: entry.fileRef || null,
+      fileCount: Array.isArray(entry.files) ? entry.files.length : Number(entry.fileCount) || 0,
+    };
+  }
+
+  async function ensureRecoveryDir(plugin) {
+    const recoveryDir = getRecoveryDir(plugin);
+    if (!recoveryDir) {
+      throw new Error("Unable to resolve live-graph recovery directory.");
+    }
+    await fsp.mkdir(recoveryDir, { recursive: true });
+    return recoveryDir;
+  }
+
+  async function writeJsonFile(filePath, value) {
+    await fsp.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  }
+
+  async function readJsonFile(filePath) {
+    const raw = await fsp.readFile(filePath, "utf8");
+    return JSON.parse(raw);
+  }
+
+  async function writeRecoveryEntry(plugin, entry) {
+    if (!entry) return null;
+    const recoveryDir = await ensureRecoveryDir(plugin);
+    const entryId = entry.id || entry.cycleId;
+    if (!entryId) {
+      throw new Error("Cannot persist live-graph entry without an id.");
+    }
+    const filePath = path.join(recoveryDir, `${entryId}.json`);
+    await writeJsonFile(filePath, packEntry(entry));
+    return {
+      id: entryId,
+      fileRef: getRecoveryFileRef(`${entryId}.json`),
+    };
+  }
+
+  async function readRecoveryEntry(plugin, fileRef) {
+    if (!fileRef) return null;
+    const basePath = getVaultBasePath(plugin);
+    if (!basePath) return null;
+    const filePath = path.join(basePath, ".obsidian", "plugins", "live-graph", fileRef);
+    if (!fs.existsSync(filePath)) {
+      return null;
+    }
+    return unpackEntry(await readJsonFile(filePath));
   }
 
   async function sleepWithStop(ms, shouldStop) {
@@ -242,6 +327,33 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         border-color: var(--interactive-accent);
         background: rgba(120, 170, 255, 0.16);
       }
+      .life-graph-stage {
+        position: relative;
+        min-height: 360px;
+        overflow: hidden;
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 16px;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(120, 170, 255, 0.18), transparent 30%),
+          radial-gradient(circle at 80% 30%, rgba(255, 165, 80, 0.14), transparent 32%),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.08));
+      }
+      .life-graph-canvas {
+        display: block;
+        width: 100%;
+        min-height: 360px;
+      }
+      .life-graph-caption {
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.22);
+        color: var(--text-muted);
+        font-size: 0.72em;
+        pointer-events: none;
+      }
     `;
     const mountTarget = document.head || document.body;
     if (mountTarget && typeof mountTarget.appendChild === "function") {
@@ -376,13 +488,86 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
   }
 
+  function requestFrame(callback) {
+    if (typeof window !== "undefined" && typeof window.requestAnimationFrame === "function") {
+      return window.requestAnimationFrame(callback);
+    }
+    if (typeof setTimeout === "function") {
+      return setTimeout(() => callback(Date.now()), 16);
+    }
+    callback(Date.now());
+    return 0;
+  }
+
+  function cancelFrame(frameId) {
+    if (!frameId) return;
+    if (typeof window !== "undefined" && typeof window.cancelAnimationFrame === "function") {
+      window.cancelAnimationFrame(frameId);
+      return;
+    }
+    if (typeof clearTimeout === "function") {
+      clearTimeout(frameId);
+    }
+  }
+
+  function pickGraphProfile(nodeCount, edgeCount) {
+    if (nodeCount >= 10000 || edgeCount >= 20000) {
+      return {
+        mode: "ultra",
+        chunked: true,
+        chunkSize: 360,
+        labelLimit: 0,
+        nodeRadius: 1.6,
+        edgeAlpha: 0.16,
+      };
+    }
+    if (nodeCount >= 4000 || edgeCount >= 8000) {
+      return {
+        mode: "heavy",
+        chunked: true,
+        chunkSize: 520,
+        labelLimit: 80,
+        nodeRadius: 2,
+        edgeAlpha: 0.2,
+      };
+    }
+    return {
+      mode: "standard",
+      chunked: false,
+      chunkSize: Infinity,
+      labelLimit: 260,
+      nodeRadius: 2.8,
+      edgeAlpha: 0.32,
+    };
+  }
+
+  function normalizeLinkTarget(target) {
+    return String(target || "")
+      .trim()
+      .replace(/\\/g, "/")
+      .replace(/\.md$/i, "");
+  }
+
+  function noteBaseName(filePath) {
+    return path.basename(String(filePath || "").replace(/\\/g, "/"), ".md");
+  }
+
   class LifePanelView extends BaseItemView {
     constructor(leaf, plugin) {
       super(leaf);
       this.plugin = plugin;
       this.statusEl = null;
       this.rootEl = null;
+      this.graphStageEl = null;
+      this.graphCanvas = null;
+      this.graphCaptionEl = null;
       this.lastStatusText = "";
+      this.markdownFileCache = null;
+      this.nodeIndexCache = null;
+      this.rafId = null;
+      this.paintFrameId = null;
+      this.currentProfile = null;
+      this.lastPaintSummary = null;
     }
 
     getViewType() {
@@ -401,9 +586,12 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       clearElement(this.containerEl);
       this.rootEl = this.containerEl.createDiv({ cls: "life-panel-shell" });
       this.render();
+      this.renderGraph(true);
+      this.startRenderLoop();
     }
 
     async onClose() {
+      this.stopRenderLoop();
       this.plugin.panelViews.delete(this);
     }
 
@@ -412,6 +600,12 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       clearElement(this.rootEl);
       injectStyles();
       this.plugin.renderSettingsBlock(this.rootEl, this);
+      this.graphStageEl = this.rootEl.createDiv({ cls: "life-graph-stage" });
+      this.graphCanvas = this.graphStageEl.createEl("canvas", { cls: "life-graph-canvas" });
+      this.graphCaptionEl = this.graphStageEl.createDiv({
+        cls: "life-graph-caption",
+        text: "Graph renderer warming up",
+      });
     }
 
     refreshStatus() {
@@ -421,6 +615,244 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       if (text === this.lastStatusText) return;
       this.lastStatusText = text;
       this.statusEl.setText(text);
+    }
+
+    startRenderLoop() {
+      if (this.rafId) return;
+      const tick = () => {
+        this.rafId = null;
+        this.renderGraph(false);
+        this.rafId = requestFrame(tick);
+      };
+      this.rafId = requestFrame(tick);
+    }
+
+    stopRenderLoop() {
+      cancelFrame(this.rafId);
+      cancelFrame(this.paintFrameId);
+      this.rafId = null;
+      this.paintFrameId = null;
+    }
+
+    getMarkdownFilesCached() {
+      if (!this.markdownFileCache) {
+        const files =
+          typeof this.plugin.app?.vault?.getMarkdownFiles === "function"
+            ? this.plugin.app.vault.getMarkdownFiles()
+            : [];
+        this.markdownFileCache = files.filter((file) => file && !String(file.path || "").startsWith("."));
+        this.nodeIndexCache = null;
+      }
+      return this.markdownFileCache;
+    }
+
+    getNodeIndexes(files) {
+      if (this.nodeIndexCache && this.nodeIndexCache.files === files) {
+        return this.nodeIndexCache;
+      }
+
+      const byPath = new Map();
+      const byBase = new Map();
+      const nodes = files.map((file, index) => {
+        const id = String(file.path || file.name || `note-${index}`);
+        const cleanPath = normalizeLinkTarget(id);
+        const base = file.basename || noteBaseName(id);
+        const node = {
+          id,
+          cleanPath,
+          base,
+          index,
+          x: 0,
+          y: 0,
+        };
+        byPath.set(cleanPath, node);
+        byPath.set(`${cleanPath}.md`, node);
+        if (!byBase.has(base)) {
+          byBase.set(base, node);
+        }
+        return node;
+      });
+
+      this.nodeIndexCache = { files, nodes, byPath, byBase };
+      return this.nodeIndexCache;
+    }
+
+    buildGraph(skipResolvedLinks = false) {
+      const files = this.getMarkdownFilesCached();
+      const index = this.getNodeIndexes(files);
+      const edges = [];
+      const resolvedLinks = skipResolvedLinks
+        ? {}
+        : this.plugin.app?.metadataCache?.resolvedLinks || {};
+
+      for (const [sourcePath, targets] of Object.entries(resolvedLinks || {})) {
+        const source =
+          index.byPath.get(normalizeLinkTarget(sourcePath)) ||
+          index.byPath.get(String(sourcePath || ""));
+        if (!source || !targets) continue;
+
+        for (const targetPath of Object.keys(targets)) {
+          const normalized = normalizeLinkTarget(targetPath);
+          const target =
+            index.byPath.get(normalized) ||
+            index.byPath.get(`${normalized}.md`) ||
+            index.byBase.get(noteBaseName(normalized));
+          if (!target || target === source) continue;
+          edges.push({ source, target });
+        }
+      }
+
+      return {
+        nodes: index.nodes,
+        edges,
+      };
+    }
+
+    layoutGraph(nodes, width, height) {
+      const count = Math.max(1, nodes.length);
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const maxRadius = Math.max(80, Math.min(width, height) * 0.43);
+      const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+
+      for (const node of nodes) {
+        const radius = maxRadius * Math.sqrt((node.index + 0.5) / count);
+        const angle = node.index * goldenAngle;
+        node.x = centerX + Math.cos(angle) * radius;
+        node.y = centerY + Math.sin(angle) * radius;
+      }
+    }
+
+    getCanvasContext() {
+      if (!this.graphCanvas && this.rootEl) {
+        this.render();
+      }
+      const canvas = this.graphCanvas;
+      if (!canvas || typeof canvas.getContext !== "function") {
+        return { canvas: null, ctx: null, width: 0, height: 0 };
+      }
+
+      const rect =
+        typeof canvas.getBoundingClientRect === "function"
+          ? canvas.getBoundingClientRect()
+          : { width: 1200, height: 720 };
+      const width = Math.max(320, Math.floor(rect.width || 1200));
+      const height = Math.max(260, Math.floor(rect.height || 720));
+      const pixelRatio =
+        typeof window !== "undefined"
+          ? Math.max(1, Math.min(2, Number(window.devicePixelRatio) || 1))
+          : 1;
+      canvas.width = Math.floor(width * pixelRatio);
+      canvas.height = Math.floor(height * pixelRatio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      const ctx = canvas.getContext("2d");
+      if (ctx && typeof ctx.setTransform === "function") {
+        ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      }
+      return { canvas, ctx, width, height };
+    }
+
+    drawFrame(ctx, graph, profile, frameIndex, totalFrames) {
+      if (!ctx) return;
+      const { nodes, edges } = graph;
+      const totalItems = nodes.length + edges.length;
+      const chunkSize = profile.chunked
+        ? Math.max(1, Math.ceil(totalItems / totalFrames))
+        : totalItems;
+      const start = frameIndex * chunkSize;
+      const end = Math.min(totalItems, start + chunkSize);
+
+      if (frameIndex === 0) {
+        if (typeof ctx.clearRect === "function") {
+          ctx.clearRect(0, 0, 100000, 100000);
+        }
+        ctx.lineCap = "round";
+      }
+
+      for (let itemIndex = start; itemIndex < end; itemIndex += 1) {
+        if (itemIndex < edges.length) {
+          const edge = edges[itemIndex];
+          if (typeof ctx.beginPath === "function") ctx.beginPath();
+          ctx.strokeStyle = `rgba(150, 170, 205, ${profile.edgeAlpha})`;
+          ctx.lineWidth = 0.8;
+          if (typeof ctx.moveTo === "function") ctx.moveTo(edge.source.x, edge.source.y);
+          if (typeof ctx.lineTo === "function") ctx.lineTo(edge.target.x, edge.target.y);
+          if (typeof ctx.stroke === "function") ctx.stroke();
+          continue;
+        }
+
+        const node = nodes[itemIndex - edges.length];
+        if (!node) continue;
+        if (typeof ctx.beginPath === "function") ctx.beginPath();
+        ctx.fillStyle = node.id.includes("Calendula/") ? "rgba(80, 168, 255, 0.72)" : "rgba(255, 166, 72, 0.78)";
+        if (typeof ctx.arc === "function") {
+          ctx.arc(node.x, node.y, profile.nodeRadius, 0, Math.PI * 2);
+        }
+        if (typeof ctx.fill === "function") ctx.fill();
+      }
+
+      if (!profile.labelLimit || frameIndex !== totalFrames - 1) return;
+      ctx.fillStyle = "rgba(220, 226, 240, 0.72)";
+      ctx.textBaseline = "middle";
+      for (const node of nodes.slice(0, profile.labelLimit)) {
+        if (typeof ctx.fillText === "function") {
+          ctx.fillText(node.base, node.x + 4, node.y);
+        }
+      }
+    }
+
+    paintGraph(graph, profile, width, height) {
+      const { ctx } = this.getCanvasContext();
+      this.layoutGraph(graph.nodes, width, height);
+      cancelFrame(this.paintFrameId);
+      this.paintFrameId = null;
+
+      const totalItems = graph.nodes.length + graph.edges.length;
+      const frames = profile.chunked
+        ? Math.max(20, Math.ceil(totalItems / profile.chunkSize))
+        : 1;
+      const labelsSkipped = Math.max(0, graph.nodes.length - profile.labelLimit);
+      this.lastPaintSummary = {
+        nodes: graph.nodes.length,
+        edges: graph.edges.length,
+        frames,
+        chunked: profile.chunked,
+        labelsSkipped,
+      };
+
+      if (this.graphCaptionEl && typeof this.graphCaptionEl.setText === "function") {
+        this.graphCaptionEl.setText(
+          `${profile.mode}: ${graph.nodes.length} nodes, ${graph.edges.length} edges, ${frames} frame(s)`,
+        );
+      }
+
+      let frameIndex = 0;
+      const paintNext = () => {
+        this.drawFrame(ctx, graph, profile, frameIndex, frames);
+        frameIndex += 1;
+        if (frameIndex < frames) {
+          this.paintFrameId = requestFrame(paintNext);
+        } else {
+          this.paintFrameId = null;
+        }
+      };
+
+      if (profile.chunked) {
+        this.paintFrameId = requestFrame(paintNext);
+      } else {
+        paintNext();
+      }
+    }
+
+    renderGraph(skipResolvedLinks = false) {
+      const graph = this.buildGraph(skipResolvedLinks);
+      const { width, height } = this.getCanvasContext();
+      const profile = pickGraphProfile(graph.nodes.length, graph.edges.length);
+      this.currentProfile = profile;
+      this.paintGraph(graph, profile, width || 1200, height || 720);
+      return graph;
     }
   }
 
@@ -450,8 +882,24 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         const data = (await this.loadData()) || {};
         const legacySettings = data.settings || data;
         this.settings = Object.assign({}, DEFAULT_SETTINGS, legacySettings);
-        this.activeBatch = data.activeBatch ? unpackEntry(data.activeBatch) : null;
-        this.safetyBuffer = this.activeBatch ? [this.activeBatch] : [];
+        this.activeBatch = null;
+        this.activeBatchMeta = null;
+        this.safetyBuffer = [];
+        this.persistedDetached = [];
+
+        if (Array.isArray(data.persistedDetached)) {
+          this.persistedDetached = data.persistedDetached
+            .map((entry) => sanitizeStateEntry(entry))
+            .filter(Boolean);
+          this.safetyBuffer = this.persistedDetached.map((entry) => ({ ...entry }));
+          this.activeBatchMeta = this.getLastDetachedEntry();
+        } else if (data.activeBatchRef) {
+          this.activeBatchMeta = sanitizeStateEntry(data.activeBatchRef);
+        } else if (data.activeBatch) {
+          this.activeBatch = unpackEntry(data.activeBatch);
+          this.safetyBuffer = [this.activeBatch];
+          this.activeBatchMeta = sanitizeStateEntry(this.activeBatch);
+        }
         this.interval = null;
         this.busy = false;
         this.stopRequested = false;
@@ -468,6 +916,14 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           name: `Open ${PLUGIN_LABEL} panel`,
           callback: () => {
             void this.openLifePanel();
+          },
+        });
+
+        this.addCommand({
+          id: "open-live-graph",
+          name: "Open native graph",
+          callback: () => {
+            void this.openLiveGraph();
           },
         });
 
@@ -497,9 +953,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         this.addSettingTab(new LifeSettingsTab(this.app, this));
 
         this.app.workspace.onLayoutReady(() => {
-          void this.recoverFromBuffer().catch((error) => {
-            console.error(`[${PLUGIN_LABEL}] recovery restore failed`, error);
-          });
           this.restartTimer();
           if (this.settings.autoOpenPanel) {
             void this.openLifePanel().catch((error) => {
@@ -579,9 +1032,28 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
 
     async saveState() {
+      const detachedEntries = this.safetyBuffer.filter((entry) => entry.status === "detached");
+      const persistedDetached = [];
+
+      for (const entry of detachedEntries) {
+        const hasInlineFiles = Array.isArray(entry.files) && entry.files.length > 0;
+        if (hasInlineFiles) {
+          const persisted = await writeRecoveryEntry(this, entry);
+          entry.fileRef = persisted.fileRef;
+        } else if (!entry.fileRef && entry.id) {
+          entry.fileRef = getRecoveryFileRef(`${entry.id}.json`);
+        }
+
+        persistedDetached.push(sanitizeStateEntry(entry));
+      }
+
+      this.persistedDetached = persistedDetached;
+      this.activeBatchMeta = this.getLastDetachedEntry() ? sanitizeStateEntry(this.getLastDetachedEntry()) : null;
+
       await this.saveData({
         settings: this.settings,
-        activeBatch: this.activeBatch ? packEntry(this.activeBatch) : null,
+        activeBatchRef: this.activeBatchMeta,
+        persistedDetached,
       });
     }
 
@@ -618,6 +1090,25 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         this.app.workspace.revealLeaf(leaf);
       }
       this.refreshPanelViews();
+    }
+
+    async openLiveGraph() {
+      const workspace = this.app?.workspace;
+      if (!workspace) return;
+      const leaf =
+        (typeof workspace.getLeavesOfType === "function" ? workspace.getLeavesOfType("graph")[0] : null) ||
+        (typeof workspace.getLeaf === "function" ? workspace.getLeaf(false) : null);
+      if (!leaf || typeof leaf.setViewState !== "function") return;
+
+      await leaf.setViewState({
+        type: "graph",
+        active: true,
+        state: {},
+      });
+
+      if (typeof workspace.revealLeaf === "function") {
+        workspace.revealLeaf(leaf);
+      }
     }
 
     refreshPanelViews() {
@@ -844,6 +1335,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       this.safetyBuffer.push(entry);
       this.trimBuffer();
       this.activeBatch = { cycleId: entry.id, files: files.map((file) => ({ ...file })) };
+      this.activeBatchMeta = sanitizeStateEntry(entry);
       await this.saveState();
       this.refreshPanelViews();
       return entry;
@@ -857,6 +1349,15 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
       const blocked = [];
       for (const entry of detachedEntries) {
+        if (!Array.isArray(entry.files) || !entry.files.length) {
+          const loaded = await readRecoveryEntry(this, entry.fileRef || (entry.id ? getRecoveryFileRef(`${entry.id}.json`) : null));
+          if (!loaded) {
+            continue;
+          }
+          Object.assign(entry, loaded);
+          entry.fileRef = entry.fileRef || getRecoveryFileRef(`${entry.id}.json`);
+        }
+
         let entryRestored = true;
         for (const snapshot of entry.files) {
           const file = this.app.vault.getAbstractFileByPath(snapshot.path);

@@ -1,7 +1,10 @@
 ---
 type: person
 circle: Особеные
-index: 407
+index: 4207
+graphProfile: ultra-20k-ring
 ---
 # Person-0407
-Short person card.
+
+Load-test person card for Calendula-20K.
+Graph link: [[24-12-03]].

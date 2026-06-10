@@ -1,0 +1,29 @@
+# Resilient Graph Platform Execution Log
+
+## 2026-06-10
+
+- Started autonomous v6 implementation.
+- Created backlog and bug registry.
+- Initial focus: `GP-A001`, `GP-A002`, `GP-A003`, `GP-B001`, `GP-B002`, `GP-B003`, `TEST-M001`.
+- Completed v6 profile schema, offline profile validator, guard quarantine repair, and safe startup tests.
+- Pester status after Milestone 1 foundation: `26 passed, 0 failed`.
+- Started Graph Store MVP: `GP-C001`, `GP-C002`, `GP-D001`, `GP-D002`.
+- Completed atomic graph store MVP with binary node/edge/layout arrays, forward CSR, reverse CSR, manifest checksums, current/previous recovery.
+- Pester status after Graph Store MVP: `27 passed, 0 failed`.
+- Started Query Engine and immutable RenderPlan work: `GP-E001`, `GP-E002`, `GP-E003`.
+- Completed Query Engine, immutable RenderPlan, LOD selector, and GraphScheduler backpressure.
+- Pester status after scheduler: `29 passed, 0 failed`.
+- Started Canvas Ultra Graph MVP: `GP-I001`.
+- Completed Canvas Ultra Graph MVP with 20K synthetic nodes, progressive frame-budget drawing, pan/zoom input, FPS/budget status, command registration, and listener cleanup.
+- Fixed `BUG-I001`: profile switcher now keeps both Guard and Ultra Graph enabled.
+- Pester status after Ultra Graph MVP: `30 passed, 0 failed`.
+- Started degraded-mode observability and Graph Health panel work: `GP-J001`, `GP-K001`.
+- Completed Ultra Graph controlled degradation: interactive, degraded, emergency, steady modes with adaptive frame budget and render stride.
+- Completed visible Graph Health panel and frozen runtime health snapshots.
+- Fixed `BUG-K001`: first frame no longer starts as false interactive mode.
+- Pester status after degraded-mode health panel: `30 passed, 0 failed`.
+- Completed Vault safety policy: path-inside-root guard, destructive bulk `-Force`, write/delete/rename checks across Vault scripts.
+- Pester status after safety policy: `33 passed, 0 failed`.
+- Completed repeatable benchmark tooling: `Measure-CalendulaGraphPerformance.ps1` + Node JSON report.
+- Pester status after benchmark tooling: `34 passed, 0 failed`.
+- Real Calendula-20K benchmark: `33,900` nodes, `35,948` edges, `0` unresolved, graph build `1854.11ms`, store write `38.18ms`, render plan `9.54ms`, scheduler `7.72ms`.

@@ -1,7 +1,13 @@
 ---
 type: person
 circle: Особеные
-index: 411
+index: 4211
+graphProfile: fast-backbone
 ---
 # Person-0411
-Short person card.
+
+Load-test person card for Calendula-20K.
+Graph link: [[19-07-03]].
+
+Graph scope: #graph/backbone
+Backbone link: [[Person-0413]].

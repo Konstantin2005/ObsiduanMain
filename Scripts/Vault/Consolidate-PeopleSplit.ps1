@@ -2,12 +2,15 @@ param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$DiaryRoot = (Join-Path $VaultPath "Calendula\Calendula"),
     [string]$ArchiveFileName = "Mini diaries.md",
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$Force
 )
 
 $ErrorActionPreference = 'Stop'
 $utf8 = [System.Text.UTF8Encoding]::new($false)
 $archivePath = Join-Path $DiaryRoot $ArchiveFileName
+
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
 
 function Get-SplitFiles {
     param([string]$Root)
@@ -129,6 +132,8 @@ $archiveText = @(
 Write-Host "Archive: $archivePath"
 
 if (-not $DryRun) {
+    Assert-SafeBulkOperation -Operation 'Consolidate-PeopleSplit archive write' -Root $DiaryRoot -TargetPaths @($archivePath) -DryRun:$DryRun -Force:$Force
+    Assert-SafeBulkOperation -Operation 'Consolidate-PeopleSplit split cleanup' -Root $DiaryRoot -TargetPaths $splitFiles -DryRun:$DryRun -Force:$Force -Destructive
     [System.IO.File]::WriteAllText($archivePath, $archiveText, $utf8)
     foreach ($file in $splitFiles) {
         Remove-Item -LiteralPath $file -Force

@@ -1,7 +1,10 @@
 ---
 type: person
 circle: Познакомились
-index: 371
+index: 4371
+graphProfile: ultra-20k-ring
 ---
 # Person-0371
-Short person card.
+
+Load-test person card for Calendula-20K.
+Graph link: [[27-07-06]].

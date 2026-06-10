@@ -250,6 +250,7 @@ foreach ($name in ($personMap.Keys | Sort-Object)) {
     $sectionText = "`n---`n$sectionHeader`n`n" + ($formatted -join "`n`n")
     $newContent = $contentBefore + $sectionText
     if (-not $DryRun) {
+        Assert-SafeBulkOperation -Operation 'collect-mentions person write' -Root $VaultPath -TargetPaths @($data.File) -DryRun:$DryRun
         Write-Utf8Text -Path $data.File -Content $newContent
     }
 
