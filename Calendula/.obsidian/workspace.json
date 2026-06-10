@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Calendula/2026/Июнь/09-06-26.md",
+                "file": "Calendula/2026/Июнь/03-06-26.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09-06-26"
+              "title": "03-06-26"
             }
           }
         ]
@@ -176,8 +176,10 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "a211858d290dfa17",
+  "active": "de72db943b4e717e",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/02-06-26.md",
+    "Calendula/2026/Июнь/09-06-26.md",
     "Calendula/2026/Май/05.31-05-2026.md",
     "Calendula/2026/Май/06.22-05-2026.md",
     "Calendula/2026/Май/09.17-05-2026.md",
@@ -188,7 +190,6 @@
     "Calendula/2026/Июнь/07.9-06-2026.md",
     "Calendula/2026/Июнь/05.5-06-2026.md",
     "Calendula/2026/Июнь/10-06-26.md",
-    "Calendula/2026/Июнь/09-06-26.md",
     "Calendula/2026/Июнь/08.5-06-26.md",
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Июль.md",
@@ -208,7 +209,6 @@
     "Excalidraw/Deltaав.md",
     "Calendula/2026/Июнь/08-06-26.md",
     "Calendula/2026/Июнь/07.5-06-26.md",
-    "Финансы/sample-data-2026.md",
     "Финансы/Summaries",
     "Финансы/Scripts/собрать-год.ps1",
     "Финансы/Scripts/создать-дни-год.ps1",

@@ -76,14 +76,14 @@ function Get-SplitFileName {
 
     if ($baseName -match '(\d{4}-\d{2}-\d{2})') {
         $date = [datetime]::ParseExact($matches[1], 'yyyy-MM-dd', $null)
-        $datePart = $date.ToString('d-MM-yyyy')
+        $datePart = $date.ToString('d-MM-yy')
     }
     elseif ($baseName -match '(\d{1,2})-(\d{1,2})-(\d{2,4})') {
         $day = [int]$matches[1]
         $month = [int]$matches[2]
         $yearText = $matches[3]
-        $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
-        $datePart = ('{0}-{1:00}-{2}' -f $day, $month, $year)
+        $year = if ($yearText.Length -eq 2) { [int]$yearText } else { [int]$yearText % 100 }
+        $datePart = ('{0}-{1:00}-{2:00}' -f $day, $month, $year)
     }
 
     return ('{0:D2}.{1}.md' -f $PeopleCount, $datePart)
