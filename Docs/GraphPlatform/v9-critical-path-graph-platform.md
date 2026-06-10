@@ -521,11 +521,22 @@ Backend boundary already has CanvasBackend and NullBackend tests.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-7-001 | Produce Canvas bottleneck report | TODO | draw time is the limiting factor |
+| V9-7-001 | Produce Canvas bottleneck report | DONE | draw time is the limiting factor |
 | V9-7-002 | Define WebGL backend contract delta | TODO | no renderer rewrite required |
 | V9-7-003 | Add minimal WebGL node backend | TODO | GPU path renders visible nodes only |
 | V9-7-004 | Add Canvas fallback comparison | TODO | WebGL failure returns to Canvas safely |
-| TEST-V9-7 | Backend upgrade tests | TODO | capability failure and backend comparison covered |
+| TEST-V9-7 | Backend upgrade gate tests | DONE | WebGL is denied until Canvas bottleneck is proven |
+
+## v9.8: Renderer Upgrade Gate
+
+Goal: prevent premature WebGL by requiring measured Canvas bottleneck proof.
+
+| ID | Task | Status | Done Criteria |
+| --- | --- | --- | --- |
+| V9-UPGRADE-001 | Add Canvas bottleneck report schema | DONE | p95 draw/renderPlan/storage/query timings are aggregated |
+| V9-UPGRADE-002 | Add WebGL permission gate | DONE | WebGL is denied when Canvas is within budget or other layers are slow |
+| V9-UPGRADE-003 | Keep WebGL out of runtime until allowed | DONE | no placeholder backend leaks into architecture |
+| TEST-V9-UPGRADE | Renderer upgrade gate tests | DONE | fast Canvas denied, slow RenderPlan denied, proven Canvas bottleneck allowed |
 
 ## First Slice: V9-S1 Critical Real Frame
 

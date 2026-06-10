@@ -64,3 +64,7 @@
 - Worker failures map to degraded `FailureState`; stale results are dropped instead of being applied.
 - Pester status after Phase 7: `40 passed, 0 failed`.
 - Real Calendula-20K Phase 7 benchmark: `33,900` nodes, `35,948` edges, graph build `2415.39ms`, store write `92.61ms`, RenderPlan `7.38ms`, scheduler `4.54ms`, node budget `3,000`, edge budget `1,000`.
+- Completed Phase 8 / Renderer Upgrade Gate: added Canvas bottleneck report and WebGL permission gate.
+- WebGL remains intentionally unimplemented because current benchmark keeps RenderPlan in budget and no Canvas draw bottleneck has been proven.
+- Pester status after Phase 8: `41 passed, 0 failed`.
+- Real Calendula-20K Phase 8 benchmark: `33,900` nodes, `35,948` edges, graph build `2460.75ms`, store write `102.95ms`, RenderPlan `6.97ms`, scheduler `4.52ms`, node budget `3,000`, edge budget `1,000`.

@@ -64,5 +64,5 @@ The next active plan is `v9 Critical Path Graph Platform`.
 | V9-5 | Multi-scale graph | DONE | domain overview, clusters, backbone, important nodes, ego graph, details |
 | V9-6 | Storage evolution | DONE | cold stable IDs, fingerprints, incremental update planner, compatibility matrix, current/previous recovery |
 | V9-7 | Worker layer | DONE | async query/layout/edge tasks, stale cancellation, main-thread fallback failure mapping |
-| V9-8 | Renderer upgrade gate | TODO | Canvas bottleneck proof before WebGL |
+| V9-8 | Renderer upgrade gate | DONE | Canvas bottleneck proof before WebGL |
 | V9-3 | Deep validation and store compatibility | TODO | idle deep scan and repair scheduling |
