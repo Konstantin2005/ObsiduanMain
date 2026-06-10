@@ -182,6 +182,35 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         gap: 8px;
         margin-top: 10px;
       }
+      .life-panel-mode-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0 8px;
+      }
+      .life-panel-mode-chip {
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: var(--background-primary);
+        cursor: pointer;
+        font-size: 0.84em;
+        transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+      }
+      .life-panel-mode-chip:hover {
+        transform: translateY(-1px);
+        border-color: var(--interactive-accent);
+      }
+      .life-panel-mode-chip.is-active {
+        background: var(--interactive-accent);
+        color: var(--text-on-accent);
+        border-color: var(--interactive-accent);
+      }
+      .life-panel-hint {
+        margin: 4px 0 0;
+        color: var(--text-muted);
+        font-size: 0.84em;
+      }
       .life-panel-pill {
         border-radius: 999px;
         padding: 5px 10px;
@@ -389,8 +418,26 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         cls: "life-plugin-action is-wide",
       });
       graphButton.addEventListener("click", () => {
-        void this.plugin.openBuiltInGraph(true);
+        void this.plugin.openBuiltInGraph();
       });
+
+      const modeRow = controls.createDiv({ cls: "life-panel-mode-row" });
+      const modes = [
+        { mode: "prune-heavy", label: "Prune hubs" },
+        { mode: "equalize", label: "Equalize" },
+        { mode: "regrow", label: "Regrow" },
+      ];
+      for (const entry of modes) {
+        const chip = modeRow.createEl("button", {
+          text: entry.label,
+          cls: `life-panel-mode-chip${this.plugin.settings.cycleMode === entry.mode ? " is-active" : ""}`,
+        });
+        chip.addEventListener("click", async () => {
+          await this.plugin.setCycleMode(entry.mode);
+          this.render();
+          this.plugin.refreshPanelViews();
+        });
+      }
 
       const presets = controls.createDiv({ cls: "life-panel-presets" });
       const presetDefs = [
@@ -424,6 +471,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       const banner = controls.createDiv({ cls: "life-panel-banner" });
       banner.createDiv({ cls: "life-panel-pill", text: `Mode: ${pickModeLabel(this.plugin.settings.cycleMode)}` });
       banner.createDiv({ cls: "life-panel-pill", text: `Hold: ${formatMs(this.plugin.settings.detachHoldMs)} / ${formatMs(this.plugin.settings.restoreHoldMs)}` });
+      controls.createEl("p", {
+        text: pickModeHint(this.plugin.settings.cycleMode),
+        cls: "life-panel-hint",
+      });
 
       this.plugin.renderSettingsBlock(this.rootEl, this);
     }
@@ -535,7 +586,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         });
       } catch (error) {
         console.error(`[${PLUGIN_LABEL}] failed to load`, error);
-        new Notice(`${PLUGIN_LABEL} failed to load. Check the console.`);
       }
     }
 
@@ -599,11 +649,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
 
     async openLifePanel() {
-      let leaf = this.app.workspace.getLeavesOfType(PANEL_VIEW_TYPE)[0];
-      if (!leaf) {
-        const rightLeaf = this.app.workspace.getRightLeaf;
-        leaf = typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(true);
-      }
+      const rightLeaf = this.app.workspace.getRightLeaf;
+      const leaf =
+        typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(false);
+      if (!leaf) return;
       await leaf.setViewState({
         type: PANEL_VIEW_TYPE,
         active: true,
@@ -615,12 +664,11 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       this.refreshPanelViews();
     }
 
-    async openBuiltInGraph(showNotice = false) {
-      let leaf = this.app.workspace.getLeavesOfType(GRAPH_VIEW_TYPE)[0];
-      if (!leaf) {
-        const rightLeaf = this.app.workspace.getRightLeaf;
-        leaf = typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(true);
-      }
+    async openBuiltInGraph() {
+      const rightLeaf = this.app.workspace.getRightLeaf;
+      const leaf =
+        typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(false);
+      if (!leaf) return;
       await leaf.setViewState({
         type: GRAPH_VIEW_TYPE,
         active: true,
@@ -628,9 +676,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       });
       if (typeof this.app.workspace.revealLeaf === "function") {
         this.app.workspace.revealLeaf(leaf);
-      }
-      if (showNotice) {
-        new Notice(`${PLUGIN_LABEL}: opened built-in Graph`);
       }
     }
 
@@ -665,33 +710,25 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
       const mode = this.settings.cycleMode || "prune-heavy";
       if (mode === "regrow") {
-        const detached = this.safetyBuffer.filter((entry) => entry.status === "detached");
-        if (detached.length) {
-          const newest = detached[detached.length - 1];
-          return newest.files.slice(0, batchSize);
-        }
+        return [];
       }
 
-      stats.sort((left, right) => {
-        if (mode === "equalize") {
-          if (left.linkCount !== right.linkCount) return left.linkCount - right.linkCount;
-        } else {
-          if (left.linkCount !== right.linkCount) return right.linkCount - left.linkCount;
-        }
-        return left.file.path.localeCompare(right.file.path);
-      });
-
-      const chosen = [];
-      for (const item of stats) {
-        if (chosen.length >= batchSize) break;
-        chosen.push({
+      const ranked = stats
+        .map((item) => ({
           path: item.file.path,
           original: item.text,
           detached: this.detachOneLink(item.text, mode),
           linkCount: item.linkCount,
+        }))
+        .sort((left, right) => {
+          if (left.linkCount !== right.linkCount) return right.linkCount - left.linkCount;
+          return left.path.localeCompare(right.path);
         });
-      }
-      return chosen;
+
+      const overloaded = ranked.filter((item) => item.linkCount > 1);
+      const fallback = ranked.filter((item) => item.linkCount <= 1);
+      const ordered = mode === "equalize" ? overloaded.concat(fallback) : ranked;
+      return ordered.slice(0, batchSize);
     }
 
     detachOneLink(text, mode) {
@@ -700,11 +737,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
       let link = links[0];
       if (mode === "prune-heavy") {
-        link = links.reduce((best, candidate) => {
-          const bestScore = best.detached.length + best.original.length;
-          const candidateScore = candidate.detached.length + candidate.original.length;
-          return candidateScore > bestScore ? candidate : best;
-        }, links[0]);
+        link = links[0];
       } else if (mode === "equalize" && links.length > 1) {
         link = links[links.length - 1];
       } else if (mode === "regrow") {
@@ -714,6 +747,12 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
 
       return replaceRange(text, link.start, link.end, link.detached);
+    }
+
+    async setCycleMode(mode) {
+      this.settings.cycleMode = mode;
+      await this.saveState();
+      this.refreshPanelViews();
     }
 
     renderSettingsBlock(containerEl) {
@@ -745,8 +784,22 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         cls: "life-plugin-action is-wide",
       });
       graphButton.addEventListener("click", () => {
-        void this.openBuiltInGraph(true);
+        void this.openBuiltInGraph();
       });
+
+      const modeSetting = new Setting(card)
+        .setName("Cycle mode")
+        .setDesc("Choose how the graph shifts during each cycle.");
+      modeSetting.addDropdown((dropdown) =>
+        dropdown
+          .addOption("prune-heavy", "Prune hubs")
+          .addOption("equalize", "Equalize")
+          .addOption("regrow", "Regrow")
+          .setValue(this.settings.cycleMode)
+          .onChange(async (value) => {
+            await this.setCycleMode(value);
+          }),
+      );
 
       new Setting(card)
         .setName("Open panel on start")
@@ -922,29 +975,11 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       this.refreshPanelViews();
 
       if (blocked.length && !force) {
-        new Notice(`${PLUGIN_LABEL}: restore paused because some files changed externally.`);
+        console.warn(`[${PLUGIN_LABEL}] restore paused because some files changed externally.`);
         return false;
       }
 
       return true;
-    }
-
-    async pickBatchCandidates(batchSize) {
-      const files = shuffle(this.app.vault.getMarkdownFiles().filter((file) => !file.path.startsWith(".")));
-      const candidates = [];
-      for (const file of files) {
-        if (candidates.length >= batchSize) break;
-        const text = await this.app.vault.read(file);
-        const links = extractWikiLinkCandidates(text);
-        if (!links.length) continue;
-        const link = links[Math.floor(Math.random() * links.length)];
-        candidates.push({
-          path: file.path,
-          original: text,
-          detached: replaceRange(text, link.start, link.end, link.detached),
-        });
-      }
-      return candidates;
     }
 
     async cycleLinks(showNotice = false) {
@@ -958,9 +993,20 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         const pulseCount = Math.max(1, Number(this.settings.pulseCount) || 3);
         for (let pulse = 0; pulse < pulseCount; pulse += 1) {
           const batchSize = Math.max(1, Number(this.settings.batchSize) || 5);
-          const candidates = await this.pickBatchCandidates(batchSize);
+          const mode = this.settings.cycleMode || "prune-heavy";
+          if (mode === "regrow") {
+            const regrown = await this.recoverFromBuffer(true);
+            if (!regrown) return completed;
+            await this.openLifePanel();
+            await this.openBuiltInGraph();
+            completed += 1;
+            await sleep(Math.max(0, Number(this.settings.restoreHoldMs) || 0));
+            continue;
+          }
+
+          const candidates = await this.chooseCandidates(batchSize);
           if (!candidates.length) {
-            new Notice(`${PLUGIN_LABEL}: no wiki links found to cycle.`);
+            console.warn(`[${PLUGIN_LABEL}] no wiki links found to cycle.`);
             return completed;
           }
 
@@ -974,11 +1020,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
           const entry = await this.recordDetachedBatch(candidates);
           await this.openLifePanel();
-          await this.openBuiltInGraph(false);
-
-          if (showNotice && pulse === 0) {
-            new Notice(`${PLUGIN_LABEL}: detached ${candidates.length} link(s)`);
-          }
+          await this.openBuiltInGraph();
 
           await sleep(Math.max(0, Number(this.settings.detachHoldMs) || 0));
           await this.recoverFromBuffer(false);
