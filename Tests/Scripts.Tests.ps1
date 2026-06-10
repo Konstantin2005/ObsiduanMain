@@ -1,5 +1,6 @@
 ﻿$repoRoot = Split-Path -Parent $PSScriptRoot
-
+$repoRoot = Split-Path -Parent $PSScriptRoot
+. (Join-Path $repoRoot 'Scripts\Vault\VaultHelpers.ps1')
 function New-TempRoot {
     $path = Join-Path ([System.IO.Path]::GetTempPath()) ("codex-" + [guid]::NewGuid().ToString("N"))
     New-Item -ItemType Directory -Path $path -Force | Out-Null

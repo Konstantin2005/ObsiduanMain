@@ -5,8 +5,9 @@
 )
 
 $ErrorActionPreference = 'Stop'
-$utf8 = [System.Text.UTF8Encoding]::new($false)
 $archivePath = Join-Path $DiaryRoot "Mini diaries.md"
+
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
 
 function Get-NoteMeta {
     param([string]$Path)
@@ -49,25 +50,6 @@ function Get-NoteMeta {
     }
 
     return $null
-}
-
-function Get-RelativePath {
-    param(
-        [string]$From,
-        [string]$To
-    )
-
-    $fromFull = [System.IO.Path]::GetFullPath($From)
-    if (-not $fromFull.EndsWith([System.IO.Path]::DirectorySeparatorChar)) {
-        $fromFull += [System.IO.Path]::DirectorySeparatorChar
-    }
-
-    $toFull = [System.IO.Path]::GetFullPath($To)
-    if ($toFull.StartsWith($fromFull, [System.StringComparison]::OrdinalIgnoreCase)) {
-        return $toFull.Substring($fromFull.Length).Replace('\', '/')
-    }
-
-    return $toFull.Replace('\', '/')
 }
 
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
@@ -131,7 +113,7 @@ $markdownFiles = Get-ChildItem -LiteralPath $DiaryRoot -Recurse -File -Filter "*
     Where-Object { $_.FullName -ne $archivePath }
 
 foreach ($file in $markdownFiles) {
-    $original = [System.IO.File]::ReadAllText($file.FullName, $utf8)
+    $original = Read-Utf8Text -Path $file.FullName
     $updated = $original
 
     foreach ($item in $renamePlan) {
@@ -140,7 +122,7 @@ foreach ($file in $markdownFiles) {
     }
 
     if ($updated -ne $original) {
-        [System.IO.File]::WriteAllText($file.FullName, $updated, $utf8)
+        Write-Utf8Text -Path $file.FullName -Content $updated
     }
 }
 

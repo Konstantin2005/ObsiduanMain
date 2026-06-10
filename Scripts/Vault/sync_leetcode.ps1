@@ -10,7 +10,8 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$utf8 = [System.Text.UTF8Encoding]::new($false)
+
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
 
 $topicMap = @{
     "Array" = "Array"
@@ -189,7 +190,7 @@ foreach ($slug in $sortedSlugs) {
 
     $content = $lines -join "`n"
     if (-not $DryRun) {
-        [System.IO.File]::WriteAllText($filePath, $content, $utf8)
+        Write-Utf8Text -Path $filePath -Content $content
     }
     $generated++
     $moveDetails += [pscustomobject]@{

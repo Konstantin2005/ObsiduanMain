@@ -9,6 +9,8 @@ $ErrorActionPreference = 'Stop'
 $vaultPath = $VaultPath
 $vaultFull = $VaultFull
 
+. (Join-Path $PSScriptRoot 'VaultHelpers.ps1')
+
 $abstractions = @{
     "Emotion" = @("positive_emotions", "negative_emotions")
     "Action" = @("actions")
@@ -358,7 +360,7 @@ foreach ($word in ($wordToAbstractions.Keys | Sort-Object)) {
     $content = $lines -join "`n"
     $fileName = "$vaultPath\$word.md"
     if (-not $DryRun) {
-        [System.IO.File]::WriteAllText($fileName, $content, [System.Text.Encoding]::UTF8)
+        Write-Utf8Text -Path $fileName -Content $content -Bom
     }
 
     $count++
