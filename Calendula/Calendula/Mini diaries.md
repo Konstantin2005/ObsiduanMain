@@ -7,6 +7,8 @@ source: consolidated-mini-diaries
 
 ## 05.5-06-2026.md
 
+- date_key: 2026-06-05
+
 - mini_source: 05.5-06-26.md
 - source: 05.5-06-2026.md
 - people_count: 5
@@ -28,6 +30,8 @@ source: consolidated-mini-diaries
 ---
 
 ## 07.9-06-2026.md
+
+- date_key: 2026-06-09
 
 - mini_source: 07.9-06-26.md
 - source: 07.9-06-2026.md
@@ -56,6 +60,8 @@ source: consolidated-mini-diaries
 
 ## 05.13-05-2026.md
 
+- date_key: 2026-05-13
+
 - mini_source: 05.13-05-26.md
 - source: 05.13-05-2026.md
 - people_count: 5
@@ -80,6 +86,8 @@ source: consolidated-mini-diaries
 
 ## 05.31-05-2026.md
 
+- date_key: 2026-05-31
+
 - mini_source: 05.31-05-26.md
 - source: 05.31-05-2026.md
 - people_count: 5
@@ -95,6 +103,8 @@ source: consolidated-mini-diaries
 
 ## 05.7-05-2026.md
 
+- date_key: 2026-05-07
+
 - mini_source: 05.7-05-26.md
 - source: 05.7-05-2026.md
 - people_count: 5
@@ -109,6 +119,8 @@ source: consolidated-mini-diaries
 ---
 
 ## 06.22-05-2026.md
+
+- date_key: 2026-05-22
 
 - mini_source: 06.22-05-26.md
 - source: 06.22-05-2026.md
@@ -133,6 +145,8 @@ source: consolidated-mini-diaries
 ---
 
 ## 07.16-05-2026.md
+
+- date_key: 2026-05-16
 
 - mini_source: 07.16-05-26.md
 - source: 07.16-05-2026.md
@@ -164,6 +178,8 @@ source: consolidated-mini-diaries
 ---
 
 ## 08.15-05-2026.md
+
+- date_key: 2026-05-15
 
 - mini_source: 08.15-05-26.md
 - source: 08.15-05-2026.md
@@ -198,6 +214,8 @@ source: consolidated-mini-diaries
 ---
 
 ## 09.17-05-2026.md
+
+- date_key: 2026-05-17
 
 - mini_source: 09.17-05-26.md
 - source: 09.17-05-2026.md

@@ -57,6 +57,30 @@ function Get-SourceSectionTitle {
     return [System.IO.Path]::GetFileNameWithoutExtension($FilePath)
 }
 
+function Get-DateKeyFromName {
+    param([string]$FileName)
+
+    $name = [System.IO.Path]::GetFileNameWithoutExtension($FileName)
+
+    if ($name -match '^\d{2}\.(.+)$') {
+        $name = $matches[1]
+    }
+
+    if ($name -match '^(\d{4})-(\d{2})-(\d{2})$') {
+        return "$($matches[1])-$($matches[2])-$($matches[3])"
+    }
+
+    if ($name -match '^(\d{1,2})-(\d{1,2})-(\d{2,4})$') {
+        $day = [int]$matches[1]
+        $month = [int]$matches[2]
+        $yearText = $matches[3]
+        $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
+        return ('{0:0000}-{1:00}-{2:00}' -f $year, $month, $day)
+    }
+
+    return $null
+}
+
 $splitFiles = Get-SplitFiles -Root $DiaryRoot | Sort-Object
 Write-Host "Found $($splitFiles.Count) split files"
 
@@ -73,10 +97,12 @@ foreach ($file in $splitFiles) {
     $primaryPeople = Get-FmValue -FrontMatter $fm.FrontMatter -Key "primary_people"
     $overflowPeople = Get-FmValue -FrontMatter $fm.FrontMatter -Key "overflow_people"
     $title = Get-SourceSectionTitle -FilePath $file -SourceValue $sourceValue
+    $dateKey = Get-DateKeyFromName -FileName ([System.IO.Path]::GetFileName($file))
 
     $entry = New-Object System.Collections.Generic.List[string]
     [void]$entry.Add("## $title")
     [void]$entry.Add("")
+    if ($dateKey) { [void]$entry.Add("- date_key: $dateKey") }
     [void]$entry.Add("- mini_source: $([System.IO.Path]::GetFileName($file))")
     if ($sourceValue) { [void]$entry.Add("- source: $sourceValue") }
     if ($peopleCount) { [void]$entry.Add("- people_count: $peopleCount") }

@@ -64,23 +64,48 @@ function Get-ArchivePath {
     return Join-Path $Root $Name
 }
 
+function Get-DateKeyFromName {
+    param([string]$FileName)
+
+    $name = [System.IO.Path]::GetFileNameWithoutExtension($FileName)
+
+    if ($name -match '^\d{2}\.(.+)$') {
+        $name = $matches[1]
+    }
+
+    if ($name -match '^(\d{4})-(\d{2})-(\d{2})$') {
+        return "$($matches[1])-$($matches[2])-$($matches[3])"
+    }
+
+    if ($name -match '^(\d{1,2})-(\d{1,2})-(\d{2,4})$') {
+        $day = [int]$matches[1]
+        $month = [int]$matches[2]
+        $yearText = $matches[3]
+        $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
+        return ('{0:0000}-{1:00}-{2:00}' -f $year, $month, $day)
+    }
+
+    return $null
+}
+
 function Get-SourceKey {
     param([string]$FilePath)
     return [System.IO.Path]::GetFileName($FilePath)
 }
 
-function Test-ArchiveHasSource {
+function Test-ArchiveHasDateKey {
     param(
         [string]$ArchiveText,
-        [string]$SourceKey
+        [string]$DateKey
     )
 
-    $escaped = [Regex]::Escape($SourceKey)
-    return $ArchiveText -match "(?m)^source:\s+$escaped\s*$"
+    $escaped = [Regex]::Escape($DateKey)
+    return $ArchiveText -match "(?m)^date_key:\s+$escaped\s*$"
 }
 
 function New-ArchiveEntry {
     param(
+        [string]$DateKey,
         [string]$DailySource,
         [string]$MiniSource,
         [int]$PeopleCount,
@@ -90,8 +115,10 @@ function New-ArchiveEntry {
     )
 
     $lines = New-Object System.Collections.Generic.List[string]
-    [void]$lines.Add("## $DailySource")
+    [void]$lines.Add("## $DateKey")
     [void]$lines.Add("")
+    [void]$lines.Add("- date_key: $DateKey")
+    [void]$lines.Add("- source: $DailySource")
     [void]$lines.Add("- mini_source: $MiniSource")
     [void]$lines.Add("- people_count: $PeopleCount")
     [void]$lines.Add("- primary_people: $([string]::Join(', ', $PrimaryPeople))")
@@ -148,7 +175,12 @@ foreach ($file in $files) {
     }
 
     $dailySource = Get-SourceKey -FilePath $file
-    if (Test-ArchiveHasSource -ArchiveText $archiveText -SourceKey $dailySource) {
+    $dateKey = Get-DateKeyFromName -FileName $dailySource
+    if ([string]::IsNullOrWhiteSpace($dateKey)) {
+        continue
+    }
+
+    if (Test-ArchiveHasDateKey -ArchiveText $archiveText -DateKey $dateKey) {
         Write-Host ""
         Write-Host "File: $file"
         Write-Host "People: $($orderedPeople.Count) -> already in archive, skipped"
@@ -156,6 +188,7 @@ foreach ($file in $files) {
     }
 
     $entryText = New-ArchiveEntry `
+        -DateKey $dateKey `
         -DailySource $dailySource `
         -MiniSource ([System.IO.Path]::GetFileNameWithoutExtension($file)) `
         -PeopleCount $orderedPeople.Count `
