@@ -21,14 +21,17 @@
             "id": "20d21b3d685c3683",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/Люди/1_круг/Yogg.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Yogg"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,8 +190,9 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "20d21b3d685c3683",
+  "active": "cb1a52c74fbc87b1",
   "lastOpenFiles": [
+    "Calendula/Люди/1_круг/Yogg.md",
     "Calendula/Люди/Люди.md",
     "Calendula/Люди/4_круг/Янфир2.md",
     "daily-git.ps1",
@@ -220,7 +224,6 @@
     "Calendula/Люди/5_круг/Доп5_072.md",
     "Calendula/Люди/5_круг/Доп5_071.md",
     "Calendula/Люди/5_круг/Доп5_070.md",
-    "Calendula/Люди/5_круг/Доп5_069.md",
     "Calendula/Люди/5_круг",
     "Планирование/Seting/Templetes",
     "Планирование/Что-то другое",
