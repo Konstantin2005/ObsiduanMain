@@ -283,7 +283,7 @@ Rps * размер данных * количество секунд в году 
 #Complete ^MAS5yv74
 
 ## Embedded Files
-2c3d242e44b5cfeecb56d63630777ee6b87f63b3: [[Pasted Image 20260204162544_802.png]]
+2c3d242e44b5cfeecb56d63630777ee6b87f63b3: Pasted Image 20260204162544_802.png
 
 %%
 ## Drawing

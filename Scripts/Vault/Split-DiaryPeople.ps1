@@ -5,7 +5,8 @@
   Scans markdown diary files, counts unique person wikilinks like [[Danil]],
   and when the count is greater than the main limit, splits the note into
   chunks. The original note keeps up to 4 unique people, and later mini notes
-  keep up to 3 unique people each.
+  keep up to 3 unique people each. Mini notes only keep the copied text body,
+  without YAML properties.
 
   Default output file name format:
     07.1-06-26.md
@@ -31,11 +32,6 @@ function Get-DiaryFiles {
         Where-Object {
             $name = [System.IO.Path]::GetFileNameWithoutExtension($_)
             if ($name -match '^\d{4}$' -or $name -match '^\d{2}\.\d+-.+$') {
-                return $false
-            }
-
-            $head = [System.IO.File]::ReadAllText($_, [System.Text.UTF8Encoding]::new($false))
-            if ($head -match '(?m)^chunk_index:\s*\d+\s*$') {
                 return $false
             }
 
@@ -143,69 +139,9 @@ function Get-SplitFileName {
     return ('{0}.{1}-{2}.md' -f $dateParts.Day, $ChunkIndex, $dateParts.MonthYear)
 }
 
-function Rename-ExistingSplitFiles {
-    param(
-        [string]$Root,
-        [switch]$DryRun
-    )
-
-    $splitFiles = [System.IO.Directory]::GetFiles($Root, "*.md", [System.IO.SearchOption]::AllDirectories) |
-        Where-Object {
-            [System.IO.Path]::GetFileNameWithoutExtension($_) -match '^\d{2}\.\d+-.+$'
-        }
-
-    foreach ($splitFile in $splitFiles) {
-        $content = [System.IO.File]::ReadAllText($splitFile, $utf8)
-        if ($content -notmatch '(?m)^source:\s*(.+?)\s*$') {
-            continue
-        }
-
-        $sourceName = $matches[1].Trim()
-        $chunkIndex = $null
-        if ($content -match '(?m)^chunk_index:\s*(\d+)\s*$') {
-            $chunkIndex = [int]$matches[1]
-        }
-        elseif ([System.IO.Path]::GetFileNameWithoutExtension($splitFile) -match '^\d{2}\.(\d+)-\d{2}-\d{2}$') {
-            $chunkIndex = [int]$matches[1]
-        }
-
-        if ($null -eq $chunkIndex) {
-            continue
-        }
-
-        $sourcePath = Join-Path ([System.IO.Path]::GetDirectoryName($splitFile)) $sourceName
-        if (-not [System.IO.File]::Exists($sourcePath)) {
-            Write-Host "  ! Skip rename for $splitFile because source is missing: $sourceName"
-            continue
-        }
-
-        $targetName = Get-SplitFileName -SourceFile $sourcePath -ChunkIndex $chunkIndex
-        $currentName = [System.IO.Path]::GetFileName($splitFile)
-        if ($targetName -eq $currentName) {
-            continue
-        }
-
-        $targetPath = Join-Path ([System.IO.Path]::GetDirectoryName($splitFile)) $targetName
-        if ([System.IO.File]::Exists($targetPath)) {
-            Write-Host "  ! Skip rename for $splitFile because target already exists: $targetName"
-            continue
-        }
-
-        if ($DryRun) {
-            Write-Host "  -> Rename $currentName to $targetName"
-            continue
-        }
-
-        [System.IO.File]::Move($splitFile, $targetPath)
-        Write-Host "  -> Renamed $currentName to $targetName"
-    }
-}
-
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
     throw "Diary path not found: $DiaryRoot"
 }
-
-$null = Rename-ExistingSplitFiles -Root $DiaryRoot -DryRun:$DryRun
 
 $files = Get-DiaryFiles -Root $DiaryRoot
 Write-Host "Found $($files.Count) diary files"
@@ -276,19 +212,12 @@ foreach ($file in $files) {
         $chunk = $chunks[$chunkIndex]
         $splitFileName = Get-SplitFileName -SourceFile $file -ChunkIndex $chunkIndex
         $splitPath = Join-Path ([System.IO.Directory]::GetParent($file).FullName) $splitFileName
-        $splitContent = @(
-            "---"
-            "source: $([System.IO.Path]::GetFileName($file))"
-            "people_count: $($chunk.PeopleCount)"
-            "chunk_index: $chunkIndex"
-            "main_limit: $MainChunkLimit"
-            "mini_limit: $MiniChunkLimit"
-            "---"
-            ""
-            $topTags
-            ""
-            ($chunk.Blocks -join "`n`n")
-        ) -join "`n"
+        $splitSections = @()
+        if ($topTags.Count -gt 0) {
+            $splitSections += ($topTags -join "`n")
+        }
+        $splitSections += ($chunk.Blocks -join "`n`n")
+        $splitContent = $splitSections -join "`n`n"
 
         [System.IO.File]::WriteAllText($splitPath, $splitContent, $utf8)
         Write-Host "  -> $splitPath"

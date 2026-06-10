@@ -164,6 +164,9 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.currentProfile = null;
       this.currentTickMs = plugin.settings.tickMs;
       this.textColor = null;
+      this.paintRafId = null;
+      this.paintToken = 0;
+      this.lastPaintSummary = null;
       this.destroyed = false;
     }
 
@@ -236,6 +239,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     async onClose() {
       this.destroyed = true;
       this.stopRenderLoop();
+      this.cancelCanvasGraphPaint();
     }
 
     togglePause() {
@@ -335,6 +339,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
           reseedInterval: 0,
           positionJitter: 0,
           positionMargin: 0,
+          edgeBatchSize: 0,
+          nodeBatchSize: 0,
+          labelLimit: 0,
+          labelMaxChars: 0,
         };
       }
       if (fileCount >= ultraThreshold) {
@@ -350,6 +358,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
           reseedInterval: 10,
           positionJitter: 12,
           positionMargin: 40,
+          edgeBatchSize: 6,
+          nodeBatchSize: 4,
+          labelLimit: 8,
+          labelMaxChars: 24,
         };
       }
       if (fileCount >= 5000) {
@@ -365,6 +377,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
           reseedInterval: 6,
           positionJitter: 16,
           positionMargin: 42,
+          edgeBatchSize: 12,
+          nodeBatchSize: 8,
+          labelLimit: 14,
+          labelMaxChars: 28,
         };
       }
       return {
@@ -379,6 +395,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         reseedInterval: 3,
         positionJitter: 22,
         positionMargin: 46,
+        edgeBatchSize: 0,
+        nodeBatchSize: 0,
+        labelLimit: this.plugin.settings.maxNodes,
+        labelMaxChars: 36,
       };
     }
 
@@ -507,6 +527,149 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.imageSmoothingEnabled = true;
       return ctx;
+    }
+
+    cancelCanvasGraphPaint() {
+      if (
+        this.paintRafId !== null &&
+        typeof window !== "undefined" &&
+        typeof window.cancelAnimationFrame === "function"
+      ) {
+        window.cancelAnimationFrame(this.paintRafId);
+      }
+      this.paintRafId = null;
+      this.paintToken += 1;
+    }
+
+    getLabelPaths(sample, degree, profile) {
+      const limit = Math.max(0, Math.min(profile.labelLimit || sample.length, sample.length));
+      if (!limit || limit >= sample.length) {
+        return null;
+      }
+
+      const ranked = sample
+        .slice()
+        .sort((left, right) => {
+          const degreeDiff = (degree.get(right.path) || 0) - (degree.get(left.path) || 0);
+          if (degreeDiff !== 0) return degreeDiff;
+          return shortName(left).localeCompare(shortName(right));
+        });
+
+      return new Set(ranked.slice(0, limit).map((file) => file.path));
+    }
+
+    paintCanvasBackdrop(ctx, width, height) {
+      ctx.clearRect(0, 0, width, height);
+      ctx.save();
+      const bg = ctx.createLinearGradient(0, 0, width, height);
+      bg.addColorStop(0, "rgba(80, 120, 255, 0.16)");
+      bg.addColorStop(0.5, "rgba(0, 0, 0, 0.04)");
+      bg.addColorStop(1, "rgba(255, 132, 111, 0.10)");
+      roundedRectPath(ctx, 0, 0, width, height, 24);
+      ctx.fillStyle = bg;
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255,255,255,0.08)";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    paintCanvasEdges(ctx, edges, startIndex, endIndex, disabledKeys) {
+      let drawn = 0;
+      ctx.save();
+      ctx.lineCap = "round";
+      for (let index = startIndex; index < endIndex; index += 1) {
+        const edge = edges[index];
+        const a = this.positions.get(edge.a);
+        const b = this.positions.get(edge.b);
+        if (!a || !b) continue;
+        const disabled = disabledKeys.has(edge.key);
+        ctx.setLineDash(edge.ghost ? [5, 8] : []);
+        ctx.strokeStyle = disabled
+          ? edge.ghost
+            ? "rgba(120, 120, 120, 0.14)"
+            : "rgba(123, 148, 255, 0.08)"
+          : edge.ghost
+            ? "rgba(120, 120, 120, 0.26)"
+            : "rgba(123, 148, 255, 0.38)";
+        ctx.lineWidth = edge.ghost ? 1.1 : 1.45;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+        drawn += 1;
+      }
+      ctx.restore();
+      return drawn;
+    }
+
+    paintCanvasNodes(
+      ctx,
+      sample,
+      degree,
+      startIndex,
+      endIndex,
+      width,
+      labelPaths,
+      profile,
+      summary,
+    ) {
+      let drawn = 0;
+      ctx.save();
+      ctx.font = "12px var(--font-interface)";
+      ctx.textBaseline = "middle";
+      const textColor = this.getTextColor();
+      const maxLabelChars = profile.labelMaxChars || 36;
+      for (let index = startIndex; index < endIndex; index += 1) {
+        const file = sample[index];
+        const pos = this.positions.get(file.path);
+        if (!pos) continue;
+        const links = degree.get(file.path) || 0;
+        const radius = clamp(5 + Math.sqrt(links), 5, 14);
+        const shouldLabel = !labelPaths || labelPaths.has(file.path);
+        const label = shouldLabel ? shortName(file).slice(0, maxLabelChars) : "";
+        const labelX = pos.x + radius + 7;
+        const labelHeight = shouldLabel ? 18 : 0;
+        const labelWidth = shouldLabel
+          ? Math.min(
+              Math.max(0, width - labelX - 16),
+              ctx.measureText(label).width + 6,
+            )
+          : 0;
+        const labelY = pos.y - labelHeight / 2;
+
+        this.hitTargets.push({
+          path: file.path,
+          x: pos.x,
+          y: pos.y,
+          radius: radius + 4,
+          labelX,
+          labelY,
+          labelWidth,
+          labelHeight,
+        });
+
+        ctx.beginPath();
+        ctx.fillStyle = colorFromString(file.path);
+        ctx.arc(pos.x, pos.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = "rgba(255,255,255,0.30)";
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+
+        if (shouldLabel) {
+          ctx.fillStyle = textColor;
+          ctx.fillText(label, labelX, pos.y);
+          summary.labelsRendered += 1;
+        } else {
+          summary.labelsSkipped += 1;
+        }
+
+        drawn += 1;
+      }
+      ctx.restore();
+      return drawn;
     }
 
     drawCanvasGraph(width, height, sample, edges, degree, disabledKeys, profile) {
