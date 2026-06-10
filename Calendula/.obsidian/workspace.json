@@ -39,10 +39,14 @@
             "id": "3a6e4c1637da330f",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Июнь/08-06-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "08-06-26"
             }
           },
           {
@@ -233,12 +237,14 @@
   },
   "active": "3a6e4c1637da330f",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/09-06-26.md",
+    "Calendula/2026/Июнь/08-06-26.md",
+    "Calendula/2026/Июнь/09.07-06-26.md",
+    "Calendula/2026/Июнь/02.07-06-26.md",
+    "Calendula/2026/Июнь/02-06-26.md",
     "Calendula/2026/Май/07-05-26.md",
     "Calendula/2026/Май/02.17-05-26.md",
-    "Calendula/2026/Июнь/09.07-06-26.md",
-    "Calendula/2026/Июнь/09-06-26.md",
     "Calendula/2026/Июнь/03-06-26.md",
-    "Calendula/2026/Июнь/02-06-26.md",
     "Calendula/2026/Июнь/01-06-26.md",
     "Calendula/2026/Июнь/04-06-26.md",
     "Calendula/2026/Май/06.22-05-26.md",
@@ -257,8 +263,6 @@
     "Calendula/2026/Март/21-03-26.md",
     "Calendula/2026/Май/30-05-26.md",
     "Calendula/2026/Май/29-05-26.md",
-    "Calendula/2026/Май/27-05-26.md",
-    "Calendula/2026/Май/26-05-26.md",
     "Excalidraw/pichers/Pasted Image 20260609231556_859.png",
     "Excalidraw/pichers/Pasted Image 20260609231219_906.png",
     "Excalidraw/pichers/Pasted Image 20260609231156_502.png",
