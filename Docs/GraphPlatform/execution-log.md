@@ -43,3 +43,7 @@
 - Ultra Graph now reports stability state in health snapshots and records store/frame incidents without crashing the renderer.
 - Pester status after Phase 2: `36 passed, 0 failed`.
 - Real Calendula-20K Phase 2 benchmark: `33,900` nodes, `35,948` edges, graph build `2168.21ms`, store write `42.75ms`, RenderPlan `7.07ms`, scheduler `4.54ms`, node budget `3,000`, edge budget `1,000`.
+- Completed Phase 3 / Performance Core: added `BudgetPolicy`, `FrameGovernor`, `MemoryGovernor`, and `IOGovernor`.
+- Ultra Graph budgets now flow through governors; health snapshots expose frame, memory, and IO governor state.
+- Pester status after Phase 3: `37 passed, 0 failed`.
+- Real Calendula-20K Phase 3 benchmark: `33,900` nodes, `35,948` edges, graph build `2161.5ms`, store write `39.51ms`, RenderPlan `7.61ms`, scheduler `3.92ms`, node budget `3,000`, edge budget `1,000`.

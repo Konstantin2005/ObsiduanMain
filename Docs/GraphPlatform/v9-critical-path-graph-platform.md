@@ -424,12 +424,12 @@ Goal: keep every next frame stable after the first one works.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-2-001 | Add `FrameGovernor` | TODO | slow frames reduce edge/node budgets before pause |
-| V9-2-002 | Add `MemoryGovernor` | TODO | cold loads and caches respect memory pressure |
-| V9-2-003 | Add `IOGovernor` | TODO | deep validation and repair never block frame loop |
-| V9-2-004 | Add operational state machine | TODO | transitions have trigger/cooldown/recovery/max retries |
-| V9-2-005 | Add aggregate degradation reasons | TODO | no per-object reason allocations |
-| TEST-V9-2 | Governor tests | TODO | pressure, recovery, cooldown, and safe fallback cases |
+| V9-2-001 | Add `FrameGovernor` | DONE | slow frames reduce edge/node budgets before pause |
+| V9-2-002 | Add `MemoryGovernor` | DONE | cold loads and caches respect memory pressure |
+| V9-2-003 | Add `IOGovernor` | DONE | deep validation and repair never block frame loop |
+| V9-2-004 | Add operational state machine | DONE | transitions have trigger/cooldown/recovery/max retries |
+| V9-2-005 | Add aggregate degradation reasons | DONE | no per-object reason allocations |
+| TEST-V9-2 | Governor tests | DONE | pressure, recovery, cooldown, and safe fallback cases |
 
 ## v9.1.5: Stability Layer
 
