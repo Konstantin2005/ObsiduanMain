@@ -392,13 +392,13 @@ Goal: define only the contracts needed by the first real frame.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-0-001 | Define `GraphStoreClient` | TODO | all adapter errors are caught and mapped to `FailureState` |
-| V9-0-002 | Define `GraphSnapshot` | TODO | immutable typed-array view exposes `x/y/type/flags` |
-| V9-0-003 | Define `RenderPlan` | TODO | immutable visible node set and idle edge batch |
-| V9-0-004 | Define `RenderBackend` | TODO | Canvas hidden behind backend contract |
-| V9-0-005 | Define `FrameStats` | TODO | aggregate counts and timings only |
-| V9-0-006 | Define `FailureState` | TODO | recoverable/degraded/blocking/fatal states explicit |
-| TEST-V9-0 | Minimal contract tests | TODO | contracts are cheap, immutable, and failure-safe |
+| V9-0-001 | Define `GraphStoreClient` | DONE | all adapter errors are caught and mapped to `FailureState` |
+| V9-0-002 | Define `GraphSnapshot` | DONE | immutable typed-array view exposes `x/y/type/flags` |
+| V9-0-003 | Define `RenderPlan` | DONE | immutable visible node set and idle edge batch |
+| V9-0-004 | Define `RenderBackend` | DONE | Canvas hidden behind backend contract |
+| V9-0-005 | Define `FrameStats` | DONE | aggregate counts and timings only |
+| V9-0-006 | Define `FailureState` | DONE | recoverable/degraded/blocking/fatal states explicit |
+| TEST-V9-0 | Minimal contract tests | DONE | contracts are cheap, immutable, and failure-safe |
 
 ## v9.1: Critical Real Frame
 
@@ -406,17 +406,17 @@ Goal: draw real nodes through the shortest safe path.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-1-001 | Open Ultra Graph through v9 entrypoint | TODO | no full native graph fallback on startup |
-| V9-1-002 | Load manifest | TODO | manifest read budget measured |
-| V9-1-003 | Shallow manifest validation | TODO | schema/files/counts/array lengths checked |
-| V9-1-004 | Load only `x/y/type/flags` | TODO | no strings or labels in first frame |
-| V9-1-005 | Build visible set by camera bounds | TODO | viewport culling before draw |
-| V9-1-006 | Create immutable `RenderPlan` | TODO | plan build budget measured |
-| V9-1-007 | Draw nodes through `CanvasBackend` | TODO | real nodes appear from Graph Store |
-| V9-1-008 | Draw `<= 1000` idle edges | TODO | edge draw is optional and budgeted |
-| V9-1-009 | Emit aggregate `FrameStats` | TODO | first frame explains timing and counts |
-| V9-1-010 | Enter `FailureState` on bad store | TODO | missing/corrupt store does not crash |
-| TEST-V9-1 | Critical frame tests | TODO | good store, missing store, corrupt store, slow budget, backend failure |
+| V9-1-001 | Open Ultra Graph through v9 entrypoint | DONE | no full native graph fallback on startup |
+| V9-1-002 | Load manifest | DONE | manifest read budget measured |
+| V9-1-003 | Shallow manifest validation | DONE | schema/files/counts/array lengths checked |
+| V9-1-004 | Load only `x/y/type/flags` | DONE | no strings or labels in first frame |
+| V9-1-005 | Build visible set by camera bounds | DONE | viewport culling before draw |
+| V9-1-006 | Create immutable `RenderPlan` | DONE | plan build budget measured |
+| V9-1-007 | Draw nodes through `CanvasBackend` | DONE | real nodes appear from Graph Store |
+| V9-1-008 | Draw `<= 1000` idle edges | DONE | edge draw is optional and budgeted |
+| V9-1-009 | Emit aggregate `FrameStats` | DONE | first frame explains timing and counts |
+| V9-1-010 | Enter `FailureState` on bad store | DONE | missing/corrupt store does not crash |
+| TEST-V9-1 | Critical frame tests | DONE | good store, missing store, corrupt store, slow budget, backend failure |
 
 ## v9.2: Governors And State Machine
 
@@ -506,17 +506,17 @@ This replaces `V8-S1 Contracted Real Renderer`.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-S1-001 | `GraphStoreClient` catches all adapter errors | TODO | no adapter exception escapes to renderer |
-| V9-S1-002 | Shallow manifest validation | TODO | manifest schema, files, counts, basic lengths checked |
-| V9-S1-003 | Load only `x/y/type/flags` | TODO | no strings, labels, markdown, or text filters on first frame |
-| V9-S1-004 | Build visible set by camera bounds | TODO | culling target `<= 4ms`, acceptable `<= 8ms` |
-| V9-S1-005 | Create immutable `RenderPlan` | TODO | plan build target `<= 4ms`, acceptable `<= 8ms` |
-| V9-S1-006 | Draw nodes through `CanvasBackend` | TODO | real nodes appear through backend boundary |
-| V9-S1-007 | Draw `<= 1000` idle edges | TODO | edges never block node draw |
-| V9-S1-008 | Emit aggregate `FrameStats` | TODO | timings, counts, budgets, aggregate skip reasons |
-| V9-S1-009 | Missing/corrupt store enters `FailureState` | TODO | no crash and no full native graph fallback |
-| V9-S1-010 | Benchmark hot path budgets | TODO | first-frame and frame-loop budget report exists |
-| TEST-V9-S1 | Critical real frame tests | TODO | real store fixture, bad store fixture, budget pressure, backend failure |
+| V9-S1-001 | `GraphStoreClient` catches all adapter errors | DONE | no adapter exception escapes to renderer |
+| V9-S1-002 | Shallow manifest validation | DONE | manifest schema, files, counts, basic lengths checked |
+| V9-S1-003 | Load only `x/y/type/flags` | DONE | no strings, labels, markdown, or text filters on first frame |
+| V9-S1-004 | Build visible set by camera bounds | DONE | culling target `<= 4ms`, acceptable `<= 8ms` |
+| V9-S1-005 | Create immutable `RenderPlan` | DONE | plan build target `<= 4ms`, acceptable `<= 8ms` |
+| V9-S1-006 | Draw nodes through `CanvasBackend` | DONE | real nodes appear through backend boundary |
+| V9-S1-007 | Draw `<= 1000` idle edges | DONE | edges never block node draw |
+| V9-S1-008 | Emit aggregate `FrameStats` | DONE | timings, counts, budgets, aggregate skip reasons |
+| V9-S1-009 | Missing/corrupt store enters `FailureState` | DONE | no crash and no full native graph fallback |
+| V9-S1-010 | Benchmark hot path budgets | DONE | first-frame and frame-loop budget report exists |
+| TEST-V9-S1 | Critical real frame tests | DONE | real store fixture, bad store fixture, budget pressure, backend failure |
 
 Done:
 

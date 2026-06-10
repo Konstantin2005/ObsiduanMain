@@ -34,3 +34,8 @@
 - v8 is now marked superseded; active first slice is `V9-S1 Critical Real Frame`.
 - New v9 standard: `Critical Path First, Contracted`; protect first real frame, keep contracts minimal, split hot/cold paths, validate shallow before first frame and deep after idle.
 - Added v9 rules for aggregate-only `FrameStats`, failure severity matrix, `CanvasBackend`/`NullBackend` isolation, and `FrameGovernor`/`MemoryGovernor`/`IOGovernor`.
+- Completed Phase 1 / `V9-S1 Critical Real Frame`: added `GraphStoreClient`, `GraphSnapshot`, shallow validation, minimal `x/y/id/type/flags` array loading, immutable v9 `RenderPlan`, `CanvasBackend`, `NullBackend`, aggregate `FrameStats`, and `FailureState`.
+- Switched Calendula Ultra Graph from synthetic normal path to real Graph Store rendering through the v9 critical path.
+- Added critical-frame Pester coverage for shallow snapshot load, no string arrays on first frame, immutable plan, aggregate reasons, missing-store failure, previous-store recovery, and `NullBackend` frame stats.
+- Pester status after Phase 1: `35 passed, 0 failed`.
+- Real Calendula-20K Phase 1 benchmark: `33,900` nodes, `35,948` edges, graph build `2041.09ms`, store write `131.76ms`, RenderPlan `7.74ms`, scheduler `3.8ms`, node budget `3,000`, edge budget `1,000`.

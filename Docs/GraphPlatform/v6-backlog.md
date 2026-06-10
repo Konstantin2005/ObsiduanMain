@@ -55,8 +55,8 @@ The next active plan is `v9 Critical Path Graph Platform`.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-S1 | Critical Real Frame | TODO | real nodes appear from Graph Store with no strings, no labels, no uncaught store errors, and aggregate FrameStats |
-| V9-0 | Minimal hot-path contracts | TODO | GraphStoreClient, GraphSnapshot, RenderPlan, RenderBackend, FrameStats, FailureState |
-| V9-1 | Shallow validation and real node draw | TODO | manifest, files, counts, x/y/type/flags, visible set, CanvasBackend |
+| V9-S1 | Critical Real Frame | DONE | real nodes appear from Graph Store with no strings, no labels, no uncaught store errors, and aggregate FrameStats |
+| V9-0 | Minimal hot-path contracts | DONE | GraphStoreClient, GraphSnapshot, RenderPlan, RenderBackend, FrameStats, FailureState |
+| V9-1 | Shallow validation and real node draw | DONE | manifest, files, counts, x/y/type/flags, visible set, CanvasBackend |
 | V9-2 | Governors and state machine | TODO | FrameGovernor, MemoryGovernor, IOGovernor, transition cooldowns, recovery, aggregate reasons |
 | V9-3 | Deep validation and store compatibility | TODO | idle deep scan, compatibility matrix, migration policy, previous-store recovery |
