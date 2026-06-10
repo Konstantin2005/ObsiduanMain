@@ -1,20 +1,8 @@
-<#
-.SYNOPSIS
-  Splits diary notes by people mentions when the daily count exceeds a threshold.
-.DESCRIPTION
-  Scans markdown diary files, counts unique person wikilinks like [[Danil]],
-  and when the count is greater than the threshold, creates a new note with the
-  people-related blocks moved into it.
-
-  Default output file name format:
-    03.3-06-2026.md
-  where the leading number is the amount of unique people mentions in that note.
-#>
-
 param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$DiaryRoot = (Join-Path $VaultPath "Calendula\Calendula"),
     [int]$Threshold = 4,
+    [string]$ArchiveFileName = "Mini diaries.md",
     [switch]$DryRun
 )
 
@@ -37,12 +25,14 @@ function Get-PersonOrder {
     $matches = [Regex]::Matches($Text, '\[\[([^\]]+)\]\]')
     $seen = New-Object System.Collections.Generic.HashSet[string]
     $ordered = New-Object System.Collections.Generic.List[string]
+
     foreach ($m in $matches) {
         $name = $m.Groups[1].Value.Trim()
         if ($seen.Add($name)) {
             [void]$ordered.Add($name)
         }
     }
+
     return $ordered
 }
 
@@ -69,41 +59,72 @@ function Test-BlockHasAnyPerson {
     return $false
 }
 
-function Get-SplitFileName {
+function Get-ArchivePath {
+    param([string]$Root, [string]$Name)
+    return Join-Path $Root $Name
+}
+
+function Get-SourceKey {
+    param([string]$FilePath)
+    return [System.IO.Path]::GetFileName($FilePath)
+}
+
+function Test-ArchiveHasSource {
     param(
-        [string]$SourceFile,
-        [int]$PeopleCount
+        [string]$ArchiveText,
+        [string]$SourceKey
     )
 
-    $baseName = [System.IO.Path]::GetFileNameWithoutExtension($SourceFile)
-    $datePart = $baseName
+    $escaped = [Regex]::Escape($SourceKey)
+    return $ArchiveText -match "(?m)^source:\s+$escaped\s*$"
+}
 
-    if ($baseName -match '(\d{4}-\d{2}-\d{2})') {
-        $date = [datetime]::ParseExact($matches[1], 'yyyy-MM-dd', $null)
-        $datePart = $date.ToString('d-MM-yy')
-    }
-    elseif ($baseName -match '(\d{1,2})-(\d{1,2})-(\d{2,4})') {
-        $day = [int]$matches[1]
-        $month = [int]$matches[2]
-        $yearText = $matches[3]
-        $year = if ($yearText.Length -eq 2) { [int]$yearText } else { [int]$yearText % 100 }
-        $datePart = ('{0}-{1:00}-{2:00}' -f $day, $month, $year)
+function New-ArchiveEntry {
+    param(
+        [string]$DailySource,
+        [string]$MiniSource,
+        [int]$PeopleCount,
+        [System.Collections.Generic.HashSet[string]]$PrimaryPeople,
+        [System.Collections.Generic.HashSet[string]]$OverflowPeople,
+        [System.Collections.Generic.List[string]]$OverflowBlocks
+    )
+
+    $lines = New-Object System.Collections.Generic.List[string]
+    [void]$lines.Add("## $DailySource")
+    [void]$lines.Add("")
+    [void]$lines.Add("- mini_source: $MiniSource")
+    [void]$lines.Add("- people_count: $PeopleCount")
+    [void]$lines.Add("- primary_people: $([string]::Join(', ', $PrimaryPeople))")
+    [void]$lines.Add("- overflow_people: $([string]::Join(', ', $OverflowPeople))")
+    [void]$lines.Add("")
+
+    foreach ($block in $OverflowBlocks) {
+        [void]$lines.Add($block)
+        [void]$lines.Add("")
     }
 
-    return ('{0:D2}.{1}.md' -f $PeopleCount, $datePart)
+    return ($lines -join "`n").TrimEnd()
 }
 
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
     throw "Diary path not found: $DiaryRoot"
 }
 
+$archivePath = Get-ArchivePath -Root $DiaryRoot -Name $ArchiveFileName
+$archiveText = if ([System.IO.File]::Exists($archivePath)) {
+    [System.IO.File]::ReadAllText($archivePath, $utf8)
+} else {
+    ""
+}
+
+$needsArchiveInit = -not [System.IO.File]::Exists($archivePath)
 $files = Get-DiaryFiles -Root $DiaryRoot
 Write-Host "Found $($files.Count) diary files"
 
 foreach ($file in $files) {
     $content = [System.IO.File]::ReadAllText($file, $utf8)
     if ([string]::IsNullOrWhiteSpace($content)) { continue }
-    if ($content -match '(?m)^\s*kind:\s*people-split\s*$') { continue }
+    if ($content -match '(?m)^\s*kind:\s*people-split(?:-archive)?\s*$') { continue }
 
     $orderedPeople = Get-PersonOrder -Text $content
     if ($orderedPeople.Count -le $Threshold) { continue }
@@ -119,45 +140,56 @@ foreach ($file in $files) {
         }
     }
 
-    $blocks = Split-IntoBlocks -Text $content
     $overflowBlocks = New-Object System.Collections.Generic.List[string]
-    $keepBlocks = New-Object System.Collections.Generic.List[string]
-
-    foreach ($block in $blocks) {
+    foreach ($block in (Split-IntoBlocks -Text $content)) {
         if (Test-BlockHasAnyPerson -Block $block -PersonNames $overflowPeople) {
             [void]$overflowBlocks.Add($block)
-        } else {
-            [void]$keepBlocks.Add($block)
         }
     }
 
-    $splitFileName = Get-SplitFileName -SourceFile $file -PeopleCount $orderedPeople.Count
-    $splitPath = Join-Path ([System.IO.Directory]::GetParent($file).FullName) $splitFileName
+    $dailySource = Get-SourceKey -FilePath $file
+    if (Test-ArchiveHasSource -ArchiveText $archiveText -SourceKey $dailySource) {
+        Write-Host ""
+        Write-Host "File: $file"
+        Write-Host "People: $($orderedPeople.Count) -> already in archive, skipped"
+        continue
+    }
 
-    $splitContent = @(
-        "---"
-        "kind: people-split"
-        "source: $([System.IO.Path]::GetFileName($file))"
-        "people_count: $($orderedPeople.Count)"
-        "primary_people: $([string]::Join(', ', $primaryPeople))"
-        "overflow_people: $([string]::Join(', ', $overflowPeople))"
-        "threshold: $Threshold"
-        "---"
-        ""
-        ($overflowBlocks -join "`n`n")
-    ) -join "`n"
+    $entryText = New-ArchiveEntry `
+        -DailySource $dailySource `
+        -MiniSource ([System.IO.Path]::GetFileNameWithoutExtension($file)) `
+        -PeopleCount $orderedPeople.Count `
+        -PrimaryPeople $primaryPeople `
+        -OverflowPeople $overflowPeople `
+        -OverflowBlocks $overflowBlocks
 
     Write-Host ""
     Write-Host "File: $file"
-    Write-Host "People: $($orderedPeople.Count) -> split file: $splitPath"
-    Write-Host "Mode: copy overflow only, keep original intact"
+    Write-Host "People: $($orderedPeople.Count) -> archive: $archivePath"
+    Write-Host "Mode: append overflow only, keep original intact"
 
     if ($DryRun) {
         Write-Host "Dry run: no files written"
         continue
     }
 
-    [System.IO.File]::WriteAllText($splitPath, $splitContent, $utf8)
+    if ($needsArchiveInit) {
+        $header = @(
+            "---"
+            "kind: people-split-archive"
+            "source: generated-from-daily-notes"
+            "---"
+            ""
+            "# Mini diaries"
+            ""
+        ) -join "`n"
+        [System.IO.File]::WriteAllText($archivePath, $header, $utf8)
+        $needsArchiveInit = $false
+        $archiveText = $header
+    }
+
+    [System.IO.File]::AppendAllText($archivePath, "`n`n$entryText`n", $utf8)
+    $archiveText += "`n`n$entryText`n"
 }
 
 Write-Host ""
