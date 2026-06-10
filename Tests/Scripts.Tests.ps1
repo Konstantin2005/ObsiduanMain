@@ -519,6 +519,14 @@ Describe 'LiveGraph' {
         cb({ setValue() { return { onChange() {} }; } });
         return this;
       }
+      addDropdown(cb) {
+        cb({
+          addOption() { return this; },
+          setValue() { return this; },
+          onChange() { return this; },
+        });
+        return this;
+      }
       addSlider(cb) {
         cb({
           setLimits() { return this; },
@@ -745,6 +753,14 @@ Describe 'LiveGraph' {
       cb({ setValue() { return { onChange() {} }; } });
       return this;
     }
+    addDropdown(cb) {
+      cb({
+        addOption() { return this; },
+        setValue() { return this; },
+        onChange() { return this; },
+      });
+      return this;
+    }
     addSlider(cb) {
       cb({
         setLimits() { return this; },
@@ -942,6 +958,14 @@ Describe 'LiveGraph' {
       cb({ setValue() { return { onChange() {} }; } });
       return this;
     }
+    addDropdown(cb) {
+      cb({
+        addOption() { return this; },
+        setValue() { return this; },
+        onChange() { return this; },
+      });
+      return this;
+    }
     addSlider(cb) {
       cb({
         setLimits() { return this; },
@@ -1086,6 +1110,14 @@ Describe 'LiveGraph' {
     setName() { return this; }
     setDesc() { return this; }
     addToggle(cb) { cb({ setValue() { return { onChange() {} }; } }); return this; }
+    addDropdown(cb) {
+      cb({
+        addOption() { return this; },
+        setValue() { return this; },
+        onChange() { return this; },
+      });
+      return this;
+    }
     addSlider(cb) {
       cb({
         setLimits() { return this; },
