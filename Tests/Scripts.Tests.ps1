@@ -1495,6 +1495,7 @@ Describe 'Calendula Worker Layer' {
   const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
   const critical = require(path.join(repoRoot, 'Scripts/Obsidian/graph-critical-frame.js'));
   const worker = require(path.join(repoRoot, 'Scripts/Obsidian/graph-worker-layer.js'));
+  const deepValidation = require(path.join(repoRoot, 'Scripts/Obsidian/graph-deep-validation.js'));
 
   const graph = store.buildGraph(vaultRoot);
   store.writeStore(vaultRoot, outRoot, graph);
@@ -1521,6 +1522,23 @@ Describe 'Calendula Worker Layer' {
   });
   if (!edgeBatch.ok || edgeBatch.value.edges.length > 2) throw new Error(`Expected budgeted edge batch, got ${JSON.stringify(edgeBatch)}`);
 
+  const validDeep = await controller.runDeepValidation({ snapshot: loaded.snapshot });
+  if (!validDeep.ok || !validDeep.value.ok) throw new Error(`Expected valid deep validation, got ${JSON.stringify(validDeep)}`);
+
+  const badSnapshot = {
+    ...loaded.snapshot,
+    edgeCount: 1,
+    arrays: {
+      ...loaded.snapshot.arrays,
+      edgeSources: new Uint32Array([0]),
+      edgeTargets: new Uint32Array([99]),
+    },
+  };
+  const invalidDeep = deepValidation.validateSnapshotDeep(badSnapshot);
+  if (invalidDeep.ok || invalidDeep.stats.invalidEdges !== 1) throw new Error(`Expected invalid edge endpoint, got ${JSON.stringify(invalidDeep)}`);
+  const repair = deepValidation.planStoreRepair(invalidDeep);
+  if (!repair.required || repair.action !== 'rebuild-current-then-keep-previous') throw new Error(`Expected repair plan, got ${JSON.stringify(repair)}`);
+
   const stalePromise = controller.scheduleTask({
     type: 'slow-query',
     payload: {},
@@ -1544,7 +1562,7 @@ Describe 'Calendula Worker Layer' {
     throw new Error(`Expected degraded worker failure, got ${JSON.stringify(failed)}`);
   }
 
-  process.stdout.write(`worker-layer:ok ${JSON.stringify({ query: query.value.stats.candidates, edges: edgeBatch.value.edges.length, stale: stale.stale })}\n`);
+  process.stdout.write(`worker-layer:ok ${JSON.stringify({ query: query.value.stats.candidates, edges: edgeBatch.value.edges.length, stale: stale.stale, deep: validDeep.value.ok })}\n`);
 })().catch((error) => {
   console.error(error);
   process.exit(1);

@@ -1,5 +1,6 @@
 const { buildQueryPlan } = require("./graph-query-engine.js");
 const { createFailureState, FAILURE_SEVERITY } = require("./graph-critical-frame.js");
+const { validateSnapshotDeep } = require("./graph-deep-validation.js");
 
 function defer() {
   return new Promise((resolve) => setTimeout(resolve, 0));
@@ -91,6 +92,14 @@ class WorkerTaskController {
       payload,
       handler: ({ snapshot, nodeIds = [], edgeBudget = 1000, backboneOnly = false }) =>
         buildEdgeBatch({ snapshot, nodeIds, edgeBudget, backboneOnly }),
+    });
+  }
+
+  runDeepValidation(payload) {
+    return this.scheduleTask({
+      type: "deep-validation",
+      payload,
+      handler: ({ snapshot, maxErrors = 100 }) => validateSnapshotDeep(snapshot, { maxErrors }),
     });
   }
 }
