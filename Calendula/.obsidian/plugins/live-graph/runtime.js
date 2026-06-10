@@ -918,6 +918,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
     renderGraph(forceReseed = false) {
       const files = this.getMarkdownFiles();
+      this.cancelCanvasGraphPaint();
       if (!files.length) {
         this.showEmpty("No markdown files found.");
         return;
@@ -979,7 +980,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       this.ensurePositions(this.sample, width, height, forceReseed, profile);
       const disabledKeys = this.disabledKeysForCycle(profile);
-      this.drawCanvasGraph(width, height, this.sample, edges, degree, disabledKeys, profile);
+      this.drawCanvasGraphOptimized(width, height, this.sample, edges, degree, disabledKeys, profile);
       this.showEmpty("");
     }
 

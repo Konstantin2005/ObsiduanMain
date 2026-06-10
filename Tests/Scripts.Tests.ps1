@@ -651,6 +651,20 @@ Describe 'LiveGraph' {
     };
   }
 
+  function drainQueue() {
+    let guard = 0;
+    while (rafQueue.length) {
+      const tick = rafQueue.shift();
+      if (typeof tick === 'function') {
+        tick(2000 + (guard * 16));
+      }
+      guard += 1;
+      if (guard > 100) {
+        throw new Error('RAF queue did not drain');
+      }
+    }
+  }
+
   global.document = {
     createElementNS(_ns, tag) { return makeEl(tag); },
     createElement(tag) { return makeEl(tag); },
@@ -660,9 +674,11 @@ Describe 'LiveGraph' {
     getPropertyValue() { return '#d8dde8'; },
   });
   let rafCalls = 0;
+  const rafQueue = [];
   global.window = {
     requestAnimationFrame(cb) {
       rafCalls += 1;
+      rafQueue.push(cb);
       return rafCalls;
     },
     cancelAnimationFrame() {},
@@ -751,11 +767,15 @@ Describe 'LiveGraph' {
   const plugin = new (create({ ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon }))();
   await plugin.onload();
   const view = plugin._factory({});
+  view.startRenderLoop = () => {};
   await view.onOpen();
+  drainQueue();
   view.renderGraph(false);
+  drainQueue();
   view.renderGraph(false);
+  drainQueue();
 
-  process.stdout.write(`calls:${markdownCalls};raf:${rafCalls};mode:${view.currentProfile?.mode}\n`);
+  process.stdout.write(`calls:${markdownCalls};raf:${rafCalls};mode:${view.currentProfile?.mode};frames:${view.lastPaintSummary?.frames};chunked:${view.lastPaintSummary?.chunked};skipped:${view.lastPaintSummary?.labelsSkipped}\n`);
 })().catch((error) => {
   console.error(error);
   process.exit(1);
@@ -769,8 +789,10 @@ Describe 'LiveGraph' {
 
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'calls:1'
-            ($output -join [Environment]::NewLine) | Should Match 'raf:1'
             ($output -join [Environment]::NewLine) | Should Match 'mode:ultra'
+            ($output -join [Environment]::NewLine) | Should Match 'chunked:true'
+            ($output -join [Environment]::NewLine) | Should Match 'frames:[2-9][0-9]*'
+            ($output -join [Environment]::NewLine) | Should Match 'skipped:[1-9][0-9]*'
         }
         finally {
             if (Test-Path -LiteralPath $root) {

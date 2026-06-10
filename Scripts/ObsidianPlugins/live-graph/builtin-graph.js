@@ -72,6 +72,46 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         color: var(--text-muted);
         font-size: 0.9em;
       }
+      .life-panel-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .life-panel-metric {
+        border-radius: 12px;
+        padding: 10px 12px;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--background-modifier-border);
+      }
+      .life-panel-metric-label {
+        display: block;
+        font-size: 0.72em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+        margin-bottom: 4px;
+      }
+      .life-panel-metric-value {
+        font-size: 0.98em;
+        font-weight: 600;
+      }
+      .life-panel-pulse {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-right: 8px;
+        border-radius: 999px;
+        background: var(--interactive-accent);
+        box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.45);
+        animation: life-pulse 1.8s ease-in-out infinite;
+        vertical-align: middle;
+      }
+      @keyframes life-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.45); }
+        70% { box-shadow: 0 0 0 10px rgba(96, 165, 250, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
+      }
       .life-panel-card {
         border: 1px solid var(--background-modifier-border);
         background: linear-gradient(180deg, rgba(120, 170, 255, 0.08), rgba(120, 170, 255, 0.03));
@@ -109,6 +149,26 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
       .life-plugin-action.is-wide {
         grid-column: 1 / -1;
+      }
+      .life-plugin-action.is-soft {
+        background: rgba(120, 170, 255, 0.12);
+      }
+      .life-panel-presets {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 8px 0 10px;
+      }
+      .life-panel-preset {
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: var(--background-primary);
+        cursor: pointer;
+        font-size: 0.88em;
+      }
+      .life-panel-preset:hover {
+        border-color: var(--interactive-accent);
       }
       .life-panel-card .setting-item {
         padding-top: 0.55em;
@@ -199,6 +259,21 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     return candidates;
   }
 
+  function formatMs(ms) {
+    const value = Math.max(0, Number(ms) || 0);
+    if (value >= 60000) {
+      return `${Math.round(value / 60000)}m`;
+    }
+    return `${Math.round(value / 1000)}s`;
+  }
+
+  function pickTempoLabel(settings) {
+    const interval = Number(settings.cycleIntervalMs) || 0;
+    if (interval <= 180000) return "Lively";
+    if (interval <= 360000) return "Balanced";
+    return "Gentle";
+  }
+
   class LifePanelView extends ItemView {
     constructor(leaf, plugin) {
       super(leaf);
@@ -242,6 +317,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         cls: "life-panel-subtitle",
       });
       this.statusEl = hero.createDiv({ cls: "life-panel-status" });
+      const metrics = hero.createDiv({ cls: "life-panel-metrics" });
+      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Tempo</span><span class="life-panel-metric-value">${pickTempoLabel(this.plugin.settings)}</span>`;
+      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Batch</span><span class="life-panel-metric-value">${this.plugin.settings.batchSize}</span>`;
+      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Pulse</span><span class="life-panel-metric-value">${this.plugin.settings.pulseCount}</span>`;
       this.refreshStatus();
 
       const controls = this.rootEl.createDiv({ cls: "life-panel-card" });
@@ -271,6 +350,35 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       graphButton.addEventListener("click", () => {
         void this.plugin.openBuiltInGraph(true);
       });
+
+      const presets = controls.createDiv({ cls: "life-panel-presets" });
+      const presetDefs = [
+        {
+          label: "Gentle",
+          settings: { batchSize: 2, pulseCount: 2, detachHoldMs: 15000, restoreHoldMs: 8000, cycleIntervalMs: 420000 },
+        },
+        {
+          label: "Balanced",
+          settings: { batchSize: 5, pulseCount: 3, detachHoldMs: 15000, restoreHoldMs: 5000, cycleIntervalMs: 300000 },
+        },
+        {
+          label: "Lively",
+          settings: { batchSize: 8, pulseCount: 5, detachHoldMs: 9000, restoreHoldMs: 2500, cycleIntervalMs: 180000 },
+        },
+      ];
+      for (const preset of presetDefs) {
+        const button = presets.createEl("button", {
+          text: preset.label,
+          cls: "life-panel-preset",
+        });
+        button.addEventListener("click", async () => {
+          Object.assign(this.plugin.settings, preset.settings);
+          await this.plugin.saveState();
+          this.plugin.restartTimer();
+          this.render();
+          this.plugin.refreshPanelViews();
+        });
+      }
 
       this.plugin.renderSettingsBlock(this.rootEl, this);
     }
@@ -483,10 +591,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
     refreshPanelViews() {
       for (const view of this.panelViews) {
-        if (view?.refreshStatus) {
-          view.refreshStatus();
-        }
-        if (view?.render && !view.statusEl) {
+        if (view?.render) {
           view.render();
         }
       }
@@ -531,6 +636,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           toggle.setValue(this.settings.autoOpenPanel).onChange(async (value) => {
             this.settings.autoOpenPanel = value;
             await this.saveState();
+            this.refreshPanelViews();
           }),
         );
 
@@ -541,6 +647,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           toggle.setValue(this.settings.autoOpenGraph).onChange(async (value) => {
             this.settings.autoOpenGraph = value;
             await this.saveState();
+            this.refreshPanelViews();
           }),
         );
 
@@ -552,6 +659,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             this.settings.autoCycleLinks = value;
             await this.saveState();
             this.restartTimer();
+            this.refreshPanelViews();
           }),
         );
 
@@ -567,6 +675,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
               this.settings.cycleIntervalMs = value;
               await this.saveState();
               this.restartTimer();
+              this.refreshPanelViews();
             }),
         );
 
@@ -581,6 +690,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             .onChange(async (value) => {
               this.settings.batchSize = value;
               await this.saveState();
+              this.refreshPanelViews();
             }),
         );
 
@@ -595,6 +705,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             .onChange(async (value) => {
               this.settings.pulseCount = value;
               await this.saveState();
+              this.refreshPanelViews();
             }),
         );
 
@@ -609,6 +720,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             .onChange(async (value) => {
               this.settings.detachHoldMs = value;
               await this.saveState();
+              this.refreshPanelViews();
             }),
         );
 
@@ -623,6 +735,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             .onChange(async (value) => {
               this.settings.restoreHoldMs = value;
               await this.saveState();
+              this.refreshPanelViews();
             }),
         );
 
@@ -637,6 +750,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             .onChange(async (value) => {
               this.settings.bufferLimit = value;
               await this.saveState();
+              this.refreshPanelViews();
             }),
         );
     }
