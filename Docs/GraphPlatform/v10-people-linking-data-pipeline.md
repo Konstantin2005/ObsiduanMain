@@ -2,6 +2,8 @@
 
 Status values: `TODO`, `DOING`, `DONE`, `BUG`, `REGRESSION`, `BLOCKED`.
 
+Superseded note: v10 remains the correctness reference for people-linking provenance, invalidation, and safe snapshot behavior. The active implementation path is now `v11 Sustainable People Engine`, which keeps the correctness goals but reduces early operational complexity.
+
 ## Main Verdict
 
 The previous direction was right but incomplete.
