@@ -1,4 +1,4 @@
-module.exports = function createLiveGraphPlugin(obsidian) {
+﻿module.exports = function createLiveGraphPlugin(obsidian) {
   const {
     ItemView,
     Plugin,
@@ -1306,7 +1306,12 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     async openNativeGraph() {
       try {
         let leaf = this.app.workspace.getLeavesOfType(NATIVE_GRAPH_VIEW_TYPE)[0];
-        if (!leaf) return;
+        if (!leaf) {
+          leaf =
+            typeof this.app.workspace.getRightLeaf === "function"
+              ? this.app.workspace.getRightLeaf(false) || this.app.workspace.getLeaf(true)
+              : this.app.workspace.getLeaf(true);
+        }
         await leaf.setViewState({
           type: NATIVE_GRAPH_VIEW_TYPE,
           active: true,
@@ -1329,7 +1334,12 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       try {
         let leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
-        if (!leaf) return;
+        if (!leaf) {
+          leaf =
+            typeof this.app.workspace.getRightLeaf === "function"
+              ? this.app.workspace.getRightLeaf(false) || this.app.workspace.getLeaf(true)
+              : this.app.workspace.getLeaf(true);
+        }
         await leaf.setViewState({ type: VIEW_TYPE, active: true });
         if (typeof this.app.workspace.revealLeaf === "function") {
           this.app.workspace.revealLeaf(leaf);
