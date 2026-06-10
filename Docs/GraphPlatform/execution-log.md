@@ -80,3 +80,4 @@
 - Restored Calendula-20K topology validity by adding root index notes for `Графы` and `Соц Капитал`, resolving the two stale links from `Люди.md` without relaxing graph-store validation.
 - Evidence benchmark: `50K` evidence records `41.687ms`, `50K` decisions `42.107ms`, mentions/edges `12.493ms`, total `96.287ms`, generated edges `15,000`.
 - Pester status after `V12-S1A`: `43 passed, 0 failed`.
+- Added v13 Trust-Aware Storage Indexer plan after review: storage indexing now prioritizes trust states, versioned note records, rename detection, resolver cache invalidation, published/staging isolation, cache recovery states, and Node indexing tests over optimistic `path + size + mtime` assumptions.

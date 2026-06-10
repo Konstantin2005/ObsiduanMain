@@ -11,7 +11,7 @@
   "showArrow": false,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
+  "lineSizeMultiplier": 0.151041666666667,
   "collapse-forces": false,
   "centerStrength": 0.473958333333333,
   "repelStrength": 18.2291666666667,
