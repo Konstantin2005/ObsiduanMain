@@ -155,19 +155,9 @@
               "icon": "lucide-archive",
               "title": "Все свойства"
             }
-          },
-          {
-            "id": "a3dcb31bf9dbcd6e",
-            "type": "leaf",
-            "state": {
-              "type": "live-graph-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "live-graph-view"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -184,7 +174,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "a3dcb31bf9dbcd6e",
+  "active": "e326c292b89cdf41",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/07.1-06-26.md",

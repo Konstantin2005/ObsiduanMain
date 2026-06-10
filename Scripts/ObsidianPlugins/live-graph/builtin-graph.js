@@ -528,7 +528,11 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
 
     async openLifePanel() {
-      const leaf = this.app.workspace.getLeavesOfType(PANEL_VIEW_TYPE)[0];
+      const leaf =
+        this.app.workspace.getLeavesOfType(PANEL_VIEW_TYPE)[0] ||
+        (typeof this.app.workspace.getRightLeaf === "function"
+          ? this.app.workspace.getRightLeaf(false)
+          : null);
       if (!leaf) return;
       await leaf.setViewState({
         type: PANEL_VIEW_TYPE,
