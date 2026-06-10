@@ -1,11 +1,14 @@
 module.exports = function createBuiltInGraphPlugin(obsidian) {
-  const { Notice, Plugin, PluginSettingTab, Setting, setIcon } = obsidian;
+  const { ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon } = obsidian;
 
   const PLUGIN_LABEL = "\u0416\u0438\u0437\u043d\u044c";
+  const PANEL_VIEW_TYPE = "life-panel";
   const GRAPH_VIEW_TYPE = "graph";
+
   const DEFAULT_SETTINGS = {
-    autoOpenGraph: true,
-    autoCycleLinks: true,
+    autoOpenPanel: true,
+    autoOpenGraph: false,
+    autoCycleLinks: false,
     cycleIntervalMs: 300000,
     batchSize: 5,
     pulseCount: 3,
@@ -32,37 +35,60 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
   }
 
+  function sleep(ms) {
+    return new Promise((resolve) => window.setTimeout(resolve, ms));
+  }
+
   function injectStyles() {
     if (typeof document === "undefined") return;
     if (document.getElementById("life-plugin-styles")) return;
     const style = document.createElement("style");
     style.id = "life-plugin-styles";
     style.textContent = `
-      .life-plugin-card {
+      .life-panel-shell {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 10px 16px;
+      }
+      .life-panel-hero {
+        padding: 14px;
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(130, 180, 255, 0.16), rgba(130, 180, 255, 0.05));
+      }
+      .life-panel-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        margin: 0 0 4px;
+      }
+      .life-panel-subtitle {
+        color: var(--text-muted);
+        font-size: 0.92em;
+        margin: 0;
+      }
+      .life-panel-status {
+        margin-top: 10px;
+        color: var(--text-muted);
+        font-size: 0.9em;
+      }
+      .life-panel-card {
         border: 1px solid var(--background-modifier-border);
         background: linear-gradient(180deg, rgba(120, 170, 255, 0.08), rgba(120, 170, 255, 0.03));
         border-radius: 14px;
-        padding: 14px 16px;
-        margin: 14px 0 18px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 12px 14px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
       }
-      .life-plugin-card h3 {
-        margin: 0 0 8px;
-        font-size: 1.05em;
-      }
-      .life-plugin-card p {
-        margin: 0 0 12px;
-        color: var(--text-muted);
-      }
-      .life-plugin-actions {
-        display: flex;
-        flex-wrap: wrap;
+      .life-panel-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
+        margin-bottom: 10px;
       }
       .life-plugin-action {
         border: 1px solid var(--background-modifier-border);
         border-radius: 999px;
-        padding: 8px 14px;
+        padding: 8px 12px;
         background: var(--background-primary);
         color: var(--text-normal);
         cursor: pointer;
@@ -80,7 +106,13 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
       .life-plugin-action.is-danger {
         background: rgba(255, 100, 100, 0.12);
-        color: var(--text-normal);
+      }
+      .life-plugin-action.is-wide {
+        grid-column: 1 / -1;
+      }
+      .life-panel-card .setting-item {
+        padding-top: 0.55em;
+        padding-bottom: 0.55em;
       }
     `;
     document.head.appendChild(style);
@@ -140,10 +172,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     return `${text.slice(0, start)}${replacement}${text.slice(end)}`;
   }
 
-  function sleep(ms) {
-    return new Promise((resolve) => window.setTimeout(resolve, ms));
-  }
-
   function parseWikiLinkBody(body) {
     const aliasIndex = body.indexOf("|");
     const target = aliasIndex >= 0 ? body.slice(0, aliasIndex) : body;
@@ -161,18 +189,102 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     while ((match = re.exec(text))) {
       if (match.index > 0 && text[match.index - 1] === "!") continue;
       const { label } = parseWikiLinkBody(match[1]);
-      const replacement = label || match[1];
       candidates.push({
         start: match.index,
         end: match.index + match[0].length,
         original: match[0],
-        replacement,
+        detached: label || match[1],
       });
     }
     return candidates;
   }
 
-  class GraphSettingsTab extends PluginSettingTab {
+  class LifePanelView extends ItemView {
+    constructor(leaf, plugin) {
+      super(leaf);
+      this.plugin = plugin;
+      this.statusEl = null;
+      this.rootEl = null;
+    }
+
+    getViewType() {
+      return PANEL_VIEW_TYPE;
+    }
+
+    getDisplayText() {
+      return PLUGIN_LABEL;
+    }
+
+    getIcon() {
+      return "activity";
+    }
+
+    async onOpen() {
+      clearElement(this.containerEl);
+      this.containerEl.classList.add("life-panel-shell");
+      this.rootEl = this.containerEl.createDiv({ cls: "life-panel-shell" });
+      this.render();
+    }
+
+    async onClose() {
+      this.plugin.panelViews.delete(this);
+    }
+
+    render() {
+      if (!this.rootEl) return;
+      clearElement(this.rootEl);
+      injectStyles();
+
+      const hero = this.rootEl.createDiv({ cls: "life-panel-hero" });
+      hero.createEl("div", { text: PLUGIN_LABEL, cls: "life-panel-title" });
+      hero.createEl("p", {
+        text: "Right sidebar control for the living cycle.",
+        cls: "life-panel-subtitle",
+      });
+      this.statusEl = hero.createDiv({ cls: "life-panel-status" });
+      this.refreshStatus();
+
+      const controls = this.rootEl.createDiv({ cls: "life-panel-card" });
+      controls.createEl("h3", { text: "Quick controls" });
+
+      const actions = controls.createDiv({ cls: "life-panel-actions" });
+      const cycleButton = actions.createEl("button", {
+        text: "Run cycle",
+        cls: "life-plugin-action is-primary",
+      });
+      cycleButton.addEventListener("click", () => {
+        void this.plugin.cycleLinks(true).then(() => this.refreshStatus());
+      });
+
+      const restoreButton = actions.createEl("button", {
+        text: "Restore now",
+        cls: "life-plugin-action is-danger",
+      });
+      restoreButton.addEventListener("click", () => {
+        void this.plugin.recoverFromBuffer(true).then(() => this.refreshStatus());
+      });
+
+      const graphButton = actions.createEl("button", {
+        text: "Open graph",
+        cls: "life-plugin-action is-wide",
+      });
+      graphButton.addEventListener("click", () => {
+        void this.plugin.openBuiltInGraph(true);
+      });
+
+      this.plugin.renderSettingsBlock(this.rootEl, this);
+    }
+
+    refreshStatus() {
+      if (!this.statusEl) return;
+      const detached = this.plugin.safetyBuffer.filter((entry) => entry.status === "detached").length;
+      this.statusEl.setText(
+        `Buffer: ${this.plugin.safetyBuffer.length} • Detached: ${detached} • ${this.plugin.busy ? "busy" : "idle"}`,
+      );
+    }
+  }
+
+  class LifeSettingsTab extends PluginSettingTab {
     constructor(app, plugin) {
       super(app, plugin);
       this.plugin = plugin;
@@ -183,147 +295,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       clearElement(containerEl);
       injectStyles();
       containerEl.createEl("h2", { text: PLUGIN_LABEL });
-
-      const card = containerEl.createDiv({ cls: "life-plugin-card" });
-      card.createEl("h3", { text: "Quick controls" });
-      card.createEl("p", {
-        text: "Run the living cycle, restore everything, or reopen the built-in graph.",
-      });
-
-      const actions = card.createDiv({ cls: "life-plugin-actions" });
-
-      const cycleButton = actions.createEl("button", {
-        text: "Run cycle",
-        cls: "life-plugin-action is-primary",
-      });
-      cycleButton.addEventListener("click", () => {
-        void this.plugin.cycleLinks(true);
-      });
-
-      const restoreButton = actions.createEl("button", {
-        text: "Restore now",
-        cls: "life-plugin-action is-danger",
-      });
-      restoreButton.addEventListener("click", () => {
-        void this.plugin.recoverFromBuffer(true);
-      });
-
-      const graphButton = actions.createEl("button", {
-        text: "Open graph",
-        cls: "life-plugin-action",
-      });
-      graphButton.addEventListener("click", () => {
-        void this.plugin.openBuiltInGraph(true);
-      });
-
-      new Setting(containerEl)
-        .setName("Open built-in Graph")
-        .setDesc("Open Obsidian's built-in Graph view automatically when the vault loads.")
-        .addToggle((toggle) =>
-          toggle.setValue(this.plugin.settings.autoOpenGraph).onChange(async (value) => {
-            this.plugin.settings.autoOpenGraph = value;
-            await this.plugin.saveState();
-          }),
-        );
-
-      new Setting(containerEl)
-        .setName("Auto cycle links")
-        .setDesc("Automatically remove and restore wiki links in batches.")
-        .addToggle((toggle) =>
-          toggle.setValue(this.plugin.settings.autoCycleLinks).onChange(async (value) => {
-            this.plugin.settings.autoCycleLinks = value;
-            await this.plugin.saveState();
-          }),
-        );
-
-      new Setting(containerEl)
-        .setName("Cycle interval")
-        .setDesc("How often a link batch is detached and then restored, in milliseconds.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(30000, 900000, 30000)
-            .setValue(this.plugin.settings.cycleIntervalMs)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.plugin.settings.cycleIntervalMs = value;
-              await this.plugin.saveState();
-              this.plugin.restartTimer();
-            }),
-        );
-
-      new Setting(containerEl)
-        .setName("Batch size")
-        .setDesc("How many notes get one link detached per cycle.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(1, 20, 1)
-            .setValue(this.plugin.settings.batchSize)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.plugin.settings.batchSize = value;
-              await this.plugin.saveState();
-            }),
-        );
-
-      new Setting(containerEl)
-        .setName("Pulse count")
-        .setDesc("How many detach/restore pulses run in one cycle.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(1, 10, 1)
-            .setValue(this.plugin.settings.pulseCount)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.plugin.settings.pulseCount = value;
-              await this.plugin.saveState();
-            }),
-        );
-
-      new Setting(containerEl)
-        .setName("Detach hold")
-        .setDesc("How long links stay detached before they are restored.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(3000, 120000, 3000)
-            .setValue(this.plugin.settings.detachHoldMs)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.plugin.settings.detachHoldMs = value;
-              await this.plugin.saveState();
-            }),
-        );
-
-      new Setting(containerEl)
-        .setName("Restore hold")
-        .setDesc("How long to wait after restoring before starting the next pulse.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(1000, 30000, 1000)
-            .setValue(this.plugin.settings.restoreHoldMs)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.plugin.settings.restoreHoldMs = value;
-              await this.plugin.saveState();
-            }),
-        );
-
-      new Setting(containerEl)
-        .setName("Buffer limit")
-        .setDesc("How many recent detach snapshots the safety buffer remembers.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(3, 50, 1)
-            .setValue(this.plugin.settings.bufferLimit)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.plugin.settings.bufferLimit = value;
-              await this.plugin.saveState();
-            }),
-        );
-
-      containerEl.createEl("p", {
-        text: "This plugin edits wiki links in your notes, so keep it enabled only if you want the text itself to change and then be restored.",
-      });
+      this.plugin.renderSettingsBlock(containerEl);
     }
   }
 
@@ -338,7 +310,21 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         this.safetyBuffer = Array.isArray(data.safetyBuffer) ? data.safetyBuffer : [];
         this.interval = null;
         this.busy = false;
-        this.cycleId = 0;
+        this.panelViews = new Set();
+
+        this.registerView(PANEL_VIEW_TYPE, (leaf) => {
+          const view = new LifePanelView(leaf, this);
+          this.panelViews.add(view);
+          return view;
+        });
+
+        this.addCommand({
+          id: "open-life-panel",
+          name: `Open ${PLUGIN_LABEL} panel`,
+          callback: () => {
+            void this.openLifePanel();
+          },
+        });
 
         this.addCommand({
           id: "open-live-graph",
@@ -360,29 +346,34 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           id: "restore-live-links",
           name: `Restore ${PLUGIN_LABEL} links`,
           callback: () => {
-            void this.restoreActiveBatch(true);
+            void this.recoverFromBuffer(true);
           },
         });
 
-        const ribbon = this.addRibbonIcon("activity", `Cycle ${PLUGIN_LABEL} links`, () => {
-          void this.cycleLinks(true);
+        const ribbon = this.addRibbonIcon("activity", `Open ${PLUGIN_LABEL} panel`, () => {
+          void this.openLifePanel();
         });
         if (ribbon) {
           setLifeIcon(ribbon);
         }
 
-        this.addSettingTab(new GraphSettingsTab(this.app, this));
+        this.addSettingTab(new LifeSettingsTab(this.app, this));
 
         this.app.workspace.onLayoutReady(() => {
+          void this.recoverFromBuffer().catch((error) => {
+            console.error(`[${PLUGIN_LABEL}] recovery restore failed`, error);
+          });
+          this.restartTimer();
+          if (this.settings.autoOpenPanel) {
+            void this.openLifePanel().catch((error) => {
+              console.error(`[${PLUGIN_LABEL}] panel open failed`, error);
+            });
+          }
           if (this.settings.autoOpenGraph) {
             void this.openBuiltInGraph().catch((error) => {
               console.error(`[${PLUGIN_LABEL}] graph open failed`, error);
             });
           }
-          void this.recoverFromBuffer().catch((error) => {
-            console.error(`[${PLUGIN_LABEL}] recovery restore failed`, error);
-          });
-          this.restartTimer();
           if (this.settings.autoCycleLinks) {
             void this.cycleLinks(true).catch((error) => {
               console.error(`[${PLUGIN_LABEL}] initial cycle failed`, error);
@@ -397,7 +388,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
     async onunload() {
       this.stopTimer();
-      if (this.activeBatch?.files?.length || this.hasDetachedBuffer()) {
+      this.panelViews.clear();
+      if (this.hasDetachedBuffer()) {
         try {
           await this.recoverFromBuffer(true);
         } catch (error) {
@@ -443,61 +435,38 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
     }
 
-    async recordDetachedBatch(batch) {
-      const entry = {
-        id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
-        createdAt: new Date().toISOString(),
-        status: "detached",
-        files: batch.files.map((file) => ({ ...file })),
-      };
-      this.safetyBuffer.push(entry);
-      this.trimBuffer();
-      this.cycleId = entry.id;
-      this.activeBatch = { files: batch.files.map((file) => ({ ...file })), cycleId: entry.id };
-      await this.saveState();
-      return entry;
-    }
-
-    async markBufferRestored(entryId) {
-      const entry = this.safetyBuffer.find((item) => item.id === entryId);
-      if (entry) {
-        entry.status = "restored";
-        entry.restoredAt = new Date().toISOString();
-      }
-      if (this.activeBatch?.cycleId === entryId) {
-        this.activeBatch = null;
-      }
-      await this.saveState();
-    }
-
-    async recoverFromBuffer(force = false) {
-      const detachedEntries = this.safetyBuffer.filter((entry) => entry.status === "detached");
-      if (!detachedEntries.length) {
-        return true;
-      }
-
-      for (const entry of detachedEntries) {
-        for (const snapshot of entry.files) {
-          const file = this.app.vault.getAbstractFileByPath(snapshot.path);
-          if (!file) continue;
-          const current = await this.app.vault.read(file);
-          if (force || current === snapshot.detached) {
-            await this.app.vault.modify(file, snapshot.original);
-          }
+    getLastDetachedEntry() {
+      for (let i = this.safetyBuffer.length - 1; i >= 0; i -= 1) {
+        const entry = this.safetyBuffer[i];
+        if (entry.status === "detached") {
+          return entry;
         }
-        entry.status = "restored";
-        entry.restoredAt = new Date().toISOString();
       }
+      return null;
+    }
 
-      this.activeBatch = null;
-      await this.saveState();
-      return true;
+    async openLifePanel() {
+      let leaf = this.app.workspace.getLeavesOfType(PANEL_VIEW_TYPE)[0];
+      if (!leaf) {
+        const rightLeaf = this.app.workspace.getRightLeaf;
+        leaf = typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(true);
+      }
+      await leaf.setViewState({
+        type: PANEL_VIEW_TYPE,
+        active: true,
+        state: {},
+      });
+      if (typeof this.app.workspace.revealLeaf === "function") {
+        this.app.workspace.revealLeaf(leaf);
+      }
+      this.refreshPanelViews();
     }
 
     async openBuiltInGraph(showNotice = false) {
       let leaf = this.app.workspace.getLeavesOfType(GRAPH_VIEW_TYPE)[0];
       if (!leaf) {
-        leaf = this.app.workspace.getLeaf(true);
+        const rightLeaf = this.app.workspace.getRightLeaf;
+        leaf = typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(true);
       }
       await leaf.setViewState({
         type: GRAPH_VIEW_TYPE,
@@ -512,14 +481,223 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
     }
 
-    getMarkdownFiles() {
-      return this.app.vault
-        .getMarkdownFiles()
-        .filter((file) => !file.path.startsWith("."));
+    refreshPanelViews() {
+      for (const view of this.panelViews) {
+        if (view?.refreshStatus) {
+          view.refreshStatus();
+        }
+        if (view?.render && !view.statusEl) {
+          view.render();
+        }
+      }
+    }
+
+    renderSettingsBlock(containerEl) {
+      const card = containerEl.createDiv({ cls: "life-panel-card" });
+      card.createEl("h3", { text: "Quick controls" });
+      card.createEl("p", {
+        text: "Run the cycle, restore everything, or open the built-in Graph.",
+      });
+
+      const actions = card.createDiv({ cls: "life-panel-actions" });
+      const cycleButton = actions.createEl("button", {
+        text: "Run cycle",
+        cls: "life-plugin-action is-primary",
+      });
+      cycleButton.addEventListener("click", () => {
+        void this.cycleLinks(true).then(() => this.refreshPanelViews());
+      });
+
+      const restoreButton = actions.createEl("button", {
+        text: "Restore now",
+        cls: "life-plugin-action is-danger",
+      });
+      restoreButton.addEventListener("click", () => {
+        void this.recoverFromBuffer(true).then(() => this.refreshPanelViews());
+      });
+
+      const graphButton = actions.createEl("button", {
+        text: "Open graph",
+        cls: "life-plugin-action is-wide",
+      });
+      graphButton.addEventListener("click", () => {
+        void this.openBuiltInGraph(true);
+      });
+
+      new Setting(card)
+        .setName("Open panel on start")
+        .setDesc("Open the right sidebar control panel when the vault loads.")
+        .addToggle((toggle) =>
+          toggle.setValue(this.settings.autoOpenPanel).onChange(async (value) => {
+            this.settings.autoOpenPanel = value;
+            await this.saveState();
+          }),
+        );
+
+      new Setting(card)
+        .setName("Open built-in Graph")
+        .setDesc("Open Obsidian's built-in Graph view automatically when the vault loads.")
+        .addToggle((toggle) =>
+          toggle.setValue(this.settings.autoOpenGraph).onChange(async (value) => {
+            this.settings.autoOpenGraph = value;
+            await this.saveState();
+          }),
+        );
+
+      new Setting(card)
+        .setName("Auto cycle links")
+        .setDesc("Automatically remove and restore wiki links in batches.")
+        .addToggle((toggle) =>
+          toggle.setValue(this.settings.autoCycleLinks).onChange(async (value) => {
+            this.settings.autoCycleLinks = value;
+            await this.saveState();
+            this.restartTimer();
+          }),
+        );
+
+      new Setting(card)
+        .setName("Cycle interval")
+        .setDesc("How often a link batch is detached and then restored, in milliseconds.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(30000, 900000, 30000)
+            .setValue(this.settings.cycleIntervalMs)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.settings.cycleIntervalMs = value;
+              await this.saveState();
+              this.restartTimer();
+            }),
+        );
+
+      new Setting(card)
+        .setName("Batch size")
+        .setDesc("How many notes get one link detached per cycle.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(1, 20, 1)
+            .setValue(this.settings.batchSize)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.settings.batchSize = value;
+              await this.saveState();
+            }),
+        );
+
+      new Setting(card)
+        .setName("Pulse count")
+        .setDesc("How many detach/restore pulses run in one cycle.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(1, 10, 1)
+            .setValue(this.settings.pulseCount)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.settings.pulseCount = value;
+              await this.saveState();
+            }),
+        );
+
+      new Setting(card)
+        .setName("Detach hold")
+        .setDesc("How long links stay detached before they are restored.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(3000, 120000, 3000)
+            .setValue(this.settings.detachHoldMs)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.settings.detachHoldMs = value;
+              await this.saveState();
+            }),
+        );
+
+      new Setting(card)
+        .setName("Restore hold")
+        .setDesc("How long to wait after restoring before starting the next pulse.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(1000, 30000, 1000)
+            .setValue(this.settings.restoreHoldMs)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.settings.restoreHoldMs = value;
+              await this.saveState();
+            }),
+        );
+
+      new Setting(card)
+        .setName("Buffer limit")
+        .setDesc("How many recent detach snapshots the safety buffer remembers.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(3, 50, 1)
+            .setValue(this.settings.bufferLimit)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.settings.bufferLimit = value;
+              await this.saveState();
+            }),
+        );
+    }
+
+    async recordDetachedBatch(files) {
+      const entry = {
+        id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+        createdAt: new Date().toISOString(),
+        status: "detached",
+        files: files.map((file) => ({ ...file })),
+      };
+      this.safetyBuffer.push(entry);
+      this.trimBuffer();
+      this.activeBatch = { cycleId: entry.id, files: files.map((file) => ({ ...file })) };
+      await this.saveState();
+      this.refreshPanelViews();
+      return entry;
+    }
+
+    async recoverFromBuffer(force = false) {
+      const detachedEntries = this.safetyBuffer.filter((entry) => entry.status === "detached");
+      if (!detachedEntries.length) {
+        return true;
+      }
+
+      const blocked = [];
+      for (const entry of detachedEntries) {
+        let entryRestored = true;
+        for (const snapshot of entry.files) {
+          const file = this.app.vault.getAbstractFileByPath(snapshot.path);
+          if (!file) continue;
+          const current = await this.app.vault.read(file);
+          if (!force && current !== snapshot.detached) {
+            blocked.push(snapshot.path);
+            entryRestored = false;
+            continue;
+          }
+          if (current !== snapshot.original) {
+            await this.app.vault.modify(file, snapshot.original);
+          }
+        }
+        if (entryRestored || force) {
+          entry.status = "restored";
+          entry.restoredAt = new Date().toISOString();
+        }
+      }
+
+      this.activeBatch = this.getLastDetachedEntry();
+      await this.saveState();
+      this.refreshPanelViews();
+
+      if (blocked.length && !force) {
+        new Notice(`${PLUGIN_LABEL}: restore paused because some files changed externally.`);
+        return false;
+      }
+
+      return true;
     }
 
     async pickBatchCandidates(batchSize) {
-      const files = shuffle(this.getMarkdownFiles());
+      const files = shuffle(this.app.vault.getMarkdownFiles().filter((file) => !file.path.startsWith(".")));
       const candidates = [];
       for (const file of files) {
         if (candidates.length >= batchSize) break;
@@ -530,17 +708,19 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         candidates.push({
           path: file.path,
           original: text,
-          detached: replaceRange(text, link.start, link.end, link.replacement),
+          detached: replaceRange(text, link.start, link.end, link.detached),
         });
       }
       return candidates;
     }
 
     async cycleLinks(showNotice = false) {
-      if (this.busy) return;
+      if (this.busy) return 0;
       this.busy = true;
+      let completed = 0;
       try {
-        await this.recoverFromBuffer(false);
+        const restored = await this.recoverFromBuffer(false);
+        if (!restored) return completed;
 
         const pulseCount = Math.max(1, Number(this.settings.pulseCount) || 3);
         for (let pulse = 0; pulse < pulseCount; pulse += 1) {
@@ -548,7 +728,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           const candidates = await this.pickBatchCandidates(batchSize);
           if (!candidates.length) {
             new Notice(`${PLUGIN_LABEL}: no wiki links found to cycle.`);
-            return;
+            return completed;
           }
 
           for (const snapshot of candidates) {
@@ -559,7 +739,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             await this.app.vault.modify(file, snapshot.detached);
           }
 
-          const entry = await this.recordDetachedBatch({ files: candidates });
+          const entry = await this.recordDetachedBatch(candidates);
+          await this.openLifePanel();
           await this.openBuiltInGraph(false);
 
           if (showNotice && pulse === 0) {
@@ -568,11 +749,19 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
           await sleep(Math.max(0, Number(this.settings.detachHoldMs) || 0));
           await this.recoverFromBuffer(false);
-          await this.markBufferRestored(entry.id);
+          entry.status = "restored";
+          entry.restoredAt = new Date().toISOString();
+          await this.saveState();
+          await this.refreshPanelViews();
+
           await sleep(Math.max(0, Number(this.settings.restoreHoldMs) || 0));
+          completed += 1;
         }
+
+        return completed;
       } finally {
         this.busy = false;
+        this.refreshPanelViews();
       }
     }
   };
