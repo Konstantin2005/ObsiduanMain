@@ -441,3 +441,142 @@ name: John
         }
     }
 }
+
+Describe 'LiveGraph' {
+    It 'loads the live-graph bundle and sources without crashing' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const targets = [
+    { label: 'bundle', file: path.join(root, 'Calendula/.obsidian/plugins/live-graph/core.js') },
+    { label: 'source-v1', file: path.join(root, 'Scripts/ObsidianPlugins/live-graph/live-graph-core.js') },
+    { label: 'source-v2', file: path.join(root, 'Scripts/ObsidianPlugins/live-graph/live-graph-core-v2.js') }
+  ];
+
+  function makeEl() {
+    return {
+      empty() {},
+      addClass() {},
+      createDiv() { return makeEl(); },
+      createEl() { return makeEl(); },
+      setText() {},
+      appendChild() {},
+      style: {},
+      classList: { add() {} },
+      setAttribute() {},
+      addEventListener() {},
+    };
+  }
+
+  function makeMockObsidian() {
+    class ItemView {
+      constructor() {
+        this.containerEl = makeEl();
+      }
+    }
+
+    class Plugin {
+      constructor() {
+        this.app = {
+          workspace: {
+            onLayoutReady(cb) { cb(); },
+            getLeavesOfType() { return []; },
+            getLeaf() { return { setViewState: async () => {}, detach: async () => {} }; },
+            revealLeaf() {},
+          },
+          vault: {
+            getMarkdownFiles() { return []; },
+            getAbstractFileByPath() { return null; },
+          },
+          metadataCache: { resolvedLinks: {} },
+        };
+      }
+
+      async loadData() { return {}; }
+      async saveData() {}
+      registerView() {}
+      addCommand() {}
+      addRibbonIcon() { return makeEl(); }
+      addSettingTab() {}
+    }
+
+    class PluginSettingTab {
+      constructor() {
+        this.containerEl = makeEl();
+      }
+    }
+
+    class Setting {
+      setName() { return this; }
+      setDesc() { return this; }
+      addToggle(cb) {
+        cb({ setValue() { return { onChange() {} }; } });
+        return this;
+      }
+      addSlider(cb) {
+        cb({
+          setLimits() { return this; },
+          setValue() { return this; },
+          setDynamicTooltip() { return this; },
+          onChange() { return this; },
+        });
+        return this;
+      }
+    }
+
+    class Notice {
+      constructor(message) {
+        this.message = message;
+      }
+    }
+
+    function setIcon() {}
+
+    return { ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon };
+  }
+
+  for (const target of targets) {
+    const create = require(target.file);
+    const originalError = console.error;
+    console.error = () => {};
+    try {
+      const MissingPlugin = create({});
+      await new MissingPlugin().onload();
+
+      const PluginClass = create(makeMockObsidian());
+      const instance = new PluginClass();
+      await instance.onload();
+      await instance.onunload();
+
+      process.stdout.write(target.label + ':ok\n');
+    } finally {
+      console.error = originalError;
+    }
+  }
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'live-graph-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'bundle:ok'
+            ($output -join [Environment]::NewLine) | Should Match 'source-v1:ok'
+            ($output -join [Environment]::NewLine) | Should Match 'source-v2:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}

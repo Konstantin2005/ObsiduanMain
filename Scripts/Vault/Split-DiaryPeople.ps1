@@ -30,8 +30,7 @@ function Get-DiaryFiles {
     [System.IO.Directory]::GetFiles($Root, "*.md", [System.IO.SearchOption]::AllDirectories) |
         Where-Object {
             $name = [System.IO.Path]::GetFileNameWithoutExtension($_)
-            $name -notmatch '^\d{4}$' -and
-            $name -notmatch '^\d{2}\.\d{2}-\d{2}-\d{2}(?:\.\d+)?$'
+            $name -notmatch '^\d{4}$'
         }
 }
 

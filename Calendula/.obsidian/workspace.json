@@ -22,6 +22,16 @@
             }
           },
           {
+            "id": "2e248e711899240e",
+            "type": "leaf",
+            "state": {
+              "type": "live-graph-view",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
+          },
+          {
             "id": "4d3beef94f8ce746",
             "type": "leaf",
             "state": {
@@ -49,7 +59,8 @@
               "title": "2026-04-29"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -202,10 +213,11 @@
       "graph:Граф": false,
       "command-palette:Открыть палитру команд": false,
       "obsidian-kanban:Создать новую доску": false,
-      "obsidian-excalidraw-plugin:Создать новый чертеж": false
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false,
+      "live-graph:Open Жизнь": false
     }
   },
-  "active": "de72db943b4e717e",
+  "active": "2e248e711899240e",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/09-06-26.md",
     "Calendula/2026/Июнь/09.07-06-26.md",
