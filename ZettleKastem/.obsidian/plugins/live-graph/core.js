@@ -70,6 +70,9 @@ module.exports = function createLiveGraphPlugin(obsidian) {
   }
 
   function setLifeIcon(element) {
+    if (typeof document === "undefined" || !element) {
+      return;
+    }
     const svg = svgEl("svg", {
       viewBox: "0 0 24 24",
       width: "18",
