@@ -10,6 +10,12 @@ const {
   GraphStabilityController,
   IncidentLog,
 } = require(path.resolve(__dirname, "..", "..", "..", "..", "Scripts", "Obsidian", "graph-stability.js"));
+const {
+  BudgetPolicy,
+  FrameGovernor,
+  IOGovernor,
+  MemoryGovernor,
+} = require(path.resolve(__dirname, "..", "..", "..", "..", "Scripts", "Obsidian", "graph-governors.js"));
 
 const VIEW_TYPE = "calendula-ultra-graph";
 const BASE_FRAME_BUDGET_MS = 8;
@@ -49,6 +55,10 @@ class UltraGraphView extends ItemView {
     this.healthEl = null;
     this.storeClient = null;
     this.stability = null;
+    this.budgetPolicy = new BudgetPolicy({ nodeBudget: STEADY_NODE_BUDGET, edgeBudget: STEADY_EDGE_BUDGET, targetFrameMs: 16 });
+    this.frameGovernor = new FrameGovernor();
+    this.memoryGovernor = new MemoryGovernor();
+    this.ioGovernor = new IOGovernor();
     this.snapshot = null;
     this.failureState = null;
     this.lastPlan = null;
@@ -138,6 +148,8 @@ class UltraGraphView extends ItemView {
       }
       this.snapshot = loaded.snapshot;
       this.failureState = null;
+      this.memoryGovernor.observeSnapshot(this.snapshot);
+      this.ioGovernor.observeSnapshot(this.snapshot);
       this.stability?.recordStoreLoadResult(loaded);
       this.restartProgressivePaint();
     } catch (error) {
@@ -244,16 +256,14 @@ class UltraGraphView extends ItemView {
   }
 
   makeFrameBudgets() {
-    if (this.mode === "emergency") {
-      return { nodeBudget: 500, edgeBudget: 0, frameBudgetMs: this.frameBudgetMs };
-    }
-    if (this.mode === "degraded") {
-      return { nodeBudget: 1200, edgeBudget: 250, frameBudgetMs: this.frameBudgetMs };
-    }
-    if (this.mode === "interactive") {
-      return { nodeBudget: 2200, edgeBudget: 0, frameBudgetMs: this.frameBudgetMs };
-    }
-    return { nodeBudget: STEADY_NODE_BUDGET, edgeBudget: STEADY_EDGE_BUDGET, frameBudgetMs: this.frameBudgetMs };
+    const resolved = this.budgetPolicy.resolve({
+      mode: this.mode,
+      framePressure: this.frameGovernor.getSnapshot().pressure,
+      memoryPressure: this.memoryGovernor.getSnapshot().pressure,
+      ioPressure: this.ioGovernor.getSnapshot().pressure,
+      inputBurst: this.mode === "interactive",
+    });
+    return { ...resolved, frameBudgetMs: this.frameBudgetMs };
   }
 
   renderFrame() {
@@ -296,6 +306,7 @@ class UltraGraphView extends ItemView {
     });
     this.lastPlan = plan;
     this.frameStats = this.backend.draw(plan);
+    this.frameGovernor.recordFrameStats(this.frameStats);
     this.stability?.recordFrameStats(this.frameStats);
     if (this.frameStats.failureState) {
       this.failureState = this.frameStats.failureState;
@@ -370,6 +381,11 @@ class UltraGraphView extends ItemView {
           })
         : null,
       stability: this.stability?.getSnapshot() || null,
+      governors: Object.freeze({
+        frame: this.frameGovernor.getSnapshot(),
+        memory: this.memoryGovernor.getSnapshot(),
+        io: this.ioGovernor.getSnapshot(),
+      }),
     });
   }
 

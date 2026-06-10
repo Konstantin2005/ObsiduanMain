@@ -1081,6 +1081,8 @@ Describe 'Calendula-20K rendering profile' {
     if (steadyHealth.nodeCount < 30000 || steadyHealth.visibleNodes <= 0) throw new Error(`Expected real health counts, got ${JSON.stringify(steadyHealth)}`);
     if (steadyHealth.timingsMs.renderPlan <= 0) throw new Error(`Expected render plan timings, got ${JSON.stringify(steadyHealth.timingsMs)}`);
     if (!steadyHealth.stability || steadyHealth.stability.state !== 'NORMAL') throw new Error(`Expected NORMAL stability state, got ${JSON.stringify(steadyHealth.stability)}`);
+    if (!steadyHealth.governors || steadyHealth.governors.frame.pressure !== 'normal') throw new Error(`Expected governor health snapshot, got ${JSON.stringify(steadyHealth.governors)}`);
+    if (steadyHealth.governors.memory.snapshotBytes <= 0) throw new Error(`Expected memory governor to observe snapshot bytes, got ${JSON.stringify(steadyHealth.governors.memory)}`);
     if (steadyHealth.mode !== 'steady' || steadyHealth.renderStride !== 1) {
       throw new Error(`Expected steady health mode, got ${JSON.stringify(steadyHealth)}`);
     }
@@ -1182,6 +1184,76 @@ Describe 'Calendula graph store' {
 
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'graph-store:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula Performance Governors' {
+    It 'controls frame, memory, IO, and render budgets with measurable snapshots' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const governors = require(path.join(repoRoot, 'Scripts/Obsidian/graph-governors.js'));
+
+  const policy = new governors.BudgetPolicy({ nodeBudget: 3000, edgeBudget: 1000, minNodeBudget: 100 });
+  const normalBudget = policy.resolve();
+  if (normalBudget.nodeBudget !== 3000 || normalBudget.edgeBudget !== 1000 || normalBudget.labelBudget !== 0) {
+    throw new Error(`Unexpected normal budget: ${JSON.stringify(normalBudget)}`);
+  }
+  const burstBudget = policy.resolve({ inputBurst: true });
+  if (burstBudget.edgeBudget !== 0 || !burstBudget.reasons.INPUT_BURST) throw new Error(`Input burst should remove edges, got ${JSON.stringify(burstBudget)}`);
+  const memoryBudget = policy.resolve({ memoryPressure: true });
+  if (memoryBudget.nodeBudget > 500 || memoryBudget.edgeBudget !== 0) throw new Error(`Memory pressure budget wrong: ${JSON.stringify(memoryBudget)}`);
+
+  const frameGovernor = new governors.FrameGovernor({ limits: { warningFrameMs: 10, pressureFrameMs: 20, emergencyFrameMs: 30 } });
+  for (let i = 0; i < 20; i += 1) {
+    frameGovernor.recordFrameStats({ timingsMs: { total: i < 18 ? 12 : 26 } });
+  }
+  const frameSnapshot = frameGovernor.getSnapshot();
+  if (frameSnapshot.pressure !== 'pressure' || frameSnapshot.p95FrameMs < 20) {
+    throw new Error(`Expected frame pressure, got ${JSON.stringify(frameSnapshot)}`);
+  }
+
+  const memoryGovernor = new governors.MemoryGovernor({ maxSnapshotBytes: 16, maxColdLoadBytes: 8 });
+  const memorySnapshot = memoryGovernor.observeSnapshot({
+    arrays: {
+      nodeIds: new Uint32Array(8),
+      layoutX: new Float32Array(8),
+    },
+  });
+  if (!memorySnapshot.pressure || memoryGovernor.canLoadColdData(4)) {
+    throw new Error(`Expected memory pressure and cold load block, got ${JSON.stringify(memorySnapshot)}`);
+  }
+  if (!memorySnapshot.loadedArrays.includes('nodeIds') || !memorySnapshot.loadedArrays.includes('layoutX')) {
+    throw new Error(`Expected loaded array accounting, got ${JSON.stringify(memorySnapshot.loadedArrays)}`);
+  }
+
+  const ioGovernor = new governors.IOGovernor({ limits: { manifestReadMs: 50, shallowValidationMs: 100, arrayLoadMs: 500 } });
+  const ioSnapshot = ioGovernor.observeSnapshot({ timingsMs: { manifestRead: 10, shallowValidation: 20, arrayLoad: 750 } });
+  if (!ioSnapshot.pressure) throw new Error(`Expected IO pressure, got ${JSON.stringify(ioSnapshot)}`);
+  if (!ioGovernor.canRunBeforeFirstFrame('minimal-array-load')) throw new Error('Minimal array load should be allowed before first frame');
+  if (!ioGovernor.shouldDefer('deep-validation') || !ioGovernor.shouldDefer('strings')) throw new Error('Cold IO should be deferred');
+
+  process.stdout.write(`governors:ok ${JSON.stringify({ frame: frameSnapshot.pressure, memory: memorySnapshot.pressure, io: ioSnapshot.pressure })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'governors-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'governors:ok'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
