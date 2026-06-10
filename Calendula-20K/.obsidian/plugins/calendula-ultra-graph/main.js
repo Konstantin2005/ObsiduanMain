@@ -16,6 +16,7 @@ const {
   IOGovernor,
   MemoryGovernor,
 } = require(path.resolve(__dirname, "..", "..", "..", "..", "Scripts", "Obsidian", "graph-governors.js"));
+const { buildQueryPlan } = require(path.resolve(__dirname, "..", "..", "..", "..", "Scripts", "Obsidian", "graph-query-engine.js"));
 
 const VIEW_TYPE = "calendula-ultra-graph";
 const BASE_FRAME_BUDGET_MS = 8;
@@ -62,6 +63,7 @@ class UltraGraphView extends ItemView {
     this.snapshot = null;
     this.failureState = null;
     this.lastPlan = null;
+    this.queryPlan = null;
     this.frameStats = null;
     this.frameId = null;
     this.localFrameId = 0;
@@ -130,6 +132,7 @@ class UltraGraphView extends ItemView {
     this.snapshot = null;
     this.failureState = null;
     this.lastPlan = null;
+    this.queryPlan = null;
     this.frameStats = null;
     this.ctx = null;
     this.canvas = null;
@@ -148,6 +151,7 @@ class UltraGraphView extends ItemView {
       }
       this.snapshot = loaded.snapshot;
       this.failureState = null;
+      this.queryPlan = buildQueryPlan({ snapshot: this.snapshot, id: "ultra-default-query", edgePolicy: "visible" });
       this.memoryGovernor.observeSnapshot(this.snapshot);
       this.ioGovernor.observeSnapshot(this.snapshot);
       this.stability?.recordStoreLoadResult(loaded);
@@ -303,6 +307,7 @@ class UltraGraphView extends ItemView {
       profileId: "calendula-ultra-v9",
       mode: this.mode,
       reason: this.degradationReason,
+      queryPlan: this.queryPlan,
     });
     this.lastPlan = plan;
     this.frameStats = this.backend.draw(plan);

@@ -1263,6 +1263,109 @@ Describe 'Calendula Performance Governors' {
     }
 }
 
+Describe 'Calendula Query Engine' {
+    It 'compiles filters into bitsets and RenderPlan consumes QueryPlan without renderer filtering' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const fs = require('fs');
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(tempRoot, 'Vault');
+  const outRoot = path.join(tempRoot, 'graph-store');
+  fs.mkdirSync(vaultRoot, { recursive: true });
+  fs.writeFileSync(path.join(vaultRoot, 'A.md'), 'type: diary\n[[B]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'B.md'), 'type: person\n[[C]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'C.md'), 'type: diary\n[[A]]\n', 'utf8');
+
+  const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
+  const critical = require(path.join(repoRoot, 'Scripts/Obsidian/graph-critical-frame.js'));
+  const queryEngine = require(path.join(repoRoot, 'Scripts/Obsidian/graph-query-engine.js'));
+  const renderPlan = require(path.join(repoRoot, 'Scripts/Obsidian/graph-render-plan.js'));
+
+  const graph = store.buildGraph(vaultRoot);
+  store.writeStore(vaultRoot, outRoot, graph);
+  const loaded = new critical.GraphStoreClient({ storeRoot: outRoot }).loadSnapshot();
+  if (!loaded.ok) throw new Error(`Expected snapshot: ${JSON.stringify(loaded.failureState)}`);
+
+  const personQuery = queryEngine.buildQueryPlan({
+    snapshot: loaded.snapshot,
+    filters: [{ type: 'nodeType', values: [2] }],
+    id: 'people-only',
+  });
+  if (!Object.isFrozen(personQuery) || !(personQuery.candidateNodes instanceof Uint8Array)) throw new Error('QueryPlan should be immutable with bitsets');
+  if (personQuery.stats.candidates !== 1 || personQuery.reasons.NODE_TYPE_FILTER !== 2) {
+    throw new Error(`Expected one person candidate, got ${JSON.stringify(personQuery.stats)} / ${JSON.stringify(personQuery.reasons)}`);
+  }
+
+  const peoplePlan = critical.buildCriticalRenderPlan({
+    snapshot: loaded.snapshot,
+    queryPlan: personQuery,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    budgets: { nodeBudget: 10, edgeBudget: 10, frameBudgetMs: 16 },
+    frameId: 10,
+  });
+  if (peoplePlan.nodes.length !== 1 || peoplePlan.nodeTypes[0] !== 2) throw new Error(`RenderPlan did not respect type filter: ${JSON.stringify(Array.from(peoplePlan.nodeTypes))}`);
+  if (peoplePlan.queryPlanId !== 'people-only') throw new Error(`Missing query lineage: ${peoplePlan.queryPlanId}`);
+
+  const priorityQuery = queryEngine.buildQueryPlan({
+    snapshot: loaded.snapshot,
+    priorityNodeIds: [2],
+    id: 'priority-c',
+  });
+  const priorityPlan = critical.buildCriticalRenderPlan({
+    snapshot: loaded.snapshot,
+    queryPlan: priorityQuery,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    budgets: { nodeBudget: 3, edgeBudget: 10, frameBudgetMs: 16 },
+    frameId: 11,
+  });
+  if (priorityPlan.nodeIds[0] !== 2) throw new Error(`Priority node should be first, got ${Array.from(priorityPlan.nodeIds).join(',')}`);
+
+  const noEdgesQuery = queryEngine.buildQueryPlan({ snapshot: loaded.snapshot, edgePolicy: 'none', id: 'nodes-only' });
+  const noEdgesPlan = critical.buildCriticalRenderPlan({
+    snapshot: loaded.snapshot,
+    queryPlan: noEdgesQuery,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    budgets: { nodeBudget: 3, edgeBudget: 10, frameBudgetMs: 16 },
+    frameId: 12,
+  });
+  if (noEdgesPlan.edges.length !== 0 || noEdgesPlan.skipReasons.EDGE_POLICY_NONE === undefined) {
+    throw new Error(`Edge policy none should skip all edges, got ${JSON.stringify(noEdgesPlan.skipReasons)}`);
+  }
+
+  const profilePlan = renderPlan.buildRenderPlan({
+    storeRoot: outRoot,
+    profile: { name: 'people-profile', nodeTypes: [2], maxVisibleNodes: 10, maxVisibleEdges: 10, edgePolicy: 'visible' },
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    frameId: 13,
+  });
+  if (profilePlan.nodes.length !== 1 || profilePlan.nodeTypes[0] !== 2) throw new Error('Profile nodeTypes should compile through QueryPlan');
+
+  process.stdout.write(`query-engine:ok ${JSON.stringify({ people: peoplePlan.nodes.length, priorityFirst: priorityPlan.nodeIds[0], noEdges: noEdgesPlan.edges.length })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'query-engine-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'query-engine:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula Stability Layer' {
     It 'turns store and renderer failures into controlled states with incident logs' {
         $root = New-TempRoot

@@ -3,6 +3,7 @@ const {
   buildCriticalRenderPlan,
   createFailureState,
 } = require("./graph-critical-frame.js");
+const { buildQueryPlan } = require("./graph-query-engine.js");
 
 const DEFAULT_CAMERA = {
   x: 0,
@@ -260,6 +261,13 @@ function buildRenderPlan({
   const modeInfo = pickMode({ profile: normalizedProfile, frameHistory, memoryPressure });
   const lod = pickLod({ camera, mode: modeInfo.mode, profile: normalizedProfile });
   const budgets = makeBudgets(normalizedProfile, modeInfo.mode, lod);
+  const queryPlan = buildQueryPlan({
+    snapshot: indexed.snapshot,
+    filters: normalizedProfile.nodeTypes ? [{ type: "nodeType", values: normalizedProfile.nodeTypes }] : [],
+    priorityNodeIds: normalizedProfile.priorityNodeIds || [],
+    edgePolicy: normalizedProfile.edgePolicy === "backbone" ? "backbone" : "visible",
+    id: `${normalizedProfile.name || "profile"}-query`,
+  });
   return buildCriticalRenderPlan({
     snapshot: indexed.snapshot,
     camera: { ...DEFAULT_CAMERA, ...camera },
@@ -269,6 +277,7 @@ function buildRenderPlan({
     mode: modeInfo.mode,
     reason: modeInfo.reason,
     lod,
+    queryPlan,
   });
 }
 
