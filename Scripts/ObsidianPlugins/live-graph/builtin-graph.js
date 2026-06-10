@@ -61,17 +61,38 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         flex-direction: column;
         gap: 12px;
         padding: 12px 10px 16px;
+        background:
+          radial-gradient(circle at 18% 12%, rgba(90, 190, 255, 0.14), transparent 30%),
+          radial-gradient(circle at 82% 8%, rgba(255, 178, 102, 0.14), transparent 22%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0));
       }
       .life-panel-hero {
-        padding: 14px;
+        position: relative;
+        overflow: hidden;
+        padding: 16px;
         border: 1px solid var(--background-modifier-border);
         border-radius: 16px;
-        background: linear-gradient(180deg, rgba(130, 180, 255, 0.16), rgba(130, 180, 255, 0.05));
+        background:
+          linear-gradient(180deg, rgba(130, 180, 255, 0.16), rgba(130, 180, 255, 0.04)),
+          linear-gradient(135deg, rgba(30, 41, 59, 0.08), rgba(255, 255, 255, 0.02));
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      }
+      .life-panel-hero::after {
+        content: "";
+        position: absolute;
+        inset: -40% auto auto -20%;
+        width: 70%;
+        height: 140%;
+        background: linear-gradient(110deg, rgba(255,255,255,0.14), rgba(255,255,255,0));
+        transform: rotate(12deg);
+        pointer-events: none;
+        opacity: 0.55;
       }
       .life-panel-title {
         font-size: 1.2em;
         font-weight: 700;
         margin: 0 0 4px;
+        letter-spacing: 0.01em;
       }
       .life-panel-subtitle {
         color: var(--text-muted);
@@ -82,6 +103,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         margin-top: 10px;
         color: var(--text-muted);
         font-size: 0.9em;
+        line-height: 1.35;
       }
       .life-panel-metrics {
         display: grid;
@@ -90,10 +112,12 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         margin-top: 10px;
       }
       .life-panel-metric {
+        position: relative;
         border-radius: 12px;
         padding: 10px 12px;
-        background: rgba(0, 0, 0, 0.06);
+        background: rgba(0, 0, 0, 0.05);
         border: 1px solid var(--background-modifier-border);
+        backdrop-filter: blur(10px);
       }
       .life-panel-metric-label {
         display: block;
@@ -125,14 +149,17 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
       .life-panel-card {
         border: 1px solid var(--background-modifier-border);
-        background: linear-gradient(180deg, rgba(120, 170, 255, 0.08), rgba(120, 170, 255, 0.03));
+        background:
+          linear-gradient(180deg, rgba(120, 170, 255, 0.10), rgba(120, 170, 255, 0.03)),
+          rgba(255, 255, 255, 0.02);
         border-radius: 14px;
         padding: 12px 14px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(12px);
       }
       .life-panel-actions {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
         margin-bottom: 10px;
       }
@@ -140,23 +167,28 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         border: 1px solid var(--background-modifier-border);
         border-radius: 999px;
         padding: 8px 12px;
-        background: var(--background-primary);
+        background: linear-gradient(180deg, var(--background-primary), var(--background-secondary));
         color: var(--text-normal);
         cursor: pointer;
-        transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+        transition:
+          transform 140ms ease,
+          background 140ms ease,
+          border-color 140ms ease,
+          box-shadow 140ms ease;
       }
       .life-plugin-action:hover {
         transform: translateY(-1px);
         border-color: var(--interactive-accent);
         background: var(--background-secondary-alt);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
       }
       .life-plugin-action.is-primary {
-        background: var(--interactive-accent);
+        background: linear-gradient(180deg, var(--interactive-accent), color-mix(in srgb, var(--interactive-accent) 85%, white));
         color: var(--text-on-accent);
         border-color: var(--interactive-accent);
       }
       .life-plugin-action.is-danger {
-        background: rgba(255, 100, 100, 0.12);
+        background: linear-gradient(180deg, rgba(255, 100, 100, 0.16), rgba(255, 100, 100, 0.08));
       }
       .life-plugin-action.is-wide {
         grid-column: 1 / -1;
@@ -174,12 +206,15 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         border: 1px solid var(--background-modifier-border);
         border-radius: 999px;
         padding: 6px 10px;
-        background: var(--background-primary);
+        background: linear-gradient(180deg, var(--background-primary), rgba(255,255,255,0.03));
         cursor: pointer;
         font-size: 0.88em;
+        transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
       }
       .life-panel-preset:hover {
         border-color: var(--interactive-accent);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
       }
       .life-panel-card .setting-item {
         padding-top: 0.55em;
@@ -202,17 +237,22 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         border: 1px solid var(--background-modifier-border);
         border-radius: 999px;
         padding: 6px 10px;
-        background: var(--background-primary);
+        background: linear-gradient(180deg, var(--background-primary), rgba(255,255,255,0.03));
         cursor: pointer;
         font-size: 0.84em;
-        transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+        transition:
+          transform 140ms ease,
+          border-color 140ms ease,
+          background 140ms ease,
+          box-shadow 140ms ease;
       }
       .life-panel-mode-chip:hover {
         transform: translateY(-1px);
         border-color: var(--interactive-accent);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
       }
       .life-panel-mode-chip.is-active {
-        background: var(--interactive-accent);
+        background: linear-gradient(180deg, var(--interactive-accent), color-mix(in srgb, var(--interactive-accent) 82%, white));
         color: var(--text-on-accent);
         border-color: var(--interactive-accent);
       }
@@ -220,12 +260,13 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         margin: 4px 0 0;
         color: var(--text-muted);
         font-size: 0.84em;
+        line-height: 1.35;
       }
       .life-panel-pill {
         border-radius: 999px;
         padding: 5px 10px;
         border: 1px solid var(--background-modifier-border);
-        background: var(--background-primary);
+        background: rgba(255, 255, 255, 0.04);
         font-size: 0.8em;
       }
     `;
@@ -359,8 +400,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       super(leaf);
       this.plugin = plugin;
       this.statusEl = null;
-      this.rootEl = null;
-    }
+      this.rootEl = null;`r`n      this.lastStatusText = "";`r`n    }
 
     getViewType() {
       return PANEL_VIEW_TYPE;
@@ -499,10 +539,11 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
     refreshStatus() {
       if (!this.statusEl) return;
-      const detached = this.plugin.safetyBuffer.filter((entry) => entry.status === "detached").length;
-      this.statusEl.setText(
-        `Buffer: ${this.plugin.safetyBuffer.length} • Detached: ${detached} • ${this.plugin.busy ? "busy" : "idle"}`,
-      );
+      const detached = this.plugin.safetyBuffer.filter((entry) => entry.status === "detached" ).length;
+      const text = "Buffer:  • Detached:  • ";
+      if (text === this.lastStatusText) return;
+      this.lastStatusText = text;
+      this.statusEl.setText(text);
     }
   }
 
@@ -590,11 +631,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           if (this.settings.autoOpenPanel) {
             void this.openLifePanel().catch((error) => {
               console.error(`[${PLUGIN_LABEL}] panel open failed`, error);
-            });
-          }
-          if (this.settings.autoOpenGraph) {
-            void this.openBuiltInGraph().catch((error) => {
-              console.error(`[${PLUGIN_LABEL}] graph open failed`, error);
             });
           }
           if (this.settings.autoCycleLinks) {
@@ -1035,7 +1071,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             const regrown = await this.recoverFromBuffer(true);
             if (!regrown || this.stopRequested) return completed;
             await this.openLifePanel();
-            await this.openBuiltInGraph();
             completed += 1;
             if (!(await sleepWithStop(Math.max(0, Number(this.settings.restoreHoldMs) || 0), () => this.stopRequested))) {
               break;
@@ -1059,7 +1094,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
           const entry = await this.recordDetachedBatch(candidates);
           await this.openLifePanel();
-          await this.openBuiltInGraph();
 
           if (!(await sleepWithStop(Math.max(0, Number(this.settings.detachHoldMs) || 0), () => this.stopRequested))) {
             break;

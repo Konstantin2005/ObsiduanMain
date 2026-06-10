@@ -168,6 +168,9 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.currentProfile = null;
       this.currentTickMs = plugin.settings.tickMs;
       this.textColor = null;
+      this.lastStatusText = "";
+      this.backdropCanvas = null;
+      this.backdropSignature = "";
       this.paintRafId = null;
       this.paintToken = 0;
       this.lastPaintSummary = null;
@@ -257,8 +260,14 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         );
       }
       if (this.statusEl) {
-        this.statusEl.setText(this.paused ? "Paused" : "Cycling connections");
+        this.setStatusText(this.paused ? "Paused" : "Cycling connections");
       }
+    }
+
+    setStatusText(text) {
+      if (!this.statusEl || text === this.lastStatusText) return;
+      this.lastStatusText = text;
+      this.statusEl.setText(text);
     }
 
     startRenderLoop() {

@@ -158,7 +158,7 @@
             }
           },
           {
-            "id": "e88fdffd1c08380b",
+            "id": "03f051638c647229",
             "type": "leaf",
             "state": {
               "type": "life-panel",
@@ -168,7 +168,7 @@
             }
           },
           {
-            "id": "7f83f536b277e9ab",
+            "id": "332da3df5b7648ec",
             "type": "leaf",
             "state": {
               "type": "life-panel",
@@ -178,207 +178,7 @@
             }
           },
           {
-            "id": "1d7ed08ef6564b66",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "27bc790f1c4593af",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "40857f074e8ebaaa",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "8f592cd1b97f135b",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "1bdf88df898640d0",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "371193595c6880b6",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "d0e330bc5d027a83",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "52c05d726d2f9c4f",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "d32b4e50cdd3a9db",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "82b932e34f2a0005",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "e32ebfd1b658440e",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "0c7aa85cf240db61",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "c3b17bdf16c37d74",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "e745a3f9522f6cb3",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "48b4b54ed210374c",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "d75f1f684efab0bb",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "de6cea128a7447c7",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "34df021fcccdbdc7",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "7d17cad50843c148",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "80db3ccc1a63620e",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "f1da9f481d3bd587",
+            "id": "f79618f7ade91d8a",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -388,7 +188,7 @@
             }
           }
         ],
-        "currentTab": 27
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -405,7 +205,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "f1da9f481d3bd587",
+  "active": "f79618f7ade91d8a",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/07.1-06-26.md",
