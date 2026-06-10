@@ -431,6 +431,20 @@ Goal: keep every next frame stable after the first one works.
 | V9-2-005 | Add aggregate degradation reasons | TODO | no per-object reason allocations |
 | TEST-V9-2 | Governor tests | TODO | pressure, recovery, cooldown, and safe fallback cases |
 
+## v9.1.5: Stability Layer
+
+Goal: every store, runtime, and backend failure becomes a controlled state, not a crash.
+
+| ID | Task | Status | Done Criteria |
+| --- | --- | --- | --- |
+| V9-STAB-001 | Add `GraphStabilityController` | DONE | store and frame events map to explicit states |
+| V9-STAB-002 | Add incident log | DONE | transitions are recorded and can persist to JSONL |
+| V9-STAB-003 | Add renderer degraded state | DONE | backend failures keep graph controlled |
+| V9-STAB-004 | Add store degraded state | DONE | previous-store recovery keeps rendering possible |
+| V9-STAB-005 | Add paused/blocking state | DONE | missing/corrupt store does not crash or open full native graph |
+| V9-STAB-006 | Add safe fallback profile | DONE | fallback target is `fast-backbone`, not full native graph |
+| TEST-V9-STAB | Stability tests | DONE | blocking store, recovered previous, renderer failure, frame pressure, recovery |
+
 ## v9.3: Deep Validation And Store Compatibility
 
 Goal: protect correctness after first render.

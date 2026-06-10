@@ -39,3 +39,7 @@
 - Added critical-frame Pester coverage for shallow snapshot load, no string arrays on first frame, immutable plan, aggregate reasons, missing-store failure, previous-store recovery, and `NullBackend` frame stats.
 - Pester status after Phase 1: `35 passed, 0 failed`.
 - Real Calendula-20K Phase 1 benchmark: `33,900` nodes, `35,948` edges, graph build `2041.09ms`, store write `131.76ms`, RenderPlan `7.74ms`, scheduler `3.8ms`, node budget `3,000`, edge budget `1,000`.
+- Completed Phase 2 / Stability Layer: added `GraphStabilityController`, `IncidentLog`, controlled states for normal/store degraded/renderer degraded/frame pressure/paused/safe native, and safe `fast-backbone` fallback profile.
+- Ultra Graph now reports stability state in health snapshots and records store/frame incidents without crashing the renderer.
+- Pester status after Phase 2: `36 passed, 0 failed`.
+- Real Calendula-20K Phase 2 benchmark: `33,900` nodes, `35,948` edges, graph build `2168.21ms`, store write `42.75ms`, RenderPlan `7.07ms`, scheduler `4.54ms`, node budget `3,000`, edge budget `1,000`.
