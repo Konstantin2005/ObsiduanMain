@@ -1110,7 +1110,7 @@ TopQuark ^UTDRUunz
 #Complete ^hMyhZUZi
 
 ## Embedded Files
-1dfa0cbc63090b027568da31a248b1d7f71b405b: [[Pasted Image 20260210204220_382.png]]
+1dfa0cbc63090b027568da31a248b1d7f71b405b: Pasted Image 20260210204220_382.png
 
 97f0063d7617c29cb47fe425d056b79a6a330359: [[Pasted Image 20260210204220_434.png]]
 

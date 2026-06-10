@@ -609,7 +609,7 @@ log N *  ^gjiEUHBh
 #Complete ^ZrNTHpmB
 
 ## Embedded Files
-2dbb70465fa3f7e162a765604086bf4f997e3314: [[Pasted Image 20260219210634_892.png]]
+2dbb70465fa3f7e162a765604086bf4f997e3314: Pasted Image 20260219210634_892.png
 
 4f3594d462087f83b983c757519a4c64c43908bd: [[Pasted Image 20260219210901_141.png]]
 
