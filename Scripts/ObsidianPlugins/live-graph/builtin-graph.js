@@ -305,7 +305,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
     async onOpen() {
       clearElement(this.containerEl);
-      this.containerEl.classList.add("life-panel-shell");
       this.rootEl = this.containerEl.createDiv({ cls: "life-panel-shell" });
       this.render();
     }
@@ -318,103 +317,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       if (!this.rootEl) return;
       clearElement(this.rootEl);
       injectStyles();
-
-      const hero = this.rootEl.createDiv({ cls: "life-panel-hero" });
-      hero.createEl("div", { text: PLUGIN_LABEL, cls: "life-panel-title" });
-      hero.createEl("p", {
-        text: "Right sidebar control for the living cycle.",
-        cls: "life-panel-subtitle",
-      });
-      this.statusEl = hero.createDiv({ cls: "life-panel-status" });
-      const metrics = hero.createDiv({ cls: "life-panel-metrics" });
-      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Tempo</span><span class="life-panel-metric-value">${pickTempoLabel(this.plugin.settings)}</span>`;
-      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Batch</span><span class="life-panel-metric-value">${this.plugin.settings.batchSize}</span>`;
-      metrics.createDiv({ cls: "life-panel-metric" }).innerHTML = `<span class="life-panel-metric-label">Mode</span><span class="life-panel-metric-value">${pickModeLabel(this.plugin.settings.cycleMode)}</span>`;
-      this.refreshStatus();
-
-      const controls = this.rootEl.createDiv({ cls: "life-panel-card" });
-      controls.createEl("h3", { text: "Quick controls" });
-
-      const actions = controls.createDiv({ cls: "life-panel-actions" });
-      const cycleButton = actions.createEl("button", {
-        text: "Run cycle",
-        cls: "life-plugin-action is-primary",
-      });
-      cycleButton.addEventListener("click", () => {
-        void this.plugin.cycleLinks(true).then(() => this.refreshStatus());
-      });
-
-      const stopButton = actions.createEl("button", {
-        text: "Stop cycle",
-        cls: "life-plugin-action is-danger",
-      });
-      stopButton.addEventListener("click", () => {
-        void this.plugin.stopCycle(true).then(() => this.refreshStatus());
-      });
-
-      const restoreButton = actions.createEl("button", {
-        text: "Restore now",
-        cls: "life-plugin-action is-danger",
-      });
-      restoreButton.addEventListener("click", () => {
-        void this.plugin.recoverFromBuffer(true).then(() => this.refreshStatus());
-      });
-
-      const modeRow = controls.createDiv({ cls: "life-panel-mode-row" });
-      const modes = [
-        { mode: "prune-heavy", label: "Prune hubs" },
-        { mode: "equalize", label: "Equalize" },
-        { mode: "regrow", label: "Regrow" },
-      ];
-      for (const entry of modes) {
-        const chip = modeRow.createEl("button", {
-          text: entry.label,
-          cls: `life-panel-mode-chip${this.plugin.settings.cycleMode === entry.mode ? " is-active" : ""}`,
-        });
-        chip.addEventListener("click", async () => {
-          await this.plugin.setCycleMode(entry.mode);
-          this.render();
-          this.plugin.refreshPanelViews();
-        });
-      }
-
-      const presets = controls.createDiv({ cls: "life-panel-presets" });
-      const presetDefs = [
-        {
-          label: "Gentle",
-          settings: { cycleMode: "equalize", batchSize: 2, pulseCount: 2, detachHoldMs: 15000, restoreHoldMs: 8000, cycleIntervalMs: 420000 },
-        },
-        {
-          label: "Balanced",
-          settings: { cycleMode: "prune-heavy", batchSize: 5, pulseCount: 3, detachHoldMs: 15000, restoreHoldMs: 5000, cycleIntervalMs: 300000 },
-        },
-        {
-          label: "Lively",
-          settings: { cycleMode: "regrow", batchSize: 8, pulseCount: 5, detachHoldMs: 9000, restoreHoldMs: 2500, cycleIntervalMs: 180000 },
-        },
-      ];
-      for (const preset of presetDefs) {
-        const button = presets.createEl("button", {
-          text: preset.label,
-          cls: "life-panel-preset",
-        });
-        button.addEventListener("click", async () => {
-          Object.assign(this.plugin.settings, preset.settings);
-          await this.plugin.saveState();
-          this.plugin.restartTimer();
-          this.render();
-          this.plugin.refreshPanelViews();
-        });
-      }
-
-      const banner = controls.createDiv({ cls: "life-panel-banner" });
-      banner.createDiv({ cls: "life-panel-pill", text: `Mode: ${pickModeLabel(this.plugin.settings.cycleMode)}` });
-      banner.createDiv({ cls: "life-panel-pill", text: `Hold: ${formatMs(this.plugin.settings.detachHoldMs)} / ${formatMs(this.plugin.settings.restoreHoldMs)}` });
-      controls.createEl("p", {
-        text: pickModeHint(this.plugin.settings.cycleMode),
-        cls: "life-panel-hint",
-      });
-
       this.plugin.renderSettingsBlock(this.rootEl, this);
     }
 
@@ -566,6 +468,22 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       return true;
     }
 
+    async setLiveMovement(enabled) {
+      if (enabled === this.settings.autoCycleLinks) return;
+      if (!enabled) {
+        await this.stopCycle(true);
+        return;
+      }
+
+      this.settings.autoCycleLinks = true;
+      await this.saveState();
+      this.restartTimer();
+      this.refreshPanelViews();
+      void this.cycleLinks(true).catch((error) => {
+        console.error(`[${PLUGIN_LABEL}] live cycle failed`, error);
+      });
+    }
+
     async saveState() {
       await this.saveData({
         settings: this.settings,
@@ -686,168 +604,67 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       this.refreshPanelViews();
     }
 
-    renderSettingsBlock(containerEl) {
-      const card = containerEl.createDiv({ cls: "life-panel-card" });
-      card.createEl("h3", { text: "Quick controls" });
-      card.createEl("p", {
-        text: "Run, restore, or tune the cycle.",
+    renderSettingsBlock(containerEl, view = null) {
+      const card = containerEl.createDiv({ cls: "life-mini-window" });
+
+      const header = card.createDiv({ cls: "life-mini-header" });
+      header.createEl("div", { text: PLUGIN_LABEL, cls: "life-mini-title" });
+      const liveBadge = header.createEl("button", {
+        text: this.settings.autoCycleLinks ? "Вкл" : "Выкл",
+        cls: `life-mini-toggle${this.settings.autoCycleLinks ? " is-active" : ""}`,
+      });
+      liveBadge.addEventListener("click", async () => {
+        await this.setLiveMovement(!this.settings.autoCycleLinks);
       });
 
-      const actions = card.createDiv({ cls: "life-panel-actions" });
-      const cycleButton = actions.createEl("button", {
-        text: "Run cycle",
-        cls: "life-plugin-action is-primary",
-      });
-      cycleButton.addEventListener("click", () => {
-        void this.cycleLinks(true).then(() => this.refreshPanelViews());
-      });
-
-      const restoreButton = actions.createEl("button", {
-        text: "Restore now",
-        cls: "life-plugin-action is-danger",
-      });
-      restoreButton.addEventListener("click", () => {
-        void this.recoverFromBuffer(true).then(() => this.refreshPanelViews());
-      });
-
-      const modeSetting = new Setting(card)
-        .setName("Cycle mode")
-        .setDesc("Choose how links inside notes are changed during each cycle.");
-      modeSetting.addDropdown((dropdown) =>
-        dropdown
-          .addOption("prune-heavy", "Prune hubs")
-          .addOption("equalize", "Equalize")
-          .addOption("regrow", "Regrow")
-          .setValue(this.settings.cycleMode)
-          .onChange(async (value) => {
-            await this.setCycleMode(value);
-          }),
-      );
-
-      const quickRow = card.createDiv({ cls: "life-panel-mode-row" });
-      const quickToggles = [
-        {
-          label: "Panel",
-          key: "autoOpenPanel",
-          desc: "Open the control panel on start.",
-        },
-        {
-          label: "Cycle",
-          key: "autoCycleLinks",
-          desc: "Auto-run the cycle on a timer.",
-        },
-      ];
-      for (const item of quickToggles) {
-        const toggle = quickRow.createEl("button", {
-          text: `${item.label}: ${this.settings[item.key] ? "on" : "off"}`,
-          cls: `life-panel-mode-chip${this.settings[item.key] ? " is-active" : ""}`,
-        });
-        toggle.title = item.desc;
-        toggle.addEventListener("click", async () => {
-          this.settings[item.key] = !this.settings[item.key];
-          if (item.key === "autoCycleLinks") {
-            this.restartTimer();
-          }
-          await this.saveState();
-          this.refreshPanelViews();
-        });
+      const statusText = this.settings.autoCycleLinks
+        ? `Живое движение включено · ${formatMs(this.settings.cycleIntervalMs)}`
+        : `Живое движение выключено · ${formatMs(this.settings.cycleIntervalMs)}`;
+      if (view) {
+        view.statusEl = card.createDiv({ cls: "life-mini-status", text: statusText });
+        view.lastStatusText = statusText;
+      } else {
+        card.createDiv({ cls: "life-mini-status", text: statusText });
       }
 
-      const banner = card.createDiv({ cls: "life-panel-banner" });
-      banner.createDiv({ cls: "life-panel-pill", text: `Tempo: ${pickTempoLabel(this.settings)}` });
-      banner.createDiv({ cls: "life-panel-pill", text: `Batch: ${this.settings.batchSize}` });
-      banner.createDiv({ cls: "life-panel-pill", text: `Hold: ${formatMs(this.settings.detachHoldMs)}` });
+      const speedControl = card.createDiv({ cls: "life-mini-control" });
+      speedControl.createEl("div", { text: "Скорость", cls: "life-mini-label" });
+      const speedRow = speedControl.createDiv({ cls: "life-mini-slider-row" });
+      const speedValue = speedRow.createEl("div", {
+        text: formatMs(this.settings.cycleIntervalMs),
+        cls: "life-mini-value",
+      });
+      const speedInput = speedRow.createEl("input");
+      speedInput.type = "range";
+      speedInput.min = "30000";
+      speedInput.max = "900000";
+      speedInput.step = "30000";
+      speedInput.value = String(this.settings.cycleIntervalMs);
+      speedInput.classList.add("life-mini-slider");
+      speedInput.addEventListener("input", async () => {
+        const value = Math.max(30000, Math.min(900000, Number(speedInput.value) || 30000));
+        speedValue.setText(formatMs(value));
+        this.settings.cycleIntervalMs = value;
+        await this.saveState();
+        this.restartTimer();
+        this.refreshPanelViews();
+      });
 
-      new Setting(card)
-        .setName("Cycle interval")
-        .setDesc("How often a link batch is detached and then restored, in milliseconds.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(30000, 900000, 30000)
-            .setValue(this.settings.cycleIntervalMs)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.settings.cycleIntervalMs = value;
-              await this.saveState();
-              this.restartTimer();
-              this.refreshPanelViews();
-            }),
-        );
-
-      new Setting(card)
-        .setName("Batch size")
-        .setDesc("How many notes get one link detached per cycle.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(1, 20, 1)
-            .setValue(this.settings.batchSize)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.settings.batchSize = value;
-              await this.saveState();
-              this.refreshPanelViews();
-            }),
-        );
-
-      new Setting(card)
-        .setName("Pulse count")
-        .setDesc("How many detach/restore pulses run in one cycle.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(1, 10, 1)
-            .setValue(this.settings.pulseCount)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.settings.pulseCount = value;
-              await this.saveState();
-              this.refreshPanelViews();
-            }),
-        );
-
-      new Setting(card)
-        .setName("Detach hold")
-        .setDesc("How long links stay detached before they are restored.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(3000, 120000, 3000)
-            .setValue(this.settings.detachHoldMs)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.settings.detachHoldMs = value;
-              await this.saveState();
-              this.refreshPanelViews();
-            }),
-        );
-
-      new Setting(card)
-        .setName("Restore hold")
-        .setDesc("How long to wait after restoring before starting the next pulse.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(1000, 30000, 1000)
-            .setValue(this.settings.restoreHoldMs)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.settings.restoreHoldMs = value;
-              await this.saveState();
-              this.refreshPanelViews();
-            }),
-        );
-
-      new Setting(card)
-        .setName("Buffer limit")
-        .setDesc("How many recent detach snapshots the safety buffer remembers.")
-        .addSlider((slider) =>
-          slider
-            .setLimits(3, 50, 1)
-            .setValue(this.settings.bufferLimit)
-            .setDynamicTooltip()
-            .onChange(async (value) => {
-              this.settings.bufferLimit = value;
-              await this.saveState();
-              this.refreshPanelViews();
-            }),
-        );
+      const liveControl = card.createDiv({ cls: "life-mini-control" });
+      liveControl.createEl("div", { text: "Живое движение", cls: "life-mini-label" });
+      liveControl.createEl("div", {
+        text: "Держит цикл ссылок в работе.",
+        cls: "life-mini-note",
+      });
+      const liveRow = liveControl.createDiv({ cls: "life-mini-slider-row" });
+      liveRow.createDiv({ cls: "life-mini-value", text: "" });
+      const liveToggle = liveRow.createEl("button", {
+        text: this.settings.autoCycleLinks ? "Вкл" : "Выкл",
+        cls: `life-mini-toggle${this.settings.autoCycleLinks ? " is-active" : ""}`,
+      });
+      liveToggle.addEventListener("click", async () => {
+        await this.setLiveMovement(!this.settings.autoCycleLinks);
+      });
     }
 
     async recordDetachedBatch(files) {
