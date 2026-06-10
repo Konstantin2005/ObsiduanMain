@@ -2,6 +2,8 @@
 
 Status values: `TODO`, `DOING`, `DONE`, `BUG`, `REGRESSION`, `BLOCKED`.
 
+Evolution note: v11 remains the operational foundation for identity, sync safety, corrections, migration, cache locality, and renderer isolation. The next strategic layer is `v12 Personal Knowledge Graph Engine`, which adds evidence, temporal evolution, ranking, relationship inference, entity resolution, and graph intelligence APIs.
+
 ## Main Verdict
 
 v10 became strong on correctness, but too heavy operationally.
