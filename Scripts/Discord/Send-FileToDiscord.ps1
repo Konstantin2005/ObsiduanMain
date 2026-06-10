@@ -1,5 +1,4 @@
 param(
-    [Parameter(Mandatory = $true)]
     [string]$FilePath,
 
     [Parameter(Mandatory = $true)]
@@ -11,7 +10,9 @@ param(
 
     [int]$ChunkSize = 2000,
 
-    [int]$DelayMs = 350
+    [int]$DelayMs = 350,
+
+    [switch]$FromClipboard
 )
 
 $ErrorActionPreference = 'Stop'
@@ -59,13 +60,25 @@ function Get-Chunks {
     return $chunks
 }
 
-if (-not (Test-Path -LiteralPath $FilePath)) {
-    throw "File not found: $FilePath"
-}
+if ($FromClipboard) {
+    Add-Type -AssemblyName System.Windows.Forms
+    $text = [System.Windows.Forms.Clipboard]::GetText()
+    if ([string]::IsNullOrWhiteSpace($text)) {
+        throw "Clipboard is empty."
+    }
+} else {
+    if ([string]::IsNullOrWhiteSpace($FilePath)) {
+        throw "Provide -FilePath or use -FromClipboard."
+    }
 
-$text = [System.IO.File]::ReadAllText($FilePath, [System.Text.UTF8Encoding]::new($false))
-if ([string]::IsNullOrWhiteSpace($text)) {
-    throw "File is empty: $FilePath"
+    if (-not (Test-Path -LiteralPath $FilePath)) {
+        throw "File not found: $FilePath"
+    }
+
+    $text = [System.IO.File]::ReadAllText($FilePath, [System.Text.UTF8Encoding]::new($false))
+    if ([string]::IsNullOrWhiteSpace($text)) {
+        throw "File is empty: $FilePath"
+    }
 }
 
 $basePrefix = "**$Title**"

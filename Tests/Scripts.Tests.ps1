@@ -472,6 +472,19 @@ Describe 'LiveGraph' {
     };
   }
 
+  global.document = {
+    createElementNS(_ns, tag) { return makeEl(tag); },
+    createElement(tag) { return makeEl(tag); },
+    getElementById() { return null; },
+    body: makeEl(),
+    head: makeEl(),
+  };
+  global.window = {
+    requestAnimationFrame() { return 1; },
+    cancelAnimationFrame() {},
+    devicePixelRatio: 1,
+  };
+
   function makeMockObsidian() {
     class ItemView {
       constructor() {
