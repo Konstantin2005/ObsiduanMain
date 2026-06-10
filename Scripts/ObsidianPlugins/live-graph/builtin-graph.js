@@ -727,8 +727,13 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
       const overloaded = ranked.filter((item) => item.linkCount > 1);
       const fallback = ranked.filter((item) => item.linkCount <= 1);
-      const ordered = mode === "equalize" ? overloaded.concat(fallback) : ranked;
-      return ordered.slice(0, batchSize);
+      if (mode === "equalize") {
+        if (!overloaded.length) {
+          return [];
+        }
+        return overloaded.slice(0, batchSize);
+      }
+      return ranked.slice(0, batchSize);
     }
 
     detachOneLink(text, mode) {
@@ -982,7 +987,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       return true;
     }
 
-    async cycleLinks(showNotice = false) {
+    async cycleLinks() {
       if (this.busy) return 0;
       this.busy = true;
       let completed = 0;

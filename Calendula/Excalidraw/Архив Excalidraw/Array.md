@@ -3325,7 +3325,7 @@ Two Pointers ^ZH4oxZSy
 #Complete ^7m5niQpT
 
 ## Embedded Files
-2f1eb13228fc12fbd63966d263b2a9839fd0ffc0: [[Pasted Image 20260408012145_252.png]]
+2f1eb13228fc12fbd63966d263b2a9839fd0ffc0: Pasted Image 20260408012145_252.png
 
 %%
 ## Drawing
