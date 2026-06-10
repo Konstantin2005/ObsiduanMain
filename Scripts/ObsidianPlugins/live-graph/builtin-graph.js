@@ -224,6 +224,24 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         color: var(--text-muted);
         font-size: 0.76em;
       }
+      .life-mini-mode-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .life-mini-mode-chip {
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: var(--background-primary);
+        color: var(--text-normal);
+        cursor: pointer;
+        font-size: 0.78em;
+      }
+      .life-mini-mode-chip.is-active {
+        border-color: var(--interactive-accent);
+        background: rgba(120, 170, 255, 0.16);
+      }
     `;
     const mountTarget = document.head || document.body;
     if (mountTarget && typeof mountTarget.appendChild === "function") {
@@ -772,6 +790,31 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       liveToggle.addEventListener("click", async () => {
         await this.setLiveMovement(!this.settings.autoCycleLinks);
       });
+
+      card.createDiv({
+        cls: "life-mini-note",
+        text: `\u0420\u0435\u0436\u0438\u043c: ${pickModeLabel(this.settings.cycleMode)}`,
+      });
+
+      const modeControl = card.createDiv({ cls: "life-mini-control" });
+      modeControl.createEl("div", { text: "\u0414\u0432\u0438\u0436\u0435\u043d\u0438\u0435", cls: "life-mini-label" });
+      const modeRow = modeControl.createDiv({ cls: "life-mini-mode-row" });
+      const modeDefs = [
+        { mode: "prune-heavy", label: "\u0425\u0443\u0431\u044b" },
+        { mode: "equalize", label: "\u0420\u0430\u0432\u043d\u043e" },
+        { mode: "cascade-one", label: "\u0414\u043e 1" },
+        { mode: "regrow", label: "\u041e\u0431\u0440\u0430\u0442\u043d\u043e" },
+      ];
+      for (const item of modeDefs) {
+        const chip = modeRow.createEl("button", {
+          text: item.label,
+          cls: `life-mini-mode-chip${this.settings.cycleMode === item.mode ? " is-active" : ""}`,
+        });
+        chip.addEventListener("click", async () => {
+          await this.setCycleMode(item.mode);
+          this.refreshPanelViews();
+        });
+      }
 
       if (!view) {
         const modeSetting = new Setting(containerEl)

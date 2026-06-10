@@ -1,7 +1,7 @@
 {
   "settings": {
     "autoOpenPanel": false,
-    "autoCycleLinks": false,
+    "autoCycleLinks": true,
     "cycleIntervalMs": 30000,
     "batchSize": 20,
     "pulseCount": 10,
@@ -12,7 +12,7 @@
     "autoOpenGraph": false
   },
   "activeBatch": {
-    "cycleId": "1781081566435-2d4fd4e5e4a97",
+    "cycleId": "1781081632841-1a2e4532f912",
     "files": [
       {
         "path": "Excalidraw/Архив Excalidraw/Преза Big O.md",
