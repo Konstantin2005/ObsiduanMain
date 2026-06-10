@@ -68,7 +68,7 @@ module.exports = class CalendulaGraphGuard extends Plugin {
       callback: async () => {
         await this.applyProfile(FAST_PROFILE, { reason: "command", allowDanger: false });
         await this.openSingleGraphLeaf();
-        new Notice("Calendula-20K fast graph profile applied.");
+        new Notice("Calendula-30K fast graph profile applied.");
       },
     });
 
@@ -77,7 +77,7 @@ module.exports = class CalendulaGraphGuard extends Plugin {
       name: "Repair performance profile",
       callback: async () => {
         const result = await this.guardFastProfile("manual-repair");
-        new Notice(result.repaired ? "Calendula-20K repaired." : "Calendula-20K is already safe.");
+        new Notice(result.repaired ? "Calendula-30K repaired." : "Calendula-30K is already safe.");
       },
     });
 

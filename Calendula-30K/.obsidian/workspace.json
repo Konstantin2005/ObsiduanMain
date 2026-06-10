@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "calendula-20k-main",
+    "id": "calendula-30k-main",
     "type": "split",
     "children": [
       {
-        "id": "calendula-20k-tabs",
+        "id": "calendula-30k-tabs",
         "type": "tabs",
         "children": [
           {
-            "id": "calendula-20k-fast-graph",
+            "id": "calendula-30k-fast-graph",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "calendula-20k-left",
+    "id": "calendula-30k-left",
     "type": "split",
     "children": [
       {
-        "id": "calendula-20k-left-tabs",
+        "id": "calendula-30k-left-tabs",
         "type": "tabs",
         "children": [
           {
-            "id": "calendula-20k-files",
+            "id": "calendula-30k-files",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -51,7 +51,7 @@
     "collapsed": true
   },
   "right": {
-    "id": "calendula-20k-right",
+    "id": "calendula-30k-right",
     "type": "split",
     "children": [],
     "direction": "horizontal",
@@ -65,7 +65,7 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "calendula-20k-fast-graph",
+  "active": "calendula-30k-fast-graph",
   "lastOpenFiles": [
     "Calendula/2026/Август/01-08-26.md",
     "Соц Капитал/1_круг/Person-0001.md"

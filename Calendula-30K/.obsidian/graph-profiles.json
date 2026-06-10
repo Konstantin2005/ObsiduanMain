@@ -212,7 +212,7 @@
       "nativeAllowed": false,
       "requiresIndex": false,
       "requiresLayout": false,
-      "maxVisibleNodes": 33900,
+      "maxVisibleNodes": 30000,
       "maxVisibleEdges": 50000,
       "lodPolicy": "manual-danger",
       "edgePolicy": "minimal",
