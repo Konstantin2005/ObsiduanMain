@@ -6,6 +6,10 @@ const {
   GraphStoreClient,
   buildCriticalRenderPlan,
 } = require(path.resolve(__dirname, "..", "..", "..", "..", "Scripts", "Obsidian", "graph-critical-frame.js"));
+const {
+  GraphStabilityController,
+  IncidentLog,
+} = require(path.resolve(__dirname, "..", "..", "..", "..", "Scripts", "Obsidian", "graph-stability.js"));
 
 const VIEW_TYPE = "calendula-ultra-graph";
 const BASE_FRAME_BUDGET_MS = 8;
@@ -44,6 +48,7 @@ class UltraGraphView extends ItemView {
     this.statusEl = null;
     this.healthEl = null;
     this.storeClient = null;
+    this.stability = null;
     this.snapshot = null;
     this.failureState = null;
     this.lastPlan = null;
@@ -94,7 +99,11 @@ class UltraGraphView extends ItemView {
     this.canvas = shell.createEl("canvas", { cls: "calendula-ultra-canvas" });
     this.ctx = this.canvas.getContext("2d");
     this.backend = new CanvasBackend({ canvas: this.canvas, ctx: this.ctx });
-    this.storeClient = new GraphStoreClient({ storeRoot: resolveGraphStoreRoot(), includeEdges: true });
+    const graphStoreRoot = resolveGraphStoreRoot();
+    this.stability = new GraphStabilityController({
+      incidentLog: new IncidentLog({ filePath: path.join(graphStoreRoot, "graph.incidents.jsonl") }),
+    });
+    this.storeClient = new GraphStoreClient({ storeRoot: graphStoreRoot, includeEdges: true });
     this.attachInput();
     this.resize();
     this.loadGraphSnapshot();
@@ -107,6 +116,7 @@ class UltraGraphView extends ItemView {
     this.backend?.dispose();
     this.backend = null;
     this.storeClient = null;
+    this.stability = null;
     this.snapshot = null;
     this.failureState = null;
     this.lastPlan = null;
@@ -123,10 +133,12 @@ class UltraGraphView extends ItemView {
       if (!loaded.ok) {
         this.snapshot = null;
         this.failureState = loaded.failureState;
+        this.stability?.recordStoreLoadResult(loaded);
         return;
       }
       this.snapshot = loaded.snapshot;
       this.failureState = null;
+      this.stability?.recordStoreLoadResult(loaded);
       this.restartProgressivePaint();
     } catch (error) {
       this.snapshot = null;
@@ -139,6 +151,7 @@ class UltraGraphView extends ItemView {
         failures: Object.freeze([]),
         cause: String(error?.stack || error),
       });
+      this.stability?.recordStoreLoadResult({ ok: false, failureState: this.failureState, failures: [] });
     }
   }
 
@@ -254,7 +267,8 @@ class UltraGraphView extends ItemView {
     this.ctx.clearRect(0, 0, this.width, this.height);
     this.drawBackground();
 
-    if (!this.snapshot || this.failureState) {
+    const stabilitySnapshot = this.stability?.getSnapshot();
+    if (!this.snapshot || this.failureState || stabilitySnapshot?.canRender === false) {
       this.drawn = 0;
       this.visited = 0;
       this.visibleNodes = 0;
@@ -282,6 +296,7 @@ class UltraGraphView extends ItemView {
     });
     this.lastPlan = plan;
     this.frameStats = this.backend.draw(plan);
+    this.stability?.recordFrameStats(this.frameStats);
     if (this.frameStats.failureState) {
       this.failureState = this.frameStats.failureState;
     }
@@ -354,6 +369,7 @@ class UltraGraphView extends ItemView {
             message: this.failureState.message,
           })
         : null,
+      stability: this.stability?.getSnapshot() || null,
     });
   }
 
@@ -385,8 +401,9 @@ class UltraGraphView extends ItemView {
     this.lastHealthUpdateAt = now;
     const health = this.getHealthSnapshot();
     const failure = health.failure ? ` | failure ${health.failure.severity}/${health.failure.code}` : "";
+    const stability = health.stability ? ` | state ${health.stability.state}` : "";
     this.healthEl.setText(
-      `Health: ${health.mode} (${health.reason}) | budget ${health.frameBudgetMs}ms | stride ${health.renderStride} | visible ${health.visibleNodes.toLocaleString()}/${health.nodeCount.toLocaleString()} | edges ${health.visibleEdges.toLocaleString()} | plan ${health.timingsMs.renderPlan}ms | draw ${health.timingsMs.draw}ms | DPR ${health.devicePixelRatio}${failure}`,
+      `Health: ${health.mode} (${health.reason}) | budget ${health.frameBudgetMs}ms | stride ${health.renderStride} | visible ${health.visibleNodes.toLocaleString()}/${health.nodeCount.toLocaleString()} | edges ${health.visibleEdges.toLocaleString()} | plan ${health.timingsMs.renderPlan}ms | draw ${health.timingsMs.draw}ms | DPR ${health.devicePixelRatio}${failure}${stability}`,
     );
   }
 }

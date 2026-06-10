@@ -1080,6 +1080,7 @@ Describe 'Calendula-20K rendering profile' {
     if (!Object.isFrozen(steadyHealth)) throw new Error('Health snapshot should be frozen');
     if (steadyHealth.nodeCount < 30000 || steadyHealth.visibleNodes <= 0) throw new Error(`Expected real health counts, got ${JSON.stringify(steadyHealth)}`);
     if (steadyHealth.timingsMs.renderPlan <= 0) throw new Error(`Expected render plan timings, got ${JSON.stringify(steadyHealth.timingsMs)}`);
+    if (!steadyHealth.stability || steadyHealth.stability.state !== 'NORMAL') throw new Error(`Expected NORMAL stability state, got ${JSON.stringify(steadyHealth.stability)}`);
     if (steadyHealth.mode !== 'steady' || steadyHealth.renderStride !== 1) {
       throw new Error(`Expected steady health mode, got ${JSON.stringify(steadyHealth)}`);
     }
@@ -1181,6 +1182,97 @@ Describe 'Calendula graph store' {
 
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'graph-store:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
+Describe 'Calendula Stability Layer' {
+    It 'turns store and renderer failures into controlled states with incident logs' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const fs = require('fs');
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const critical = require(path.join(repoRoot, 'Scripts/Obsidian/graph-critical-frame.js'));
+  const stability = require(path.join(repoRoot, 'Scripts/Obsidian/graph-stability.js'));
+  const incidentFile = path.join(tempRoot, 'graph.incidents.jsonl');
+
+  const blocking = critical.createFailureState({
+    severity: critical.FAILURE_SEVERITY.BLOCKING,
+    code: 'STORE_UNAVAILABLE',
+    message: 'store missing',
+  });
+  const controller = new stability.GraphStabilityController({
+    incidentLog: new stability.IncidentLog({ filePath: incidentFile }),
+    recoveryFrames: 2,
+  });
+  const paused = controller.recordStoreLoadResult({ ok: false, failureState: blocking, failures: [] });
+  if (paused.state !== stability.STABILITY_STATE.PAUSED || paused.canRender) throw new Error(`Expected paused no-render state, got ${JSON.stringify(paused)}`);
+  if (!paused.safeFallbackProfile || paused.safeFallbackProfile.name !== 'fast-backbone') throw new Error('Expected safe native fallback profile');
+  if (!fs.existsSync(incidentFile)) throw new Error('Expected incident log file');
+
+  const recoveredController = new stability.GraphStabilityController({ incidentLog: new stability.IncidentLog(), recoveryFrames: 2 });
+  const recovered = recoveredController.recordStoreLoadResult({
+    ok: true,
+    recoveredFromPrevious: true,
+    snapshot: { activeDir: 'graph.previous' },
+  });
+  if (recovered.state !== stability.STABILITY_STATE.STORE_DEGRADED || !recovered.canRender) {
+    throw new Error(`Expected recovered previous store to keep rendering degraded, got ${JSON.stringify(recovered)}`);
+  }
+
+  const rendererController = new stability.GraphStabilityController({ incidentLog: new stability.IncidentLog(), recoveryFrames: 2 });
+  const rendererFailure = critical.createFailureState({
+    severity: critical.FAILURE_SEVERITY.DEGRADED,
+    code: 'CANVAS_DRAW_FAILED',
+    message: 'draw failed',
+  });
+  const rendererState = rendererController.recordFrameStats({
+    frameId: 1,
+    backendId: 'canvas',
+    failureState: rendererFailure,
+    budgets: { frameBudgetMs: 16 },
+    timingsMs: { total: 1 },
+  });
+  if (rendererState.state !== stability.STABILITY_STATE.RENDERER_DEGRADED || !rendererState.canRender) {
+    throw new Error(`Expected renderer degraded state, got ${JSON.stringify(rendererState)}`);
+  }
+  rendererController.recordFrameStats({ frameId: 2, backendId: 'canvas', budgets: { frameBudgetMs: 16 }, timingsMs: { total: 1 } });
+  const rendererRecovered = rendererController.recordFrameStats({ frameId: 3, backendId: 'canvas', budgets: { frameBudgetMs: 16 }, timingsMs: { total: 1 } });
+  if (rendererRecovered.state !== stability.STABILITY_STATE.NORMAL) throw new Error(`Expected renderer recovery, got ${JSON.stringify(rendererRecovered)}`);
+
+  const pressureController = new stability.GraphStabilityController({ incidentLog: new stability.IncidentLog(), recoveryFrames: 2 });
+  const pressure = pressureController.recordFrameStats({
+    frameId: 4,
+    backendId: 'canvas',
+    budgets: { frameBudgetMs: 16 },
+    timingsMs: { total: 25 },
+  });
+  if (pressure.state !== stability.STABILITY_STATE.FRAME_PRESSURE || pressure.canRender !== true) {
+    throw new Error(`Expected frame pressure with rendering allowed, got ${JSON.stringify(pressure)}`);
+  }
+
+  process.stdout.write(`stability:ok ${JSON.stringify({ paused: paused.state, recovered: recovered.state, rendererRecovered: rendererRecovered.state, pressure: pressure.state })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'stability-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'stability:ok'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
