@@ -1,77 +1,77 @@
 {
-    "main":  {
-                 "id":  "calendula-20k-main",
-                 "type":  "split",
-                 "children":  [
-                                  {
-                                      "id":  "calendula-20k-tabs",
-                                      "type":  "tabs",
-                                      "children":  [
-                                                       {
-                                                           "id":  "calendula-20k-fast-graph",
-                                                           "type":  "leaf",
-                                                           "state":  {
-                                                                         "type":  "graph",
-                                                                         "state":  {
-
-                                                                                   },
-                                                                         "icon":  "lucide-git-fork",
-                                                                         "title":  "Graph: fast-backbone"
-                                                                     }
-                                                       }
-                                                   ],
-                                      "currentTab":  0
-                                  }
-                              ],
-                 "direction":  "vertical"
-             },
-    "left":  {
-                 "id":  "calendula-20k-left",
-                 "type":  "split",
-                 "children":  [
-                                  {
-                                      "id":  "calendula-20k-left-tabs",
-                                      "type":  "tabs",
-                                      "children":  [
-                                                       {
-                                                           "id":  "calendula-20k-files",
-                                                           "type":  "leaf",
-                                                           "state":  {
-                                                                         "type":  "file-explorer",
-                                                                         "state":  {
-                                                                                       "sortOrder":  "alphabetical",
-                                                                                       "autoReveal":  false
-                                                                                   },
-                                                                         "icon":  "lucide-folder-closed",
-                                                                         "title":  "Files"
-                                                                     }
-                                                       }
-                                                   ],
-                                      "currentTab":  0
-                                  }
-                              ],
-                 "direction":  "horizontal",
-                 "width":  260,
-                 "collapsed":  true
-             },
-    "right":  {
-                  "id":  "calendula-20k-right",
-                  "type":  "split",
-                  "children":  [
-
-                               ],
-                  "direction":  "horizontal",
-                  "width":  260,
-                  "collapsed":  true
+  "main": {
+    "id": "calendula-20k-main",
+    "type": "split",
+    "children": [
+      {
+        "id": "calendula-20k-tabs",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "calendula-20k-fast-graph",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Август/01-08-26.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-    "left-ribbon":  {
-                        "hiddenItems":  {
-
-                                        }
-                    },
-    "active":  "calendula-20k-fast-graph",
-    "lastOpenFiles":  [
-                          "Calendula/2026/Август/01-08-26.md",
-                          "Соц Капитал/1_круг/Person-0001.md"
-                      ]
+              "icon": "lucide-file",
+              "title": "01-08-26"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "calendula-20k-left",
+    "type": "split",
+    "children": [
+      {
+        "id": "calendula-20k-left-tabs",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "calendula-20k-files",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 260
+  },
+  "right": {
+    "id": "calendula-20k-right",
+    "type": "split",
+    "children": [],
+    "direction": "horizontal",
+    "width": 260,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "calendula-20k-fast-graph",
+  "lastOpenFiles": [
+    "Calendula/2026/Август/01-08-26.md",
+    "Соц Капитал/1_круг/Person-0001.md"
+  ]
 }
