@@ -481,23 +481,23 @@ Describe 'LiveGraph' {
 
     class Plugin {
       constructor() {
-        this.app = {
-          workspace: {
-            onLayoutReady(cb) { cb(); },
-            getLeavesOfType() { return []; },
-            getLeaf() { return { setViewState: async () => {}, detach: async () => {} }; },
-            revealLeaf() {},
-          },
-          vault: {
-            getMarkdownFiles() { return []; },
-            getAbstractFileByPath() { return null; },
-            on() { return { off() {} }; },
-          },
-          metadataCache: { resolvedLinks: {} },
+      this.app = {
+        workspace: {
+          onLayoutReady(cb) { cb(); },
+          getLeavesOfType() { return []; },
+          getLeaf() { return { setViewState: async () => {}, detach: async () => {} }; },
+          revealLeaf() {},
+        },
+        vault: {
+          getMarkdownFiles() { return []; },
+          getAbstractFileByPath() { return null; },
+          on() { return { off() {} }; },
+        },
+          metadataCache: { resolvedLinks: {}, on() { return { off() {} }; } },
         };
       }
 
-      async loadData() { return {}; }
+      async loadData() { return { autoOpen: false }; }
       async saveData() {}
       registerView() {}
       addCommand() {}
