@@ -1,6 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const { loadGraphStore } = require("./build-calendula-graph-store.js");
+const {
+  GraphStoreClient,
+  buildCriticalRenderPlan,
+  createFailureState,
+} = require("./graph-critical-frame.js");
 
 const DEFAULT_CAMERA = {
   x: 0,
@@ -18,12 +20,6 @@ const DEFAULT_PROFILE = {
   edgePolicy: "backbone",
   lodPolicy: "native-safe",
 };
-
-function readArray(filePath, Ctor) {
-  const buffer = fs.readFileSync(filePath);
-  const sliced = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
-  return new Ctor(sliced);
-}
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -100,30 +96,22 @@ function makeBudgets(profile, mode, lod) {
 }
 
 function loadIndexedGraph(storeRoot) {
-  const loaded = loadGraphStore(storeRoot);
+  const loaded = new GraphStoreClient({ storeRoot, includeEdges: true }).loadSnapshot();
   if (!loaded.ok) {
     return {
       ok: false,
       failures: loaded.failures,
+      failureState: loaded.failureState,
     };
   }
-  const activeDir = path.join(storeRoot, loaded.activeDir);
-  const files = loaded.manifest.files;
-  const graph = {
+  return {
     ok: true,
-    manifest: loaded.manifest,
+    snapshot: loaded.snapshot,
+    manifest: loaded.snapshot.manifest,
     recoveredFromPrevious: loaded.recoveredFromPrevious,
-    activeDir: loaded.activeDir,
-    arrays: {
-      nodeClusters: readArray(path.join(activeDir, files.nodesCluster), Uint32Array),
-      edgeSources: readArray(path.join(activeDir, files.edgesSource), Uint32Array),
-      edgeTargets: readArray(path.join(activeDir, files.edgesTarget), Uint32Array),
-      edgeFlags: readArray(path.join(activeDir, files.edgesFlags), Uint32Array),
-      layoutX: readArray(path.join(activeDir, files.layoutX), Float32Array),
-      layoutY: readArray(path.join(activeDir, files.layoutY), Float32Array),
-    },
+    activeDir: loaded.snapshot.activeDir,
+    arrays: loaded.snapshot.arrays,
   };
-  return graph;
 }
 
 function isInCamera(x, y, camera) {
@@ -227,47 +215,60 @@ function buildRenderPlan({
   const normalizedProfile = normalizeProfile(profile);
   const indexed = loadIndexedGraph(storeRoot);
   if (!indexed.ok) {
+    const failureState =
+      indexed.failureState ||
+      createFailureState({
+        code: "INDEX_MISSING",
+        message: "Graph index is missing",
+        failures: indexed.failures,
+      });
     return Object.freeze({
+      contract: "RenderPlan/v9.0",
       id: frameId,
+      frameId,
       profileId: normalizedProfile.name,
       lod: 0,
       mode: "index-missing",
+      reason: "store-unavailable",
       nodes: new Uint32Array(0),
       edges: new Uint32Array(0),
       clusters: new Uint32Array(0),
       labels: new Uint32Array(0),
+      nodeIds: new Uint32Array(0),
+      nodeX: new Float32Array(0),
+      nodeY: new Float32Array(0),
+      nodeTypes: new Uint16Array(0),
+      nodeFlags: new Uint32Array(0),
+      edgeIds: new Uint32Array(0),
+      edgeSourceIds: new Uint32Array(0),
+      edgeTargetIds: new Uint32Array(0),
+      edgeX1: new Float32Array(0),
+      edgeY1: new Float32Array(0),
+      edgeX2: new Float32Array(0),
+      edgeY2: new Float32Array(0),
       budgets: Object.freeze({ nodeBudget: 0, edgeBudget: 0, labelBudget: 0, frameBudgetMs: 12 }),
       skipped: Object.freeze({ nodes: 0, edges: 0, labels: 0 }),
+      skipReasons: Object.freeze({ STORE_UNAVAILABLE: 1 }),
+      failureState,
       recoveredFromPrevious: false,
       failures: indexed.failures,
+      stats: Object.freeze({ nodes: 0, edges: 0 }),
+      timingsMs: Object.freeze({ visibleSet: 0, edgeBatch: 0, renderPlan: 0 }),
     });
   }
 
   const modeInfo = pickMode({ profile: normalizedProfile, frameHistory, memoryPressure });
   const lod = pickLod({ camera, mode: modeInfo.mode, profile: normalizedProfile });
   const budgets = makeBudgets(normalizedProfile, modeInfo.mode, lod);
-  const selectedNodes = selectNodes(indexed, { ...DEFAULT_CAMERA, ...camera }, budgets, lod);
-  const selectedEdges = selectEdges(indexed, selectedNodes.nodeSet, budgets, modeInfo.mode);
-  const selectedLabels = selectLabels(selectedNodes.nodes, budgets, lod, normalizedProfile);
-
-  return Object.freeze({
-    id: frameId,
+  return buildCriticalRenderPlan({
+    snapshot: indexed.snapshot,
+    camera: { ...DEFAULT_CAMERA, ...camera },
+    budgets,
+    frameId,
     profileId: normalizedProfile.name,
-    lod,
     mode: modeInfo.mode,
     reason: modeInfo.reason,
-    nodes: selectedNodes.nodes,
-    edges: selectedEdges.edges,
-    clusters: selectedNodes.clusters,
-    labels: selectedLabels.labels,
-    budgets: Object.freeze(budgets),
-    skipped: Object.freeze({
-      nodes: selectedNodes.skippedNodes,
-      edges: selectedEdges.skippedEdges,
-      labels: selectedLabels.skippedLabels,
-    }),
-    recoveredFromPrevious: indexed.recoveredFromPrevious,
-    stats: indexed.manifest.stats,
+    lod,
   });
 }
 
