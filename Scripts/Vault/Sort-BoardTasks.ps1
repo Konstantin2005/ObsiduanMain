@@ -1,9 +1,15 @@
-﻿param(
+param(
     [Parameter(Mandatory=$false)]
-    [string]$KanbanDir = "C:\obsidian\Main\Calendula\План"
+    [string]$KanbanDir = "C:\obsidian\Main\Calendula\План",
+    [switch]$DryRun,
+    [switch]$PassThru
 )
 
 $ErrorActionPreference = "Stop"
+
+if (-not (Test-Path -LiteralPath $KanbanDir)) {
+    throw "Kanban path not found: $KanbanDir"
+}
 
 $monthNames = @{
     "Январь" = 1; "Февраль" = 2; "Март" = 3; "Апрель" = 4
@@ -18,10 +24,10 @@ $dateRegex = '@\{(\d{4})-(\d{2})-(\d{2})\}'
 
 $moves = @{}  # source_path -> @{task=..., targetYear=..., targetMonth=...}
 
-$yearDirs = Get-ChildItem $KanbanDir -Directory | Sort-Object Name
+$yearDirs = Get-ChildItem -LiteralPath $KanbanDir -Directory | Sort-Object Name
 
 foreach ($yearDir in $yearDirs) {
-    $files = Get-ChildItem "$($yearDir.FullName)\*.md"
+    $files = Get-ChildItem -LiteralPath $yearDir.FullName -Filter "*.md"
     foreach ($file in $files) {
         if ($file.Name -notmatch $fileRegex) { continue }
         $fileYear = [int]$Matches[1]
@@ -29,7 +35,7 @@ foreach ($yearDir in $yearDirs) {
         if (-not $monthNames.ContainsKey($fileMonthName)) { continue }
         $fileMonth = $monthNames[$fileMonthName]
 
-        $lines = Get-Content $file.FullName -Encoding UTF8
+        $lines = Get-Content -LiteralPath $file.FullName -Encoding UTF8
         $modified = $false
         $newLines = @()
         $fileMoves = @()
@@ -40,7 +46,7 @@ foreach ($yearDir in $yearDirs) {
                 $taskYear = [int]$Matches[1]
                 $taskMonth = [int]$Matches[2]
                 if ($taskYear -ne $fileYear -or $taskMonth -ne $fileMonth) {
-                    $fileMoves += @{task = $line; targetYear = $taskYear; targetMonth = $taskMonth}
+                    $fileMoves += @{ task = $line; targetYear = $taskYear; targetMonth = $taskMonth }
                     $modified = $true
                     continue
                 }
@@ -50,7 +56,9 @@ foreach ($yearDir in $yearDirs) {
 
         if ($modified) {
             $newContent = ($newLines -join "`r`n").TrimEnd() + "`r`n"
-            [System.IO.File]::WriteAllText($file.FullName, $newContent, [System.Text.UTF8Encoding]::new($false))
+            if (-not $DryRun) {
+                [System.IO.File]::WriteAllText($file.FullName, $newContent, [System.Text.UTF8Encoding]::new($false))
+            }
             $moves[$file.FullName] = $fileMoves
         }
     }
@@ -58,6 +66,13 @@ foreach ($yearDir in $yearDirs) {
 
 if ($moves.Count -eq 0) {
     Write-Host "All tasks are in their correct month boards."
+    if ($PassThru) {
+        [pscustomobject]@{
+            TotalMoved = 0
+            MoveDetails = @()
+            DryRun = [bool]$DryRun
+        }
+    }
     exit 0
 }
 
@@ -68,19 +83,18 @@ $moveDetails = @()
 foreach ($sourcePath in $moves.Keys) {
     foreach ($move in $moves[$sourcePath]) {
         $targetDir = Join-Path $KanbanDir "$($move.targetYear)"
-        if (-not (Test-Path $targetDir)) { continue }
+        if (-not (Test-Path -LiteralPath $targetDir)) { continue }
         $targetName = "$($move.targetYear) - $($numToName[$move.targetMonth]).md"
         $targetPath = Join-Path $targetDir $targetName
-        if (-not (Test-Path $targetPath)) { continue }
+        if (-not (Test-Path -LiteralPath $targetPath)) { continue }
 
         if (-not $incoming.ContainsKey($targetPath)) { $incoming[$targetPath] = @() }
         $incoming[$targetPath] += $move.task
         $total++
-        $moveDetails += @{source = $sourcePath; target = $targetPath; task = $move.task.Trim()}
+        $moveDetails += @{ source = $sourcePath; target = $targetPath; task = $move.task.Trim() }
     }
 }
 
-# Helper: strip blank lines from both ends of an array
 function Strip-Blank {
     param($arr)
     while ($arr.Count -gt 0 -and [string]::IsNullOrWhiteSpace($arr[0])) {
@@ -96,7 +110,7 @@ function Strip-Blank {
 
 foreach ($targetPath in $incoming.Keys) {
     $tasks = $incoming[$targetPath] | Sort-Object -Unique
-    $content = Get-Content $targetPath -Encoding UTF8
+    $content = Get-Content -LiteralPath $targetPath -Encoding UTF8
     $newContent = @()
     $appended = $false
 
@@ -105,7 +119,7 @@ foreach ($targetPath in $incoming.Keys) {
         $line = $content[$i]
         if ($line -match "^## Запланировано$") {
             $newContent += $line
-            $newContent += ""  # blank line after heading
+            $newContent += ""
 
             $j = $i + 1
             $sectionLines = @()
@@ -115,7 +129,6 @@ foreach ($targetPath in $incoming.Keys) {
             }
 
             $cleanLines = Strip-Blank $sectionLines
-
             if ($cleanLines.Count -gt 0) {
                 $newContent += $cleanLines
                 $newContent += ""
@@ -132,7 +145,6 @@ foreach ($targetPath in $incoming.Keys) {
     }
 
     if (-not $appended) {
-        # No Запланировано section found — append it before settings or at end
         $newContent += ""
         $newContent += "## Запланировано"
         $newContent += ""
@@ -141,7 +153,9 @@ foreach ($targetPath in $incoming.Keys) {
     }
 
     $out = ($newContent -join "`r`n").TrimEnd() + "`r`n"
-    [System.IO.File]::WriteAllText($targetPath, $out, [System.Text.UTF8Encoding]::new($false))
+    if (-not $DryRun) {
+        [System.IO.File]::WriteAllText($targetPath, $out, [System.Text.UTF8Encoding]::new($false))
+    }
 }
 
 Write-Host "Moved $total task(s) to their correct month boards:"
@@ -150,4 +164,12 @@ foreach ($md in $moveDetails) {
     $tgtName = [System.IO.Path]::GetFileNameWithoutExtension($md.target)
     Write-Host "  $($md.task)"
     Write-Host "    $srcName -> $tgtName"
+}
+
+if ($PassThru) {
+    [pscustomobject]@{
+        TotalMoved = $total
+        MoveDetails = $moveDetails
+        DryRun = [bool]$DryRun
+    }
 }

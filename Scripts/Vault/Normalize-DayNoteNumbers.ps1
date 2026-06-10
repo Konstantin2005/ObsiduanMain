@@ -1,11 +1,13 @@
 param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$DiaryRoot = (Join-Path $VaultPath "Calendula\Calendula"),
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$PassThru
 )
 
 $ErrorActionPreference = 'Stop'
 $utf8 = [System.Text.UTF8Encoding]::new($false)
+$archivePath = Join-Path $DiaryRoot "Mini diaries.md"
 
 function Get-NoteMeta {
     param([string]$Path)
@@ -13,25 +15,7 @@ function Get-NoteMeta {
     $baseName = [System.IO.Path]::GetFileNameWithoutExtension($Path)
     $directory = [System.IO.Path]::GetDirectoryName($Path)
 
-    if ($baseName -match '^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})\.(?<number>\d{1,2})$') {
-        $yearText = $matches.year
-        $year = [int]$yearText
-
-        return [pscustomobject]@{
-            Path = $Path
-            Directory = $directory
-            BaseName = $baseName
-            IsNumbered = $true
-            PatternKind = 'Suffix'
-            Number = [int]$matches.number
-            DayText = $matches.day
-            MonthText = $matches.month
-            YearText = $yearText
-            DateKey = ('{0:0000}-{1:00}-{2:00}' -f $year, [int]$matches.month, [int]$matches.day)
-        }
-    }
-
-    if ($baseName -match '^(?<day>\d{1,2})\.(?<number>\d{1,2})-(?<month>\d{1,2})-(?<year>\d{2,4})$') {
+    if ($baseName -match '^(?<prefix>\d{1,2})\.(?<day>\d{1,2})-(?<month>\d{1,2})-(?<year>\d{2,4})$') {
         $yearText = $matches.year
         $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
 
@@ -40,26 +24,7 @@ function Get-NoteMeta {
             Directory = $directory
             BaseName = $baseName
             IsNumbered = $true
-            PatternKind = 'DayIndex'
-            Number = [int]$matches.number
-            DayText = $matches.day
-            MonthText = $matches.month
-            YearText = $yearText
-            DateKey = ('{0:0000}-{1:00}-{2:00}' -f $year, [int]$matches.month, [int]$matches.day)
-        }
-    }
-
-    if ($baseName -match '^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})$') {
-        $yearText = $matches.year
-        $year = [int]$yearText
-
-        return [pscustomobject]@{
-            Path = $Path
-            Directory = $directory
-            BaseName = $baseName
-            IsNumbered = $false
-            PatternKind = 'MainYearFirst'
-            Number = $null
+            Prefix = [int]$matches.prefix
             DayText = $matches.day
             MonthText = $matches.month
             YearText = $yearText
@@ -76,8 +41,7 @@ function Get-NoteMeta {
             Directory = $directory
             BaseName = $baseName
             IsNumbered = $false
-            PatternKind = 'MainDayFirst'
-            Number = $null
+            Prefix = $null
             DayText = $matches.day
             MonthText = $matches.month
             YearText = $yearText
@@ -107,12 +71,6 @@ function Get-RelativePath {
     return $toFull.Replace('\', '/')
 }
 
-function Get-ShortYearText {
-    param([string]$YearText)
-
-    return ('{0:00}' -f ([int]$YearText % 100))
-}
-
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
     throw "Diary path not found: $DiaryRoot"
 }
@@ -129,21 +87,17 @@ $renamePlan = New-Object System.Collections.Generic.List[object]
 
 foreach ($group in $groups) {
     $groupNotes = @($group.Group)
-    $mainExists = @($allNotes | Where-Object {
+    $mainExists = $allNotes | Where-Object {
         (-not $_.IsNumbered) -and $_.Directory -eq $groupNotes[0].Directory -and $_.DateKey -eq $groupNotes[0].DateKey
-    })
-    $mainNote = $mainExists | Select-Object -First 1
+    }
 
-    $startIndex = 1
-    $ordered = @($groupNotes | Sort-Object Number, BaseName)
-    $style = 'DayIndex'
+    $startIndex = if ($mainExists.Count -gt 0) { 2 } else { 1 }
+    $ordered = $groupNotes | Sort-Object Prefix, BaseName
 
     for ($i = 0; $i -lt $ordered.Count; $i++) {
         $note = $ordered[$i]
         $newPrefix = $startIndex + $i
-        $dayText = ('{0:00}' -f [int]$note.DayText)
-        $yearText = Get-ShortYearText -YearText $note.YearText
-        $newBaseName = ('{0}.{1}-{2}-{3}.md' -f $dayText, $newPrefix, $note.MonthText, $yearText)
+        $newBaseName = ('{0:00}.{1}-{2}-{3}.md' -f $newPrefix, $note.DayText, $note.MonthText, $note.YearText)
 
         if ($newBaseName -eq ($note.BaseName + ".md")) {
             continue
@@ -160,36 +114,47 @@ foreach ($group in $groups) {
     }
 }
 
+foreach ($item in $renamePlan) {
+    if ((Test-Path -LiteralPath $item.NewPath) -and ($item.NewPath -ne $item.OldPath)) {
+        throw "Rename target already exists: $($item.NewPath)"
+    }
+}
+
 Write-Host "Planned renames: $($renamePlan.Count)"
 foreach ($item in $renamePlan) {
     Write-Host "$($item.OldRelative) -> $($item.NewRelative)"
 }
 
-if ($DryRun) {
+if ($DryRun -or $renamePlan.Count -eq 0) {
+    if ($PassThru) {
+        $renamePlan
+    }
     Write-Host "Done"
     return
 }
 
-if ($renamePlan.Count -gt 0) {
+foreach ($item in $renamePlan) {
+    [System.IO.File]::Move($item.OldPath, $item.NewPath)
+}
+
+$markdownFiles = Get-ChildItem -LiteralPath $DiaryRoot -Recurse -File -Filter "*.md" |
+    Where-Object { $_.FullName -ne $archivePath }
+
+foreach ($file in $markdownFiles) {
+    $original = [System.IO.File]::ReadAllText($file.FullName, $utf8)
+    $updated = $original
+
     foreach ($item in $renamePlan) {
-        [System.IO.File]::Move($item.OldPath, $item.NewPath)
+        $updated = $updated.Replace($item.OldRelative, $item.NewRelative)
+        $updated = $updated.Replace($item.OldBaseName, $item.NewBaseName)
     }
 
-    $markdownFiles = Get-ChildItem -LiteralPath $VaultPath -Recurse -File -Filter "*.md"
-
-    foreach ($file in $markdownFiles) {
-        $original = [System.IO.File]::ReadAllText($file.FullName, $utf8)
-        $updated = $original
-
-        foreach ($item in $renamePlan) {
-            $updated = $updated.Replace($item.OldRelative, $item.NewRelative)
-            $updated = $updated.Replace($item.OldBaseName, $item.NewBaseName)
-        }
-
-        if ($updated -ne $original) {
-            [System.IO.File]::WriteAllText($file.FullName, $updated, $utf8)
-        }
+    if ($updated -ne $original) {
+        [System.IO.File]::WriteAllText($file.FullName, $updated, $utf8)
     }
 }
 
 Write-Host "Done"
+if ($PassThru) {
+    $renamePlan
+}

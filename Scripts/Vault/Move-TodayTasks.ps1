@@ -3,7 +3,8 @@ param(
     [string]$Date = (Get-Date -Format "yyyy-MM-dd"),
     [Parameter(Mandatory=$false)]
     [string]$KanbanDir = "C:\obsidian\Main\Calendula\План",
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$PassThru
 )
 
 $ErrorActionPreference = "Stop"
@@ -124,3 +125,13 @@ if (-not $DryRun) {
 
 Write-Host "Moved $($tasksToMove.Count) task(s) from 'Запланировано' to 'Сегодня'"
 foreach ($task in $tasksToMove) { Write-Host "  $($task.Trim())" }
+
+if ($PassThru) {
+    [pscustomobject]@{
+        FilePath = $filePath
+        Date = $Date
+        MovedCount = $tasksToMove.Count
+        DryRun = [bool]$DryRun
+        Tasks = @($tasksToMove)
+    }
+}
