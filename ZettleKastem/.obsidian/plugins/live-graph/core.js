@@ -60,6 +60,15 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     return el;
   }
 
+  function clearElement(element) {
+    if (!element) return;
+    if (typeof element.empty === "function") {
+      element.empty();
+    } else {
+      element.innerHTML = "";
+    }
+  }
+
   function setLifeIcon(element) {
     const svg = svgEl("svg", {
       viewBox: "0 0 24 24",
@@ -96,7 +105,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         opacity: 0.35,
       }),
     );
-    element.empty();
+    clearElement(element);
     element.appendChild(svg);
   }
 
@@ -131,8 +140,8 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     async onOpen() {
-      this.containerEl.empty();
-      this.containerEl.addClass("live-graph-shell");
+      clearElement(this.containerEl);
+      this.containerEl.classList.add("live-graph-shell");
 
       this.shellEl = this.containerEl.createDiv({ cls: "live-graph-shell-inner" });
       const toolbar = this.shellEl.createDiv({ cls: "live-graph-toolbar" });
@@ -177,7 +186,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       this.emptyEl = this.graphEl.createDiv({
         cls: "live-graph-empty",
-        text: `Loading ${PLUGIN_LABEL}…`,
+        text: `Loading ${PLUGIN_LABEL}...`,
       });
 
       this.renderGraph(true);
@@ -198,7 +207,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     togglePause() {
       this.paused = !this.paused;
       if (this.pauseBtn) {
-        this.pauseBtn.empty();
+        clearElement(this.pauseBtn);
         setIcon(this.pauseBtn, this.paused ? "play" : "pause");
         this.pauseBtn.setAttribute(
           "aria-label",
@@ -500,7 +509,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
     display() {
       const { containerEl } = this;
-      containerEl.empty();
+      clearElement(containerEl);
       containerEl.createEl("h2", { text: PLUGIN_LABEL });
 
       new Setting(containerEl)
@@ -567,7 +576,9 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         callback: () => this.openLiveGraph(),
       });
       const ribbon = this.addRibbonIcon("activity", `Open ${PLUGIN_LABEL}`, () => this.openLiveGraph());
-      setLifeIcon(ribbon);
+      if (ribbon) {
+        setLifeIcon(ribbon);
+      }
       this.addSettingTab(new LiveGraphSettingsTab(this.app, this));
 
       this.app.workspace.onLayoutReady(() => {
