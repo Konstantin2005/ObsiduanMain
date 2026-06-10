@@ -7,7 +7,7 @@ const dayRoot = path.join(root, 'Calendula');
 const startDay = new Date('2040-01-01T00:00:00Z');
 const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 const totalPerCircle = 1600;
-const dayCount = 2000;
+const dayCount = 12000;
 
 function pad(n, len = 4) {
   return String(n).padStart(len, '0');
