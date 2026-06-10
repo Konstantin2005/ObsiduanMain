@@ -19,6 +19,8 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     maxGhostEdges: 24,
   };
 
+  const PLUGIN_LABEL = "Жизнь";
+
   function shuffle(items) {
     const out = items.slice();
     for (let i = out.length - 1; i > 0; i -= 1) {
@@ -58,6 +60,46 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     return el;
   }
 
+  function setLifeIcon(element) {
+    const svg = svgEl("svg", {
+      viewBox: "0 0 24 24",
+      width: "18",
+      height: "18",
+      fill: "none",
+      class: "life-ribbon-icon",
+    });
+    svg.appendChild(
+      svgEl("path", {
+        d: "M4 12.2c1.7-2.7 3.2-4.1 4.5-4.1 1.6 0 2.4 2 3.5 4.7 1-2.2 2-4 3.7-4 1.5 0 2.7 1.2 4.3 4.2",
+        stroke: "currentColor",
+        "stroke-width": 1.9,
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+      }),
+    );
+    svg.appendChild(
+      svgEl("path", {
+        d: "M4 12.2h2.4l1.4-2.6 1.8 5 1.8-3.3 1.1 1.9h2.8",
+        stroke: "currentColor",
+        "stroke-width": 1.9,
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+      }),
+    );
+    svg.appendChild(
+      svgEl("circle", {
+        cx: 12,
+        cy: 12,
+        r: 8.5,
+        stroke: "currentColor",
+        "stroke-width": 1.3,
+        opacity: 0.35,
+      }),
+    );
+    element.empty();
+    element.appendChild(svg);
+  }
+
   class LiveGraphView extends ItemView {
     constructor(leaf, plugin) {
       super(leaf);
@@ -81,7 +123,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     getDisplayText() {
-      return "Live Graph";
+      return PLUGIN_LABEL;
     }
 
     getIcon() {
@@ -96,7 +138,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       const toolbar = this.shellEl.createDiv({ cls: "live-graph-toolbar" });
 
       const titleBox = toolbar.createDiv({ cls: "live-graph-titlebox" });
-      titleBox.createEl("div", { text: "Live Graph", cls: "live-graph-title" });
+      titleBox.createEl("div", { text: PLUGIN_LABEL, cls: "live-graph-title" });
       this.statusEl = titleBox.createEl("div", {
         text: "Cycling connections",
         cls: "live-graph-status",
@@ -135,7 +177,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       this.emptyEl = this.graphEl.createDiv({
         cls: "live-graph-empty",
-        text: "Loading live graph…",
+        text: "Loading Жизнь…",
       });
 
       this.renderGraph(true);
@@ -435,11 +477,11 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     display() {
       const { containerEl } = this;
       containerEl.empty();
-      containerEl.createEl("h2", { text: "Live Graph" });
+      containerEl.createEl("h2", { text: PLUGIN_LABEL });
 
       new Setting(containerEl)
         .setName("Auto open")
-        .setDesc("Open the live graph automatically when the vault loads.")
+        .setDesc("Open the living graph automatically when the vault loads.")
         .addToggle((toggle) =>
           toggle.setValue(this.plugin.settings.autoOpen).onChange(async (value) => {
             this.plugin.settings.autoOpen = value;
@@ -449,7 +491,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       new Setting(containerEl)
         .setName("Max nodes")
-        .setDesc("How many notes the live graph samples at once.")
+        .setDesc("How many notes the living graph samples at once.")
         .addSlider((slider) =>
           slider
             .setLimits(24, 180, 4)
@@ -497,10 +539,11 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.registerView(VIEW_TYPE, (leaf) => new LiveGraphView(leaf, this));
       this.addCommand({
         id: "open-live-graph",
-        name: "Open Live Graph",
+        name: "Open Жизнь",
         callback: () => this.openLiveGraph(),
       });
-      this.addRibbonIcon("activity", "Open Live Graph", () => this.openLiveGraph());
+      const ribbon = this.addRibbonIcon("activity", "Open Жизнь", () => this.openLiveGraph());
+      setLifeIcon(ribbon);
       this.addSettingTab(new LiveGraphSettingsTab(this.app, this));
 
       this.app.workspace.onLayoutReady(() => {

@@ -1,6 +1,6 @@
 {
   "id": "live-graph",
-  "name": "Live Graph",
+  "name": "Жизнь",
   "version": "1.0.0",
   "minAppVersion": "1.5.0",
   "description": "A living graph view that reshuffles notes and ghost links without changing your markdown files.",
