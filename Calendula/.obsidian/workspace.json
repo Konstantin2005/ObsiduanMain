@@ -155,14 +155,33 @@
               "icon": "lucide-archive",
               "title": "Все свойства"
             }
+          },
+          {
+            "id": "f3f79a7081fba580",
+            "type": "leaf",
+            "state": {
+              "type": "life-panel",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
+          },
+          {
+            "id": "a85ea813279d174d",
+            "type": "leaf",
+            "state": {
+              "type": "life-panel",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 468.5,
-    "collapsed": true
+    "width": 468.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,10 +190,11 @@
       "graph:Граф": false,
       "command-palette:Открыть палитру команд": false,
       "obsidian-kanban:Создать новую доску": false,
-      "obsidian-excalidraw-plugin:Создать новый чертеж": false
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false,
+      "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "32b6236491d6341e",
+  "active": "a85ea813279d174d",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/07.1-06-26.md",

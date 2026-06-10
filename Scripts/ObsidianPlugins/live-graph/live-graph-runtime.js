@@ -618,6 +618,112 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.paintToken += 1;
     }
 
+    getBackdropCanvas(width, height, profile) {
+      const signature = [
+        width,
+        height,
+        profile.mode,
+        profile.labelLimit || 0,
+        profile.edgeBatchSize || 0,
+        profile.nodeBatchSize || 0,
+      ].join(":");
+      if (this.backdropCanvas && this.backdropSignature === signature) {
+        return this.backdropCanvas;
+      }
+
+      if (typeof document === "undefined") {
+        return null;
+      }
+
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.floor(width));
+      canvas.height = Math.max(1, Math.floor(height));
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        return null;
+      }
+
+      const bg = ctx.createLinearGradient(0, 0, width, height);
+      const modeStops =
+        profile.mode === "ultra"
+          ? [
+              [0, "rgba(62, 120, 255, 0.26)"],
+              [0.54, "rgba(0, 0, 0, 0.05)"],
+              [1, "rgba(255, 140, 110, 0.18)"],
+            ]
+          : profile.mode === "heavy"
+            ? [
+                [0, "rgba(80, 120, 255, 0.22)"],
+                [0.54, "rgba(0, 0, 0, 0.05)"],
+                [1, "rgba(255, 132, 111, 0.14)"],
+              ]
+            : [
+                [0, "rgba(80, 120, 255, 0.18)"],
+                [0.54, "rgba(0, 0, 0, 0.04)"],
+                [1, "rgba(255, 132, 111, 0.12)"],
+              ];
+      for (const [stop, color] of modeStops) {
+        bg.addColorStop(stop, color);
+      }
+
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "rgba(0,0,0,0.01)";
+      ctx.fillRect(0, 0, width, height);
+      roundedRectPath(ctx, 0, 0, width, height, 24);
+      ctx.fillStyle = bg;
+      ctx.fill();
+
+      ctx.save();
+      ctx.globalAlpha = profile.mode === "ultra" ? 0.14 : 0.18;
+      ctx.strokeStyle = "rgba(255,255,255,0.06)";
+      ctx.lineWidth = 1;
+      const gridX = profile.mode === "ultra" ? 140 : 110;
+      const gridY = profile.mode === "ultra" ? 120 : 96;
+      for (let x = 24; x < width; x += gridX) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+      }
+      for (let y = 24; y < height; y += gridY) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.globalAlpha = 0.9;
+      const haloA = ctx.createRadialGradient(width * 0.2, height * 0.18, 0, width * 0.2, height * 0.18, width * 0.42);
+      haloA.addColorStop(0, "rgba(92, 145, 255, 0.18)");
+      haloA.addColorStop(1, "rgba(92, 145, 255, 0)");
+      ctx.fillStyle = haloA;
+      ctx.beginPath();
+      ctx.arc(width * 0.2, height * 0.18, width * 0.42, 0, Math.PI * 2);
+      ctx.fill();
+
+      const haloB = ctx.createRadialGradient(width * 0.8, height * 0.78, 0, width * 0.8, height * 0.78, width * 0.36);
+      haloB.addColorStop(0, "rgba(255, 132, 111, 0.14)");
+      haloB.addColorStop(1, "rgba(255, 132, 111, 0)");
+      ctx.fillStyle = haloB;
+      ctx.beginPath();
+      ctx.arc(width * 0.8, height * 0.78, width * 0.36, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = "rgba(255,255,255,0.08)";
+      ctx.lineWidth = 1;
+      roundedRectPath(ctx, 0, 0, width, height, 24);
+      ctx.stroke();
+      ctx.restore();
+
+      this.backdropCanvas = canvas;
+      this.backdropSignature = signature;
+      return canvas;
+    }
+
     getLabelPaths(sample, degree, profile) {
       const rawLimit =
         profile.labelLimit === undefined || profile.labelLimit === null
@@ -642,7 +748,14 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       return new Set(ranked.slice(0, limit).map((file) => file.path));
     }
 
-    paintCanvasBackdrop(ctx, width, height) {
+    paintCanvasBackdrop(ctx, width, height, profile) {
+      const backdrop = this.getBackdropCanvas(width, height, profile);
+      if (backdrop && typeof ctx.drawImage === "function") {
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(backdrop, 0, 0, width, height);
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
       ctx.save();
       const bg = ctx.createLinearGradient(0, 0, width, height);
@@ -765,7 +878,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       this.cancelCanvasGraphPaint();
       this.hitTargets = [];
-      this.paintCanvasBackdrop(ctx, width, height);
+      this.paintCanvasBackdrop(ctx, width, height, profile);
 
       const labelPaths = this.getLabelPaths(sample, degree, profile);
       const summary = {
