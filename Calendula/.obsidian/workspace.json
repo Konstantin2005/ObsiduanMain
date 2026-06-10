@@ -162,8 +162,8 @@
             "state": {
               "type": "live-graph-view",
               "state": {},
-              "icon": "activity",
-              "title": "Live Graph"
+              "icon": "lucide-ghost",
+              "title": "live-graph-view"
             }
           }
         ],
@@ -175,7 +175,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "live-graph:Open Live Graph": false,
+      "live-graph:Open Жизнь panel": false,
       "switcher:Меню быстрого перехода": false,
       "obsidianella-delink:Copy delinked note": false,
       "graph:Граф": false,
