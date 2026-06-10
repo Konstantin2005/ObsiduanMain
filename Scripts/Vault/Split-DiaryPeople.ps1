@@ -8,7 +8,7 @@
   keep up to 3 unique people each.
 
   Default output file name format:
-    03.07-06-26.md
+    03.1-06-26.md
   where the leading number is the amount of unique people mentions in that chunk.
 #>
 
@@ -30,7 +30,8 @@ function Get-DiaryFiles {
     [System.IO.Directory]::GetFiles($Root, "*.md", [System.IO.SearchOption]::AllDirectories) |
         Where-Object {
             $name = [System.IO.Path]::GetFileNameWithoutExtension($_)
-            $name -notmatch '^\d{4}$'
+            $name -notmatch '^\d{4}$' -and
+            $name -notmatch '^\d{2}\.\d+-.+$'
         }
 }
 
@@ -105,21 +106,16 @@ function Get-SplitFileName {
 
     if ($baseName -match '(\d{4}-\d{2}-\d{2})') {
         $date = [datetime]::ParseExact($matches[1], 'yyyy-MM-dd', $null)
-        $datePart = $date.ToString('dd-MM-yy')
+        $datePart = $date.ToString('MM-yy')
     }
     elseif ($baseName -match '(\d{1,2})-(\d{1,2})-(\d{2,4})') {
-        $day = [int]$matches[1]
         $month = [int]$matches[2]
         $yearText = $matches[3]
         $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
-        $datePart = ('{0:00}-{1:00}-{2:00}' -f $day, $month, ($year % 100))
+        $datePart = ('{0:00}-{1:00}' -f $month, ($year % 100))
     }
 
-    if ($ChunkIndex -le 1) {
-        return ('{0:D2}.{1}.md' -f $PeopleCount, $datePart)
-    }
-
-    return ('{0:D2}.{1}.{2}.md' -f $PeopleCount, $datePart, $ChunkIndex)
+    return ('{0:D2}.{1}-{2}.md' -f $PeopleCount, $ChunkIndex, $datePart)
 }
 
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
