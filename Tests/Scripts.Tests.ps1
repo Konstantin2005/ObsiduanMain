@@ -2209,6 +2209,20 @@ Describe 'Calendula graph benchmark tooling' {
             }
         }
     }
+
+    It 'produces a validated evidence engine benchmark report' {
+        $output = & node (Join-Path $repoRoot 'Scripts\Obsidian\measure-graph-evidence-engine.js') --iterations 1000 --reject-every 7 --edge-every 2 2>&1
+
+        $LASTEXITCODE | Should Be 0
+        $report = ($output -join [Environment]::NewLine) | ConvertFrom-Json
+        $report.ok | Should Be $true
+        $report.contract | Should Be 'EvidenceBenchmark/v12.0'
+        [int]$report.iterations | Should Be 1000
+        ([double]$report.timingsMs.total -gt 0) | Should Be $true
+        ([int]$report.stats.accepted -gt 0) | Should Be $true
+        ([int]$report.stats.rejected -gt 0) | Should Be $true
+        ([int]$report.stats.generatedEdges -gt 0) | Should Be $true
+    }
 }
 
 Describe 'LiveGraph' {

@@ -545,6 +545,60 @@ It knows:
   and how that changed over time.
 ```
 
+## Implementation Progress
+
+### V12-S1A - Evidence Contract Foundation
+
+Status: `DONE`
+
+Completed:
+
+```txt
+Signal enum
+EvidenceRecord/v12.0 contract
+EvidenceDecision/v12.0 contract
+EvidenceMention/v12.0 contract
+EvidenceGeneratedEdge/v12.0 contract
+decision aggregation from evidence
+human rejection override
+negative section evidence rejection
+generated edge blocked for rejected decisions
+raw text stripped from evidence metadata
+synthetic evidence benchmark
+```
+
+Measured:
+
+```txt
+50K evidence records: 41.687ms
+50K decisions: 42.107ms
+mentions/edges batch: 12.493ms
+total synthetic benchmark: 96.287ms
+accepted decisions: 45,000
+rejected decisions: 5,000
+generated edges: 15,000
+```
+
+Verified:
+
+```txt
+Pester: 43 passed, 0 failed
+Calendula-20K fixture: 33,903 nodes, 35,956 edges, 0 unresolved
+```
+
+Remaining in `V12-S1`:
+
+```txt
+Entity UUID system integration
+Signal extraction from real note text
+Evidence Store persistence
+Temporal counters
+PersonRank buckets
+Relationship inference v0
+Explain API
+Renderer cached rank hints
+```
+
 ## Implementation Phases
 
 ### Phase 0 - Evidence Contract
