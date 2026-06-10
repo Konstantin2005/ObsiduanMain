@@ -172,7 +172,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 618.5
+    "width": 618.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,7 +186,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "6506147f2647de19",
+  "active": "32b6236491d6341e",
   "lastOpenFiles": [
     "Соц Капитал/3_круг/Человек-4000.md",
     "Соц Капитал/3_круг/Человек-3999.md",
