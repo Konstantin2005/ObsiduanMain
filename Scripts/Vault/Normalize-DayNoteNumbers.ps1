@@ -178,28 +178,30 @@ foreach ($item in $renamePlan) {
     Write-Host "$($item.OldRelative) -> $($item.NewRelative)"
 }
 
-if ($DryRun -or $renamePlan.Count -eq 0) {
+if ($DryRun) {
     Write-Host "Done"
     return
 }
 
-foreach ($item in $renamePlan) {
-    [System.IO.File]::Move($item.OldPath, $item.NewPath)
-}
-
-$markdownFiles = Get-ChildItem -LiteralPath $VaultPath -Recurse -File -Filter "*.md"
-
-foreach ($file in $markdownFiles) {
-    $original = [System.IO.File]::ReadAllText($file.FullName, $utf8)
-    $updated = $original
-
+if ($renamePlan.Count -gt 0) {
     foreach ($item in $renamePlan) {
-        $updated = $updated.Replace($item.OldRelative, $item.NewRelative)
-        $updated = $updated.Replace($item.OldBaseName, $item.NewBaseName)
+        [System.IO.File]::Move($item.OldPath, $item.NewPath)
     }
 
-    if ($updated -ne $original) {
-        [System.IO.File]::WriteAllText($file.FullName, $updated, $utf8)
+    $markdownFiles = Get-ChildItem -LiteralPath $VaultPath -Recurse -File -Filter "*.md"
+
+    foreach ($file in $markdownFiles) {
+        $original = [System.IO.File]::ReadAllText($file.FullName, $utf8)
+        $updated = $original
+
+        foreach ($item in $renamePlan) {
+            $updated = $updated.Replace($item.OldRelative, $item.NewRelative)
+            $updated = $updated.Replace($item.OldBaseName, $item.NewBaseName)
+        }
+
+        if ($updated -ne $original) {
+            [System.IO.File]::WriteAllText($file.FullName, $updated, $utf8)
+        }
     }
 }
 
@@ -207,45 +209,47 @@ $currentNotes = Get-ChildItem -LiteralPath $DiaryRoot -Recurse -File -Filter "*.
     ForEach-Object { Get-NoteMeta -Path $_.FullName } |
     Where-Object { $_ -ne $null }
 
-$currentGroups = $currentNotes |
-    Where-Object { $_.IsNumbered } |
-    Group-Object -Property { "$($_.Directory)|$($_.DateKey)" }
+if (@($currentNotes).Count -gt 0) {
+    $currentGroups = $currentNotes |
+        Where-Object { $_.IsNumbered } |
+        Group-Object -Property { "$($_.Directory)|$($_.DateKey)" }
 
-foreach ($group in $currentGroups) {
-    $groupNotes = @($group.Group | Sort-Object Number, BaseName)
-    $mainNote = $currentNotes | Where-Object {
-        (-not $_.IsNumbered) -and $_.Directory -eq $groupNotes[0].Directory -and $_.DateKey -eq $groupNotes[0].DateKey
-    } | Select-Object -First 1
+    foreach ($group in $currentGroups) {
+        $groupNotes = @($group.Group | Sort-Object Number, BaseName)
+        $mainNote = $currentNotes | Where-Object {
+            (-not $_.IsNumbered) -and $_.Directory -eq $groupNotes[0].Directory -and $_.DateKey -eq $groupNotes[0].DateKey
+        } | Select-Object -First 1
 
-    if (-not $mainNote) {
-        continue
-    }
-
-    $mainText = [System.IO.File]::ReadAllText($mainNote.Path, $utf8)
-    $updatedMain = $mainText
-
-    foreach ($note in $groupNotes) {
-        $sourceName = [System.IO.Path]::GetFileName($note.Path)
-        $marker = "<!-- mini-note-source: $sourceName -->"
-        if ($updatedMain.Contains($marker)) {
+        if (-not $mainNote) {
             continue
         }
 
-        $sourceText = [System.IO.File]::ReadAllText($note.Path, $utf8)
-        $bodyText = Get-BodyText -Text $sourceText
-        if ([string]::IsNullOrWhiteSpace($bodyText)) {
-            continue
+        $mainText = [System.IO.File]::ReadAllText($mainNote.Path, $utf8)
+        $updatedMain = $mainText
+
+        foreach ($note in $groupNotes) {
+            $sourceName = [System.IO.Path]::GetFileName($note.Path)
+            $marker = "<!-- mini-note-source: $sourceName -->"
+            if ($updatedMain.Contains($marker)) {
+                continue
+            }
+
+            $sourceText = [System.IO.File]::ReadAllText($note.Path, $utf8)
+            $bodyText = Get-BodyText -Text $sourceText
+            if ([string]::IsNullOrWhiteSpace($bodyText)) {
+                continue
+            }
+
+            if (-not $updatedMain.EndsWith("`n")) {
+                $updatedMain += "`n"
+            }
+
+            $updatedMain += "`n$marker`n`n$bodyText`n"
         }
 
-        if (-not $updatedMain.EndsWith("`n")) {
-            $updatedMain += "`n"
+        if ($updatedMain -ne $mainText) {
+            [System.IO.File]::WriteAllText($mainNote.Path, $updatedMain, $utf8)
         }
-
-        $updatedMain += "`n$marker`n`n$bodyText`n"
-    }
-
-    if ($updatedMain -ne $mainText) {
-        [System.IO.File]::WriteAllText($mainNote.Path, $updatedMain, $utf8)
     }
 }
 
