@@ -6,17 +6,36 @@
   "hideUnresolved": true,
   "showOrphans": false,
   "collapse-color-groups": false,
-  "colorGroups": [],
-  "collapse-display": true,
+  "colorGroups": [
+    {
+      "query": "tag:#graph/backbone path:Calendula",
+      "color": {
+        "a": 1,
+        "r": 0.12,
+        "g": 0.58,
+        "b": 0.95
+      }
+    },
+    {
+      "query": "tag:#graph/backbone -path:Calendula",
+      "color": {
+        "a": 1,
+        "r": 1,
+        "g": 0.56,
+        "b": 0.12
+      }
+    }
+  ],
+  "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.3628873693012112,
+  "nodeSizeMultiplier": 0.72,
+  "lineSizeMultiplier": 0.34,
+  "collapse-forces": false,
+  "centerStrength": 0.045,
+  "repelStrength": 1.15,
+  "linkStrength": 0.035,
+  "linkDistance": 26,
+  "scale": 0.05,
   "close": false
 }
