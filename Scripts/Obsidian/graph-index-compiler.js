@@ -214,7 +214,12 @@ class ReadAmplificationTracker {
   observeTrustDecision(decision) {
     if (!decision || decision.contract !== CONTRACTS.TRUST_DECISION) return this.snapshot();
     if (decision.action === TRUST_ACTION.READ_AND_PARSE) this.add("markdownRead", 1);
-    if (decision.action === TRUST_ACTION.REPARSE_AFFECTED) this.add("markdownRead", 1);
+    if (decision.action === TRUST_ACTION.REPARSE_AFFECTED && decision.state !== TRUST_STATE.DELETED) {
+      this.add("markdownRead", 1);
+    }
+    if (decision.action === TRUST_ACTION.REPARSE_AFFECTED || decision.state === TRUST_STATE.DELETED) {
+      this.add("resolverKeysRecomputed", 1);
+    }
     if (decision.action === TRUST_ACTION.REBUILD_RESOLVER) this.add("resolverKeysRecomputed", 1);
     return this.snapshot();
   }

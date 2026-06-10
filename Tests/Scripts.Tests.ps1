@@ -1263,6 +1263,166 @@ Describe 'Calendula Evidence Engine v12' {
     }
 }
 
+Describe 'Calendula Incremental Graph Compiler v14' {
+    It 'explains trust decisions and read amplification before indexing reads markdown' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const compiler = require(path.join(root, 'Scripts/Obsidian/graph-index-compiler.js'));
+
+  const previous = [
+    {
+      path: 'A.md',
+      noteUuid: 'note-a',
+      size: 10,
+      mtimeMs: 100,
+      contentHash: 'hash-a',
+      recordVersion: 14,
+      parserVersion: 1,
+      resolverVersion: 1,
+      schemaVersion: 14,
+      recordBuiltAtMs: Date.now(),
+    },
+    {
+      path: 'B.md',
+      noteUuid: 'note-b',
+      size: 20,
+      mtimeMs: 200,
+      contentHash: 'hash-b',
+      recordVersion: 14,
+      parserVersion: 1,
+      resolverVersion: 1,
+      schemaVersion: 14,
+      recordBuiltAtMs: Date.now(),
+    },
+    {
+      path: 'Deleted.md',
+      noteUuid: 'note-deleted',
+      size: 5,
+      mtimeMs: 50,
+      contentHash: 'hash-deleted',
+      recordVersion: 14,
+      parserVersion: 1,
+      resolverVersion: 1,
+      schemaVersion: 14,
+    },
+    {
+      path: 'Corrupt.md',
+      noteUuid: 'note-corrupt',
+      size: 9,
+      mtimeMs: 90,
+      contentHash: 'hash-corrupt',
+      recordVersion: 14,
+      parserVersion: 1,
+      resolverVersion: 1,
+      schemaVersion: 14,
+    },
+  ];
+  const next = [
+    { ...previous[0] },
+    { ...previous[1], size: 21, mtimeMs: 201, quickKey: compiler.makeQuickKey({ path: 'B.md', size: 21, mtimeMs: 201 }) },
+    {
+      path: 'Added.md',
+      noteUuid: 'note-added',
+      size: 7,
+      mtimeMs: 70,
+      contentHash: 'hash-added',
+      recordVersion: 14,
+      parserVersion: 1,
+      resolverVersion: 1,
+      schemaVersion: 14,
+    },
+    { ...previous[3], shardStatus: 'corrupt' },
+  ];
+
+  const log = new compiler.IndexOperationLog({ runId: 'run-test', mode: compiler.INDEX_MODE.BACKGROUND_NORMAL });
+  const readTracker = new compiler.ReadAmplificationTracker({ budgets: { markdownRead: 3 } });
+  const plan = compiler.buildChangedSetPlan({
+    previousManifest: previous,
+    nextManifest: next,
+    operationLog: log,
+    readTracker,
+  });
+
+  if (plan.contract !== 'IndexChangedSetPlan/v14.0') throw new Error(`Unexpected plan contract ${plan.contract}`);
+  if (plan.stateCounts.UNCHANGED_TRUSTED !== 1) throw new Error(`Expected one trusted unchanged file: ${JSON.stringify(plan.stateCounts)}`);
+  if (plan.stateCounts.CHANGED_STAT !== 1) throw new Error(`Expected one stat-changed file: ${JSON.stringify(plan.stateCounts)}`);
+  if (plan.stateCounts.ADDED !== 1 || plan.stateCounts.DELETED !== 1) throw new Error(`Expected add/delete states: ${JSON.stringify(plan.stateCounts)}`);
+  if (plan.reasonCounts.RECORD_SHARD_CORRUPT !== 1) throw new Error(`Expected corrupt shard reason: ${JSON.stringify(plan.reasonCounts)}`);
+  if (plan.stats.recordsReused !== 1) throw new Error(`Expected one reused record, got ${plan.stats.recordsReused}`);
+  if (plan.stats.filesToRead !== 2) throw new Error(`Expected two direct file reads, got ${plan.stats.filesToRead}`);
+  if (plan.readAmplification.counters.markdownRead !== 3) {
+    throw new Error(`Expected three markdown reads including corrupt/deleted affected reparse, got ${plan.readAmplification.counters.markdownRead}`);
+  }
+  if (!plan.readAmplification.ok) throw new Error(`Read amplification should stay within budget: ${JSON.stringify(plan.readAmplification.overBudget)}`);
+
+  const disabled = compiler.classifyTrust({
+    previousEntry: previous[0],
+    nextEntry: next[0],
+    cacheEnabled: false,
+  });
+  if (disabled.action !== compiler.TRUST_ACTION.DISABLE_WARM_CACHE_FOR_RUN) {
+    throw new Error(`Expected warm cache disable action, got ${disabled.action}`);
+  }
+
+  const parserBump = compiler.classifyTrust({
+    previousEntry: previous[0],
+    nextEntry: { ...next[0], parserVersion: 2 },
+    versions: { recordVersion: 14, parserVersion: 1, resolverVersion: 1, schemaVersion: 14 },
+  });
+  if (!parserBump.reasons.includes(compiler.TRUST_REASON.PARSER_VERSION_CHANGED) || parserBump.action !== compiler.TRUST_ACTION.READ_AND_PARSE) {
+    throw new Error(`Expected parser version invalidation, got ${JSON.stringify(parserBump)}`);
+  }
+
+  const compatibility = compiler.createSnapshotCompatibility({
+    sourceManifestId: 'source-1',
+    recordSetId: 'records-1',
+    resolverCacheId: 'resolver-1',
+    operationRunId: log.runId,
+    buildMode: compiler.INDEX_MODE.BACKGROUND_NORMAL,
+    materializationMode: compiler.MATERIALIZATION_MODE.FULL_FROM_RECORDS,
+  });
+  if (!compatibility.ok || compatibility.operationRunId !== 'run-test') {
+    throw new Error(`Expected complete snapshot compatibility lineage, got ${JSON.stringify(compatibility)}`);
+  }
+
+  const badCompatibility = compiler.createSnapshotCompatibility({ sourceManifestId: 'source-1' });
+  if (badCompatibility.ok || !badCompatibility.missing.includes('recordSetId')) {
+    throw new Error(`Expected missing compatibility fields, got ${JSON.stringify(badCompatibility)}`);
+  }
+
+  const snapshot = log.snapshot({ readAmplification: plan.readAmplification });
+  if (snapshot.eventCounts.TRUST_CLASSIFIED !== plan.decisions.length) {
+    throw new Error(`Operation log should explain every trust decision, got ${JSON.stringify(snapshot.eventCounts)}`);
+  }
+
+  process.stdout.write(`index-compiler:v14-ok ${JSON.stringify({ decisions: plan.decisions.length, markdownRead: plan.readAmplification.counters.markdownRead })}\n`);
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'index-compiler-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'index-compiler:v14-ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula graph store' {
     It 'builds an atomic graph store with forward and reverse CSR recovery' {
         $root = New-TempRoot
