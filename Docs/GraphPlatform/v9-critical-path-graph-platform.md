@@ -499,11 +499,11 @@ Goal: move compute off the main thread only when contracts and state recovery ar
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-6-001 | Define worker message protocol | TODO | protocol is based on v9 contracts, not renderer internals |
+| V9-6-001 | Define worker message protocol | DONE | protocol is based on v9 contracts, not renderer internals |
 | V9-6-002 | Move cold validation to worker | TODO | main thread remains responsive |
-| V9-6-003 | Move query/visible-set compute when needed | TODO | stale worker results are dropped |
-| V9-6-004 | Add main-thread fallback | TODO | worker failure maps to `degraded`, not crash |
-| TEST-V9-6 | Worker tests | TODO | success, timeout, stale result, crash fallback |
+| V9-6-003 | Move query/visible-set compute when needed | DONE | stale worker results are dropped |
+| V9-6-004 | Add main-thread fallback | DONE | worker failure maps to `degraded`, not crash |
+| TEST-V9-6 | Worker tests | DONE | success, timeout, stale result, crash fallback |
 
 ## v9.7: Backend Upgrade Gate
 

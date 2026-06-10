@@ -1473,6 +1473,100 @@ Describe 'Calendula Multi-Scale Graph' {
     }
 }
 
+Describe 'Calendula Worker Layer' {
+    It 'runs async query/layout/edge tasks, cancels stale work, and maps failures' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const fs = require('fs');
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(tempRoot, 'Vault');
+  const outRoot = path.join(tempRoot, 'graph-store');
+  fs.mkdirSync(vaultRoot, { recursive: true });
+  fs.writeFileSync(path.join(vaultRoot, 'A.md'), 'type: diary\nBackbone link: [[B]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'B.md'), 'type: person\n[[C]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'C.md'), 'type: diary\n[[A]]\n', 'utf8');
+
+  const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
+  const critical = require(path.join(repoRoot, 'Scripts/Obsidian/graph-critical-frame.js'));
+  const worker = require(path.join(repoRoot, 'Scripts/Obsidian/graph-worker-layer.js'));
+
+  const graph = store.buildGraph(vaultRoot);
+  store.writeStore(vaultRoot, outRoot, graph);
+  const loaded = new critical.GraphStoreClient({ storeRoot: outRoot }).loadSnapshot();
+  if (!loaded.ok) throw new Error(`Expected snapshot: ${JSON.stringify(loaded.failureState)}`);
+
+  const controller = new worker.WorkerTaskController();
+  const query = await controller.runQuery({
+    snapshot: loaded.snapshot,
+    filters: [{ type: 'nodeType', values: [2] }],
+    id: 'worker-people',
+  });
+  if (!query.ok || query.value.stats.candidates !== 1) throw new Error(`Expected worker query result, got ${JSON.stringify(query)}`);
+
+  const layout = await controller.runLayout({ snapshot: loaded.snapshot });
+  if (!layout.ok || layout.value.maxX < layout.value.minX || layout.value.maxY < layout.value.minY) {
+    throw new Error(`Expected layout bounds, got ${JSON.stringify(layout)}`);
+  }
+
+  const edgeBatch = await controller.runEdgeBatch({
+    snapshot: loaded.snapshot,
+    nodeIds: [0, 1, 2],
+    edgeBudget: 2,
+  });
+  if (!edgeBatch.ok || edgeBatch.value.edges.length > 2) throw new Error(`Expected budgeted edge batch, got ${JSON.stringify(edgeBatch)}`);
+
+  const stalePromise = controller.scheduleTask({
+    type: 'slow-query',
+    payload: {},
+    handler: async () => {
+      await new Promise((resolve) => setTimeout(resolve, 10));
+      return { ok: true };
+    },
+  });
+  controller.cancelStale('test-cancel');
+  const stale = await stalePromise;
+  if (!stale.stale || stale.ok) throw new Error(`Expected stale task cancellation, got ${JSON.stringify(stale)}`);
+
+  const failed = await controller.scheduleTask({
+    type: 'bad-task',
+    payload: {},
+    handler: () => {
+      throw new Error('boom');
+    },
+  });
+  if (failed.ok || !failed.failureState || failed.failureState.severity !== 'degraded') {
+    throw new Error(`Expected degraded worker failure, got ${JSON.stringify(failed)}`);
+  }
+
+  process.stdout.write(`worker-layer:ok ${JSON.stringify({ query: query.value.stats.candidates, edges: edgeBatch.value.edges.length, stale: stale.stale })}\n`);
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'worker-layer-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'worker-layer:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula Stability Layer' {
     It 'turns store and renderer failures into controlled states with incident logs' {
         $root = New-TempRoot
