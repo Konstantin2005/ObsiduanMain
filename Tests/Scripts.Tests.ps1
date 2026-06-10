@@ -2383,6 +2383,20 @@ Describe 'Calendula graph benchmark tooling' {
         ([int]$report.stats.rejected -gt 0) | Should Be $true
         ([int]$report.stats.generatedEdges -gt 0) | Should Be $true
     }
+
+    It 'produces a validated index compiler benchmark report' {
+        $output = & node (Join-Path $repoRoot 'Scripts\Obsidian\measure-graph-index-compiler.js') --files 1000 --changed 10 --added 3 --deleted 2 --corrupt 4 2>&1
+
+        $LASTEXITCODE | Should Be 0
+        $report = ($output -join [Environment]::NewLine) | ConvertFrom-Json
+        $report.ok | Should Be $true
+        $report.contract | Should Be 'IndexCompilerBenchmark/v14.0'
+        [int]$report.input.files | Should Be 1000
+        ([double]$report.timingsMs.changedSetPlan -gt 0) | Should Be $true
+        [int]$report.readAmplification.counters.markdownRead | Should Be 17
+        [int]$report.readAmplification.counters.resolverKeysRecomputed | Should Be 6
+        ([int]$report.operationEvents -gt 0) | Should Be $true
+    }
 }
 
 Describe 'LiveGraph' {
