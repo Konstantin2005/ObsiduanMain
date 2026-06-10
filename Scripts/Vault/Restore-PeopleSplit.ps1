@@ -136,7 +136,7 @@ foreach ($split in $splitFiles) {
         continue
     }
 
-    $appendText = "`r`n`r`n---`r`n`r`n## Восстановленные люди`r`n`r`n" + ($missingBlocks -join "`r`n`r`n")
+    $appendText = "`r`n`r`n---`r`n`r`n" + ($missingBlocks -join "`r`n`r`n")
 
     if (-not $DryRun) {
         $newText = $original.Text

@@ -100,7 +100,7 @@ function Test-ArchiveHasDateKey {
     )
 
     $escaped = [Regex]::Escape($DateKey)
-    return $ArchiveText -match "(?m)^date_key:\s+$escaped\s*$"
+    return $ArchiveText -match "(?m)^\s*-?\s*date_key:\s+$escaped\s*$"
 }
 
 function New-ArchiveEntry {
