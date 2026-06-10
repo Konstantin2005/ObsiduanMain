@@ -1,0 +1,4 @@
+/* Calendula-30K high-load UI profile. */
+.workspace-leaf-content[data-type="graph"] { --graph-node: 0.72; }
+.mod-root .workspace-tabs { transition: none !important; }
+.workspace-split, .workspace-leaf, .workspace-tab-header-container { transition: none !important; }

@@ -1,0 +1,273 @@
+{
+  "main": {
+    "id": "2d11afaab4c4425e",
+    "type": "split",
+    "children": [
+      {
+        "id": "04354aaa40180f6f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e351c0a77ff78dcf",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          },
+          {
+            "id": "258369fdb114d246",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          },
+          {
+            "id": "50e302998a3e7158",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2029/Май/05-05-29.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05-05-29"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f752c77ede8eeae4",
+    "type": "split",
+    "children": [
+      {
+        "id": "54f991c64dd68aea",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4d16c9d5dea68ca4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "b0bc6477cc46546d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "b539e32ccbfb16d9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 210.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "5756aa4194a281ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "eaa717c53aa8187e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "341392f845dcd032",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Calendula/2026/Май/2026-05-22.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для 2026-05-22"
+            }
+          },
+          {
+            "id": "c2df7db501cd5f4c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Calendula/2026/Май/2026-05-22.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из 2026-05-22"
+            }
+          },
+          {
+            "id": "bfcdbfc3d58153b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "f99e630944eccaad",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "2c1ce20b41569214",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Calendula/2026/Май/2026-05-22.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура 2026-05-22"
+            }
+          },
+          {
+            "id": "4ecca05cb9026d5a",
+            "type": "leaf",
+            "state": {
+              "type": "timer-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "timer-view"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 437.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "3d-graph-new:Global 3D Graph": false,
+      "graph:Граф": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "obsidianella-delink:Copy delinked note": false,
+      "bases:Создать новую базу": false,
+      "switcher:Меню быстрого перехода": false,
+      "canvas:Создать новый холст": false,
+      "obsidian42-brat:BRAT": false
+    }
+  },
+  "active": "258369fdb114d246",
+  "lastOpenFiles": [
+    "Люди/4_круг/Доп4_214.md",
+    "Calendula/2029/Май/05-05-29.md",
+    "Люди/1_круг/Жабол.md",
+    "Люди/1_круг/Vano.md",
+    "Люди/2_круг/Доп2_028.md",
+    "Люди/2_круг/Доп2_027.md",
+    "Люди/2_круг/Доп2_026.md",
+    "Люди/2_круг/Доп2_025.md",
+    "Люди/2_круг/Доп2_024.md",
+    "Люди/2_круг/Доп2_023.md",
+    "Люди/2_круг/Доп2_022.md",
+    "Люди/2_круг/Доп2_021.md",
+    "Люди/2_круг/Доп2_020.md",
+    "Люди/2_круг/Доп2_019.md",
+    "Люди/2_круг/Доп2_018.md",
+    "Люди/2_круг/Доп2_017.md",
+    "Люди/2_круг/Доп2_016.md",
+    "Люди/2_круг/Доп2_015.md",
+    "Люди/2_круг/Доп2_014.md",
+    "Люди/2_круг/Доп2_013.md",
+    "Люди/2_круг/Доп2_012.md",
+    "Люди/2_круг/Доп2_011.md",
+    "Люди/2_круг/Доп2_010.md",
+    "Люди/2_круг/Доп2_009.md",
+    "Люди/2_круг/Доп2_008.md",
+    "Люди/2_круг/Доп2_007.md",
+    "Люди/5_круг",
+    "Calendula/2039/Март",
+    "Calendula/2039/Январь",
+    "Calendula/2039/Февраль",
+    "Calendula/2039/Май",
+    "Calendula/2039/Апрель",
+    "Calendula/2039",
+    "Calendula/2038/Май",
+    "Calendula/2038/Март",
+    "Calendula/2038/Февраль",
+    "Без названия.canvas",
+    "photo_2026-03-23_17-36-59.jpg",
+    "photo_2026-03-23_14-28-36.jpg",
+    "photo_2026-03-23_14-24-16.jpg",
+    "photo_2026-03-23_01-30-17.jpg",
+    "photo_2026-03-23_01-21-38.jpg",
+    "photo_2026-03-23_01-15-25.jpg",
+    "photo_2026-03-23_01-15-25 1.jpg",
+    "photo_2025-05-21_19-35-00.jpg",
+    "photo_2025-05-18_19-46-43.jpg",
+    "photo_2025-05-18_19-46-43 1.jpg",
+    "Untitled.canvas"
+  ]
+}

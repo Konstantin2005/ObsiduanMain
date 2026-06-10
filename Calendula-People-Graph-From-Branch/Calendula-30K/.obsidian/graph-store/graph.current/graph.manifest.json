@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 6,
+  "storeVersion": "2026.06.10.1",
+  "status": "ready",
+  "builtAt": "2026-06-10T10:58:02.383Z",
+  "activeDir": "graph.current",
+  "vault": {
+    "root": "C:\\obsidian\\Main\\Calendula-30K",
+    "name": "Calendula-30K"
+  },
+  "stats": {
+    "files": 33900,
+    "nodes": 33900,
+    "edges": 35948,
+    "clusters": 86,
+    "unresolved": 0,
+    "duplicateBasenames": 0,
+    "backboneEdges": 2048
+  },
+  "arrays": {
+    "integerFormat": "little-endian",
+    "nodeCount": 33900,
+    "edgeCount": 35948
+  },
+  "files": {
+    "nodesIds": "graph.nodes.ids.bin",
+    "nodesType": "graph.nodes.type.bin",
+    "nodesFlags": "graph.nodes.flags.bin",
+    "nodesCluster": "graph.nodes.cluster.bin",
+    "nodesPathString": "graph.nodes.path-string.bin",
+    "nodesBasenameString": "graph.nodes.basename-string.bin",
+    "nodesMtime": "graph.nodes.mtime.bin",
+    "edgesSource": "graph.edges.source.bin",
+    "edgesTarget": "graph.edges.target.bin",
+    "edgesWeight": "graph.edges.weight.bin",
+    "edgesFlags": "graph.edges.flags.bin",
+    "edgesType": "graph.edges.type.bin",
+    "outOffsets": "graph.out.offsets.bin",
+    "outTargets": "graph.out.targets.bin",
+    "outEdgeIds": "graph.out.edge-ids.bin",
+    "inOffsets": "graph.in.offsets.bin",
+    "inSources": "graph.in.sources.bin",
+    "inEdgeIds": "graph.in.edge-ids.bin",
+    "layoutX": "graph.layout.x.bin",
+    "layoutY": "graph.layout.y.bin",
+    "strings": "graph.strings.json",
+    "stats": "graph.stats.json"
+  },
+  "checksums": {
+    "graph.nodes.ids.bin": "a98f4028696f368efb7d4f6edc5ac5c0e222a0a7c83ede97a4d6149c5beb288c",
+    "graph.nodes.type.bin": "6a587e89d351fd48ab0bad974f0d5d0ecd590c0dafb31f5c1445c084957cfed1",
+    "graph.nodes.flags.bin": "400c206b957085c520db719e2f3ae17a1b5aa0a34096107434b8b2ed0f4f085b",
+    "graph.nodes.cluster.bin": "a6a30b9b89e2ebe73a0cb83429be8f8470f84767e5eb4db839bdd57ff206be0c",
+    "graph.nodes.path-string.bin": "a98f4028696f368efb7d4f6edc5ac5c0e222a0a7c83ede97a4d6149c5beb288c",
+    "graph.nodes.basename-string.bin": "a98f4028696f368efb7d4f6edc5ac5c0e222a0a7c83ede97a4d6149c5beb288c",
+    "graph.nodes.mtime.bin": "50d386f50f2c8510bd00b40e042655c85b169303a94ec5c3887c312573865f7a",
+    "graph.edges.source.bin": "2c5b235b916ab0f3f8da2c7cb1b5df7e89ab8eb34ada3c7015c120427f95f660",
+    "graph.edges.target.bin": "0425bd001d9062b3d337056b07590f252dc75f82061a453c5181eb6f88082978",
+    "graph.edges.weight.bin": "822ba444d587a45432a653b59d03cd8ebf93d99adbd6bb0e5df69a70764869b5",
+    "graph.edges.flags.bin": "b6aab770356ba6c321a227ebc13911077d6e60f263018d0474d9ff4e1a90858d",
+    "graph.edges.type.bin": "53fd421dce417992e1e90c053e96b38888efee1db5a5397680d561ae540cda71",
+    "graph.out.offsets.bin": "8f8de9d22bc115d6aaa6a67b3c43a561f17d4bae23ced90cabf349bb8b1a46bf",
+    "graph.out.targets.bin": "0425bd001d9062b3d337056b07590f252dc75f82061a453c5181eb6f88082978",
+    "graph.out.edge-ids.bin": "01517c5842c90451da5d9deb7f44a3280a9754631f8d3d0e844d1632d2cb31cc",
+    "graph.in.offsets.bin": "8f8de9d22bc115d6aaa6a67b3c43a561f17d4bae23ced90cabf349bb8b1a46bf",
+    "graph.in.sources.bin": "16a39e7f8cc13bbba383d403a724108e0142a859a293cdbcf2d7f739b6c7eb61",
+    "graph.in.edge-ids.bin": "d398926eaed24935ed76b4dc54c8c40927f46a7dd2f755b410b9c60f0a55b390",
+    "graph.layout.x.bin": "ff7662f7a89374bba815e05eae9d80f9c0ea12f9a05a6a34e1e73d5db991a039",
+    "graph.layout.y.bin": "0861036835b84f464810bd94131cfc18452f69b637f5165a577c3f0196776719",
+    "graph.strings.json": "b6bfcef5bd8fb7030f0c8d6d6cb658d0fb1b897efd0b1c21b496ba1fdaecc4ad",
+    "graph.stats.json": "92f029c3747067af0643ec1a636c4514916b6818c53a1d03eb07aa3c6de25fc4"
+  },
+  "validation": {
+    "ok": true,
+    "errors": []
+  }
+}

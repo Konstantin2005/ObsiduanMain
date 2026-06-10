@@ -1,0 +1,81 @@
+{
+  "main": {
+    "id": "calendula-30k-main",
+    "type": "split",
+    "children": [
+      {
+        "id": "calendula-30k-tabs",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3722a5528a267c7b",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "calendula-30k-left",
+    "type": "split",
+    "children": [
+      {
+        "id": "calendula-30k-left-tabs",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "calendula-30k-files",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 260
+  },
+  "right": {
+    "id": "calendula-30k-right",
+    "type": "split",
+    "children": [],
+    "direction": "horizontal",
+    "width": 260,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "3722a5528a267c7b",
+  "lastOpenFiles": [
+    "Дни/README.md",
+    "Люди/README.md",
+    "Дни.md",
+    "Люди.md",
+    "Дни/2026-06-10.md",
+    "Люди/Шаблон.md",
+    "Дни",
+    "Люди",
+    "Calendula/2027/Апрель/01-04-27.md",
+    "Calendula/2026/Август/01-08-26.md",
+    "Соц Капитал/1_круг/Person-0001.md"
+  ]
+}
