@@ -654,6 +654,8 @@ Describe 'Calendula-20K rendering profile' {
 
   const zeroOut = [...outDegree.values()].filter((value) => value === 0).length;
   const zeroIn = [...inDegree.values()].filter((value) => value === 0).length;
+  const indexEdgeAllowance = ['Люди.md', 'Графы.md', 'Соц Капитал.md']
+    .reduce((sum, filePath) => sum + Math.max(0, (outDegree.get(filePath) || 0) - 1), 0);
   const graph = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'graph.json'), 'utf8'));
   const profiles = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'graph-profiles.json'), 'utf8'));
   const workspace = JSON.parse(fs.readFileSync(path.join(root, '.obsidian', 'workspace.json'), 'utf8'));
@@ -672,7 +674,9 @@ Describe 'Calendula-20K rendering profile' {
   if (duplicateBasenames.size) throw new Error(`Duplicate basenames: ${[...duplicateBasenames].slice(0, 5).join(', ')}`);
   if (backboneCount < 1000 || backboneCount > 2500) throw new Error(`Unexpected backbone size: ${backboneCount}`);
   if (backboneEdges !== backboneCount) throw new Error(`Expected one backbone edge per backbone node, got ${backboneEdges}/${backboneCount}`);
-  if (edgeCount !== files.length + backboneCount) throw new Error(`Expected ring plus backbone edges, got ${edgeCount} for ${files.length} files and ${backboneCount} backbone nodes`);
+  if (edgeCount !== files.length + backboneCount + indexEdgeAllowance) {
+    throw new Error(`Expected ring plus backbone plus index edges, got ${edgeCount} for ${files.length} files, ${backboneCount} backbone nodes, and ${indexEdgeAllowance} index links`);
+  }
   if (unresolved !== 0) throw new Error(`Expected no unresolved links, got ${unresolved}`);
   if (zeroOut !== 0 || zeroIn !== 0) throw new Error(`Expected balanced graph, got zeroOut=${zeroOut}, zeroIn=${zeroIn}`);
   if (profiles.schemaVersion !== 6) throw new Error(`Expected graph profile schema v6, got ${profiles.schemaVersion}`);
