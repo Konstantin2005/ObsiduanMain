@@ -452,9 +452,9 @@ Goal: protect correctness after first render.
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
 | V9-3-001 | Schedule deep validation in idle/background | TODO | endpoint bounds and duplicate IDs do not block first frame |
-| V9-3-002 | Add store compatibility matrix | TODO | read/write/migration support is explicit |
+| V9-3-002 | Add store compatibility matrix | DONE | read/write/migration support is explicit |
 | V9-3-003 | Add cold repair/rebuild flow | TODO | corrupt store can be repaired safely |
-| V9-3-004 | Add previous-store recovery | TODO | current failure can fall back without throwing |
+| V9-3-004 | Add previous-store recovery | DONE | current failure can fall back without throwing |
 | TEST-V9-3 | Store compatibility tests | TODO | compatible, migration, unsupported, corrupt current, previous fallback |
 
 ## v9.4: Query Layer
@@ -475,10 +475,23 @@ Goal: add clusters/backbone as scalability layers after query planning exists.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-5-001 | Define scale levels from existing data | TODO | overview/backbone/detail levels are explicit |
-| V9-5-002 | Build cluster/backbone candidates cold | TODO | scale data does not block first frame |
-| V9-5-003 | Add scale-aware `RenderPlan` inputs | TODO | raw graph is not the only render layer |
-| TEST-V9-5 | Multi-scale tests | TODO | zoom and pressure select expected scale |
+| V9-5-001 | Define scale levels from existing data | DONE | overview/backbone/detail levels are explicit |
+| V9-5-002 | Build cluster/backbone candidates cold | DONE | scale data does not block first frame |
+| V9-5-003 | Add scale-aware `RenderPlan` inputs | DONE | raw graph is not the only render layer |
+| TEST-V9-5 | Multi-scale tests | DONE | zoom and pressure select expected scale |
+
+## v9.5.5: Storage Evolution
+
+Goal: evolve cold storage metadata without expanding first-frame loading.
+
+| ID | Task | Status | Done Criteria |
+| --- | --- | --- | --- |
+| V9-STORE-EVO-001 | Add cold stable IDs | DONE | stable IDs are written separately from dense hot node indices |
+| V9-STORE-EVO-002 | Add fingerprints | DONE | each node path has size/mtime/hash/stableId metadata |
+| V9-STORE-EVO-003 | Add incremental update planner | DONE | small changes can be planned incrementally, large changes fall back to full rebuild |
+| V9-STORE-EVO-004 | Add compatibility matrix | DONE | read/write/migration fields are present in manifest |
+| V9-STORE-EVO-005 | Preserve first-frame minimal load | DONE | `GraphSnapshot` does not load strings, fingerprints, or stable-id cold arrays |
+| TEST-V9-STORE-EVO | Storage evolution tests | DONE | stable IDs, fingerprints, compatibility, incremental plan, full rebuild fallback |
 
 ## v9.6: Worker Compute
 

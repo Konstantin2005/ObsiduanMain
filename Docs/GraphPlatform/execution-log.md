@@ -52,3 +52,11 @@
 - Fixed QueryPlan hot-path overhead by avoiding all-node bitset allocation when no filters are active.
 - Pester status after Phase 4: `38 passed, 0 failed`.
 - Real Calendula-20K Phase 4 benchmark after optimization: `33,900` nodes, `35,948` edges, graph build `2220.76ms`, store write `31.78ms`, RenderPlan `6.79ms`, scheduler `4.29ms`, node budget `3,000`, edge budget `1,000`.
+- Completed Phase 5 / Multi-Scale Graph: added levels `0-5` for domain overview, spatial clusters, backbone, important nodes, ego graph, and details.
+- Multi-scale selections compile into QueryPlan and are consumed by RenderPlan only when `profile.scaleLevel` is set, so the default hot path does not pay for scale model construction.
+- Pester status after Phase 5: `39 passed, 0 failed`.
+- Real Calendula-20K Phase 5 benchmark: `33,900` nodes, `35,948` edges, graph build `2186.21ms`, store write `33.15ms`, RenderPlan `6.79ms`, scheduler `5.04ms`, node budget `3,000`, edge budget `1,000`.
+- Completed Phase 6 / Storage Evolution foundation: added cold stable IDs, fingerprints, compatibility matrix, incremental update planner, and full-rebuild fallback decision.
+- First-frame snapshot still loads only hot arrays and explicitly does not load strings, fingerprints, or cold stable IDs.
+- Pester status after Phase 6: `39 passed, 0 failed`.
+- Real Calendula-20K Phase 6 benchmark after repeat check: `33,900` nodes, `35,948` edges, graph build `2417.18ms`, store write `92.25ms`, RenderPlan `6.7ms`, scheduler `4.03ms`, node budget `3,000`, edge budget `1,000`.
