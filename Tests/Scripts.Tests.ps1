@@ -1128,6 +1128,134 @@ Describe 'Calendula-20K rendering profile' {
     }
 }
 
+Describe 'Calendula Evidence Engine v12' {
+    It 'builds evidence-backed decisions, mentions, and generated edges' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const evidence = require(path.join(root, 'Scripts/Obsidian/graph-evidence-engine.js'));
+
+  const aliasSignal = evidence.createEvidenceRecord({
+    evidenceId: 'e-1',
+    entityUuid: 'person-alice',
+    sourceUuid: 'note-1',
+    targetUuid: 'alias-alice',
+    signal: evidence.SIGNAL.ALIAS_MATCH,
+    strength: evidence.STRENGTH.STRONG,
+    reason: 'exact-full-name-alias',
+    timeBucket: '2026-06',
+    metadata: { rawText: 'Alice', safeHint: 'full-name' },
+  });
+
+  if (aliasSignal.metadata.rawText) throw new Error('Evidence metadata must not keep raw text');
+  if (aliasSignal.metadata.safeHint !== 'full-name') throw new Error('Safe metadata should be preserved');
+
+  const accepted = evidence.aggregateEvidenceDecision({
+    decisionId: 'd-1',
+    target: 'note-person-edge',
+    evidence: [aliasSignal],
+  });
+
+  if (accepted.decision !== evidence.DECISION.ACCEPT) throw new Error(`Expected ACCEPT, got ${accepted.decision}`);
+  if (accepted.evidenceIds[0] !== 'e-1') throw new Error('Decision must reference evidence id');
+
+  const mention = evidence.createEvidenceBackedMention({
+    mentionId: 'm-1',
+    noteUuid: 'note-1',
+    personUuid: 'person-alice',
+    aliasUuid: 'alias-alice',
+    offset: 42,
+    length: 5,
+    decision: accepted,
+  });
+
+  if (!mention.accepted || mention.decisionId !== 'd-1') throw new Error('Mention must keep accepted decision lineage');
+
+  const edge = evidence.createGeneratedPeopleEdge({
+    edgeId: 'edge-1',
+    sourceUuid: 'note-1',
+    targetUuid: 'person-alice',
+    mentionIds: [mention.mentionId],
+    decision: accepted,
+  });
+
+  if (edge.evidenceIds[0] !== 'e-1' || edge.mentionIds[0] !== 'm-1') {
+    throw new Error('Generated edge must stay explainable through mention and evidence ids');
+  }
+
+  const codeReject = evidence.createEvidenceRecord({
+    evidenceId: 'e-2',
+    entityUuid: 'person-alice',
+    sourceUuid: 'note-1',
+    signal: evidence.SIGNAL.SECTION_REJECTION,
+    strength: evidence.STRENGTH.NEGATIVE,
+    reason: 'inside-code',
+  });
+  const rejected = evidence.aggregateEvidenceDecision({ decisionId: 'd-2', evidence: [aliasSignal, codeReject] });
+  if (rejected.decision !== evidence.DECISION.REJECT) throw new Error(`Expected REJECT, got ${rejected.decision}`);
+  if (!rejected.rejectedEvidenceIds.includes('e-2')) throw new Error('Rejected decision must reference negative evidence');
+
+  let edgeRejected = false;
+  try {
+    evidence.createGeneratedPeopleEdge({
+      sourceUuid: 'note-1',
+      targetUuid: 'person-alice',
+      decision: rejected,
+    });
+  } catch (_) {
+    edgeRejected = true;
+  }
+  if (!edgeRejected) throw new Error('Rejected decisions must not emit generated edges');
+
+  const userReject = evidence.createEvidenceRecord({
+    evidenceId: 'e-3',
+    entityUuid: 'person-alice',
+    sourceUuid: 'note-1',
+    signal: evidence.SIGNAL.MANUAL_CORRECTION,
+    strength: evidence.STRENGTH.DECISIVE,
+    reason: 'user-rejected',
+  });
+  const userRejected = evidence.aggregateEvidenceDecision({
+    decisionId: 'd-3',
+    evidence: [aliasSignal, userReject],
+  });
+  if (userRejected.decision !== evidence.DECISION.USER_REJECTED) {
+    throw new Error(`Human rejection must win over matcher evidence, got ${userRejected.decision}`);
+  }
+
+  const replayed = evidence.aggregateEvidenceDecision({
+    decisionId: 'd-4',
+    evidence: [aliasSignal, userReject],
+  });
+  if (replayed.decision !== userRejected.decision) throw new Error('Evidence replay should recompute the same decision');
+
+  process.stdout.write('evidence-engine:v12-ok\n');
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'evidence-engine-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'evidence-engine:v12-ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula graph store' {
     It 'builds an atomic graph store with forward and reverse CSR recovery' {
         $root = New-TempRoot
