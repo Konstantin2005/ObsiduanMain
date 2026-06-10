@@ -32,6 +32,60 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
   }
 
+  function injectStyles() {
+    if (typeof document === "undefined") return;
+    if (document.getElementById("life-plugin-styles")) return;
+    const style = document.createElement("style");
+    style.id = "life-plugin-styles";
+    style.textContent = `
+      .life-plugin-card {
+        border: 1px solid var(--background-modifier-border);
+        background: linear-gradient(180deg, rgba(120, 170, 255, 0.08), rgba(120, 170, 255, 0.03));
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin: 14px 0 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      .life-plugin-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.05em;
+      }
+      .life-plugin-card p {
+        margin: 0 0 12px;
+        color: var(--text-muted);
+      }
+      .life-plugin-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .life-plugin-action {
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 999px;
+        padding: 8px 14px;
+        background: var(--background-primary);
+        color: var(--text-normal);
+        cursor: pointer;
+        transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      }
+      .life-plugin-action:hover {
+        transform: translateY(-1px);
+        border-color: var(--interactive-accent);
+        background: var(--background-secondary-alt);
+      }
+      .life-plugin-action.is-primary {
+        background: var(--interactive-accent);
+        color: var(--text-on-accent);
+        border-color: var(--interactive-accent);
+      }
+      .life-plugin-action.is-danger {
+        background: rgba(255, 100, 100, 0.12);
+        color: var(--text-normal);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   function setLifeIcon(element) {
     if (typeof document === "undefined" || !element) return;
     const svg = svgEl("svg", {
@@ -127,7 +181,40 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     display() {
       const { containerEl } = this;
       clearElement(containerEl);
+      injectStyles();
       containerEl.createEl("h2", { text: PLUGIN_LABEL });
+
+      const card = containerEl.createDiv({ cls: "life-plugin-card" });
+      card.createEl("h3", { text: "Quick controls" });
+      card.createEl("p", {
+        text: "Run the living cycle, restore everything, or reopen the built-in graph.",
+      });
+
+      const actions = card.createDiv({ cls: "life-plugin-actions" });
+
+      const cycleButton = actions.createEl("button", {
+        text: "Run cycle",
+        cls: "life-plugin-action is-primary",
+      });
+      cycleButton.addEventListener("click", () => {
+        void this.plugin.cycleLinks(true);
+      });
+
+      const restoreButton = actions.createEl("button", {
+        text: "Restore now",
+        cls: "life-plugin-action is-danger",
+      });
+      restoreButton.addEventListener("click", () => {
+        void this.plugin.recoverFromBuffer(true);
+      });
+
+      const graphButton = actions.createEl("button", {
+        text: "Open graph",
+        cls: "life-plugin-action",
+      });
+      graphButton.addEventListener("click", () => {
+        void this.plugin.openBuiltInGraph(true);
+      });
 
       new Setting(containerEl)
         .setName("Open built-in Graph")
@@ -243,6 +330,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
   return class BuiltInGraphPlugin extends Plugin {
     async onload() {
       try {
+        injectStyles();
         const data = (await this.loadData()) || {};
         const legacySettings = data.settings || data;
         this.settings = Object.assign({}, DEFAULT_SETTINGS, legacySettings);

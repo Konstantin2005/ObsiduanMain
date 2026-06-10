@@ -254,7 +254,11 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     startRenderLoop() {
-      if (this.rafId !== null || typeof window === "undefined") {
+      if (
+        this.rafId !== null ||
+        typeof window === "undefined" ||
+        typeof window.requestAnimationFrame !== "function"
+      ) {
         return;
       }
       const tick = (timestamp) => {
@@ -271,7 +275,11 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     stopRenderLoop() {
-      if (this.rafId !== null && typeof window !== "undefined") {
+      if (
+        this.rafId !== null &&
+        typeof window !== "undefined" &&
+        typeof window.cancelAnimationFrame === "function"
+      ) {
         window.cancelAnimationFrame(this.rafId);
       }
       this.rafId = null;
@@ -643,7 +651,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         return;
       }
 
-      const profile = this.getPerformanceProfile(linkedFiles.length);
+      const profile = this.getPerformanceProfile(files.length);
       this.currentProfile = profile;
       this.currentTickMs = profile.tickMs || this.plugin.settings.tickMs;
 
@@ -856,7 +864,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     async openLiveGraph() {
-      if (this.getFileCount() >= (this.settings.nativeGraphThreshold || 5000)) {
+      if (this.getFileCount() >= (this.settings.nativeGraphThreshold || 20000)) {
         await this.openNativeGraph();
         return;
       }

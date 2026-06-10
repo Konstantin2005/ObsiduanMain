@@ -29,7 +29,8 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     keepRatio: 0.72,
     randomEdgeRatio: 0.18,
     maxRandomEdges: 24,
-    nativeGraphThreshold: 5000,
+    ultraLargeThreshold: 10000,
+    nativeGraphThreshold: 20000,
   };
 
   const PLUGIN_LABEL = "Live Graph";
@@ -145,6 +146,8 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.edgeSignature = "";
       this.cachedFiles = [];
       this.cachedFilesVersion = -1;
+      this.cachedLinkedFiles = [];
+      this.cachedLinkedFilesVersion = -1;
       this.edgeOrder = [];
       this.edgeCursor = 0;
       this.positions = new Map();
@@ -156,6 +159,12 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.emptyEl = null;
       this.hitTargets = [];
       this.canvasContext = null;
+      this.rafId = null;
+      this.lastFrameAt = 0;
+      this.currentProfile = null;
+      this.currentTickMs = plugin.settings.tickMs;
+      this.textColor = null;
+      this.destroyed = false;
     }
 
     getViewType() {
@@ -171,6 +180,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     async onOpen() {
+      this.destroyed = false;
       clearElement(this.containerEl);
       this.containerEl.addClass("live-graph-shell");
 
@@ -220,18 +230,12 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       });
 
       this.renderGraph(true);
-      this.interval = window.setInterval(() => {
-        if (!this.paused) {
-          this.renderGraph(false);
-        }
-      }, this.plugin.settings.tickMs);
+      this.startRenderLoop();
     }
 
     async onClose() {
-      if (this.interval) {
-        window.clearInterval(this.interval);
-        this.interval = null;
-      }
+      this.destroyed = true;
+      this.stopRenderLoop();
     }
 
     togglePause() {
@@ -249,6 +253,38 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       }
     }
 
+    startRenderLoop() {
+      if (
+        this.rafId !== null ||
+        typeof window === "undefined" ||
+        typeof window.requestAnimationFrame !== "function"
+      ) {
+        return;
+      }
+      const tick = (timestamp) => {
+        if (this.destroyed) {
+          return;
+        }
+        if (!this.paused && timestamp - this.lastFrameAt >= this.currentTickMs) {
+          this.lastFrameAt = timestamp;
+          this.renderGraph(false);
+        }
+        this.rafId = window.requestAnimationFrame(tick);
+      };
+      this.rafId = window.requestAnimationFrame(tick);
+    }
+
+    stopRenderLoop() {
+      if (
+        this.rafId !== null &&
+        typeof window !== "undefined" &&
+        typeof window.cancelAnimationFrame === "function"
+      ) {
+        window.cancelAnimationFrame(this.rafId);
+      }
+      this.rafId = null;
+    }
+
     getMarkdownFiles() {
       const version = this.plugin.graphVersion || 0;
       if (this.cachedFilesVersion !== version) {
@@ -261,6 +297,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     getLinkedMarkdownFiles(files) {
+      const version = this.plugin.graphVersion || 0;
+      if (this.cachedLinkedFilesVersion === version) {
+        return this.cachedLinkedFiles;
+      }
       const resolved = this.plugin.app.metadataCache.resolvedLinks || {};
       const fileSet = new Set(files.map((file) => file.path));
       const linkedPaths = new Set();
@@ -274,10 +314,75 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         }
       }
 
-      return files.filter((file) => linkedPaths.has(file.path));
+      this.cachedLinkedFiles = files.filter((file) => linkedPaths.has(file.path));
+      this.cachedLinkedFilesVersion = version;
+      return this.cachedLinkedFiles;
     }
 
-    pickSample(files, maxNodes, forceReseed) {
+    getPerformanceProfile(fileCount) {
+      const ultraThreshold = this.plugin.settings.ultraLargeThreshold || 10000;
+      const nativeThreshold = this.plugin.settings.nativeGraphThreshold || 20000;
+      if (fileCount >= nativeThreshold) {
+        return {
+          mode: "native",
+          label: "native graph",
+          maxNodes: 0,
+          tickMs: 0,
+          keepRatio: 0,
+          randomEdgeRatio: 0,
+          maxRandomEdges: 0,
+          cycleWindow: 0,
+          reseedInterval: 0,
+          positionJitter: 0,
+          positionMargin: 0,
+        };
+      }
+      if (fileCount >= ultraThreshold) {
+        return {
+          mode: "ultra",
+          label: "ultra-large",
+          maxNodes: 24,
+          tickMs: Math.max(this.plugin.settings.tickMs, 3600),
+          keepRatio: 0.88,
+          randomEdgeRatio: 0.08,
+          maxRandomEdges: 12,
+          cycleWindow: 2,
+          reseedInterval: 10,
+          positionJitter: 12,
+          positionMargin: 40,
+        };
+      }
+      if (fileCount >= 5000) {
+        return {
+          mode: "heavy",
+          label: "heavy",
+          maxNodes: 32,
+          tickMs: Math.max(this.plugin.settings.tickMs, 2400),
+          keepRatio: 0.82,
+          randomEdgeRatio: 0.12,
+          maxRandomEdges: 18,
+          cycleWindow: 4,
+          reseedInterval: 6,
+          positionJitter: 16,
+          positionMargin: 42,
+        };
+      }
+      return {
+        mode: "normal",
+        label: "cycling",
+        maxNodes: this.plugin.settings.maxNodes,
+        tickMs: this.plugin.settings.tickMs,
+        keepRatio: this.plugin.settings.keepRatio,
+        randomEdgeRatio: this.plugin.settings.randomEdgeRatio,
+        maxRandomEdges: this.plugin.settings.maxRandomEdges,
+        cycleWindow: this.plugin.settings.cycleWindow,
+        reseedInterval: 3,
+        positionJitter: 22,
+        positionMargin: 46,
+      };
+    }
+
+    pickSample(files, maxNodes, forceReseed, keepRatio) {
       const byPath = new Map(files.map((file) => [file.path, file]));
       if (forceReseed || !this.sample.length) {
         return randomSubset(files, maxNodes);
@@ -285,7 +390,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       const keepTarget = Math.min(
         maxNodes,
-        Math.max(1, Math.round(maxNodes * this.plugin.settings.keepRatio)),
+        Math.max(1, Math.round(maxNodes * keepRatio)),
       );
       const kept = [];
       const seen = new Set();
@@ -306,7 +411,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       return sample.slice(0, maxNodes);
     }
 
-    buildEdges(sample) {
+    buildEdges(sample, profile) {
       const sampleSet = new Set(sample.map((file) => file.path));
       const resolved = this.plugin.app.metadataCache.resolvedLinks || {};
       const edgeMap = new Map();
@@ -326,8 +431,8 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       }
 
       const randomEdgeTarget = Math.min(
-        this.plugin.settings.maxRandomEdges,
-        Math.max(6, Math.round(sample.length * this.plugin.settings.randomEdgeRatio)),
+        profile.maxRandomEdges,
+        Math.max(6, Math.round(sample.length * profile.randomEdgeRatio)),
       );
       let safety = sample.length * sample.length * 4;
       while (edgeMap.size < randomEdgeTarget + 1 && safety > 0) {
@@ -347,31 +452,41 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       return { edges, degree, signature };
     }
 
-    disabledKeysForCycle() {
+    disabledKeysForCycle(profile) {
       const total = this.edgeOrder.length;
-      const windowSize = Math.min(Math.max(1, Math.floor(this.plugin.settings.cycleWindow)), total);
+      const cycleWindow = Math.min(Math.max(1, Math.floor(profile.cycleWindow)), total);
       const disabled = new Set();
       if (!total) return disabled;
-      for (let i = 0; i < windowSize; i += 1) {
+      for (let i = 0; i < cycleWindow; i += 1) {
         const index = (this.edgeCursor + i) % total;
         disabled.add(this.edgeOrder[index].key);
       }
       return disabled;
     }
 
-    ensurePositions(sample, width, height, reseed = false) {
+    ensurePositions(sample, width, height, reseed = false, profile = null) {
+      const jitter = profile ? profile.positionJitter : 22;
+      const margin = profile ? profile.positionMargin : 46;
       const next = new Map();
       for (const file of sample) {
         const existing = !reseed ? this.positions.get(file.path) : null;
         const x = existing
-          ? clamp(existing.x + (Math.random() - 0.5) * 22, 46, width - 46)
+          ? clamp(existing.x + (Math.random() - 0.5) * jitter, margin, width - margin)
           : 80 + Math.random() * (width - 160);
         const y = existing
-          ? clamp(existing.y + (Math.random() - 0.5) * 22, 46, height - 46)
+          ? clamp(existing.y + (Math.random() - 0.5) * jitter, margin, height - margin)
           : 80 + Math.random() * (height - 160);
         next.set(file.path, { x, y });
       }
       this.positions = next;
+    }
+
+    getTextColor() {
+      if (!this.textColor && typeof document !== "undefined") {
+        this.textColor =
+          getComputedStyle(document.body).getPropertyValue("--text-normal").trim() || "#d8dde8";
+      }
+      return this.textColor || "#d8dde8";
     }
 
     getCanvasContext(width, height) {
@@ -394,7 +509,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       return ctx;
     }
 
-    drawCanvasGraph(width, height, sample, edges, degree, disabledKeys) {
+    drawCanvasGraph(width, height, sample, edges, degree, disabledKeys, profile) {
       const ctx = this.getCanvasContext(width, height);
       if (!ctx) {
         this.showEmpty("Canvas rendering is unavailable.");
@@ -443,6 +558,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       ctx.save();
       ctx.font = "12px var(--font-interface)";
       ctx.textBaseline = "middle";
+      const textColor = this.getTextColor();
       for (const file of sample) {
         const pos = this.positions.get(file.path);
         if (!pos) continue;
@@ -474,14 +590,22 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         ctx.lineWidth = 1.4;
         ctx.stroke();
 
-        ctx.fillStyle = getComputedStyle(document.body).getPropertyValue("--text-normal") || "#eaeaea";
+        ctx.fillStyle = textColor;
         ctx.fillText(label, labelX, pos.y);
       }
       ctx.restore();
 
       if (this.statusEl) {
         this.statusEl.setText(
-          `${edges.length} links • ${disabledKeys.size} off • ${this.paused ? "paused" : "cycling"}`,
+          `${edges.length} links • ${disabledKeys.size} off • ${
+            profile.mode === "ultra"
+              ? "ultra-large"
+              : profile.mode === "heavy"
+                ? "heavy"
+                : this.paused
+                  ? "paused"
+                  : "cycling"
+          }`,
         );
       }
     }
@@ -527,25 +651,34 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         return;
       }
 
+      const profile = this.getPerformanceProfile(files.length);
+      this.currentProfile = profile;
+      this.currentTickMs = profile.tickMs || this.plugin.settings.tickMs;
+
       const rect = this.graphEl.getBoundingClientRect();
       const width = Math.max(700, Math.floor(rect.width || 1000));
       const height = Math.max(460, Math.floor(rect.height || 700));
       const maxNodes = Math.min(this.plugin.settings.maxNodes, linkedFiles.length);
       const vaultVersion = this.cachedFilesVersion;
-      const reseedInterval = linkedFiles.length >= 5000 ? 8 : linkedFiles.length >= 2000 ? 5 : 3;
+      const maxNodesTarget = Math.min(profile.maxNodes, maxNodes);
+      const reseedInterval = profile.reseedInterval;
       const shouldReseed =
         forceReseed ||
         !this.sample.length ||
         this.sampleVaultVersion !== vaultVersion ||
+        this.sampleProfileMode !== profile.mode ||
         this.sampleAge >= reseedInterval ||
-        this.sample.length !== maxNodes;
-      const sample = shouldReseed ? this.pickSample(linkedFiles, maxNodes, true) : this.sample;
+        this.sample.length !== maxNodesTarget;
+      const sample = shouldReseed
+        ? this.pickSample(linkedFiles, maxNodesTarget, true, profile.keepRatio)
+        : this.sample;
       const sampleSignature = sample.map((file) => file.path).join("|");
-      const { edges, degree, signature } = this.buildEdges(sample);
+      const { edges, degree, signature } = this.buildEdges(sample, profile);
 
       if (shouldReseed || this.sampleSignature !== sampleSignature) {
         this.sample = sample;
         this.sampleSignature = sampleSignature;
+        this.sampleProfileMode = profile.mode;
         this.edgeCursor = 0;
         this.positions.clear();
       }
@@ -562,9 +695,9 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         this.edgeCursor = (this.edgeCursor + 1) % this.edgeOrder.length;
       }
 
-      this.ensurePositions(this.sample, width, height, forceReseed);
-      const disabledKeys = this.disabledKeysForCycle();
-      this.drawCanvasGraph(width, height, this.sample, edges, degree, disabledKeys);
+      this.ensurePositions(this.sample, width, height, forceReseed, profile);
+      const disabledKeys = this.disabledKeysForCycle(profile);
+      this.drawCanvasGraph(width, height, this.sample, edges, degree, disabledKeys, profile);
       this.showEmpty("");
     }
 
@@ -731,7 +864,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     async openLiveGraph() {
-      if (this.getFileCount() >= (this.settings.nativeGraphThreshold || 5000)) {
+      if (this.getFileCount() >= (this.settings.nativeGraphThreshold || 20000)) {
         await this.openNativeGraph();
         return;
       }

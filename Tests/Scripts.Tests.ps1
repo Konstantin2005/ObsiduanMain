@@ -659,9 +659,13 @@ Describe 'LiveGraph' {
   global.getComputedStyle = () => ({
     getPropertyValue() { return '#d8dde8'; },
   });
+  let rafCalls = 0;
   global.window = {
-    setInterval() { return 1; },
-    clearInterval() {},
+    requestAnimationFrame(cb) {
+      rafCalls += 1;
+      return rafCalls;
+    },
+    cancelAnimationFrame() {},
     devicePixelRatio: 1,
   };
 
@@ -698,6 +702,7 @@ Describe 'LiveGraph' {
             'Notes/note-00001.md': { 'Notes/note-00002.md': 1 },
             'Notes/note-00002.md': { 'Notes/note-00001.md': 1 },
           },
+          on() { return { off() {} }; },
         },
       };
     }
@@ -750,7 +755,7 @@ Describe 'LiveGraph' {
   view.renderGraph(false);
   view.renderGraph(false);
 
-  process.stdout.write(`calls:${markdownCalls}\n`);
+  process.stdout.write(`calls:${markdownCalls};raf:${rafCalls};mode:${view.currentProfile?.mode}\n`);
 })().catch((error) => {
   console.error(error);
   process.exit(1);
@@ -764,6 +769,8 @@ Describe 'LiveGraph' {
 
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'calls:1'
+            ($output -join [Environment]::NewLine) | Should Match 'raf:1'
+            ($output -join [Environment]::NewLine) | Should Match 'mode:ultra'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
@@ -772,7 +779,207 @@ Describe 'LiveGraph' {
         }
     }
 
-    It 'opens the native graph for large vaults' {
+    It 'drives the render loop with requestAnimationFrame' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const create = require(path.join(root, 'Calendula/.obsidian/plugins/live-graph/core.js'));
+  let markdownCalls = 0;
+  let rafCalls = 0;
+  const rafQueue = [];
+
+  function makeEl(tag = 'div') {
+    return {
+      tagName: tag,
+      children: [],
+      empty() { this.children = []; this.textContent = ''; },
+      addClass() {},
+      removeClass() {},
+      createDiv() { return makeEl('div'); },
+      createEl(_tag, _opts = {}) { return makeEl(_tag); },
+      setText(text) { this.textContent = text; },
+      appendChild(child) { this.children.push(child); return child; },
+      querySelector(selector) {
+        return this.children.find((child) => child.tagName === selector) || makeEl(selector);
+      },
+      style: {},
+      classList: { add() {} },
+      setAttribute() {},
+      addEventListener() {},
+      getContext(kind) {
+        if (tag !== 'canvas' || kind !== '2d') return null;
+        if (!this._ctx) {
+          const gradient = { addColorStop() {} };
+          this._ctx = {
+            setTransform() {},
+            clearRect() {},
+            save() {},
+            restore() {},
+            beginPath() {},
+            moveTo() {},
+            lineTo() {},
+            quadraticCurveTo() {},
+            closePath() {},
+            fill() {},
+            stroke() {},
+            arc() {},
+            setLineDash() {},
+            measureText(text) { return { width: text.length * 6 }; },
+            fillText() {},
+            createLinearGradient() { return gradient; },
+            imageSmoothingEnabled: true,
+          };
+        }
+        return this._ctx;
+      },
+      getBoundingClientRect() { return { width: 1280, height: 820 }; },
+      innerHTML: '',
+      textContent: '',
+    };
+  }
+
+  global.document = {
+    createElementNS(_ns, tag) { return makeEl(tag); },
+    createElement(tag) { return makeEl(tag); },
+    body: makeEl('body'),
+  };
+  global.getComputedStyle = () => ({
+    getPropertyValue() { return '#d8dde8'; },
+  });
+  global.window = {
+    requestAnimationFrame(cb) {
+      rafCalls += 1;
+      rafQueue.push(cb);
+      return rafCalls;
+    },
+    cancelAnimationFrame() {},
+    devicePixelRatio: 1,
+  };
+
+  class ItemView {
+    constructor() {
+      this.containerEl = makeEl('div');
+    }
+  }
+
+  class Plugin {
+    constructor() {
+      const files = Array.from({ length: 1000 }, (_, index) => ({
+        path: `Notes/note-${String(index + 1).padStart(5, '0')}.md`,
+        basename: `note-${String(index + 1).padStart(5, '0')}`,
+        name: `note-${String(index + 1).padStart(5, '0')}`,
+      }));
+      this.app = {
+        workspace: {
+          onLayoutReady(cb) { cb(); },
+          getLeavesOfType() { return []; },
+          getLeaf() { return { setViewState: async () => {}, detach: async () => {}, openFile: async () => {} }; },
+          revealLeaf() {},
+        },
+        vault: {
+          getMarkdownFiles() {
+            markdownCalls += 1;
+            return files;
+          },
+          getAbstractFileByPath() { return null; },
+          on() { return { off() {} }; },
+        },
+        metadataCache: {
+          resolvedLinks: {
+            'Notes/note-00001.md': { 'Notes/note-00002.md': 1 },
+            'Notes/note-00002.md': { 'Notes/note-00001.md': 1 },
+          },
+          on() { return { off() {} }; },
+        },
+      };
+    }
+
+    async loadData() { return { autoOpen: false }; }
+    async saveData() {}
+    registerView(_type, factory) { this._factory = factory; }
+    addCommand() {}
+    addRibbonIcon() { return makeEl('button'); }
+    addSettingTab() {}
+    registerEvent() {}
+  }
+
+  class PluginSettingTab {
+    constructor() {
+      this.containerEl = makeEl('div');
+    }
+  }
+
+  class Setting {
+    setName() { return this; }
+    setDesc() { return this; }
+    addToggle(cb) {
+      cb({ setValue() { return { onChange() {} }; } });
+      return this;
+    }
+    addSlider(cb) {
+      cb({
+        setLimits() { return this; },
+        setValue() { return this; },
+        setDynamicTooltip() { return this; },
+        onChange() { return this; },
+      });
+      return this;
+    }
+  }
+
+  class Notice {
+    constructor(message) {
+      this.message = message;
+    }
+  }
+
+  function setIcon() {}
+
+  const plugin = new (create({ ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon }))();
+  await plugin.onload();
+  const view = plugin._factory({});
+  let renders = 0;
+  const originalRender = view.renderGraph.bind(view);
+  view.renderGraph = (...args) => {
+    renders += 1;
+    return originalRender(...args);
+  };
+  await view.onOpen();
+  const firstTick = rafQueue.shift();
+  if (typeof firstTick !== 'function') {
+    throw new Error('No animation frame was scheduled');
+  }
+  firstTick(2000);
+
+  process.stdout.write(`renders:${renders};raf:${rafCalls};calls:${markdownCalls}\n`);
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'live-graph-raf-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'renders:2'
+            ($output -join [Environment]::NewLine) | Should Match 'raf:2'
+            ($output -join [Environment]::NewLine) | Should Match 'calls:1'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
+    It 'opens the native graph for 20K vaults' {
         $root = New-TempRoot
         try {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
@@ -810,7 +1017,7 @@ Describe 'LiveGraph' {
 
   class Plugin {
     constructor() {
-      const files = Array.from({ length: 6000 }, (_, index) => ({
+      const files = Array.from({ length: 20000 }, (_, index) => ({
         path: `Notes/note-${index + 1}.md`,
         basename: `note-${index + 1}`,
         name: `note-${index + 1}`,
@@ -834,7 +1041,7 @@ Describe 'LiveGraph' {
           getAbstractFileByPath() { return null; },
           on() { return { off() {} }; },
         },
-        metadataCache: { resolvedLinks: {} },
+        metadataCache: { resolvedLinks: {}, on() { return { off() {} }; } },
       };
     }
 
