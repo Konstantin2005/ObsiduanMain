@@ -58,12 +58,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-13.1.md
+## 13.1-05-26.md
 
 - date_key: 2026-05-13
 
-- mini_source: 2026-05-13.1.md
-- source: 2026-05-13.1.md
+- mini_source: 13.1-05-26.md
+- source: 13.1-05-26.md
 - people_count: 5
 - threshold: 4
 
@@ -84,12 +84,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-31.1.md
+## 31.1-05-26.md
 
 - date_key: 2026-05-31
 
-- mini_source: 2026-05-31.1.md
-- source: 2026-05-31.1.md
+- mini_source: 31.1-05-26.md
+- source: 31.1-05-26.md
 - people_count: 5
 - threshold: 4
 
@@ -101,12 +101,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-07.2.md
+## 07.2-05-26.md
 
 - date_key: 2026-05-07
 
-- mini_source: 2026-05-07.2.md
-- source: 2026-05-07.2.md
+- mini_source: 07.2-05-26.md
+- source: 07.2-05-26.md
 - people_count: 5
 - threshold: 4
 
@@ -118,12 +118,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-22.1.md
+## 22.1-05-26.md
 
 - date_key: 2026-05-22
 
-- mini_source: 2026-05-22.1.md
-- source: 2026-05-22.1.md
+- mini_source: 22.1-05-26.md
+- source: 22.1-05-26.md
 - people_count: 6
 - threshold: 4
 
@@ -144,12 +144,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-16.1.md
+## 16.1-05-26.md
 
 - date_key: 2026-05-16
 
-- mini_source: 2026-05-16.1.md
-- source: 2026-05-16.1.md
+- mini_source: 16.1-05-26.md
+- source: 16.1-05-26.md
 - people_count: 7
 - threshold: 4
 
@@ -177,12 +177,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-15.1.md
+## 15.1-05-26.md
 
 - date_key: 2026-05-15
 
-- mini_source: 2026-05-15.1.md
-- source: 2026-05-15.1.md
+- mini_source: 15.1-05-26.md
+- source: 15.1-05-26.md
 - people_count: 8
 - threshold: 4
 
@@ -213,12 +213,12 @@ source: consolidated-mini-diaries
 
 ---
 
-## 2026-05-17.1.md
+## 17.1-05-26.md
 
 - date_key: 2026-05-17
 
-- mini_source: 2026-05-17.1.md
-- source: 2026-05-17.1.md
+- mini_source: 17.1-05-26.md
+- source: 17.1-05-26.md
 - people_count: 9
 - threshold: 4
 
