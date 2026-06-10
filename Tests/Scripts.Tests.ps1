@@ -1391,7 +1391,7 @@ Describe 'LiveGraph' {
 
   await plugin.saveState();
 
-  if (!savedState || !savedState.activeBatch || !savedState.safetyBuffer) {
+  if (!savedState || !savedState.activeBatch) {
     throw new Error('State was not saved');
   }
 
@@ -1403,17 +1403,6 @@ Describe 'LiveGraph' {
         { path: 'B.md', original: big + 'y', detached: big + 'z' },
       ],
     },
-    safetyBuffer: [
-      {
-        id: 'entry-1',
-        createdAt: '2026-06-10T00:00:00.000Z',
-        status: 'detached',
-        files: [
-          { path: 'A.md', original: big, detached: big + 'x' },
-          { path: 'B.md', original: big + 'y', detached: big + 'z' },
-        ],
-      },
-    ],
   }), 'utf8');
   const savedSize = Buffer.byteLength(JSON.stringify(savedState), 'utf8');
 
@@ -1423,10 +1412,6 @@ Describe 'LiveGraph' {
 
   if (typeof savedState.activeBatch.files[0].original !== 'string' || !savedState.activeBatch.files[0].original.startsWith('~z~')) {
     throw new Error('Active batch original was not compressed');
-  }
-
-  if (typeof savedState.safetyBuffer[0].files[0].detached !== 'string' || !savedState.safetyBuffer[0].files[0].detached.startsWith('~z~')) {
-    throw new Error('Safety buffer detached text was not compressed');
   }
 
   const createReloaded = require(path.join(root, 'Scripts/ObsidianPlugins/live-graph/builtin-graph.js'));
@@ -1443,8 +1428,8 @@ Describe 'LiveGraph' {
     throw new Error('Active batch did not decompress on load');
   }
 
-  if (reloaded.safetyBuffer[0].files[1].detached !== big + 'z') {
-    throw new Error('Safety buffer did not decompress on load');
+  if (reloaded.safetyBuffer.length !== 1 || reloaded.safetyBuffer[0].files[1].detached !== big + 'z') {
+    throw new Error('Safety buffer did not initialize from active batch');
   }
 
   process.stdout.write('compact-state:ok\\n');

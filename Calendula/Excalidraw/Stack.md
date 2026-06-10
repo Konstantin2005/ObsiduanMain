@@ -946,7 +946,7 @@ Time Complexite: ^5rCWg2bA
 O(n) ^0mgLM2FZ
 
 ## Embedded Files
-e7cd4ea91cece378dd4ef9b93c3081fa66311961: [[Pasted Image 20260609230527_198.png]]
+e7cd4ea91cece378dd4ef9b93c3081fa66311961: Pasted Image 20260609230527_198.png
 
 03c67c3ed57e51b118136f5b29ec95ab0645d36f: [[Pasted Image 20260609231013_778.png]]
 
