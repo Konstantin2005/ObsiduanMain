@@ -23,6 +23,9 @@ function Get-DateKeyFromName {
     param([string]$FileName)
 
     $name = [System.IO.Path]::GetFileNameWithoutExtension($FileName)
+    if ($name -match '^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})\.(?<number>\d{1,2})$') {
+        return "$($matches.year)-$($matches.month)-$($matches.day)"
+    }
     if ($name -match '^\d{2}\.(.+)$') {
         $name = $matches[1]
     }

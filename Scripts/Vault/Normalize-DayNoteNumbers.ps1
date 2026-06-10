@@ -143,7 +143,8 @@ foreach ($group in $groups) {
         $note = $ordered[$i]
         $newPrefix = $startIndex + $i
         if ($style -eq 'Suffix') {
-            $newBaseName = ('{0}-{1}-{2}.{3}.md' -f $note.YearText, $note.MonthText, $note.DayText, $newPrefix)
+            $dayText = ('{0:00}' -f [int]$note.DayText)
+            $newBaseName = ('{0}-{1}-{2}.{3}.md' -f $note.YearText, $note.MonthText, $dayText, $newPrefix)
         } else {
             $newBaseName = ('{0:00}.{1}-{2}-{3}.md' -f $newPrefix, $note.DayText, $note.MonthText, $note.YearText)
         }

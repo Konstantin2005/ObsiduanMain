@@ -11,14 +11,10 @@
             "id": "de72db943b4e717e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Финансы/README.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Новая вкладка"
             }
           }
         ]
@@ -176,8 +172,21 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "de72db943b4e717e",
+  "active": "a211858d290dfa17",
   "lastOpenFiles": [
+    "Calendula/2026/Май/2026-05-17.2.md",
+    "Calendula/2026/Май/2026-05-15.2.md",
+    "Calendula/2026/Май/2026-05-16.2.md",
+    "Calendula/2026/Май/2026-05-22.2.md",
+    "Calendula/2026/Май/2026-05-07.3.md",
+    "Calendula/2026/Май/2026-05-07.2.md",
+    "Calendula/2026/Май/2026-05-31.2.md",
+    "Calendula/2026/Май/2026-05-13.2.md",
+    "Calendula/2026/Июнь/02.6-06-2026.md",
+    "Calendula/2026/Июнь/05.5-06-26.md",
+    "Calendula/2026/Июнь/04.5-06-2026.md",
+    "Calendula/2026/Июнь/03.5-06-26.md",
+    "Calendula/2026/Июнь/02.5-06-26.md",
     "Финансы/Days/2026-06-19.md",
     "Финансы/Days/2026-06-17.md",
     "Финансы/Days/2026-06-13.md",
@@ -196,19 +205,6 @@
     "Calendula/2026/Июнь/01-06-26.md",
     "Calendula/2026/Июнь/06.5-06-2026.md",
     "Calendula/2026/Июнь/06.6-06-2026.md",
-    "Calendula/Mini diaries.md",
-    "Calendula/2026/Июнь/06-06-26.md",
-    "Calendula/2026/Июнь/05.5-06-26.md",
-    "Calendula/2026/Июнь/05-06-26.md",
-    "Calendula/2026/Июнь/04-06-26.md",
-    "Calendula/2026/Июнь/03-06-26.md",
-    "Calendula/2026/Июнь/0.5-06-26.md",
-    "Calendula/2026/Июнь/09-06-26.md",
-    "Calendula/2026/Июнь/10-06-26.md",
-    "Calendula/2026/Июнь/08.5-06-26.md",
-    "Calendula/2026/Июнь/08-06-26.md",
-    "Calendula/2026/Июнь/07.9-06-26.md",
-    "Calendula/2026/Июнь/07-06-26.md",
     "Финансы/Summaries",
     "Финансы/Scripts/собрать-год.ps1",
     "Финансы/Scripts/создать-дни-год.ps1",
