@@ -73,3 +73,4 @@
 - Final Calendula-20K benchmark: `33,900` nodes, `35,948` edges, graph build `2476.82ms`, store write `96.82ms`, RenderPlan `6.96ms`, scheduler `4.22ms`, node budget `3,000`, edge budget `1,000`.
 - Optimized hot edge linking with CSR adjacency walk: first-frame RenderPlan now loads `edgeFlags + outOffsets/outTargets/outEdgeIds` in hot mode and keeps full `edgeSources/edgeTargets` for cold validation/multi-scale.
 - CSR edge benchmark on Calendula-20K: `35,948` total edges, `3,182` scanned edge slots, edge batch `0.511ms`, RenderPlan `6.74ms`, Pester `41 passed, 0 failed`.
+- Added v10 People Linking Data Pipeline plan after review: prewarm is now treated as an optional freshness accelerator, while correctness moves into stable person IDs, alias policies, mention provenance, invalidation rules, writer locks, delta/compaction, and quality benchmarks.
