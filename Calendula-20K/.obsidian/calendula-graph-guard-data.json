@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "repairCount": 10,
-  "lastRepairAt": "2026-06-10T12:52:58.279Z",
+  "repairCount": 12,
+  "lastRepairAt": "2026-06-10T13:23:56.983Z",
   "lastDriftReason": "repel-strength-drift",
   "incidents": [
     {
@@ -89,6 +89,25 @@
     },
     {
       "at": "2026-06-10T12:52:58.279Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T13:23:56.982Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T13:23:56.983Z",
       "type": "quarantine-repair",
       "reason": "timer",
       "graphReason": "repel-strength-drift",

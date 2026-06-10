@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "calendula-30k-fast-graph",
+            "id": "3722a5528a267c7b",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -64,7 +64,7 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "calendula-30k-files",
+  "active": "3722a5528a267c7b",
   "lastOpenFiles": [
     "Дни/README.md",
     "Люди/README.md",
