@@ -1,7 +1,6 @@
 module.exports = function createLiveGraphPlugin(obsidian) {
   const {
     ItemView,
-    Notice,
     Plugin,
     PluginSettingTab,
     Setting,
@@ -17,8 +16,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     typeof Plugin === "function" &&
     typeof PluginSettingTab === "function" &&
     typeof Setting === "function" &&
-    typeof setIcon === "function" &&
-    typeof Notice === "function";
+    typeof setIcon === "function";
 
   const VIEW_TYPE = "live-graph-view";
   const NATIVE_GRAPH_VIEW_TYPE = "graph";
@@ -1107,7 +1105,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         if (file) {
           void this.plugin.app.workspace.getLeaf(true).openFile(file);
         } else {
-          new Notice(`Cannot open ${target.path}`);
+          console.warn(`[${PLUGIN_LABEL}] cannot open ${target.path}`);
         }
         return;
       }
@@ -1302,9 +1300,6 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         if (!hasRequiredApi) {
           const error = new Error("Missing required Obsidian API exports");
           console.error(`[${PLUGIN_LABEL}] failed to load`, error);
-          if (typeof Notice === "function") {
-            new Notice(`${PLUGIN_LABEL} cannot start in this Obsidian build.`);
-          }
           return;
         }
 
@@ -1342,7 +1337,6 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         });
       } catch (error) {
         console.error(`[${PLUGIN_LABEL}] failed to load`, error);
-        new Notice(`${PLUGIN_LABEL} failed to load. Check the console.`);
       }
     }
 

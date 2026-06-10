@@ -1,5 +1,22 @@
 module.exports = function createBuiltInGraphPlugin(obsidian) {
-  const { ItemView, Plugin, PluginSettingTab, Setting, setIcon } = obsidian;
+  const {
+    ItemView,
+    Plugin,
+    PluginSettingTab,
+    Setting,
+    setIcon,
+  } = obsidian;
+
+  const BaseItemView = typeof ItemView === "function" ? ItemView : class {};
+  const BasePluginSettingTab =
+    typeof PluginSettingTab === "function" ? PluginSettingTab : class {};
+  const BasePlugin = typeof Plugin === "function" ? Plugin : class {};
+  const hasRequiredApi =
+    typeof ItemView === "function" &&
+    typeof Plugin === "function" &&
+    typeof PluginSettingTab === "function" &&
+    typeof Setting === "function" &&
+    typeof setIcon === "function";
 
   const PLUGIN_LABEL = "\u0416\u0438\u0437\u043d\u044c";
   const PANEL_VIEW_TYPE = "life-panel";
@@ -217,8 +234,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
       }
       .life-panel-card .setting-item {
-        padding-top: 0.55em;
-        padding-bottom: 0.55em;
+        padding-top: 0.35em;
+        padding-bottom: 0.35em;
       }
       .life-panel-banner {
         display: flex;
@@ -264,10 +281,34 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       }
       .life-panel-pill {
         border-radius: 999px;
-        padding: 5px 10px;
+        padding: 4px 8px;
         border: 1px solid var(--background-modifier-border);
         background: rgba(255, 255, 255, 0.04);
+        font-size: 0.72em;
+      }
+      .life-panel-advanced {
+        margin-top: 8px;
+        border-top: 1px solid var(--background-modifier-border);
+        padding-top: 6px;
+      }
+      .life-panel-advanced summary {
+        cursor: pointer;
+        color: var(--text-muted);
         font-size: 0.8em;
+        list-style: none;
+        padding: 2px 0;
+      }
+      .life-panel-advanced summary::-webkit-details-marker {
+        display: none;
+      }
+      .life-panel-compact-setting .setting-item {
+        border-top: 0;
+      }
+      .life-panel-compact-setting .setting-item-info {
+        margin-bottom: 0;
+      }
+      .life-panel-compact-setting .setting-item-control {
+        margin-top: 0;
       }
     `;
     document.head.appendChild(style);
@@ -395,7 +436,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
   }
 
-  class LifePanelView extends ItemView {
+  class LifePanelView extends BaseItemView {
     constructor(leaf, plugin) {
       super(leaf);
       this.plugin = plugin;
@@ -549,7 +590,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
   }
 
-  class LifeSettingsTab extends PluginSettingTab {
+  class LifeSettingsTab extends BasePluginSettingTab {
     constructor(app, plugin) {
       super(app, plugin);
       this.plugin = plugin;
@@ -564,9 +605,13 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
   }
 
-  return class BuiltInGraphPlugin extends Plugin {
+  return class BuiltInGraphPlugin extends BasePlugin {
     async onload() {
       try {
+        if (!hasRequiredApi) {
+          console.error(`[${PLUGIN_LABEL}] missing required Obsidian exports`);
+          return;
+        }
         injectStyles();
         const data = (await this.loadData()) || {};
         const legacySettings = data.settings || data;
@@ -832,7 +877,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       const card = containerEl.createDiv({ cls: "life-panel-card" });
       card.createEl("h3", { text: "Quick controls" });
       card.createEl("p", {
-        text: "Run the cycle, restore everything, or open the built-in Graph.",
+        text: "Run, restore, or tune the cycle.",
       });
 
       const actions = card.createDiv({ cls: "life-panel-actions" });
@@ -874,18 +919,45 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           }),
       );
 
-      new Setting(card)
-        .setName("Open panel on start")
-        .setDesc("Open the right sidebar control panel when the vault loads.")
-        .addToggle((toggle) =>
-          toggle.setValue(this.settings.autoOpenPanel).onChange(async (value) => {
-            this.settings.autoOpenPanel = value;
-            await this.saveState();
-            this.refreshPanelViews();
-          }),
-        );
+      const quickRow = card.createDiv({ cls: "life-panel-mode-row" });
+      const quickToggles = [
+        {
+          label: "Panel",
+          key: "autoOpenPanel",
+          desc: "Open the control panel on start.",
+        },
+        {
+          label: "Cycle",
+          key: "autoCycleLinks",
+          desc: "Auto-run the cycle on a timer.",
+        },
+      ];
+      for (const item of quickToggles) {
+        const toggle = quickRow.createEl("button", {
+          text: `${item.label}: ${this.settings[item.key] ? "on" : "off"}`,
+          cls: `life-panel-mode-chip${this.settings[item.key] ? " is-active" : ""}`,
+        });
+        toggle.title = item.desc;
+        toggle.addEventListener("click", async () => {
+          this.settings[item.key] = !this.settings[item.key];
+          if (item.key === "autoCycleLinks") {
+            this.restartTimer();
+          }
+          await this.saveState();
+          this.refreshPanelViews();
+        });
+      }
 
-      new Setting(card)
+      const banner = card.createDiv({ cls: "life-panel-banner" });
+      banner.createDiv({ cls: "life-panel-pill", text: `Tempo: ${pickTempoLabel(this.settings)}` });
+      banner.createDiv({ cls: "life-panel-pill", text: `Batch: ${this.settings.batchSize}` });
+      banner.createDiv({ cls: "life-panel-pill", text: `Hold: ${formatMs(this.settings.detachHoldMs)}` });
+
+      const advanced = card.createEl("details", { cls: "life-panel-advanced" });
+      advanced.createEl("summary", { text: "Advanced settings" });
+      const advancedBody = advanced.createDiv({ cls: "life-panel-compact-setting" });
+
+      new Setting(advancedBody)
         .setName("Open built-in Graph")
         .setDesc("Open Obsidian's built-in Graph view automatically when the vault loads.")
         .addToggle((toggle) =>
@@ -896,19 +968,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           }),
         );
 
-      new Setting(card)
-        .setName("Auto cycle links")
-        .setDesc("Automatically remove and restore wiki links in batches.")
-        .addToggle((toggle) =>
-          toggle.setValue(this.settings.autoCycleLinks).onChange(async (value) => {
-            this.settings.autoCycleLinks = value;
-            await this.saveState();
-            this.restartTimer();
-            this.refreshPanelViews();
-          }),
-        );
-
-      new Setting(card)
+      new Setting(advancedBody)
         .setName("Cycle interval")
         .setDesc("How often a link batch is detached and then restored, in milliseconds.")
         .addSlider((slider) =>
@@ -924,7 +984,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(card)
+      new Setting(advancedBody)
         .setName("Batch size")
         .setDesc("How many notes get one link detached per cycle.")
         .addSlider((slider) =>
@@ -939,7 +999,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(card)
+      new Setting(advancedBody)
         .setName("Pulse count")
         .setDesc("How many detach/restore pulses run in one cycle.")
         .addSlider((slider) =>
@@ -954,7 +1014,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(card)
+      new Setting(advancedBody)
         .setName("Detach hold")
         .setDesc("How long links stay detached before they are restored.")
         .addSlider((slider) =>
@@ -969,7 +1029,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(card)
+      new Setting(advancedBody)
         .setName("Restore hold")
         .setDesc("How long to wait after restoring before starting the next pulse.")
         .addSlider((slider) =>
@@ -984,7 +1044,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(card)
+      new Setting(advancedBody)
         .setName("Buffer limit")
         .setDesc("How many recent detach snapshots the safety buffer remembers.")
         .addSlider((slider) =>
