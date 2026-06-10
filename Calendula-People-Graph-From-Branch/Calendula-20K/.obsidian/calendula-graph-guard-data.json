@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "repairCount": 18,
+  "lastRepairAt": "2026-06-10T13:30:41.988Z",
+  "lastDriftReason": "repel-strength-drift",
+  "incidents": [
+    {
+      "at": "2026-06-10T12:31:26.176Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T12:31:26.178Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T12:33:27.640Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T12:33:27.641Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T12:35:58.267Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T12:35:58.269Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T12:44:27.635Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T12:44:27.637Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T12:52:58.277Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T12:52:58.279Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T13:23:56.982Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T13:23:56.983Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T13:24:11.981Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T13:24:11.982Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T13:30:26.982Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T13:30:26.994Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    },
+    {
+      "at": "2026-06-10T13:30:41.987Z",
+      "type": "profile-applied",
+      "reason": "quarantine:timer:repel-strength-drift",
+      "profileName": "fast-backbone",
+      "danger": false
+    },
+    {
+      "at": "2026-06-10T13:30:41.988Z",
+      "type": "quarantine-repair",
+      "reason": "timer",
+      "graphReason": "repel-strength-drift",
+      "workspaceRepair": {
+        "reason": "timer",
+        "repaired": false,
+        "graphLeavesDetached": 0,
+        "heavyLeavesDetached": 0
+      }
+    }
+  ]
+}

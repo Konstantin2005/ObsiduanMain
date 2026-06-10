@@ -3,126 +3,133 @@
   "search": "",
   "showTags": false,
   "showAttachments": false,
-  "hideUnresolved": false,
+  "hideUnresolved": true,
   "showOrphans": false,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "#Дни",
-      "color": {
-        "a": 1,
-        "rgb": 11870497
-      }
-    },
-    {
-      "query": "#Мясорубка",
-      "color": {
-        "a": 1,
-        "rgb": 16774912
-      }
-    },
-    {
-      "query": "#Продуктивная_скукота",
-      "color": {
-        "a": 1,
-        "rgb": 10942251
-      }
-    },
-    {
-      "query": "#Интересный",
-      "color": {
-        "a": 1,
-        "rgb": 16756224
-      }
-    },
-    {
-      "query": "#Отдых",
-      "color": {
-        "a": 1,
-        "rgb": 13172480
-      }
-    },
-    {
-      "query": "#Обычный",
-      "color": {
-        "a": 1,
-        "rgb": 12177664
-      }
-    },
-    {
-      "query": "#Думал",
-      "color": {
-        "a": 1,
-        "rgb": 11127094
-      }
-    },
-    {
-      "query": "#Ничего_не_делал",
-      "color": {
-        "a": 1,
-        "rgb": 4603445
-      }
-    },
-    {
-      "query": "#Не_задокоментирован",
-      "color": {
-        "a": 1,
-        "rgb": 4677633
-      }
-    },
-    {
-      "query": "#Соц_Капитал",
+      "query": "#Дниии",
       "color": {
         "a": 1,
         "rgb": 0
       }
     },
     {
-      "query": "#Особенные",
+      "query": "#Мясорубка",
       "color": {
         "a": 1,
-        "rgb": 9240320
+        "rgb": 16731392
+      }
+    },
+    {
+      "query": " #Продуктивная_скукота ",
+      "color": {
+        "a": 1,
+        "rgb": 16753152
+      }
+    },
+    {
+      "query": "#Интересный",
+      "color": {
+        "a": 1,
+        "rgb": 15785497
+      }
+    },
+    {
+      "query": "#Думал ",
+      "color": {
+        "a": 1,
+        "rgb": 11649582
+      }
+    },
+    {
+      "query": "#Обычный ",
+      "color": {
+        "a": 1,
+        "rgb": 12163152
+      }
+    },
+    {
+      "query": "#Ничего_не_делал ",
+      "color": {
+        "a": 1,
+        "rgb": 5393152
+      }
+    },
+    {
+      "query": " #Не_задокоментирован ",
+      "color": {
+        "a": 1,
+        "rgb": 4272897
+      }
+    },
+    {
+      "query": "#Отдых",
+      "color": {
+        "a": 1,
+        "rgb": 8489477
+      }
+    },
+    {
+      "query": "#Люди",
+      "color": {
+        "a": 1,
+        "rgb": 0
       }
     },
     {
       "query": "#Ближний_круг",
       "color": {
         "a": 1,
-        "rgb": 4318805
-      }
-    },
-    {
-      "query": "#Средний_Круг",
-      "color": {
-        "a": 1,
-        "rgb": 46079
+        "rgb": 4783872
       }
     },
     {
       "query": "#Дальний_Круг",
       "color": {
         "a": 1,
-        "rgb": 6816892
+        "rgb": 4704536
       }
     },
     {
-      "query": "#Познакомились",
+      "query": "#Средний_Круг",
       "color": {
         "a": 1,
-        "rgb": 14682891
+        "rgb": 5882449
+      }
+    },
+    {
+      "query": "#Познакомились ",
+      "color": {
+        "a": 1,
+        "rgb": 4815360
+      }
+    },
+    {
+      "query": "#Особенные",
+      "color": {
+        "a": 1,
+        "rgb": 5920514
+      }
+    },
+    {
+      "query": "#Kanban",
+      "color": {
+        "a": 1,
+        "rgb": 2556443
       }
     }
   ],
   "collapse-display": true,
-  "showArrow": true,
-  "textFadeMultiplier": 0.8,
-  "nodeSizeMultiplier": 0.7125,
+  "showArrow": false,
+  "textFadeMultiplier": -0.2,
+  "nodeSizeMultiplier": 0.584895833333333,
   "lineSizeMultiplier": 0.1,
-  "collapse-forces": false,
-  "centerStrength": 0.0885416666666667,
-  "repelStrength": 17.7083333333333,
-  "linkStrength": 0.958333333333333,
-  "linkDistance": 449,
-  "scale": 0.0078125,
-  "close": false
+  "collapse-forces": true,
+  "centerStrength": 0.0572916666666667,
+  "repelStrength": 16.0416666666667,
+  "linkStrength": 1,
+  "linkDistance": 255,
+  "scale": 0.22920135941748795,
+  "close": true
 }

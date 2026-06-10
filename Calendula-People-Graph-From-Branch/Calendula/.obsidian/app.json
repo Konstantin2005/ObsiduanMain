@@ -3,5 +3,8 @@
   "strictLineBreaks": true,
   "showLineNumber": false,
   "spellcheck": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "cssSnippets": [
+    "hide-graph-reset"
+  ]
 }

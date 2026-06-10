@@ -1,0 +1,4 @@
+.graph-controls .clickable-icon[aria-label="Restore default settings"],
+.graph-controls button.mod-cta {
+    display: none !important;
+}

@@ -1,0 +1,9 @@
+{
+  "id": "calendula-ultra-graph",
+  "name": "Calendula Ultra Graph",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Budgeted Canvas graph renderer MVP for high-load Calendula graph experiments.",
+  "author": "Codex",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,8 @@
+.graph-pro-left-graph-controls button.clickable-icon[aria-label^="Restore"],
+.graph-pro-left-graph-controls button.clickable-icon[title^="Restore"],
+.graph-pro-top-graph-controls button.clickable-icon[aria-label^="Restore"],
+.graph-pro-top-graph-controls button.clickable-icon[title^="Restore"],
+.graph-controls button.clickable-icon[aria-label^="Restore"],
+.graph-controls button.clickable-icon[title^="Restore"] {
+    display: none !important;
+}

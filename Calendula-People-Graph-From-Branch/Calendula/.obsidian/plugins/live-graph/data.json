@@ -1,0 +1,16 @@
+{
+  "settings": {
+    "autoOpenPanel": false,
+    "autoCycleLinks": false,
+    "cycleIntervalMs": 30000,
+    "batchSize": 20,
+    "pulseCount": 10,
+    "detachHoldMs": 15000,
+    "restoreHoldMs": 5000,
+    "bufferLimit": 12,
+    "cycleMode": "regrow",
+    "autoOpenGraph": false
+  },
+  "activeBatchRef": null,
+  "persistedDetached": []
+}
