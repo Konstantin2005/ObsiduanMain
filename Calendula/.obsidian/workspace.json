@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "09.07-06-26"
             }
+          },
+          {
+            "id": "cf28cd4991504c4d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -178,7 +189,7 @@
       "live-graph:Open Жизнь": false
     }
   },
-  "active": "de72db943b4e717e",
+  "active": "cf28cd4991504c4d",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/09.07-06-26.md",
     "Calendula/2026/Июнь/09-06-26.md",
