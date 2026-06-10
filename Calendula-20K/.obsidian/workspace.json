@@ -47,8 +47,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260,
-    "collapsed": true
+    "width": 260
   },
   "right": {
     "id": "calendula-20k-right",
