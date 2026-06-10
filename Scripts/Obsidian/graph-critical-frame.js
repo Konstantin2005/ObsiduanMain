@@ -355,6 +355,11 @@ function makeLineage(snapshot, frameId) {
   });
 }
 
+function isQueryCandidate(queryPlan, index) {
+  if (!queryPlan || queryPlan.contract !== "QueryPlan/v9.0") return true;
+  return queryPlan.candidateNodes[index] === 1;
+}
+
 function buildCriticalRenderPlan({
   snapshot,
   camera = DEFAULT_CAMERA,
@@ -364,6 +369,7 @@ function buildCriticalRenderPlan({
   mode = "normal",
   reason = "critical-path",
   lod = 2,
+  queryPlan = null,
 } = {}) {
   const startedAt = nowMs();
   if (!snapshot || snapshot.contract !== "GraphSnapshot/v9.0") {
@@ -414,6 +420,7 @@ function buildCriticalRenderPlan({
   const nodeCount = snapshot.nodeCount;
   const edgeCount = snapshot.edgeCount;
   const visibleMask = new Uint8Array(nodeCount);
+  const selectedMask = new Uint8Array(nodeCount);
   const maxNodes = Math.min(normalizedBudgets.nodeBudget, nodeCount);
   const nodeIds = new Uint32Array(maxNodes);
   const nodeX = new Float32Array(maxNodes);
@@ -425,7 +432,37 @@ function buildCriticalRenderPlan({
   let visibleCandidates = 0;
   const visibleStartedAt = nowMs();
 
+  function selectNode(index) {
+    visibleMask[index] = 1;
+    selectedMask[index] = 1;
+    nodeIds[selectedNodeCount] = arrays.nodeIds[index] ?? index;
+    nodeX[selectedNodeCount] = arrays.layoutX[index];
+    nodeY[selectedNodeCount] = arrays.layoutY[index];
+    nodeTypes[selectedNodeCount] = arrays.nodeTypes[index] ?? 0;
+    nodeFlags[selectedNodeCount] = arrays.nodeFlags[index] ?? 0;
+    selectedNodeCount += 1;
+  }
+
+  if (queryPlan?.priorityNodes?.length) {
+    for (const nodeId of queryPlan.priorityNodes) {
+      const index = Number(nodeId);
+      if (!Number.isInteger(index) || index < 0 || index >= nodeCount) continue;
+      if (!isQueryCandidate(queryPlan, index)) continue;
+      if (!isInCamera(arrays.layoutX[index], arrays.layoutY[index], normalizedCamera)) continue;
+      if (selectedNodeCount >= maxNodes) {
+        incrementReason(skipReasons, "PRIORITY_NODE_BUDGET");
+        continue;
+      }
+      selectNode(index);
+    }
+  }
+
   for (let index = 0; index < nodeCount; index += 1) {
+    if (!isQueryCandidate(queryPlan, index)) {
+      incrementReason(skipReasons, "QUERY_EXCLUDED");
+      continue;
+    }
+    if (selectedMask[index]) continue;
     const x = arrays.layoutX[index];
     const y = arrays.layoutY[index];
     if (!isInCamera(x, y, normalizedCamera)) {
@@ -437,26 +474,15 @@ function buildCriticalRenderPlan({
       incrementReason(skipReasons, "NODE_BUDGET");
       continue;
     }
-    visibleMask[index] = 1;
-    nodeIds[selectedNodeCount] = arrays.nodeIds[index] ?? index;
-    nodeX[selectedNodeCount] = x;
-    nodeY[selectedNodeCount] = y;
-    nodeTypes[selectedNodeCount] = arrays.nodeTypes[index] ?? 0;
-    nodeFlags[selectedNodeCount] = arrays.nodeFlags[index] ?? 0;
-    selectedNodeCount += 1;
+    selectNode(index);
   }
 
   if (selectedNodeCount === 0 && nodeCount > 0 && maxNodes > 0) {
     const fallbackCount = Math.min(maxNodes, nodeCount);
     incrementReason(skipReasons, "VIEWPORT_EMPTY_FALLBACK", fallbackCount);
     for (let index = 0; index < fallbackCount; index += 1) {
-      visibleMask[index] = 1;
-      nodeIds[selectedNodeCount] = arrays.nodeIds[index] ?? index;
-      nodeX[selectedNodeCount] = arrays.layoutX[index];
-      nodeY[selectedNodeCount] = arrays.layoutY[index];
-      nodeTypes[selectedNodeCount] = arrays.nodeTypes[index] ?? 0;
-      nodeFlags[selectedNodeCount] = arrays.nodeFlags[index] ?? 0;
-      selectedNodeCount += 1;
+      if (!isQueryCandidate(queryPlan, index)) continue;
+      selectNode(index);
     }
   }
 
@@ -474,6 +500,8 @@ function buildCriticalRenderPlan({
 
   if (normalizedBudgets.edgeBudget <= 0) {
     incrementReason(skipReasons, "EDGE_BUDGET_ZERO", edgeCount);
+  } else if (queryPlan?.edgePolicy === "none") {
+    incrementReason(skipReasons, "EDGE_POLICY_NONE", edgeCount);
   } else {
     for (let edgeId = 0; edgeId < edgeCount; edgeId += 1) {
       const source = arrays.edgeSources[edgeId];
@@ -484,6 +512,10 @@ function buildCriticalRenderPlan({
       }
       if (!visibleMask[source] || !visibleMask[target]) {
         incrementReason(skipReasons, "EDGE_OUTSIDE_VISIBLE_SET");
+        continue;
+      }
+      if (queryPlan?.edgePolicy === "backbone" && (arrays.edgeFlags[edgeId] & 1) === 0) {
+        incrementReason(skipReasons, "EDGE_POLICY_BACKBONE");
         continue;
       }
       if (selectedEdgeCount >= maxEdges) {
@@ -543,8 +575,15 @@ function buildCriticalRenderPlan({
     skipReasons: freezeReasons(skipReasons),
     failureState: null,
     recoveredFromPrevious: snapshot.recoveredFromPrevious,
-    lineage: makeLineage(snapshot, frameId),
-    stats: Object.freeze({ ...snapshot.manifest.stats, nodes: nodeCount, edges: edgeCount, visibleCandidates }),
+    lineage: Object.freeze({ ...makeLineage(snapshot, frameId), queryPlanId: queryPlan?.id || null }),
+    queryPlanId: queryPlan?.id || null,
+    stats: Object.freeze({
+      ...snapshot.manifest.stats,
+      nodes: nodeCount,
+      edges: edgeCount,
+      visibleCandidates,
+      queryCandidates: queryPlan?.stats?.candidates ?? nodeCount,
+    }),
     timingsMs: Object.freeze({
       visibleSet: visibleSetMs,
       edgeBatch: edgeBatchMs,
