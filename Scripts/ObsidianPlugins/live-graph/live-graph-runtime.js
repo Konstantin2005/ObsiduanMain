@@ -672,6 +672,125 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       return drawn;
     }
 
+    drawCanvasGraphOptimized(width, height, sample, edges, degree, disabledKeys, profile) {
+      const ctx = this.getCanvasContext(width, height);
+      if (!ctx) {
+        this.showEmpty("Canvas rendering is unavailable.");
+        return;
+      }
+
+      this.cancelCanvasGraphPaint();
+      this.hitTargets = [];
+      this.paintCanvasBackdrop(ctx, width, height);
+
+      const labelPaths = this.getLabelPaths(sample, degree, profile);
+      const summary = {
+        mode: profile.mode,
+        chunked: false,
+        frames: 1,
+        edgesDrawn: 0,
+        nodesDrawn: 0,
+        labelsRendered: 0,
+        labelsSkipped: 0,
+      };
+      const statusLabel =
+        profile.mode === "ultra"
+          ? "ultra-large"
+          : profile.mode === "heavy"
+            ? "heavy"
+            : this.paused
+              ? "paused"
+              : "cycling";
+      const finish = () => {
+        this.lastPaintSummary = summary;
+        if (this.statusEl) {
+          const frameSuffix = summary.chunked ? ` | ${summary.frames} frames` : "";
+          this.statusEl.setText(
+            `${summary.edgesDrawn} links | ${disabledKeys.size} off | ${statusLabel}${frameSuffix}`,
+          );
+        }
+        this.showEmpty("");
+      };
+
+      if (
+        profile.mode === "normal" ||
+        typeof window === "undefined" ||
+        typeof window.requestAnimationFrame !== "function"
+      ) {
+        summary.edgesDrawn = this.paintCanvasEdges(ctx, edges, 0, edges.length, disabledKeys);
+        summary.nodesDrawn = this.paintCanvasNodes(
+          ctx,
+          sample,
+          degree,
+          0,
+          sample.length,
+          width,
+          labelPaths,
+          profile,
+          summary,
+        );
+        finish();
+        return;
+      }
+
+      const edgeBatchSize = Math.max(1, profile.edgeBatchSize || 8);
+      const nodeBatchSize = Math.max(1, profile.nodeBatchSize || 8);
+      let edgeIndex = 0;
+      let nodeIndex = 0;
+      const paintToken = this.paintToken + 1;
+      this.paintToken = paintToken;
+      this.lastPaintSummary = null;
+      if (this.statusEl) {
+        this.statusEl.setText(`Rendering ${profile.label || statusLabel} graph...`);
+      }
+
+      const step = () => {
+        if (this.destroyed || paintToken !== this.paintToken) {
+          return;
+        }
+
+        summary.frames += 1;
+
+        if (edgeIndex < edges.length) {
+          const nextEdgeIndex = Math.min(edges.length, edgeIndex + edgeBatchSize);
+          summary.edgesDrawn += this.paintCanvasEdges(
+            ctx,
+            edges,
+            edgeIndex,
+            nextEdgeIndex,
+            disabledKeys,
+          );
+          edgeIndex = nextEdgeIndex;
+        } else if (nodeIndex < sample.length) {
+          const nextNodeIndex = Math.min(sample.length, nodeIndex + nodeBatchSize);
+          summary.nodesDrawn += this.paintCanvasNodes(
+            ctx,
+            sample,
+            degree,
+            nodeIndex,
+            nextNodeIndex,
+            width,
+            labelPaths,
+            profile,
+            summary,
+          );
+          nodeIndex = nextNodeIndex;
+        }
+
+        if (edgeIndex < edges.length || nodeIndex < sample.length) {
+          summary.chunked = true;
+          this.paintRafId = window.requestAnimationFrame(step);
+          return;
+        }
+
+        summary.chunked = true;
+        this.paintRafId = null;
+        finish();
+      };
+
+      this.paintRafId = window.requestAnimationFrame(step);
+    }
+
     drawCanvasGraph(width, height, sample, edges, degree, disabledKeys, profile) {
       const ctx = this.getCanvasContext(width, height);
       if (!ctx) {
@@ -799,6 +918,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
     renderGraph(forceReseed = false) {
       const files = this.getMarkdownFiles();
+      this.cancelCanvasGraphPaint();
       if (!files.length) {
         this.showEmpty("No markdown files found.");
         return;
@@ -860,7 +980,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       this.ensurePositions(this.sample, width, height, forceReseed, profile);
       const disabledKeys = this.disabledKeysForCycle(profile);
-      this.drawCanvasGraph(width, height, this.sample, edges, degree, disabledKeys, profile);
+      this.drawCanvasGraphOptimized(width, height, this.sample, edges, degree, disabledKeys, profile);
       this.showEmpty("");
     }
 
