@@ -400,7 +400,9 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       super(leaf);
       this.plugin = plugin;
       this.statusEl = null;
-      this.rootEl = null;`r`n      this.lastStatusText = "";`r`n    }
+      this.rootEl = null;
+      this.lastStatusText = "";
+    }
 
     getViewType() {
       return PANEL_VIEW_TYPE;
@@ -539,8 +541,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
     refreshStatus() {
       if (!this.statusEl) return;
-      const detached = this.plugin.safetyBuffer.filter((entry) => entry.status === "detached" ).length;
-      const text = "Buffer:  • Detached:  • ";
+      const detached = this.plugin.safetyBuffer.filter((entry) => entry.status === "detached").length;
+      const text = `Buffer: ${this.plugin.safetyBuffer.length} • Detached: ${detached} • ${this.plugin.busy ? "busy" : "idle"}`;
       if (text === this.lastStatusText) return;
       this.lastStatusText = text;
       this.statusEl.setText(text);

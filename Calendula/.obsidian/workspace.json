@@ -74,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -156,39 +155,9 @@
               "icon": "lucide-archive",
               "title": "Все свойства"
             }
-          },
-          {
-            "id": "03f051638c647229",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "332da3df5b7648ec",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
-          },
-          {
-            "id": "f79618f7ade91d8a",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -196,7 +165,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "live-graph:Open Жизнь panel": false,
       "switcher:Меню быстрого перехода": false,
       "obsidianella-delink:Copy delinked note": false,
       "graph:Граф": false,
@@ -205,7 +173,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "f79618f7ade91d8a",
+  "active": "e326c292b89cdf41",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/07.1-06-26.md",
