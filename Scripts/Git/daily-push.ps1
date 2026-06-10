@@ -1,35 +1,37 @@
 param(
-    [string]$RepoPath = "C:\obsidian\Main"
+    [string]$RepoPath = "C:\obsidian\Main",
+    [string]$Branch = "main",
+    [switch]$DryRun
 )
 
-Set-Location $RepoPath
-
+$ErrorActionPreference = 'Stop'
 $logPath = Join-Path $RepoPath "Scripts\Logs\daily-push.log"
+
 function Write-Log {
     param([string]$Message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $logPath -Value "[$timestamp] $Message"
+    Add-Content -LiteralPath $logPath -Value "[$timestamp] $Message"
 }
 
-Write-Log "Starting daily push..."
-
-git fetch --all --prune 2>&1 | Out-Null
-if ($LASTEXITCODE -ne 0) {
-    Write-Log "git fetch failed with code $LASTEXITCODE"
-    exit $LASTEXITCODE
+function Invoke-Git {
+    param([Parameter(Mandatory=$true)][string[]]$Args)
+    $output = & git @Args 2>&1
+    $code = $LASTEXITCODE
+    if ($output) { $output | ForEach-Object { Write-Log "$($_)" } }
+    if ($code -ne 0) { throw "git $($Args -join ' ') failed with code $code" }
 }
 
-git pull --no-rebase --autostash -X ours origin main 2>&1 | Out-Null
-if ($LASTEXITCODE -ne 0) {
-    Write-Log "git pull failed with code $LASTEXITCODE"
-    exit $LASTEXITCODE
+Set-Location -LiteralPath $RepoPath
+Write-Log "Starting daily push for branch '$Branch'"
+
+if ($DryRun) {
+    Write-Log "DryRun enabled; skipping git commands"
+    exit 0
 }
 
-git push
-if ($LASTEXITCODE -ne 0) {
-    Write-Log "git push failed with code $LASTEXITCODE"
-    exit $LASTEXITCODE
-}
+Invoke-Git -Args @('fetch', '--all', '--prune')
+Invoke-Git -Args @('pull', '--no-rebase', '--autostash', '-X', 'ours', 'origin', $Branch)
+Invoke-Git -Args @('push', 'origin', $Branch)
 
 Write-Log "Push completed successfully."
 exit 0
