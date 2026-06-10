@@ -571,40 +571,62 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
   return class LiveGraphPlugin extends Plugin {
     async onload() {
-      this.settings = Object.assign({}, DEFAULT_SETTINGS, (await this.loadData()) || {});
-      this.registerView(VIEW_TYPE, (leaf) => new LiveGraphView(leaf, this));
-      this.addCommand({
-        id: "open-live-graph",
-        name: `Open ${PLUGIN_LABEL}`,
-        callback: () => this.openLiveGraph(),
-      });
-      const ribbon = this.addRibbonIcon("activity", `Open ${PLUGIN_LABEL}`, () => this.openLiveGraph());
-      if (ribbon) {
-        setLifeIcon(ribbon);
-      }
-      this.addSettingTab(new LiveGraphSettingsTab(this.app, this));
-
-      this.app.workspace.onLayoutReady(() => {
-        if (this.settings.autoOpen) {
-          this.openLiveGraph();
+      try {
+        this.settings = Object.assign({}, DEFAULT_SETTINGS, (await this.loadData()) || {});
+        this.registerView(VIEW_TYPE, (leaf) => new LiveGraphView(leaf, this));
+        this.addCommand({
+          id: "open-live-graph",
+          name: `Open ${PLUGIN_LABEL}`,
+          callback: () => {
+            void this.openLiveGraph();
+          },
+        });
+        const ribbon = this.addRibbonIcon("activity", `Open ${PLUGIN_LABEL}`, () => {
+          void this.openLiveGraph();
+        });
+        if (ribbon) {
+          setLifeIcon(ribbon);
         }
-      });
+        this.addSettingTab(new LiveGraphSettingsTab(this.app, this));
+
+        this.app.workspace.onLayoutReady(() => {
+          if (this.settings.autoOpen) {
+            void this.openLiveGraph().catch((error) => {
+              console.error(`[${PLUGIN_LABEL}] auto-open failed`, error);
+            });
+          }
+        });
+      } catch (error) {
+        console.error(`[${PLUGIN_LABEL}] failed to load`, error);
+        new Notice(`${PLUGIN_LABEL} failed to load. Check the console.`);
+      }
     }
 
     async onunload() {
       const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE);
       for (const leaf of leaves) {
-        await leaf.detach();
+        try {
+          await leaf.detach();
+        } catch (error) {
+          console.error(`[${PLUGIN_LABEL}] failed to detach view`, error);
+        }
       }
     }
 
     async openLiveGraph() {
-      let leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
-      if (!leaf) {
-        leaf = this.app.workspace.getLeaf(true);
+      try {
+        let leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
+        if (!leaf) {
+          leaf = this.app.workspace.getLeaf(true);
+        }
+        await leaf.setViewState({ type: VIEW_TYPE, active: true });
+        if (typeof this.app.workspace.revealLeaf === "function") {
+          this.app.workspace.revealLeaf(leaf);
+        }
+      } catch (error) {
+        console.error(`[${PLUGIN_LABEL}] failed to open view`, error);
+        throw error;
       }
-      await leaf.setViewState({ type: VIEW_TYPE, active: true });
-      this.app.workspace.revealLeaf(leaf);
     }
 
     async saveSettings() {

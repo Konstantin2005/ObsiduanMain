@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$DiaryRoot = (Join-Path $VaultPath "Calendula\Calendula"),
     [switch]$DryRun
@@ -86,12 +86,12 @@ $renamePlan = New-Object System.Collections.Generic.List[object]
 
 foreach ($group in $groups) {
     $groupNotes = @($group.Group)
-    $mainExists = $allNotes | Where-Object {
+    $mainExists = @($allNotes | Where-Object {
         (-not $_.IsNumbered) -and $_.Directory -eq $groupNotes[0].Directory -and $_.DateKey -eq $groupNotes[0].DateKey
-    }
+    })
 
     $startIndex = if ($mainExists.Count -gt 0) { 2 } else { 1 }
-    $ordered = $groupNotes | Sort-Object Prefix, BaseName
+    $ordered = @($groupNotes | Sort-Object Prefix, BaseName)
 
     for ($i = 0; $i -lt $ordered.Count; $i++) {
         $note = $ordered[$i]
