@@ -38,14 +38,24 @@ const NODE_ARRAY_SPECS = Object.freeze([
   Object.freeze({ key: "layoutY", prop: "layoutY", ctor: Float32Array, count: "node" }),
 ]);
 
-const EDGE_ARRAY_SPECS = Object.freeze([
+const EDGE_SOURCE_ARRAY_SPECS = Object.freeze([
   Object.freeze({ key: "edgesSource", prop: "edgeSources", ctor: Uint32Array, count: "edge" }),
   Object.freeze({ key: "edgesTarget", prop: "edgeTargets", ctor: Uint32Array, count: "edge" }),
+]);
+
+const EDGE_CSR_ARRAY_SPECS = Object.freeze([
   Object.freeze({ key: "edgesFlags", prop: "edgeFlags", ctor: Uint32Array, count: "edge" }),
   Object.freeze({ key: "outOffsets", prop: "outOffsets", ctor: Uint32Array, count: "node-plus-one" }),
   Object.freeze({ key: "outTargets", prop: "outTargets", ctor: Uint32Array, count: "edge" }),
   Object.freeze({ key: "outEdgeIds", prop: "outEdgeIds", ctor: Uint32Array, count: "edge" }),
 ]);
+
+const EDGE_FULL_ARRAY_SPECS = Object.freeze([...EDGE_SOURCE_ARRAY_SPECS, ...EDGE_CSR_ARRAY_SPECS]);
+
+function getEdgeArraySpecs(edgeMode = "full") {
+  if (edgeMode === "csr") return EDGE_CSR_ARRAY_SPECS;
+  return EDGE_FULL_ARRAY_SPECS;
+}
 
 function nowMs() {
   const perf = globalThis.performance || nodePerformance;
@@ -153,7 +163,7 @@ function getManifestStats(manifest) {
   };
 }
 
-function validateManifestShallow(manifest, activeDir, { includeEdges = true } = {}) {
+function validateManifestShallow(manifest, activeDir, { includeEdges = true, edgeMode = "full" } = {}) {
   const errors = [];
   const warnings = [];
   if (!manifest || typeof manifest !== "object") {
@@ -170,7 +180,7 @@ function validateManifestShallow(manifest, activeDir, { includeEdges = true } = 
   if (!Number.isInteger(edgeCount) || edgeCount < 0) errors.push("edge-count-invalid");
 
   if (manifest.files) {
-    const specs = includeEdges ? [...NODE_ARRAY_SPECS, ...EDGE_ARRAY_SPECS] : NODE_ARRAY_SPECS;
+    const specs = includeEdges ? [...NODE_ARRAY_SPECS, ...getEdgeArraySpecs(edgeMode)] : NODE_ARRAY_SPECS;
     for (const spec of specs) {
       const fileName = manifest.files[spec.key];
       if (!fileName) {
@@ -223,16 +233,18 @@ function readCurrentManifest(storeRoot, activeDirName) {
   throw new Error(`Missing manifest for ${activeDirName}`);
 }
 
-function loadSnapshotArrays(manifest, activeDir, validation, { includeEdges = true } = {}) {
+function loadSnapshotArrays(manifest, activeDir, validation, { includeEdges = true, edgeMode = "full" } = {}) {
   const arrays = {};
   for (const spec of NODE_ARRAY_SPECS) {
     arrays[spec.prop] = readTypedArray(resolveStoreFile(activeDir, manifest.files[spec.key]), spec.ctor, validation.nodeCount);
   }
   if (includeEdges) {
-    for (const spec of EDGE_ARRAY_SPECS) {
+    for (const spec of getEdgeArraySpecs(edgeMode)) {
       const expectedLength = spec.count === "node-plus-one" ? validation.nodeCount + 1 : validation.edgeCount;
       arrays[spec.prop] = readTypedArray(resolveStoreFile(activeDir, manifest.files[spec.key]), spec.ctor, expectedLength);
     }
+    if (!arrays.edgeSources) arrays.edgeSources = new Uint32Array(0);
+    if (!arrays.edgeTargets) arrays.edgeTargets = new Uint32Array(0);
   } else {
     arrays.edgeSources = new Uint32Array(0);
     arrays.edgeTargets = new Uint32Array(0);
@@ -261,14 +273,16 @@ function createGraphSnapshot({ storeRoot, activeDirName, activeDir, manifest, va
 }
 
 class GraphStoreClient {
-  constructor({ storeRoot, includeEdges = true } = {}) {
+  constructor({ storeRoot, includeEdges = true, edgeMode = "full" } = {}) {
     if (!storeRoot) throw new Error("GraphStoreClient requires storeRoot");
     this.storeRoot = path.resolve(storeRoot);
     this.includeEdges = includeEdges;
+    this.edgeMode = edgeMode;
   }
 
   loadSnapshot(options = {}) {
     const includeEdges = options.includeEdges ?? this.includeEdges;
+    const edgeMode = options.edgeMode ?? this.edgeMode;
     const failures = [];
     const attempts = ["graph.current", "graph.previous"];
 
@@ -280,14 +294,14 @@ class GraphStoreClient {
         timingsMs.manifestRead = manifestTimed.ms;
         const manifest = manifestTimed.value;
 
-        const validationTimed = timed(() => validateManifestShallow(manifest, activeDir, { includeEdges }));
+        const validationTimed = timed(() => validateManifestShallow(manifest, activeDir, { includeEdges, edgeMode }));
         timingsMs.shallowValidation = validationTimed.ms;
         const validation = validationTimed.value;
         if (!validation.ok) {
           throw new Error(`Shallow validation failed: ${validation.errors.join(", ")}`);
         }
 
-        const arraysTimed = timed(() => loadSnapshotArrays(manifest, activeDir, validation, { includeEdges }));
+        const arraysTimed = timed(() => loadSnapshotArrays(manifest, activeDir, validation, { includeEdges, edgeMode }));
         timingsMs.arrayLoad = arraysTimed.ms;
         const snapshot = createGraphSnapshot({
           storeRoot: this.storeRoot,

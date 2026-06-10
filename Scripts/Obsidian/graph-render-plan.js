@@ -97,8 +97,8 @@ function makeBudgets(profile, mode, lod) {
   };
 }
 
-function loadIndexedGraph(storeRoot) {
-  const loaded = new GraphStoreClient({ storeRoot, includeEdges: true }).loadSnapshot();
+function loadIndexedGraph(storeRoot, { edgeMode = "csr" } = {}) {
+  const loaded = new GraphStoreClient({ storeRoot, includeEdges: true, edgeMode }).loadSnapshot();
   if (!loaded.ok) {
     return {
       ok: false,
@@ -215,7 +215,7 @@ function buildRenderPlan({
   frameId = 1,
 } = {}) {
   const normalizedProfile = normalizeProfile(profile);
-  const indexed = loadIndexedGraph(storeRoot);
+  const indexed = loadIndexedGraph(storeRoot, { edgeMode: normalizedProfile.scaleLevel !== undefined ? "full" : "csr" });
   if (!indexed.ok) {
     const failureState =
       indexed.failureState ||

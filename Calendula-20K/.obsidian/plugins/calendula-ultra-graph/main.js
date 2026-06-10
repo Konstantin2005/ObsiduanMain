@@ -115,7 +115,7 @@ class UltraGraphView extends ItemView {
     this.stability = new GraphStabilityController({
       incidentLog: new IncidentLog({ filePath: path.join(graphStoreRoot, "graph.incidents.jsonl") }),
     });
-    this.storeClient = new GraphStoreClient({ storeRoot: graphStoreRoot, includeEdges: true });
+    this.storeClient = new GraphStoreClient({ storeRoot: graphStoreRoot, includeEdges: true, edgeMode: "csr" });
     this.attachInput();
     this.resize();
     this.loadGraphSnapshot();
