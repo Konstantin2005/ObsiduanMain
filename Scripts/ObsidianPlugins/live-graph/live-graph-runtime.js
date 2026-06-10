@@ -165,6 +165,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.lastStatusText = "";
       this.backdropCanvas = null;
       this.backdropSignature = "";
+      this.cachedTopologyKey = "";
+      this.cachedTopology = null;
+      this.cachedLabelKey = "";
+      this.cachedLabelPaths = null;
       this.paintRafId = null;
       this.paintToken = 0;
       this.lastPaintSummary = null;
@@ -274,6 +278,11 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       }
       const tick = (timestamp) => {
         if (this.destroyed) {
+          return;
+        }
+        if (typeof document !== "undefined" && document.hidden) {
+          this.lastFrameAt = timestamp;
+          this.rafId = window.requestAnimationFrame(tick);
           return;
         }
         if (!this.paused && timestamp - this.lastFrameAt >= this.currentTickMs) {
@@ -477,6 +486,18 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       );
       const signature = edges.map((edge) => edge.key).join("|");
       return { edges, degree, signature };
+    }
+
+    getCachedTopology(sample, profile, vaultVersion, sampleSignature) {
+      const topologyKey = [vaultVersion, profile.mode, sampleSignature].join("|");
+      if (this.cachedTopology && this.cachedTopologyKey === topologyKey) {
+        return this.cachedTopology;
+      }
+
+      const topology = this.buildEdges(sample, profile);
+      this.cachedTopologyKey = topologyKey;
+      this.cachedTopology = topology;
+      return topology;
     }
 
     disabledKeysForCycle(profile) {
@@ -799,7 +820,16 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       return drawn;
     }
 
-    drawCanvasGraphOptimized(width, height, sample, edges, degree, disabledKeys, profile) {
+    drawCanvasGraphOptimized(
+      width,
+      height,
+      sample,
+      edges,
+      degree,
+      disabledKeys,
+      profile,
+      labelPaths = null,
+    ) {
       const ctx = this.getCanvasContext(width, height);
       if (!ctx) {
         this.showEmpty("Canvas rendering is unavailable.");
@@ -809,8 +839,6 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.cancelCanvasGraphPaint();
       this.hitTargets = [];
       this.paintCanvasBackdrop(ctx, width, height, profile);
-
-      const labelPaths = this.getLabelPaths(sample, degree, profile);
       const summary = {
         mode: profile.mode,
         chunked: false,
@@ -1083,7 +1111,12 @@ module.exports = function createLiveGraphPlugin(obsidian) {
         ? this.pickSample(linkedFiles, maxNodesTarget, true, profile.keepRatio)
         : this.sample;
       const sampleSignature = sample.map((file) => file.path).join("|");
-      const { edges, degree, signature } = this.buildEdges(sample, profile);
+      const { edges, degree, signature } = this.getCachedTopology(
+        sample,
+        profile,
+        vaultVersion,
+        sampleSignature,
+      );
 
       if (shouldReseed || this.sampleSignature !== sampleSignature) {
         this.sample = sample;
@@ -1107,7 +1140,28 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       this.ensurePositions(this.sample, width, height, forceReseed, profile);
       const disabledKeys = this.disabledKeysForCycle(profile);
-      this.drawCanvasGraphOptimized(width, height, this.sample, edges, degree, disabledKeys, profile);
+      const labelKey = [
+        vaultVersion,
+        profile.mode,
+        sampleSignature,
+        signature,
+        profile.labelLimit || 0,
+        profile.labelMaxChars || 0,
+      ].join("|");
+      if (this.cachedLabelKey !== labelKey) {
+        this.cachedLabelKey = labelKey;
+        this.cachedLabelPaths = this.getLabelPaths(this.sample, degree, profile);
+      }
+      this.drawCanvasGraphOptimized(
+        width,
+        height,
+        this.sample,
+        edges,
+        degree,
+        disabledKeys,
+        profile,
+        this.cachedLabelPaths,
+      );
       this.showEmpty("");
     }
 

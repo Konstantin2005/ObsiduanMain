@@ -157,106 +157,6 @@
             }
           },
           {
-            "id": "f3f79a7081fba580",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "a85ea813279d174d",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "b3a735ea0043e748",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "27663addacbc7935",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "36ec0b999f51641d",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "d5b3d80ec82373e1",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "92d3c9ad531ae11c",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "87f3311c54016468",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "87e059c1511bf539",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
-            "id": "03eda48af3c1cecf",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "life-panel"
-            }
-          },
-          {
             "id": "a3dcb31bf9dbcd6e",
             "type": "leaf",
             "state": {
@@ -267,7 +167,7 @@
             }
           }
         ],
-        "currentTab": 15
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",

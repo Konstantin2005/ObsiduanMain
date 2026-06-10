@@ -957,11 +957,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       banner.createDiv({ cls: "life-panel-pill", text: `Batch: ${this.settings.batchSize}` });
       banner.createDiv({ cls: "life-panel-pill", text: `Hold: ${formatMs(this.settings.detachHoldMs)}` });
 
-      const advanced = card.createEl("details", { cls: "life-panel-advanced" });
-      advanced.createEl("summary", { text: "Advanced settings" });
-      const advancedBody = advanced.createDiv({ cls: "life-panel-compact-setting" });
-
-      new Setting(advancedBody)
+      new Setting(card)
         .setName("Open built-in Graph")
         .setDesc("Open Obsidian's built-in Graph view automatically when the vault loads.")
         .addToggle((toggle) =>
@@ -972,7 +968,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           }),
         );
 
-      new Setting(advancedBody)
+      new Setting(card)
         .setName("Cycle interval")
         .setDesc("How often a link batch is detached and then restored, in milliseconds.")
         .addSlider((slider) =>
@@ -988,7 +984,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(advancedBody)
+      new Setting(card)
         .setName("Batch size")
         .setDesc("How many notes get one link detached per cycle.")
         .addSlider((slider) =>
@@ -1003,7 +999,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(advancedBody)
+      new Setting(card)
         .setName("Pulse count")
         .setDesc("How many detach/restore pulses run in one cycle.")
         .addSlider((slider) =>
@@ -1018,7 +1014,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(advancedBody)
+      new Setting(card)
         .setName("Detach hold")
         .setDesc("How long links stay detached before they are restored.")
         .addSlider((slider) =>
@@ -1033,7 +1029,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(advancedBody)
+      new Setting(card)
         .setName("Restore hold")
         .setDesc("How long to wait after restoring before starting the next pulse.")
         .addSlider((slider) =>
@@ -1048,7 +1044,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
-      new Setting(advancedBody)
+      new Setting(card)
         .setName("Buffer limit")
         .setDesc("How many recent detach snapshots the safety buffer remembers.")
         .addSlider((slider) =>

@@ -601,6 +601,7 @@ Describe 'LiveGraph' {
   const create = require(path.join(root, 'Calendula/.obsidian/plugins/live-graph/core.js'));
   const fileCount = 10000;
   let markdownCalls = 0;
+  let resolvedAccesses = 0;
 
   function makeEl(tag = 'div') {
     return {
@@ -721,14 +722,20 @@ Describe 'LiveGraph' {
           getAbstractFileByPath() { return null; },
           on() { return { off() {} }; },
         },
-        metadataCache: {
-          resolvedLinks: {
+      };
+      const metadataCache = {
+        on() { return { off() {} }; },
+      };
+      Object.defineProperty(metadataCache, 'resolvedLinks', {
+        get() {
+          resolvedAccesses += 1;
+          return {
             'Notes/note-00001.md': { 'Notes/note-00002.md': 1 },
             'Notes/note-00002.md': { 'Notes/note-00001.md': 1 },
-          },
-          on() { return { off() {} }; },
+          };
         },
-      };
+      });
+      this.app.metadataCache = metadataCache;
     }
 
     async loadData() { return { autoOpen: false }; }
@@ -791,7 +798,7 @@ Describe 'LiveGraph' {
   view.renderGraph(false);
   drainQueue();
 
-  process.stdout.write(`calls:${markdownCalls};raf:${rafCalls};mode:${view.currentProfile?.mode};frames:${view.lastPaintSummary?.frames};chunked:${view.lastPaintSummary?.chunked};skipped:${view.lastPaintSummary?.labelsSkipped}\n`);
+  process.stdout.write(`calls:${markdownCalls};resolved:${resolvedAccesses};raf:${rafCalls};mode:${view.currentProfile?.mode};frames:${view.lastPaintSummary?.frames};chunked:${view.lastPaintSummary?.chunked};skipped:${view.lastPaintSummary?.labelsSkipped}\n`);
 })().catch((error) => {
   console.error(error);
   process.exit(1);
@@ -805,6 +812,7 @@ Describe 'LiveGraph' {
 
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'calls:1'
+            ($output -join [Environment]::NewLine) | Should Match 'resolved:2'
             ($output -join [Environment]::NewLine) | Should Match 'mode:ultra'
             ($output -join [Environment]::NewLine) | Should Match 'chunked:true'
             ($output -join [Environment]::NewLine) | Should Match 'frames:[2-9][0-9]*'
