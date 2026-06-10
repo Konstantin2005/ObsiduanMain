@@ -1134,7 +1134,7 @@ Describe 'Calendula Evidence Engine v12' {
         try {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const path = require('path');
   const root = __REPO_ROOT__;
   const evidence = require(path.join(root, 'Scripts/Obsidian/graph-evidence-engine.js'));
@@ -1266,7 +1266,7 @@ Describe 'Calendula graph store' {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $tempRootJson = $root | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const fs = require('fs');
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
@@ -1345,7 +1345,7 @@ Describe 'Calendula Performance Governors' {
         try {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
   const governors = require(path.join(repoRoot, 'Scripts/Obsidian/graph-governors.js'));
@@ -1416,7 +1416,7 @@ Describe 'Calendula Query Engine' {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $tempRootJson = $root | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const fs = require('fs');
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
@@ -1519,7 +1519,7 @@ Describe 'Calendula Multi-Scale Graph' {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $tempRootJson = $root | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const fs = require('fs');
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
@@ -1722,7 +1722,7 @@ Describe 'Calendula Renderer Upgrade Gate' {
         try {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
   const upgrade = require(path.join(repoRoot, 'Scripts/Obsidian/graph-renderer-upgrade.js'));
@@ -1791,7 +1791,7 @@ Describe 'Calendula Stability Layer' {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $tempRootJson = $root | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const fs = require('fs');
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
@@ -1882,7 +1882,7 @@ Describe 'Calendula Critical Real Frame contracts' {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $tempRootJson = $root | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const fs = require('fs');
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
@@ -2013,7 +2013,7 @@ Describe 'Calendula RenderPlan' {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $tempRootJson = $root | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
   const tempRoot = __TEMP_ROOT__;
@@ -2101,7 +2101,7 @@ Describe 'Calendula GraphScheduler' {
             $repoRootJson = $repoRoot | ConvertTo-Json -Compress
             $tempRootJson = $root | ConvertTo-Json -Compress
             $scriptContent = @'
-(() => {
+(async () => {
   const path = require('path');
   const repoRoot = __REPO_ROOT__;
   const tempRoot = __TEMP_ROOT__;
