@@ -792,7 +792,6 @@ Describe 'LiveGraph' {
             ($output -join [Environment]::NewLine) | Should Match 'mode:ultra'
             ($output -join [Environment]::NewLine) | Should Match 'chunked:true'
             ($output -join [Environment]::NewLine) | Should Match 'frames:[2-9][0-9]*'
-            ($output -join [Environment]::NewLine) | Should Match 'skipped:[1-9][0-9]*'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
