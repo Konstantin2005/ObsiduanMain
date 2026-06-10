@@ -145,6 +145,24 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         color: var(--text-normal);
         cursor: pointer;
       }
+      .life-mini-state {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30px;
+        padding: 0 10px;
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text-muted);
+        cursor: default;
+        font-size: 0.8em;
+      }
+      .life-mini-state.is-active {
+        border-color: var(--interactive-accent);
+        background: rgba(120, 170, 255, 0.16);
+        color: var(--text-normal);
+      }
       .life-mini-toggle.is-active {
         border-color: var(--interactive-accent);
         background: rgba(120, 170, 255, 0.16);
@@ -609,12 +627,9 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
       const header = card.createDiv({ cls: "life-mini-header" });
       header.createEl("div", { text: PLUGIN_LABEL, cls: "life-mini-title" });
-      const liveBadge = header.createEl("button", {
+      header.createEl("div", {
         text: this.settings.autoCycleLinks ? "Вкл" : "Выкл",
-        cls: `life-mini-toggle${this.settings.autoCycleLinks ? " is-active" : ""}`,
-      });
-      liveBadge.addEventListener("click", async () => {
-        await this.setLiveMovement(!this.settings.autoCycleLinks);
+        cls: `life-mini-state${this.settings.autoCycleLinks ? " is-active" : ""}`,
       });
 
       const statusText = this.settings.autoCycleLinks
