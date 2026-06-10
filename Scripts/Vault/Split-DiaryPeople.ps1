@@ -99,6 +99,7 @@ Write-Host "Found $($files.Count) diary files"
 foreach ($file in $files) {
     $content = [System.IO.File]::ReadAllText($file, $utf8)
     if ([string]::IsNullOrWhiteSpace($content)) { continue }
+    if ($content -match '(?m)^\s*kind:\s*people-split\s*$') { continue }
 
     $people = Get-PersonMentions -Text $content
     if ($people.Count -le $Threshold) { continue }
@@ -120,6 +121,7 @@ foreach ($file in $files) {
 
     $splitContent = @(
         "---"
+        "kind: people-split"
         "source: $([System.IO.Path]::GetFileName($file))"
         "people_count: $($people.Count)"
         "threshold: $Threshold"
