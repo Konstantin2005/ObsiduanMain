@@ -45,8 +45,7 @@
               "title": "2026-04-29"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -129,12 +128,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Calendula/2026/Май/2026-05-13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из 2026-05-13"
+              "title": "Исходящие ссылки"
             }
           },
           {
@@ -143,7 +141,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Calendula/2026/Май/2026-05-13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +150,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для 2026-05-13"
+              "title": "Обратные ссылки"
             }
           },
           {
@@ -205,8 +202,9 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "4d3beef94f8ce746",
+  "active": "de72db943b4e717e",
   "lastOpenFiles": [
+    "Calendula/2026/Май/2026-05-13.md",
     "Calendula/2026/Апрель/2026-04-29.md",
     "Calendula/2026/Июнь/05.5-06-26.md",
     "Calendula/2026/Июнь/05.4-06-26.md",
@@ -232,7 +230,6 @@
     "Calendula/2026/Май/2026-05-17.1.md",
     "Calendula/2026/Май/2026-05-16.1.md",
     "Calendula/2026/Май/2026-05-15.1.md",
-    "Calendula/2026/Май/2026-05-13.1.md",
     "Excalidraw/pichers/Pasted Image 20260609231556_859.png",
     "Excalidraw/pichers/Pasted Image 20260609231219_906.png",
     "Excalidraw/pichers/Pasted Image 20260609231156_502.png",

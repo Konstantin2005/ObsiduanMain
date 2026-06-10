@@ -1,7 +1,15 @@
-$vaultPath = "C:\obsidian\Main"
-$problemsDir = [System.IO.Path]::Combine($vaultPath, "Problems")
-$cachePath = [System.IO.Path]::Combine($vaultPath, "Tasks", "leetcode_problems_cache.json")
-$existingDir = [System.IO.Path]::Combine($vaultPath, "Tasks", "LeetCode")
+param(
+    [string]$VaultPath = "C:\obsidian\Main",
+    [string]$ProblemsDir = (Join-Path $VaultPath "Problems"),
+    [string]$CachePath = (Join-Path $VaultPath "Tasks\leetcode_problems_cache.json"),
+    [string]$ExistingDir = (Join-Path $VaultPath "Tasks\LeetCode"),
+    [string[]]$SolvedSlugs,
+    [string]$ApiUrl = "https://leetcode-api-pied.vercel.app/user/Mr_Kefir/solved",
+    [switch]$DryRun,
+    [switch]$PassThru
+)
+
+$ErrorActionPreference = "Stop"
 $utf8 = [System.Text.UTF8Encoding]::new($false)
 
 $topicMap = @{
@@ -71,63 +79,58 @@ $topicMap = @{
     "Interactive" = "Array"
 }
 
-if (-not (Test-Path -LiteralPath $problemsDir)) {
-    New-Item -ItemType Directory -Path $problemsDir -Force | Out-Null
-    Write-Host "Created directory: $problemsDir"
+if (-not (Test-Path -LiteralPath $ProblemsDir)) {
+    New-Item -ItemType Directory -Path $ProblemsDir -Force | Out-Null
 }
 
-if (Test-Path -LiteralPath $cachePath) {
-    $cacheRaw = Get-Content -LiteralPath $cachePath -Raw -Encoding UTF8
-    $cache = $cacheRaw | ConvertFrom-Json
-    $slugToProblem = @{}
-    $idToProblem = @{}
-    foreach ($p in $cache) {
-        $slugToProblem[$p.titleSlug] = $p
-        $idToProblem[$p.frontendQuestionId] = $p
-    }
-    Write-Host "Loaded $($cache.Count) problems from cache"
+if (-not (Test-Path -LiteralPath $CachePath)) {
+    throw "Cache file not found: $CachePath"
+}
+
+$cacheRaw = Get-Content -LiteralPath $CachePath -Raw -Encoding UTF8
+$cache = $cacheRaw | ConvertFrom-Json
+$slugToProblem = @{}
+$idToProblem = @{}
+foreach ($p in $cache) {
+    $slugToProblem[$p.titleSlug] = $p
+    $idToProblem[$p.frontendQuestionId] = $p
+}
+
+$resolvedSolved = [System.Collections.Generic.HashSet[string]]::new()
+if ($SolvedSlugs) {
+    foreach ($s in $SolvedSlugs) { $null = $resolvedSolved.Add($s) }
 } else {
-    Write-Host "ERROR: Cache file not found at $cachePath. Run fetch first."
-    exit 1
-}
-
-$solvedSlugs = [System.Collections.Generic.HashSet[string]]::new()
-
-Write-Host "Fetching recent solved problems from API..."
-try {
-    $solvedResp = Invoke-RestMethod -Uri "https://leetcode-api-pied.vercel.app/user/Mr_Kefir/solved" -Method Get -TimeoutSec 15
-    foreach ($s in $solvedResp.solved_slugs) {
-        $null = $solvedSlugs.Add($s)
+    Write-Host "Fetching recent solved problems from API..."
+    try {
+        $solvedResp = Invoke-RestMethod -Uri $ApiUrl -Method Get -TimeoutSec 15
+        foreach ($s in $solvedResp.solved_slugs) { $null = $resolvedSolved.Add($s) }
+    } catch {
+        Write-Host "  WARNING: API failed: $($_.Exception.Message)"
     }
-    Write-Host "  Found $($solvedResp.solved_slugs.Count) from API"
-} catch {
-    Write-Host "  WARNING: API failed: $($_.Exception.Message)"
 }
 
-Write-Host "Scanning existing files in $existingDir..."
-$existingFiles = Get-ChildItem -LiteralPath $existingDir -Filter "*.md"
-$fileCount = 0
-foreach ($f in $existingFiles) {
-    $name = $f.BaseName
-    if ($name -match '^(\d+)\.\s+(.*)') {
-        $problemId = $Matches[1]
-        if ($idToProblem.ContainsKey($problemId)) {
-            $null = $solvedSlugs.Add($idToProblem[$problemId].titleSlug)
-            $fileCount++
+if (Test-Path -LiteralPath $ExistingDir) {
+    $existingFiles = Get-ChildItem -LiteralPath $ExistingDir -Filter "*.md"
+    foreach ($f in $existingFiles) {
+        if ($f.BaseName -match '^(\d+)\.\s+(.*)') {
+            $problemId = $Matches[1]
+            if ($idToProblem.ContainsKey($problemId)) {
+                $null = $resolvedSolved.Add($idToProblem[$problemId].titleSlug)
+            }
         }
     }
 }
-Write-Host "  Found $fileCount existing problem files"
 
-Write-Host "`nGenerating problem files in $problemsDir..."
 $generated = 0
 $skipped = 0
-$sortedSlugs = $solvedSlugs | Sort-Object
+$moveDetails = @()
+$sortedSlugs = $resolvedSolved | Sort-Object
+
 foreach ($slug in $sortedSlugs) {
     if (-not $slugToProblem.ContainsKey($slug)) {
-        Write-Host "  WARNING: No cache data for slug: $slug"
         continue
     }
+
     $problem = $slugToProblem[$slug]
     $id = $problem.frontendQuestionId
     $title = $problem.title
@@ -137,7 +140,7 @@ foreach ($slug in $sortedSlugs) {
     $fileName = "$id. $title.md"
     $invalidChars = [System.IO.Path]::GetInvalidFileNameChars() -join ''
     $fileName = [regex]::Replace($fileName, "[$invalidChars]", '')
-    $filePath = [System.IO.Path]::Combine($problemsDir, $fileName)
+    $filePath = [System.IO.Path]::Combine($ProblemsDir, $fileName)
 
     if (Test-Path -LiteralPath $filePath) {
         $skipped++
@@ -149,68 +152,64 @@ foreach ($slug in $sortedSlugs) {
         $apiName = $t.name
         if ($topicMap.ContainsKey($apiName)) {
             $mapped = $topicMap[$apiName]
-            if ($mapped -notin $selectedTopics) {
-                $selectedTopics += $mapped
-            }
+            if ($mapped -notin $selectedTopics) { $selectedTopics += $mapped }
         } else {
             $safeName = $apiName.Replace(" ", "_").Replace("-", "_")
-            if ($safeName -notin $selectedTopics) {
-                $selectedTopics += $safeName
-            }
+            if ($safeName -notin $selectedTopics) { $selectedTopics += $safeName }
         }
         if ($selectedTopics.Count -ge 2) { break }
     }
 
-    $topicLine = ""
-    $topicFrontmatter = ""
-    $topicContent = ""
-    if ($selectedTopics.Count -gt 0) {
-        $topicFrontmatter = $selectedTopics[0]
-        $topicContent = ($selectedTopics | ForEach-Object { "[[$_]]" }) -join " "
-        $topicLine = $selectedTopics[0]
-    }
-
-    $diffTag = "#$difficulty"
-    $diffLower = $difficulty.ToLower()
+    $topicFrontmatter = if ($selectedTopics.Count -gt 0) { $selectedTopics[0] } else { "" }
+    $topicContent = if ($selectedTopics.Count -gt 0) { ($selectedTopics | ForEach-Object { "[[$_]]" }) -join " " } else { "" }
     $diffFrontmatter = $difficulty.Substring(0,1).ToUpper() + $difficulty.Substring(1).ToLower()
 
-    $lines = @()
-    $lines += "---"
-    $lines += "type: problem"
-    $lines += "difficulty: $diffFrontmatter"
-    $lines += "topic: [[$topicFrontmatter]]"
-    $lines += "leetcode_id: $id"
-    $lines += "---"
-    $lines += ""
-    $lines += "# $title"
-    $lines += ""
-    $lines += "**Difficulty:** $difficulty"
-    $lines += ""
+    $lines = @(
+        "---",
+        "type: problem",
+        "difficulty: $diffFrontmatter",
+        "topic: [[$topicFrontmatter]]",
+        "leetcode_id: $id",
+        "---",
+        "",
+        "# $title",
+        "",
+        "**Difficulty:** $difficulty",
+        ""
+    )
     if ($selectedTopics.Count -gt 0) {
         $lines += "**Topic:** $topicContent"
         $lines += ""
     }
     $lines += "**LeetCode Link:** https://leetcode.com/problems/$slug/"
     $lines += ""
-    $lines += "**Status:** ✅ Solved"
+    $lines += "**Status:** Solved"
     $lines += ""
-    $lines += $diffTag
+    $lines += "#$difficulty"
 
     $content = $lines -join "`n"
-    [System.IO.File]::WriteAllText($filePath, $content, $utf8)
+    if (-not $DryRun) {
+        [System.IO.File]::WriteAllText($filePath, $content, $utf8)
+    }
     $generated++
-
-    if ($generated % 10 -eq 0) {
-        Write-Host "  Generated $generated files..."
+    $moveDetails += [pscustomobject]@{
+        Slug = $slug
+        FilePath = $filePath
+        LeetCodeId = $id
     }
 }
 
-Write-Host "`nDone!"
+Write-Host "Done!"
 Write-Host "  Generated: $generated new files"
 Write-Host "  Skipped (already exist): $skipped"
-Write-Host "  Total known solved: $($solvedSlugs.Count)"
-Write-Host ""
-Write-Host "NOTE: LeetCode API only exposes the last ~20 submissions."
-Write-Host "Your profile shows 340 solved, but only $($solvedSlugs.Count) are retrievable via public API."
-Write-Host "Re-run this script periodically to pick up new solves."
-Write-Host "For full export, use a LeetCode export tool with your session cookie."
+Write-Host "  Total known solved: $($resolvedSolved.Count)"
+
+if ($PassThru) {
+    [pscustomobject]@{
+        Generated = $generated
+        Skipped = $skipped
+        TotalSolved = $resolvedSolved.Count
+        Details = $moveDetails
+        DryRun = [bool]$DryRun
+    }
+}

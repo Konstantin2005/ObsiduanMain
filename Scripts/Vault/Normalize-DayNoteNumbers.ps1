@@ -1,8 +1,7 @@
 param(
     [string]$VaultPath = "C:\obsidian\Main",
     [string]$DiaryRoot = (Join-Path $VaultPath "Calendula\Calendula"),
-    [switch]$DryRun,
-    [switch]$PassThru
+    [switch]$DryRun
 )
 
 $ErrorActionPreference = 'Stop'
@@ -114,21 +113,12 @@ foreach ($group in $groups) {
     }
 }
 
-foreach ($item in $renamePlan) {
-    if ((Test-Path -LiteralPath $item.NewPath) -and ($item.NewPath -ne $item.OldPath)) {
-        throw "Rename target already exists: $($item.NewPath)"
-    }
-}
-
 Write-Host "Planned renames: $($renamePlan.Count)"
 foreach ($item in $renamePlan) {
     Write-Host "$($item.OldRelative) -> $($item.NewRelative)"
 }
 
 if ($DryRun -or $renamePlan.Count -eq 0) {
-    if ($PassThru) {
-        $renamePlan
-    }
     Write-Host "Done"
     return
 }
@@ -155,6 +145,3 @@ foreach ($file in $markdownFiles) {
 }
 
 Write-Host "Done"
-if ($PassThru) {
-    $renamePlan
-}
