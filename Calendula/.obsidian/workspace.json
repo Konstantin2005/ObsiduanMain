@@ -225,9 +225,39 @@
               "icon": "activity",
               "title": "Жизнь"
             }
+          },
+          {
+            "id": "87f3311c54016468",
+            "type": "leaf",
+            "state": {
+              "type": "life-panel",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
+          },
+          {
+            "id": "87e059c1511bf539",
+            "type": "leaf",
+            "state": {
+              "type": "life-panel",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
+          },
+          {
+            "id": "03eda48af3c1cecf",
+            "type": "leaf",
+            "state": {
+              "type": "life-panel",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
           }
         ],
-        "currentTab": 11
+        "currentTab": 14
       }
     ],
     "direction": "horizontal",
@@ -244,7 +274,7 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "92d3c9ad531ae11c",
+  "active": "03eda48af3c1cecf",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/07.1-06-26.md",

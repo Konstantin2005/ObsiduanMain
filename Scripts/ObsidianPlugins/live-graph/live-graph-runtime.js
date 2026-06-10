@@ -637,7 +637,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       canvas.width = Math.max(1, Math.floor(width));
       canvas.height = Math.max(1, Math.floor(height));
       const ctx = canvas.getContext("2d");
-      if (!ctx) {
+      if (!ctx || typeof ctx.fillRect !== "function") {
         return null;
       }
 

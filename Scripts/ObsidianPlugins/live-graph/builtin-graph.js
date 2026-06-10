@@ -69,7 +69,12 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
   function injectStyles() {
     if (typeof document === "undefined") return;
-    if (document.getElementById("life-plugin-styles")) return;
+    if (
+      typeof document.getElementById === "function" &&
+      document.getElementById("life-plugin-styles")
+    ) {
+      return;
+    }
     const style = document.createElement("style");
     style.id = "life-plugin-styles";
     style.textContent = `
@@ -311,7 +316,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         margin-top: 0;
       }
     `;
-    document.head.appendChild(style);
+    const mountTarget = document.head || document.body;
+    if (mountTarget && typeof mountTarget.appendChild === "function") {
+      mountTarget.appendChild(style);
+    }
   }
 
   function setLifeIcon(element) {
