@@ -161,7 +161,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 468.5
+    "width": 468.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,7 +174,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "e326c292b89cdf41",
+  "active": "32b6236491d6341e",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Июнь/07.1-06-26.md",

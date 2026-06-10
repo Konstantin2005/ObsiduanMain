@@ -542,7 +542,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     refreshStatus() {
       if (!this.statusEl) return;
       const detached = this.plugin.safetyBuffer.filter((entry) => entry.status === "detached").length;
-      const text = `Buffer: ${this.plugin.safetyBuffer.length} • Detached: ${detached} • ${this.plugin.busy ? "busy" : "idle"}`;
+      const text = `Buffer: ${this.plugin.safetyBuffer.length} | Detached: ${detached} | ${this.plugin.busy ? "busy" : "idle"}`;
       if (text === this.lastStatusText) return;
       this.lastStatusText = text;
       this.statusEl.setText(text);
