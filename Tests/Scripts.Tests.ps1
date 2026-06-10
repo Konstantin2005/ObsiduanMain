@@ -491,6 +491,7 @@ Describe 'LiveGraph' {
           vault: {
             getMarkdownFiles() { return []; },
             getAbstractFileByPath() { return null; },
+            on() { return { off() {} }; },
           },
           metadataCache: { resolvedLinks: {} },
         };
@@ -502,6 +503,7 @@ Describe 'LiveGraph' {
       addCommand() {}
       addRibbonIcon() { return makeEl(); }
       addSettingTab() {}
+      registerEvent() {}
     }
 
     class PluginSettingTab {
@@ -572,6 +574,158 @@ Describe 'LiveGraph' {
             ($output -join [Environment]::NewLine) | Should Match 'bundle:ok'
             ($output -join [Environment]::NewLine) | Should Match 'source-v1:ok'
             ($output -join [Environment]::NewLine) | Should Match 'source-v2:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
+    It 'caches vault enumeration across repeated renders in the live-graph bundle' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const create = require(path.join(root, 'Calendula/.obsidian/plugins/live-graph/core.js'));
+  const fileCount = 10000;
+  let markdownCalls = 0;
+
+  function makeEl(tag = 'div') {
+    return {
+      tagName: tag,
+      children: [],
+      empty() { this.children = []; this.textContent = ''; },
+      addClass() {},
+      removeClass() {},
+      createDiv() { return makeEl('div'); },
+      createEl(_tag, _opts = {}) { return makeEl(_tag); },
+      setText(text) { this.textContent = text; },
+      appendChild(child) { this.children.push(child); return child; },
+      querySelector(selector) {
+        return this.children.find((child) => child.tagName === selector) || makeEl(selector);
+      },
+      style: {},
+      classList: { add() {} },
+      setAttribute() {},
+      addEventListener() {},
+      getBoundingClientRect() { return { width: 1280, height: 820 }; },
+      innerHTML: '',
+      textContent: '',
+    };
+  }
+
+  global.document = {
+    createElementNS(_ns, tag) { return makeEl(tag); },
+    createElement(tag) { return makeEl(tag); },
+  };
+  global.window = {
+    setInterval() { return 1; },
+    clearInterval() {},
+  };
+
+  class ItemView {
+    constructor() {
+      this.containerEl = makeEl('div');
+    }
+  }
+
+  class Plugin {
+    constructor() {
+      const files = Array.from({ length: fileCount }, (_, index) => ({
+        path: `Notes/note-${String(index + 1).padStart(5, '0')}.md`,
+        basename: `note-${String(index + 1).padStart(5, '0')}`,
+        name: `note-${String(index + 1).padStart(5, '0')}`,
+      }));
+      this.app = {
+        workspace: {
+          onLayoutReady(cb) { cb(); },
+          getLeavesOfType() { return []; },
+          getLeaf() { return { setViewState: async () => {}, detach: async () => {}, openFile: async () => {} }; },
+          revealLeaf() {},
+        },
+        vault: {
+          getMarkdownFiles() {
+            markdownCalls += 1;
+            return files;
+          },
+          getAbstractFileByPath() { return null; },
+          on() { return { off() {} }; },
+        },
+        metadataCache: {
+          resolvedLinks: {
+            'Notes/note-00001.md': { 'Notes/note-00002.md': 1 },
+            'Notes/note-00002.md': { 'Notes/note-00001.md': 1 },
+          },
+        },
+      };
+    }
+
+    async loadData() { return { autoOpen: false }; }
+    async saveData() {}
+    registerView(_type, factory) { this._factory = factory; }
+    addCommand() {}
+    addRibbonIcon() { return makeEl('button'); }
+    addSettingTab() {}
+    registerEvent() {}
+  }
+
+  class PluginSettingTab {
+    constructor() {
+      this.containerEl = makeEl('div');
+    }
+  }
+
+  class Setting {
+    setName() { return this; }
+    setDesc() { return this; }
+    addToggle(cb) {
+      cb({ setValue() { return { onChange() {} }; } });
+      return this;
+    }
+    addSlider(cb) {
+      cb({
+        setLimits() { return this; },
+        setValue() { return this; },
+        setDynamicTooltip() { return this; },
+        onChange() { return this; },
+      });
+      return this;
+    }
+  }
+
+  class Notice {
+    constructor(message) {
+      this.message = message;
+    }
+  }
+
+  function setIcon() {}
+
+  const plugin = new (create({ ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon }))();
+  await plugin.onload();
+  const view = plugin._factory({});
+  await view.onOpen();
+  view.renderGraph(false);
+  view.renderGraph(false);
+
+  process.stdout.write(`calls:${markdownCalls}\n`);
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'live-graph-cache-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'calls:1'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
