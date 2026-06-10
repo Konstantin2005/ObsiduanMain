@@ -542,8 +542,15 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
 
     getLabelPaths(sample, degree, profile) {
-      const limit = Math.max(0, Math.min(profile.labelLimit || sample.length, sample.length));
-      if (!limit || limit >= sample.length) {
+      const rawLimit =
+        profile.labelLimit === undefined || profile.labelLimit === null
+          ? sample.length
+          : profile.labelLimit;
+      const limit = Math.max(0, Math.min(rawLimit, sample.length));
+      if (limit === 0) {
+        return new Set();
+      }
+      if (limit >= sample.length) {
         return null;
       }
 
