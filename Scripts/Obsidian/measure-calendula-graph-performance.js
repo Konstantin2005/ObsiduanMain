@@ -96,6 +96,9 @@ function main() {
           labels: plan.labels.length,
           budgets: plan.budgets,
           skipped: plan.skipped,
+          edgeSlotsScanned: plan.stats.edgeSlotsScanned,
+          edgeBatchMs: plan.timingsMs.edgeBatch,
+          visibleSetMs: plan.timingsMs.visibleSet,
         },
         scheduler: {
           mode: scheduled.plan.mode,

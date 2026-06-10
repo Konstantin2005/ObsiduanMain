@@ -71,3 +71,5 @@
 - Completed v9 deep validation closure: added cold `DeepValidation/v9.0`, repair planning, and worker-scheduled deep validation so endpoint bounds and duplicate IDs stay off the first-frame path.
 - Final Pester status for autonomous v9 pass: `41 passed, 0 failed`.
 - Final Calendula-20K benchmark: `33,900` nodes, `35,948` edges, graph build `2476.82ms`, store write `96.82ms`, RenderPlan `6.96ms`, scheduler `4.22ms`, node budget `3,000`, edge budget `1,000`.
+- Optimized hot edge linking with CSR adjacency walk: first-frame RenderPlan now loads `edgeFlags + outOffsets/outTargets/outEdgeIds` in hot mode and keeps full `edgeSources/edgeTargets` for cold validation/multi-scale.
+- CSR edge benchmark on Calendula-20K: `35,948` total edges, `3,182` scanned edge slots, edge batch `0.511ms`, RenderPlan `6.74ms`, Pester `41 passed, 0 failed`.
