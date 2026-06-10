@@ -592,6 +592,66 @@ Warm cache can be disabled safely.
 Snapshot manifest records source ids and versions.
 ```
 
+## Implementation Progress
+
+### V14-S1A - Explainable Trust Planner Foundation
+
+Status: `DONE`
+
+Completed:
+
+```txt
+IndexOperationLog/v14.0
+IndexOperationEvent/v14.0
+IndexTrustDecision/v14.0
+IndexChangedSetPlan/v14.0
+IndexReadAmplification/v14.0
+IndexSnapshotCompatibility/v14.0
+trust state classification
+trust reason/action codes
+warm-cache-disable action
+parser/resolver/schema version invalidation
+corrupt shard action routing
+deleted file resolver invalidation without markdown read
+read amplification tracker
+snapshot compatibility lineage contract
+synthetic index compiler benchmark
+```
+
+Measured:
+
+```txt
+50K synthetic files
+100 changed
+10 added
+10 deleted
+5 corrupt shards
+changed-set planning: 299.181ms
+total synthetic benchmark: 317.102ms
+markdownRead: 115
+resolverKeysRecomputed: 15
+operation events: 50,011
+unchanged trusted records: 49,885
+```
+
+Verified:
+
+```txt
+Pester: 45 passed, 0 failed
+```
+
+Remaining in `V14-S1`:
+
+```txt
+record address table
+shard manifest checksums
+overlay journal
+post-build source manifest verification
+operation log persistence
+external/plugin parity fixture
+resolver dependency index
+```
+
 ## What To Defer
 
 Do not do first:
