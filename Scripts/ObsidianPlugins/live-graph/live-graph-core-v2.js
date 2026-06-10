@@ -19,7 +19,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     maxGhostEdges: 24,
   };
 
-  const PLUGIN_LABEL = "Жизнь";
+  const PLUGIN_LABEL = "\u0416\u0438\u0437\u043d\u044c";
 
   function shuffle(items) {
     const out = items.slice();
@@ -177,7 +177,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
       this.emptyEl = this.graphEl.createDiv({
         cls: "live-graph-empty",
-        text: "Loading Жизнь…",
+        text: `Loading ${PLUGIN_LABEL}…`,
       });
 
       this.renderGraph(true);
@@ -539,10 +539,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
       this.registerView(VIEW_TYPE, (leaf) => new LiveGraphView(leaf, this));
       this.addCommand({
         id: "open-live-graph",
-        name: "Open Жизнь",
+        name: `Open ${PLUGIN_LABEL}`,
         callback: () => this.openLiveGraph(),
       });
-      const ribbon = this.addRibbonIcon("activity", "Open Жизнь", () => this.openLiveGraph());
+      const ribbon = this.addRibbonIcon("activity", `Open ${PLUGIN_LABEL}`, () => this.openLiveGraph());
       setLifeIcon(ribbon);
       this.addSettingTab(new LiveGraphSettingsTab(this.app, this));
 
