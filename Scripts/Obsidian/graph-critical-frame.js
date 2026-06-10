@@ -357,6 +357,7 @@ function makeLineage(snapshot, frameId) {
 
 function isQueryCandidate(queryPlan, index) {
   if (!queryPlan || queryPlan.contract !== "QueryPlan/v9.0") return true;
+  if (!queryPlan.candidateNodes) return true;
   return queryPlan.candidateNodes[index] === 1;
 }
 

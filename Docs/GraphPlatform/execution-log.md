@@ -47,3 +47,8 @@
 - Ultra Graph budgets now flow through governors; health snapshots expose frame, memory, and IO governor state.
 - Pester status after Phase 3: `37 passed, 0 failed`.
 - Real Calendula-20K Phase 3 benchmark: `33,900` nodes, `35,948` edges, graph build `2161.5ms`, store write `39.51ms`, RenderPlan `7.61ms`, scheduler `3.92ms`, node budget `3,000`, edge budget `1,000`.
+- Completed Phase 4 / Query Engine: added `QueryPlan`, node type/id/flag filters, candidate bitsets, excluded bitsets, priority nodes, and edge policies.
+- RenderPlan now consumes QueryPlan and carries query lineage; CanvasBackend still receives only RenderPlan and does not know filtering.
+- Fixed QueryPlan hot-path overhead by avoiding all-node bitset allocation when no filters are active.
+- Pester status after Phase 4: `38 passed, 0 failed`.
+- Real Calendula-20K Phase 4 benchmark after optimization: `33,900` nodes, `35,948` edges, graph build `2220.76ms`, store write `31.78ms`, RenderPlan `6.79ms`, scheduler `4.29ms`, node budget `3,000`, edge budget `1,000`.

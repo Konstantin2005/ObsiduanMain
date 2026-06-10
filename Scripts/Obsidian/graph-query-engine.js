@@ -103,8 +103,9 @@ function buildQueryPlan({
     });
   }
 
-  const candidateNodes = makeBitset(snapshot.nodeCount, 1);
-  const excludedNodes = makeBitset(snapshot.nodeCount, 0);
+  const hasFilters = filters.length > 0;
+  const candidateNodes = hasFilters ? makeBitset(snapshot.nodeCount, 1) : null;
+  const excludedNodes = hasFilters ? makeBitset(snapshot.nodeCount, 0) : null;
   const reasons = {};
   for (const filter of filters) {
     applyFilter(snapshot, candidateNodes, excludedNodes, filter, reasons);
@@ -113,14 +114,16 @@ function buildQueryPlan({
   const priority = [];
   const requestedPriority = toNumberSet(priorityNodeIds);
   for (const nodeId of requestedPriority) {
-    if (nodeId < snapshot.nodeCount && candidateNodes[nodeId]) priority.push(nodeId);
+    if (nodeId < snapshot.nodeCount && (!candidateNodes || candidateNodes[nodeId])) priority.push(nodeId);
   }
 
-  let candidates = 0;
+  let candidates = hasFilters ? 0 : snapshot.nodeCount;
   let excluded = 0;
-  for (let index = 0; index < snapshot.nodeCount; index += 1) {
-    if (candidateNodes[index]) candidates += 1;
-    if (excludedNodes[index]) excluded += 1;
+  if (hasFilters) {
+    for (let index = 0; index < snapshot.nodeCount; index += 1) {
+      if (candidateNodes[index]) candidates += 1;
+      if (excludedNodes[index]) excluded += 1;
+    }
   }
 
   return Object.freeze({

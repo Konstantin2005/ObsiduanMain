@@ -463,11 +463,11 @@ Goal: introduce query planning only after real rendering and governors are stabl
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-4-001 | Define minimal query input contract | TODO | renderer still receives only `RenderPlan` |
-| V9-4-002 | Compile viewport/profile filters to bitsets | TODO | no text filtering in renderer |
-| V9-4-003 | Add priority node sets | TODO | selected/backbone nodes survive budgets |
+| V9-4-001 | Define minimal query input contract | DONE | renderer still receives only `RenderPlan` |
+| V9-4-002 | Compile viewport/profile filters to bitsets | DONE | no text filtering in renderer |
+| V9-4-003 | Add priority node sets | DONE | selected/backbone nodes survive budgets |
 | V9-4-004 | Add cold query index integrity checks | TODO | query index validation stays off first frame |
-| TEST-V9-4 | Query layer tests | TODO | deterministic bitsets, priority, budget interaction |
+| TEST-V9-4 | Query layer tests | DONE | deterministic bitsets, priority, budget interaction |
 
 ## v9.5: Multi-Scale Graph
 
