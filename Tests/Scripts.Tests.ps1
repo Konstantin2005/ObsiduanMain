@@ -7,6 +7,57 @@ function New-TempRoot {
     return $path
 }
 
+function Initialize-CollectMentionsVault {
+    param([Parameter(Mandatory = $true)][string]$Root)
+
+    $diaryRoot = Join-Path $Root 'Calendula\Calendula'
+    $socialRoot = Join-Path $Root 'Calendula\Соц Капитал'
+    New-Item -ItemType Directory -Path (Join-Path $diaryRoot '2026\Июнь') -Force | Out-Null
+    New-Item -ItemType Directory -Path $socialRoot -Force | Out-Null
+
+    Write-Utf8Text -Path (Join-Path $socialRoot 'John.md') -Content @"
+---
+name: John
+---
+"@
+
+    Write-Utf8Text -Path (Join-Path $socialRoot 'Mary.md') -Content @"
+---
+name: Mary
+---
+"@
+
+    Write-Utf8Text -Path (Join-Path $socialRoot 'Alex.md') -Content @"
+---
+name: Alex
+---
+"@
+
+    Write-Utf8Text -Path (Join-Path $diaryRoot '2026\Июнь\01-06-26.md') -Content @"
+# Дневник 1
+
+Сегодня видел [[John]] и Mary.
+
+Вечером снова встретил John.
+"@
+
+    Write-Utf8Text -Path (Join-Path $diaryRoot '2026\Июнь\02-06-26.md') -Content @"
+# Дневник 2
+
+Alex пришёл раньше.
+
+Потом John и Mary обсуждали планы.
+"@
+
+    Write-Utf8Text -Path (Join-Path $diaryRoot '2026\Июнь\03-06-26.md') -Content @"
+# Дневник 3
+
+Mary помогла Alex.
+
+John пришёл позже и снова встретил Mary.
+"@
+}
+
 Describe 'Scripts' {
     Context 'VaultHelpers' {
         It 'maps month numbers to Russian names' {
@@ -272,6 +323,32 @@ name: John
         finally {
             if (Test-Path -LiteralPath $root) {
                 Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
+    It 'collect-mentions produces the same result with parallel and serial scans' {
+        $serialRoot = New-TempRoot
+        $parallelRoot = New-TempRoot
+        try {
+            Initialize-CollectMentionsVault -Root $serialRoot
+            Initialize-CollectMentionsVault -Root $parallelRoot
+
+            & (Join-Path $repoRoot 'Scripts\Vault\collect-mentions.ps1') -VaultPath $serialRoot -DiaryRoot (Join-Path $serialRoot 'Calendula\Calendula') -SocialCapitalRoot (Join-Path $serialRoot 'Calendula\Соц Капитал') -ThrottleLimit 1
+            & (Join-Path $repoRoot 'Scripts\Vault\collect-mentions.ps1') -VaultPath $parallelRoot -DiaryRoot (Join-Path $parallelRoot 'Calendula\Calendula') -SocialCapitalRoot (Join-Path $parallelRoot 'Calendula\Соц Капитал') -ThrottleLimit 4
+
+            $people = 'Alex', 'John', 'Mary'
+            foreach ($name in $people) {
+                $serialFile = Join-Path $serialRoot "Calendula\Соц Капитал\$name.md"
+                $parallelFile = Join-Path $parallelRoot "Calendula\Соц Капитал\$name.md"
+                (Read-Utf8Text -Path $serialFile) | Should Be (Read-Utf8Text -Path $parallelFile)
+            }
+        }
+        finally {
+            foreach ($root in @($serialRoot, $parallelRoot)) {
+                if (Test-Path -LiteralPath $root) {
+                    Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+                }
             }
         }
     }
