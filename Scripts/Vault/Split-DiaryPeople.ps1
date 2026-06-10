@@ -7,4 +7,4 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-Write-Host "Mini diaries feature removed. Original diary files are left unchanged."
+Write-Host "People split feature removed. Original diary files are left unchanged."

@@ -5,4 +5,4 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-Write-Host "Mini diaries feature removed. No restore is performed."
+Write-Host "People split feature removed. No restore is performed."

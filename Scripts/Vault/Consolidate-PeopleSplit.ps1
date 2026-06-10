@@ -6,4 +6,4 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-Write-Host "Mini diaries feature removed. No consolidation is performed."
+Write-Host "People split feature removed. No consolidation is performed."
