@@ -6,7 +6,6 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $utf8 = [System.Text.UTF8Encoding]::new($false)
-$archivePath = Join-Path $DiaryRoot "Mini diaries.md"
 
 function Get-NoteMeta {
     param([string]$Path)
@@ -114,18 +113,6 @@ function Get-ShortYearText {
     return ('{0:00}' -f ([int]$YearText % 100))
 }
 
-function Get-BodyText {
-    param([string]$Text)
-
-    $body = $Text
-    $frontmatter = [Regex]::Match($body, "^---\r?\n[\s\S]*?\r?\n---\r?\n?", [System.Text.RegularExpressions.RegexOptions]::Singleline)
-    if ($frontmatter.Success) {
-        $body = $body.Substring($frontmatter.Length)
-    }
-
-    return $body.Trim()
-}
-
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
     throw "Diary path not found: $DiaryRoot"
 }
@@ -201,54 +188,6 @@ if ($renamePlan.Count -gt 0) {
 
         if ($updated -ne $original) {
             [System.IO.File]::WriteAllText($file.FullName, $updated, $utf8)
-        }
-    }
-}
-
-$currentNotes = Get-ChildItem -LiteralPath $DiaryRoot -Recurse -File -Filter "*.md" |
-    ForEach-Object { Get-NoteMeta -Path $_.FullName } |
-    Where-Object { $_ -ne $null }
-
-if (@($currentNotes).Count -gt 0) {
-    $currentGroups = $currentNotes |
-        Where-Object { $_.IsNumbered } |
-        Group-Object -Property { "$($_.Directory)|$($_.DateKey)" }
-
-    foreach ($group in $currentGroups) {
-        $groupNotes = @($group.Group | Sort-Object Number, BaseName)
-        $mainNote = $currentNotes | Where-Object {
-            (-not $_.IsNumbered) -and $_.Directory -eq $groupNotes[0].Directory -and $_.DateKey -eq $groupNotes[0].DateKey
-        } | Select-Object -First 1
-
-        if (-not $mainNote) {
-            continue
-        }
-
-        $mainText = [System.IO.File]::ReadAllText($mainNote.Path, $utf8)
-        $updatedMain = $mainText
-
-        foreach ($note in $groupNotes) {
-            $sourceName = [System.IO.Path]::GetFileName($note.Path)
-            $marker = "<!-- mini-note-source: $sourceName -->"
-            if ($updatedMain.Contains($marker)) {
-                continue
-            }
-
-            $sourceText = [System.IO.File]::ReadAllText($note.Path, $utf8)
-            $bodyText = Get-BodyText -Text $sourceText
-            if ([string]::IsNullOrWhiteSpace($bodyText)) {
-                continue
-            }
-
-            if (-not $updatedMain.EndsWith("`n")) {
-                $updatedMain += "`n"
-            }
-
-            $updatedMain += "`n$marker`n`n$bodyText`n"
-        }
-
-        if ($updatedMain -ne $mainText) {
-            [System.IO.File]::WriteAllText($mainNote.Path, $updatedMain, $utf8)
         }
     }
 }
