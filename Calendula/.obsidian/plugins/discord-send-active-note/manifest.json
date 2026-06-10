@@ -1,0 +1,9 @@
+{
+  "id": "discord-send-active-note",
+  "name": "Discord Send Active Note",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Send the active note to Discord in 2000-character chunks.",
+  "author": "Codex",
+  "isDesktopOnly": true
+}
