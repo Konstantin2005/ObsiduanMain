@@ -178,7 +178,7 @@ foreach ($item in $renamePlan) {
     [System.IO.File]::Move($item.OldPath, $item.NewPath)
 }
 
-$markdownFiles = Get-ChildItem -LiteralPath $DiaryRoot -Recurse -File -Filter "*.md" |
+$markdownFiles = Get-ChildItem -LiteralPath $VaultPath -Recurse -File -Filter "*.md" |
     Where-Object { $_.FullName -ne $archivePath }
 
 foreach ($file in $markdownFiles) {
