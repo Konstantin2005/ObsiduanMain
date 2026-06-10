@@ -1,9 +1,22 @@
 [
-  "3d-graph",
-  "obsidian-kanban",
   "dataview",
+  "obsidian-git",
+  "obsidian-view-mode-by-frontmatter",
   "obsidian-excalidraw-plugin",
+  "3d-graph",
+  "excalibrain",
   "extended-graph",
+  "obsidian-kanban",
   "calendar",
-  "alfonso-money-manager"
+  "alfonso-money-manager",
+  "copilot",
+  "graph-pro",
+  "advanced-canvas",
+  "obsidian-timeline",
+  "obsidian42-brat",
+  "cm-chs-patch",
+  "edit-in-neovim",
+  "mini-vimrc",
+  "vim-im-select",
+  "zettelflow"
 ]

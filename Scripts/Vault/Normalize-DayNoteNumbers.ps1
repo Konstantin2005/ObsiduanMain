@@ -108,6 +108,12 @@ function Get-RelativePath {
     return $toFull.Replace('\', '/')
 }
 
+function Get-ShortYearText {
+    param([string]$YearText)
+
+    return ('{0:00}' -f ([int]$YearText % 100))
+}
+
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
     throw "Diary path not found: $DiaryRoot"
 }
@@ -131,24 +137,14 @@ foreach ($group in $groups) {
 
     $startIndex = 1
     $ordered = @($groupNotes | Sort-Object Number, BaseName)
-    $style = if ($mainNote -and $mainNote.PatternKind -eq 'MainYearFirst') {
-        'Suffix'
-    } elseif ($mainNote) {
-        'DayIndex'
-    } else {
-        $ordered[0].PatternKind
-    }
+    $style = 'DayIndex'
 
     for ($i = 0; $i -lt $ordered.Count; $i++) {
         $note = $ordered[$i]
         $newPrefix = $startIndex + $i
-        if ($style -eq 'Suffix') {
-            $dayText = ('{0:00}' -f [int]$note.DayText)
-            $newBaseName = ('{0}-{1}-{2}.{3}.md' -f $note.YearText, $note.MonthText, $dayText, $newPrefix)
-        } else {
-            $dayText = ('{0:00}' -f [int]$note.DayText)
-            $newBaseName = ('{0}.{1}-{2}-{3}.md' -f $dayText, $newPrefix, $note.MonthText, $note.YearText)
-        }
+        $dayText = ('{0:00}' -f [int]$note.DayText)
+        $yearText = Get-ShortYearText -YearText $note.YearText
+        $newBaseName = ('{0}.{1}-{2}-{3}.md' -f $dayText, $newPrefix, $note.MonthText, $yearText)
 
         if ($newBaseName -eq ($note.BaseName + ".md")) {
             continue
