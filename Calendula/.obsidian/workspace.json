@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Calendula/2026/Июнь/0.5-06-26.md",
+                "file": "Calendula/Mini diaries.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для 0.5-06-26"
+              "title": "Обратные ссылки для Mini diaries"
             }
           },
           {
@@ -191,7 +191,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "7a73fe0843c7e652",
+  "active": "a211858d290dfa17",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/05.2-06-26.md",
     "Calendula/2026/Июнь/05.1-06-26.md",
