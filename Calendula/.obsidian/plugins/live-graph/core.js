@@ -1,4 +1,4 @@
-const createPlugin = require("C:/obsidian/Main/Scripts/ObsidianPlugins/live-graph/live-graph-runtime.js");
+const createPlugin = require("C:/obsidian/Main/Scripts/ObsidianPlugins/live-graph/builtin-graph.js");
 
 function getObsidianExports() {
   try {

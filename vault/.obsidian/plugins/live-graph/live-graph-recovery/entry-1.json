@@ -1,0 +1,17 @@
+{
+  "id": "entry-1",
+  "createdAt": "2026-06-10T00:00:00.000Z",
+  "status": "detached",
+  "files": [
+    {
+      "path": "A.md",
+      "original": "~z~eJztxrEJACAMALBX+kpPaUFwcHDwf/qDczIlz90VvV5Fqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6n8HIIhdVA==",
+      "detached": "~z~eJztxqENACAMALBX9spOGQkJAjGB4Hx+QLequXtVjHkqUlVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf97H35UXcw="
+    },
+    {
+      "path": "B.md",
+      "original": "~z~eJztxqENACAMALBX9spOGQkJAjGB4Xt+QLequXtVjHkqUlVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf97H35VXc0=",
+      "detached": "~z~eJztxqENACAMALBX9spOGQkJAoFAEK7nB3SrmnONitZ3Raqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqup/z33cml5G"
+    }
+  ]
+}
