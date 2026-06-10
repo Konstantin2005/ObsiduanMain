@@ -8,8 +8,8 @@
   keep up to 3 unique people each.
 
   Default output file name format:
-    03.1-06-26.md
-  where the leading number is the amount of unique people mentions in that chunk.
+    07.1-06-26.md
+  where the leading number is the source day and the suffix keeps the month-year.
 #>
 
 param(
@@ -91,6 +91,37 @@ function Get-TopTags {
     return $tags
 }
 
+function Get-DatePartsFromSourceFile {
+    param([string]$SourceFile)
+
+    $baseName = [System.IO.Path]::GetFileNameWithoutExtension($SourceFile)
+
+    if ($baseName -match '^(\d{4})-(\d{2})-(\d{2})$') {
+        $date = [datetime]::ParseExact($matches[1], 'yyyy-MM-dd', $null)
+        return [pscustomobject]@{
+            Day = $date.ToString('dd')
+            MonthYear = $date.ToString('MM-yy')
+        }
+    }
+
+    if ($baseName -match '^(\d{1,2})(?:\.\d+)?-(\d{1,2})-(\d{2,4})$') {
+        $day = '{0:00}' -f [int]$matches[1]
+        $month = '{0:00}' -f [int]$matches[2]
+        $yearText = $matches[3]
+        $yearSuffix = if ($yearText.Length -eq 2) { $yearText } else { $yearText.Substring($yearText.Length - 2, 2) }
+
+        return [pscustomobject]@{
+            Day = $day
+            MonthYear = "$month-$yearSuffix"
+        }
+    }
+
+    return [pscustomobject]@{
+        Day = $baseName
+        MonthYear = $baseName
+    }
+}
+
 function Get-BlockMentions {
     param([string]$Block)
 
@@ -105,30 +136,76 @@ function Get-BlockMentions {
 function Get-SplitFileName {
     param(
         [string]$SourceFile,
-        [int]$PeopleCount,
         [int]$ChunkIndex
     )
 
-    $baseName = [System.IO.Path]::GetFileNameWithoutExtension($SourceFile)
-    $datePart = $baseName
+    $dateParts = Get-DatePartsFromSourceFile -SourceFile $SourceFile
+    return ('{0}.{1}-{2}.md' -f $dateParts.Day, $ChunkIndex, $dateParts.MonthYear)
+}
 
-    if ($baseName -match '(\d{4}-\d{2}-\d{2})') {
-        $date = [datetime]::ParseExact($matches[1], 'yyyy-MM-dd', $null)
-        $datePart = $date.ToString('MM-yy')
-    }
-    elseif ($baseName -match '(\d{1,2})-(\d{1,2})-(\d{2,4})') {
-        $month = [int]$matches[2]
-        $yearText = $matches[3]
-        $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
-        $datePart = ('{0:00}-{1:00}' -f $month, ($year % 100))
-    }
+function Rename-ExistingSplitFiles {
+    param(
+        [string]$Root,
+        [switch]$DryRun
+    )
 
-    return ('{0:D2}.{1}-{2}.md' -f $PeopleCount, $ChunkIndex, $datePart)
+    $splitFiles = [System.IO.Directory]::GetFiles($Root, "*.md", [System.IO.SearchOption]::AllDirectories) |
+        Where-Object {
+            [System.IO.Path]::GetFileNameWithoutExtension($_) -match '^\d{2}\.\d+-.+$'
+        }
+
+    foreach ($splitFile in $splitFiles) {
+        $content = [System.IO.File]::ReadAllText($splitFile, $utf8)
+        if ($content -notmatch '(?m)^source:\s*(.+?)\s*$') {
+            continue
+        }
+
+        $sourceName = $matches[1].Trim()
+        $chunkIndex = $null
+        if ($content -match '(?m)^chunk_index:\s*(\d+)\s*$') {
+            $chunkIndex = [int]$matches[1]
+        }
+        elseif ([System.IO.Path]::GetFileNameWithoutExtension($splitFile) -match '^\d{2}\.(\d+)-\d{2}-\d{2}$') {
+            $chunkIndex = [int]$matches[1]
+        }
+
+        if ($null -eq $chunkIndex) {
+            continue
+        }
+
+        $sourcePath = Join-Path ([System.IO.Path]::GetDirectoryName($splitFile)) $sourceName
+        if (-not [System.IO.File]::Exists($sourcePath)) {
+            Write-Host "  ! Skip rename for $splitFile because source is missing: $sourceName"
+            continue
+        }
+
+        $targetName = Get-SplitFileName -SourceFile $sourcePath -ChunkIndex $chunkIndex
+        $currentName = [System.IO.Path]::GetFileName($splitFile)
+        if ($targetName -eq $currentName) {
+            continue
+        }
+
+        $targetPath = Join-Path ([System.IO.Path]::GetDirectoryName($splitFile)) $targetName
+        if ([System.IO.File]::Exists($targetPath)) {
+            Write-Host "  ! Skip rename for $splitFile because target already exists: $targetName"
+            continue
+        }
+
+        if ($DryRun) {
+            Write-Host "  -> Rename $currentName to $targetName"
+            continue
+        }
+
+        [System.IO.File]::Move($splitFile, $targetPath)
+        Write-Host "  -> Renamed $currentName to $targetName"
+    }
 }
 
 if (-not [System.IO.Directory]::Exists($DiaryRoot)) {
     throw "Diary path not found: $DiaryRoot"
 }
+
+$null = Rename-ExistingSplitFiles -Root $DiaryRoot -DryRun:$DryRun
 
 $files = Get-DiaryFiles -Root $DiaryRoot
 Write-Host "Found $($files.Count) diary files"
@@ -197,7 +274,7 @@ foreach ($file in $files) {
 
     for ($chunkIndex = 1; $chunkIndex -lt $chunks.Count; $chunkIndex++) {
         $chunk = $chunks[$chunkIndex]
-        $splitFileName = Get-SplitFileName -SourceFile $file -PeopleCount $chunk.PeopleCount -ChunkIndex $chunkIndex
+        $splitFileName = Get-SplitFileName -SourceFile $file -ChunkIndex $chunkIndex
         $splitPath = Join-Path ([System.IO.Directory]::GetParent($file).FullName) $splitFileName
         $splitContent = @(
             "---"

@@ -8,6 +8,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     autoCycleLinks: true,
     cycleIntervalMs: 300000,
     batchSize: 5,
+    pulseCount: 3,
+    detachHoldMs: 15000,
+    restoreHoldMs: 5000,
+    bufferLimit: 12,
   };
 
   function svgEl(tag, attrs = {}) {
@@ -80,6 +84,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
   function replaceRange(text, start, end, replacement) {
     return `${text.slice(0, start)}${replacement}${text.slice(end)}`;
+  }
+
+  function sleep(ms) {
+    return new Promise((resolve) => window.setTimeout(resolve, ms));
   }
 
   function parseWikiLinkBody(body) {
@@ -170,6 +178,62 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
             }),
         );
 
+      new Setting(containerEl)
+        .setName("Pulse count")
+        .setDesc("How many detach/restore pulses run in one cycle.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(1, 10, 1)
+            .setValue(this.plugin.settings.pulseCount)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.plugin.settings.pulseCount = value;
+              await this.plugin.saveState();
+            }),
+        );
+
+      new Setting(containerEl)
+        .setName("Detach hold")
+        .setDesc("How long links stay detached before they are restored.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(3000, 120000, 3000)
+            .setValue(this.plugin.settings.detachHoldMs)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.plugin.settings.detachHoldMs = value;
+              await this.plugin.saveState();
+            }),
+        );
+
+      new Setting(containerEl)
+        .setName("Restore hold")
+        .setDesc("How long to wait after restoring before starting the next pulse.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(1000, 30000, 1000)
+            .setValue(this.plugin.settings.restoreHoldMs)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.plugin.settings.restoreHoldMs = value;
+              await this.plugin.saveState();
+            }),
+        );
+
+      new Setting(containerEl)
+        .setName("Buffer limit")
+        .setDesc("How many recent detach snapshots the safety buffer remembers.")
+        .addSlider((slider) =>
+          slider
+            .setLimits(3, 50, 1)
+            .setValue(this.plugin.settings.bufferLimit)
+            .setDynamicTooltip()
+            .onChange(async (value) => {
+              this.plugin.settings.bufferLimit = value;
+              await this.plugin.saveState();
+            }),
+        );
+
       containerEl.createEl("p", {
         text: "This plugin edits wiki links in your notes, so keep it enabled only if you want the text itself to change and then be restored.",
       });
@@ -183,8 +247,10 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         const legacySettings = data.settings || data;
         this.settings = Object.assign({}, DEFAULT_SETTINGS, legacySettings);
         this.activeBatch = data.activeBatch || null;
+        this.safetyBuffer = Array.isArray(data.safetyBuffer) ? data.safetyBuffer : [];
         this.interval = null;
         this.busy = false;
+        this.cycleId = 0;
 
         this.addCommand({
           id: "open-live-graph",
@@ -225,11 +291,9 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
               console.error(`[${PLUGIN_LABEL}] graph open failed`, error);
             });
           }
-          if (this.activeBatch?.files?.length) {
-            void this.restoreActiveBatch(true).catch((error) => {
-              console.error(`[${PLUGIN_LABEL}] recovery restore failed`, error);
-            });
-          }
+          void this.recoverFromBuffer().catch((error) => {
+            console.error(`[${PLUGIN_LABEL}] recovery restore failed`, error);
+          });
           this.restartTimer();
           if (this.settings.autoCycleLinks) {
             void this.cycleLinks(true).catch((error) => {
@@ -245,13 +309,17 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
     async onunload() {
       this.stopTimer();
-      if (this.activeBatch?.files?.length) {
+      if (this.activeBatch?.files?.length || this.hasDetachedBuffer()) {
         try {
-          await this.restoreActiveBatch(false);
+          await this.recoverFromBuffer(true);
         } catch (error) {
           console.error(`[${PLUGIN_LABEL}] unload restore failed`, error);
         }
       }
+    }
+
+    hasDetachedBuffer() {
+      return this.safetyBuffer.some((entry) => entry.status === "detached");
     }
 
     restartTimer() {
@@ -276,7 +344,66 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       await this.saveData({
         settings: this.settings,
         activeBatch: this.activeBatch,
+        safetyBuffer: this.safetyBuffer,
       });
+    }
+
+    trimBuffer() {
+      const limit = Math.max(1, Number(this.settings.bufferLimit) || 12);
+      if (this.safetyBuffer.length > limit) {
+        this.safetyBuffer = this.safetyBuffer.slice(-limit);
+      }
+    }
+
+    async recordDetachedBatch(batch) {
+      const entry = {
+        id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+        createdAt: new Date().toISOString(),
+        status: "detached",
+        files: batch.files.map((file) => ({ ...file })),
+      };
+      this.safetyBuffer.push(entry);
+      this.trimBuffer();
+      this.cycleId = entry.id;
+      this.activeBatch = { files: batch.files.map((file) => ({ ...file })), cycleId: entry.id };
+      await this.saveState();
+      return entry;
+    }
+
+    async markBufferRestored(entryId) {
+      const entry = this.safetyBuffer.find((item) => item.id === entryId);
+      if (entry) {
+        entry.status = "restored";
+        entry.restoredAt = new Date().toISOString();
+      }
+      if (this.activeBatch?.cycleId === entryId) {
+        this.activeBatch = null;
+      }
+      await this.saveState();
+    }
+
+    async recoverFromBuffer(force = false) {
+      const detachedEntries = this.safetyBuffer.filter((entry) => entry.status === "detached");
+      if (!detachedEntries.length) {
+        return true;
+      }
+
+      for (const entry of detachedEntries) {
+        for (const snapshot of entry.files) {
+          const file = this.app.vault.getAbstractFileByPath(snapshot.path);
+          if (!file) continue;
+          const current = await this.app.vault.read(file);
+          if (force || current === snapshot.detached) {
+            await this.app.vault.modify(file, snapshot.original);
+          }
+        }
+        entry.status = "restored";
+        entry.restoredAt = new Date().toISOString();
+      }
+
+      this.activeBatch = null;
+      await this.saveState();
+      return true;
     }
 
     async openBuiltInGraph(showNotice = false) {
@@ -321,66 +448,40 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       return candidates;
     }
 
-    async restoreActiveBatch(force = false) {
-      if (!this.activeBatch?.files?.length) return true;
-
-      const pending = [];
-      for (const snapshot of this.activeBatch.files) {
-        const file = this.app.vault.getAbstractFileByPath(snapshot.path);
-        if (!file) continue;
-
-        const current = await this.app.vault.read(file);
-        if (!force && current !== snapshot.detached) {
-          pending.push(snapshot);
-          continue;
-        }
-
-        if (current !== snapshot.original) {
-          await this.app.vault.modify(file, snapshot.original);
-        }
-      }
-
-      this.activeBatch = pending.length ? { files: pending } : null;
-      await this.saveState();
-
-      if (pending.length) {
-        new Notice(`${PLUGIN_LABEL}: some files changed and were not restored.`);
-        return false;
-      }
-
-      return true;
-    }
-
     async cycleLinks(showNotice = false) {
       if (this.busy) return;
       this.busy = true;
       try {
-        if (this.activeBatch?.files?.length) {
-          const restored = await this.restoreActiveBatch(false);
-          if (!restored) return;
-        }
+        await this.recoverFromBuffer(false);
 
-        const batchSize = Math.max(1, Number(this.settings.batchSize) || 5);
-        const candidates = await this.pickBatchCandidates(batchSize);
-        if (!candidates.length) {
-          new Notice(`${PLUGIN_LABEL}: no wiki links found to cycle.`);
-          return;
-        }
+        const pulseCount = Math.max(1, Number(this.settings.pulseCount) || 3);
+        for (let pulse = 0; pulse < pulseCount; pulse += 1) {
+          const batchSize = Math.max(1, Number(this.settings.batchSize) || 5);
+          const candidates = await this.pickBatchCandidates(batchSize);
+          if (!candidates.length) {
+            new Notice(`${PLUGIN_LABEL}: no wiki links found to cycle.`);
+            return;
+          }
 
-        for (const snapshot of candidates) {
-          const file = this.app.vault.getAbstractFileByPath(snapshot.path);
-          if (!file) continue;
-          const current = await this.app.vault.read(file);
-          if (current !== snapshot.original) continue;
-          await this.app.vault.modify(file, snapshot.detached);
-        }
+          for (const snapshot of candidates) {
+            const file = this.app.vault.getAbstractFileByPath(snapshot.path);
+            if (!file) continue;
+            const current = await this.app.vault.read(file);
+            if (current !== snapshot.original) continue;
+            await this.app.vault.modify(file, snapshot.detached);
+          }
 
-        this.activeBatch = { files: candidates };
-        await this.saveState();
-        await this.openBuiltInGraph(false);
+          const entry = await this.recordDetachedBatch({ files: candidates });
+          await this.openBuiltInGraph(false);
 
-        if (showNotice) {
-          new Notice(`${PLUGIN_LABEL}: detached ${candidates.length} link(s)`);
+          if (showNotice && pulse === 0) {
+            new Notice(`${PLUGIN_LABEL}: detached ${candidates.length} link(s)`);
+          }
+
+          await sleep(Math.max(0, Number(this.settings.detachHoldMs) || 0));
+          await this.recoverFromBuffer(false);
+          await this.markBufferRestored(entry.id);
+          await sleep(Math.max(0, Number(this.settings.restoreHoldMs) || 0));
         }
       } finally {
         this.busy = false;
