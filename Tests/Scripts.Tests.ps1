@@ -1366,6 +1366,98 @@ Describe 'Calendula Query Engine' {
     }
 }
 
+Describe 'Calendula Multi-Scale Graph' {
+    It 'builds scale levels 0-5 and compiles scale selections into QueryPlan' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $tempRootJson = $root | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const fs = require('fs');
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const tempRoot = __TEMP_ROOT__;
+  const vaultRoot = path.join(tempRoot, 'Vault');
+  const outRoot = path.join(tempRoot, 'graph-store');
+  fs.mkdirSync(vaultRoot, { recursive: true });
+  fs.writeFileSync(path.join(vaultRoot, 'A.md'), 'type: diary\nBackbone link: [[B]]\n[[C]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'B.md'), 'type: person\n[[C]]\n', 'utf8');
+  fs.writeFileSync(path.join(vaultRoot, 'C.md'), 'type: diary\n[[A]]\n', 'utf8');
+
+  const store = require(path.join(repoRoot, 'Scripts/Obsidian/build-calendula-graph-store.js'));
+  const critical = require(path.join(repoRoot, 'Scripts/Obsidian/graph-critical-frame.js'));
+  const multiscale = require(path.join(repoRoot, 'Scripts/Obsidian/graph-multiscale.js'));
+  const renderPlan = require(path.join(repoRoot, 'Scripts/Obsidian/graph-render-plan.js'));
+
+  const graph = store.buildGraph(vaultRoot);
+  store.writeStore(vaultRoot, outRoot, graph);
+  const loaded = new critical.GraphStoreClient({ storeRoot: outRoot }).loadSnapshot();
+  if (!loaded.ok) throw new Error(`Expected snapshot: ${JSON.stringify(loaded.failureState)}`);
+
+  const model = multiscale.buildMultiScaleModel({ snapshot: loaded.snapshot, selectedNodeIds: [1] });
+  if (!Object.isFrozen(model) || model.contract !== 'MultiScaleModel/v9.0') throw new Error('Expected frozen multiscale model');
+  for (let level = 0; level <= 5; level += 1) {
+    if (!model.levels[level] || !(model.levels[level].nodes instanceof Uint32Array)) {
+      throw new Error(`Missing scale level ${level}`);
+    }
+  }
+  if (model.levels[0].count < 2) throw new Error(`Domain overview should include node types, got ${model.levels[0].count}`);
+  if (model.levels[2].count < 2) throw new Error(`Backbone should include both endpoints, got ${model.levels[2].count}`);
+  if (model.levels[3].count === 0) throw new Error('Important level should include degree-ranked nodes');
+  if (!Array.from(model.levels[4].nodes).includes(1)) throw new Error('Ego level should include selected center');
+  if (model.levels[5].count !== 3) throw new Error(`Details level should include all nodes, got ${model.levels[5].count}`);
+
+  const scaleQuery = multiscale.buildScaleQueryPlan({
+    snapshot: loaded.snapshot,
+    level: multiscale.SCALE_LEVELS.BACKBONE,
+    budget: 10,
+    selectedNodeIds: [1],
+    id: 'backbone-scale',
+  });
+  if (scaleQuery.edgePolicy !== 'backbone' || scaleQuery.stats.candidates < 2) {
+    throw new Error(`Expected backbone scale query, got ${JSON.stringify(scaleQuery.stats)} / ${scaleQuery.edgePolicy}`);
+  }
+
+  const scalePlan = critical.buildCriticalRenderPlan({
+    snapshot: loaded.snapshot,
+    queryPlan: scaleQuery,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    budgets: { nodeBudget: 10, edgeBudget: 10, frameBudgetMs: 16 },
+    frameId: 20,
+  });
+  if (scalePlan.queryPlanId !== 'backbone-scale' || scalePlan.nodes.length < 2) throw new Error(`RenderPlan did not consume scale query: ${scalePlan.queryPlanId}`);
+
+  const profilePlan = renderPlan.buildRenderPlan({
+    storeRoot: outRoot,
+    profile: { name: 'domain-profile', scaleLevel: 0, maxVisibleNodes: 10, maxVisibleEdges: 10, edgePolicy: 'visible' },
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    frameId: 21,
+  });
+  if (profilePlan.nodes.length > model.levels[0].count || !profilePlan.queryPlanId.includes('scale-0')) {
+    throw new Error(`Profile scale level should select domain overview, got nodes=${profilePlan.nodes.length}, query=${profilePlan.queryPlanId}`);
+  }
+
+  process.stdout.write(`multiscale:ok ${JSON.stringify({ domain: model.levels[0].count, backbone: model.levels[2].count, profileNodes: profilePlan.nodes.length })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
+            $scriptPath = Join-Path $root 'multiscale-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'multiscale:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula Stability Layer' {
     It 'turns store and renderer failures into controlled states with incident logs' {
         $root = New-TempRoot

@@ -4,6 +4,7 @@ const {
   createFailureState,
 } = require("./graph-critical-frame.js");
 const { buildQueryPlan } = require("./graph-query-engine.js");
+const { buildScaleQueryPlan } = require("./graph-multiscale.js");
 
 const DEFAULT_CAMERA = {
   x: 0,
@@ -261,13 +262,23 @@ function buildRenderPlan({
   const modeInfo = pickMode({ profile: normalizedProfile, frameHistory, memoryPressure });
   const lod = pickLod({ camera, mode: modeInfo.mode, profile: normalizedProfile });
   const budgets = makeBudgets(normalizedProfile, modeInfo.mode, lod);
-  const queryPlan = buildQueryPlan({
-    snapshot: indexed.snapshot,
-    filters: normalizedProfile.nodeTypes ? [{ type: "nodeType", values: normalizedProfile.nodeTypes }] : [],
-    priorityNodeIds: normalizedProfile.priorityNodeIds || [],
-    edgePolicy: normalizedProfile.edgePolicy === "backbone" ? "backbone" : "visible",
-    id: `${normalizedProfile.name || "profile"}-query`,
-  });
+  const queryPlan =
+    normalizedProfile.scaleLevel !== undefined
+      ? buildScaleQueryPlan({
+          snapshot: indexed.snapshot,
+          level: Number(normalizedProfile.scaleLevel),
+          budget: normalizedProfile.maxVisibleNodes,
+          selectedNodeIds: normalizedProfile.selectedNodeIds || [],
+          edgePolicy: normalizedProfile.edgePolicy === "backbone" ? "backbone" : "visible",
+          id: `${normalizedProfile.name || "profile"}-scale-${normalizedProfile.scaleLevel}`,
+        })
+      : buildQueryPlan({
+          snapshot: indexed.snapshot,
+          filters: normalizedProfile.nodeTypes ? [{ type: "nodeType", values: normalizedProfile.nodeTypes }] : [],
+          priorityNodeIds: normalizedProfile.priorityNodeIds || [],
+          edgePolicy: normalizedProfile.edgePolicy === "backbone" ? "backbone" : "visible",
+          id: `${normalizedProfile.name || "profile"}-query`,
+        });
   return buildCriticalRenderPlan({
     snapshot: indexed.snapshot,
     camera: { ...DEFAULT_CAMERA, ...camera },
