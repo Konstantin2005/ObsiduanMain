@@ -85,3 +85,4 @@
 - Started autonomous v14 execution from the project `SKill` protocol. Completed `V14-S1A Explainable Trust Planner Foundation`: added `graph-index-compiler.js`, operation log, trust decisions, read amplification tracking, snapshot compatibility lineage, warm-cache-disable action, and synthetic index compiler benchmark.
 - v14 index compiler benchmark: `50K` synthetic files, `100` changed, `10` added, `10` deleted, `5` corrupt shards, changed-set planning `299.181ms`, total `317.102ms`, markdown reads `115`, resolver recomputes `15`.
 - Pester status after `V14-S1A`: `45 passed, 0 failed`.
+- Added v15 Adaptive Parallel Index Compiler plan after worker-pool review: workers are now scoped as bounded acceleration behind deterministic WorkPlan, with byte-based chunking, resource governor, backpressure, cancellation/stale result handling, raw-facts-only workers, deterministic compiler, failure levels, and parallel-vs-single determinism benchmarks.
