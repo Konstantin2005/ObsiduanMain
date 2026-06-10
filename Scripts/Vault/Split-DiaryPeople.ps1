@@ -52,6 +52,36 @@ function Split-IntoBlocks {
         Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
 }
 
+function Get-TopTags {
+    param([string]$Text)
+
+    $lines = $Text -split "\r?\n"
+    $tags = New-Object System.Collections.Generic.List[string]
+
+    foreach ($line in $lines) {
+        if ([string]::IsNullOrWhiteSpace($line)) {
+            if ($tags.Count -gt 0) {
+                break
+            }
+
+            continue
+        }
+
+        if ($line -match '^#(?!#)\S') {
+            [void]$tags.Add($line.TrimEnd())
+            continue
+        }
+
+        if ($tags.Count -gt 0) {
+            break
+        }
+
+        break
+    }
+
+    return $tags
+}
+
 function Get-BlockMentions {
     param([string]$Block)
 
@@ -103,6 +133,7 @@ foreach ($file in $files) {
     $content = [System.IO.File]::ReadAllText($file, $utf8)
     if ([string]::IsNullOrWhiteSpace($content)) { continue }
 
+    $topTags = Get-TopTags -Text $content
     $people = Get-PersonMentions -Text $content
     if ($people.Count -le $MainChunkLimit) { continue }
 
@@ -172,6 +203,8 @@ foreach ($file in $files) {
             "main_limit: $MainChunkLimit"
             "mini_limit: $MiniChunkLimit"
             "---"
+            ""
+            $topTags
             ""
             ($chunk.Blocks -join "`n`n")
         ) -join "`n"
