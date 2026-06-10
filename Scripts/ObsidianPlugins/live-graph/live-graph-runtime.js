@@ -350,18 +350,18 @@ module.exports = function createLiveGraphPlugin(obsidian) {
           mode: "ultra",
           label: "ultra-large",
           maxNodes: 24,
-          tickMs: Math.max(this.plugin.settings.tickMs, 3600),
-          keepRatio: 0.88,
-          randomEdgeRatio: 0.08,
-          maxRandomEdges: 12,
+          tickMs: Math.max(this.plugin.settings.tickMs, 4200),
+          keepRatio: 0.92,
+          randomEdgeRatio: 0.06,
+          maxRandomEdges: 8,
           cycleWindow: 2,
           reseedInterval: 10,
-          positionJitter: 12,
-          positionMargin: 40,
-          edgeBatchSize: 6,
-          nodeBatchSize: 4,
-          labelLimit: 8,
-          labelMaxChars: 24,
+          positionJitter: 0,
+          positionMargin: 36,
+          edgeBatchSize: 4,
+          nodeBatchSize: 2,
+          labelLimit: 0,
+          labelMaxChars: 0,
         };
       }
       if (fileCount >= 5000) {
@@ -369,18 +369,18 @@ module.exports = function createLiveGraphPlugin(obsidian) {
           mode: "heavy",
           label: "heavy",
           maxNodes: 32,
-          tickMs: Math.max(this.plugin.settings.tickMs, 2400),
-          keepRatio: 0.82,
-          randomEdgeRatio: 0.12,
-          maxRandomEdges: 18,
+          tickMs: Math.max(this.plugin.settings.tickMs, 2800),
+          keepRatio: 0.86,
+          randomEdgeRatio: 0.1,
+          maxRandomEdges: 14,
           cycleWindow: 4,
           reseedInterval: 6,
-          positionJitter: 16,
+          positionJitter: 8,
           positionMargin: 42,
-          edgeBatchSize: 12,
-          nodeBatchSize: 8,
-          labelLimit: 14,
-          labelMaxChars: 28,
+          edgeBatchSize: 8,
+          nodeBatchSize: 6,
+          labelLimit: 8,
+          labelMaxChars: 24,
         };
       }
       return {
@@ -543,7 +543,10 @@ module.exports = function createLiveGraphPlugin(obsidian) {
 
     getLabelPaths(sample, degree, profile) {
       const limit = Math.max(0, Math.min(profile.labelLimit || sample.length, sample.length));
-      if (!limit || limit >= sample.length) {
+      if (limit === 0) {
+        return new Set();
+      }
+      if (limit >= sample.length) {
         return null;
       }
 
