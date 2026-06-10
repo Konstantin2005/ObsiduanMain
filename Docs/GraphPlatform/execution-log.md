@@ -30,3 +30,7 @@
 - Replaced v7 execution plan with v8 Complex Graph Systems Plan after review.
 - v7 is now marked superseded; active first slice is `V8-S1 Contracted Real Renderer`.
 - New v8 standard: contract, budget, benchmark, fallback, and reason code for every production feature.
+- Replaced v8 execution plan with v9 Critical Path Graph Platform after final review.
+- v8 is now marked superseded; active first slice is `V9-S1 Critical Real Frame`.
+- New v9 standard: `Critical Path First, Contracted`; protect first real frame, keep contracts minimal, split hot/cold paths, validate shallow before first frame and deep after idle.
+- Added v9 rules for aggregate-only `FrameStats`, failure severity matrix, `CanvasBackend`/`NullBackend` isolation, and `FrameGovernor`/`MemoryGovernor`/`IOGovernor`.

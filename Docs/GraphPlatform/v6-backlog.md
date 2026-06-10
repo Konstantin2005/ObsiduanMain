@@ -51,11 +51,12 @@ Status values: `TODO`, `DOING`, `DONE`, `BUG`, `REGRESSION`, `BLOCKED`.
 
 ## Active Next Plan
 
-The next active plan is `v8 Complex Graph Systems Plan`.
+The next active plan is `v9 Critical Path Graph Platform`.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V8-S1 | Contracted Real Renderer | TODO | real graph opens through contracts, validation, backend boundary, benchmark, reason codes |
-| V8-0 | Contract layer | TODO | GraphStoreClient, GraphSnapshot, RenderPlan, BudgetPolicy, FailureState, Benchmark schema |
-| V8-1 | Real Data Canvas | TODO | real nodes draw from Graph Store with validation and viewport visible set |
-| V8-2 | Degradation Ladder | TODO | L0-L6 fallback ladder with incident logging |
+| V9-S1 | Critical Real Frame | TODO | real nodes appear from Graph Store with no strings, no labels, no uncaught store errors, and aggregate FrameStats |
+| V9-0 | Minimal hot-path contracts | TODO | GraphStoreClient, GraphSnapshot, RenderPlan, RenderBackend, FrameStats, FailureState |
+| V9-1 | Shallow validation and real node draw | TODO | manifest, files, counts, x/y/type/flags, visible set, CanvasBackend |
+| V9-2 | Governors and state machine | TODO | FrameGovernor, MemoryGovernor, IOGovernor, transition cooldowns, recovery, aggregate reasons |
+| V9-3 | Deep validation and store compatibility | TODO | idle deep scan, compatibility matrix, migration policy, previous-store recovery |
