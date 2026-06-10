@@ -8,6 +8,18 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     setIcon,
   } = obsidian;
 
+  const BaseItemView = typeof ItemView === "function" ? ItemView : class {};
+  const BasePluginSettingTab =
+    typeof PluginSettingTab === "function" ? PluginSettingTab : class {};
+  const BasePlugin = typeof Plugin === "function" ? Plugin : class {};
+  const hasRequiredApi =
+    typeof ItemView === "function" &&
+    typeof Plugin === "function" &&
+    typeof PluginSettingTab === "function" &&
+    typeof Setting === "function" &&
+    typeof setIcon === "function" &&
+    typeof Notice === "function";
+
   const VIEW_TYPE = "live-graph-view";
   const DEFAULT_SETTINGS = {
     autoOpen: true,
@@ -57,7 +69,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     return el;
   }
 
-  class LiveGraphView extends ItemView {
+  class LiveGraphView extends BaseItemView {
     constructor(leaf, plugin) {
       super(leaf);
       this.plugin = plugin;
@@ -369,7 +381,7 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
   }
 
-  class LiveGraphSettingsTab extends PluginSettingTab {
+  class LiveGraphSettingsTab extends BasePluginSettingTab {
     constructor(app, plugin) {
       super(app, plugin);
       this.plugin = plugin;
@@ -420,8 +432,16 @@ module.exports = function createLiveGraphPlugin(obsidian) {
     }
   }
 
-  return class LiveGraphPlugin extends Plugin {
+  return class LiveGraphPlugin extends BasePlugin {
     async onload() {
+      if (!hasRequiredApi) {
+        const error = new Error("Missing required Obsidian API exports");
+        console.error(`[${PLUGIN_LABEL}] failed to load`, error);
+        if (typeof Notice === "function") {
+          new Notice(`${PLUGIN_LABEL} cannot start in this Obsidian build.`);
+        }
+        return;
+      }
       this.settings = Object.assign({}, DEFAULT_SETTINGS, (await this.loadData()) || {});
       this.registerView(VIEW_TYPE, (leaf) => new LiveGraphView(leaf, this));
       this.addCommand({
