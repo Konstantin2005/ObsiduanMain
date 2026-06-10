@@ -31,15 +31,19 @@ function Get-DiaryFiles {
         }
 }
 
-function Get-PersonMentions {
+function Get-PersonOrder {
     param([string]$Text)
 
     $matches = [Regex]::Matches($Text, '\[\[([^\]]+)\]\]')
-    $names = New-Object System.Collections.Generic.HashSet[string]
+    $seen = New-Object System.Collections.Generic.HashSet[string]
+    $ordered = New-Object System.Collections.Generic.List[string]
     foreach ($m in $matches) {
-        [void]$names.Add($m.Groups[1].Value.Trim())
+        $name = $m.Groups[1].Value.Trim()
+        if ($seen.Add($name)) {
+            [void]$ordered.Add($name)
+        }
     }
-    return $names
+    return $ordered
 }
 
 function Split-IntoBlocks {
@@ -49,7 +53,7 @@ function Split-IntoBlocks {
         Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
 }
 
-function Test-BlockHasPerson {
+function Test-BlockHasAnyPerson {
     param(
         [string]$Block,
         [System.Collections.Generic.HashSet[string]]$PersonNames
@@ -101,42 +105,55 @@ foreach ($file in $files) {
     if ([string]::IsNullOrWhiteSpace($content)) { continue }
     if ($content -match '(?m)^\s*kind:\s*people-split\s*$') { continue }
 
-    $people = Get-PersonMentions -Text $content
-    if ($people.Count -le $Threshold) { continue }
+    $orderedPeople = Get-PersonOrder -Text $content
+    if ($orderedPeople.Count -le $Threshold) { continue }
 
-    $blocks = Split-IntoBlocks -Text $content
-    $personBlocks = New-Object System.Collections.Generic.List[string]
-    $otherBlocks = New-Object System.Collections.Generic.List[string]
+    $primaryPeople = New-Object System.Collections.Generic.HashSet[string]
+    $overflowPeople = New-Object System.Collections.Generic.HashSet[string]
 
-    foreach ($block in $blocks) {
-        if (Test-BlockHasPerson -Block $block -PersonNames $people) {
-            [void]$personBlocks.Add($block)
+    for ($i = 0; $i -lt $orderedPeople.Count; $i++) {
+        if ($i -lt $Threshold) {
+            [void]$primaryPeople.Add($orderedPeople[$i])
         } else {
-            [void]$otherBlocks.Add($block)
+            [void]$overflowPeople.Add($orderedPeople[$i])
         }
     }
 
-    $splitFileName = Get-SplitFileName -SourceFile $file -PeopleCount $people.Count
+    $blocks = Split-IntoBlocks -Text $content
+    $overflowBlocks = New-Object System.Collections.Generic.List[string]
+    $keepBlocks = New-Object System.Collections.Generic.List[string]
+
+    foreach ($block in $blocks) {
+        if (Test-BlockHasAnyPerson -Block $block -PersonNames $overflowPeople) {
+            [void]$overflowBlocks.Add($block)
+        } else {
+            [void]$keepBlocks.Add($block)
+        }
+    }
+
+    $splitFileName = Get-SplitFileName -SourceFile $file -PeopleCount $orderedPeople.Count
     $splitPath = Join-Path ([System.IO.Directory]::GetParent($file).FullName) $splitFileName
 
     $splitContent = @(
         "---"
         "kind: people-split"
         "source: $([System.IO.Path]::GetFileName($file))"
-        "people_count: $($people.Count)"
+        "people_count: $($orderedPeople.Count)"
+        "primary_people: $([string]::Join(', ', $primaryPeople))"
+        "overflow_people: $([string]::Join(', ', $overflowPeople))"
         "threshold: $Threshold"
         "---"
         ""
         "# People split"
         ""
-        ($personBlocks -join "`n`n")
+        ($overflowBlocks -join "`n`n")
     ) -join "`n"
 
-    $updatedOriginal = $otherBlocks -join "`n`n"
+    $updatedOriginal = $keepBlocks -join "`n`n"
 
     Write-Host ""
     Write-Host "File: $file"
-    Write-Host "People: $($people.Count) -> split file: $splitPath"
+    Write-Host "People: $($orderedPeople.Count) -> split file: $splitPath"
 
     if ($DryRun) {
         Write-Host "Dry run: no files written"
