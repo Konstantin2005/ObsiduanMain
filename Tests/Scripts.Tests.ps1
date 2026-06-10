@@ -1166,6 +1166,21 @@ Describe 'Calendula graph store' {
   if (size(rootManifest.files.inOffsets) !== (rootManifest.stats.nodes + 1) * 4) throw new Error('Reverse CSR offsets size mismatch');
   if (size(rootManifest.files.outTargets) !== rootManifest.stats.edges * 4) throw new Error('Forward CSR target size mismatch');
   if (size(rootManifest.files.inSources) !== rootManifest.stats.edges * 4) throw new Error('Reverse CSR source size mismatch');
+  if (size(rootManifest.files.nodesStableId) !== rootManifest.stats.nodes * 4) throw new Error('Stable ID size mismatch');
+  if (!rootManifest.compatibility || !rootManifest.compatibility.supportedReadVersions.includes(6) || !rootManifest.compatibility.canRenderWithoutMigration) {
+    throw new Error(`Compatibility matrix missing or invalid: ${JSON.stringify(rootManifest.compatibility)}`);
+  }
+  const fingerprints = JSON.parse(fs.readFileSync(path.join(currentDir, rootManifest.files.fingerprints), 'utf8'));
+  const fingerprintKeys = Object.keys(fingerprints);
+  if (fingerprintKeys.length !== rootManifest.stats.nodes) throw new Error(`Expected fingerprint per node, got ${fingerprintKeys.length}`);
+  if (!fingerprints[fingerprintKeys[0]].stableId || !fingerprints[fingerprintKeys[0]].sha256) throw new Error('Fingerprint should include stableId and sha256');
+
+  const changedFingerprints = { ...fingerprints };
+  changedFingerprints[fingerprintKeys[0]] = { ...changedFingerprints[fingerprintKeys[0]], sha256: 'changed' };
+  const incremental = store.planIncrementalUpdate(fingerprints, changedFingerprints);
+  if (!incremental.canIncremental || incremental.diff.changed.length !== 1) throw new Error(`Expected small change incremental plan, got ${JSON.stringify(incremental)}`);
+  const rebuild = store.planIncrementalUpdate(fingerprints, {});
+  if (rebuild.canIncremental || rebuild.fallback !== 'full-rebuild') throw new Error(`Expected full rebuild fallback, got ${JSON.stringify(rebuild)}`);
 
   fs.writeFileSync(path.join(currentDir, rootManifest.files.edgesSource), 'corrupt-current');
   const loaded = store.loadGraphStore(outRoot);
@@ -1173,7 +1188,7 @@ Describe 'Calendula graph store' {
     throw new Error(`Expected recovery from previous store, got ${JSON.stringify(loaded)}`);
   }
 
-  process.stdout.write(`graph-store:ok ${JSON.stringify({ nodes: rootManifest.stats.nodes, edges: rootManifest.stats.edges, recovered: loaded.recoveredFromPrevious })}\n`);
+  process.stdout.write(`graph-store:ok ${JSON.stringify({ nodes: rootManifest.stats.nodes, edges: rootManifest.stats.edges, recovered: loaded.recoveredFromPrevious, stableIds: true })}\n`);
 })()
 '@
             $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson).Replace('__TEMP_ROOT__', $tempRootJson)
@@ -1585,6 +1600,7 @@ Describe 'Calendula Critical Real Frame contracts' {
   if (!(snapshot.arrays.nodeFlags instanceof Uint32Array)) throw new Error('Expected node flag array');
   if (!(snapshot.arrays.layoutX instanceof Float32Array) || !(snapshot.arrays.layoutY instanceof Float32Array)) throw new Error('Expected layout arrays');
   if (snapshot.arrays.nodePathStrings || snapshot.arrays.nodeBasenameStrings) throw new Error('Critical snapshot must not load strings');
+  if (snapshot.arrays.nodeStableIds) throw new Error('Critical snapshot must not load cold stable IDs');
   if (snapshot.validation.errors.length !== 0) throw new Error(`Unexpected shallow validation errors: ${snapshot.validation.errors.join(',')}`);
 
   const plan = critical.buildCriticalRenderPlan({

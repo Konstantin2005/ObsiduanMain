@@ -4,6 +4,8 @@ const crypto = require("crypto");
 
 const SCHEMA_VERSION = 6;
 const STORE_VERSION = "2026.06.10.1";
+const SUPPORTED_READ_SCHEMA_VERSIONS = Object.freeze([6, 7, 8, 9]);
+const SUPPORTED_WRITE_SCHEMA_VERSION = 6;
 const DEFAULT_VAULT = path.resolve(__dirname, "..", "..", "Calendula-20K");
 const LINK_RE = /\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]/g;
 
@@ -114,6 +116,21 @@ function sha256File(filePath) {
   return crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex");
 }
 
+function stableIdForPath(filePath) {
+  const digest = crypto.createHash("sha256").update(filePath).digest();
+  const value = digest.readUInt32LE(0);
+  return value === 0 ? 1 : value;
+}
+
+function fingerprintForText(filePath, stat, text) {
+  return {
+    stableId: stableIdForPath(filePath),
+    mtimeMs: stat.mtimeMs,
+    size: stat.size,
+    sha256: crypto.createHash("sha256").update(text).digest("hex"),
+  };
+}
+
 function makeCsr(nodeCount, edges, sourceKey, targetKey) {
   const counts = new Uint32Array(nodeCount);
   for (const edge of edges) counts[edge[sourceKey]] += 1;
@@ -153,6 +170,7 @@ function buildGraph(vaultRoot) {
   for (const file of files) {
     const filePath = vaultPath(vaultRoot, file);
     const text = fs.readFileSync(file, "utf8");
+    const stat = fs.statSync(file);
     fileTexts.set(filePath, text);
     const base = basename(filePath);
     if (byBase.has(base)) duplicateBasenames.add(base);
@@ -164,7 +182,9 @@ function buildGraph(vaultRoot) {
       base,
       type: classifyNode(filePath, text),
       cluster: clusterName(filePath),
-      mtime: fs.statSync(file).mtimeMs,
+      mtime: stat.mtimeMs,
+      size: stat.size,
+      fingerprint: fingerprintForText(filePath, stat, text),
     });
   }
 
@@ -204,8 +224,10 @@ function buildGraph(vaultRoot) {
   const nodePathStrings = new Uint32Array(nodes.length);
   const nodeBasenameStrings = new Uint32Array(nodes.length);
   const nodeMtime = new Float64Array(nodes.length);
+  const nodeStableIds = new Uint32Array(nodes.length);
   const layoutX = new Float32Array(nodes.length);
   const layoutY = new Float32Array(nodes.length);
+  const fingerprints = {};
 
   const goldenAngle = Math.PI * (3 - Math.sqrt(5));
   const radiusScale = Math.max(100, Math.sqrt(nodes.length) * 10);
@@ -217,6 +239,8 @@ function buildGraph(vaultRoot) {
     nodePathStrings[node.id] = stringId(strings.paths, node.path);
     nodeBasenameStrings[node.id] = stringId(strings.basenames, node.base);
     nodeMtime[node.id] = node.mtime;
+    nodeStableIds[node.id] = node.fingerprint.stableId;
+    fingerprints[node.path] = node.fingerprint;
     const radius = radiusScale * Math.sqrt((node.id + 0.5) / Math.max(1, nodes.length));
     const angle = node.id * goldenAngle;
     layoutX[node.id] = Math.cos(angle) * radius;
@@ -265,6 +289,7 @@ function buildGraph(vaultRoot) {
       nodePathStrings,
       nodeBasenameStrings,
       nodeMtime,
+      nodeStableIds,
       edgeSources,
       edgeTargets,
       edgeWeights,
@@ -279,6 +304,7 @@ function buildGraph(vaultRoot) {
       layoutX,
       layoutY,
     },
+    fingerprints,
   };
 }
 
@@ -307,6 +333,7 @@ function writeStore(vaultRoot, outRoot, graph, options = {}) {
       nodesPathString: "graph.nodes.path-string.bin",
       nodesBasenameString: "graph.nodes.basename-string.bin",
       nodesMtime: "graph.nodes.mtime.bin",
+      nodesStableId: "graph.nodes.stable-id.bin",
       edgesSource: "graph.edges.source.bin",
       edgesTarget: "graph.edges.target.bin",
       edgesWeight: "graph.edges.weight.bin",
@@ -322,6 +349,7 @@ function writeStore(vaultRoot, outRoot, graph, options = {}) {
       layoutY: "graph.layout.y.bin",
       strings: "graph.strings.json",
       stats: "graph.stats.json",
+      fingerprints: "graph.fingerprints.json",
     };
 
     writeTypedArray(path.join(nextDir, files.nodesIds), graph.arrays.ids);
@@ -331,6 +359,7 @@ function writeStore(vaultRoot, outRoot, graph, options = {}) {
     writeTypedArray(path.join(nextDir, files.nodesPathString), graph.arrays.nodePathStrings);
     writeTypedArray(path.join(nextDir, files.nodesBasenameString), graph.arrays.nodeBasenameStrings);
     writeTypedArray(path.join(nextDir, files.nodesMtime), graph.arrays.nodeMtime);
+    writeTypedArray(path.join(nextDir, files.nodesStableId), graph.arrays.nodeStableIds);
     writeTypedArray(path.join(nextDir, files.edgesSource), graph.arrays.edgeSources);
     writeTypedArray(path.join(nextDir, files.edgesTarget), graph.arrays.edgeTargets);
     writeTypedArray(path.join(nextDir, files.edgesWeight), graph.arrays.edgeWeights);
@@ -346,6 +375,7 @@ function writeStore(vaultRoot, outRoot, graph, options = {}) {
     writeTypedArray(path.join(nextDir, files.layoutY), graph.arrays.layoutY);
     writeJson(path.join(nextDir, files.strings), graph.strings);
     writeJson(path.join(nextDir, files.stats), graph.stats);
+    writeJson(path.join(nextDir, files.fingerprints), graph.fingerprints);
 
     const checksums = {};
     for (const fileName of Object.values(files)) {
@@ -368,6 +398,7 @@ function writeStore(vaultRoot, outRoot, graph, options = {}) {
         nodeCount: graph.stats.nodes,
         edgeCount: graph.stats.edges,
       },
+      compatibility: getStoreCompatibility({ schemaVersion: SCHEMA_VERSION }),
       files,
       checksums,
       validation: validateGraph(graph),
@@ -399,10 +430,66 @@ function validateGraph(graph) {
   if (graph.arrays.inOffsets.length !== graph.stats.nodes + 1) errors.push("in-offset-length-mismatch");
   if (graph.arrays.outOffsets[graph.arrays.outOffsets.length - 1] !== graph.stats.edges) errors.push("out-csr-edge-count-mismatch");
   if (graph.arrays.inOffsets[graph.arrays.inOffsets.length - 1] !== graph.stats.edges) errors.push("in-csr-edge-count-mismatch");
+  if (graph.arrays.nodeStableIds.length !== graph.stats.nodes) errors.push("stable-id-length-mismatch");
   return {
     ok: errors.length === 0,
     errors,
   };
+}
+
+function getStoreCompatibility(manifest = {}) {
+  const schemaVersion = Number(manifest.schemaVersion || SCHEMA_VERSION);
+  const supported = SUPPORTED_READ_SCHEMA_VERSIONS.includes(schemaVersion);
+  return {
+    storeVersion: schemaVersion,
+    supportedReadVersions: [...SUPPORTED_READ_SCHEMA_VERSIONS],
+    supportedWriteVersion: SUPPORTED_WRITE_SCHEMA_VERSION,
+    migrationRequired: schemaVersion !== SUPPORTED_WRITE_SCHEMA_VERSION,
+    canRenderWithoutMigration: supported,
+  };
+}
+
+function diffFingerprints(previous = {}, next = {}) {
+  const added = [];
+  const changed = [];
+  const removed = [];
+  const unchanged = [];
+  const previousKeys = new Set(Object.keys(previous));
+  for (const [filePath, nextFingerprint] of Object.entries(next)) {
+    if (!previousKeys.has(filePath)) {
+      added.push(filePath);
+      continue;
+    }
+    previousKeys.delete(filePath);
+    const previousFingerprint = previous[filePath];
+    if (previousFingerprint?.sha256 === nextFingerprint?.sha256 && previousFingerprint?.size === nextFingerprint?.size) {
+      unchanged.push(filePath);
+    } else {
+      changed.push(filePath);
+    }
+  }
+  for (const filePath of previousKeys) removed.push(filePath);
+  return Object.freeze({
+    added: Object.freeze(added.sort()),
+    changed: Object.freeze(changed.sort()),
+    removed: Object.freeze(removed.sort()),
+    unchanged: Object.freeze(unchanged.sort()),
+  });
+}
+
+function planIncrementalUpdate(previousFingerprints = {}, nextFingerprints = {}, { maxChangeRatio = 0.25 } = {}) {
+  const diff = diffFingerprints(previousFingerprints, nextFingerprints);
+  const total = Math.max(1, Object.keys(nextFingerprints).length);
+  const changedCount = diff.added.length + diff.changed.length + diff.removed.length;
+  const changeRatio = changedCount / total;
+  return Object.freeze({
+    diff,
+    changedCount,
+    total,
+    changeRatio,
+    canIncremental: changeRatio <= maxChangeRatio,
+    fallback: changeRatio <= maxChangeRatio ? null : "full-rebuild",
+  });
 }
 
 function validateStore(dir, manifest) {
@@ -490,7 +577,10 @@ if (require.main === module) {
 
 module.exports = {
   buildGraph,
+  diffFingerprints,
+  getStoreCompatibility,
   loadGraphStore,
+  planIncrementalUpdate,
   validateGraph,
   validateStore,
   writeStore,
