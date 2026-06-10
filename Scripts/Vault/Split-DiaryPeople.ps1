@@ -177,9 +177,17 @@ foreach ($file in $files) {
 
     $overflowBlocks = New-Object System.Collections.Generic.List[string]
     foreach ($block in (Split-IntoBlocks -Text $content)) {
-        if (Test-BlockHasAnyPerson -Block $block -PersonNames $overflowPeople) {
-            [void]$overflowBlocks.Add($block)
+        if (-not (Test-BlockHasAnyPerson -Block $block -PersonNames $overflowPeople)) {
+            continue
         }
+
+        # Keep the first 4 people in the original note only.
+        # Mixed blocks stay in the main day so we do not duplicate the baseline people.
+        if (Test-BlockHasAnyPerson -Block $block -PersonNames $primaryPeople) {
+            continue
+        }
+
+        [void]$overflowBlocks.Add($block)
     }
 
     $dailySource = Get-SourceKey -FilePath $file
