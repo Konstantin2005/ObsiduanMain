@@ -302,6 +302,19 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     }
   }
 
+  function pickModeHint(mode) {
+    switch (mode) {
+      case "prune-heavy":
+        return "Remove links from the most connected notes first.";
+      case "equalize":
+        return "Push highly connected notes down until the graph feels even.";
+      case "regrow":
+        return "Restore the latest detached batch and let the graph breathe back in.";
+      default:
+        return "Remove links from the most connected notes first.";
+    }
+  }
+
   class LifePanelView extends ItemView {
     constructor(leaf, plugin) {
       super(leaf);
