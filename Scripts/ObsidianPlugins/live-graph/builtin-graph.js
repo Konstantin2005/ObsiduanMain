@@ -248,11 +248,12 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     let match;
     while ((match = re.exec(text))) {
       if (match.index > 0 && text[match.index - 1] === "!") continue;
-      const { label } = parseWikiLinkBody(match[1]);
+      const { target, label } = parseWikiLinkBody(match[1]);
       candidates.push({
         start: match.index,
         end: match.index + match[0].length,
         original: match[0],
+        target,
         detached: label || match[1],
       });
     }
@@ -561,13 +562,22 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       };
     }
 
+    resolveLinkedTarget(file, link) {
+      const cache = this.app.metadataCache;
+      if (!cache || typeof cache.getFirstLinkpathDest !== "function") {
+        return true;
+      }
+      return Boolean(cache.getFirstLinkpathDest(link.target, file.path));
+    }
+
     async chooseCandidates(batchSize) {
       const files = shuffle(this.app.vault.getMarkdownFiles().filter((file) => !file.path.startsWith(".")));
       const stats = [];
       for (const file of files) {
         const { text, links } = await this.readFileLinkStats(file);
-        if (!links.length) continue;
-        stats.push({ file, text, links, linkCount: links.length });
+        const connectedLinks = links.filter((link) => this.resolveLinkedTarget(file, link));
+        if (!connectedLinks.length) continue;
+        stats.push({ file, text, links: connectedLinks, linkCount: connectedLinks.length });
       }
 
       if (!stats.length) {
@@ -583,7 +593,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         .map((item) => ({
           path: item.file.path,
           original: item.text,
-          detached: this.detachOneLink(item.text, mode),
+          detached: this.detachOneLink(item.text, mode, item.links),
           linkCount: item.linkCount,
         }))
         .sort((left, right) => {
@@ -602,19 +612,19 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       return ranked.slice(0, batchSize);
     }
 
-    detachOneLink(text, mode) {
-      const links = extractWikiLinkCandidates(text);
-      if (!links.length) return text;
+    detachOneLink(text, mode, links = null) {
+      const linkList = Array.isArray(links) && links.length ? links : extractWikiLinkCandidates(text);
+      if (!linkList.length) return text;
 
-      let link = links[0];
+      let link = linkList[0];
       if (mode === "prune-heavy") {
-        link = links[0];
-      } else if (mode === "equalize" && links.length > 1) {
-        link = links[links.length - 1];
+        link = linkList[0];
+      } else if (mode === "equalize" && linkList.length > 1) {
+        link = linkList[linkList.length - 1];
       } else if (mode === "regrow") {
         return text;
       } else {
-        link = links[Math.floor(Math.random() * links.length)];
+        link = linkList[Math.floor(Math.random() * linkList.length)];
       }
 
       return replaceRange(text, link.start, link.end, link.detached);
