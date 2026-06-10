@@ -6,6 +6,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     Setting,
     setIcon,
   } = obsidian;
+  const zlib = require("zlib");
 
   const BaseItemView = typeof ItemView === "function" ? ItemView : class {};
   const BasePluginSettingTab =
@@ -53,6 +54,58 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
   function sleep(ms) {
     return new Promise((resolve) => window.setTimeout(resolve, ms));
+  }
+
+  function encodeSnapshotText(text) {
+    if (typeof text !== "string" || text.length < 1024) {
+      return text;
+    }
+
+    const compressed = zlib.deflateSync(Buffer.from(text, "utf8")).toString("base64");
+    return compressed.length + 16 < text.length ? `~z~${compressed}` : text;
+  }
+
+  function decodeSnapshotText(text) {
+    if (typeof text !== "string") {
+      return "";
+    }
+
+    if (!text.startsWith("~z~")) {
+      return text;
+    }
+
+    return zlib.inflateSync(Buffer.from(text.slice(3), "base64")).toString("utf8");
+  }
+
+  function packSnapshot(snapshot) {
+    return {
+      ...snapshot,
+      original: encodeSnapshotText(snapshot.original),
+      detached: encodeSnapshotText(snapshot.detached),
+    };
+  }
+
+  function unpackSnapshot(snapshot) {
+    if (!snapshot) return snapshot;
+    return {
+      ...snapshot,
+      original: decodeSnapshotText(snapshot.original),
+      detached: decodeSnapshotText(snapshot.detached),
+    };
+  }
+
+  function packEntry(entry) {
+    return {
+      ...entry,
+      files: Array.isArray(entry?.files) ? entry.files.map(packSnapshot) : [],
+    };
+  }
+
+  function unpackEntry(entry) {
+    return {
+      ...entry,
+      files: Array.isArray(entry?.files) ? entry.files.map(unpackSnapshot) : [],
+    };
   }
 
   async function sleepWithStop(ms, shouldStop) {
@@ -379,8 +432,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         const data = (await this.loadData()) || {};
         const legacySettings = data.settings || data;
         this.settings = Object.assign({}, DEFAULT_SETTINGS, legacySettings);
-        this.activeBatch = data.activeBatch || null;
-        this.safetyBuffer = Array.isArray(data.safetyBuffer) ? data.safetyBuffer : [];
+        this.activeBatch = data.activeBatch ? unpackEntry(data.activeBatch) : null;
+        this.safetyBuffer = Array.isArray(data.safetyBuffer) ? data.safetyBuffer.map(unpackEntry) : [];
         this.interval = null;
         this.busy = false;
         this.stopRequested = false;
@@ -510,8 +563,8 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     async saveState() {
       await this.saveData({
         settings: this.settings,
-        activeBatch: this.activeBatch,
-        safetyBuffer: this.safetyBuffer,
+        activeBatch: this.activeBatch ? packEntry(this.activeBatch) : null,
+        safetyBuffer: this.safetyBuffer.map(packEntry),
       });
     }
 
