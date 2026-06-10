@@ -20,11 +20,9 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
   const PLUGIN_LABEL = "\u0416\u0438\u0437\u043d\u044c";
   const PANEL_VIEW_TYPE = "life-panel";
-  const GRAPH_VIEW_TYPE = "graph";
 
   const DEFAULT_SETTINGS = {
     autoOpenPanel: true,
-    autoOpenGraph: false,
     autoCycleLinks: false,
     cycleIntervalMs: 300000,
     batchSize: 5,
@@ -522,14 +520,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         void this.plugin.recoverFromBuffer(true).then(() => this.refreshStatus());
       });
 
-      const graphButton = actions.createEl("button", {
-        text: "Open graph",
-        cls: "life-plugin-action is-wide",
-      });
-      graphButton.addEventListener("click", () => {
-        void this.plugin.openBuiltInGraph();
-      });
-
       const modeRow = controls.createDiv({ cls: "life-panel-mode-row" });
       const modes = [
         { mode: "prune-heavy", label: "Prune hubs" },
@@ -642,14 +632,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           name: `Open ${PLUGIN_LABEL} panel`,
           callback: () => {
             void this.openLifePanel();
-          },
-        });
-
-        this.addCommand({
-          id: "open-live-graph",
-          name: `Open ${PLUGIN_LABEL} graph`,
-          callback: () => {
-            void this.openBuiltInGraph();
           },
         });
 
@@ -783,19 +765,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       this.refreshPanelViews();
     }
 
-    async openBuiltInGraph() {
-      const leaf = this.app.workspace.getLeavesOfType(GRAPH_VIEW_TYPE)[0];
-      if (!leaf) return;
-      await leaf.setViewState({
-        type: GRAPH_VIEW_TYPE,
-        active: true,
-        state: {},
-      });
-      if (typeof this.app.workspace.revealLeaf === "function") {
-        this.app.workspace.revealLeaf(leaf);
-      }
-    }
-
     refreshPanelViews() {
       for (const view of this.panelViews) {
         if (view?.render) {
@@ -901,17 +870,9 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         void this.recoverFromBuffer(true).then(() => this.refreshPanelViews());
       });
 
-      const graphButton = actions.createEl("button", {
-        text: "Open graph",
-        cls: "life-plugin-action is-wide",
-      });
-      graphButton.addEventListener("click", () => {
-        void this.openBuiltInGraph();
-      });
-
       const modeSetting = new Setting(card)
         .setName("Cycle mode")
-        .setDesc("Choose how the graph shifts during each cycle.");
+        .setDesc("Choose how links inside notes are changed during each cycle.");
       modeSetting.addDropdown((dropdown) =>
         dropdown
           .addOption("prune-heavy", "Prune hubs")
@@ -956,17 +917,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       banner.createDiv({ cls: "life-panel-pill", text: `Tempo: ${pickTempoLabel(this.settings)}` });
       banner.createDiv({ cls: "life-panel-pill", text: `Batch: ${this.settings.batchSize}` });
       banner.createDiv({ cls: "life-panel-pill", text: `Hold: ${formatMs(this.settings.detachHoldMs)}` });
-
-      new Setting(card)
-        .setName("Open built-in Graph")
-        .setDesc("Open Obsidian's built-in Graph view automatically when the vault loads.")
-        .addToggle((toggle) =>
-          toggle.setValue(this.settings.autoOpenGraph).onChange(async (value) => {
-            this.settings.autoOpenGraph = value;
-            await this.saveState();
-            this.refreshPanelViews();
-          }),
-        );
 
       new Setting(card)
         .setName("Cycle interval")
