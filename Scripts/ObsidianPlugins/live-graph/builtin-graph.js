@@ -433,7 +433,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         const legacySettings = data.settings || data;
         this.settings = Object.assign({}, DEFAULT_SETTINGS, legacySettings);
         this.activeBatch = data.activeBatch ? unpackEntry(data.activeBatch) : null;
-        this.safetyBuffer = Array.isArray(data.safetyBuffer) ? data.safetyBuffer.map(unpackEntry) : [];
+        this.safetyBuffer = this.activeBatch ? [this.activeBatch] : [];
         this.interval = null;
         this.busy = false;
         this.stopRequested = false;
@@ -564,7 +564,6 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       await this.saveData({
         settings: this.settings,
         activeBatch: this.activeBatch ? packEntry(this.activeBatch) : null,
-        safetyBuffer: this.safetyBuffer.map(packEntry),
       });
     }
 

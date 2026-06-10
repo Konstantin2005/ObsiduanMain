@@ -1277,4 +1277,195 @@ Describe 'LiveGraph' {
             }
         }
     }
+
+    It 'compresses live-graph snapshots before persisting them' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const create = require(path.join(root, 'Scripts/ObsidianPlugins/live-graph/builtin-graph.js'));
+
+  class ItemView {
+    constructor() {
+      this.containerEl = { createDiv() { return this; }, createEl() { return this; } };
+    }
+  }
+
+  global.document = {
+    getElementById() { return null; },
+    createElement() {
+      return {
+        style: {},
+        classList: { add() {} },
+        setAttribute() {},
+        appendChild() {},
+        addEventListener() {},
+        createDiv() { return this; },
+        createEl() { return this; },
+        setText() {},
+      };
+    },
+    createElementNS() {
+      return {
+        setAttribute() {},
+      };
+    },
+    body: { appendChild() {} },
+    head: { appendChild() {} },
+  };
+  global.window = {
+    setTimeout,
+    clearTimeout,
+    setInterval,
+    clearInterval,
+    requestAnimationFrame(cb) { return setTimeout(cb, 0); },
+    cancelAnimationFrame(id) { clearTimeout(id); },
+    devicePixelRatio: 1,
+  };
+
+  let savedState = null;
+
+  class Plugin {
+    constructor() {
+      this.app = {
+        workspace: {
+          onLayoutReady(cb) { cb(); },
+          getLeavesOfType() { return []; },
+          getRightLeaf() { return null; },
+          revealLeaf() {},
+        },
+        vault: {
+          read: async () => '',
+          modify: async () => {},
+          getAbstractFileByPath: () => null,
+        },
+        metadataCache: { getFirstLinkpathDest: () => true },
+      };
+    }
+
+    async loadData() { return { settings: { autoCycleLinks: false } }; }
+    async saveData(data) { savedState = data; }
+    registerView() {}
+    addCommand() {}
+    addRibbonIcon() { return null; }
+    addSettingTab() {}
+    registerEvent() {}
+  }
+
+  class PluginSettingTab { constructor() {} }
+  class Setting {
+    setName() { return this; }
+    setDesc() { return this; }
+    addToggle() { return this; }
+    addDropdown() { return this; }
+    addSlider() { return this; }
+  }
+  class Notice { constructor() {} }
+  function setIcon() {}
+
+  const plugin = new (create({ ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon }))();
+  await plugin.onload();
+
+  const big = 'Alpha beta '.repeat(2000);
+  plugin.activeBatch = {
+    cycleId: 'cycle-1',
+    files: [
+      { path: 'A.md', original: big, detached: big + 'x' },
+      { path: 'B.md', original: big + 'y', detached: big + 'z' },
+    ],
+  };
+  plugin.safetyBuffer = [
+    {
+      id: 'entry-1',
+      createdAt: '2026-06-10T00:00:00.000Z',
+      status: 'detached',
+      files: [
+        { path: 'A.md', original: big, detached: big + 'x' },
+        { path: 'B.md', original: big + 'y', detached: big + 'z' },
+      ],
+    },
+  ];
+
+  await plugin.saveState();
+
+  if (!savedState || !savedState.activeBatch || !savedState.safetyBuffer) {
+    throw new Error('State was not saved');
+  }
+
+  const rawSize = Buffer.byteLength(JSON.stringify({
+    activeBatch: {
+      cycleId: 'cycle-1',
+      files: [
+        { path: 'A.md', original: big, detached: big + 'x' },
+        { path: 'B.md', original: big + 'y', detached: big + 'z' },
+      ],
+    },
+    safetyBuffer: [
+      {
+        id: 'entry-1',
+        createdAt: '2026-06-10T00:00:00.000Z',
+        status: 'detached',
+        files: [
+          { path: 'A.md', original: big, detached: big + 'x' },
+          { path: 'B.md', original: big + 'y', detached: big + 'z' },
+        ],
+      },
+    ],
+  }), 'utf8');
+  const savedSize = Buffer.byteLength(JSON.stringify(savedState), 'utf8');
+
+  if (savedSize >= rawSize / 4) {
+    throw new Error(`Expected compact state, raw=${rawSize}, saved=${savedSize}`);
+  }
+
+  if (typeof savedState.activeBatch.files[0].original !== 'string' || !savedState.activeBatch.files[0].original.startsWith('~z~')) {
+    throw new Error('Active batch original was not compressed');
+  }
+
+  if (typeof savedState.safetyBuffer[0].files[0].detached !== 'string' || !savedState.safetyBuffer[0].files[0].detached.startsWith('~z~')) {
+    throw new Error('Safety buffer detached text was not compressed');
+  }
+
+  const createReloaded = require(path.join(root, 'Scripts/ObsidianPlugins/live-graph/builtin-graph.js'));
+  let reloadedData = savedState;
+  class ReloadPlugin extends Plugin {
+    async loadData() { return reloadedData; }
+    async saveData(data) { reloadedData = data; }
+  }
+
+  const reloaded = new (createReloaded({ ItemView, Notice, Plugin: ReloadPlugin, PluginSettingTab, Setting, setIcon }))();
+  await reloaded.onload();
+
+  if (reloaded.activeBatch.files[0].original !== big) {
+    throw new Error('Active batch did not decompress on load');
+  }
+
+  if (reloaded.safetyBuffer[0].files[1].detached !== big + 'z') {
+    throw new Error('Safety buffer did not decompress on load');
+  }
+
+  process.stdout.write('compact-state:ok\\n');
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'live-graph-compact-state-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'compact-state:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
 }
