@@ -1567,6 +1567,74 @@ Describe 'Calendula Worker Layer' {
     }
 }
 
+Describe 'Calendula Renderer Upgrade Gate' {
+    It 'allows WebGL only after Canvas bottleneck is proven and other layers are within budget' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(() => {
+  const path = require('path');
+  const repoRoot = __REPO_ROOT__;
+  const upgrade = require(path.join(repoRoot, 'Scripts/Obsidian/graph-renderer-upgrade.js'));
+
+  const fastCanvas = upgrade.createCanvasBottleneckReport({
+    samples: [
+      { drawMs: 6, renderPlanMs: 4, storageMs: 20, queryMs: 1 },
+      { drawMs: 7, renderPlanMs: 5, storageMs: 20, queryMs: 1 },
+      { drawMs: 8, renderPlanMs: 5, storageMs: 20, queryMs: 1 },
+    ],
+  });
+  const fastDecision = upgrade.evaluateRendererUpgrade({ report: fastCanvas });
+  if (fastDecision.allowed || !fastDecision.reasons.CANVAS_WITHIN_BUDGET) {
+    throw new Error(`Fast Canvas should not allow WebGL, got ${JSON.stringify(fastDecision)}`);
+  }
+
+  const badPlan = upgrade.createCanvasBottleneckReport({
+    samples: [
+      { drawMs: 24, renderPlanMs: 12, storageMs: 20, queryMs: 1 },
+      { drawMs: 25, renderPlanMs: 12, storageMs: 20, queryMs: 1 },
+      { drawMs: 26, renderPlanMs: 12, storageMs: 20, queryMs: 1 },
+    ],
+  });
+  const badPlanDecision = upgrade.evaluateRendererUpgrade({ report: badPlan });
+  if (badPlanDecision.allowed || !badPlanDecision.reasons.RENDERPLAN_NOT_READY) {
+    throw new Error(`Slow RenderPlan should block WebGL, got ${JSON.stringify(badPlanDecision)}`);
+  }
+
+  const canvasBottleneck = upgrade.createCanvasBottleneckReport({
+    samples: [
+      { drawMs: 22, renderPlanMs: 5, storageMs: 20, queryMs: 1 },
+      { drawMs: 24, renderPlanMs: 5, storageMs: 20, queryMs: 1 },
+      { drawMs: 28, renderPlanMs: 6, storageMs: 20, queryMs: 2 },
+      { drawMs: 30, renderPlanMs: 6, storageMs: 20, queryMs: 2 },
+    ],
+  });
+  const allowed = upgrade.evaluateRendererUpgrade({ report: canvasBottleneck });
+  if (!allowed.allowed || allowed.nextBackend !== 'webgl-node-backend-prototype') {
+    throw new Error(`Canvas bottleneck should allow WebGL prototype, got ${JSON.stringify(allowed)}`);
+  }
+
+  process.stdout.write(`renderer-upgrade:ok ${JSON.stringify({ denied: fastDecision.allowed, allowed: allowed.allowed })}\n`);
+})()
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'renderer-upgrade-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'renderer-upgrade:ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula Stability Layer' {
     It 'turns store and renderer failures into controlled states with incident logs' {
         $root = New-TempRoot
