@@ -47,8 +47,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260,
-    "collapsed": true
+    "width": 260
   },
   "right": {
     "id": "calendula-30k-right",
@@ -67,6 +66,7 @@
   },
   "active": "calendula-30k-fast-graph",
   "lastOpenFiles": [
+    "Calendula/2027/Апрель/01-04-27.md",
     "Calendula/2026/Август/01-08-26.md",
     "Соц Капитал/1_круг/Person-0001.md"
   ]
