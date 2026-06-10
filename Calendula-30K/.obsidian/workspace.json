@@ -64,8 +64,16 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "calendula-30k-fast-graph",
+  "active": "calendula-30k-files",
   "lastOpenFiles": [
+    "Дни.md",
+    "Люди.md",
+    "Дни/2026-06-10.md",
+    "Люди/Шаблон.md",
+    "Дни/README.md",
+    "Дни",
+    "Люди/README.md",
+    "Люди",
     "Calendula/2027/Апрель/01-04-27.md",
     "Calendula/2026/Август/01-08-26.md",
     "Соц Капитал/1_круг/Person-0001.md"
