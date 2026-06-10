@@ -51,7 +51,6 @@ function Get-BodyBlocks {
         $body = $body.Substring($frontmatter.Length)
     }
 
-    $body = [Regex]::Replace($body, '^\s*# People split\r?\n\r?\n?', '', [System.Text.RegularExpressions.RegexOptions]::Singleline)
     return [Regex]::Split($body, "(\r?\n\s*\r?\n)+") | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() }
 }
 

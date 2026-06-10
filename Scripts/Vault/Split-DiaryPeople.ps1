@@ -144,8 +144,6 @@ foreach ($file in $files) {
         "threshold: $Threshold"
         "---"
         ""
-        "# People split"
-        ""
         ($overflowBlocks -join "`n`n")
     ) -join "`n"
 
