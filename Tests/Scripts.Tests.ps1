@@ -1063,6 +1063,19 @@ Describe 'LiveGraph' {
     };
   }
 
+  global.document = {
+    createElementNS(_ns, tag) { return makeEl(tag); },
+    createElement(tag) { return makeEl(tag); },
+    getElementById() { return null; },
+    body: makeEl('body'),
+    head: makeEl('head'),
+  };
+  global.window = {
+    requestAnimationFrame() { return 1; },
+    cancelAnimationFrame() {},
+    devicePixelRatio: 1,
+  };
+
   class ItemView {
     constructor() {
       this.containerEl = makeEl('div');
