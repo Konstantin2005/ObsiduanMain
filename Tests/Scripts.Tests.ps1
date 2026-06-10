@@ -71,9 +71,11 @@ exit 0
             & (Join-Path $repoRoot 'Scripts\Vault\Move-TodayTasks.ps1') -Date '2026-06-10' -KanbanDir $plan
 
             $content = Get-Content -LiteralPath $file -Raw -Encoding UTF8
-            $content | Should Match '## Сегодня[\s\S]*Сделать тест @\{2026-06-10\}'
-            $content | Should Not Match '## Запланировано[\s\S]*Сделать тест @\{2026-06-10\}'
-            $content | Should Match '## Запланировано[\s\S]*Остаться здесь @\{2026-06-11\}'
+            $plannedSection = ($content -split '## Сегодня', 2)[0]
+            $todaySection = ($content -split '## Сегодня', 2)[1]
+            $todaySection | Should Match 'Сделать тест @\{2026-06-10\}'
+            $plannedSection | Should Not Match 'Сделать тест @\{2026-06-10\}'
+            $plannedSection | Should Match 'Остаться здесь @\{2026-06-11\}'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
@@ -165,7 +167,7 @@ name: John
 
             Test-Path -LiteralPath (Join-Path $monthDir '02.1-6-26.md') | Should Be $true
             Test-Path -LiteralPath $numberedNote | Should Be $false
-            (Get-Content -LiteralPath $refs -Raw) | Should Match 'link: 02\.1-6-26\.md'
+            (Get-Content -LiteralPath $refs -Raw -Encoding UTF8) | Should Match 'link: 02\.1-6-26\.md'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
