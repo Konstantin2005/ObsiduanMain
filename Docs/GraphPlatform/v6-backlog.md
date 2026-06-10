@@ -65,4 +65,4 @@ The next active plan is `v9 Critical Path Graph Platform`.
 | V9-6 | Storage evolution | DONE | cold stable IDs, fingerprints, incremental update planner, compatibility matrix, current/previous recovery |
 | V9-7 | Worker layer | DONE | async query/layout/edge tasks, stale cancellation, main-thread fallback failure mapping |
 | V9-8 | Renderer upgrade gate | DONE | Canvas bottleneck proof before WebGL |
-| V9-3 | Deep validation and store compatibility | TODO | idle deep scan and repair scheduling |
+| V9-3 | Deep validation and store compatibility | DONE | idle deep scan and repair scheduling |

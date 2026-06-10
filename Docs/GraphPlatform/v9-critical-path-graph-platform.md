@@ -451,11 +451,11 @@ Goal: protect correctness after first render.
 
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
-| V9-3-001 | Schedule deep validation in idle/background | TODO | endpoint bounds and duplicate IDs do not block first frame |
+| V9-3-001 | Schedule deep validation in idle/background | DONE | endpoint bounds and duplicate IDs do not block first frame |
 | V9-3-002 | Add store compatibility matrix | DONE | read/write/migration support is explicit |
-| V9-3-003 | Add cold repair/rebuild flow | TODO | corrupt store can be repaired safely |
+| V9-3-003 | Add cold repair/rebuild flow | DONE | corrupt store can be repaired safely |
 | V9-3-004 | Add previous-store recovery | DONE | current failure can fall back without throwing |
-| TEST-V9-3 | Store compatibility tests | TODO | compatible, migration, unsupported, corrupt current, previous fallback |
+| TEST-V9-3 | Store compatibility tests | DONE | compatible, migration, unsupported, corrupt current, previous fallback |
 
 ## v9.4: Query Layer
 

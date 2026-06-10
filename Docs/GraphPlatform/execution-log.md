@@ -68,3 +68,6 @@
 - WebGL remains intentionally unimplemented because current benchmark keeps RenderPlan in budget and no Canvas draw bottleneck has been proven.
 - Pester status after Phase 8: `41 passed, 0 failed`.
 - Real Calendula-20K Phase 8 benchmark: `33,900` nodes, `35,948` edges, graph build `2460.75ms`, store write `102.95ms`, RenderPlan `6.97ms`, scheduler `4.52ms`, node budget `3,000`, edge budget `1,000`.
+- Completed v9 deep validation closure: added cold `DeepValidation/v9.0`, repair planning, and worker-scheduled deep validation so endpoint bounds and duplicate IDs stay off the first-frame path.
+- Final Pester status for autonomous v9 pass: `41 passed, 0 failed`.
+- Final Calendula-20K benchmark: `33,900` nodes, `35,948` edges, graph build `2476.82ms`, store write `96.82ms`, RenderPlan `6.96ms`, scheduler `4.22ms`, node budget `3,000`, edge budget `1,000`.
