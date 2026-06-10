@@ -42,6 +42,9 @@ const EDGE_ARRAY_SPECS = Object.freeze([
   Object.freeze({ key: "edgesSource", prop: "edgeSources", ctor: Uint32Array, count: "edge" }),
   Object.freeze({ key: "edgesTarget", prop: "edgeTargets", ctor: Uint32Array, count: "edge" }),
   Object.freeze({ key: "edgesFlags", prop: "edgeFlags", ctor: Uint32Array, count: "edge" }),
+  Object.freeze({ key: "outOffsets", prop: "outOffsets", ctor: Uint32Array, count: "node-plus-one" }),
+  Object.freeze({ key: "outTargets", prop: "outTargets", ctor: Uint32Array, count: "edge" }),
+  Object.freeze({ key: "outEdgeIds", prop: "outEdgeIds", ctor: Uint32Array, count: "edge" }),
 ]);
 
 function nowMs() {
@@ -180,7 +183,7 @@ function validateManifestShallow(manifest, activeDir, { includeEdges = true } = 
           errors.push(`file-not-found:${spec.key}`);
           continue;
         }
-        const expectedLength = spec.count === "node" ? nodeCount : edgeCount;
+        const expectedLength = spec.count === "node" ? nodeCount : spec.count === "node-plus-one" ? nodeCount + 1 : edgeCount;
         const expectedBytes = expectedLength * spec.ctor.BYTES_PER_ELEMENT;
         const actualBytes = fs.statSync(full).size;
         if (actualBytes !== expectedBytes) {
@@ -227,12 +230,16 @@ function loadSnapshotArrays(manifest, activeDir, validation, { includeEdges = tr
   }
   if (includeEdges) {
     for (const spec of EDGE_ARRAY_SPECS) {
-      arrays[spec.prop] = readTypedArray(resolveStoreFile(activeDir, manifest.files[spec.key]), spec.ctor, validation.edgeCount);
+      const expectedLength = spec.count === "node-plus-one" ? validation.nodeCount + 1 : validation.edgeCount;
+      arrays[spec.prop] = readTypedArray(resolveStoreFile(activeDir, manifest.files[spec.key]), spec.ctor, expectedLength);
     }
   } else {
     arrays.edgeSources = new Uint32Array(0);
     arrays.edgeTargets = new Uint32Array(0);
     arrays.edgeFlags = new Uint32Array(0);
+    arrays.outOffsets = new Uint32Array(0);
+    arrays.outTargets = new Uint32Array(0);
+    arrays.outEdgeIds = new Uint32Array(0);
   }
   return Object.freeze(arrays);
 }
@@ -423,6 +430,7 @@ function buildCriticalRenderPlan({
   const visibleMask = new Uint8Array(nodeCount);
   const selectedMask = new Uint8Array(nodeCount);
   const maxNodes = Math.min(normalizedBudgets.nodeBudget, nodeCount);
+  const selectedNodeIndexes = new Uint32Array(maxNodes);
   const nodeIds = new Uint32Array(maxNodes);
   const nodeX = new Float32Array(maxNodes);
   const nodeY = new Float32Array(maxNodes);
@@ -436,6 +444,7 @@ function buildCriticalRenderPlan({
   function selectNode(index) {
     visibleMask[index] = 1;
     selectedMask[index] = 1;
+    selectedNodeIndexes[selectedNodeCount] = index;
     nodeIds[selectedNodeCount] = arrays.nodeIds[index] ?? index;
     nodeX[selectedNodeCount] = arrays.layoutX[index];
     nodeY[selectedNodeCount] = arrays.layoutY[index];
@@ -497,40 +506,58 @@ function buildCriticalRenderPlan({
   const edgeX2 = new Float32Array(maxEdges);
   const edgeY2 = new Float32Array(maxEdges);
   let selectedEdgeCount = 0;
+  let scannedEdgeSlots = 0;
   const edgeStartedAt = nowMs();
+
+  function selectEdge(edgeId, source, target) {
+    if (edgeId >= edgeCount) return false;
+    if (source >= nodeCount || target >= nodeCount) {
+      incrementReason(skipReasons, "INVALID_EDGE_ENDPOINT");
+      return false;
+    }
+    if (!visibleMask[source] || !visibleMask[target]) {
+      incrementReason(skipReasons, "EDGE_OUTSIDE_VISIBLE_SET");
+      return false;
+    }
+    if (queryPlan?.edgePolicy === "backbone" && (arrays.edgeFlags[edgeId] & 1) === 0) {
+      incrementReason(skipReasons, "EDGE_POLICY_BACKBONE");
+      return false;
+    }
+    if (selectedEdgeCount >= maxEdges) {
+      incrementReason(skipReasons, "EDGE_BUDGET");
+      return false;
+    }
+    edgeIds[selectedEdgeCount] = edgeId;
+    edgeSourceIds[selectedEdgeCount] = arrays.nodeIds[source] ?? source;
+    edgeTargetIds[selectedEdgeCount] = arrays.nodeIds[target] ?? target;
+    edgeX1[selectedEdgeCount] = arrays.layoutX[source];
+    edgeY1[selectedEdgeCount] = arrays.layoutY[source];
+    edgeX2[selectedEdgeCount] = arrays.layoutX[target];
+    edgeY2[selectedEdgeCount] = arrays.layoutY[target];
+    selectedEdgeCount += 1;
+    return true;
+  }
 
   if (normalizedBudgets.edgeBudget <= 0) {
     incrementReason(skipReasons, "EDGE_BUDGET_ZERO", edgeCount);
   } else if (queryPlan?.edgePolicy === "none") {
     incrementReason(skipReasons, "EDGE_POLICY_NONE", edgeCount);
+  } else if (arrays.outOffsets?.length === nodeCount + 1 && arrays.outTargets?.length === edgeCount && arrays.outEdgeIds?.length === edgeCount) {
+    for (let i = 0; i < selectedNodeCount && selectedEdgeCount < maxEdges; i += 1) {
+      const source = selectedNodeIndexes[i];
+      const start = arrays.outOffsets[source];
+      const end = arrays.outOffsets[source + 1];
+      for (let slot = start; slot < end && selectedEdgeCount < maxEdges; slot += 1) {
+        scannedEdgeSlots += 1;
+        selectEdge(arrays.outEdgeIds[slot], source, arrays.outTargets[slot]);
+      }
+    }
   } else {
     for (let edgeId = 0; edgeId < edgeCount; edgeId += 1) {
+      scannedEdgeSlots += 1;
       const source = arrays.edgeSources[edgeId];
       const target = arrays.edgeTargets[edgeId];
-      if (source >= nodeCount || target >= nodeCount) {
-        incrementReason(skipReasons, "INVALID_EDGE_ENDPOINT");
-        continue;
-      }
-      if (!visibleMask[source] || !visibleMask[target]) {
-        incrementReason(skipReasons, "EDGE_OUTSIDE_VISIBLE_SET");
-        continue;
-      }
-      if (queryPlan?.edgePolicy === "backbone" && (arrays.edgeFlags[edgeId] & 1) === 0) {
-        incrementReason(skipReasons, "EDGE_POLICY_BACKBONE");
-        continue;
-      }
-      if (selectedEdgeCount >= maxEdges) {
-        incrementReason(skipReasons, "EDGE_BUDGET");
-        continue;
-      }
-      edgeIds[selectedEdgeCount] = edgeId;
-      edgeSourceIds[selectedEdgeCount] = arrays.nodeIds[source] ?? source;
-      edgeTargetIds[selectedEdgeCount] = arrays.nodeIds[target] ?? target;
-      edgeX1[selectedEdgeCount] = arrays.layoutX[source];
-      edgeY1[selectedEdgeCount] = arrays.layoutY[source];
-      edgeX2[selectedEdgeCount] = arrays.layoutX[target];
-      edgeY2[selectedEdgeCount] = arrays.layoutY[target];
-      selectedEdgeCount += 1;
+      selectEdge(edgeId, source, target);
     }
   }
 
@@ -583,6 +610,7 @@ function buildCriticalRenderPlan({
       nodes: nodeCount,
       edges: edgeCount,
       visibleCandidates,
+      edgeSlotsScanned: scannedEdgeSlots,
       queryCandidates: queryPlan?.stats?.candidates ?? nodeCount,
     }),
     timingsMs: Object.freeze({

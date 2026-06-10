@@ -1799,6 +1799,52 @@ Describe 'Calendula Critical Real Frame contracts' {
   if (nullStats.contract !== 'FrameStats/v9.0') throw new Error(`Unexpected FrameStats contract: ${nullStats.contract}`);
   if (!Object.isFrozen(nullStats) || nullStats.counts.nodes !== plan.nodes.length) throw new Error('NullBackend should return aggregate frozen stats');
 
+  const nodeCount = 100;
+  const edgeCount = 5000;
+  const outOffsets = new Uint32Array(nodeCount + 1);
+  outOffsets[0] = 0;
+  outOffsets[1] = edgeCount;
+  for (let i = 2; i <= nodeCount; i += 1) outOffsets[i] = edgeCount;
+  const denseTargets = new Uint32Array(edgeCount);
+  const denseEdgeIds = new Uint32Array(edgeCount);
+  const denseSources = new Uint32Array(edgeCount);
+  const denseFlags = new Uint32Array(edgeCount);
+  for (let i = 0; i < edgeCount; i += 1) {
+    denseTargets[i] = (i % (nodeCount - 1)) + 1;
+    denseEdgeIds[i] = i;
+  }
+  const denseSnapshot = Object.freeze({
+    contract: 'GraphSnapshot/v9.0',
+    manifest: { builtAt: 'test', storeVersion: 'test', stats: { nodes: nodeCount, edges: edgeCount } },
+    validation: { nodeCount, edgeCount },
+    nodeCount,
+    edgeCount,
+    recoveredFromPrevious: false,
+    arrays: Object.freeze({
+      nodeIds: Uint32Array.from(Array.from({ length: nodeCount }, (_, i) => i)),
+      nodeTypes: new Uint16Array(nodeCount),
+      nodeFlags: new Uint32Array(nodeCount),
+      layoutX: new Float32Array(nodeCount),
+      layoutY: new Float32Array(nodeCount),
+      edgeSources: denseSources,
+      edgeTargets: denseTargets,
+      edgeFlags: denseFlags,
+      outOffsets,
+      outTargets: denseTargets,
+      outEdgeIds: denseEdgeIds,
+    }),
+  });
+  const densePlan = critical.buildCriticalRenderPlan({
+    snapshot: denseSnapshot,
+    camera: { x: 0, y: 0, width: 100000, height: 100000, zoom: 1 },
+    budgets: { nodeBudget: nodeCount, edgeBudget: 10, frameBudgetMs: 16 },
+    frameId: 43,
+  });
+  if (densePlan.edges.length !== 10) throw new Error(`Expected dense CSR plan to stop at edge budget, got ${densePlan.edges.length}`);
+  if (densePlan.stats.edgeSlotsScanned > 10) {
+    throw new Error(`CSR edge linking scanned too much: ${densePlan.stats.edgeSlotsScanned} for ${edgeCount} edges`);
+  }
+
   const missing = new critical.GraphStoreClient({ storeRoot: path.join(tempRoot, 'missing-store') }).loadSnapshot();
   if (missing.ok || missing.failureState.severity !== 'blocking') throw new Error(`Missing store should block safely, got ${JSON.stringify(missing)}`);
 
