@@ -40,6 +40,16 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     return new Promise((resolve) => window.setTimeout(resolve, ms));
   }
 
+  async function sleepWithStop(ms, shouldStop) {
+    const total = Math.max(0, Number(ms) || 0);
+    const step = 250;
+    for (let elapsed = 0; elapsed < total; elapsed += step) {
+      if (shouldStop()) return false;
+      await sleep(Math.min(step, total - elapsed));
+    }
+    return !shouldStop();
+  }
+
   function injectStyles() {
     if (typeof document === "undefined") return;
     if (document.getElementById("life-plugin-styles")) return;
@@ -405,6 +415,14 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         void this.plugin.cycleLinks(true).then(() => this.refreshStatus());
       });
 
+      const stopButton = actions.createEl("button", {
+        text: "Stop cycle",
+        cls: "life-plugin-action is-danger",
+      });
+      stopButton.addEventListener("click", () => {
+        void this.plugin.stopCycle(true).then(() => this.refreshStatus());
+      });
+
       const restoreButton = actions.createEl("button", {
         text: "Restore now",
         cls: "life-plugin-action is-danger",
@@ -514,6 +532,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         this.safetyBuffer = Array.isArray(data.safetyBuffer) ? data.safetyBuffer : [];
         this.interval = null;
         this.busy = false;
+        this.stopRequested = false;
         this.panelViews = new Set();
 
         this.registerView(PANEL_VIEW_TYPE, (leaf) => {
@@ -621,6 +640,17 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
         window.clearInterval(this.interval);
         this.interval = null;
       }
+    }
+
+    async stopCycle(save = false) {
+      this.stopRequested = true;
+      this.settings.autoCycleLinks = false;
+      this.stopTimer();
+      if (save) {
+        await this.saveState();
+      }
+      this.refreshPanelViews();
+      return true;
     }
 
     async saveState() {
@@ -989,28 +1019,32 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
 
     async cycleLinks() {
       if (this.busy) return 0;
+      this.stopRequested = false;
       this.busy = true;
       let completed = 0;
       try {
         const restored = await this.recoverFromBuffer(false);
-        if (!restored) return completed;
+        if (!restored || this.stopRequested) return completed;
 
         const pulseCount = Math.max(1, Number(this.settings.pulseCount) || 3);
         for (let pulse = 0; pulse < pulseCount; pulse += 1) {
+          if (this.stopRequested) break;
           const batchSize = Math.max(1, Number(this.settings.batchSize) || 5);
           const mode = this.settings.cycleMode || "prune-heavy";
           if (mode === "regrow") {
             const regrown = await this.recoverFromBuffer(true);
-            if (!regrown) return completed;
+            if (!regrown || this.stopRequested) return completed;
             await this.openLifePanel();
             await this.openBuiltInGraph();
             completed += 1;
-            await sleep(Math.max(0, Number(this.settings.restoreHoldMs) || 0));
+            if (!(await sleepWithStop(Math.max(0, Number(this.settings.restoreHoldMs) || 0), () => this.stopRequested))) {
+              break;
+            }
             continue;
           }
 
           const candidates = await this.chooseCandidates(batchSize);
-          if (!candidates.length) {
+          if (!candidates.length || this.stopRequested) {
             console.warn(`[${PLUGIN_LABEL}] no wiki links found to cycle.`);
             return completed;
           }
@@ -1027,20 +1061,25 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
           await this.openLifePanel();
           await this.openBuiltInGraph();
 
-          await sleep(Math.max(0, Number(this.settings.detachHoldMs) || 0));
+          if (!(await sleepWithStop(Math.max(0, Number(this.settings.detachHoldMs) || 0), () => this.stopRequested))) {
+            break;
+          }
           await this.recoverFromBuffer(false);
           entry.status = "restored";
           entry.restoredAt = new Date().toISOString();
           await this.saveState();
           await this.refreshPanelViews();
 
-          await sleep(Math.max(0, Number(this.settings.restoreHoldMs) || 0));
+          if (!(await sleepWithStop(Math.max(0, Number(this.settings.restoreHoldMs) || 0), () => this.stopRequested))) {
+            break;
+          }
           completed += 1;
         }
 
         return completed;
       } finally {
         this.busy = false;
+        this.stopRequested = false;
         this.refreshPanelViews();
       }
     }
