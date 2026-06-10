@@ -651,7 +651,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     async openLifePanel() {
       const rightLeaf = this.app.workspace.getRightLeaf;
       const leaf =
-        typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(false);
+        typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(true);
       if (!leaf) return;
       await leaf.setViewState({
         type: PANEL_VIEW_TYPE,
@@ -667,7 +667,7 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
     async openBuiltInGraph() {
       const rightLeaf = this.app.workspace.getRightLeaf;
       const leaf =
-        typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(false);
+        typeof rightLeaf === "function" ? rightLeaf.call(this.app.workspace, false) : this.app.workspace.getLeaf(true);
       if (!leaf) return;
       await leaf.setViewState({
         type: GRAPH_VIEW_TYPE,
