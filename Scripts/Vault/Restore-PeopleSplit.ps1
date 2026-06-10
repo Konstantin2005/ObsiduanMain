@@ -26,8 +26,12 @@ function Get-DateKeyFromName {
     if ($name -match '^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})\.(?<number>\d{1,2})$') {
         return "$($matches.year)-$($matches.month)-$($matches.day)"
     }
-    if ($name -match '^\d{2}\.(.+)$') {
-        $name = $matches[1]
+    if ($name -match '^(?<day>\d{1,2})\.(?<number>\d{1,2})-(?<month>\d{1,2})-(?<year>\d{2,4})$') {
+        $day = [int]$matches.day
+        $month = [int]$matches.month
+        $yearText = $matches.year
+        $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
+        return ('{0:0000}-{1:00}-{2:00}' -f $year, $month, $day)
     }
 
     if ($name -match '^(\d{4})-(\d{2})-(\d{2})$') {

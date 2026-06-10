@@ -32,7 +32,7 @@ function Get-NoteMeta {
         }
     }
 
-    if ($baseName -match '^(?<prefix>\d{1,2})\.(?<day>\d{1,2})-(?<month>\d{1,2})-(?<year>\d{2,4})$') {
+    if ($baseName -match '^(?<day>\d{1,2})\.(?<number>\d{1,2})-(?<month>\d{1,2})-(?<year>\d{2,4})$') {
         $yearText = $matches.year
         $year = if ($yearText.Length -eq 2) { 2000 + [int]$yearText } else { [int]$yearText }
 
@@ -41,8 +41,8 @@ function Get-NoteMeta {
             Directory = $directory
             BaseName = $baseName
             IsNumbered = $true
-            PatternKind = 'Prefix'
-            Number = [int]$matches.prefix
+            PatternKind = 'DayIndex'
+            Number = [int]$matches.number
             DayText = $matches.day
             MonthText = $matches.month
             YearText = $yearText
@@ -134,7 +134,7 @@ foreach ($group in $groups) {
     $style = if ($mainNote -and $mainNote.PatternKind -eq 'MainYearFirst') {
         'Suffix'
     } elseif ($mainNote) {
-        'Prefix'
+        'DayIndex'
     } else {
         $ordered[0].PatternKind
     }
