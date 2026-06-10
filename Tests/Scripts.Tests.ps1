@@ -612,6 +612,39 @@ Describe 'LiveGraph' {
       classList: { add() {} },
       setAttribute() {},
       addEventListener() {},
+      getContext(kind) {
+        if (tag !== 'canvas' || kind !== '2d') {
+          return null;
+        }
+        if (!this._ctx) {
+          const gradient = { addColorStop() {} };
+          this._ctx = {
+            setTransform() {},
+            clearRect() {},
+            save() {},
+            restore() {},
+            beginPath() {},
+            moveTo() {},
+            lineTo() {},
+            quadraticCurveTo() {},
+            closePath() {},
+            fill() {},
+            stroke() {},
+            arc() {},
+            setLineDash() {},
+            measureText(text) { return { width: text.length * 6 }; },
+            fillText() {},
+            createLinearGradient() { return gradient; },
+            imageSmoothingEnabled: true,
+            lineCap: 'round',
+            lineWidth: 1,
+            strokeStyle: '',
+            fillStyle: '',
+            textBaseline: 'middle',
+          };
+        }
+        return this._ctx;
+      },
       getBoundingClientRect() { return { width: 1280, height: 820 }; },
       innerHTML: '',
       textContent: '',
@@ -621,10 +654,15 @@ Describe 'LiveGraph' {
   global.document = {
     createElementNS(_ns, tag) { return makeEl(tag); },
     createElement(tag) { return makeEl(tag); },
+    body: makeEl('body'),
   };
+  global.getComputedStyle = () => ({
+    getPropertyValue() { return '#d8dde8'; },
+  });
   global.window = {
     setInterval() { return 1; },
     clearInterval() {},
+    devicePixelRatio: 1,
   };
 
   class ItemView {
@@ -726,6 +764,140 @@ Describe 'LiveGraph' {
 
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'calls:1'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+
+    It 'opens the native graph for large vaults' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const create = require(path.join(root, 'Calendula/.obsidian/plugins/live-graph/core.js'));
+  let openedState = null;
+
+  function makeEl(tag = 'div') {
+    return {
+      tagName: tag,
+      children: [],
+      empty() { this.children = []; },
+      addClass() {},
+      removeClass() {},
+      createDiv() { return makeEl('div'); },
+      createEl(_tag) { return makeEl(_tag); },
+      setText() {},
+      appendChild(child) { this.children.push(child); return child; },
+      style: {},
+      classList: { add() {} },
+      setAttribute() {},
+      addEventListener() {},
+      getBoundingClientRect() { return { width: 1200, height: 800 }; },
+    };
+  }
+
+  class ItemView {
+    constructor() {
+      this.containerEl = makeEl('div');
+    }
+  }
+
+  class Plugin {
+    constructor() {
+      const files = Array.from({ length: 6000 }, (_, index) => ({
+        path: `Notes/note-${index + 1}.md`,
+        basename: `note-${index + 1}`,
+        name: `note-${index + 1}`,
+      }));
+      this.app = {
+        workspace: {
+          onLayoutReady(cb) { cb(); },
+          getLeavesOfType() { return []; },
+          getLeaf() {
+            return {
+              setViewState: async (state) => {
+                openedState = state;
+              },
+              detach: async () => {},
+            };
+          },
+          revealLeaf() {},
+        },
+        vault: {
+          getMarkdownFiles() { return files; },
+          getAbstractFileByPath() { return null; },
+          on() { return { off() {} }; },
+        },
+        metadataCache: { resolvedLinks: {} },
+      };
+    }
+
+    async loadData() { return { autoOpen: false }; }
+    async saveData() {}
+    registerView() {}
+    addCommand() {}
+    addRibbonIcon() { return makeEl('button'); }
+    addSettingTab() {}
+    registerEvent() {}
+  }
+
+  class PluginSettingTab {
+    constructor() {
+      this.containerEl = makeEl('div');
+    }
+  }
+
+  class Setting {
+    setName() { return this; }
+    setDesc() { return this; }
+    addToggle(cb) { cb({ setValue() { return { onChange() {} }; } }); return this; }
+    addSlider(cb) {
+      cb({
+        setLimits() { return this; },
+        setValue() { return this; },
+        setDynamicTooltip() { return this; },
+        onChange() { return this; },
+      });
+      return this;
+    }
+  }
+
+  class Notice {
+    constructor(message) {
+      this.message = message;
+    }
+  }
+
+  function setIcon() {}
+
+  const plugin = new (create({ ItemView, Notice, Plugin, PluginSettingTab, Setting, setIcon }))();
+  await plugin.onload();
+  await plugin.openLiveGraph();
+
+  if (!openedState || openedState.type !== 'graph') {
+    throw new Error(`Expected native graph, got ${JSON.stringify(openedState)}`);
+  }
+
+  process.stdout.write('native-graph:ok\n');
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'live-graph-native-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'native-graph:ok'
         }
         finally {
             if (Test-Path -LiteralPath $root) {
