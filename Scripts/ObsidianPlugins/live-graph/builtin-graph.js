@@ -79,239 +79,79 @@ module.exports = function createBuiltInGraphPlugin(obsidian) {
       .life-panel-shell {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        padding: 12px 10px 16px;
-        background:
-          radial-gradient(circle at 18% 12%, rgba(90, 190, 255, 0.14), transparent 30%),
-          radial-gradient(circle at 82% 8%, rgba(255, 178, 102, 0.14), transparent 22%),
-          linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0));
+        gap: 8px;
+        padding: 8px;
       }
-      .life-panel-hero {
-        position: relative;
-        overflow: hidden;
-        padding: 16px;
+      .life-mini-window {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
         border: 1px solid var(--background-modifier-border);
-        border-radius: 16px;
-        background:
-          linear-gradient(180deg, rgba(130, 180, 255, 0.16), rgba(130, 180, 255, 0.04)),
-          linear-gradient(135deg, rgba(30, 41, 59, 0.08), rgba(255, 255, 255, 0.02));
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        background: var(--background-secondary);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
       }
-      .life-panel-hero::after {
-        content: "";
-        position: absolute;
-        inset: -40% auto auto -20%;
-        width: 70%;
-        height: 140%;
-        background: linear-gradient(110deg, rgba(255,255,255,0.14), rgba(255,255,255,0));
-        transform: rotate(12deg);
-        pointer-events: none;
-        opacity: 0.55;
+      .life-mini-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
       }
-      .life-panel-title {
-        font-size: 1.2em;
+      .life-mini-title {
+        font-size: 0.98em;
         font-weight: 700;
-        margin: 0 0 4px;
-        letter-spacing: 0.01em;
-      }
-      .life-panel-subtitle {
-        color: var(--text-muted);
-        font-size: 0.92em;
         margin: 0;
       }
-      .life-panel-status {
-        margin-top: 10px;
+      .life-mini-status {
         color: var(--text-muted);
-        font-size: 0.9em;
-        line-height: 1.35;
+        font-size: 0.78em;
+        line-height: 1.3;
       }
-      .life-panel-metrics {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-        margin-top: 10px;
+      .life-mini-control {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
       }
-      .life-panel-metric {
-        position: relative;
-        border-radius: 12px;
-        padding: 10px 12px;
-        background: rgba(0, 0, 0, 0.05);
-        border: 1px solid var(--background-modifier-border);
-        backdrop-filter: blur(10px);
-      }
-      .life-panel-metric-label {
-        display: block;
-        font-size: 0.72em;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
+      .life-mini-label {
+        font-size: 0.8em;
         color: var(--text-muted);
-        margin-bottom: 4px;
       }
-      .life-panel-metric-value {
-        font-size: 0.98em;
-        font-weight: 600;
-      }
-      .life-panel-pulse {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        margin-right: 8px;
-        border-radius: 999px;
-        background: var(--interactive-accent);
-        box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.45);
-        animation: life-pulse 1.8s ease-in-out infinite;
-        vertical-align: middle;
-      }
-      @keyframes life-pulse {
-        0% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.45); }
-        70% { box-shadow: 0 0 0 10px rgba(96, 165, 250, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
-      }
-      .life-panel-card {
-        border: 1px solid var(--background-modifier-border);
-        background:
-          linear-gradient(180deg, rgba(120, 170, 255, 0.10), rgba(120, 170, 255, 0.03)),
-          rgba(255, 255, 255, 0.02);
-        border-radius: 14px;
-        padding: 12px 14px;
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-        backdrop-filter: blur(12px);
-      }
-      .life-panel-actions {
+      .life-mini-slider-row {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-        margin-bottom: 10px;
-      }
-      .life-plugin-action {
-        border: 1px solid var(--background-modifier-border);
-        border-radius: 999px;
-        padding: 8px 12px;
-        background: linear-gradient(180deg, var(--background-primary), var(--background-secondary));
-        color: var(--text-normal);
-        cursor: pointer;
-        transition:
-          transform 140ms ease,
-          background 140ms ease,
-          border-color 140ms ease,
-          box-shadow 140ms ease;
-      }
-      .life-plugin-action:hover {
-        transform: translateY(-1px);
-        border-color: var(--interactive-accent);
-        background: var(--background-secondary-alt);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-      }
-      .life-plugin-action.is-primary {
-        background: linear-gradient(180deg, var(--interactive-accent), color-mix(in srgb, var(--interactive-accent) 85%, white));
-        color: var(--text-on-accent);
-        border-color: var(--interactive-accent);
-      }
-      .life-plugin-action.is-danger {
-        background: linear-gradient(180deg, rgba(255, 100, 100, 0.16), rgba(255, 100, 100, 0.08));
-      }
-      .life-plugin-action.is-wide {
-        grid-column: 1 / -1;
-      }
-      .life-plugin-action.is-soft {
-        background: rgba(120, 170, 255, 0.12);
-      }
-      .life-panel-presets {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin: 8px 0 10px;
-      }
-      .life-panel-preset {
-        border: 1px solid var(--background-modifier-border);
-        border-radius: 999px;
-        padding: 6px 10px;
-        background: linear-gradient(180deg, var(--background-primary), rgba(255,255,255,0.03));
-        cursor: pointer;
-        font-size: 0.88em;
-        transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
-      }
-      .life-panel-preset:hover {
-        border-color: var(--interactive-accent);
-        transform: translateY(-1px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-      }
-      .life-panel-card .setting-item {
-        padding-top: 0.35em;
-        padding-bottom: 0.35em;
-      }
-      .life-panel-banner {
-        display: flex;
-        justify-content: space-between;
+        grid-template-columns: auto 1fr;
         align-items: center;
         gap: 8px;
-        margin-top: 10px;
       }
-      .life-panel-mode-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin: 10px 0 8px;
-      }
-      .life-panel-mode-chip {
-        border: 1px solid var(--background-modifier-border);
-        border-radius: 999px;
-        padding: 6px 10px;
-        background: linear-gradient(180deg, var(--background-primary), rgba(255,255,255,0.03));
-        cursor: pointer;
-        font-size: 0.84em;
-        transition:
-          transform 140ms ease,
-          border-color 140ms ease,
-          background 140ms ease,
-          box-shadow 140ms ease;
-      }
-      .life-panel-mode-chip:hover {
-        transform: translateY(-1px);
-        border-color: var(--interactive-accent);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-      }
-      .life-panel-mode-chip.is-active {
-        background: linear-gradient(180deg, var(--interactive-accent), color-mix(in srgb, var(--interactive-accent) 82%, white));
-        color: var(--text-on-accent);
-        border-color: var(--interactive-accent);
-      }
-      .life-panel-hint {
-        margin: 4px 0 0;
-        color: var(--text-muted);
-        font-size: 0.84em;
-        line-height: 1.35;
-      }
-      .life-panel-pill {
-        border-radius: 999px;
-        padding: 4px 8px;
-        border: 1px solid var(--background-modifier-border);
-        background: rgba(255, 255, 255, 0.04);
-        font-size: 0.72em;
-      }
-      .life-panel-advanced {
-        margin-top: 8px;
-        border-top: 1px solid var(--background-modifier-border);
-        padding-top: 6px;
-      }
-      .life-panel-advanced summary {
-        cursor: pointer;
+      .life-mini-value {
+        min-width: 3.5em;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
         color: var(--text-muted);
         font-size: 0.8em;
-        list-style: none;
-        padding: 2px 0;
       }
-      .life-panel-advanced summary::-webkit-details-marker {
-        display: none;
+      .life-mini-slider {
+        width: 100%;
       }
-      .life-panel-compact-setting .setting-item {
-        border-top: 0;
+      .life-mini-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30px;
+        padding: 0 10px;
+        border: 1px solid var(--background-modifier-border);
+        border-radius: 999px;
+        background: var(--background-primary);
+        color: var(--text-normal);
+        cursor: pointer;
       }
-      .life-panel-compact-setting .setting-item-info {
-        margin-bottom: 0;
+      .life-mini-toggle.is-active {
+        border-color: var(--interactive-accent);
+        background: rgba(120, 170, 255, 0.16);
       }
-      .life-panel-compact-setting .setting-item-control {
-        margin-top: 0;
+      .life-mini-note {
+        color: var(--text-muted);
+        font-size: 0.76em;
       }
     `;
     const mountTarget = document.head || document.body;
