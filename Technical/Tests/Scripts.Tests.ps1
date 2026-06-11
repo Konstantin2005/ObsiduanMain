@@ -3064,7 +3064,6 @@ Describe 'LiveGraph' {
   const targets = [
     { label: 'bundle', file: path.join(root, 'Calendula/.obsidian/plugins/live-graph/core.js') },
     { label: 'source-v1', file: path.join(root, 'Technical/Scripts/Rendering/live-graph/live-graph-core.js') },
-    { label: 'source-v2', file: path.join(root, 'Technical/Scripts/Rendering/live-graph/live-graph-core-v2.js') }
   ];
 
   function makeEl() {
@@ -3204,7 +3203,7 @@ Describe 'LiveGraph' {
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'bundle:ok'
             ($output -join [Environment]::NewLine) | Should Match 'source-v1:ok'
-            ($output -join [Environment]::NewLine) | Should Match 'source-v2:ok'
+            (Test-Path -LiteralPath (Join-Path $repoRoot 'Technical\Scripts\Rendering\live-graph\live-graph-core-v2.js')) | Should Be $false
         }
         finally {
             if (Test-Path -LiteralPath $root) {
