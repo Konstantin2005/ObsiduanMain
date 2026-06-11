@@ -31,7 +31,8 @@
               "title": "Forward"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,7 +198,7 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "2b40a58f3fe40cb6",
+  "active": "f3d1575883cb210d",
   "lastOpenFiles": [
     "Forward.md",
     "Слова/move.md",
