@@ -1,4 +1,3 @@
 #Paradigmatic 
 пульс
 
-[[fa]]
