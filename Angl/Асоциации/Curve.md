@@ -1,5 +1,5 @@
 #Paradigmatic 
 Изгиб
 
-[[Bend]] 
+[[bend]] 
 [[circle]]
