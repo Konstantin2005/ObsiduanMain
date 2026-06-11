@@ -2,4 +2,4 @@
 
 [[move]]
 [[adventure]]
-[[tar]]
+[[target]]
