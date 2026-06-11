@@ -23,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "World.md",
+                "file": "Асоциации/World.md",
                 "mode": "source",
                 "source": false
               },
@@ -37,12 +37,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия.md",
+                "file": "Асоциации/Mind.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия"
+              "title": "Mind"
             }
           }
         ],
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Animal",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,7 +99,8 @@
               "title": "Закладки"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -212,20 +213,36 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "9180c1df3725434e",
+  "active": "06a32514d9499fca",
   "lastOpenFiles": [
-    "World.md",
-    "Без названия.md",
-    "Pulse.md",
+    "Асоциации/World.md",
+    "Асоциации/Mind.md",
+    "Асоциации/Pulse.md",
     "Слова/fast.md",
-    "Past.md",
+    "Асоциации/Past.md",
     "Слова/went.md",
     "Слова/was.md",
     "Асоциации/Existence.md",
     "Слова/excited.md",
-    "flash.md",
+    "Слова/flash.md",
     "Асоциации/Color.md",
-    "blood.md",
+    "Асоциации/blood.md",
     "Асоциации/Die.md",
     "Асоциации/Decline.md",
-    "Асоциации/Curve.md
+    "Асоциации/Curve.md",
+    "Слова/transform.md",
+    "Асоциации/bend.md",
+    "Асоциации/Road.md",
+    "Асоциации/Away.md",
+    "Слова/done.md",
+    "Слова/blow.md",
+    "Слова/their.md",
+    "Слова/grow.md",
+    "Асоциации/Bite.md",
+    "Слова/horse.md",
+    "Асоциации/Event.md",
+    "Слова",
+    "Асоциации",
+    "Асоциация/_zero_words.txt"
+  ]
+}
