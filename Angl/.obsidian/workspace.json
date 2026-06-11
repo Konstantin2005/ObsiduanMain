@@ -119,7 +119,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Animal",
+                "query": "For",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -140,7 +140,8 @@
               "title": "Закладки"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -253,7 +254,7 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "2b40a58f3fe40cb6",
+  "active": "06a32514d9499fca",
   "lastOpenFiles": [
     "Слова/move.md",
     "Асоциации/Gallop.md",
