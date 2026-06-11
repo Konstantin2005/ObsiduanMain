@@ -31,8 +31,7 @@
               "title": "out"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,8 +197,9 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "305cfbf09216cc06",
+  "active": "2b40a58f3fe40cb6",
   "lastOpenFiles": [
+    "Слова/out.md",
     "Слова/never.md",
     "Generated/Асоциации/Thread.md",
     "Асоциации/Smoke.md",
@@ -225,7 +225,6 @@
     "Слова/string.md",
     "Слова/stone.md",
     "Слова/mirror.md",
-    "Слова/leaf.md",
     "Generated/Асоциации",
     "Generated/Слова",
     "Generated",
