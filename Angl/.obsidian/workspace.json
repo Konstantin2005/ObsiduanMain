@@ -18,157 +18,21 @@
             }
           },
           {
-            "id": "386502ac25abd552",
+            "id": "3330638edfea477a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Асоциации/World.md",
+                "file": "Слова/be.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "World"
+              "title": "be"
             }
           },
           {
-            "id": "9180c1df3725434e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Mind.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Mind"
-            }
-          },
-          {
-            "id": "40ad83cb90b2d975",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Animal.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Animal"
-            }
-          },
-          {
-            "id": "24af4ddb5ef411b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Nature.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Nature"
-            }
-          },
-          {
-            "id": "131569b1de85348e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Plant.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Plant"
-            }
-          },
-          {
-            "id": "3e337a743dc83784",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Plant.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Plant"
-            }
-          },
-          {
-            "id": "8e2dbb5af5675ba0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Earth.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Earth"
-            }
-          },
-          {
-            "id": "6101f3af4ce72a1d",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "a4c997b1c5cae9ad",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Sound.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Sound"
-            }
-          },
-          {
-            "id": "ebcab0574413d23a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Size.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Size"
-            }
-          },
-          {
-            "id": "8ecec4d25efa457c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Group.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Group"
-            }
-          },
-          {
-            "id": "a935514012b441ee",
+            "id": "997fa14bd827bcd0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -180,205 +44,8 @@
               "icon": "lucide-file",
               "title": "Thing"
             }
-          },
-          {
-            "id": "caaa752e78032d4c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/King.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "King"
-            }
-          },
-          {
-            "id": "864a48ff0dd0e1f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Power.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Power"
-            }
-          },
-          {
-            "id": "5f9cbf6b30a57bbf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Power.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Power"
-            }
-          },
-          {
-            "id": "d42edfb88f62091e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Way.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Way"
-            }
-          },
-          {
-            "id": "99f499d3445330d1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Night.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Night"
-            }
-          },
-          {
-            "id": "8314e8a9e162dfd6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Morning.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Morning"
-            }
-          },
-          {
-            "id": "124717893c6378c3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Без названия 3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Без названия 3"
-            }
-          },
-          {
-            "id": "ca7c223ef7b12630",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Morning.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Morning"
-            }
-          },
-          {
-            "id": "40144bbf4dc2e722",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Асоциации/Family.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Family"
-            }
-          },
-          {
-            "id": "f3e87566c95d799d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Science.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Science"
-            }
-          },
-          {
-            "id": "bf4548dc2dd83d09",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Без названия 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Без названия 1"
-            }
-          },
-          {
-            "id": "e47434dfdc372709",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Без названия 2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Без названия 2"
-            }
-          },
-          {
-            "id": "d2bc8d3eff02c9ff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Без названия 4.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Без названия 4"
-            }
-          },
-          {
-            "id": "9c714be08573ea13",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Без названия 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Без названия 1"
-            }
           }
-        ],
-        "currentTab": 26
+        ]
       }
     ],
     "direction": "vertical"
@@ -435,7 +102,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 252.5
+    "width": 252.5,
+    "collapsed": true
   },
   "right": {
     "id": "e67c64f1ff03de04",
@@ -544,34 +212,34 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "9c714be08573ea13",
+  "active": "876f08d402df8399",
   "lastOpenFiles": [
-    "Science.md",
-    "Friend.md",
-    "Без названия 4.md",
-    "Без названия 2.md",
-    "Без названия 1.md",
-    "Асоциации/Family.md",
-    "Асоциации/Morning.md",
-    "Асоциации/Night.md",
-    "Асоциации/Way.md",
-    "Асоциации/Use.md",
-    "Без названия 3.md",
-    "Асоциации/Power.md",
-    "Асоциации/King.md",
+    "Слова/be.md",
     "Асоциации/Thing.md",
-    "Асоциации/Group.md",
-    "Асоциации/Number.md",
-    "Асоциации/Size.md",
+    "Асоциации/Plant.md",
+    "Асоциации/Earth.md",
     "Асоциации/Sound.md",
+    "Асоциации/Size.md",
+    "Асоциации/Group.md",
+    "Асоциации/King.md",
+    "Асоциации/Power.md",
+    "Асоциации/Way.md",
+    "Асоциации/Night.md",
+    "Асоциации/Morning.md",
+    "Без названия 3.md",
+    "Асоциации/Family.md",
+    "Science.md",
+    "Без названия 1.md",
+    "Без названия 2.md",
+    "Без названия 4.md",
+    "Friend.md",
+    "Асоциации/Use.md",
+    "Асоциации/Number.md",
     "Асоциации/Energy.md",
     "Асоциации/Сhange.md",
     "Асоциации/World.md",
     "Асоциации/Water.md",
     "Асоциации/Trip.md",
-    "Асоциации/Tree.md",
-    "Асоциации/Transport.md",
-    "Асоциации/Trail.md",
     "Слова",
     "Асоциации",
     "Асоциация/_zero_words.txt"
