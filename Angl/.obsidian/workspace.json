@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "876f08d402df8399",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Generated/Glass.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Glass"
-            }
-          },
-          {
             "id": "80b3f0c91c7498d5",
             "type": "leaf",
             "state": {
@@ -327,12 +313,26 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "876f08d402df8399",
+  "active": "80b3f0c91c7498d5",
   "lastOpenFiles": [
+    "Generated/Асоциации/Moss.md",
+    "Generated/Асоциации/Signal.md",
+    "Generated/Асоциации/Thread.md",
+    "Generated/Асоциации/Ash.md",
+    "Generated/Асоциации/Glass.md",
+    "Generated/Асоциации/Rain.md",
+    "Generated/Асоциации",
+    "Generated/Слова/Moss.md",
+    "Generated/Слова/Signal.md",
+    "Generated/Слова/Thread.md",
+    "Generated/Слова/Ash.md",
+    "Generated/Слова/Glass.md",
+    "Generated/Слова/Rain.md",
+    "Generated/Слова",
     "Generated/Echo.md",
+    "Generated/Glass.md",
     "Generated/Drift.md",
     "Generated/Ash.md",
-    "Generated/Glass.md",
     "Generated/Lantern.md",
     "Generated/Moss.md",
     "Generated/Signal.md",
@@ -344,18 +344,6 @@
     "Generated",
     "Асоциации/Energy.md",
     "Асоциации/Bite.md",
-    "Асоциации/Pulse.md",
-    "wave.md",
-    "Gun.md",
-    "Без названия.md",
-    "Love.md",
-    "Слова/red.md",
-    "Асоциации/forever.md",
-    "coal.md",
-    "Асоциации/Night.md",
-    "Асоциации/Family.md",
-    "Асоциации/Thing.md",
-    "Слова/skateboard.md",
     "Слова",
     "Асоциации",
     "Асоциация/_zero_words.txt"
