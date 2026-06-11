@@ -18,6 +18,34 @@
             }
           },
           {
+            "id": "c4099a7ed8ec6b4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pulse.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Pulse"
+            }
+          },
+          {
+            "id": "43fe37e9841c76fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Слова/fast.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "fast"
+            }
+          },
+          {
             "id": "1bf166fd41fa125b",
             "type": "leaf",
             "state": {
@@ -31,7 +59,8 @@
               "title": "Past"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -198,8 +227,9 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "876f08d402df8399",
+  "active": "c4099a7ed8ec6b4c",
   "lastOpenFiles": [
+    "Слова/fast.md",
     "Past.md",
     "Слова/went.md",
     "Слова/was.md",
@@ -225,7 +255,6 @@
     "Асоциации/Event.md",
     "Слова/happen.md",
     "Forever.md",
-    "every.md",
     "Слова",
     "Асоциации",
     "Асоциация/_zero_words.txt"

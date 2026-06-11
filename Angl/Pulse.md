@@ -1,3 +1,5 @@
 #Paradigmatic 
 пульс
 
+
+[[fast]]
