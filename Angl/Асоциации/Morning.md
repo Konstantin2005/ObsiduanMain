@@ -1,3 +1,6 @@
 
 #Paradigmatic 
 Утро
+
+[[order]]
+[[began]]
