@@ -1,2 +1,4 @@
 #Paradigmatic 
 Семья
+
+[[home]]
