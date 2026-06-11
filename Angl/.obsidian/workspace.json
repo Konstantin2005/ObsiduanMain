@@ -229,7 +229,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Way.md",
+                "file": "Асоциации/Way.md",
                 "mode": "source",
                 "source": false
               },
@@ -243,7 +243,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Night.md",
+                "file": "Асоциации/Night.md",
                 "mode": "source",
                 "source": false
               },
@@ -257,7 +257,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Morning.md",
+                "file": "Асоциации/Morning.md",
                 "mode": "source",
                 "source": false
               },
@@ -285,16 +285,100 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Morning.md",
+                "file": "Асоциации/Morning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Morning"
             }
+          },
+          {
+            "id": "40144bbf4dc2e722",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Асоциации/Family.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Family"
+            }
+          },
+          {
+            "id": "f3e87566c95d799d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Без названия.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Без названия"
+            }
+          },
+          {
+            "id": "bf4548dc2dd83d09",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Без названия 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Без названия 1"
+            }
+          },
+          {
+            "id": "e47434dfdc372709",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Без названия 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Без названия 2"
+            }
+          },
+          {
+            "id": "d2bc8d3eff02c9ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Без названия 4.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Без названия 4"
+            }
+          },
+          {
+            "id": "9c714be08573ea13",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Без названия.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Без названия"
+            }
           }
         ],
-        "currentTab": 20
+        "currentTab": 26
       }
     ],
     "direction": "vertical"
@@ -460,13 +544,19 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "ca7c223ef7b12630",
+  "active": "9c714be08573ea13",
   "lastOpenFiles": [
-    "Night.md",
-    "Way.md",
-    "Use.md",
+    "Friend.md",
+    "Без названия 4.md",
+    "Без названия 2.md",
+    "Без названия 1.md",
+    "Без названия.md",
+    "Асоциации/Family.md",
+    "Асоциации/Morning.md",
+    "Асоциации/Night.md",
+    "Асоциации/Way.md",
+    "Асоциации/Use.md",
     "Без названия 3.md",
-    "Morning.md",
     "Асоциации/Power.md",
     "Асоциации/King.md",
     "Асоциации/Thing.md",
@@ -482,12 +572,6 @@
     "Асоциации/Tree.md",
     "Асоциации/Transport.md",
     "Асоциации/Trail.md",
-    "Асоциации/Task.md",
-    "Асоциации/Story.md",
-    "Асоциации/Road.md",
-    "Асоциации/Ride.md",
-    "Асоциации/Pulse.md",
-    "Асоциации/Process.md",
     "Слова",
     "Асоциации",
     "Асоциация/_zero_words.txt"
