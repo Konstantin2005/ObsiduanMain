@@ -651,6 +651,57 @@ Renderer remains isolated.
 Snapshot publish still goes through quality gate.
 ```
 
+## Implementation Progress
+
+### V17-S1A UI-Protected Throughput Governor Foundation - DONE
+
+Implemented:
+
+- `GraphResourceProfile/v17.0`;
+- `GraphSlaReport/v17.0`;
+- `GraphThroughputPolicy/v17.0`;
+- `GraphThroughputGovernorDecision/v17.0`;
+- `GraphPartition/v17.0`;
+- `GraphDashboardSample/v17.0`;
+- conservative throughput governor with SLA-first scaling;
+- immediate emergency throttle for UI/input/publish pressure;
+- `workers -50%` emergency action;
+- IO pause fallback with `pauseIoMs >= 500`;
+- `maxInFlightBytes` constrained to one chunk during emergency throttle;
+- low-priority cache-only fallback;
+- low-throughput-gain rollback;
+- partition freshness map;
+- dashboard sampling guard at `<=2Hz`;
+- benchmark tool: `Scripts/Obsidian/measure-graph-throughput-governor.js`.
+
+Closed:
+
+- `V17-B001`: success metric moved from raw CPU target to useful facts/sec under SLA.
+- `V17-B002`: fixed worker count replaced with conservative governor decisions.
+- `V17-B003`: UI SLA now has a contract and emergency throttle.
+- `V17-B007`: partial graph freshness is explicit through partition freshness maps.
+- `V17-B008`: dashboard sampling is budgeted and rate-limited.
+- `V17-B010`: benchmark/build data now includes useful throughput.
+
+Current benchmark baseline:
+
+```txt
+Scenario: workers 2,4,6; useful facts/sec 10000,13800,14200; eventLoopDelayP95 8ms,11ms,24ms
+Total governor benchmark layer: 2.471ms
+Decision: KEEP_WORKERS_4
+Reasons at workers=6: UI_LAG, FRAME_BUDGET_EXCEEDED
+Actions at workers=6: EMERGENCY_THROTTLE, SCALE_DOWN, PAUSE_IO, REDUCE_CHUNK_BYTES, REDUCE_IN_FLIGHT_BYTES, DROP_LOW_PRIORITY, CACHE_ONLY_LOW_PRIORITY
+Final policy after emergency: workers=3, chunkBytes=2097152, maxInFlightBytes=2097152, maxReadConcurrency=1, pauseIoMs=500
+Dashboard maxHz: 2
+Freshness coverage: 0.925556
+```
+
+Test status:
+
+```txt
+Pester: 49 passed, 0 failed
+```
+
 ## Benchmark Plan
 
 Benchmarks:

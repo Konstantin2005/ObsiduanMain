@@ -138,16 +138,17 @@ function runBenchmark(options = {}) {
 
   const decisions = benchmarkTimed.value.decisions;
   const finalDecision = decisions[decisions.length - 1];
-  const bestDecision = decisions.reduce((best, decision) => {
-    if (!best) return decision;
-    if (decision.slaReport.ok && decision.throughput.usefulFactsPerSec > best.throughput.usefulFactsPerSec) return decision;
+  const bestIndex = decisions.reduce((best, decision, index) => {
+    if (!decision.slaReport.ok) return best;
+    if (best === -1) return index;
+    if (decision.throughput.usefulFactsPerSec > decisions[best].throughput.usefulFactsPerSec) return index;
     return best;
-  }, null);
+  }, -1);
 
   const decisionLabel =
     finalDecision.actions.includes(governor.GOVERNOR_ACTION.SCALE_DOWN) ||
     finalDecision.actions.includes(governor.GOVERNOR_ACTION.EMERGENCY_THROTTLE)
-      ? `KEEP_WORKERS_${bestDecision?.slaReport?.ok ? bestDecision.nextPolicy.workerCount : benchmarkTimed.value.finalPolicy.workerCount}`
+      ? `KEEP_WORKERS_${bestIndex >= 0 ? workerSeries[bestIndex] : benchmarkTimed.value.finalPolicy.workerCount}`
       : finalDecision.actions[0];
 
   return {
@@ -174,8 +175,8 @@ function runBenchmark(options = {}) {
       freshnessCoverage: benchmarkTimed.value.dashboard.freshness.coverage,
       throttleReasons: benchmarkTimed.value.dashboard.throttleReasons,
     },
-    decisions: decisions.map((decision) => ({
-      workerCount: decision.slaReport.metrics.workerCount,
+    decisions: decisions.map((decision, index) => ({
+      workerCount: workerSeries[index],
       usefulFactsPerSec: decision.throughput.usefulFactsPerSec,
       gain: decision.throughput.gain,
       actions: decision.actions,
