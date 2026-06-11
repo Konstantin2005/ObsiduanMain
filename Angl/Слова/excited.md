@@ -1,3 +1,3 @@
+#Adjective
 взволнованный
 
-#Verb 
