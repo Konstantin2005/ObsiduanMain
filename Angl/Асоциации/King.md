@@ -1,3 +1,2 @@
 #Paradigmatic 
-
-вешь
+вид

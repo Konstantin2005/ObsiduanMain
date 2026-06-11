@@ -159,7 +159,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Group.md",
+                "file": "Асоциации/Group.md",
                 "mode": "source",
                 "source": false
               },
@@ -173,7 +173,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Thing.md",
+                "file": "Асоциации/Thing.md",
                 "mode": "source",
                 "source": false
               },
@@ -187,6 +187,76 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Асоциации/King.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "King"
+            }
+          },
+          {
+            "id": "864a48ff0dd0e1f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Асоциации/Power.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Power"
+            }
+          },
+          {
+            "id": "5f9cbf6b30a57bbf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Асоциации/Power.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Power"
+            }
+          },
+          {
+            "id": "d42edfb88f62091e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Без названия.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Без названия"
+            }
+          },
+          {
+            "id": "99f499d3445330d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Без названия 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Без названия 1"
+            }
+          },
+          {
+            "id": "8314e8a9e162dfd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Без названия 2.md",
                 "mode": "source",
                 "source": false
@@ -196,7 +266,7 @@
             }
           },
           {
-            "id": "864a48ff0dd0e1f9",
+            "id": "124717893c6378c3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -210,21 +280,21 @@
             }
           },
           {
-            "id": "5f9cbf6b30a57bbf",
+            "id": "ca7c223ef7b12630",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Thing.md",
+                "file": "Без названия 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thing"
+              "title": "Без названия 4"
             }
           }
         ],
-        "currentTab": 15
+        "currentTab": 20
       }
     ],
     "direction": "vertical"
@@ -390,13 +460,18 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "5f9cbf6b30a57bbf",
+  "active": "ca7c223ef7b12630",
   "lastOpenFiles": [
-    "Group.md",
-    "Number.md",
     "Без названия 3.md",
+    "Без названия 4.md",
     "Без названия 2.md",
-    "Thing.md",
+    "Без названия 1.md",
+    "Без названия.md",
+    "Асоциации/Power.md",
+    "Асоциации/King.md",
+    "Асоциации/Thing.md",
+    "Асоциации/Group.md",
+    "Асоциации/Number.md",
     "Асоциации/Size.md",
     "Асоциации/Sound.md",
     "Асоциации/Energy.md",
@@ -413,11 +488,6 @@
     "Асоциации/Ride.md",
     "Асоциации/Pulse.md",
     "Асоциации/Process.md",
-    "Асоциации/Plant.md",
-    "Асоциации/Perception.md",
-    "Асоциации/Past.md",
-    "Асоциации/Nature.md",
-    "Асоциации/Mountain.md",
     "Слова",
     "Асоциации",
     "Асоциация/_zero_words.txt"
