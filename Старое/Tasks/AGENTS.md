@@ -36,7 +36,7 @@
 Для автоматического запуска каждый день можно добавить задачу в Планировщик Windows:
 
 - Триггер: ежедневно в 00:00
-- Действие: `powershell.exe -File "C:\obsidian\Main\Scripts\Vault\Move-TodayTasks.ps1"`
+- Действие: `powershell.exe -File "C:\obsidian\Main\Technical\Scripts\Vault\Move-TodayTasks.ps1"`
 - Working directory: `C:\obsidian\Main\Tasks`
 
 ### Важно

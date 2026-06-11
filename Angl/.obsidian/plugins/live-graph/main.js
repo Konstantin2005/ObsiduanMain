@@ -1,1 +1,1 @@
-module.exports = require("C:/obsidian/Main/Scripts/ObsidianPlugins/live-graph/builtin-graph.js")(require("obsidian"));
+module.exports = require("C:/obsidian/Main/Technical/Scripts/Rendering/live-graph/builtin-graph.js")(require("obsidian"));

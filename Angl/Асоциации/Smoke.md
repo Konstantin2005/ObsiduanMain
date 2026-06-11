@@ -1,3 +1,4 @@
 #Semantic
 Дым
 
+[[blow]]
