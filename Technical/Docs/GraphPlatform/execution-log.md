@@ -99,6 +99,7 @@
 - Started autonomous v21 execution from the project `SKill` protocol. Completed `V21-S1A Capacity Lease + Brownout Foundation`: added `graph-capacity-lease-runtime.js`, capacity envelopes with TTL/confidence, admission decisions, resource lease manager, watermark/hysteresis decisions, brownout, dependency-aware shedding, truth-labeled snapshot contract, containment gate, and synthetic capacity benchmark.
 - v21 capacity lease benchmark: confidence `0.72`, compiler backlog `80MB`, people edge multiplier `12`, total decision layer `2.898ms`, admission `START_DEGRADED`, leases granted `4`, leases revoked `1`, brownout `MODERATE`, truth label `PARTIAL_STALE`, contained partition `people`, shedding cancelled `4` tasks, recovered without oscillation.
 - Pester status after `V21-S1A`: `51 passed, 0 failed`.
+- Synced the remaining `v9` plan items with the implemented codebase: query index integrity checks, cold-validation worker execution, and the WebGL contract/backend/fallback gate are now marked `DONE` in the critical-path plan.
 
 ## 2026-06-11
 
