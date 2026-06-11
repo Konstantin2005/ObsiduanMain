@@ -46,7 +46,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -213,8 +213,9 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "599bcb6e0fabc1ac",
+  "active": "6c26bdfddea85122",
   "lastOpenFiles": [
+    "Слова/every.md",
     "Слова/ash.md",
     "Слова/wind.md",
     "Асоциации/World.md",
@@ -240,7 +241,6 @@
     "Асоциации/Dust.md",
     "Асоциации/Brick.md",
     "Асоциации/Apple.md",
-    "Слова/road.md",
     "Generated/Асоциации",
     "Generated/Слова",
     "Generated",
