@@ -31,8 +31,7 @@
               "title": "wind"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,7 +198,7 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "9da9ed7a0c0e7b72",
+  "active": "2b40a58f3fe40cb6",
   "lastOpenFiles": [
     "Слова/wind.md",
     "Асоциации/World.md",
