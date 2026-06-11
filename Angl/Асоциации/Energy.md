@@ -1,6 +1,6 @@
 #Paradigmatic 
 Энергия
 
-[[ho]]
+[[horse]]
 [[coal]]
 [[wave]]

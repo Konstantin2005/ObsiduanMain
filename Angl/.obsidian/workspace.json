@@ -157,8 +157,7 @@
               "title": "forever"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -324,10 +323,10 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "80b3f0c91c7498d5",
+  "active": "876f08d402df8399",
   "lastOpenFiles": [
-    "Асоциации/Bite.md",
     "Асоциации/Energy.md",
+    "Асоциации/Bite.md",
     "Асоциации/Pulse.md",
     "wave.md",
     "Gun.md",
