@@ -1,5 +1,6 @@
 #Paradigmatic 
 Энергия
 
-[[food]]
+[[ho]]
 [[coal]]
+[[wave]]

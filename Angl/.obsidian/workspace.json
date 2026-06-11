@@ -18,6 +18,48 @@
             }
           },
           {
+            "id": "80b3f0c91c7498d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Асоциации/Energy.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Energy"
+            }
+          },
+          {
+            "id": "2b40a58f3fe40cb6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Асоциации/Bite.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bite"
+            }
+          },
+          {
+            "id": "072dce687a09136f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Асоциации/Energy.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Energy"
+            }
+          },
+          {
             "id": "e246a817b425d5e7",
             "type": "leaf",
             "state": {
@@ -282,8 +324,11 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "e246a817b425d5e7",
+  "active": "80b3f0c91c7498d5",
   "lastOpenFiles": [
+    "Асоциации/Bite.md",
+    "Асоциации/Energy.md",
+    "Асоциации/Pulse.md",
     "wave.md",
     "Gun.md",
     "Без названия.md",
@@ -291,7 +336,6 @@
     "Слова/red.md",
     "Асоциации/forever.md",
     "coal.md",
-    "Асоциации/Energy.md",
     "Асоциации/Night.md",
     "Асоциации/Family.md",
     "Асоциации/Thing.md",
@@ -302,14 +346,12 @@
     "Асоциации/Morning.md",
     "Слова/life.md",
     "Слова/become.md",
-    "Асоциации/Pulse.md",
     "Асоциации/Away.md",
     "Слова/blow.md",
     "Слова/began.md",
     "Слова/come.md",
     "Асоциации/Tree.md",
     "Асоциации/nature.md",
-    "Асоциации/Earth.md",
     "Слова",
     "Асоциации",
     "Асоциация/_zero_words.txt"
