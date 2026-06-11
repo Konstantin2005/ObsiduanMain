@@ -1,0 +1,4 @@
+#Paradigmatic 
+пульс
+
+[[fa]]
