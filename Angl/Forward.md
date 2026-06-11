@@ -1,4 +1,4 @@
 #Paradigmatic 
 
 [[move]]
-[[]]
+[[adventure]]
