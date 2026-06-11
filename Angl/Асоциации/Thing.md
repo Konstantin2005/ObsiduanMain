@@ -3,4 +3,4 @@
 вещь
 
 [[tea]] 
-[[sc]]
+[[skateboard]]

@@ -31,8 +31,7 @@
               "title": "Thing"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,8 +198,9 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "65dda9d21bd768ac",
+  "active": "876f08d402df8399",
   "lastOpenFiles": [
+    "Асоциации/Thing.md",
     "Слова/skateboard.md",
     "Асоциации/Group.md",
     "Слова/order.md",
@@ -218,7 +218,6 @@
     "Асоциации/Earth.md",
     "Friend.md",
     "Слова/be.md",
-    "Асоциации/Thing.md",
     "Асоциации/Plant.md",
     "Асоциации/Sound.md",
     "Асоциации/Size.md",
