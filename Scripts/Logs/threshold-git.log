@@ -1917,3 +1917,6 @@
 [2026-06-11 17:12:58] git commit failed with code 128
 [2026-06-11 17:12:59] Success. Commit: 2026-06-11 17:12:58.
 [2026-06-11 17:13:01] Success. Commit: 2026-06-11 17:12:59.
+[2026-06-11 17:13:01] Starting threshold commit loop with 15s interval...
+[2026-06-11 17:13:02] git add -A failed with code 128
+[2026-06-11 17:13:03] Success. Commit: 2026-06-11 17:13:01.
