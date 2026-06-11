@@ -1,3 +1,4 @@
 #Semantic
 мир
 
+[[nature]]
