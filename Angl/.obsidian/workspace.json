@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generated/Moss.md",
+                "file": "Generated/Echo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Moss"
+              "title": "Echo"
             }
           },
           {
@@ -329,17 +329,17 @@
   },
   "active": "876f08d402df8399",
   "lastOpenFiles": [
+    "Generated/Glass.md",
+    "Generated/Lantern.md",
+    "Generated/Moss.md",
     "Generated/Signal.md",
     "Generated/Thread.md",
     "Generated/Velvet.md",
     "Generated/Echo.md",
     "Generated/Drift.md",
     "Generated/Ash.md",
-    "Generated/Lantern.md",
     "Generated/Spark.md",
     "Generated/Mirror.md",
-    "Generated/Moss.md",
-    "Generated/Glass.md",
     "Generated/Rain.md",
     "Generated",
     "Асоциации/Energy.md",
