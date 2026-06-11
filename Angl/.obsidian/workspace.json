@@ -18,6 +18,20 @@
             }
           },
           {
+            "id": "f3d1575883cb210d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Forward.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Forward"
+            }
+          },
+          {
             "id": "c3d27a2f808f078a",
             "type": "leaf",
             "state": {
@@ -87,7 +101,8 @@
               "title": "out"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -253,8 +268,9 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "3996311c9b7e5584",
+  "active": "f3d1575883cb210d",
   "lastOpenFiles": [
+    "Forward.md",
     "Слова/move.md",
     "Асоциации/Gallop.md",
     "Слова/rorward.md",
@@ -280,7 +296,6 @@
     "Слова/smoke.md",
     "Слова/sun.md",
     "Слова/wood.md",
-    "Слова/water.md",
     "Generated/Асоциации",
     "Generated/Слова",
     "Generated",
