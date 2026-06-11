@@ -1,6 +1,3 @@
-#Semantic 
-ветер
+#Noun
+Ветер приходит внезапно и уходит дальше.
 
-[[blow]] wind
-[[air]] 
-[[fresh]] wind
