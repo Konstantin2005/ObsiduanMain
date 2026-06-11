@@ -11,10 +11,14 @@
             "id": "876f08d402df8399",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Generated/Ash.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ash"
             }
           },
           {
