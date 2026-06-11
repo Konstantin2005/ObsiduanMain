@@ -1,2 +1,3 @@
 #Syntagmatic
-Нить
+Нож
+
