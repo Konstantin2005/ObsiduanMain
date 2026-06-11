@@ -1,2 +1,2 @@
-#Noun 
+#Semantic
 Земля

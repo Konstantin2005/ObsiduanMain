@@ -1,3 +1,3 @@
 
-#Noun 
+#Semantic
 Разум
