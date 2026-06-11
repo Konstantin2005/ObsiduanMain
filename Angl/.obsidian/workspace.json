@@ -45,8 +45,7 @@
               "title": "out"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -212,7 +211,7 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "1d43ac43bc56714d",
+  "active": "2b40a58f3fe40cb6",
   "lastOpenFiles": [
     "Слова/out.md",
     "Слова/never.md",
