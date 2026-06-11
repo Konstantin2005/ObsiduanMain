@@ -2,3 +2,4 @@
 
 [[Слова/green|green]]
 [[red]]
+[[flash]]
