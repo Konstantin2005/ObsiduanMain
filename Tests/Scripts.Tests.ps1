@@ -2936,6 +2936,22 @@ Describe 'Calendula graph benchmark tooling' {
         ([double]$report.dashboard.freshnessCoverage -gt 0) | Should Be $true
         ([double]$report.dashboard.maxHz -le 2) | Should Be $true
     }
+
+    It 'produces a validated capacity lease benchmark report' {
+        $output = & node (Join-Path $repoRoot 'Scripts\Obsidian\measure-graph-capacity-lease-runtime.js') --confidence 0.72 --compiler-backlog-mb 80 --edge-multiplier 12 2>&1
+
+        $LASTEXITCODE | Should Be 0
+        $report = ($output -join [Environment]::NewLine) | ConvertFrom-Json
+        $report.ok | Should Be $true
+        $report.contract | Should Be 'CapacityLeaseBenchmark/v21.0'
+        $report.admission | Should Be 'START_DEGRADED'
+        ([int]$report.leasesGranted -ge 3) | Should Be $true
+        ([int]$report.leasesRevoked -ge 1) | Should Be $true
+        $report.brownout | Should Be 'MODERATE'
+        $report.truthLabel | Should Be 'PARTIAL_STALE'
+        ($report.containedPartitions -contains 'people') | Should Be $true
+        $report.recoveredWithoutOscillation | Should Be $true
+    }
 }
 
 Describe 'LiveGraph' {

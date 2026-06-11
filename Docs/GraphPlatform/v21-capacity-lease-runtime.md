@@ -572,6 +572,69 @@ Faulty partitions are contained.
 System recovers without oscillation.
 ```
 
+## Implementation Progress
+
+### V21-S1A Capacity Lease + Brownout Foundation - DONE
+
+Implemented:
+
+- `GraphCapacityEnvelope/v21.0`;
+- `GraphAdmissionDecision/v21.0`;
+- `GraphResourceLease/v21.0`;
+- `GraphWatermarkPolicy/v21.0`;
+- `GraphWatermarkDecision/v21.0`;
+- `GraphBrownoutDecision/v21.0`;
+- `GraphSheddingPlan/v21.0`;
+- `GraphSnapshotTruth/v21.0`;
+- `GraphContainmentDecision/v21.0`;
+- dynamic capacity envelope with confidence and TTL;
+- admission controller with `START_NOW`, `START_DEGRADED`, `DEFER`, `REJECT`, and `REPAIR_ONLY`;
+- resource lease manager with grant, revoke, reduce, expire, and priority preemption;
+- soft/hard/critical/recovery watermarks with hysteresis;
+- brownout controller that disables non-essential work before emergency;
+- dependency-aware shedding that propagates cancellation downstream;
+- truth-labeled partial snapshot contract;
+- partition containment gate for producer anomalies;
+- benchmark tool: `Scripts/Obsidian/measure-graph-capacity-lease-runtime.js`.
+
+Closed:
+
+- `V21-B001`: capacity envelope now has TTL and confidence.
+- `V21-B002`: heavy work now goes through admission.
+- `V21-B003`: resource ownership is represented through leases.
+- `V21-B005`: shedding now propagates through dependencies.
+- `V21-B006`: partial snapshots now require truth labels.
+- `V21-B007`: watermarks include recovery and hysteresis.
+- `V21-B008`: brownout exists before emergency.
+- `V21-B009`: faulty partitions can be contained.
+- `V21-B011`: lease expiry is modeled.
+- `V21-B012`: expired capacity envelope defers admission.
+
+Current benchmark baseline:
+
+```txt
+Scenario: confidence 0.72, compiler backlog 80MB, people edge multiplier 12
+Total capacity lease benchmark layer: 2.898ms
+Admission: START_DEGRADED
+Admission reason: low-capacity-confidence
+Leases granted: 4
+Leases revoked: 1
+Active owners: current-view, compiler, snapshot-repair
+Brownout: MODERATE
+Disabled: dashboard-detail, deep-validation, layout-prep, speculative-prewarm, people-scan
+Truth label: PARTIAL_STALE
+Contained partitions: people
+Containment actions: KEEP_PREVIOUS_PARTITION, DISABLE_PRODUCER, OPEN_INCIDENT
+Dependency-aware shedding cancelled tasks: 4
+Recovered without oscillation: true
+```
+
+Test status:
+
+```txt
+Pester: 51 passed, 0 failed
+```
+
 ## Benchmark and Chaos Plan
 
 Benchmarks:
