@@ -1731,6 +1731,203 @@ Describe 'Calendula Graph Throughput Governor v17' {
     }
 }
 
+Describe 'Calendula Capacity Lease Runtime v21' {
+    It 'admits work through leases, brownout, truth labels, and containment' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const capacity = require(path.join(root, 'Scripts/Obsidian/graph-capacity-lease-runtime.js'));
+
+  const nowMs = 1000000;
+  const envelope = capacity.createCapacityEnvelope({
+    staticCapacity: { logicalCores: 12, totalMemoryMb: 32768 },
+    observed: { readMbSec: 120, compilerFactsSec: 80000, publishCriticalSectionMs: 4, diskLatencyMs: 35 },
+    effective: { maxWorkersNow: 5, maxReadMbSecNow: 80, maxQueueBytesNow: 64 * 1024 * 1024, maxMemoryMbNow: 512, publishBudgetMs: 8 },
+    confidence: 0.72,
+    ttlMs: 30000,
+    nowMs,
+  });
+  if (envelope.contract !== 'GraphCapacityEnvelope/v21.0' || envelope.confidence !== 0.72 || capacity.isEnvelopeExpired(envelope, nowMs + 1000)) {
+    throw new Error(`Invalid live capacity envelope: ${JSON.stringify(envelope)}`);
+  }
+
+  const expired = capacity.createCapacityEnvelope({ ttlMs: 100, nowMs });
+  const expiredAdmission = capacity.evaluateAdmission({
+    intent: { changedFiles: 1000 },
+    envelope: expired,
+    nowMs: nowMs + 200,
+  });
+  if (expiredAdmission.decision !== capacity.ADMISSION_DECISION.DEFER || !expiredAdmission.reasons.includes('capacity-envelope-expired')) {
+    throw new Error(`Expired envelope should defer heavy work, got ${JSON.stringify(expiredAdmission)}`);
+  }
+
+  const degradedAdmission = capacity.evaluateAdmission({
+    intent: { changedFiles: 25000, userActive: false },
+    envelope,
+    pressure: { diskLatencyMs: 35 },
+    nowMs: nowMs + 1000,
+  });
+  if (degradedAdmission.decision !== capacity.ADMISSION_DECISION.START_DEGRADED || !degradedAdmission.reasons.includes('low-capacity-confidence')) {
+    throw new Error(`Low-confidence capacity should start degraded, got ${JSON.stringify(degradedAdmission)}`);
+  }
+
+  const deferredFull = capacity.evaluateAdmission({
+    intent: { changedFiles: 100000, userActive: true, fullRebuild: true },
+    envelope,
+    pressure: { diskLatencyMs: 90, uiActive: true },
+    nowMs: nowMs + 1000,
+  });
+  if (deferredFull.decision !== capacity.ADMISSION_DECISION.DEFER) {
+    throw new Error(`Full rebuild under UI/disk pressure should defer, got ${JSON.stringify(deferredFull)}`);
+  }
+
+  const leases = new capacity.ResourceLeaseManager({
+    capacity: { workers: 4, memoryMb: 512, ioMbSec: 80, queueBytes: 32 * 1024 * 1024, publishBudgetMs: 8 },
+  });
+  const current = leases.requestLease({
+    owner: 'current-view',
+    resources: { workers: 1, memoryMb: 64, ioMbSec: 10, queueBytes: 4 * 1024 * 1024, publishBudgetMs: 2 },
+    priority: 100,
+    ttlMs: 10000,
+    nowMs,
+    revocable: false,
+  });
+  const compiler = leases.requestLease({
+    owner: 'compiler',
+    resources: { workers: 1, memoryMb: 128, ioMbSec: 20, queueBytes: 8 * 1024 * 1024, publishBudgetMs: 4 },
+    priority: 90,
+    ttlMs: 10000,
+    nowMs,
+    revocable: false,
+  });
+  const people = leases.requestLease({
+    owner: 'people-scan',
+    resources: { workers: 2, memoryMb: 256, ioMbSec: 30, queueBytes: 12 * 1024 * 1024 },
+    priority: 20,
+    ttlMs: 10000,
+    nowMs,
+    revocable: true,
+  });
+  const repair = leases.requestLease({
+    owner: 'snapshot-repair',
+    resources: { workers: 2, memoryMb: 128, ioMbSec: 20, queueBytes: 8 * 1024 * 1024, publishBudgetMs: 2 },
+    priority: 95,
+    ttlMs: 5000,
+    nowMs: nowMs + 100,
+    revocable: false,
+  });
+  if (!current.granted || !compiler.granted || !people.granted || !repair.granted || repair.revoked.length !== 1) {
+    throw new Error(`Expected high-priority repair lease to preempt people scan, got ${JSON.stringify({ current, compiler, people, repair })}`);
+  }
+  if (repair.revoked[0].owner !== 'people-scan' || repair.revoked[0].status !== capacity.LEASE_STATUS.REVOKED) {
+    throw new Error(`Expected people-scan lease revocation, got ${JSON.stringify(repair.revoked)}`);
+  }
+
+  const watermarkPolicy = capacity.createWatermarkPolicy({
+    metric: 'compilerBacklogBytes',
+    soft: 32 * 1024 * 1024,
+    hard: 64 * 1024 * 1024,
+    critical: 128 * 1024 * 1024,
+    recovery: 16 * 1024 * 1024,
+    hysteresisWindowMs: 10000,
+  });
+  const hardBacklog = capacity.evaluateWatermark({
+    policy: watermarkPolicy,
+    value: 80 * 1024 * 1024,
+    previousLevel: capacity.WATERMARK_LEVEL.NORMAL,
+    levelSinceMs: nowMs,
+    nowMs: nowMs + 1000,
+  });
+  if (hardBacklog.level !== capacity.WATERMARK_LEVEL.HARD || !hardBacklog.actions.includes('enter-brownout')) {
+    throw new Error(`Expected hard backlog brownout, got ${JSON.stringify(hardBacklog)}`);
+  }
+  const notRecovered = capacity.evaluateWatermark({
+    policy: watermarkPolicy,
+    value: 8 * 1024 * 1024,
+    previousLevel: hardBacklog.level,
+    levelSinceMs: nowMs,
+    nowMs: nowMs + 5000,
+  });
+  if (notRecovered.level !== capacity.WATERMARK_LEVEL.HARD) {
+    throw new Error(`Hysteresis should prevent early recovery, got ${JSON.stringify(notRecovered)}`);
+  }
+  const recovered = capacity.evaluateWatermark({
+    policy: watermarkPolicy,
+    value: 8 * 1024 * 1024,
+    previousLevel: hardBacklog.level,
+    levelSinceMs: nowMs,
+    nowMs: nowMs + 11000,
+  });
+  if (recovered.level !== capacity.WATERMARK_LEVEL.RECOVERY) {
+    throw new Error(`Expected recovery after hysteresis, got ${JSON.stringify(recovered)}`);
+  }
+
+  const brownout = capacity.decideBrownout({ watermarkDecisions: [hardBacklog], admission: degradedAdmission });
+  if (brownout.level !== capacity.BROWNOUT_LEVEL.MODERATE || !brownout.disabled.includes('people-scan') || !brownout.preserved.includes('snapshot integrity')) {
+    throw new Error(`Expected moderate brownout preserving core safety, got ${JSON.stringify(brownout)}`);
+  }
+
+  const shedding = capacity.createSheddingPlan({
+    generation: 42,
+    cancelTaskIds: ['parse-old'],
+    dependencyGraph: {
+      'compile-old': ['parse-old'],
+      'validate-old': ['compile-old'],
+      'publish-old': ['validate-old'],
+      'parse-new': [],
+    },
+  });
+  if (!shedding.propagated || !shedding.cancelledTaskIds.includes('publish-old') || shedding.cancelledTaskIds.includes('parse-new')) {
+    throw new Error(`Expected dependency-aware shedding, got ${JSON.stringify(shedding)}`);
+  }
+
+  const truth = capacity.createSnapshotTruth({
+    coverage: { coreGraph: 1, peopleLinks: 0.74, layout: 1, archive: 0.52 },
+    freshness: { currentYear: 'fresh', people: 'stale', archive: 'partial' },
+    stalePartitions: ['people'],
+    missingPartitions: ['archive-2019'],
+    queryLimitations: ['people-neighborhood-incomplete'],
+  });
+  if (truth.truthLabel !== capacity.TRUTH_LABEL.PARTIAL_STALE || !truth.visualWarning || !truth.queryLimitations.includes('people-neighborhood-incomplete')) {
+    throw new Error(`Expected truth-labeled partial snapshot, got ${JSON.stringify(truth)}`);
+  }
+
+  const containment = capacity.evaluateContainment({
+    partitionId: 'people',
+    producer: 'people-scan',
+    metrics: { edgeMultiplier: 12, unresolvedDelta: 100, coverage: 0.74 },
+  });
+  if (!containment.contained || !containment.actions.includes(capacity.CONTAINMENT_ACTION.KEEP_PREVIOUS_PARTITION) || !containment.actions.includes(capacity.CONTAINMENT_ACTION.DISABLE_PRODUCER)) {
+    throw new Error(`Expected people partition containment, got ${JSON.stringify(containment)}`);
+  }
+
+  process.stdout.write(`capacity-lease:v21-ok ${JSON.stringify({ admission: degradedAdmission.decision, revoked: repair.revoked.length, brownout: brownout.level, truth: truth.truthLabel })}\n`);
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'capacity-lease-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'capacity-lease:v21-ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula graph store' {
     It 'builds an atomic graph store with forward and reverse CSR recovery' {
         $root = New-TempRoot
