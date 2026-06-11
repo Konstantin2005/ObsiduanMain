@@ -243,12 +243,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия 1.md",
+                "file": "Night.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия 1"
+              "title": "Night"
             }
           },
           {
@@ -257,12 +257,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия 2.md",
+                "file": "Morning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия 2"
+              "title": "Morning"
             }
           },
           {
@@ -285,12 +285,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Way.md",
+                "file": "Morning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Way"
+              "title": "Morning"
             }
           }
         ],
@@ -462,11 +462,11 @@
   },
   "active": "ca7c223ef7b12630",
   "lastOpenFiles": [
+    "Night.md",
+    "Way.md",
     "Use.md",
     "Без названия 3.md",
-    "Без названия 2.md",
-    "Без названия 1.md",
-    "Way.md",
+    "Morning.md",
     "Асоциации/Power.md",
     "Асоциации/King.md",
     "Асоциации/Thing.md",
