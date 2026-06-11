@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generated/Слова/moss.md",
+                "file": "Generated/Асоциации/Rain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "moss"
+              "title": "Rain"
             }
           },
           {
@@ -313,18 +313,18 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "80b3f0c91c7498d5",
+  "active": "3996311c9b7e5584",
   "lastOpenFiles": [
+    "Generated/Асоциации/Moss.md",
+    "Generated/Асоциации/Glass.md",
+    "Generated/Асоциации/Ash.md",
+    "Generated/Слова/moss.md",
     "Generated/Слова/glass.md",
     "Generated/Слова/ash.md",
-    "Generated/Асоциации/Moss.md",
     "Асоциации/Energy.md",
     "Generated/Асоциации/Signal.md",
     "Generated/Асоциации/Thread.md",
-    "Generated/Асоциации/Ash.md",
-    "Generated/Асоциации/Glass.md",
     "Generated/Асоциации/Rain.md",
-    "Generated/Слова/moss.md",
     "Generated/Слова/signal.md",
     "Generated/Слова/thread.md",
     "Generated/Слова/rain.md",
