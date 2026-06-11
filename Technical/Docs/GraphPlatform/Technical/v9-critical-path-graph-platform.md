@@ -466,7 +466,7 @@ Goal: introduce query planning only after real rendering and governors are stabl
 | V9-4-001 | Define minimal query input contract | DONE | renderer still receives only `RenderPlan` |
 | V9-4-002 | Compile viewport/profile filters to bitsets | DONE | no text filtering in renderer |
 | V9-4-003 | Add priority node sets | DONE | selected/backbone nodes survive budgets |
-| V9-4-004 | Add cold query index integrity checks | TODO | query index validation stays off first frame |
+| V9-4-004 | Add cold query index integrity checks | DONE | query index validation stays off first frame |
 | TEST-V9-4 | Query layer tests | DONE | deterministic bitsets, priority, budget interaction |
 
 ## v9.5: Multi-Scale Graph
@@ -500,7 +500,7 @@ Goal: move compute off the main thread only when contracts and state recovery ar
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
 | V9-6-001 | Define worker message protocol | DONE | protocol is based on v9 contracts, not renderer internals |
-| V9-6-002 | Move cold validation to worker | TODO | main thread remains responsive |
+| V9-6-002 | Move cold validation to worker | DONE | main thread remains responsive |
 | V9-6-003 | Move query/visible-set compute when needed | DONE | stale worker results are dropped |
 | V9-6-004 | Add main-thread fallback | DONE | worker failure maps to `degraded`, not crash |
 | TEST-V9-6 | Worker tests | DONE | success, timeout, stale result, crash fallback |
@@ -522,9 +522,9 @@ Backend boundary already has CanvasBackend and NullBackend tests.
 | ID | Task | Status | Done Criteria |
 | --- | --- | --- | --- |
 | V9-7-001 | Produce Canvas bottleneck report | DONE | draw time is the limiting factor |
-| V9-7-002 | Define WebGL backend contract delta | TODO | no renderer rewrite required |
-| V9-7-003 | Add minimal WebGL node backend | TODO | GPU path renders visible nodes only |
-| V9-7-004 | Add Canvas fallback comparison | TODO | WebGL failure returns to Canvas safely |
+| V9-7-002 | Define WebGL backend contract delta | DONE | no renderer rewrite required |
+| V9-7-003 | Add minimal WebGL node backend | DONE | GPU path renders visible nodes only |
+| V9-7-004 | Add Canvas fallback comparison | DONE | WebGL failure returns to Canvas safely |
 | TEST-V9-7 | Backend upgrade gate tests | DONE | WebGL is denied until Canvas bottleneck is proven |
 
 ## v9.8: Renderer Upgrade Gate
