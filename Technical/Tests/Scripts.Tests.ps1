@@ -249,6 +249,17 @@ exit 0
         }
     }
 
+    It 'legacy threshold launchers point at the Technical Git automation path' {
+        $legacyScripts = @(
+            (Join-Path $repoRoot 'Старое\Calendula-People-Graph\run-hidden.vbs'),
+            (Join-Path $repoRoot 'Calendula-People-Graph-From-Branch\run-hidden.vbs')
+        )
+
+        foreach ($script in $legacyScripts) {
+            (Read-Utf8Text -Path $script) | Should Match 'Technical\\Scripts\\Git\\threshold-git\.ps1'
+        }
+    }
+
     It 'Move-TodayTasks moves dated tasks from Запланировано to Сегодня' {
         $root = New-TempRoot
         try {

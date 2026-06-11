@@ -115,3 +115,4 @@
 - Updated hourly git automation so the hourly task commits all local changes with `git add -A`, pulls, and pushes every hour.
 - Added Pester coverage for hourly auto-push with and without local changes.
 - Added a legacy `Scripts/Launchers/run-hourly.vbs` shim because the registered Windows `HourlyGit` task still points at the old launcher path and direct task update returned access denied.
+- Moved legacy threshold git launchers under `Technical/Scripts/Git` by pointing old `run-hidden.vbs` and `threshold-git.ps1` shims at the new canonical path instead of the repository root.

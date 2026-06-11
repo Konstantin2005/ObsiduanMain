@@ -4,7 +4,14 @@ param(
 
 Set-Location $RepoPath
 
-$logPath = Join-Path $RepoPath "threshold-git.log"
+$logPath = Join-Path $RepoPath "Technical\Scripts\Logs\threshold-git.log"
+$scriptPath = Join-Path $RepoPath "Technical\Scripts\Git\threshold-git.ps1"
+
+if (Test-Path -LiteralPath $scriptPath) {
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $scriptPath -RepoPath $RepoPath
+    exit $LASTEXITCODE
+}
+
 function Write-Log {
     param([string]$Message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
