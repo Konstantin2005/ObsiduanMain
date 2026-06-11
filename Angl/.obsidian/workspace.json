@@ -229,12 +229,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия.md",
+                "file": "Way.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия"
+              "title": "Way"
             }
           },
           {
@@ -285,12 +285,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия 4.md",
+                "file": "Way.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия 4"
+              "title": "Way"
             }
           }
         ],
@@ -462,11 +462,11 @@
   },
   "active": "ca7c223ef7b12630",
   "lastOpenFiles": [
+    "Use.md",
     "Без названия 3.md",
-    "Без названия 4.md",
     "Без названия 2.md",
     "Без названия 1.md",
-    "Без названия.md",
+    "Way.md",
     "Асоциации/Power.md",
     "Асоциации/King.md",
     "Асоциации/Thing.md",

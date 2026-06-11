@@ -1,0 +1,2 @@
+#Paradigmatic 
+Путь/спо
