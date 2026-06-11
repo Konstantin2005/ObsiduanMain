@@ -87,8 +87,7 @@
               "title": "out"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -254,8 +253,9 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "c3d27a2f808f078a",
+  "active": "2b40a58f3fe40cb6",
   "lastOpenFiles": [
+    "Слова/move.md",
     "Асоциации/Gallop.md",
     "Слова/rorward.md",
     "Слова/out.md",
@@ -281,7 +281,6 @@
     "Слова/sun.md",
     "Слова/wood.md",
     "Слова/water.md",
-    "Слова/string.md",
     "Generated/Асоциации",
     "Generated/Слова",
     "Generated",
