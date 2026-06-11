@@ -159,12 +159,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия.md",
+                "file": "Group.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия"
+              "title": "Group"
             }
           },
           {
@@ -173,12 +173,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия 1.md",
+                "file": "Thing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия 1"
+              "title": "Thing"
             }
           },
           {
@@ -215,12 +215,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия.md",
+                "file": "Thing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия"
+              "title": "Thing"
             }
           }
         ],
@@ -392,11 +392,11 @@
   },
   "active": "5f9cbf6b30a57bbf",
   "lastOpenFiles": [
+    "Group.md",
     "Number.md",
     "Без названия 3.md",
     "Без названия 2.md",
-    "Без названия 1.md",
-    "Без названия.md",
+    "Thing.md",
     "Асоциации/Size.md",
     "Асоциации/Sound.md",
     "Асоциации/Energy.md",
