@@ -1,2 +1,5 @@
 #Paradigmatic 
 Энергия
+
+[[food]]
+[[coal]]
