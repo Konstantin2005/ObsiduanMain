@@ -313,12 +313,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия.md",
+                "file": "Science.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия"
+              "title": "Science"
             }
           },
           {
@@ -369,12 +369,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия.md",
+                "file": "Без названия 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия"
+              "title": "Без названия 1"
             }
           }
         ],
@@ -546,11 +546,11 @@
   },
   "active": "9c714be08573ea13",
   "lastOpenFiles": [
+    "Science.md",
     "Friend.md",
     "Без названия 4.md",
     "Без названия 2.md",
     "Без названия 1.md",
-    "Без названия.md",
     "Асоциации/Family.md",
     "Асоциации/Morning.md",
     "Асоциации/Night.md",
