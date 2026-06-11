@@ -1,2 +1,2 @@
-#Semantic
+#Noun 
 навсегда
