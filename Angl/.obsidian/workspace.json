@@ -45,8 +45,7 @@
               "title": "ash"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -213,10 +212,10 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "6c26bdfddea85122",
+  "active": "2b40a58f3fe40cb6",
   "lastOpenFiles": [
-    "Слова/every.md",
     "Слова/ash.md",
+    "Слова/every.md",
     "Слова/wind.md",
     "Асоциации/World.md",
     "Асоциации/Cloud.md",
