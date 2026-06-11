@@ -1573,6 +1573,164 @@ Describe 'Calendula Autonomous Graph Build Runtime v16' {
     }
 }
 
+Describe 'Calendula Graph Throughput Governor v17' {
+    It 'maximizes useful throughput only while UI SLA holds' {
+        $root = New-TempRoot
+        try {
+            $repoRootJson = $repoRoot | ConvertTo-Json -Compress
+            $scriptContent = @'
+(async () => {
+  const path = require('path');
+  const root = __REPO_ROOT__;
+  const throughput = require(path.join(root, 'Scripts/Obsidian/graph-throughput-governor.js'));
+
+  const profile = throughput.createResourceProfile({
+    staticCaps: { logicalCores: 12, totalMemoryMb: 32768, platform: 'win32' },
+    observedCaps: {
+      usefulFactsPerSec: 13800,
+      parseFilesPerSec: 12000,
+      readMbPerSec: 350,
+      serializationMsPerMb: 3,
+      snapshotWriteMbPerSec: 220,
+      publishCriticalSectionMs: 4,
+    },
+    confidence: 0.8,
+  });
+  if (profile.contract !== 'GraphResourceProfile/v17.0' || profile.staticCaps.logicalCores !== 12 || profile.confidence !== 0.8) {
+    throw new Error(`Invalid resource profile: ${JSON.stringify(profile)}`);
+  }
+
+  const safeSla = throughput.evaluateSla({
+    mode: throughput.SLA_MODE.INTERACTIVE_SAFE,
+    metrics: {
+      eventLoopDelayP95: 10,
+      eventLoopDelayP99: 20,
+      inputLatencyMs: 30,
+      renderFrameMs: 12,
+      snapshotPublishMs: 4,
+      dashboardUpdateHz: 1,
+    },
+  });
+  if (!safeSla.ok || safeSla.violations.length !== 0) {
+    throw new Error(`Expected safe SLA, got ${JSON.stringify(safeSla)}`);
+  }
+
+  const governor = new throughput.ThroughputGovernor({
+    policy: {
+      mode: throughput.SLA_MODE.INTERACTIVE_SAFE,
+      workerCount: 2,
+      maxWorkers: 6,
+      chunkBytes: 4 * 1024 * 1024,
+      maxInFlightBytes: 16 * 1024 * 1024,
+      maxReadConcurrency: 4,
+    },
+  });
+  const scaleUp = governor.observe({
+    slaReport: safeSla,
+    resourceProfile: profile,
+    previousSample: { usefulFactsPerSec: 10000 },
+    sample: { usefulFactsPerSec: 13800, diskLatencyMs: 10, serializationMsPerMb: 3 },
+  });
+  if (!scaleUp.actions.includes(throughput.GOVERNOR_ACTION.SCALE_UP) || scaleUp.nextPolicy.workerCount !== 3) {
+    throw new Error(`Expected conservative scale up, got ${JSON.stringify(scaleUp)}`);
+  }
+
+  const lowGain = governor.observe({
+    slaReport: safeSla,
+    resourceProfile: profile,
+    previousSample: { usefulFactsPerSec: 13800 },
+    sample: { usefulFactsPerSec: 14200, diskLatencyMs: 10, serializationMsPerMb: 3 },
+  });
+  if (!lowGain.throttleReasons.includes(throughput.THROTTLE_REASON.LOW_THROUGHPUT_GAIN) || lowGain.nextPolicy.workerCount >= scaleUp.nextPolicy.workerCount) {
+    throw new Error(`Expected low-gain rollback, got ${JSON.stringify(lowGain)}`);
+  }
+
+  const badSla = throughput.evaluateSla({
+    mode: throughput.SLA_MODE.INTERACTIVE_SAFE,
+    metrics: {
+      eventLoopDelayP95: 40,
+      eventLoopDelayP99: 80,
+      inputLatencyMs: 120,
+      renderFrameMs: 30,
+      snapshotPublishMs: 12,
+      dashboardUpdateHz: 4,
+    },
+  });
+  if (badSla.ok || !badSla.emergency || !badSla.violations.includes(throughput.THROTTLE_REASON.UI_LAG)) {
+    throw new Error(`Expected emergency SLA violation, got ${JSON.stringify(badSla)}`);
+  }
+
+  const emergency = governor.observe({
+    slaReport: badSla,
+    resourceProfile: profile,
+    previousSample: { usefulFactsPerSec: 14200 },
+    sample: {
+      usefulFactsPerSec: 13000,
+      diskLatencyMs: 80,
+      serializationMsPerMb: 12,
+      gcPauseMs: 60,
+      memoryUsedRatio: 0.9,
+    },
+  });
+  if (!emergency.actions.includes(throughput.GOVERNOR_ACTION.EMERGENCY_THROTTLE) || emergency.nextPolicy.workerCount > 1) {
+    throw new Error(`Expected emergency throttle to workers<=1, got ${JSON.stringify(emergency)}`);
+  }
+  if (emergency.nextPolicy.pauseIoMs < 500 || !emergency.nextPolicy.cacheOnlyLowPriority) {
+    throw new Error(`Expected IO pause and cache-only low priority, got ${JSON.stringify(emergency.nextPolicy)}`);
+  }
+  if (emergency.nextPolicy.maxInFlightBytes !== emergency.nextPolicy.chunkBytes) {
+    throw new Error(`Expected maxInFlightBytes constrained to one chunk, got ${JSON.stringify(emergency.nextPolicy)}`);
+  }
+
+  const freshness = throughput.buildFreshnessMap([
+    { id: 'current-year', priority: 90, freshness: throughput.PARTITION_FRESHNESS.PARTIAL_FRESH, coverage: 0.9, lastBuildId: 'build-1' },
+    { id: 'people', priority: 80, freshness: throughput.PARTITION_FRESHNESS.COMPLETE, coverage: 1, lastBuildId: 'build-1' },
+    { id: 'archive', priority: 10, freshness: throughput.PARTITION_FRESHNESS.PARTIAL_STALE, coverage: 0.2, lastBuildId: 'old' },
+  ]);
+  if (freshness.partitions.archive.freshness !== throughput.PARTITION_FRESHNESS.PARTIAL_STALE || freshness.coverage >= 1) {
+    throw new Error(`Expected explicit partial freshness map, got ${JSON.stringify(freshness)}`);
+  }
+
+  if (throughput.shouldSampleDashboard({ lastSampleAtMs: 1000, nowMs: 1200, maxHz: 2 })) {
+    throw new Error('Dashboard should not sample faster than 2Hz');
+  }
+  if (!throughput.shouldSampleDashboard({ lastSampleAtMs: 1000, nowMs: 1600, maxHz: 2 })) {
+    throw new Error('Dashboard should sample after the 2Hz interval');
+  }
+
+  const dashboard = throughput.createDashboardSample({
+    policy: emergency.nextPolicy,
+    slaReport: badSla,
+    decision: emergency,
+    freshnessMap: freshness,
+  });
+  if (dashboard.contract !== 'GraphDashboardSample/v17.0' || dashboard.maxHz > 2 || !dashboard.throttleReasons.includes(throughput.THROTTLE_REASON.UI_LAG)) {
+    throw new Error(`Invalid dashboard sample: ${JSON.stringify(dashboard)}`);
+  }
+
+  process.stdout.write(`throughput-governor:v17-ok ${JSON.stringify({ workers: emergency.nextPolicy.workerCount, reasons: emergency.throttleReasons.length, freshness: freshness.coverage })}\n`);
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+'@
+            $scriptContent = $scriptContent.Replace('__REPO_ROOT__', $repoRootJson)
+            $scriptPath = Join-Path $root 'throughput-governor-check.js'
+            Write-Utf8Text -Path $scriptPath -Content $scriptContent
+
+            $output = & node $scriptPath 2>&1
+
+            $LASTEXITCODE | Should Be 0
+            ($output -join [Environment]::NewLine) | Should Match 'throughput-governor:v17-ok'
+        }
+        finally {
+            if (Test-Path -LiteralPath $root) {
+                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 Describe 'Calendula graph store' {
     It 'builds an atomic graph store with forward and reverse CSR recovery' {
         $root = New-TempRoot
@@ -2564,6 +2722,22 @@ Describe 'Calendula graph benchmark tooling' {
         [int]$report.buildHistory.count | Should Be 2
         $report.priorityPlan.firstPath | Should Be 'Calendula/Today.md'
         ([int]$report.serializationOverhead.bytes -gt 0) | Should Be $true
+    }
+
+    It 'produces a validated throughput governor benchmark report' {
+        $output = & node (Join-Path $repoRoot 'Scripts\Obsidian\measure-graph-throughput-governor.js') --workers 2,4,6 --throughput 10000,13800,14200 --event-loop-p95 8,11,24 2>&1
+
+        $LASTEXITCODE | Should Be 0
+        $report = ($output -join [Environment]::NewLine) | ConvertFrom-Json
+        $report.ok | Should Be $true
+        $report.contract | Should Be 'GraphThroughputBenchmark/v17.0'
+        [int]$report.workers.Count | Should Be 3
+        ([double]$report.timingsMs.total -ge 0) | Should Be $true
+        ($report.reasons -contains 'UI_LAG') | Should Be $true
+        ($report.actions -contains 'EMERGENCY_THROTTLE') | Should Be $true
+        [int]$report.finalPolicy.workerCount | Should Be 3
+        ([double]$report.dashboard.freshnessCoverage -gt 0) | Should Be $true
+        ([double]$report.dashboard.maxHz -le 2) | Should Be $true
     }
 }
 
