@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generated/Асоциации/Rain.md",
+                "file": "Generated/Асоциации/Signal.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rain"
+              "title": "Signal"
             }
           },
           {
@@ -313,8 +313,9 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "3996311c9b7e5584",
+  "active": "80b3f0c91c7498d5",
   "lastOpenFiles": [
+    "Generated/Асоциации/Rain.md",
     "Generated/Асоциации/Moss.md",
     "Generated/Асоциации/Glass.md",
     "Generated/Асоциации/Ash.md",
@@ -324,7 +325,6 @@
     "Асоциации/Energy.md",
     "Generated/Асоциации/Signal.md",
     "Generated/Асоциации/Thread.md",
-    "Generated/Асоциации/Rain.md",
     "Generated/Слова/signal.md",
     "Generated/Слова/thread.md",
     "Generated/Слова/rain.md",
