@@ -205,8 +205,7 @@
       "zettelkasten-navigation:open zk-index-graph": false,
       "zettelkasten-navigation:open zk-local-graph": false,
       "zettelkasten-branch-tracker:Zettelkasten Branch Tracker": false,
-      "zettelkasten-core:Zettelkasten Inbox": false,
-      "live-graph:Open Жизнь panel": false
+      "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
   "active": "0fadd3a2b5ede29f",
