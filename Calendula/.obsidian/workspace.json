@@ -8,16 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "32b6236491d6341e",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
             "id": "a20925c06592098f",
             "type": "leaf",
             "state": {
@@ -200,7 +190,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "32b6236491d6341e",
+  "active": "a20925c06592098f",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/11-06-26.md",
     "Calendula/2026/Июнь/10-06-26.md",
