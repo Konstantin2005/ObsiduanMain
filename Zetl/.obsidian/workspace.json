@@ -189,24 +189,13 @@
               "icon": "lucide-list",
               "title": "Структура"
             }
-          },
-          {
-            "id": "57856882ca0f22ba",
-            "type": "leaf",
-            "state": {
-              "type": "life-panel",
-              "state": {},
-              "icon": "activity",
-              "title": "Жизнь"
-            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 419.5,
-    "collapsed": true
+    "width": 419.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -220,7 +209,7 @@
       "live-graph:Open Жизнь panel": false
     }
   },
-  "active": "02209ca3e92389b6",
+  "active": "0fadd3a2b5ede29f",
   "lastOpenFiles": [
     "Index/Програмирование/BD/0 Casandra.md",
     "Index/Програмирование/BD/0 LiteSql.md",
