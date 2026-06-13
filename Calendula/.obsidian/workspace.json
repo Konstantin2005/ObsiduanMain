@@ -76,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -177,7 +176,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "553845c0821e0898",
+  "active": "6597eafc8d33d078",
   "lastOpenFiles": [
     "Excalidraw/Англиский.md",
     "Calendula/2026/Июнь/11-06-26.md",
