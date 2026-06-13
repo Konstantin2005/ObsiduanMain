@@ -11,12 +11,14 @@
             "id": "6597eafc8d33d078",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Англиский.md"
+                "file": "Calendula/2026/Июнь/12-06-26.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "icon": "lucide-file",
+              "title": "12-06-26"
             }
           }
         ]
@@ -76,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -176,12 +179,12 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "c7df40a4ff9c3e1b",
+  "active": "6597eafc8d33d078",
   "lastOpenFiles": [
-    "Excalidraw/Англиский.md",
-    "Pasted Image 20260613151843_983.png",
-    "Pasted Image 20260613151843_926.png",
     "Calendula/2026/Июнь/11-06-26.md",
+    "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
+    "Excalidraw/Англиский.md",
+    "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
     "Calendula/2026/Июнь/12-06-26.md",
     "Calendula/2026/Июнь/10-06-26.md",
     "Calendula/2026/Июнь/09-06-26.md",
