@@ -11,10 +11,14 @@
             "id": "empty",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Мега умные заметки.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Мега умные заметки"
             }
           },
           {
@@ -104,6 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Мега умные заметки.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки"
+              "title": "Обратные ссылки для Мега умные заметки"
             }
           },
           {
@@ -122,11 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Мега умные заметки.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки"
+              "title": "Исходящие ссылки из Мега умные заметки"
             }
           },
           {
@@ -164,12 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Мега умные заметки.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура Мега умные заметки"
             }
           },
           {
@@ -202,8 +209,13 @@
       "zettelflow:Create a new Zettel Note": false
     }
   },
-  "active": "empty",
+  "active": "ed9f351acda65d44",
   "lastOpenFiles": [
+    "Фидбек.md",
+    "Каша из всего.md",
+    "Жеский Промпт.md",
+    "Дружелюбный промт.md",
+    "Вопросики.md",
     "Мега умные заметки.md"
   ]
 }
