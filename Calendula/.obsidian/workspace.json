@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "14-06-26"
             }
+          },
+          {
+            "id": "9b21420b47cc0ade",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -179,7 +190,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "42d5ee7a4f71faf1",
+  "active": "9b21420b47cc0ade",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/14-06-26.md",
     "Соц Капитал/1_круг/Vano.md",
