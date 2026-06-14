@@ -4,31 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "47e51e0b1a22c69d",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "376ea646386f0a23",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Calendula/2026/Апрель/12-04-26.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12-04-26"
-            }
-          }
-        ]
-      },
-      {
         "id": "2365eeed4fe189e3",
         "type": "tabs",
         "children": [
           {
-            "id": "6597eafc8d33d078",
+            "id": "9aa4025921710cbf",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -94,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -194,34 +175,34 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "376ea646386f0a23",
+  "active": "9aa4025921710cbf",
   "lastOpenFiles": [
-    "Calendula/2026/Апрель/11-04-26.md",
-    "Calendula/2026/Апрель/10-04-26.md",
-    "Calendula/2026/Апрель/09-04-26.md",
-    "Calendula/2026/Апрель/08-04-26.md",
-    "Calendula/2026/Апрель/07-04-26.md",
-    "Calendula/2026/Апрель/06-04-26.md",
-    "Calendula/2026/Апрель/05-04-26.md",
-    "Calendula/2026/Апрель/04-04-26.md",
-    "Calendula/2026/Апрель/03-04-26.md",
-    "Calendula/2026/Апрель/02-04-26.md",
-    "Calendula/2026/Апрель/01-04-26.md",
-    "Calendula/2026/Март/31-03-26.md",
-    "Calendula/2026/Март/30-03-26.md",
-    "Calendula/2026/Март/29.1-03-26.md",
-    "Calendula/2026/Март/29-03-26.md",
-    "Calendula/2026/Март/28-03-26.md",
-    "Calendula/2026/Март/27-03-26.md",
-    "Calendula/2026/Март/26-03-26.md",
-    "Calendula/2026/Март/25-03-26.md",
-    "Calendula/2026/Март/24-03-26.md",
-    "Calendula/2026/Март/23-03-26.md",
-    "Calendula/2026/Март/22-03-26.md",
-    "Calendula/2026/Март/21-03-26.md",
-    "Calendula/2026/Март/20-03-26.md",
-    "Calendula/2026/Март/19-03-26.md",
-    "Calendula/2026/Март/18-03-26.md",
+    "Соц Капитал/1_круг/Vano.md",
+    "Calendula/2026/Апрель/28-04-26.md",
+    "Calendula/2026/Май/15.1-05-26.md",
+    "Mercau.md",
+    "Calendula/2026/Май/15-05-26.md",
+    "Calendula/2026/Май/14-05-26.md",
+    "Calendula/2026/Май/13.1-05-26.md",
+    "Calendula/2026/Май/13-05-26.md",
+    "Calendula/2026/Май/12-05-26.md",
+    "Calendula/2026/Май/11-05-26.md",
+    "Calendula/2026/Май/10-05-26.md",
+    "Calendula/2026/Май/09-05-26.md",
+    "Calendula/2026/Май/08-05-26.md",
+    "Calendula/2026/Май/07-05-26.md",
+    "Calendula/2026/Май/06-05-26.md",
+    "Calendula/2026/Май/05-05-26.md",
+    "Calendula/2026/Май/04-05-26.md",
+    "Calendula/2026/Май/03.1-05-26.md",
+    "Calendula/2026/Май/03-05-26.md",
+    "Calendula/2026/Май/02.1-05-26.md",
+    "Calendula/2026/Май/02-05-26.md",
+    "Calendula/2026/Май/01-05-26.md",
+    "Calendula/2026/Апрель/30-04-26.md",
+    "Соц Капитал/King.md",
+    "Соц Капитал/Графы.md",
+    "Calendula/2026/Апрель/29-04-26.md",
     "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
     "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
     "Excalidraw/pichers/Pasted image 20260611033205.png",
