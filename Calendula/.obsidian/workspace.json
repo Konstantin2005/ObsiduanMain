@@ -8,31 +8,33 @@
         "type": "tabs",
         "children": [
           {
+            "id": "376ea646386f0a23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Апрель/12-04-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12-04-26"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2365eeed4fe189e3",
+        "type": "tabs",
+        "children": [
+          {
             "id": "6597eafc8d33d078",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Calendula/2026/Июнь/07.1-06-26.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "07.1-06-26"
-            }
-          },
-          {
-            "id": "6836921f6a70be2b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Соц Капитал/2_круг/3_круг/Ilayr.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Ilayr"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -49,7 +51,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3d4caad4ab4f03b5",
+            "id": "a1ef4b3f866d1783",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -77,7 +79,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Интересный",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -192,37 +194,37 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "6597eafc8d33d078",
+  "active": "376ea646386f0a23",
   "lastOpenFiles": [
-    "Calendula/2026/Июнь/07-06-26.md",
-    "Calendula/2026/Июнь/07.1-06-26.md",
-    "Calendula/2026/Июнь/06-06-26.md",
-    "Calendula/2026/Июнь/05-06-26.md",
-    "Calendula/2026/Июнь/04-06-26.md",
-    "Calendula/2026/Июнь/03-06-26.md",
-    "Calendula/2026/Июнь/02-06-26.md",
-    "Calendula/2026/Июнь/02.1-06-26.md",
-    "Calendula/2026/Июнь/01-06-26.md",
-    "Соц Капитал/2_круг/3_круг/Ilayr.md",
-    "Calendula/2026/Июнь/12-06-26.md",
-    "Мамуна.md",
-    "Calendula/2026/Июнь/11-06-26.md",
+    "Calendula/2026/Апрель/11-04-26.md",
+    "Calendula/2026/Апрель/10-04-26.md",
+    "Calendula/2026/Апрель/09-04-26.md",
+    "Calendula/2026/Апрель/08-04-26.md",
+    "Calendula/2026/Апрель/07-04-26.md",
+    "Calendula/2026/Апрель/06-04-26.md",
+    "Calendula/2026/Апрель/05-04-26.md",
+    "Calendula/2026/Апрель/04-04-26.md",
+    "Calendula/2026/Апрель/03-04-26.md",
+    "Calendula/2026/Апрель/02-04-26.md",
+    "Calendula/2026/Апрель/01-04-26.md",
+    "Calendula/2026/Март/31-03-26.md",
+    "Calendula/2026/Март/30-03-26.md",
+    "Calendula/2026/Март/29.1-03-26.md",
+    "Calendula/2026/Март/29-03-26.md",
+    "Calendula/2026/Март/28-03-26.md",
+    "Calendula/2026/Март/27-03-26.md",
+    "Calendula/2026/Март/26-03-26.md",
+    "Calendula/2026/Март/25-03-26.md",
+    "Calendula/2026/Март/24-03-26.md",
+    "Calendula/2026/Март/23-03-26.md",
+    "Calendula/2026/Март/22-03-26.md",
+    "Calendula/2026/Март/21-03-26.md",
+    "Calendula/2026/Март/20-03-26.md",
+    "Calendula/2026/Март/19-03-26.md",
+    "Calendula/2026/Март/18-03-26.md",
     "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
-    "Excalidraw/Англиский.md",
     "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
-    "Calendula/2026/Июнь/10-06-26.md",
-    "Calendula/2026/Июнь/09-06-26.md",
-    "Calendula/2026/Июнь/08-06-26.md",
-    "Calendula/2026/Июль/01-07-26.md",
-    "Calendula/2026/Июль/02-07-26.md",
-    "Calendula/2026/Июнь/13-06-26.md",
-    "Calendula/2026/Июнь/15-06-26.md",
-    "Calendula/2026/Июнь/14-06-26.md",
-    "Соц Капитал/1_круг/Hold.md",
     "Excalidraw/pichers/Pasted image 20260611033205.png",
-    "Соц Капитал/3_круг/Человек-4000.md",
-    "Соц Капитал/3_круг/Человек-3999.md",
-    "Соц Капитал/3_круг/Человек-3998.md",
     "Соц Капитал/3_круг",
     "Excalidraw/pichers/Pasted Image 20260609231556_859.png",
     "Excalidraw/pichers/Pasted Image 20260609231219_906.png",
