@@ -4,7 +4,7 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
-  "showOrphans": false,
+  "showOrphans": true,
   "collapse-color-groups": true,
   "colorGroups": [
     {
@@ -18,42 +18,49 @@
       "query": "#Мясорубка",
       "color": {
         "a": 1,
-        "rgb": 16731392
+        "rgb": 16403200
       }
     },
     {
       "query": " #Продуктивная_скукота ",
       "color": {
         "a": 1,
-        "rgb": 16753152
+        "rgb": 9857288
       }
     },
     {
       "query": "#Интересный",
       "color": {
         "a": 1,
-        "rgb": 15785497
+        "rgb": 15511044
       }
     },
     {
       "query": "#Думал ",
       "color": {
         "a": 1,
-        "rgb": 11649582
+        "rgb": 15514730
+      }
+    },
+    {
+      "query": "#Отдых",
+      "color": {
+        "a": 1,
+        "rgb": 13003347
       }
     },
     {
       "query": "#Обычный ",
       "color": {
         "a": 1,
-        "rgb": 12163152
+        "rgb": 6569740
       }
     },
     {
       "query": "#Ничего_не_делал ",
       "color": {
         "a": 1,
-        "rgb": 5393152
+        "rgb": 4209410
       }
     },
     {
@@ -61,13 +68,6 @@
       "color": {
         "a": 1,
         "rgb": 4272897
-      }
-    },
-    {
-      "query": "#Отдых",
-      "color": {
-        "a": 1,
-        "rgb": 8489477
       }
     },
     {
@@ -81,35 +81,35 @@
       "query": "#Ближний_круг",
       "color": {
         "a": 1,
-        "rgb": 4783872
+        "rgb": 6946606
       }
     },
     {
       "query": "#Дальний_Круг",
       "color": {
         "a": 1,
-        "rgb": 4704536
+        "rgb": 5819693
       }
     },
     {
       "query": "#Средний_Круг",
       "color": {
         "a": 1,
-        "rgb": 5882449
+        "rgb": 5411661
       }
     },
     {
       "query": "#Познакомились ",
       "color": {
         "a": 1,
-        "rgb": 4815360
+        "rgb": 3491355
       }
     },
     {
       "query": "#Особенные",
       "color": {
         "a": 1,
-        "rgb": 5920514
+        "rgb": 3919436
       }
     },
     {
@@ -130,6 +130,6 @@
   "repelStrength": 16.0416666666667,
   "linkStrength": 1,
   "linkDistance": 255,
-  "scale": 0.08317427835927267,
-  "close": true
+  "scale": 0.11660891579457301,
+  "close": false
 }

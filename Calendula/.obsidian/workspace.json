@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "9b21420b47cc0ade",
+            "id": "20e4043ebe70c6b8",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -31,8 +31,7 @@
               "title": "Граф"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -190,7 +189,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "9b21420b47cc0ade",
+  "active": "42d5ee7a4f71faf1",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/14-06-26.md",
     "Соц Капитал/1_круг/Vano.md",
