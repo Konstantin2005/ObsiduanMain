@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9aa4025921710cbf",
+            "id": "42d5ee7a4f71faf1",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Июнь/14-06-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "14-06-26"
             }
           }
         ]
@@ -175,8 +179,9 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "9aa4025921710cbf",
+  "active": "42d5ee7a4f71faf1",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/14-06-26.md",
     "Соц Капитал/1_круг/Vano.md",
     "Calendula/2026/Апрель/28-04-26.md",
     "Calendula/2026/Май/15.1-05-26.md",
@@ -202,7 +207,6 @@
     "Calendula/2026/Апрель/30-04-26.md",
     "Соц Капитал/King.md",
     "Соц Капитал/Графы.md",
-    "Calendula/2026/Апрель/29-04-26.md",
     "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
     "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
     "Excalidraw/pichers/Pasted image 20260611033205.png",
