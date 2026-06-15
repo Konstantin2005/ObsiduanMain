@@ -62,6 +62,13 @@
         "a": 1,
         "rgb": 11621088
       }
+    },
+    {
+      "query": "#Шахматы",
+      "color": {
+        "a": 1,
+        "rgb": 13195549
+      }
     }
   ],
   "collapse-display": false,
@@ -74,6 +81,6 @@
   "repelStrength": 18.75,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.18462326225855352,
+  "scale": 0.535979599622589,
   "close": true
 }
