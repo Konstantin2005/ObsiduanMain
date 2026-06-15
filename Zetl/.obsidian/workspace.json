@@ -4,33 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2e1809295ccf5b76",
-        "type": "tabs",
-        "dimension": 36.243718592964825,
-        "children": [
-          {
-            "id": "02209ca3e92389b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Prepositions Index.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Prepositions Index"
-            }
-          }
-        ]
-      },
-      {
         "id": "71a9d46163d30be1",
         "type": "tabs",
-        "dimension": 63.756281407035175,
         "children": [
           {
-            "id": "f2b3048cfefafbb2",
+            "id": "128cc8997d8d80cc",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -106,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5
+    "width": 228.5
   },
   "right": {
     "id": "0685e666711754de",
@@ -231,39 +209,39 @@
       "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
-  "active": "f2b3048cfefafbb2",
+  "active": "128cc8997d8d80cc",
   "lastOpenFiles": [
-    "Prepositions Index.md",
-    "Index/Языки/Немецский/1 German Index.md",
-    "Modal Verbs Index.md",
-    "Tenses Index.md",
-    "Adjectives Index.md",
-    "Word Order Index.md",
-    "Verbs Index.md",
-    "Articles Index.md",
-    "Cases Index.md",
-    "Foundations Index.md",
+    "Index/Языки/Испанский/0 Adjectives Index.md",
+    "Index/Языки/Испанский/1 Spanish Index.md",
+    "Index/Языки/Испанский/0 Pronouns Index.md",
+    "Index/Языки/Испанский/0 Verbs Index.md",
+    "Index/Языки/Испанский/0 Subjunctive Index.md",
+    "Index/Языки/Испанский/0 Tenses Index.md",
+    "Index/Языки/Испанский/0 Articles Index.md",
+    "Index/Языки/Испанский/0 Foundations Index.md",
+    "Index/Языки/Немецский/0 Prepositions Index.md",
+    "Index/Языки/Английский/0 Comparison Index.md",
     "Index/Языки/Английский/1 Grammar Hub.md",
-    "0 Comparison Index.md",
-    "0 Advanced Index.md",
-    "Index/Языки/Английский/0 Verbs Index.md",
-    "Index/Языки/Английский/0 Tenses Index.md",
-    "Index/Языки/Английский/0 Sentences Index.md",
+    "Index/Языки/Английский/0 Advanced Index.md",
     "Index/Языки/Английский/0 Modals Index.md",
+    "Index/Языки/Английский/0 Verbs Index.md",
     "Index/Языки/Английский/0 Foundations Index.md",
+    "Index/Языки/Немецский/1 German Index.md",
+    "Index/Языки/Немецский/0 Modal Verbs Index.md",
+    "Index/Языки/Немецский/0 Tenses Index.md",
+    "Index/Языки/Немецский/0 Adjectives Index.md",
+    "Index/Языки/Немецский/0 Word Order Index.md",
+    "Index/Языки/Немецский/0 Verbs Index.md",
+    "Index/Языки/Немецский/0 Cases Index.md",
+    "Index/Языки/Немецский/0 Foundations Index.md",
+    "Index/Языки/Испанский/0 Prepositions Index.md",
+    "Index/Языки/Немецский/0 Articles Index.md",
+    "Index/Языки/Английский/0 Tenses Index.md",
     "Index/Языки/Испанский",
     "Index/Языки/Немецский",
     "Index/Языки/Английский",
     "Index/Языки",
-    "Index/Програмирование/Языки/Java/Структуры данных/0 HashMap.md",
-    "Index/Програмирование/Языки/Java/Структуры данных/0 HashSet.md",
-    "Index/Програмирование/Языки/Java/0 Java Object.md",
     "Index/Програмирование/Языки/Java/Структуры данных",
-    "Index/Програмирование/Языки/Java/0 Java Stirng.md",
-    "Node/String Builder.md",
-    "Node/String Pool.md",
-    "Index/Програмирование/Языки/Java/1 Java Core.md",
-    "Index/Програмирование/Языки/Java/0 Java Collections.md",
     "Index/Програмирование/Языки/Java/String",
     "Сети (2)/__MACOSX/╨б╨╡╤В╨╕",
     "Сети (2)/╨б╨╡╤В╨╕",

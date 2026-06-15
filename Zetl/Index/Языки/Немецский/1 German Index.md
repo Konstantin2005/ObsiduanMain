@@ -1,27 +1,27 @@
-
+#Немецский
 ## Foundations  
-- [[Foundations Index]]  
+- [[Index/Языки/Немецский/0 Foundations Index]]  
   
 ## Cases  
-- [[Cases Index]]  
+- [[0 Cases Index]]  
   
 ## Articles  
-- [[Articles Index]]  
+- [[Index/Языки/Немецский/0 Articles Index]]  
   
 ## Verbs  
-- [[Verbs Index]]  
+- [[Index/Языки/Немецский/0 Verbs Index]]  
   
 ## Word Order  
-- [[Word Order Index]]  
+- [[0 Word Order Index]]  
   
 ## Adjectives  
-- [[Adjectives Index]]  
+- [[Index/Языки/Немецский/0 Adjectives Index]]  
   
 ## Tenses  
-- [[Tenses Index]]  
+- [[Index/Языки/Немецский/0 Tenses Index]]  
   
 ## Modal Verbs  
-- [[Modal Verbs Index]]  
+- [[0 Modal Verbs Index]]  
   
 ## Prepositions  
-- [[Prepositions Index]]
+- [[Index/Языки/Немецский/0 Prepositions Index]]

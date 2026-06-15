@@ -43,24 +43,24 @@
       }
     },
     {
-      "query": "#Kubernetes",
+      "query": "#Англиский",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "#Немецский",
       "color": {
         "a": 1,
         "rgb": 5395168
       }
     },
     {
-      "query": "#Cloud",
+      "query": "#Испанский",
       "color": {
         "a": 1,
         "rgb": 11621088
-      }
-    },
-    {
-      "query": "#System Design",
-      "color": {
-        "a": 1,
-        "rgb": 14701233
       }
     }
   ],
@@ -69,11 +69,11 @@
   "textFadeMultiplier": -0.9,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 0.891145833333333,
-  "collapse-forces": true,
-  "centerStrength": 0.0989583333333333,
-  "repelStrength": 14.1666666666667,
+  "collapse-forces": false,
+  "centerStrength": 0.09375,
+  "repelStrength": 16.5625,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.1316872427983385,
+  "scale": 0.017341529915830368,
   "close": false
 }
