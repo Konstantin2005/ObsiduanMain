@@ -11,10 +11,12 @@
             "id": "20e4043ebe70c6b8",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Англиский.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Англиский"
             }
           }
         ]

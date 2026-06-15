@@ -13,12 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Index/Програмирование/LeetCode/GR-06 Greedy by Priority Queue.md",
+                "file": "Index/Шахматы/ZK-013 Правило 80 20 для быстрого роста.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GR-06 Greedy by Priority Queue"
+              "title": "ZK-013 Правило 80 20 для быстрого роста"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dfa39a215d4572fb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e6013925009c11e",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -186,13 +202,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Index/Програмирование/LeetCode/GR-06 Greedy by Priority Queue.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура GR-06 Greedy by Priority Queue"
+              "title": "Структура"
             }
           }
         ],
@@ -214,43 +229,43 @@
       "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
-  "active": "128cc8997d8d80cc",
+  "active": "1e6013925009c11e",
   "lastOpenFiles": [
-    "Index/Програмирование/LeetCode/GR-05 Two-Sided Greedy.md",
-    "Index/Програмирование/LeetCode/GR-06 Greedy by Priority Queue.md",
-    "Index/Програмирование/LeetCode/GR-04 Local Best with Feasibility Constraint.md",
-    "Index/Програмирование/LeetCode/GR-03 Earliest Finish Time Greedy.md",
-    "Index/Програмирование/LeetCode/GR-02 Sorting and Greedy Sweep.md",
-    "Index/Програмирование/LeetCode/GR-01 Exchange Argument.md",
-    "Index/Языки/Испанский/0 Adjectives Index.md",
-    "Index/Языки/Испанский/1 Spanish Index.md",
-    "Index/Языки/Испанский/0 Pronouns Index.md",
-    "Index/Языки/Испанский/0 Verbs Index.md",
-    "Index/Языки/Испанский/0 Subjunctive Index.md",
-    "Index/Языки/Испанский/0 Tenses Index.md",
-    "Index/Языки/Испанский/0 Articles Index.md",
-    "Index/Языки/Испанский/0 Foundations Index.md",
-    "Index/Языки/Немецский/0 Prepositions Index.md",
-    "Index/Языки/Английский/0 Comparison Index.md",
-    "Index/Языки/Английский/1 Grammar Hub.md",
-    "Index/Языки/Английский/0 Advanced Index.md",
-    "Index/Языки/Английский/0 Modals Index.md",
-    "Index/Языки/Английский/0 Verbs Index.md",
+    "Index/Шахматы/ZK-013 Правило 80 20 для быстрого роста.md",
+    "Index/Шахматы/ZK-012 — Алгоритм мышления на каждый ход.md",
+    "Index/Шахматы/ZK-011 — Базовая тактика.md",
+    "Index/Шахматы/ZK-009 Активность фигур.md",
+    "Index/Шахматы/ZK-005 Три стадии партии.md",
+    "Index/Шахматы/ZK-010  Эндшпиль.md",
+    "Index/Шахматы/ZK-007  Безопасность короля.md",
+    "Index/Языки/Английский/0 Tenses Index.md",
+    "Index/Шахматы/Без названия 4.md",
+    "Index/Шахматы/Без названия 3.md",
+    "Index/Шахматы/ZK-008  Центр.md",
+    "Index/Шахматы/ZK-006 Принципы дебюта.md",
+    "Index/Шахматы/ZK-004 Особые ходы.md",
+    "Index/Шахматы/ZK-003 Как ходят фигуры.md",
+    "Index/Шахматы/ZK-002 Ценность фигур.md",
+    "Index/Шахматы/ZK-001 Что такое шахматы.md",
+    "Index/Шахматы",
+    "Index/Языки/Английский/1 English.md",
     "Index/Языки/Английский/0 Foundations Index.md",
-    "Index/Языки/Немецский/1 German Index.md",
-    "Index/Языки/Немецский/0 Modal Verbs Index.md",
-    "Index/Языки/Немецский/0 Tenses Index.md",
-    "Index/Языки/Немецский/0 Adjectives Index.md",
-    "Index/Языки/Немецский/0 Word Order Index.md",
+    "Index/Языки/Английский/03_Past_Simple.md",
+    "Index/Языки/Английский/12_Linkers.md",
+    "Index/Языки/Английский/11_Phrasal_Verbs.md",
+    "Index/Языки/Английский/10_Passive_Voice.md",
+    "Index/Языки/Английский/09_Conditionals.md",
+    "Index/Языки/Английский/08_Modals.md",
+    "Index/Языки/Английский/07_Verb_Patterns.md",
+    "Index/Языки/Английский/06_Articles.md",
     "Index/Языки/Испанский",
     "Index/Языки/Немецский",
     "Index/Языки/Английский",
     "Index/Языки",
     "Index/Програмирование/Языки/Java/Структуры данных",
     "Index/Програмирование/Языки/Java/String",
-    "Сети (2)/__MACOSX/╨б╨╡╤В╨╕",
-    "Сети (2)/╨б╨╡╤В╨╕",
-    "Сети (2)/__MACOSX",
-    "Сети (2)"
+    "Index/Сети/__MACOSX/╨б╨╡╤В╨╕",
+    "Index/Сети/╨б╨╡╤В╨╕",
+    "Index/Сети/__MACOSX"
   ]
 }
