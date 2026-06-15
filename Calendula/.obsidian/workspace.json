@@ -74,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -175,8 +174,11 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "20e4043ebe70c6b8",
+  "active": "a1ef4b3f866d1783",
   "lastOpenFiles": [
+    "Соц Капитал/2_круг/3_круг/Nett.md",
+    "Calendula/2026/Июнь/09-06-26.md",
+    "Соц Капитал/King.md",
     "Calendula/2026/Июнь/14.1-06-26.md",
     "Calendula/2026/Июнь/14-06-26.md",
     "Calendula/2026/Июнь/13-06-26.md",
@@ -200,9 +202,6 @@
     "Calendula/2026/Май/03.1-05-26.md",
     "Calendula/2026/Май/03-05-26.md",
     "Calendula/2026/Май/02.1-05-26.md",
-    "Calendula/2026/Май/02-05-26.md",
-    "Calendula/2026/Май/01-05-26.md",
-    "Calendula/2026/Апрель/30-04-26.md",
     "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
     "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
     "Excalidraw/pichers/Pasted image 20260611033205.png",
