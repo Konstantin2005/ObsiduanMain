@@ -36,17 +36,10 @@
       }
     },
     {
-      "query": "#JavaCore",
+      "query": "#Java",
       "color": {
         "a": 1,
         "rgb": 5431473
-      }
-    },
-    {
-      "query": "#JVM",
-      "color": {
-        "a": 1,
-        "rgb": 5419488
       }
     },
     {
@@ -81,6 +74,6 @@
   "repelStrength": 14.1666666666667,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.02431252836326745,
+  "scale": 0.3628873693011719,
   "close": false
 }

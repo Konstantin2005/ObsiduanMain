@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Index/Програмирование/Языки/Java/0 JVM.md",
+                "file": "String Builder.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0 JVM"
+              "title": "String Builder"
             }
           },
           {
@@ -218,12 +218,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "String Builder.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура String Builder"
             }
           }
         ],
@@ -245,43 +246,43 @@
       "zettelkasten-core:Zettelkasten Inbox": false
     }
   },
-  "active": "02209ca3e92389b6",
+  "active": "a4782e363c7657f6",
   "lastOpenFiles": [
-    "Index/Програмирование/Языки/Java/0 JVM.md",
-    "Index/Програмирование/Языки/Java/0 JavaCore.md",
-    "Index/Програмирование/Языки/0 Kotlin.md",
+    "Index/Програмирование/Языки/Java/0 Java Stirng.md",
+    "String Builder.md",
+    "Node/String Pool.md",
+    "Index/Програмирование/Языки/Java/1 Java Core.md",
+    "Index/Програмирование/Языки/Java/0 Java Collections.md",
+    "Index/Програмирование/Языки/Java/0 Java Object.md",
+    "Index/Програмирование/Языки/Java/0 Java Generics.md",
+    "Index/Програмирование/Языки/Java/0 Java.md",
+    "Index/Програмирование/Языки/Java/String",
+    "Сети (2)/╨б╨╡╤В╨╕/OSI.md",
+    "Сети (2)/╨б╨╡╤В╨╕/HTTP‑запрос.md",
+    "Сети (2)/╨б╨╡╤В╨╕/Сети.md",
+    "Сети (2)/╨б╨╡╤В╨╕/╨Ь╨░╤Б╨║╨░ ╨┐╨╛╨┤╤Б╨╡╤В╨╕.md",
+    "Сети (2)/╨б╨╡╤В╨╕/╨Ъ╨░╨║ ╤А╨░╨▒╨╛╤В╨░╨╡╤В ╨▒╤А╨░╤Г╨╖╨╡╤А.md",
+    "Сети (2)/╨б╨╡╤В╨╕/╨Ш╨╜╤Ж╨╕╨┤╨╡╨╜╤В╤Л Nginx.md",
+    "Сети (2)/╨б╨╡╤В╨╕/╨б╨╡╤В╨╡╨▓╤Л╨╡ ╤Г╤В╨╕╨╗╨╕╤В╤Л.md",
+    "Сети (2)/╨б╨╡╤В╨╕/╨б╨╡╤А╨▓╨╡╤А.md",
+    "Сети (2)/╨б╨╡╤В╨╕/WebSocket.md",
+    "Сети (2)/╨б╨╡╤В╨╕/VLAN.md",
+    "Сети (2)/╨б╨╡╤В╨╕/UDP.md",
+    "Сети (2)/╨б╨╡╤В╨╕/TELNET.md",
+    "Сети (2)/╨б╨╡╤В╨╕/TCP.md",
+    "Сети (2)/╨б╨╡╤В╨╕/TCP-IP.md",
+    "Сети (2)/╨б╨╡╤В╨╕/SSH.md",
+    "Сети (2)/╨б╨╡╤В╨╕/Socket.md",
+    "Сети (2)/╨б╨╡╤В╨╕/Proxy vs VPN vs NAT.md",
+    "Сети (2)/╨б╨╡╤В╨╕/Nginx.md",
+    "Сети (2)/__MACOSX/╨б╨╡╤В╨╕",
+    "Сети (2)/╨б╨╡╤В╨╕",
+    "Сети (2)/__MACOSX",
+    "Сети (2)",
     "Index/Програмирование/Языки/Java",
     "Index/Програмирование/Без названия",
-    "Index/Програмирование/Языки/0 Elixir.md",
-    "Node/BEAM.md",
-    "Node/Actors.md",
-    "Index/Програмирование/Языки/0 PHP.md",
-    "Node/Zend Engine.md",
-    "Node/Ограниченная.md",
-    "Node/Coroutines.md",
-    "Index/Програмирование/Языки/0 C++.md",
-    "Index/Програмирование/Языки/0 Rust.md",
-    "Node/Системная.md",
-    "Index/Програмирование/Языки/0 TypeScript.md",
-    "Index/Програмирование/Языки/0 JavaScript.md",
-    "Node/V8.md",
-    "Node/Event Loop.md",
-    "Node/Функциональная.md",
-    "Setengs/Templete/Языки программирования.md",
-    "Index/Програмирование/Языки/0 Cшарп.md",
-    "Node/Net-байткоде.md",
-    "Node/CLR.md",
-    "Async/Await.md",
     "Async",
-    "Index/Програмирование/Языки/0 SQL.md",
-    "Index/Програмирование/Языки/0 R.md",
-    "Index/Програмирование/Языки/0 Python.md",
     "Node",
-    "Index/Програмирование/LeetCode",
-    "Index/Програмирование/Языки",
-    "Index/Програмирование",
-    "Index/BD/Без названия",
-    "Index/Програмирование/BD",
-    "Setengs/Templete"
+    "Index/Програмирование/LeetCode"
   ]
 }
