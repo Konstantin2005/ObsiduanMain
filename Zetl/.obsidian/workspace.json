@@ -11,10 +11,14 @@
             "id": "128cc8997d8d80cc",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Index/Програмирование/LeetCode/GR-06 Greedy by Priority Queue.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "GR-06 Greedy by Priority Queue"
             }
           }
         ]
@@ -182,12 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Index/Програмирование/LeetCode/GR-06 Greedy by Priority Queue.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура GR-06 Greedy by Priority Queue"
             }
           }
         ],
@@ -211,6 +216,12 @@
   },
   "active": "128cc8997d8d80cc",
   "lastOpenFiles": [
+    "Index/Програмирование/LeetCode/GR-05 Two-Sided Greedy.md",
+    "Index/Програмирование/LeetCode/GR-06 Greedy by Priority Queue.md",
+    "Index/Програмирование/LeetCode/GR-04 Local Best with Feasibility Constraint.md",
+    "Index/Програмирование/LeetCode/GR-03 Earliest Finish Time Greedy.md",
+    "Index/Програмирование/LeetCode/GR-02 Sorting and Greedy Sweep.md",
+    "Index/Програмирование/LeetCode/GR-01 Exchange Argument.md",
     "Index/Языки/Испанский/0 Adjectives Index.md",
     "Index/Языки/Испанский/1 Spanish Index.md",
     "Index/Языки/Испанский/0 Pronouns Index.md",
@@ -231,12 +242,6 @@
     "Index/Языки/Немецский/0 Tenses Index.md",
     "Index/Языки/Немецский/0 Adjectives Index.md",
     "Index/Языки/Немецский/0 Word Order Index.md",
-    "Index/Языки/Немецский/0 Verbs Index.md",
-    "Index/Языки/Немецский/0 Cases Index.md",
-    "Index/Языки/Немецский/0 Foundations Index.md",
-    "Index/Языки/Испанский/0 Prepositions Index.md",
-    "Index/Языки/Немецский/0 Articles Index.md",
-    "Index/Языки/Английский/0 Tenses Index.md",
     "Index/Языки/Испанский",
     "Index/Языки/Немецский",
     "Index/Языки/Английский",
