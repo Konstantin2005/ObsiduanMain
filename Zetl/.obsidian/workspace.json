@@ -6,6 +6,42 @@
       {
         "id": "601e40309c9cfea2",
         "type": "tabs",
+        "dimension": 40.51312649164678,
+        "children": [
+          {
+            "id": "a4782e363c7657f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Index/Програмирование/Языки/Java/0 JVM.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0 JVM"
+            }
+          },
+          {
+            "id": "8e632780aa2eec05",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Index/Програмирование/Языки/0 Elixir.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0 Elixir"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2e1809295ccf5b76",
+        "type": "tabs",
+        "dimension": 59.48687350835322,
         "children": [
           {
             "id": "02209ca3e92389b6",
@@ -15,20 +51,6 @@
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Граф"
-            }
-          },
-          {
-            "id": "a27400112da8ffbe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "0 Kotlin.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "0 Kotlin"
             }
           }
         ]
@@ -225,41 +247,41 @@
   },
   "active": "02209ca3e92389b6",
   "lastOpenFiles": [
-    "0 Kotlin.md",
-    "0 TypeScript.md",
-    "0 SQL.md",
-    "0 Rust.md",
-    "0 R.md",
-    "0 PHP.md",
-    "0 JavaScript.md",
-    "0 Python.md",
-    "0 Java.md",
-    "0 Go.md",
-    "0 Cшарп.md",
-    "0 C++.md",
-    "JVM.md",
-    "JVM-Байткод.md",
-    "Python VM.md",
-    "Treads.md",
-    "ООП.md",
-    "Динамическая.md",
-    "Интерпретируемый.md",
-    "Нативный.md",
-    "Процедурная.md",
-    "Goroutines.md",
-    "Статическая.md",
-    "Компилируемый.md",
-    "Index/Програмирование/BD/0 Casandra.md",
-    "Index/Програмирование/BD/0 LiteSql.md",
+    "Index/Програмирование/Языки/Java/0 JVM.md",
+    "Index/Програмирование/Языки/Java/0 JavaCore.md",
+    "Index/Програмирование/Языки/0 Kotlin.md",
+    "Index/Програмирование/Языки/Java",
+    "Index/Програмирование/Без названия",
+    "Index/Програмирование/Языки/0 Elixir.md",
+    "Node/BEAM.md",
+    "Node/Actors.md",
+    "Index/Програмирование/Языки/0 PHP.md",
+    "Node/Zend Engine.md",
+    "Node/Ограниченная.md",
+    "Node/Coroutines.md",
+    "Index/Програмирование/Языки/0 C++.md",
+    "Index/Програмирование/Языки/0 Rust.md",
+    "Node/Системная.md",
+    "Index/Програмирование/Языки/0 TypeScript.md",
+    "Index/Програмирование/Языки/0 JavaScript.md",
+    "Node/V8.md",
+    "Node/Event Loop.md",
+    "Node/Функциональная.md",
+    "Setengs/Templete/Языки программирования.md",
+    "Index/Програмирование/Языки/0 Cшарп.md",
+    "Node/Net-байткоде.md",
+    "Node/CLR.md",
+    "Async/Await.md",
+    "Async",
+    "Index/Програмирование/Языки/0 SQL.md",
+    "Index/Програмирование/Языки/0 R.md",
+    "Index/Програмирование/Языки/0 Python.md",
     "Node",
     "Index/Програмирование/LeetCode",
     "Index/Програмирование/Языки",
     "Index/Програмирование",
     "Index/BD/Без названия",
     "Index/Програмирование/BD",
-    "Setengs/Templete",
-    "Setengs",
-    "Index",
-    "Archive"
+    "Setengs/Templete"
   ]
 }
