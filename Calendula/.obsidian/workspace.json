@@ -11,10 +11,12 @@
             "id": "20e4043ebe70c6b8",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Англиский.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Англиский"
             }
           }
         ]
@@ -176,6 +178,8 @@
   },
   "active": "20e4043ebe70c6b8",
   "lastOpenFiles": [
+    "Excalidraw/Алгоритмы.md",
+    "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Excalidraw/Англиский.md",
     "Pasted Image 20260617104003_519.png",
     "Pasted Image 20260617103553_177.png",
@@ -203,7 +207,6 @@
     "Calendula/2026/Май/13-05-26.md",
     "Calendula/2026/Май/12-05-26.md",
     "Calendula/2026/Май/11-05-26.md",
-    "Calendula/2026/Май/10-05-26.md",
     "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
     "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
     "Excalidraw/pichers/Pasted image 20260611033205.png",
