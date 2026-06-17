@@ -11,12 +11,10 @@
             "id": "20e4043ebe70c6b8",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Англиский.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Англиский"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -76,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -177,7 +174,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "386d9d510e54a629",
+  "active": "20e4043ebe70c6b8",
   "lastOpenFiles": [
     "Excalidraw/Англиский.md",
     "Pasted Image 20260617104003_519.png",
