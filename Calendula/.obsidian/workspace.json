@@ -8,37 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "20e4043ebe70c6b8",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
-            "id": "df16d757744d4683",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
             "id": "2467e226d45415d5",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Июнь/18-06-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "18-06-26"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,17 +181,17 @@
   },
   "active": "2467e226d45415d5",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/17-06-26.md",
+    "Calendula/2026/Июнь/16-06-26.md",
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Апрель/25-04-26.md",
     "Соц Капитал/1_круг/Vano.md",
-    "Calendula/2026/Июнь/17-06-26.md",
     "Excalidraw/Англиский.md",
     "Excalidraw/Алгоритмы.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Excalidraw/pichers/Pasted Image 20260617104003_519.png",
     "Excalidraw/pichers/Pasted Image 20260617103553_177.png",
     "Excalidraw/pichers/Архив Excalidraw/Pasted Image 20260617103441_793.png",
-    "Calendula/2026/Июнь/16-06-26.md",
     "Соц Капитал/Познакомились/Andrey DS.md",
     "Соц Капитал/2_круг/3_круг/Nett.md",
     "Calendula/2026/Май/31-05-26.md",
