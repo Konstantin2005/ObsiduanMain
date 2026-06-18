@@ -1,11 +1,11 @@
 {
-  "collapse-filter": false,
+  "collapse-filter": true,
   "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": false,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "#Дниии",
@@ -15,59 +15,59 @@
       }
     },
     {
-      "query": "#Мясорубка",
-      "color": {
-        "a": 1,
-        "rgb": 16403200
-      }
-    },
-    {
-      "query": " #Продуктивная_скукота ",
-      "color": {
-        "a": 1,
-        "rgb": 9857288
-      }
-    },
-    {
       "query": "#Интересный",
       "color": {
         "a": 1,
-        "rgb": 15511044
-      }
-    },
-    {
-      "query": "#Думал ",
-      "color": {
-        "a": 1,
-        "rgb": 15514730
+        "rgb": 16765286
       }
     },
     {
       "query": "#Отдых",
       "color": {
         "a": 1,
-        "rgb": 13003347
+        "rgb": 16041322
       }
     },
     {
       "query": "#Обычный ",
       "color": {
         "a": 1,
-        "rgb": 6569740
+        "rgb": 14263361
+      }
+    },
+    {
+      "query": " #Продуктивная_скукота ",
+      "color": {
+        "a": 1,
+        "rgb": 8411861
+      }
+    },
+    {
+      "query": "#Мясорубка",
+      "color": {
+        "a": 1,
+        "rgb": 7030465
+      }
+    },
+    {
+      "query": "#Думал ",
+      "color": {
+        "a": 1,
+        "rgb": 5586074
       }
     },
     {
       "query": "#Ничего_не_делал ",
       "color": {
         "a": 1,
-        "rgb": 4209410
+        "rgb": 4469626
       }
     },
     {
       "query": " #Не_задокоментирован ",
       "color": {
         "a": 1,
-        "rgb": 4272897
+        "rgb": 2956137
       }
     },
     {
@@ -81,28 +81,28 @@
       "query": "#Ближний_круг",
       "color": {
         "a": 1,
-        "rgb": 6946606
-      }
-    },
-    {
-      "query": "#Дальний_Круг",
-      "color": {
-        "a": 1,
-        "rgb": 5819693
+        "rgb": 8317126
       }
     },
     {
       "query": "#Средний_Круг",
       "color": {
         "a": 1,
-        "rgb": 5411661
+        "rgb": 4638628
+      }
+    },
+    {
+      "query": "#Дальний_Круг",
+      "color": {
+        "a": 1,
+        "rgb": 2332282
       }
     },
     {
       "query": "#Познакомились ",
       "color": {
         "a": 1,
-        "rgb": 3491355
+        "rgb": 1534809
       }
     },
     {
@@ -120,16 +120,16 @@
       }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": 0.4,
-  "nodeSizeMultiplier": 0.584895833333333,
+  "textFadeMultiplier": -0.5,
+  "nodeSizeMultiplier": 1.06979166666667,
   "lineSizeMultiplier": 0.1,
   "collapse-forces": false,
-  "centerStrength": 0.203125,
-  "repelStrength": 15.4166666666667,
-  "linkStrength": 0.583333333333333,
-  "linkDistance": 449,
-  "scale": 0.05932617187499876,
-  "close": true
+  "centerStrength": 0,
+  "repelStrength": 16.9791666666667,
+  "linkStrength": 0.692708333333333,
+  "linkDistance": 77,
+  "scale": 0.07058167567046353,
+  "close": false
 }
