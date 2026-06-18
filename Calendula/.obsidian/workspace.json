@@ -18,7 +18,17 @@
             }
           },
           {
-            "id": "dd1676d5e92915a7",
+            "id": "df16d757744d4683",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          },
+          {
+            "id": "2467e226d45415d5",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -28,7 +38,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -186,7 +196,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "dd1676d5e92915a7",
+  "active": "2467e226d45415d5",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Hold.md",
     "Calendula/2026/Апрель/25-04-26.md",
