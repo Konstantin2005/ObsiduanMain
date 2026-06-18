@@ -22,6 +22,22 @@
             }
           }
         ]
+      },
+      {
+        "id": "ff9e1619e1baf73f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6643ecffa159fd0f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -179,8 +195,9 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "2467e226d45415d5",
+  "active": "6643ecffa159fd0f",
   "lastOpenFiles": [
+    "Calendula/2026/Июнь/18-06-26.md",
     "Calendula/2026/Июнь/17-06-26.md",
     "Calendula/2026/Июнь/16-06-26.md",
     "Соц Капитал/1_круг/Hold.md",
@@ -209,7 +226,6 @@
     "Calendula/2026/Май/15.1-05-26.md",
     "Calendula/2026/Май/15-05-26.md",
     "Calendula/2026/Май/14-05-26.md",
-    "Calendula/2026/Май/13.1-05-26.md",
     "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
     "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
     "Excalidraw/pichers/Pasted image 20260611033205.png",
