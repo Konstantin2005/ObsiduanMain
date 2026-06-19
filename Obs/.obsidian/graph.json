@@ -69,6 +69,20 @@
         "a": 1,
         "rgb": 14701233
       }
+    },
+    {
+      "query": "#Заметки",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "#Doska",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
     }
   ],
   "collapse-display": true,
@@ -81,6 +95,6 @@
   "repelStrength": 13.4375,
   "linkStrength": 1,
   "linkDistance": 182,
-  "scale": 0.25883865621815766,
-  "close": true
+  "scale": 0.9999999999999787,
+  "close": false
 }
