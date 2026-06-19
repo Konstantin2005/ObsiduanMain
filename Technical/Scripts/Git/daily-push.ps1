@@ -3,8 +3,8 @@ param(
     [string]$Branch = "main",
     [string]$GitPath = "git",
     [string]$LogPath = (Join-Path $RepoPath "Technical\Scripts\Logs\daily-push.log"),
-    [int]$CommitIntervalSeconds = 5,
-    [int]$PushIntervalMinutes = 5,
+    [int]$CommitIntervalSeconds = 300,
+    [int]$PushIntervalMinutes = 60,
     [switch]$DryRun
 )
 

@@ -46,21 +46,21 @@
       "query": "#Book",
       "color": {
         "a": 1,
-        "rgb": 592384
+        "rgb": 12110358
       }
     },
     {
       "query": "#Chat_GPT",
       "color": {
         "a": 1,
-        "rgb": 14701233
+        "rgb": 14732626
       }
     },
     {
       "query": "#Video",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 14734418
       }
     },
     {
@@ -102,6 +102,6 @@
   "repelStrength": 13.4375,
   "linkStrength": 1,
   "linkDistance": 182,
-  "scale": 0.5087618855792571,
+  "scale": 0.36288736930120946,
   "close": false
 }

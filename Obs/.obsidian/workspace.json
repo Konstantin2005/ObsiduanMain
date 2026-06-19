@@ -6,7 +6,6 @@
       {
         "id": "6857c6df9e125b83",
         "type": "tabs",
-        "dimension": 39.72081218274111,
         "children": [
           {
             "id": "d6f0e48729db36fd",
@@ -14,23 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Замысел/Programming.md",
+                "file": "Коллекция/PGR/PGR-001 Что такое Программирование.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Programming"
+              "title": "PGR-001 Что такое Программирование"
             }
           }
         ]
       },
       {
-        "id": "201f1c87db2c8a53",
+        "id": "981564d47fb233e1",
         "type": "tabs",
-        "dimension": 60.27918781725889,
         "children": [
           {
-            "id": "1065201f4d343ea6",
+            "id": "0ea773ed4fdad58a",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -198,22 +196,23 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "1065201f4d343ea6",
+  "active": "1ccca354d0b43969",
   "lastOpenFiles": [
-    "Замысел/Programming.md",
+    "Замысел/1 Programming.md",
+    "Замысел/1 Экономика.md",
+    "Замысел/1 Obsidian.md",
+    "Замысел/1 Chess.md",
+    "Коллекция/PGR/PGR-001 Что такое Программирование.md",
     "Коллекция/PGR/PGR-002 Array.md",
     "Коллекция/OB/OB-001 Text source.md",
-    "Коллекция/PGR/PGR-001 Програмирование.md",
     "Коллекция/CH/CH-001 Что такое шахматы.md",
     "Коллекция/CH",
-    "Замысел/Шахматы.md",
     "Крона",
     "Замысел",
-    "искра",
+    "Искра",
     "Коллекция/PGR",
     "Коллекция/OB",
     "Коллекция",
-    "Замысел/Obsidian.md",
     "Вечно зеленные",
     "Заметки"
   ]

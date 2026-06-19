@@ -1,5 +1,5 @@
 
-[[Obsidian]]
+[[1 Obsidian]]
 #Chat_GPT 
 ### Текстовые источники
 
