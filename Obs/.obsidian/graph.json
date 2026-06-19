@@ -62,6 +62,13 @@
         "a": 1,
         "rgb": 14734418
       }
+    },
+    {
+      "query": "#Мысли",
+      "color": {
+        "a": 1,
+        "rgb": 14701233
+      }
     }
   ],
   "collapse-display": true,
@@ -74,6 +81,6 @@
   "repelStrength": 13.4375,
   "linkStrength": 1,
   "linkDistance": 182,
-  "scale": 0.5087618855792532,
-  "close": true
+  "scale": 0.2588386562181597,
+  "close": false
 }
