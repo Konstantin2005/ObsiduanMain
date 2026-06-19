@@ -4,17 +4,45 @@
     "type": "split",
     "children": [
       {
-        "id": "dfa39a215d4572fb",
+        "id": "601e40309c9cfea2",
         "type": "tabs",
         "children": [
           {
-            "id": "1e6013925009c11e",
+            "id": "02209ca3e92389b6",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Граф"
+            }
+          },
+          {
+            "id": "98f851a527cf463b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Index/Програмирование/BD/0 LiteSql.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0 LiteSql"
+            }
+          },
+          {
+            "id": "83dab96030572f01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Index/Програмирование/BD/0 Redis.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0 Redis"
             }
           }
         ]
@@ -76,15 +104,15 @@
             "state": {
               "type": "zettelkasten-branch-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "zettelkasten-branch-view"
+              "icon": "lucide-file",
+              "title": "Zettelkasten Branch Tracker"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 228.5
+    "width": 200
   },
   "right": {
     "id": "0685e666711754de",
@@ -162,8 +190,8 @@
             "state": {
               "type": "zk-graph-type",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "zk-graph-type"
+              "icon": "network",
+              "title": "zk-local-graph"
             }
           },
           {
@@ -172,8 +200,8 @@
             "state": {
               "type": "zettelkasten-inbox",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "zettelkasten-inbox"
+              "icon": "inbox",
+              "title": "Zettelkasten Inbox"
             }
           },
           {
@@ -189,30 +217,38 @@
               "icon": "lucide-list",
               "title": "Структура"
             }
+          },
+          {
+            "id": "0317a1dafb55a1f4",
+            "type": "leaf",
+            "state": {
+              "type": "life-panel",
+              "state": {},
+              "icon": "activity",
+              "title": "Жизнь"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 419.5,
-    "collapsed": true
+    "width": 419.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "live-graph:Open Жизнь panel": false,
       "graph:Граф": false,
       "command-palette:Открыть палитру команд": false,
-      "templates:Вставить шаблон": false,
       "zettelkasten-navigation:open zk-index-graph": false,
-      "zettelkasten-navigation:open zk-local-graph": false,
       "zettelkasten-branch-tracker:Zettelkasten Branch Tracker": false,
-      "zettelkasten-core:Zettelkasten Inbox": false
+      "zettelkasten-core:Zettelkasten Inbox": false,
+      "zettelkasten-navigation:open zk-local-graph": false,
+      "templates:Вставить шаблон": false
     }
   },
-  "active": "1e6013925009c11e",
+  "active": "0317a1dafb55a1f4",
   "lastOpenFiles": [
-<<<<<<< HEAD
-<<<<<<< Updated upstream
     "Index/Програмирование/BD/0 LiteSql.md",
     "Index/Програмирование/BD/0 Casandra.md",
     "Index/Програмирование/BD/0 HBase.md",
@@ -249,81 +285,5 @@
     "Setengs",
     "Index",
     "Archive"
-=======
-    "ZK-123  Удушенный мат.md",
-    "ZK-122 — Мат Легаля.md",
-    "ZK-121 Мат по последней горизонтали.md",
-    "Setengs/Templete/Языки программирования.md",
-    "Node/Функциональная.md",
-    "Node/Статическая.md",
-    "Node/Системная.md",
-    "Node/Процедурная.md",
-    "Node/Ограниченная.md",
-    "Node/ООП.md",
-    "Node/Нативный.md",
-    "Node/Компилируемый.md",
-    "Node/Интерпретируемый.md",
-    "Node/Динамическая.md",
-    "Node/Zend Engine.md",
-    "Node/V8.md",
-    "Node/Treads.md",
-    "Node/String Pool.md",
-    "Node/String Builder.md",
-    "Node/Python VM.md",
-    "Node/Net-байткоде.md",
-    "Node/JVM.md",
-    "Node/JVM-Байткод.md",
-    "Node/Goroutines.md",
-    "Node/Event Loop.md",
-    "Node/Coroutines.md",
-    "Index/Языки/Немецский",
-    "Index/Языки/Испанский",
-    "Index/Языки/Английский",
-    "Index/Языки",
-    "Index/Шахматы",
-    "Index/Сети/__MACOSX/╨б╨╡╤В╨╕",
-    "Index/Сети/╨б╨╡╤В╨╕",
-    "Index/Сети/__MACOSX",
-    "Index/Сети",
-    "Index/Програмирование/Языки/Java/Структуры данных"
->>>>>>> Stashed changes
-=======
-    "Index/Языки/Английский/0 Foundations Index.md",
-    "Index/Шахматы/ZK-120 — Мат ладьей и королем.md",
-    "Index/Шахматы/ZK-044 Маты.md",
-    "ZK-121 Мат по последней горизонтали.md",
-    "ZK-122 — Мат Легаля.md",
-    "Index/Шахматы/ZK-110 Двойной удар.md",
-    "ZK-123  Удушенный мат.md",
-    "Index/Шахматы/ZK-111 Вскрытое нападение.md",
-    "Index/Шахматы/ZK-119 Мат ферзем и королем.md",
-    "Index/Шахматы/ZK-010  Эндшпиль.md",
-    "Index/Шахматы/ZK-118 Открытые линии для ладей.md",
-    "Index/Шахматы/ZK-118 — Открытые линии для ладей.md",
-    "Index/Шахматы/ZK-117 Улучшай худшую фигуру.md",
-    "Index/Шахматы/ZK-116 Активность важнее материала.md",
-    "Index/Шахматы/Без названия 6.md",
-    "Index/Шахматы/Без названия 5.md",
-    "Index/Шахматы/ZK-112 Уничтожение защитника.md",
-    "Index/Шахматы/ZK-109 Связка.md",
-    "Index/Шахматы/ZK-108 Вилка.md",
-    "Index/Шахматы/ZK-107  Не охотиться за пешками.md",
-    "Index/Шахматы/ZK-101 Шахматы решаются ошибками.md",
-    "Index/Шахматы/ZK-104  Захват центра.md",
-    "Index/Шахматы/ZK-105  Развитие фигур.md",
-    "Index/Шахматы/ZK-106  Ранняя рокировка.md",
-    "Index/Шахматы/ZK-006 Принципы дебюта.md",
-    "Index/Шахматы/ZK-103 Формула оценки позиции.md",
-    "Index/Шахматы",
-    "Index/Языки/Испанский",
-    "Index/Языки/Немецский",
-    "Index/Языки/Английский",
-    "Index/Языки",
-    "Index/Програмирование/Языки/Java/Структуры данных",
-    "Index/Програмирование/Языки/Java/String",
-    "Index/Сети/__MACOSX/╨б╨╡╤В╨╕",
-    "Index/Сети/╨б╨╡╤В╨╕",
-    "Index/Сети/__MACOSX"
->>>>>>> codex/3-repo-bloat-cleanup
   ]
 }

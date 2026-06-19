@@ -3,5 +3,6 @@
   "zettelkasten-navigation",
   "zettelkasten-outliner",
   "zettelkasten-branch-tracker",
-  "zettelkasten-core"
+  "zettelkasten-core",
+  "live-graph"
 ]
