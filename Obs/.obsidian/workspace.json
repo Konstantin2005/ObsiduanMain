@@ -6,6 +6,7 @@
       {
         "id": "6857c6df9e125b83",
         "type": "tabs",
+        "dimension": 39.72081218274111,
         "children": [
           {
             "id": "758c854b76851d18",
@@ -15,6 +16,23 @@
               "state": {},
               "icon": "lucide-file",
               "title": "Новая вкладка"
+            }
+          }
+        ]
+      },
+      {
+        "id": "201f1c87db2c8a53",
+        "type": "tabs",
+        "dimension": 60.27918781725889,
+        "children": [
+          {
+            "id": "1065201f4d343ea6",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -176,8 +194,9 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "1ccca354d0b43969",
+  "active": "1065201f4d343ea6",
   "lastOpenFiles": [
-    "Без названия"
+    "Вечно зеленные",
+    "Заметки"
   ]
 }
