@@ -59,6 +59,12 @@ function Push-Changes {
 
 Set-Location -LiteralPath $RepoPath
 
+$currentBranch = & $GitPath rev-parse --abbrev-ref HEAD
+if ($currentBranch -ne $Branch) {
+    Write-Log "Switching from '$currentBranch' to '$Branch'..."
+    Invoke-Git -Args @('checkout', $Branch)
+}
+
 Write-Log "Starting auto-commit/push loop on branch '$Branch' (commit: ${CommitIntervalSeconds}s, push: ${PushIntervalMinutes}m)"
 
 if ($DryRun) {
