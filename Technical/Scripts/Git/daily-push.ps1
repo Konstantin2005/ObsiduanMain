@@ -46,7 +46,11 @@ function Commit-Changes {
 }
 
 function Push-Changes {
-    Write-Log "Pushing changes..."
+    if (-not $Branch -or $Branch -eq '') {
+        Write-Log "ERROR: Branch name is empty, cannot push"
+        throw "Branch name is empty"
+    }
+    Write-Log "Pushing changes to branch '$Branch'..."
     Invoke-Git -Args @('fetch', '--all', '--prune')
     Invoke-Git -Args @('pull', '--rebase', '--autostash', 'origin', $Branch)
     Invoke-Git -Args @('push', 'origin', $Branch)

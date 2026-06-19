@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Progect Notes/Книги/Что ожидаю ПМ.md",
+                "file": "1 Remember/Array.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Что ожидаю ПМ"
+              "title": "Array"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Array",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Закладки"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Progect Notes/Книги/Что ожидаю ПМ.md",
+                "file": "1 Remember/Array.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для Что ожидаю ПМ"
+              "title": "Обратные ссылки для Array"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Progect Notes/Книги/Что ожидаю ПМ.md",
+                "file": "1 Remember/Array.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из Что ожидаю ПМ"
+              "title": "Исходящие ссылки из Array"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Progect Notes/Книги/Что ожидаю ПМ.md",
+                "file": "1 Remember/Array.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура Что ожидаю ПМ"
+              "title": "Структура Array"
             }
           }
         ],
@@ -186,6 +187,29 @@
   },
   "active": "empty",
   "lastOpenFiles": [
+    "2 Understand/Slice.md",
+    "2 Understand/Server.md",
+    "2 Understand/Gorutina.md",
+    "2 Understand/Golang.md",
+    "2 Understand/For.md",
+    "2 Understand/Codex.md",
+    "2 Understand/Can.md",
+    "2 Understand/Binary Searc.md",
+    "2 Understand/Big О.md",
+    "0 Indox/CLI.md",
+    "0 Indox/Chaining.md",
+    "0 Indox/Brouzer.md",
+    "0 Indox/Bit Manipulation.md",
+    "0 Indox/Becend.md",
+    "0 Indox/Atomity.md",
+    "0 Indox/Arraylet.md",
+    "0 Indox/Agent Harness.md",
+    "0 Indox/ACID.md",
+    "0 Indox/4 Выбор технологий.md",
+    "0 Indox/3 Рисование кубиков.md",
+    "0 Indox/2 Модели данных и АПИ.md",
+    "0 Indox/1 Сбор требований.md",
+    "Progect Notes/Книги/Что ожидаю ПМ.md",
     "Мега умные заметки.md",
     "Progect Notes/Книги/Практическое мышление.md",
     "Progect Notes/Книги/Грокаем Алгоритмы.md"

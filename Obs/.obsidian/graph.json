@@ -43,7 +43,7 @@
       }
     },
     {
-      "query": "#Книга",
+      "query": "#Book",
       "color": {
         "a": 1,
         "rgb": 11621088
@@ -57,7 +57,7 @@
       }
     },
     {
-      "query": "",
+      "query": "#Video",
       "color": {
         "a": 1,
         "rgb": 14701138
@@ -97,11 +97,11 @@
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "collapse-forces": false,
+  "centerStrength": 0.229166666666667,
+  "repelStrength": 13.4375,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.713275462622441,
+  "linkDistance": 182,
+  "scale": 0.7132754626224399,
   "close": false
 }
