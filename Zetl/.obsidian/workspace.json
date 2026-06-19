@@ -239,6 +239,7 @@
   },
   "active": "02209ca3e92389b6",
   "lastOpenFiles": [
+<<<<<<< Updated upstream
     "Index/Програмирование/BD/0 LiteSql.md",
     "Index/Програмирование/BD/0 Casandra.md",
     "Index/Програмирование/BD/0 HBase.md",
@@ -275,5 +276,43 @@
     "Setengs",
     "Index",
     "Archive"
+=======
+    "ZK-123  Удушенный мат.md",
+    "ZK-122 — Мат Легаля.md",
+    "ZK-121 Мат по последней горизонтали.md",
+    "Setengs/Templete/Языки программирования.md",
+    "Node/Функциональная.md",
+    "Node/Статическая.md",
+    "Node/Системная.md",
+    "Node/Процедурная.md",
+    "Node/Ограниченная.md",
+    "Node/ООП.md",
+    "Node/Нативный.md",
+    "Node/Компилируемый.md",
+    "Node/Интерпретируемый.md",
+    "Node/Динамическая.md",
+    "Node/Zend Engine.md",
+    "Node/V8.md",
+    "Node/Treads.md",
+    "Node/String Pool.md",
+    "Node/String Builder.md",
+    "Node/Python VM.md",
+    "Node/Net-байткоде.md",
+    "Node/JVM.md",
+    "Node/JVM-Байткод.md",
+    "Node/Goroutines.md",
+    "Node/Event Loop.md",
+    "Node/Coroutines.md",
+    "Index/Языки/Немецский",
+    "Index/Языки/Испанский",
+    "Index/Языки/Английский",
+    "Index/Языки",
+    "Index/Шахматы",
+    "Index/Сети/__MACOSX/╨б╨╡╤В╨╕",
+    "Index/Сети/╨б╨╡╤В╨╕",
+    "Index/Сети/__MACOSX",
+    "Index/Сети",
+    "Index/Програмирование/Языки/Java/Структуры данных"
+>>>>>>> Stashed changes
   ]
 }
