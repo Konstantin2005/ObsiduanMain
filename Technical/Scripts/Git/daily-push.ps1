@@ -3,8 +3,8 @@ param(
     [string]$Branch = "main",
     [string]$GitPath = "git",
     [string]$LogPath = (Join-Path $RepoPath "Technical\Scripts\Logs\daily-push.log"),
-    [int]$CommitIntervalSeconds = 300,
-    [int]$PushIntervalMinutes = 60,
+    [int]$CommitIntervalSeconds = 5,
+    [int]$PushIntervalMinutes = 5,
     [switch]$DryRun
 )
 
@@ -34,6 +34,7 @@ function Test-HasChanges {
 }
 
 function Commit-Changes {
+    Ensure-OnBranch
     if (-not (Test-HasChanges)) {
         Write-Log "No changes to commit"
         return
@@ -45,11 +46,20 @@ function Commit-Changes {
     Write-Log "Commit completed"
 }
 
+function Ensure-OnBranch {
+    $currentBranch = & $GitPath rev-parse --abbrev-ref HEAD 2>&1
+    if ($currentBranch -ne $Branch) {
+        Write-Log "Branch mismatch: on '$currentBranch', expected '$Branch'. Switching..."
+        Invoke-Git -Args @('checkout', $Branch)
+    }
+}
+
 function Push-Changes {
     if (-not $Branch -or $Branch -eq '') {
         Write-Log "ERROR: Branch name is empty, cannot push"
         throw "Branch name is empty"
     }
+    Ensure-OnBranch
     Write-Log "Pushing changes to branch '$Branch'..."
     Invoke-Git -Args @('fetch', '--all', '--prune')
     Invoke-Git -Args @('pull', '--rebase', '--autostash', 'origin', $Branch)
