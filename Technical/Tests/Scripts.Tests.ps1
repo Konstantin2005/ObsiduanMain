@@ -252,7 +252,8 @@ exit 0
     It 'legacy threshold launchers point at the Technical Git automation path' {
         $legacyScripts = @(
             (Join-Path $repoRoot 'Старое\Calendula-People-Graph\run-hidden.vbs'),
-            (Join-Path $repoRoot 'Calendula-People-Graph-From-Branch\run-hidden.vbs')
+            (Join-Path $repoRoot 'Старое\Calendula-People-Graph-From-Branch\run-hidden.vbs'),
+            (Join-Path $repoRoot 'Technical\Scripts\Launchers\run-hidden.vbs')
         )
 
         foreach ($script in $legacyScripts) {
