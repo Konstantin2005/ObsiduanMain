@@ -183,73 +183,7 @@ exit 0
         }
     }
 
-    It 'hourly-git commits all local changes before pulling and pushing' {
-        $root = New-TempRoot
-        try {
-            $repo = Join-Path $root 'repo'
-            New-Item -ItemType Directory -Path $repo -Force | Out-Null
-            $fakeGit = Join-Path $root 'fake-git.ps1'
-            $gitCalls = Join-Path $root 'git-calls.txt'
-            $logPath = Join-Path $repo 'Technical\Scripts\Logs\hourly-git.log'
-
-            Write-Utf8Text -Path $fakeGit -Content @"
-Add-Content -LiteralPath '$gitCalls' -Value (`$args -join ' ')
-if (`$args[0] -eq 'status') {
-    Write-Output ' M note.md'
-}
-exit 0
-"@
-
-            & (Join-Path $scriptRoot 'Git\hourly-git.ps1') -RepoPath $repo -Branch 'develop' -GitPath $fakeGit -LogPath $logPath
-
-            $calls = Get-Content -LiteralPath $gitCalls -Encoding UTF8
-            $calls.Count | Should Be 6
-            $calls[0] | Should Match '^fetch '
-            $calls[1] | Should Be 'add -A'
-            $calls[2] | Should Be 'status --porcelain'
-            $calls[3] | Should Match '^commit -m hourly sync: '
-            $calls[4] | Should Match '^pull '
-            $calls[5] | Should Be 'push origin develop'
-            (Read-Utf8Text -Path $logPath) | Should Match 'Hourly auto-push completed successfully\.'
-        }
-        finally {
-            if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
-            }
-        }
-    }
-
-    It 'hourly-git skips commit when there are no local changes but still pushes' {
-        $root = New-TempRoot
-        try {
-            $repo = Join-Path $root 'repo'
-            New-Item -ItemType Directory -Path $repo -Force | Out-Null
-            $fakeGit = Join-Path $root 'fake-git.ps1'
-            $gitCalls = Join-Path $root 'git-calls.txt'
-            $logPath = Join-Path $repo 'Technical\Scripts\Logs\hourly-git.log'
-
-            Write-Utf8Text -Path $fakeGit -Content @"
-Add-Content -LiteralPath '$gitCalls' -Value (`$args -join ' ')
-exit 0
-"@
-
-            & (Join-Path $scriptRoot 'Git\hourly-git.ps1') -RepoPath $repo -Branch 'develop' -GitPath $fakeGit -LogPath $logPath
-
-            $calls = Get-Content -LiteralPath $gitCalls -Encoding UTF8
-            ($calls | Where-Object { $_ -match '^commit ' }).Count | Should Be 0
-            ($calls -contains 'add -A') | Should Be $true
-            ($calls -contains 'status --porcelain') | Should Be $true
-            ($calls -contains 'push origin develop') | Should Be $true
-            (Read-Utf8Text -Path $logPath) | Should Match 'No local changes to commit\.'
-        }
-        finally {
-            if (Test-Path -LiteralPath $root) {
-                Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
-            }
-        }
-    }
-
-    It 'legacy threshold launchers point at the Technical Git automation path' {
+    It 'legacy launchers point at the canonical daily-push automation path' {
         $legacyScripts = @(
             (Join-Path $repoRoot 'Старое\Calendula-People-Graph\run-hidden.vbs'),
             (Join-Path $repoRoot 'Старое\Calendula-People-Graph-From-Branch\run-hidden.vbs'),
@@ -257,7 +191,7 @@ exit 0
         )
 
         foreach ($script in $legacyScripts) {
-            (Read-Utf8Text -Path $script) | Should Match 'Technical\\Scripts\\Git\\threshold-git\.ps1'
+            (Read-Utf8Text -Path $script) | Should Match 'Technical\\Scripts\\Git\\daily-push\.ps1'
         }
     }
 
