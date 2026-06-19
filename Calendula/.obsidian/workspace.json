@@ -59,7 +59,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Дальний_Круг",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -175,7 +174,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "6643ecffa159fd0f",
+  "active": "a1ef4b3f866d1783",
   "lastOpenFiles": [
     "Соц Капитал/1_круг/Vano.md",
     "Соц Капитал/3_круг/Радий.md",
