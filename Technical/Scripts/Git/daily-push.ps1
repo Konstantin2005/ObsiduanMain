@@ -54,7 +54,14 @@ function Push-Changes {
 }
 
 Set-Location -LiteralPath $RepoPath
-Write-Log "Starting auto-commit/push loop (commit: ${CommitIntervalSeconds}s, push: ${PushIntervalMinutes}m)"
+
+if (-not $Branch) {
+    $Branch = & $GitPath rev-parse --abbrev-ref HEAD
+    if (-not $Branch -or $Branch -eq 'HEAD') { throw "Could not detect current branch" }
+    Write-Log "Auto-detected branch: $Branch"
+}
+
+Write-Log "Starting auto-commit/push loop on branch '$Branch' (commit: ${CommitIntervalSeconds}s, push: ${PushIntervalMinutes}m)"
 
 if ($DryRun) {
     Write-Log "DryRun enabled; exiting"
