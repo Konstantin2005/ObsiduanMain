@@ -32,7 +32,7 @@
       "query": "#Искра",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 3992744
       }
     },
     {
@@ -46,7 +46,7 @@
       "query": "#Book",
       "color": {
         "a": 1,
-        "rgb": 11621088
+        "rgb": 592384
       }
     },
     {
@@ -102,6 +102,6 @@
   "repelStrength": 13.4375,
   "linkStrength": 1,
   "linkDistance": 182,
-  "scale": 0.7132754626224399,
+  "scale": 0.5087618855792571,
   "close": false
 }

@@ -1,6 +1,6 @@
 param(
     [string]$RepoPath = "C:\obsidian\Main",
-    [string]$Branch = "",
+    [string]$Branch = "main",
     [string]$GitPath = "git",
     [string]$LogPath = (Join-Path $RepoPath "Technical\Scripts\Logs\daily-push.log"),
     [int]$CommitIntervalSeconds = 5,
@@ -58,12 +58,6 @@ function Push-Changes {
 }
 
 Set-Location -LiteralPath $RepoPath
-
-if (-not $Branch) {
-    $Branch = & $GitPath rev-parse --abbrev-ref HEAD
-    if (-not $Branch -or $Branch -eq 'HEAD') { throw "Could not detect current branch" }
-    Write-Log "Auto-detected branch: $Branch"
-}
 
 Write-Log "Starting auto-commit/push loop on branch '$Branch' (commit: ${CommitIntervalSeconds}s, push: ${PushIntervalMinutes}m)"
 
