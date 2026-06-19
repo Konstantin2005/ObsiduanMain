@@ -1,10 +1,10 @@
 param(
     [string]$RepoPath = "C:\obsidian\Main",
-    [string]$Branch = "main",
+    [string]$Branch = "",
     [string]$GitPath = "git",
     [string]$LogPath = (Join-Path $RepoPath "Technical\Scripts\Logs\daily-push.log"),
-    [int]$CommitIntervalSeconds = 15,
-    [int]$PushIntervalHours = 1,
+    [int]$CommitIntervalSeconds = 5,
+    [int]$PushIntervalMinutes = 15,
     [switch]$DryRun
 )
 
@@ -62,7 +62,7 @@ if ($DryRun) {
 }
 
 $lastPush = [DateTime]::MinValue
-$pushInterval = New-TimeSpan -Hours $PushIntervalHours
+$pushInterval = New-TimeSpan -Minutes $PushIntervalMinutes
 
 try {
     while ($true) {
