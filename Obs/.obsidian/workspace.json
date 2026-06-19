@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OB-001 Text source.md",
+                "file": "Коллекция/OB/OB-001 Text source.md",
                 "mode": "source",
                 "source": false
               },
@@ -28,7 +28,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Вечно зеленные/Obsidian.md",
+                "file": "Замысел/Obsidian.md",
                 "mode": "source",
                 "source": false
               },
@@ -42,7 +42,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Вечно зеленные/Програмирование.md",
+                "file": "Замысел/Програмирование.md",
                 "mode": "source",
                 "source": false
               },
@@ -62,10 +62,14 @@
             "id": "1065201f4d343ea6",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Замысел/Шахматы.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Шахматы"
             }
           }
         ]
@@ -87,7 +91,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byCreatedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -229,9 +233,16 @@
   },
   "active": "1065201f4d343ea6",
   "lastOpenFiles": [
-    "Вечно зеленные/Програмирование.md",
-    "OB-001 Text source.md",
-    "Вечно зеленные/Obsidian.md",
+    "Замысел/Шахматы.md",
+    "Крона",
+    "Замысел",
+    "искра",
+    "Коллекция/PR",
+    "Замысел/Програмирование.md",
+    "Коллекция/OB",
+    "Коллекция",
+    "Коллекция/OB/OB-001 Text source.md",
+    "Замысел/Obsidian.md",
     "Вечно зеленные",
     "Заметки"
   ]
