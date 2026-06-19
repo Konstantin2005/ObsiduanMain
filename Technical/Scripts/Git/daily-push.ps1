@@ -24,7 +24,16 @@ function Invoke-Git {
     param([Parameter(Mandatory=$true)][string[]]$Args)
     $output = & $GitPath @Args 2>&1
     $code = $LASTEXITCODE
-    if ($output) { $output | ForEach-Object { Write-Log "$($_)" } }
+    if ($output) { 
+        $output | ForEach-Object { 
+            $line = $_
+            if ($line -match '^(From |Already up|Everything up|remote: |Unpacking |Total |Resolving |Compressing |Writing |To https)') {
+                Write-Log "[git] $line"
+            } else {
+                Write-Log "$line"
+            }
+        } 
+    }
     if ($code -ne 0) { throw "git $($Args -join ' ') failed with code $code" }
 }
 

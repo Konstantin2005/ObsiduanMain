@@ -11,10 +11,12 @@
             "id": "6643ecffa159fd0f",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Архив Excalidraw/Преза Big O.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Преза Big O"
             }
           },
           {
@@ -88,7 +90,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -218,7 +221,7 @@
     "Calendula/2026/Июнь/11-06-26.md",
     "Excalidraw/pichers/Pasted Image 20260617104003_519.png",
     "Excalidraw/pichers/Pasted Image 20260617103553_177.png",
-    "Excalidraw/pichers/Архив Excalidraw/Pasted Image 20260617103441_793.png",
+    "Excalidraw/Архив Excalidraw/Pasted Image 20260617103441_793.png",
     "Excalidraw/pichers/Pasted Image 20260613151843_926.png",
     "Excalidraw/pichers/Pasted Image 20260613151843_983.png",
     "Excalidraw/pichers/Pasted image 20260611033205.png",
