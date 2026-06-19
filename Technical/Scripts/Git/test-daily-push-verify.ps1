@@ -75,7 +75,7 @@ function Test-CommitCreated {
 
 function Test-PushWorks {
     $beforePush = git log --oneline origin/main..HEAD 2>$null
-    git push origin $Branch 2>&1 | Out-Null
+    $pushResult = cmd /c "git push origin $Branch 2>&1"
     $afterPush = git log --oneline origin/main..HEAD 2>$null
     
     if ($afterPush -eq "") {
