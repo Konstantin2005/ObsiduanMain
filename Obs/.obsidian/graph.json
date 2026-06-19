@@ -15,56 +15,49 @@
       }
     },
     {
-      "query": "#Росток",
+      "query": "#Вечнозелёная",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 8453888
       }
     },
     {
-      "query": "#",
+      "query": "#Крона",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 5370891
       }
     },
     {
-      "query": "",
+      "query": "#Замысел",
       "color": {
         "a": 1,
         "rgb": 5431378
       }
     },
     {
-      "query": "",
+      "query": "#Искра",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 11657298
       }
     },
     {
-      "query": "",
+      "query": "#Text_source",
       "color": {
         "a": 1,
-        "rgb": 5419488
+        "rgb": 0
       }
     },
     {
-      "query": "",
-      "color": {
-        "a": 1,
-        "rgb": 5395168
-      }
-    },
-    {
-      "query": "",
+      "query": "#Книга",
       "color": {
         "a": 1,
         "rgb": 11621088
       }
     },
     {
-      "query": "",
+      "query": "#Chat_GPT",
       "color": {
         "a": 1,
         "rgb": 14701233
@@ -116,6 +109,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.5087618855792585,
+  "scale": 0.3628873693012113,
   "close": false
 }

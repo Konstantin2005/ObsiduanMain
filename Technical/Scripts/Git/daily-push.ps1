@@ -54,7 +54,7 @@ function Push-Changes {
 }
 
 Set-Location -LiteralPath $RepoPath
-Write-Log "Starting auto-commit/push loop (commit: ${CommitIntervalSeconds}s, push: ${PushIntervalHours}h)"
+Write-Log "Starting auto-commit/push loop (commit: ${CommitIntervalSeconds}s, push: ${PushIntervalMinutes}m)"
 
 if ($DryRun) {
     Write-Log "DryRun enabled; exiting"
