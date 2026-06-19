@@ -249,6 +249,18 @@ exit 0
         }
     }
 
+    It 'legacy threshold launchers point at the Technical Git automation path' {
+        $legacyScripts = @(
+            (Join-Path $repoRoot 'Старое\Calendula-People-Graph\run-hidden.vbs'),
+            (Join-Path $repoRoot 'Старое\Calendula-People-Graph-From-Branch\run-hidden.vbs'),
+            (Join-Path $repoRoot 'Technical\Scripts\Launchers\run-hidden.vbs')
+        )
+
+        foreach ($script in $legacyScripts) {
+            (Read-Utf8Text -Path $script) | Should Match 'Technical\\Scripts\\Git\\threshold-git\.ps1'
+        }
+    }
+
     It 'Move-TodayTasks moves dated tasks from Запланировано to Сегодня' {
         $root = New-TempRoot
         try {
@@ -3053,7 +3065,6 @@ Describe 'LiveGraph' {
   const targets = [
     { label: 'bundle', file: path.join(root, 'Calendula/.obsidian/plugins/live-graph/core.js') },
     { label: 'source-v1', file: path.join(root, 'Technical/Scripts/Rendering/live-graph/live-graph-core.js') },
-    { label: 'source-v2', file: path.join(root, 'Technical/Scripts/Rendering/live-graph/live-graph-core-v2.js') }
   ];
 
   function makeEl() {
@@ -3193,7 +3204,7 @@ Describe 'LiveGraph' {
             $LASTEXITCODE | Should Be 0
             ($output -join [Environment]::NewLine) | Should Match 'bundle:ok'
             ($output -join [Environment]::NewLine) | Should Match 'source-v1:ok'
-            ($output -join [Environment]::NewLine) | Should Match 'source-v2:ok'
+            (Test-Path -LiteralPath (Join-Path $repoRoot 'Technical\Scripts\Rendering\live-graph\live-graph-core-v2.js')) | Should Be $false
         }
         finally {
             if (Test-Path -LiteralPath $root) {

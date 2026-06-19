@@ -3,10 +3,13 @@ param(
     [string]$Branch = "main",
     [string]$GitPath = "git",
     [string]$LogPath = (Join-Path $RepoPath "Technical\Scripts\Logs\daily-push.log"),
+    [int]$CommitIntervalSeconds = 15,
+    [int]$PushIntervalHours = 1,
     [switch]$DryRun
 )
 
 $ErrorActionPreference = 'Stop'
+
 function Write-Log {
     param([string]$Message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
@@ -25,17 +28,57 @@ function Invoke-Git {
     if ($code -ne 0) { throw "git $($Args -join ' ') failed with code $code" }
 }
 
+function Test-HasChanges {
+    $status = & $GitPath status --porcelain 2>&1
+    return $status -ne ""
+}
+
+function Commit-Changes {
+    if (-not (Test-HasChanges)) {
+        Write-Log "No changes to commit"
+        return
+    }
+    Write-Log "Committing changes..."
+    Invoke-Git -Args @('add', '-A')
+    $msg = "Auto-commit: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+    Invoke-Git -Args @('commit', '-m', $msg)
+    Write-Log "Commit completed"
+}
+
+function Push-Changes {
+    Write-Log "Pushing changes..."
+    Invoke-Git -Args @('fetch', '--all', '--prune')
+    Invoke-Git -Args @('pull', '--rebase', '--autostash', 'origin', $Branch)
+    Invoke-Git -Args @('push', 'origin', $Branch)
+    Write-Log "Push completed successfully"
+}
+
 Set-Location -LiteralPath $RepoPath
-Write-Log "Starting daily push for branch '$Branch'"
+Write-Log "Starting auto-commit/push loop (commit: ${CommitIntervalSeconds}s, push: ${PushIntervalHours}h)"
 
 if ($DryRun) {
-    Write-Log "DryRun enabled; skipping git commands"
+    Write-Log "DryRun enabled; exiting"
     exit 0
 }
 
-Invoke-Git -Args @('fetch', '--all', '--prune')
-Invoke-Git -Args @('pull', '--no-rebase', '--autostash', '-X', 'ours', 'origin', $Branch)
-Invoke-Git -Args @('push', 'origin', $Branch)
+$lastPush = [DateTime]::MinValue
+$pushInterval = New-TimeSpan -Hours $PushIntervalHours
 
-Write-Log "Push completed successfully."
-exit 0
+try {
+    while ($true) {
+        $now = Get-Date
+        
+        Commit-Changes
+        
+        if ($now - $lastPush -ge $pushInterval) {
+            Push-Changes
+            $lastPush = $now
+        }
+        
+        Start-Sleep -Seconds $CommitIntervalSeconds
+    }
+}
+catch {
+    Write-Log "ERROR: $($_.Exception.Message)"
+    exit 1
+}
