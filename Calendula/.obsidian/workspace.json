@@ -11,10 +11,12 @@
             "id": "b7c32eb0598af2b5",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Люди.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Люди"
             }
           },
           {
@@ -218,6 +220,7 @@
   },
   "active": "b7c32eb0598af2b5",
   "lastOpenFiles": [
+    "Excalidraw/Англиский.md",
     "План/2026/2026.md",
     "План/2026/2026 - Декабрь.md",
     "План/2026/2026 - Апрель.md",
@@ -227,7 +230,6 @@
     "Excalidraw/Общаться с людьми.md",
     "Excalidraw/Люди.md",
     "Excalidraw/Доска.md",
-    "Excalidraw/Англиский.md",
     "Excalidraw/Алгоритмы.md",
     "Excalidraw/Stack.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
