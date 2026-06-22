@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-Ethos/Values/Justice_Fairness.md",
+                "file": "02-Ethos/Values/Justice_Accountability.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Justice_Fairness"
+              "title": "Justice_Accountability"
             }
           },
           {
@@ -207,6 +207,7 @@
   },
   "active": "ee5726ef0630605a",
   "lastOpenFiles": [
+    "02-Ethos/Values/Justice_Fairness.md",
     "02-Ethos/Values/Justice_Equality.md",
     "02-Ethos/Values/Creativity_Expression.md",
     "08-Quest/Rewards/Благодарные ученики.md",
