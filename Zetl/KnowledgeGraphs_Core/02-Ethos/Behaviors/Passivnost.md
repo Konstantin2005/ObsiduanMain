@@ -7,7 +7,7 @@ title: "Пассивность"
 # ⚡ Пассивность
 
 **Тип:** Поведение
-**Кластер:** [[Tolerantность]]
+**Кластер:** 
 
 ---
 
@@ -17,13 +17,13 @@ title: "Пассивность"
 
 ## Связи
 
-- transforms_into → [[Релятивизм]] (Тень)
-- transforms_into → [[Свобода]] (Ценность)
-- manifests_as → [[Хаос]] (Тень)
+- transforms_into →  (Тень)
+- transforms_into →  (Ценность)
+- manifests_as →  (Тень)
 
 ## На что ссылаются
 
-- [[Tolerantность]] (Ценность) → manifests_as
+-  (Ценность) → manifests_as
 
 ---
 
