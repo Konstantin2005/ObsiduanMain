@@ -13,21 +13,14 @@
             "state": {
               "type": "kanban",
               "state": {
-                "file": "План/2026/2026 - Август.md",
+                "file": "План/2026/2026.md",
                 "kanbanViewState": {
                   "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
+                  "list-collapse": []
                 }
               },
               "icon": "lucide-trello",
-              "title": "2026 - Август"
+              "title": "2026"
             }
           },
           {
@@ -231,6 +224,9 @@
   },
   "active": "b7c32eb0598af2b5",
   "lastOpenFiles": [
+    "План/2026/2026 - Декабрь.md",
+    "План/2026/2026 - Апрель.md",
+    "План/2026/2026 - Август.md",
     "План/2026/2026.md",
     "Excalidraw/Поиск людей и Синк.md",
     "Excalidraw/План.md",
@@ -254,9 +250,6 @@
     "Calendula/2026/Май/06-05-26.md",
     "Calendula/2026/Апрель/06-04-26.md",
     "Calendula/2026/Июнь/19-06-26.md",
-    "Calendula/2026/Июнь/18-06-26.md",
-    "Excalidraw/Архив Excalidraw/Преза Big O.md",
-    "Calendula/2026/Июнь/17-06-26.md",
     "Excalidraw/pichers/Pasted Image 20260617104003_519.png",
     "Excalidraw/pichers/Pasted Image 20260617103553_177.png",
     "Excalidraw/Архив Excalidraw/Pasted Image 20260617103441_793.png",
