@@ -1,180 +1,187 @@
-const { Plugin, PluginSettingTab, Setting, Notice, requestUrl } = require("obsidian");
+# Git Commit/Push Automation Monitor
+# Monitors and logs git commit/push operations with detailed failure tracking
 
-const DEFAULT_SETTINGS = {
-	webhookUrl: "",
-	titlePrefix: "Obsidian note",
-	footer: "",
-	delayMs: 350,
-};
+param(
+    [string]$MonitorLogPath = "C:\obsidian\Main\Calendula\logs\git-monitor.log",
+    [string]$FailureLogPath = "C:\obsidian\Main\Calendula\logs\git-failures.log",
+    [string]$ExpectedCommitPattern = "Automated commit",
+    [int]$ExpectedCommitIntervalHours = 6,
+    [int]$MaxCommitsPerDay = 4,
+    [switch]$EnableVerboseLogging
+)
 
-function chunkText(text, maxLength) {
-	const lines = text.split(/\r?\n/);
-	const chunks = [];
-	let current = "";
-
-	for (const line of lines) {
-		const candidate = current.length === 0 ? line : `${current}\n${line}`;
-
-		if (candidate.length <= maxLength) {
-			current = candidate;
-			continue;
-		}
-
-		if (current.length > 0) {
-			chunks.push(current);
-			current = "";
-		}
-
-		if (line.length <= maxLength) {
-			current = line;
-			continue;
-		}
-
-		for (let offset = 0; offset < line.length; offset += maxLength) {
-			chunks.push(line.slice(offset, offset + maxLength));
-		}
-	}
-
-	if (current.length > 0) {
-		chunks.push(current);
-	}
-
-	return chunks;
+# Create log directories if they don't exist
+$logDir = Split-Path -Path $MonitorLogPath -Parent
+if (-not (Test-Path -Path $logDir)) {
+    New-Item -ItemType Directory -Path $logDir -Force | Out-Null
 }
 
-async function sleep(ms) {
-	return new Promise((resolve) => setTimeout(resolve, ms));
+$failureLogDir = Split-Path -Path $FailureLogPath -Parent
+if (-not (Test-Path -Path $failureLogDir)) {
+    New-Item -ItemType Directory -Path $failureLogDir -Force | Out-Null
 }
 
-class DiscordSendActiveNoteSettingTab extends PluginSettingTab {
-	constructor(app, plugin) {
-		super(app, plugin);
-		this.plugin = plugin;
-	}
-
-	display() {
-		const { containerEl } = this;
-		containerEl.empty();
-
-		containerEl.createEl("h2", { text: "Discord Send Active Note" });
-
-		new Setting(containerEl)
-			.setName("Webhook URL")
-			.setDesc("Discord webhook for the target channel.")
-			.addText((text) =>
-				text
-					.setPlaceholder("https://discord.com/api/webhooks/...")
-					.setValue(this.plugin.settings.webhookUrl)
-					.onChange(async (value) => {
-						this.plugin.settings.webhookUrl = value.trim();
-						await this.plugin.saveSettings();
-					}),
-			);
-
-		new Setting(containerEl)
-			.setName("Title prefix")
-			.setDesc("Shown at the top of each Discord message.")
-			.addText((text) =>
-				text
-					.setValue(this.plugin.settings.titlePrefix)
-					.onChange(async (value) => {
-						this.plugin.settings.titlePrefix = value;
-						await this.plugin.saveSettings();
-					}),
-			);
-
-		new Setting(containerEl)
-			.setName("Footer")
-			.setDesc("Optional extra line appended to each chunk.")
-			.addText((text) =>
-				text
-					.setValue(this.plugin.settings.footer)
-					.onChange(async (value) => {
-						this.plugin.settings.footer = value;
-						await this.plugin.saveSettings();
-					}),
-			);
-
-		new Setting(containerEl)
-			.setName("Delay between messages")
-			.setDesc("Milliseconds between Discord requests.")
-			.addText((text) =>
-				text
-					.setValue(String(this.plugin.settings.delayMs))
-					.onChange(async (value) => {
-						const parsed = Number.parseInt(value, 10);
-						this.plugin.settings.delayMs = Number.isFinite(parsed) && parsed >= 0 ? parsed : 350;
-						await this.plugin.saveSettings();
-					}),
-			);
-	}
+function Write-MonitorLog {
+    param([string]$Message)
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $logEntry = "$timestamp - $Message"
+    Write-Host $logEntry
+    Add-Content -Path $MonitorLogPath -Value $logEntry
 }
 
-module.exports = class DiscordSendActiveNotePlugin extends Plugin {
-	async onload() {
-		await this.loadSettings();
+function Write-FailureLog {
+    param([string]$Message)
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $failureEntry = "$timestamp - FAILURE: $Message"
+    Write-Host "FAILURE: $Message" -ForegroundColor Red
+    Add-Content -Path $FailureLogPath -Value $failureEntry
+}
 
-		this.addCommand({
-			id: "send-active-note-to-discord",
-			name: "Send active note to Discord",
-			callback: async () => {
-				await this.sendActiveNote();
-			},
-		});
+function Initialize-Monitor {
+    Write-MonitorLog "=== Git Commit/Push Automation Monitor Started ==="
+    Write-MonitorLog "Expected commit pattern: $ExpectedCommitPattern"
+    Write-MonitorLog "Expected commit interval: $ExpectedCommitIntervalHours hours"
+    Write-MonitorLog "Maximum commits per day: $MaxCommitsPerDay"
+}
 
-		this.addSettingTab(new DiscordSendActiveNoteSettingTab(this.app, this));
-	}
+function Check-RepositoryHealth {
+    try {
+        $branch = git rev-parse --abbrev-ref HEAD
+        Write-MonitorLog "Current branch: $branch"
+        
+        $remoteUrl = git config --get remote.origin.url
+        if ($remoteUrl) {
+            Write-MonitorLog "Remote URL: $remoteUrl"
+        } else {
+            Write-FailureLog "No remote.origin.url configured"
+        }
+        
+        $logCount = git log --oneline --since="24 hours ago" | Measure-Object -Line
+        Write-MonitorLog "Commits in last 24 hours: $logCount"
+        
+        if ($logCount -eq 0) {
+            Write-FailureLog "No commits in last 24 hours (expected at least one)"
+        }
+        
+    } catch {
+        Write-FailureLog "Failed to check repository health: $($_.Exception.Message)"
+    }
+}
 
-	async sendActiveNote() {
-		const file = this.app.workspace.getActiveFile();
-		if (!file) {
-			new Notice("No active note found.");
-			return;
-		}
+function Analyze-LastCommit {
+    try {
+        $lastCommit = git log -1 --format="%H %s %ci"
+        if ($lastCommit) {
+            $commitHash = $lastCommit.Split(' ')[0]
+            $commitMessage = $lastCommit.Split(' ')[1..($lastCommit.Split(' ').Count - 1)] -join ' '
+            $commitTime = $lastCommit.Split(' ')[$lastCommit.Split(' ').Count - 1]
+            
+            Write-MonitorLog "Last commit: $commitHash - $commitMessage at $commitTime"
+            
+            $lastCommitTime = [DateTime]::ParseExact($commitTime, "yyyy-MM-dd HH:mm:ss", $null)
+            $timeSinceLastCommit = (Get-Date) - $lastCommitTime
+            
+            if ($timeSinceLastCommit.TotalHours -gt ($ExpectedCommitIntervalHours * 2)) {
+                Write-FailureLog "Commit overdue: Last commit was $($timeSinceLastCommit.TotalHours) hours ago (expected every $ExpectedCommitIntervalHours hours)"
+            }
+            
+            if ($commitMessage -notlike "*$ExpectedCommitPattern*" -and $commitMessage -notlike "*Automated*") {
+                Write-FailureLog "Unexpected commit message: '$commitMessage' (expected: '$ExpectedCommitPattern')"
+            }
+            
+            $todayCommits = git log --oneline --since="00:00:00" | Measure-Object -Line
+            if ($todayCommits -gt $MaxCommitsPerDay) {
+                Write-FailureLog "Too many commits today: $todayCommits (maximum: $MaxCommitsPerDay)"
+            }
+            
+        } else {
+            Write-FailureLog "No commits found in repository"
+        }
+    } catch {
+        Write-FailureLog "Failed to analyze last commit: $($_.Exception.Message)"
+    }
+}
 
-		if (!this.settings.webhookUrl) {
-			new Notice("Set the Discord webhook URL in plugin settings first.");
-			return;
-		}
+function Check-UncommittedChanges {
+    try {
+        $remoteStatus = git status --porcelain
+        if ($remoteStatus) {
+            Write-MonitorLog "Repository has uncommitted changes: $remoteStatus"
+            Write-FailureLog "Uncommitted changes detected: $remoteStatus"
+        } else {
+            Write-MonitorLog "Repository is clean"
+        }
+    } catch {
+        Write-FailureLog "Failed to check uncommitted changes: $($_.Exception.Message)"
+    }
+}
 
-		const text = await this.app.vault.read(file);
-		if (!text || !text.trim()) {
-			new Notice("Active note is empty.");
-			return;
-		}
+function Check-ExpectedCommitSchedule {
+    try {
+        $today = Get-Date -Format "yyyy-MM-dd"
+        $todayCommits = git log --oneline --since="$today 00:00:00" --until="$today 23:59:59"
+        $commitCount = $todayCommits | Measure-Object -Line
+        
+        Write-MonitorLog "Expected commits today: $MaxCommitsPerDay"
+        Write-MonitorLog "Actual commits today: $commitCount"
+        
+        if ($commitCount -eq 0) {
+            Write-FailureLog "No commits today (expected at least one)"
+        } elseif ($commitCount -lt ($MaxCommitsPerDay / 2)) {
+            Write-MonitorLog "Low commit count today: $commitCount (expected at least $($MaxCommitsPerDay / 2))"
+        }
+        
+    } catch {
+        Write-FailureLog "Failed to check expected commit schedule: $($_.Exception.Message)"
+    }
+}
 
-		const chunks = chunkText(text, 1800);
-		const total = chunks.length;
+function Log-ExpectedVsActual {
+    try {
+        $expectedCommits = @()
+        $actualCommits = @()
+        
+        $today = Get-Date -Format "yyyy-MM-dd"
+        $yesterday = (Get-Date).AddDays(-1).ToString("yyyy-MM-dd")
+        
+        $expectedCommits = @(
+            "$yesterday 12:00:00 - $ExpectedCommitPattern",
+            "$yesterday 18:00:00 - $ExpectedCommitPattern",
+            "$today 09:00:00 - $ExpectedCommitPattern",
+            "$today 15:00:00 - $ExpectedCommitPattern"
+        )
+        
+        $actualCommits = git log --oneline --since="$yesterday 00:00:00" --until="$today 23:59:59"
+        
+        Write-MonitorLog "=== Expected vs Actual Commits ==="
+        foreach ($expected in $expectedCommits) {
+            Write-MonitorLog "Expected: $expected"
+        }
+        
+        Write-MonitorLog "=== Actual Commits ==="
+        foreach ($actual in $actualCommits) {
+            Write-MonitorLog "Actual: $actual"
+        }
+        
+        $missedExpected = $expectedCommits | Where-Object { $_ -notin $actualCommits }
+        if ($missedExpected) {
+            Write-FailureLog "Missed expected commits: $($missedExpected -join ', ')"
+        }
+        
+    } catch {
+        Write-FailureLog "Failed to log expected vs actual commits: $($_.Exception.Message)"
+    }
+}
 
-		for (let i = 0; i < total; i++) {
-			const header = `**${this.settings.titlePrefix}** [${i + 1}/${total}]`;
-			let content = `${header}\n${chunks[i]}`;
-			if (this.settings.footer) {
-				content += `\n${this.settings.footer}`;
-			}
+function Main-Monitor {
+    Initialize-Monitor
+    Check-RepositoryHealth
+    Analyze-LastCommit
+    Check-UncommittedChanges
+    Check-ExpectedCommitSchedule
+    Log-ExpectedVsActual
+    
+    Write-MonitorLog "=== Git Commit/Push Automation Monitor Completed ==="
+}
 
-			await requestUrl({
-				url: this.settings.webhookUrl,
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ content }),
-			});
-
-			if (this.settings.delayMs > 0 && i < total - 1) {
-				await sleep(this.settings.delayMs);
-			}
-		}
-
-		new Notice(`Sent ${total} Discord message${total === 1 ? "" : "s"}.`);
-	}
-
-	async loadSettings() {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-	}
-
-	async saveSettings() {
-		await this.saveData(this.settings);
-	}
-};
+Main-Monitor
