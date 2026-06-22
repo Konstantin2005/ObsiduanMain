@@ -78,11 +78,17 @@ function Analyze-LastCommit {
             
             Write-MonitorLog "Last commit: $commitHash - $commitMessage at $commitTime"
             
-            $lastCommitTime = [DateTime]::ParseExact($commitTime, "yyyy-MM-dd HH:mm:ss", $null)
-            $timeSinceLastCommit = (Get-Date) - $lastCommitTime
-            
-            if ($timeSinceLastCommit.TotalHours -gt ($ExpectedCommitIntervalHours * 2)) {
-                Write-FailureLog "Commit overdue: Last commit was $($timeSinceLastCommit.TotalHours) hours ago (expected every $ExpectedCommitIntervalHours hours)"
+            # Parse date with timezone offset
+            $commitTime = $commitTime.Trim()
+            if ($commitTime -match "^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) (.+)$") {
+                $datePart = $matches[1]
+                $timeZonePart = $matches[2]
+                $lastCommitTime = [DateTime]::ParseExact($datePart, "yyyy-MM-dd HH:mm:ss", $null)
+                $timeSinceLastCommit = (Get-Date) - $lastCommitTime
+                
+                if ($timeSinceLastCommit.TotalHours -gt ($ExpectedCommitIntervalHours * 2)) {
+                    Write-FailureLog "Commit overdue: Last commit was $($timeSinceLastCommit.TotalHours) hours ago (expected every $ExpectedCommitIntervalHours hours)"
+                }
             }
             
             if ($commitMessage -notlike "*$ExpectedCommitPattern*" -and $commitMessage -notlike "*Automated*") {
