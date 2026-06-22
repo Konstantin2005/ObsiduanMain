@@ -266,6 +266,14 @@
   },
   "active": "3c1f441d5ff874fc",
   "lastOpenFiles": [
+    "Navigation.md",
+    "MOC - Zetl.md",
+    "MOC - Тематические индексы.md",
+    "MOC - Теневая система ценностей.md",
+    "MOC - Экосистема идей.md",
+    "MOC - База знаний.md",
+    "MOC - Игровая система.md",
+    "MOC - Жизненная система.md",
     "organize_zetl.py",
     "ARCHITECTURE_SUMMARY.md",
     "Obstacles/Нет видимости.md",
@@ -285,13 +293,6 @@
     "Obstacles/Нереальные ожидания.md",
     "Obstacles/Эмоциональные реакции.md",
     "Index/Шахматы/ZK-001 Что такое шахматы.md",
-    "Obstacles/Нет мотивации.md",
-    "Index/Програмирование/BD/0 LiteSql.md",
-    "Index/Програмирование/BD/0 Casandra.md",
-    "Index/Програмирование/BD/0 HBase.md",
-    "Index/Програмирование/BD/0 DynamoDB.md",
-    "Index/Програмирование/BD/0 InfluxDB.md",
-    "Index/Програмирование/BD/0 LevelDB.md",
     "Node",
     "Index/Програмирование/LeetCode",
     "Index/Програмирование/Языки",
@@ -300,7 +301,6 @@
     "Index/Програмирование/BD",
     "Setengs/Templete",
     "Setengs",
-    "Index",
-    "Archive"
+    "Index"
   ]
 }
