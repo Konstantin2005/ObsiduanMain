@@ -1,4 +1,4 @@
-﻿param(
+param(
     [string]$BasePath = "C:\obsidian\Main\IdeaEcosystem"
 )
 
@@ -632,7 +632,7 @@ foreach ($ci in $counterideas) {
     $content = @"
 ---
 type: Counteridea
-tags: [counteridea, ecosystem, anti-$($ci.Aggregate)]
+tags: [counteridea, ecosystem, anti-$($ci.Against)]
 ---
 
 # $($ci.Name)
@@ -641,7 +641,7 @@ tags: [counteridea, ecosystem, anti-$($ci.Aggregate)]
 $($ci.Desc)
 
 ## Противоядие для
-- [[${$ci.Aggregate}]]
+- [[${$ci.Against}]]
 
 ## Связанные концепции
 $conceptsStr
