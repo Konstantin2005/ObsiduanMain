@@ -1131,17 +1131,20 @@ total_files += 1
 
 # ─── Statistics ──────────────────────────────────────────────────────────────
 
-print(f"✅ Vault сгенерирован: {total_files} файлов")
-print(f"📊 Узлов: {len(nodes)}")
-print(f"🔗 Связей: {sum(len(v['links']) for v in nodes.values()) // 2} (направленных: {sum(len(v['links']) for v in nodes.values())})")
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+print(f"[OK] Vault generated: {total_files} files")
+print(f"[STATS] Nodes: {len(nodes)}")
+print(f"[STATS] Links: {sum(len(v['links']) for v in nodes.values()) // 2} (directed: {sum(len(v['links']) for v in nodes.values())})")
 
 # Check minimum connectivity
 min_links = min(link_counter.values())
 under_connected = [k for k, v in link_counter.items() if v < 4]
-print(f"📈 Мин. связей на узел: {min_links}")
+print(f"[STATS] Min links per node: {min_links}")
 if under_connected:
-    print(f"⚠️  Узлов с <4 связями: {len(under_connected)}")
+    print(f"[WARN] Nodes with <4 links: {len(under_connected)}")
     for uid in under_connected[:5]:
-        print(f"   - {nodes[uid]['title']}: {link_counter[uid]} связей")
+        print(f"   - {nodes[uid]['title']}: {link_counter[uid]} links")
 else:
-    print("✅ Все узлы имеют минимум 4 связи!")
+    print("[OK] All nodes have at least 4 links!")
