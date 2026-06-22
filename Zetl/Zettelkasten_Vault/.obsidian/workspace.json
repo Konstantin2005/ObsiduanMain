@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "KnowledgeGalaxy/Psychology/Urges.md",
+                "file": "KnowledgeGalaxy/AI/Instance Segmentation.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Urges"
+              "title": "Instance Segmentation"
             }
           }
         ]
@@ -197,7 +197,7 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "734d8cd94daf1e02",
+  "active": "9c249c04e36c6af3",
   "lastOpenFiles": [
     "KnowledgeGalaxy/Psychology/Urges.md",
     "KnowledgeGalaxy/Philosophy/Responsibility.md",
