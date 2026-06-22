@@ -31,8 +31,7 @@
               "title": "Благодарные ученики"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -191,8 +190,9 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "d6b1a38875463f21",
+  "active": "06f1ba832e12f9bf",
   "lastOpenFiles": [
+    "08-Quest/Rewards/Благодарные ученики.md",
     "08-Quest/Skills/Преподавание.md",
     "08-Quest/Quests/Стать ментором.md",
     "08-Quest/Skills/Эмоциональный интеллект.md",
