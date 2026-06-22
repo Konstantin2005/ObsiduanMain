@@ -10,6 +10,13 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
+$mutexName = "Global\DailyPushMutex"
+$mutex = New-Object System.Threading.Mutex($false, $mutexName)
+if (-not $mutex.WaitOne(0, $false)) {
+    Write-Host "Another instance is already running. Exiting."
+    exit 0
+}
+
 function Write-Log {
     param([string]$Message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
