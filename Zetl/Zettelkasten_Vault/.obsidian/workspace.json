@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "33753776bb8457c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "da3dcdcbb30d675d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9c249c04e36c6af3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KnowledgeGalaxy/Psychology/Burnout.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Burnout"
+            }
+          }
+        ]
+      },
+      {
+        "id": "369ebd67cb8a7d49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "734d8cd94daf1e02",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "05ea2a7b0bd440c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "061ba746755069aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4a19c9603e850da",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "170fc329c6174ed2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "d05b7415eb73ba8c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "beaf34a2a792898a",
+    "type": "split",
+    "children": [
+      {
+        "id": "79474141edde6e16",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a24cbb067f97e34",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки"
+            }
+          },
+          {
+            "id": "c9f90b43d3826ded",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки"
+            }
+          },
+          {
+            "id": "098a25508587213f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "104bd6eba6d9468e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "34cce645e867f349",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "734d8cd94daf1e02",
+  "lastOpenFiles": [
+    "KnowledgeGalaxy/Psychology/Burnout.md",
+    "KnowledgeGalaxy/AI/Video Content.md",
+    "KnowledgeGalaxy/AI/Chatbots.md",
+    "KnowledgeGalaxy/AI/Instance Segmentation.md",
+    "KnowledgeGalaxy/Psychology/Urges.md",
+    "KnowledgeGalaxy/Philosophy/Responsibility.md",
+    "KnowledgeGalaxy/Psychology/Jung.md"
+  ]
+}
