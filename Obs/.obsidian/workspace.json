@@ -11,10 +11,14 @@
             "id": "471c6939225e2748",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Личная библиотека/2026/Июнь/17-06-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "17-06-26"
             }
           }
         ]
@@ -176,7 +180,7 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "1ccca354d0b43969",
+  "active": "471c6939225e2748",
   "lastOpenFiles": [
     "Топики/Z Picters/Pasted image 20260619203426.png",
     "Топики/Z Picters/Pasted image 20260619203420.png",
