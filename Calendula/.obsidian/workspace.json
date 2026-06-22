@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Stack.md"
+                "file": "Excalidraw/План.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Stack"
+              "title": "План"
             }
           },
           {
@@ -190,9 +190,10 @@
   },
   "active": "8d12e239d08b5f60",
   "lastOpenFiles": [
+    "Excalidraw/Доска.md",
+    "Excalidraw/Stack.md",
     "План/2026/2026 - Июль.md",
     "Excalidraw/Англиский.md",
-    "Excalidraw/Доска.md",
     "Excalidraw/Deltaав.md",
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Май.md",
@@ -206,7 +207,6 @@
     "Excalidraw/План.md",
     "Excalidraw/Общаться с людьми.md",
     "Excalidraw/Алгоритмы.md",
-    "Excalidraw/Stack.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
     "Excalidraw/Архив Excalidraw/Тех Радар.md",
     "Excalidraw/Архив Excalidraw/Многопоточка.md",
