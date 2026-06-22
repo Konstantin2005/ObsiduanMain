@@ -20,7 +20,13 @@
               "icon": "lucide-file",
               "title": "22-06-26"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "3d1fdd8c2eef6aa6",
+        "type": "tabs",
+        "children": [
           {
             "id": "67c143c38e6198eb",
             "type": "leaf",
