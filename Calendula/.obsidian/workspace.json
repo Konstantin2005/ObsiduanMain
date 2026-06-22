@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Люди.md"
+                "file": "Excalidraw/Поиск людей и Синк.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Люди"
+              "title": "Поиск людей и Синк"
             }
           },
           {
@@ -220,6 +220,7 @@
   },
   "active": "b7c32eb0598af2b5",
   "lastOpenFiles": [
+    "Excalidraw/Люди.md",
     "Excalidraw/Англиский.md",
     "План/2026/2026.md",
     "План/2026/2026 - Декабрь.md",
@@ -228,7 +229,6 @@
     "Excalidraw/Поиск людей и Синк.md",
     "Excalidraw/План.md",
     "Excalidraw/Общаться с людьми.md",
-    "Excalidraw/Люди.md",
     "Excalidraw/Доска.md",
     "Excalidraw/Алгоритмы.md",
     "Excalidraw/Stack.md",
