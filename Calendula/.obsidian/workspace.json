@@ -4,22 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "d945c3d6c758a33a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "cc0b2c8147ed96d9",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          }
-        ]
-      },
-      {
         "id": "3d02b90e553ccf27",
         "type": "tabs",
         "children": [
@@ -205,7 +189,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "cc0b2c8147ed96d9",
+  "active": "8d12e239d08b5f60",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/18-06-26.md",
     "Личная библиотека/2026/Июнь/17-06-26.md",
