@@ -113,7 +113,7 @@
       }
     },
     {
-      "query": "#Колич",
+      "query": "#Энергия",
       "color": {
         "a": 1,
         "rgb": 0
@@ -187,5 +187,4 @@
   "linkStrength": 0.645833333333333,
   "linkDistance": 412,
   "scale": 0.025613198604924788,
-  "close": false
-}
+  "clo
