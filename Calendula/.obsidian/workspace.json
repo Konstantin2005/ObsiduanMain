@@ -4,19 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "3d1fdd8c2eef6aa6",
+        "id": "34ee491a480bba42",
         "type": "tabs",
         "children": [
-          {
-            "id": "67c143c38e6198eb",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
           {
             "id": "903daf95f212b104",
             "type": "leaf",
@@ -31,8 +21,23 @@
               "title": "19-03-26 лич"
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "3d1fdd8c2eef6aa6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67c143c38e6198eb",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
