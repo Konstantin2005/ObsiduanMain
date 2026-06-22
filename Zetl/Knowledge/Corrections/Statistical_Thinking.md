@@ -39,10 +39,10 @@ Statistical thinking provides a framework for understanding uncertainty, variabi
 - Conduct pre-mortems on decisions
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Availability_Heuristic]]
-- [[Knowledge/Biases/Anchoring_Bias]]
-- [[Knowledge/Biases/Framing_Effect]]
+- 
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness across multiple bias types, particularly for analytical decision-making contexts.

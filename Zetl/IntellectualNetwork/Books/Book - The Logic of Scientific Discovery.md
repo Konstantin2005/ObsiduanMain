@@ -8,7 +8,7 @@ tags: [book, intellectual, karl_popper]
 # The Logic of Scientific Discovery
 
 ## Author
-- [[Thinker: Karl Popper]]
+- 
 
 ## Key Ideas
-- [[Idea: The Logic of Scientific Discovery]]
+- 

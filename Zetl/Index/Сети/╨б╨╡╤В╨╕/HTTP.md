@@ -160,11 +160,11 @@ curl -X POST -H "Content-Type: application/json" -d '{"ok":true}' https://exampl
 
 ## Связанные темы
 
-- [[HTTPS и TLS]]
+- 
 - [[OSI]]
 - [[API]]
-- [[Как проходит HTTP запрос]]
-- [[Как работает браузер]]
+- 
+- 
 
 ---
 

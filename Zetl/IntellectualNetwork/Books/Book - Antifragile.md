@@ -8,7 +8,7 @@ tags: [book, intellectual, nassim_taleb]
 # Antifragile
 
 ## Author
-- [[Thinker: Nassim Taleb]]
+- 
 
 ## Key Ideas
-- [[Idea: Antifragile]]
+- 

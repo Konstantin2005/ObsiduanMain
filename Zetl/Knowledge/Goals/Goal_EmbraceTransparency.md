@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Honesty_Transparency]]
-project: [[Project_Openness]]
-project2: [[Project_Clarity]]
+project: 
+project2: 
 ---
 
 # Goal_EmbraceTransparency
@@ -28,5 +28,5 @@ Not Started
 - [[Honesty_Transparency]]
 
 ## Related Projects
-- [[Project_Openness]]
-- [[Project_Clarity]]
+- 
+- 

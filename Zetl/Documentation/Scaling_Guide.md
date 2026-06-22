@@ -95,22 +95,22 @@ Knowledge/
 ```markdown
 ## Core Concepts
 ### Fundamental
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ### Advanced
-- [[Concept3_v1]]
-- [[Concept4_v1]]
+- 
+- 
 
 ## Related Values
 ### Core Values
-- [[Value1]]
-- [[Value2]]
+- 
+- 
 
 ## Related Projects
 ### Active
-- [[Project1]]
-- [[Project2]]
+- 
+- 
 
 ## Statistics
 - Total Concepts: 150

@@ -14,7 +14,7 @@ review_frequency: monthly
 Study of computer networks, communication protocols, and distributed systems.
 
 ## Related Concepts
-- [[Programming_Networking_v1]]
+- 
 - [[Programming_Security_v1]]
 
 ## Related Values
@@ -22,7 +22,7 @@ Study of computer networks, communication protocols, and distributed systems.
 - [[Competence_Standards]]
 
 ## Related Projects
-- [[Project_NetworkDevelopment]]
+- 
 
 ## Statistics
 - Total Concepts: 42

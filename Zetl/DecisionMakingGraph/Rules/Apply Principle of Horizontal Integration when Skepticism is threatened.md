@@ -9,13 +9,13 @@ tags: [rule, decision-making]
 A rule derived from principles.
 
 ## Based on Principles
-- [[Principle: Principle of Harmony]]
-- [[Principle: Principle of Encapsulation]]
+- 
+- 
 
 ## Applied in Decisions
-- [[Decision: Accept decision about Prioritize Principle of Decomposition over Competition]]
-- [[Decision: Accept decision about Use Law of Chaos to achieve Aristocracy]]
+- 
+- 
 
 ## Related Rules
-- [[Rule: Synthesize Principle of Localization and Honesty]]
-- [[Rule: Balance Principle of Continuous Improvement and Freedom]]
+- 
+- 

@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Service_Community]]
-project: [[Project_CharityWork]]
-project2: [[Project_CommunityGarden]]
+project: 
+project2: 
 ---
 
 # Goal_EngageInCommunityService
@@ -28,5 +28,5 @@ Not Started
 - [[Service_Community]]
 
 ## Related Projects
-- [[Project_CharityWork]]
-- [[Project_CommunityGarden]]
+- 
+- 

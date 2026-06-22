@@ -41,8 +41,8 @@ I learned about psychological thinking through research on cognitive psychology 
 Psychological thinking is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalThinking]]
-- [[Resource_CognitiveProcesses]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

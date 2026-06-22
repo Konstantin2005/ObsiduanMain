@@ -33,17 +33,17 @@ The Dunning-Kruger effect reveals a metacognitive bias where individuals lack th
 The effect stems from the fact that competence requires not just knowledge, but also the ability to recognize what one doesn't know.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Confirmation_Bias]]
-- [[Knowledge/Errors/Hindsight_Bias]]
-- [[Knowledge/Errors/OVERCONFIDENCE_Bias]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Anchoring_Bias]]
-- [[Knowledge/Biases/Framing_Effect]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Evidence_Review_Process]]
-- [[Knowledge/Corrections/Belief_Updating_Exercises]]
+- 
+- 
 
 ## Examples
 - Incompetent drivers believing they are better than average

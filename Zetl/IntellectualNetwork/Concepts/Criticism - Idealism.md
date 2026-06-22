@@ -7,7 +7,7 @@ tags: [criticism, intellectual]
 # Idealism
 
 ## Target
-- [[Thinker: Karl Popper]]
+- 
 
 ## Related Concepts
-- [[Concept: Idealism]]
+- 

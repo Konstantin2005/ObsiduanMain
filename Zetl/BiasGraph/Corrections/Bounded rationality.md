@@ -19,7 +19,7 @@ tags:
 
 ## Связанные методы
 - [[Take the best heuristic]]
-- [[1/N heuristic]]
+- 
 
 ## Применяется к ошибкам
 - [[Nirvana fallacy]]

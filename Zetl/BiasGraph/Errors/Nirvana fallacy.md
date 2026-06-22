@@ -14,7 +14,7 @@ tags:
 ## Порождает следствия
 - [[Recognition heuristic]]
 - [[Take the best heuristic]]
-- [[1/N heuristic]]
+- 
 
 ## Вызывается искажениями
 - [[Planning fallacy]]

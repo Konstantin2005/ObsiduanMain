@@ -42,8 +42,8 @@ I learned about personality development through research on trait theory and dev
 Personality development research is crucial for understanding human behavior and improving interpersonal relationships.
 
 ## Resources
-- [[Resource_PersonalityDevelopment]]
-- [[Resource_DevelopmentalTraitTheory]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Personality_v1]]

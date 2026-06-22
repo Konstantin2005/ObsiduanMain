@@ -9,16 +9,16 @@ tags: [counteridea, ecosystem, anti-Classism]
 Classism alternative, asserting class awareness
 
 ## Противоядие для
-- [[Classism]]
+- 
 
 ## Связанные концепции
-- [[Class]]
-- [[Awareness]]
-- [[Solidarity]]
+- 
+- 
+- 
 
 ## Связанные мемы
-- [[Collective above individual]]
-- [[Cooperation strengthens]]
+- 
+- 
 
 ## Аргументы
 - Предлагает альтернативный взгляд на проблему

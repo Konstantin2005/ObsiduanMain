@@ -42,8 +42,8 @@ I learned about perception through research on cognitive psychology and sensory 
 Perception research is crucial for designing effective user interfaces and experiences.
 
 ## Resources
-- [[Resource_PerceptionResearch]]
-- [[Resource_CognitivePsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Cognition_v1]]

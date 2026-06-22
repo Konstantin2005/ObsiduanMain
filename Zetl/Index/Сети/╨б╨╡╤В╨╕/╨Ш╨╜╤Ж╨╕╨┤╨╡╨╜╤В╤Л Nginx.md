@@ -81,5 +81,5 @@ tail -n 200 /var/log/nginx/error.log
 
 - [[Nginx]]
 - [[HTTP]]
-- [[HTTPS и TLS]]
+- 
 - [[TCP]]

@@ -32,25 +32,25 @@ Create and implement an accountability system.
 - [ ] Share accountability system
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Values
 - [[Responsibility_Accountability]]
 - [[Honesty_Accountability]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_DutyFulfillment]]
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones

@@ -28,4 +28,4 @@ tags:
 ## Как исправить
 - [[Критическое мышление]]
 - [[Seek disconfirming evidence]]
-- [[1/N heuristic]]
+- 

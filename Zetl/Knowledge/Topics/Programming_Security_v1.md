@@ -14,15 +14,15 @@ review_frequency: monthly
 Principles and practices of protecting systems and data from unauthorized access.
 
 ## Related Concepts
-- [[Programming_Cryptography_v1]]
-- [[Programming_Authentication_v1]]
+- 
+- 
 
 ## Related Values
 - [[Honesty_Integrity]]
 - [[Honesty_Transparency]]
 
 ## Related Projects
-- [[Project_SecurityDevelopment]]
+- 
 
 ## Statistics
 - Total Concepts: 43

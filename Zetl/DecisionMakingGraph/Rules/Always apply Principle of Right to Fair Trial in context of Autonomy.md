@@ -9,13 +9,13 @@ tags: [rule, decision-making]
 A rule derived from principles.
 
 ## Based on Principles
-- [[Principle: Principle of Containerization]]
-- [[Principle: Principle of Competence]]
+- 
+- 
 
 ## Applied in Decisions
-- [[Decision: Accept decision about Prioritize Principle of Scrum over Responsibility]]
-- [[Decision: Choose path of Adapt Principle of Maximization to Respect]]
+- 
+- 
 
 ## Related Rules
-- [[Rule: Balance Principle of Uniqueness and Family]]
-- [[Rule: Balance Principle of Concentration and Distributive Justice]]
+- 
+- 

@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Responsibility_Accountability]]
-project: [[Project_Duty]]
-project2: [[Project_Obligation]]
+project: 
+project2: 
 ---
 
 # Goal_FulfillDuties
@@ -28,5 +28,5 @@ Not Started
 - [[Responsibility_Accountability]]
 
 ## Related Projects
-- [[Project_Duty]]
-- [[Project_Obligation]]
+- 
+- 

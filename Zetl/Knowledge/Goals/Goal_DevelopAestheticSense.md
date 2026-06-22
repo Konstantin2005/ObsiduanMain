@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Beauty_Aesthetic]]
-project: [[Project_DesignDevelopment]]
-project2: [[Project_StyleRefinement]]
+project: 
+project2: 
 ---
 
 # Goal_DevelopAestheticSense
@@ -28,5 +28,5 @@ Not Started
 - [[Beauty_Aesthetic]]
 
 ## Related Projects
-- [[Project_DesignDevelopment]]
-- [[Project_StyleRefinement]]
+- 
+- 

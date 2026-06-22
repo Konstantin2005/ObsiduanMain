@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of fundamental nature of reality, existence, and the universe beyond the physical world.
 
 ## Related Concepts
-- [[Philosophy_Reality_v1]]
-- [[Philosophy_Knowledge_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Discovery]]
 - [[Freedom_Thought]]
 
 ## Related Projects
-- [[Project_PhilosophyResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 42
@@ -32,4 +32,4 @@ Study of fundamental nature of reality, existence, and the universe beyond the p
 
 ## See Also
 - [[Psychology_Overview_v1]]
-- [[Systems_Thinking_v1]]
+- 

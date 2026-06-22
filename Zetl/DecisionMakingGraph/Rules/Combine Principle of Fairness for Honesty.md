@@ -9,13 +9,13 @@ tags: [rule, decision-making]
 A rule derived from principles.
 
 ## Based on Principles
-- [[Principle: Principle of Cardiology]]
-- [[Principle: Principle of Golden Mean]]
+- 
+- 
 
 ## Applied in Decisions
-- [[Decision: Choose path of Never violate Law of Identity for Competition]]
-- [[Decision: Accept decision about Adapt Principle of Self-Discipline to Family]]
+- 
+- 
 
 ## Related Rules
-- [[Rule: Apply Principle of Symmetry when Humility is threatened]]
-- [[Rule: Integrate Principle of Normalization with Respect]]
+- 
+- 

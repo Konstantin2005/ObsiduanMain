@@ -41,9 +41,9 @@ Structured decision-making provides a framework for making better decisions by s
 - Implement feedback loops
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Availability_Heuristic]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for improving decision quality and overcoming cognitive biases, particularly in complex and high-stakes contexts.

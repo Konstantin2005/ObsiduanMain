@@ -8,7 +8,7 @@ tags: [book, intellectual, daniel_kahneman]
 # Thinking Fast and Slow
 
 ## Author
-- [[Thinker: Daniel Kahneman]]
+- 
 
 ## Key Ideas
-- [[Idea: Thinking Fast and Slow]]
+- 

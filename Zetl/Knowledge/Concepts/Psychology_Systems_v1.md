@@ -42,8 +42,8 @@ I learned about psychological systems through research on systems theory and com
 Psychological systems research is essential for understanding the complex interactions underlying psychological functioning.
 
 ## Resources
-- [[Resource_PsychologicalSystems]]
-- [[Resource_SystemsTheory]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

@@ -16,7 +16,7 @@ Engage in regular community service activities.
 ## Goals
 - [[Goal_EngageInCommunityService]]
 - [[Goal_BuildConnections]]
-- [[Goal_Service_Community]]
+- 
 
 ## Current Progress
 ### Completed
@@ -32,25 +32,25 @@ Engage in regular community service activities.
 - [ ] Create service program
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Values
 - [[Service_Community]]
 - [[Freedom_Association]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_MentoringProgram]]
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones

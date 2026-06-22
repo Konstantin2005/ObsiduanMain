@@ -42,8 +42,8 @@ I learned about psychological interventions through research on therapy and beha
 Psychological interventions research is essential for developing effective treatment approaches.
 
 ## Resources
-- [[Resource_PsychologicalInterventions]]
-- [[Resource_TherapyResearch]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

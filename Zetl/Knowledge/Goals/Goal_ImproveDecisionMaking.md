@@ -7,7 +7,7 @@ last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Freedom_Choice]]
 project: [[Project_DecisionMaking]]
-project2: [[Project_LimitsSetting]]
+project2: 
 ---
 
 # Goal_ImproveDecisionMaking
@@ -29,4 +29,4 @@ Not Started
 
 ## Related Projects
 - [[Project_DecisionMaking]]
-- [[Project_LimitsSetting]]
+- 

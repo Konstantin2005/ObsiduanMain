@@ -102,7 +102,7 @@ journalctl -u sshd -n 100 --no-pager
 
 ## Связанные темы
 
-- [[HTTPS и TLS]]
+- 
 - [[TCP]]
 - [[OSI]]
 - [[TELNET]]

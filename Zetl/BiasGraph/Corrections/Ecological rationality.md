@@ -18,7 +18,7 @@ tags:
 - [[Contrast effect]]
 
 ## Связанные методы
-- [[1/N heuristic]]
+- 
 - [[Equally weighted model]]
 
 ## Применяется к ошибкам

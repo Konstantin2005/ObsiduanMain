@@ -42,8 +42,8 @@ I studied attention through research on cognitive control and selective attentio
 Attention research is crucial for designing effective user interfaces and improving learning outcomes.
 
 ## Resources
-- [[Resource_AttentionResearch]]
-- [[Resource_CognitiveControl]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Cognition_v1]]

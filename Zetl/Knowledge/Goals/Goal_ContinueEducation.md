@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Competence_Learning]]
-project: [[Project_Education]]
-project2: [[Project_Knowledge]]
+project: 
+project2: 
 ---
 
 # Goal_ContinueEducation
@@ -28,5 +28,5 @@ Not Started
 - [[Competence_Learning]]
 
 ## Related Projects
-- [[Project_Education]]
-- [[Project_Knowledge]]
+- 
+- 

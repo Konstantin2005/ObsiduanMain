@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Curiosity_Discovery]]
-project: [[Project_Research]]
-project2: [[Project_Investigation]]
+project: 
+project2: 
 ---
 
 # Goal_ExploreDeeply
@@ -28,5 +28,5 @@ Not Started
 - [[Curiosity_Discovery]]
 
 ## Related Projects
-- [[Project_Research]]
-- [[Project_Investigation]]
+- 
+- 

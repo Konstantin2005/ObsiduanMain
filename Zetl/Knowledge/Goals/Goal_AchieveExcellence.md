@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Competence_Excellence]]
-project: [[Project_Performance]]
-project2: [[Project_Quality]]
+project: 
+project2: 
 ---
 
 # Goal_AchieveExcellence
@@ -28,5 +28,5 @@ Not Started
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_Performance]]
-- [[Project_Quality]]
+- 
+- 

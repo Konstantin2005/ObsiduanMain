@@ -10,13 +10,13 @@ tags: [outcome, decision-making]
 A result of a decision made.
 
 ## Caused by Decision
-- [[Decision: Choose path of Combine Principle of Kaizen for Individualism]]
-- [[Decision: Accept decision about Adapt Principle of Diversity to Wisdom]]
+- 
+- 
 
 ## Related Outcomes
-- [[Outcome: Partial success in Accept decision about Synthesize Principle of Contextuality and Knowledge]]
-- [[Outcome: Partial success in Accept decision about Integrate Principle of Just Punishment with Responsibility]]
+- 
+- 
 
 ## Influences Principles
-- [[Principle: Principle of Self-Discipline]]
-- [[Principle: Principle of Resilience]]
+- 
+- 

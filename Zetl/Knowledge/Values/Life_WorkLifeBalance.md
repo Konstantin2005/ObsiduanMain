@@ -23,22 +23,22 @@ This value matters because burnout is real, and balance prevents exhaustion whil
 - [[Career_LearningContinuity]]
 
 ### Indirect Conflicts
-- [[Value3]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
-- [[Value1]]
-- [[Value2]]
+- 
+- 
 
 ### Indirectly Supporting
-- [[Value3]]
+- 
 
 ## Related Concepts
 - [[ML_NeuralNetworks_v1]]
 - [[Productivity_Pomodoro]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 I apply this value by setting boundaries on work hours and making time for personal activities.
@@ -49,4 +49,4 @@ I apply this value by setting boundaries on work hours and making time for perso
 - Pursuing hobbies
 
 ## See Also
-- [[Value_MOC]]
+- 

@@ -4,6 +4,6 @@
 
 ### Где используется
 
-- [[Trapping Rain Water]] (в greedy интерпретации)
-- [[Remove K Digits]]
-- [[Container With Most Water]] (greedy view)
+-  (в greedy интерпретации)
+- 
+-  (greedy view)

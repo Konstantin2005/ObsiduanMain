@@ -8,7 +8,7 @@ tags: [book, intellectual, nassim_taleb]
 # The Black Swan
 
 ## Author
-- [[Thinker: Nassim Taleb]]
+- 
 
 ## Key Ideas
-- [[Idea: The Black Swan]]
+- 

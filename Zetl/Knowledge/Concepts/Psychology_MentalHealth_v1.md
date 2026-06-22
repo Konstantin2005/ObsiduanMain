@@ -42,8 +42,8 @@ I learned about mental health through research on clinical psychology and wellne
 Mental health research is essential for improving overall well-being and productivity.
 
 ## Resources
-- [[Resource_MentalHealth]]
-- [[Resource_WellnessPrograms]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

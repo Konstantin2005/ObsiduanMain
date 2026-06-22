@@ -1,13 +1,13 @@
 #Англиский
   
 ## Foundations  
-- [[Index/Языки/Английский/0 Foundations Index]]  
+-   
   
 ## Tenses  
-- [[Index/Языки/Английский/0 Tenses Index]]  
+-   
   
 ## Verbs  
-- [[Index/Языки/Английский/0 Verbs Index]]  
+-   
   
 ## Sentences  
 - [[0 Sentences Index]]  

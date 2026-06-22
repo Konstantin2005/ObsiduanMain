@@ -35,7 +35,7 @@ tail -n 200 /var/log/nginx/access.log
 ## Связанные темы
 
 - [[HTTP]]
-- [[HTTPS и TLS]]
+- 
 - [[TCP]]
 - [[DNS]]
-- [[Инциденты Nginx]]
+- 

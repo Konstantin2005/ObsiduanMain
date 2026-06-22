@@ -41,8 +41,8 @@ A project to develop new skills.
 - [[Psychology_Emotion_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

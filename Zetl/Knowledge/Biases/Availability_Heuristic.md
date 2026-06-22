@@ -32,17 +32,17 @@ The availability heuristic is a mental shortcut that relies on immediate example
 This heuristic reduces cognitive effort by using easily recalled examples rather than conducting systematic analysis.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Confirmation_Bias]]
-- [[Knowledge/Errors/Hindsight_Bias]]
-- [[Knowledge/Errors/OVERCONFIDENCE_Bias]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Anchoring_Bias]]
-- [[Knowledge/Biases/Framing_Effect]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Statistical_Thinking]]
-- [[Knowledge/Corrections/Counterintuitive_Examples]]
+- 
+- 
 
 ## Examples
 - Believing plane crashes are common after news coverage

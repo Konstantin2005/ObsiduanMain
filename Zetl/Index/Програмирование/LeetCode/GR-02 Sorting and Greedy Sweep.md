@@ -5,10 +5,10 @@
 
 ### Где используется
 
-- [[Merge Intervals]]
-- [[Non-overlapping Intervals]]
-- [[Insert Interval]]
-- [[Queue Reconstruction by Height]]
+- 
+- 
+- 
+- 
 
 ### Инвариант
 

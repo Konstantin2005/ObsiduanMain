@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of technological developments and their impact on human civilization.
 
 ## Related Concepts
-- [[History_Inventions_v1]]
-- [[History_DigitalAge_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Innovation]]
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_TechnologyHistory]]
+- 
 
 ## Statistics
 - Total Concepts: 36

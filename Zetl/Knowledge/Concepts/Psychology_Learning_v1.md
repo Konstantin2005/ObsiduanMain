@@ -42,8 +42,8 @@ I studied learning through research on educational psychology and behavioral the
 Learning theory research is essential for creating effective educational and training systems.
 
 ## Resources
-- [[Resource_LearningTheory]]
-- [[Resource_EducationalPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_ChildDevelopment_v1]]

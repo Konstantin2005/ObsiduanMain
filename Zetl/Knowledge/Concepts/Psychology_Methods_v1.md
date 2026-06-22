@@ -42,8 +42,8 @@ I learned about psychological methods through research on research methodology a
 Psychological methods research is essential for conducting rigorous and valid studies.
 
 ## Resources
-- [[Resource_PsychologicalMethods]]
-- [[Resource_ResearchMethodology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_GroupDynamics_v1]]

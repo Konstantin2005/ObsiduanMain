@@ -40,9 +40,9 @@ Resource management discipline provides a framework for making informed decision
 - Set clear success metrics
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Sunk_Cost_Fallacy]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for improving resource allocation and reducing waste, particularly in business and organizational contexts.

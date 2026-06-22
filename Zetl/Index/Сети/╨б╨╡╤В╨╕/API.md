@@ -91,7 +91,7 @@ curl -s -o /dev/null -w '%{http_code} %{time_total}\n' https://api.example.com/v
 ## Связанные темы
 
 - [[HTTP]]
-- [[HTTPS и TLS]]
+- 
 - [[WebSocket]]
 - [[OSI]]
 

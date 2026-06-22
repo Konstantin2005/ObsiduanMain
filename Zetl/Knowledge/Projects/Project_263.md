@@ -41,8 +41,8 @@ A project to achieve specific goals.
 - [[Philosophy_Aesthetics_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_169]]

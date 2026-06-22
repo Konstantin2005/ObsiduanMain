@@ -56,6 +56,6 @@ tcpdump -ni <iface> arp
 
 ## Связанные темы
 
-- [[MAC адрес]]
+- 
 - [[IP]]
 - [[OSI]]

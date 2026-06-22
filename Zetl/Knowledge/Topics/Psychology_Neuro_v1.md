@@ -22,7 +22,7 @@ Study of neural mechanisms underlying psychological processes and behavior.
 - [[Curiosity_Discovery]]
 
 ## Related Projects
-- [[Project_NeuroResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 44

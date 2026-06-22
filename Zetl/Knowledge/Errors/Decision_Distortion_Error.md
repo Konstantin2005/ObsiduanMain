@@ -36,14 +36,14 @@ Decision distortion error occurs when cognitive biases and thinking errors syste
 - Monitor decision outcomes
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Availability_Heuristic]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Resource_Waste_Error]]
-- [[Knowledge/Errors/Learning_Block_Error]]
-- [[Knowledge/Errors/Relationship_Damage_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Implement structured decision-making

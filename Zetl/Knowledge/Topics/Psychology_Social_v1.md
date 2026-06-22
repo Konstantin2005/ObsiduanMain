@@ -22,7 +22,7 @@ Study of social behavior, group dynamics, and interpersonal relationships.
 - [[Justice_Equality]]
 
 ## Related Projects
-- [[Project_SocialResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 47
@@ -32,4 +32,4 @@ Study of social behavior, group dynamics, and interpersonal relationships.
 
 ## See Also
 - [[Philosophy_Politics_v1]]
-- [[Systems_Thinking_v1]]
+- 

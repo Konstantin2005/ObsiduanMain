@@ -9,13 +9,13 @@ tags: [rule, decision-making]
 A rule derived from principles.
 
 ## Based on Principles
-- [[Principle: Law of Falsification]]
-- [[Principle: Principle of Utilitarianism]]
+- 
+- 
 
 ## Applied in Decisions
-- [[Decision: Accept decision about Balance Principle of Risk and Rationalism]]
-- [[Decision: Accept decision about Integrate Principle of Offshoring with Kindness]]
+- 
+- 
 
 ## Related Rules
-- [[Rule: Use Principle of Containerization to achieve Trust]]
-- [[Rule: Balance Law of Self-Organization and Equality]]
+- 
+- 

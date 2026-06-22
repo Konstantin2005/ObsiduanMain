@@ -9,13 +9,13 @@ tags: [rule, decision-making]
 A rule derived from principles.
 
 ## Based on Principles
-- [[Principle: Principle of Horizontal Thinking]]
-- [[Principle: Principle of Compassion]]
+- 
+- 
 
 ## Applied in Decisions
-- [[Decision: Choose path of Integrate Principle of Push System with Collectivism]]
-- [[Decision: Accept decision about Always apply Principle of Insourcing in context of Egalitarianism]]
+- 
+- 
 
 ## Related Rules
-- [[Rule: Always apply Principle of De-escalation in context of Kindness]]
-- [[Rule: Prioritize Principle of Altruism over Trust]]
+- 
+- 

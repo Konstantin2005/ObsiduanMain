@@ -33,17 +33,17 @@ Confirmation bias is one of the most pervasive cognitive biases, affecting how p
 Involves the prefrontal cortex and reward pathways, as confirming beliefs often feels cognitively comfortable and emotionally satisfying.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Availability_Heuristic]]
-- [[Knowledge/Errors/Sunk_Cost_Fallacy]]
-- [[Knowledge/Errors/Status_Quo_Bias]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Affirmation_Bias]]
-- [[Knowledge/Biases/Dunning_Kruger_Effect]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Evidence_Review_Process]]
-- [[Knowledge/Corrections/Belief_Updating_Exercises]]
+- 
+- 
 
 ## Examples
 - Only reading news sources that align with political views

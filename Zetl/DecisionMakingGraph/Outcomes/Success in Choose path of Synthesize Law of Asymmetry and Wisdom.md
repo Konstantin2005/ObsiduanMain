@@ -10,13 +10,13 @@ tags: [outcome, decision-making]
 A result of a decision made.
 
 ## Caused by Decision
-- [[Decision: Choose path of Synthesize Principle of Self-Regulation and Love]]
-- [[Decision: Choose path of Balance Principle of Regret and Kindness]]
+- 
+- 
 
 ## Related Outcomes
-- [[Outcome: Partial success in Accept decision about Synthesize Principle of Retributive Justice and Courage]]
-- [[Outcome: Failure in Accept decision about Integrate Principle of Perspective with Procedural Justice]]
+- 
+- 
 
 ## Influences Principles
-- [[Principle: Principle of Consensus]]
-- [[Principle: Principle of Framing]]
+- 
+- 

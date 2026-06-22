@@ -10,13 +10,13 @@ tags: [outcome, decision-making]
 A result of a decision made.
 
 ## Caused by Decision
-- [[Decision: Accept decision about Combine Principle of Brotherhood for Hard Work]]
-- [[Decision: Choose path of Combine Principle of Hierarchy for Persistence]]
+- 
+- 
 
 ## Related Outcomes
-- [[Outcome: Partial success in Accept decision about Integrate Principle of Diversification with Persistence]]
-- [[Outcome: Failure in Choose path of Synthesize Principle of Regulation and Discipline]]
+- 
+- 
 
 ## Influences Principles
-- [[Principle: Law of De Morgan]]
-- [[Principle: Principle of Encapsulation]]
+- 
+- 

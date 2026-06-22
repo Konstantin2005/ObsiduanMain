@@ -5,7 +5,7 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 project: [[Project_OnlineCourse]]
-reflection: [[Reflection_LearningJourney]]
+reflection: 
 ---
 
 # Decision_EnrollCourse
@@ -30,4 +30,4 @@ Data science course
 Enhanced technical skills and knowledge
 
 ## Related Reflections
-- [[Reflection_LearningJourney]]
+- 

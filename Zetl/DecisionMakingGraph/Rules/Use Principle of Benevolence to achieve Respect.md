@@ -9,13 +9,13 @@ tags: [rule, decision-making]
 A rule derived from principles.
 
 ## Based on Principles
-- [[Principle: Principle of Dignity]]
-- [[Principle: Principle of Escalation of Commitment]]
+- 
+- 
 
 ## Applied in Decisions
-- [[Decision: Choose path of Synthesize Principle of Tolerance and Trust]]
-- [[Decision: Accept decision about Synthesize Principle of Regulation and Discipline]]
+- 
+- 
 
 ## Related Rules
-- [[Rule: Integrate Law of Neutral Element with Understanding]]
-- [[Rule: Synthesize Principle of Compromise and Friendship]]
+- 
+- 

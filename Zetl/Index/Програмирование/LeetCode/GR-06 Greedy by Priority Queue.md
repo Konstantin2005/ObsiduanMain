@@ -5,7 +5,7 @@
 
 ### Где используется
 
-- [[Task Scheduler]]
-- [[IPO Problem]]
-- [[Merge K Lists]] (greedy + heap)
-- [[Huffman coding]]
+- 
+- 
+-  (greedy + heap)
+- 

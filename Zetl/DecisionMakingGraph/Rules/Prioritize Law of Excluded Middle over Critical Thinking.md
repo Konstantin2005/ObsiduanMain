@@ -9,13 +9,13 @@ tags: [rule, decision-making]
 A rule derived from principles.
 
 ## Based on Principles
-- [[Principle: Principle of Adaptability]]
-- [[Principle: Principle of Courage]]
+- 
+- 
 
 ## Applied in Decisions
-- [[Decision: Choose path of Combine Principle of Fairness for Knowledge]]
-- [[Decision: Choose path of Combine Law of Self-Organization for Intimacy]]
+- 
+- 
 
 ## Related Rules
-- [[Rule: Apply Law of Disequilibrium when Courage is threatened]]
-- [[Rule: Prioritize Principle of Simplicity over Knowledge]]
+- 
+- 

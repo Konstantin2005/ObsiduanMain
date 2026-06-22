@@ -14,15 +14,15 @@ review_frequency: monthly
 Principles and practices of managing human capital and organizational behavior.
 
 ## Related Concepts
-- [[Business_Talent_v1]]
-- [[Business_Culture_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Association]]
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_HRDevelopment]]
+- 
 
 ## Statistics
 - Total Concepts: 41

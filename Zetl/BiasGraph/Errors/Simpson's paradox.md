@@ -12,7 +12,7 @@ tags:
 Тренд данных меняется при объединении подгрупп
 
 ## Порождает следствия
-- [[1/N heuristic]]
+- 
 - [[Equally weighted model]]
 - [[Tallying]]
 

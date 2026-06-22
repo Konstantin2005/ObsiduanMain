@@ -41,8 +41,8 @@ A project to achieve specific goals.
 - [[WebDevelopment_v2]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_87]]

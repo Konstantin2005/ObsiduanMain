@@ -23,7 +23,7 @@ tags:
 - [[Эффект свиньи]]
 
 ## Ослабляется
-- [[1/N heuristic]]
+- 
 - [[Equally weighted model]]
 
 ## Ловушки связанные

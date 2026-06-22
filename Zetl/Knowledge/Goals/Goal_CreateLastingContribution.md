@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Legacy_Contribution]]
-project: [[Project_KnowledgeSharing]]
-project2: [[Project_SystemBuilding]]
+project: 
+project2: 
 ---
 
 # Goal_CreateLastingContribution
@@ -28,5 +28,5 @@ Not Started
 - [[Legacy_Contribution]]
 
 ## Related Projects
-- [[Project_KnowledgeSharing]]
-- [[Project_SystemBuilding]]
+- 
+- 

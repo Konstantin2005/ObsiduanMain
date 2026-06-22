@@ -35,11 +35,11 @@ Wisdom guides decision-making and provides perspective. Reflection prevents repe
 - [[Honesty_Integrity]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Practice regular reflection on experiences, decisions, and personal growth.
@@ -50,4 +50,4 @@ Practice regular reflection on experiences, decisions, and personal growth.
 - Seeking feedback regularly
 
 ## See Also
-- [[Value_MOC]]
+- 

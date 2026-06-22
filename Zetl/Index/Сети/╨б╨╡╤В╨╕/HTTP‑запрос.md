@@ -110,7 +110,7 @@ traceroute example.com
 ## Связанные темы
 
 - [[HTTP]]
-- [[HTTPS и TLS]]
+- 
 - [[TCP]]
 - [[UDP]]
 - [[WebSocket]]

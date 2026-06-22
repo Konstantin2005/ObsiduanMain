@@ -41,8 +41,8 @@ A project to achieve specific goals.
 - [[History_Media_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Competence_Application]]
-project: [[Project_Skill]]
-project2: [[Project_Ability]]
+project: 
+project2: 
 ---
 
 # Goal_ApplySkills
@@ -28,5 +28,5 @@ Not Started
 - [[Competence_Application]]
 
 ## Related Projects
-- [[Project_Skill]]
-- [[Project_Ability]]
+- 
+- 

@@ -42,8 +42,8 @@ I learned about language acquisition through research on linguistics and cogniti
 Language acquisition research is crucial for improving language education and understanding human communication.
 
 ## Resources
-- [[Resource_LanguageAcquisition]]
-- [[Resource_Linguistics]]
+- 
+- 
 
 ## See Also
 - [[Programming_SoftwareEngineering_v1]]

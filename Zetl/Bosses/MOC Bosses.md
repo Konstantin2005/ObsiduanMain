@@ -12,6 +12,6 @@ Map of Content for Bosses cluster in zetl
 - [[Хронический стресс]]
 
 ## Connected MOCs
-- [[MOC Global]]
-- [[MOC Skills]]
-- [[MOC Quests]]
+- 
+- 
+- 

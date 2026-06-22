@@ -5,9 +5,9 @@
 
 ### Где используется
 
-- [[Activity Selection Problem]]
-- [[Maximum number of meetings]]
-- [[CPU scheduling (variants)]]
+- 
+- 
+- 
 
 ### Интуиция
 

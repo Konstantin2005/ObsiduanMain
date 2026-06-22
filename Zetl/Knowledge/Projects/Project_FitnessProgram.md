@@ -32,25 +32,25 @@ A comprehensive fitness program to improve physical health and energy levels.
 - [ ] Schedule regular health check-ups
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Values
 - [[Health_Wellness]]
 - [[Life_WorkLifeBalance]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_MindfulnessPractice]]
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones

@@ -32,25 +32,25 @@ Create and maintain balance between work and personal life.
 - [ ] Teach others balance techniques
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Values
 - [[Balance_Harmony]]
 - [[Life_WorkLifeBalance]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - None
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones

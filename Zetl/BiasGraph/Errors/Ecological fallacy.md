@@ -13,7 +13,7 @@ tags:
 
 ## Порождает следствия
 - [[Take the best heuristic]]
-- [[1/N heuristic]]
+- 
 - [[Equally weighted model]]
 
 ## Вызывается искажениями

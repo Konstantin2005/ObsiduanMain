@@ -8,7 +8,7 @@ tags: [book, intellectual, daniel_kahneman]
 # Noise
 
 ## Author
-- [[Thinker: Daniel Kahneman]]
+- 
 
 ## Key Ideas
-- [[Idea: Noise]]
+- 

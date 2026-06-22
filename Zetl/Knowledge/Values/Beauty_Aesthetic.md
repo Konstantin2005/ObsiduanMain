@@ -20,11 +20,11 @@ This value matters because beauty elevates the human experience and inspires gro
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
-- [[Freedom_Constraint]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Beauty_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because beauty elevates the human experience and inspires gro
 - [[Beauty_Perfection]]
 
 ## Related Concepts
-- [[Concept_Aesthetic_v1]]
-- [[Concept_Harmony_v1]]
-- [[Concept_Excellence_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Beauty_v1]]
+- 
 
 ## Application
 I apply this value by creating beautiful designs, surrounding myself with art, and seeking harmony in my environment.
@@ -51,4 +51,4 @@ I apply this value by creating beautiful designs, surrounding myself with art, a
 - Appreciating music and art
 
 ## See Also
-- [[Value_MOC_Beauty]]
+- 

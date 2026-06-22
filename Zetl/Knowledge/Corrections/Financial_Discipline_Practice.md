@@ -40,9 +40,9 @@ Financial discipline practice provides a framework for making informed financial
 - Review financial goals
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Loss_Aversion_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
-- [[Knowledge/Biases/Confirmation_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for improving financial decision-making and reducing financial stress, particularly for long-term financial planning.

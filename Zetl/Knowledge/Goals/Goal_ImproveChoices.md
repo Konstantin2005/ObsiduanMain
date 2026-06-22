@@ -6,7 +6,7 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Freedom_Choice]]
-project: [[Project_Decision]]
+project: 
 project2: [[Project_Option]]
 ---
 
@@ -28,5 +28,5 @@ Not Started
 - [[Freedom_Choice]]
 
 ## Related Projects
-- [[Project_Decision]]
+- 
 - [[Project_Option]]

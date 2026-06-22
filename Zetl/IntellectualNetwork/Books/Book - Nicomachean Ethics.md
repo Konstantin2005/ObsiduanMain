@@ -8,7 +8,7 @@ tags: [book, intellectual, aristotle]
 # Nicomachean Ethics
 
 ## Author
-- [[Thinker: Aristotle]]
+- 
 
 ## Key Ideas
-- [[Idea: Nicomachean Ethics]]
+- 

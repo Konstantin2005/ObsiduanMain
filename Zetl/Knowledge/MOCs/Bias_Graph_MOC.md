@@ -19,27 +19,27 @@ A comprehensive map of cognitive biases, thinking errors, and correction strateg
 Cognitive tendencies that systematically deviate from rational judgment.
 
 #### Bias Categories
-- [[Knowledge/Biases/Cognitive_Biases]]
-- [[Knowledge/Biases/Social_Biases]]
-- [[Knowledge/Biases/Emotional_Biases]]
-- [[Knowledge/Biases/Decision_Biases]]
+- 
+- 
+- 
+- 
 
 ### Errors (150-200 notes)
 Thinking errors that result from cognitive biases, leading to suboptimal outcomes.
 
 #### Error Categories
-- [[Knowledge/Errors/Reasoning_Errors]]
-- [[Knowledge/Errors/Perception_Errors]]
-- [[Knowledge/Errors/Memory_Errors]]
-- [[Knowledge/Errors/Social_Errors]]
+- 
+- 
+- 
+- 
 
 ### Corrections (50-100 notes)
 Strategies and techniques to mitigate or overcome cognitive biases.
 
 #### Correction Categories
-- [[Knowledge/Corrections/Debiasing_Techniques]]
-- [[Knowledge/Corrections/Thinking_Skills]]
-- [[Knowledge/Corrections/Metacognitive_Skills]]
+- 
+- 
+- 
 
 ## Link Types
 
@@ -72,14 +72,14 @@ Biases that create amplification cycles and feedback loops.
 ## Navigation
 
 ### Browse by Type
-- [[Knowledge/Biases]] - Browse all bias notes
-- [[Knowledge/Errors]] - Browse all error notes
-- [[Knowledge/Corrections]] - Browse all correction notes
+-  - Browse all bias notes
+-  - Browse all error notes
+-  - Browse all correction notes
 
 ### Key Cycles
-- [[Knowledge/MOCs/Bias_Cycles]] - Major bias amplification cycles
-- [[Knowledge/MOCs/Error_Cycles]] - Thinking error feedback loops
-- [[Knowledge/MOCs/Correction_Networks]] - Correction effectiveness networks
+-  - Major bias amplification cycles
+-  - Thinking error feedback loops
+-  - Correction effectiveness networks
 
 ## Usage Tips
 
@@ -96,6 +96,6 @@ Biases that create amplification cycles and feedback loops.
 4. Monitor amplification effects
 
 ## Related Networks
-- [[Knowledge/MOCs/Cognitive_Map]] - General cognitive architecture
-- [[Knowledge/MOCs/Decision_Tree]] - Decision-making processes
-- [[Knowledge/MOCs/Thinking_Processes]] - Complete thinking workflow
+-  - General cognitive architecture
+-  - Decision-making processes
+-  - Complete thinking workflow

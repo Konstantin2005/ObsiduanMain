@@ -9,16 +9,16 @@ tags: [counteridea, ecosystem, anti-Ableism]
 Ableism alternative, asserting disability rights
 
 ## Противоядие для
-- [[Ableism]]
+- 
 
 ## Связанные концепции
-- [[Rights]]
-- [[Accessibility]]
-- [[Equality]]
+- 
+- 
+- 
 
 ## Связанные мемы
-- [[Strength in truth]]
-- [[Equality impossible]]
+- 
+- 
 
 ## Аргументы
 - Предлагает альтернативный взгляд на проблему

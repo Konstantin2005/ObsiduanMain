@@ -8,7 +8,7 @@ tags: [book, intellectual, charlie_munger]
 # The Psychology of Human Misjudgment
 
 ## Author
-- [[Thinker: Charlie Munger]]
+- 
 
 ## Key Ideas
-- [[Idea: The Psychology of Human Misjudgment]]
+- 

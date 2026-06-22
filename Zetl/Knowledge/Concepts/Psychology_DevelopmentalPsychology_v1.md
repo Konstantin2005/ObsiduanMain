@@ -42,8 +42,8 @@ I learned about developmental psychology through research on lifespan developmen
 Developmental psychology research is crucial for creating better support systems throughout the human lifespan.
 
 ## Resources
-- [[Resource_DevelopmentalPsychology]]
-- [[Resource_LifespanDevelopment]]
+- 
+- 
 
 ## See Also
 - [[Psychology_ChildDevelopment_v1]]

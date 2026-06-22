@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Responsibility_Duty]]
-project: [[Project_Commitment]]
-project2: [[Project_Obligation]]
+project: 
+project2: 
 ---
 
 # Goal_CommitToDuty
@@ -28,5 +28,5 @@ Not Started
 - [[Responsibility_Duty]]
 
 ## Related Projects
-- [[Project_Commitment]]
-- [[Project_Obligation]]
+- 
+- 

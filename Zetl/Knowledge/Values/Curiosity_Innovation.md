@@ -20,11 +20,11 @@ This value matters because innovation drives progress and solves problems. Witho
 
 ## Conflicts
 ### Direct Conflicts
-- [[Responsibility_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Curiosity_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because innovation drives progress and solves problems. Witho
 - [[Curiosity_Questioning]]
 
 ## Related Concepts
-- [[Concept_Innovation_v1]]
-- [[Concept_Creativity_v1]]
-- [[Concept_Invention_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Curiosity_v1]]
+- 
 
 ## Application
 I apply this value by brainstorming solutions, prototyping ideas, and challenging conventional approaches.
@@ -51,4 +51,4 @@ I apply this value by brainstorming solutions, prototyping ideas, and challengin
 - Inventing new tools
 
 ## See Also
-- [[Value_MOC_Curiosity]]
+- 

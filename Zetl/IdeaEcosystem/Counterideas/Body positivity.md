@@ -9,16 +9,16 @@ tags: [counteridea, ecosystem, anti-Lookism]
 Lookism alternative, asserting body acceptance
 
 ## Противоядие для
-- [[Lookism]]
+- 
 
 ## Связанные концепции
-- [[Acceptance]]
-- [[Diversity]]
-- [[Self-worth]]
+- 
+- 
+- 
 
 ## Связанные мемы
-- [[Strength in truth]]
-- [[Equality impossible]]
+- 
+- 
 
 ## Аргументы
 - Предлагает альтернативный взгляд на проблему

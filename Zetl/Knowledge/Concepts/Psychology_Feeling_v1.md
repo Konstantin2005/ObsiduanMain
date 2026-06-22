@@ -41,8 +41,8 @@ I learned about psychological feeling through research on emotion psychology and
 Psychological feeling is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalFeeling]]
-- [[Resource_AffectiveScience]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

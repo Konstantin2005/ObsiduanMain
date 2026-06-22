@@ -41,8 +41,8 @@ A project to achieve specific goals.
 - [[Programming_Foundations_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_SetBoundaries]]

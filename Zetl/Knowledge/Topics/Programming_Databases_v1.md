@@ -14,15 +14,15 @@ review_frequency: monthly
 Systems for storing, organizing, and retrieving data efficiently.
 
 ## Related Concepts
-- [[Programming_DatabaseDesign_v1]]
-- [[Programming_SQL_v1]]
+- 
+- 
 
 ## Related Values
 - [[Competence_Standards]]
 - [[Curiosity_Exploration]]
 
 ## Related Projects
-- [[Project_DatabaseDevelopment]]
+- 
 
 ## Statistics
 - Total Concepts: 41

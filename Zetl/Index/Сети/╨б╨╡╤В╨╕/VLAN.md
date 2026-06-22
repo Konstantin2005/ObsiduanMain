@@ -63,7 +63,7 @@ tcpdump -e -ni <iface> vlan
 
 ## Связанные темы
 
-- [[MAC адрес]]
+- 
 - [[OSI]]
 - [[IP]]
 - [[NAT]]

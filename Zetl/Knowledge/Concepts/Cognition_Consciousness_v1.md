@@ -28,7 +28,7 @@ I learned about consciousness through studying cognitive psychology and neurosci
 ## Related Concepts
 - [[Psychology_Memory_v1]]
 - [[Psychology_Attention_v1]]
-- [[AI_MachineLearning_v1]]
+- 
 
 ## Related Values
 - [[Career_LearningContinuity]]
@@ -42,8 +42,8 @@ I learned about consciousness through studying cognitive psychology and neurosci
 Understanding consciousness is crucial for developing AI systems that can truly understand and interact with humans.
 
 ## Resources
-- [[Resource_CognitionResearch]]
-- [[Resource_ConsciousnessStudies]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Cognition_v1]]

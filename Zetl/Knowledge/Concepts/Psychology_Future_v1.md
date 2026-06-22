@@ -42,8 +42,8 @@ I learned about the future of psychology through research on emerging trends and
 The future of psychology is essential for understanding emerging trends and developments.
 
 ## Resources
-- [[Resource_PsychologicalFuture]]
-- [[Resource_EmergingTrends]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]
