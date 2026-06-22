@@ -36,14 +36,14 @@ Risk aversion error occurs when individuals avoid taking calculated risks that c
 - Assess risk tolerance alignment
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Loss_Aversion_Bias]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Opportunity_Cost_Error]]
-- [[Knowledge/Errors/Learning_Block_Error]]
-- [[Knowledge/Errors/Growth_Limitation_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Conduct risk-benefit analysis

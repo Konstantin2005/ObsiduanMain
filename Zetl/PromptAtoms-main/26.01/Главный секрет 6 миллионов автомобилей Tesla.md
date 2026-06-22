@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203143639.png]]
+!
 
 -----
 ##  главный секрет 6 миллионов автомобилей Tesla

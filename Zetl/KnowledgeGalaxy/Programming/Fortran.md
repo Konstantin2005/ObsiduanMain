@@ -6,7 +6,7 @@ tags: [knowledge, programming]
 # Fortran
 
 ## Related Concepts
-- [[A/B Testing]]
+- 
 - [[Heap Sort]]
 - [[Chain of Responsibility]]
 - [[Logging]]

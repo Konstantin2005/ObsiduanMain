@@ -42,8 +42,8 @@ I learned about psychological education through research on educational psycholo
 Psychological education is essential for developing psychological literacy and skills.
 
 ## Resources
-- [[Resource_PsychologicalEducation]]
-- [[Resource_EducationalPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_ChildDevelopment_v1]]

@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251231153532.png]]
+!
 
 -----
 ## Эволюция мощности

@@ -7,7 +7,7 @@ title: "Порядок"
 # 💎 Порядок
 
 **Тип:** Ценность
-**Кластер:** [[Порядок]]
+**Кластер:** 
 
 ---
 
@@ -17,28 +17,28 @@ title: "Порядок"
 
 ## Связи
 
-- balances → [[Свобода vs Порядок]] (Компромисс)
-- manifests_as → [[Тоталитаризм]] (Тень)
-- manifests_as → [[Бюрократизм]] (Поведение)
-- manifests_as → [[Конформизм]] (Поведение)
-- manifests_as → [[Контроль]] (Поведение)
-- balances → [[Порядок vs Свобода]] (Компромисс)
-- conflicts_with → [[Безопасность]] (Ценность)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Традиция]] (Ценность)
-- conflicts_with → [[Равенство]] (Ценность)
-- conflicts_with → [[Безопасность]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода vs Порядок]] (Компромисс) → conflicts_with
-- [[Тоталитаризм]] (Тень) → transforms_into
-- [[Порядок vs Свобода]] (Компромисс) → conflicts_with
-- [[Безопасность]] (Ценность) → conflicts_with
-- [[Безопасность]] (Ценность) → conflicts_with
-- [[Традиция]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Равенство]] (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

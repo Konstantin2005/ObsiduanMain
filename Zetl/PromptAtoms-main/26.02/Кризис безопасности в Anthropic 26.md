@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260214125550.png]]
+!
 
 -----
 ## увольнения ключевых экспертов после угроз со стороны ИИ Claude 

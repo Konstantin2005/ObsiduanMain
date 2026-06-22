@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Edge Analytics|Edge Analytics]]
-- [[TCP/IP Protocol|TCP/IP Protocol]]
+- 
 - [[Pre-Mortem Analysis|Pre-Mortem Analysis]]
 
 ## Связанные проекты

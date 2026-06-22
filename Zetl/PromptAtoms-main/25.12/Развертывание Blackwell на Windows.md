@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153425.png]]
+!
 
 -----
 ## триумф Gemini 3 Flash и реальная необходимость PCI 5 для RTX 50

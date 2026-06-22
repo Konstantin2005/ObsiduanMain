@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124142608.png]]
+!
 
 -----
 ## почему подписка Google эффективнее и дешевле Claude Sonnet

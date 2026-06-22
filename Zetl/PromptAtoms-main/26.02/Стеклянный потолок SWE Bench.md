@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260217221524 1.png]]
+!
 
 -----
 ## Почему застой на 80% угрожает ценовой политике Anthropic

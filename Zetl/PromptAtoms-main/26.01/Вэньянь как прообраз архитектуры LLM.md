@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203161900.png]]
+!
 
 -----
 ## связь порядка слов и механизма Attention 

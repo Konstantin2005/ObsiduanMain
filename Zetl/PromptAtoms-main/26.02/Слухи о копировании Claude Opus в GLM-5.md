@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260207221015.png]]
+!
 
 -----
 ## угроза рынку и судебные тупики

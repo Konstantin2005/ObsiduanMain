@@ -13,20 +13,20 @@ status: active
 ## Связанные темы
 
 - [[IoT]]
-- [[Engineering]]
+- 
 - [[Data Engineering]]
 
 ## Используемые концепции
 
-- [[Building Information Modeling]]
-- [[Sensor Integration]]
+- 
+- 
 - [[Predictive Analytics]]
 - [[Energy Management]]
-- [[Maintenance Planning]]
-- [[Integration]]
-- [[ROI Measurement]]
-- [[Training]]
-- [[Scalability]]
+- 
+- 
+- 
+- 
+- 
 - [[Innovation Management]]
 
 ## Этапы проекта

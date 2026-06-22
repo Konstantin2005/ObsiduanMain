@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230151807.png]]
+!
 
 -----
 ## в чем главная уязвимость стратегии Anthropic?

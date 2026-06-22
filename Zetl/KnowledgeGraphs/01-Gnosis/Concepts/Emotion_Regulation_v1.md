@@ -42,8 +42,8 @@ I discovered emotion regulation through studying emotional intelligence and beha
 Emotion regulation is essential for effective decision-making and maintaining healthy relationships.
 
 ## Resources
-- [[Resource_EmotionRegulation]]
-- [[Resource_EmotionalIntelligence]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Emotion_v1]]

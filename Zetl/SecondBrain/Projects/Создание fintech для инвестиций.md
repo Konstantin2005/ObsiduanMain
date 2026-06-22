@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Finance]]
-- [[Technology]]
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Robo-Advisory]]
-- [[Portfolio Management]]
+- 
+- 
 - [[Risk Assessment]]
-- [[User Experience]]
+- 
 - [[Mobile Development]]
-- [[Analytics]]
-- [[Integration]]
+- 
+- 
 - [[Compliance]]
-- [[Partnership]]
-- [[Growth Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

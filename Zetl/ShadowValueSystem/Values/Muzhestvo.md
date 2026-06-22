@@ -7,7 +7,7 @@ title: "Мужество"
 # 💎 Мужество
 
 **Тип:** Ценность
-**Кластер:** [[Мужество]]
+**Кластер:** 
 
 ---
 
@@ -17,36 +17,36 @@ title: "Мужество"
 
 ## Связи
 
-- conflicts_with → [[Безопасность]] (Ценность)
-- conflicts_with → [[Риск]] (Ценность)
-- conflicts_with → [[Вера]] (Ценность)
-- conflicts_with → [[Скептицизм]] (Ценность)
-- conflicts_with → [[Целостность]] (Ценность)
-- balances → [[Мир vs Мужество]] (Компромисс)
-- manifests_as → [[Героизм]] (Тень)
-- manifests_as → [[Героизм]] (Поведение)
-- manifests_as → [[Вооружённое сопротивление]] (Поведение)
-- manifests_as → [[Смелость]] (Поведение)
-- balances → [[Мужество vs Мир]] (Компромисс)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Справедливость]] (Ценность)
-- conflicts_with → [[Риск]] (Ценность)
-- conflicts_with → [[Целостность]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Безопасность]] (Ценность) → conflicts_with
-- [[Риск]] (Ценность) → conflicts_with
-- [[Риск]] (Ценность) → conflicts_with
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Вера]] (Ценность) → conflicts_with
-- [[Скептицизм]] (Ценность) → conflicts_with
-- [[Целостность]] (Ценность) → conflicts_with
-- [[Целостность]] (Ценность) → conflicts_with
-- [[Мир vs Мужество]] (Компромисс) → conflicts_with
-- [[Героизм]] (Тень) → transforms_into
-- [[Мужество vs Мир]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

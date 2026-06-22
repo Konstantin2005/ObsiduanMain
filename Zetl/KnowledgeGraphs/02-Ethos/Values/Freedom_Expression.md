@@ -20,11 +20,11 @@ This value matters because free expression fuels innovation, cultural developmen
 
 ## Conflicts
 ### Direct Conflicts
-- [[Responsibility_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Freedom_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because free expression fuels innovation, cultural developmen
 - [[Freedom_Thought]]
 
 ## Related Concepts
-- [[Concept_FreeSpeech_v1]]
-- [[Concept_CreativeExpression_v1]]
-- [[Concept_ArtisticFreedom_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Freedom_v1]]
+- 
 
 ## Application
 I apply this value by speaking up in meetings, sharing my ideas openly, and creating art without self-censorship.
@@ -51,4 +51,4 @@ I apply this value by speaking up in meetings, sharing my ideas openly, and crea
 - Writing blog posts about personal experiences
 
 ## See Also
-- [[Value_MOC_Freedom]]
+- 

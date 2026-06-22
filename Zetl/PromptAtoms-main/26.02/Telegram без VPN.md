@@ -21,8 +21,8 @@ https://play.google.com/store/apps/details?id=ru.dahl.messenger
 ---
 ## Zero-links
 ---
-- [[0 Российские IT-компании]]
-- [[0 Профессиональные группы и роли]]
+- 
+- 
 
 ---
 ## Links

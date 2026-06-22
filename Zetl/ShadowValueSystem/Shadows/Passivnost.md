@@ -7,7 +7,7 @@ title: "Пассивность"
 # 🌑 Пассивность
 
 **Тип:** Тень
-**Кластер:** [[Мир]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Пассивность"
 
 ## Связи
 
-- transforms_into → [[Мир]] (Ценность)
-- manifests_as → [[Умиротворение]] (Поведение)
-- manifests_as → [[Избегание]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Мир]] (Ценность) → manifests_as
-- [[Умиротворение]] (Поведение) → transforms_into
-- [[Избегание]] (Поведение) → transforms_into
-- [[Ненасилие]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

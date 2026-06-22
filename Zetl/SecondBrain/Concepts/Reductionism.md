@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Dual Coding|Dual Coding]]
 - [[Blue-Green Deployment|Blue-Green Deployment]]
-- [[10/10/10 Rule|10/10/10 Rule]]
+- 
 
 ## Связанные проекты
 

@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Funnel Analysis]]
+- 
 - [[Lead Scoring]]
-- [[Conversion Optimization]]
+- 
 - [[Pipeline Management]]
 - [[Sales Enablement]]
-- [[Email Sequencing]]
-- [[Retargeting]]
-- [[A/B Testing]]
-- [[Sales Metrics]]
-- [[Attribution Modeling]]
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

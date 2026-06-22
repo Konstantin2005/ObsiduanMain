@@ -20,11 +20,11 @@ This value matters because integrity sustains justice and trust. When we act wit
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
-- [[Freedom_Constraint]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Justice_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because integrity sustains justice and trust. When we act wit
 - [[Justice_Accountability]]
 
 ## Related Concepts
-- [[Concept_Integrity_v1]]
-- [[Concept_Honesty_v1]]
-- [[Concept_Fairness_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Justice_v1]]
+- 
 
 ## Application
 I apply this value by being honest in legal matters, making fair decisions, and acting consistently.
@@ -51,4 +51,4 @@ I apply this value by being honest in legal matters, making fair decisions, and 
 - Acting consistently
 
 ## See Also
-- [[Value_MOC_Justice]]
+- 

@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Technology]]
-- [[Entertainment]]
+- 
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Content Management]]
-- [[User Experience]]
+- 
+- 
 - [[Mobile Development]]
-- [[Analytics]]
-- [[Monetization Strategy]]
-- [[Community Features]]
-- [[AI Recommendations]]
-- [[Partnership]]
-- [[Marketing Strategy]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

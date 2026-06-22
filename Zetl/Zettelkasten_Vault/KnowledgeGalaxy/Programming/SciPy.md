@@ -12,7 +12,7 @@ tags: [knowledge, programming]
 - [[Binary Search]]
 - [[Procedural Programming]]
 - [[Node.js]]
-- [[A*]]
+- 
 - [[Iterator]]
 - [[Distance Learning]]
 - [[Building a Second Brain]]

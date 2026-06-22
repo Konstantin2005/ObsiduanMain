@@ -15,5 +15,5 @@ tags: [knowledge, gametheory]
 - [[In Politics]]
 - [[Disjunction]]
 - [[Multilayer Perceptron]]
-- [[SSL/TLS]]
+- 
 - [[Structure]]

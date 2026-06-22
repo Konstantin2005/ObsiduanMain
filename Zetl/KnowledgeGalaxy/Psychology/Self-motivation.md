@@ -16,7 +16,7 @@ tags: [knowledge, psychology]
 - [[Element]]
 - [[Monolithic Architecture]]
 - [[Unsupervised Learning]]
-- [[80/20 Rule]]
+- 
 - [[Part]]
 - [[Reality]]
 - [[LightGBM]]

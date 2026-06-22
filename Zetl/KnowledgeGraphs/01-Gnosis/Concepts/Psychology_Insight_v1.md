@@ -41,8 +41,8 @@ I learned about psychological insight through research on cognitive psychology a
 Psychological insight is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalInsight]]
-- [[Resource_CognitiveAnalysis]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

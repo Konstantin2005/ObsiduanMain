@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
- ![[Pasted image 20260218223449.png]]
+ !
 
 -----
 ## как распознать soft ban и восстановить доступ к аккаунту

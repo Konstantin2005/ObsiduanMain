@@ -22,7 +22,7 @@ Fundamental study of human mind and behavior, exploring cognitive processes, emo
 - [[Career_LearningContinuity]]
 
 ## Related Projects
-- [[Project_PsychologyResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 50

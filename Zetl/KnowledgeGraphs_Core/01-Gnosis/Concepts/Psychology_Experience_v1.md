@@ -41,8 +41,8 @@ I learned about psychological experience through research on phenomenological ps
 Psychological experience is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalExperience]]
-- [[Resource_PhenomenologicalPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

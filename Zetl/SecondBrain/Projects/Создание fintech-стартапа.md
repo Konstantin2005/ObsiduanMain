@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Payment Systems]]
-- [[Identity Verification]]
-- [[Fraud Detection]]
-- [[API Integration]]
-- [[Customer Onboarding]]
+- 
+- 
+- 
+- 
+- 
 - [[Financial Modeling]]
-- [[Security Architecture]]
+- 
 - [[Mobile Development]]
-- [[Partnership Strategy]]
-- [[Market Analysis]]
+- 
+- 
 
 ## Этапы проекта
 

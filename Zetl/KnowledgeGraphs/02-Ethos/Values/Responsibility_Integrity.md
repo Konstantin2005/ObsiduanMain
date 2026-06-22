@@ -20,11 +20,11 @@ This value matters because integrity builds trust and character. When we act wit
 
 ## Conflicts
 ### Direct Conflicts
-- [[Freedom_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Responsibility_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because integrity builds trust and character. When we act wit
 - [[Responsibility_Accountability]]
 
 ## Related Concepts
-- [[Concept_Integrity_v1]]
-- [[Concept_Wholeness_v1]]
-- [[Concept_Alignment_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Responsibility_v1]]
+- 
 
 ## Application
 I apply this value by keeping promises, standing by my principles, and being consistent in my behavior.
@@ -51,4 +51,4 @@ I apply this value by keeping promises, standing by my principles, and being con
 - Being consistent in actions and words
 
 ## See Also
-- [[Value_MOC_Responsibility]]
+- 

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260205230434.png]]
+!
 
 -----
 ## Крах доминирования Sonnet

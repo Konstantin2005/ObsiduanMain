@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of valid reasoning, arguments, and the principles of correct thinking.
 
 ## Related Concepts
-- [[Philosophy_Argumentation_v1]]
-- [[Philosophy_Reasoning_v1]]
+- 
+- 
 
 ## Related Values
 - [[Honesty_Integrity]]
 - [[Curiosity_Questioning]]
 
 ## Related Projects
-- [[Project_LogicResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 40
@@ -32,4 +32,4 @@ Study of valid reasoning, arguments, and the principles of correct thinking.
 
 ## See Also
 - [[Psychology_Cognition_v1]]
-- [[Systems_Thinking_v1]]
+- 

@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[AML/KYC|AML/KYC]]
+- 
 - [[Hydrogen Fuel|Hydrogen Fuel]]
 - [[Strategic Alliance|Strategic Alliance]]
 

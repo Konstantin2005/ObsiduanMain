@@ -7,7 +7,7 @@ title: "Свобода"
 # 💎 Свобода
 
 **Тип:** Ценность
-**Кластер:** [[Свобода]]
+**Кластер:** 
 
 ---
 
@@ -17,192 +17,192 @@ title: "Свобода"
 
 ## Связи
 
-- manifests_as → [[Хаос]] (Тень)
-- manifests_as → [[Анархизм]] (Поведение)
-- manifests_as → [[Нонконформизм]] (Поведение)
-- manifests_as → [[Самоопределение]] (Поведение)
-- balances → [[Свобода vs Порядок]] (Компромисс)
-- conflicts_with → [[Безопасность]] (Ценность)
-- conflicts_with → [[Справедливость]] (Ценность)
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- balances → [[Порядок vs Свобода]] (Компромисс)
-- conflicts_with → [[Безопасность]] (Ценность)
-- conflicts_with → [[Риск]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Автономия]] (Ценность)
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Скептицизм]] (Ценность)
-- balances → [[Цель vs Свобода]] (Компромисс)
-- conflicts_with → [[Достоинство]] (Ценность)
-- conflicts_with → [[Власть]] (Ценность)
-- conflicts_with → [[Равенство]] (Ценность)
-- balances → [[Сообщество vs Свобода]] (Компромисс)
-- conflicts_with → [[Мужество]] (Ценность)
-- conflicts_with → [[Юмор]] (Ценность)
-- balances → [[Ответственность vs Свобода]] (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 
 ## На что ссылаются
 
-- [[Хаос]] (Тень) → transforms_into
-- [[Анархизм]] (Поведение) → conflicts_with
-- [[Нонконформизм]] (Поведение) → conflicts_with
-- [[Самоопределение]] (Поведение) → manifests_as
-- [[Свобода vs Порядок]] (Компромисс) → conflicts_with
-- [[Бюрократизм]] (Поведение) → balances
-- [[Конформизм]] (Поведение) → balances
-- [[Контроль]] (Поведение) → conflicts_with
-- [[Порядок vs Свобода]] (Компромисс) → conflicts_with
-- [[Безопасность]] (Ценность) → conflicts_with
-- [[Безопасность]] (Ценность) → conflicts_with
-- [[Избегание]] (Поведение) → transforms_into
-- [[Гиперконтроль]] (Поведение) → conflicts_with
-- [[Зависимость]] (Поведение) → conflicts_with
-- [[Риск]] (Ценность) → conflicts_with
-- [[Авантюризм]] (Поведение) → balances
-- [[Азартность]] (Поведение) → balances
-- [[Смелость]] (Поведение) → conflicts_with
-- [[Фанатизм]] (Поведение) → transforms_into
-- [[Морализаторство]] (Поведение) → balances
-- [[Научный ригоризм]] (Поведение) → transforms_into
-- [[Безразличие]] (Поведение) → conflicts_with
-- [[Мультикультурализм]] (Поведение) → balances
-- [[Пассивность]] (Поведение) → transforms_into
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Карательная справедливость]] (Поведение) → manifests_as
-- [[Вендетта]] (Поведение) → balances
-- [[Судилище]] (Поведение) → balances
-- [[Попустительство]] (Поведение) → conflicts_with
-- [[Созависимость]] (Поведение) → conflicts_with
-- [[Отпущение]] (Поведение) → transforms_into
-- [[Интеллектуальная гордыня]] (Поведение) → manifests_as
-- [[Гейткепинг]] (Поведение) → manifests_as
-- [[Наставничество]] (Поведение) → manifests_as
-- [[Консерватизм]] (Поведение) → transforms_into
-- [[Авторитарность]] (Поведение) → conflicts_with
-- [[Созерцание]] (Поведение) → transforms_into
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Контроль]] (Поведение) → manifests_as
-- [[Созависимость]] (Поведение) → manifests_as
-- [[Жертвенность]] (Поведение) → balances
-- [[Автономия]] (Ценность) → conflicts_with
-- [[Эмоциональная стена]] (Поведение) → conflicts_with
-- [[Самодостаточность]] (Поведение) → balances
-- [[Отстранённость]] (Поведение) → manifests_as
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Нигилизм]] (Поведение) → balances
-- [[Импульсивность]] (Поведение) → conflicts_with
-- [[Эксперимент]] (Поведение) → transforms_into
-- [[Ностальгия]] (Поведение) → transforms_into
-- [[Обрядоверие]] (Поведение) → manifests_as
-- [[Консерватизм]] (Поведение) → balances
+-  (Тень) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Компромисс) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Ценность) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Ценность) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Ценность) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
 - [[Перфекционизм]] (Поведение) → manifests_as
-- [[Соревновательность]] (Поведение) → balances
-- [[Посвящение]] (Поведение) → manifests_as
-- [[Модернизм]] (Поведение) → balances
-- [[Компромисс]] (Поведение) → balances
-- [[Умеренность]] (Поведение) → balances
-- [[Грубость]] (Поведение) → transforms_into
-- [[Нарциссизм]] (Поведение) → manifests_as
-- [[Директ]] (Поведение) → balances
-- [[Манипуляция]] (Поведение) → conflicts_with
-- [[Угодничество]] (Поведение) → balances
-- [[Тактичность]] (Поведение) → conflicts_with
-- [[Сектантство]] (Поведение) → transforms_into
-- [[Прозелитизм]] (Поведение) → manifests_as
-- [[Духовность]] (Поведение) → conflicts_with
-- [[Скептицизм]] (Ценность) → conflicts_with
-- [[Нигилизм]] (Поведение) → manifests_as
-- [[Паранойя]] (Поведение) → balances
-- [[Критика]] (Поведение) → transforms_into
-- [[Поглощение]] (Поведение) → transforms_into
-- [[Спасательство]] (Поведение) → balances
-- [[Сочувствие]] (Поведение) → manifests_as
-- [[Изоляция]] (Поведение) → balances
-- [[Холодность]] (Поведение) → manifests_as
-- [[Самозащита]] (Поведение) → transforms_into
-- [[Племенной менталитет]] (Поведение) → manifests_as
-- [[Апология]] (Поведение) → balances
-- [[Преданность]] (Поведение) → balances
-- [[Непреклонность]] (Поведение) → conflicts_with
-- [[Жертвенность]] (Поведение) → conflicts_with
-- [[Последовательность]] (Поведение) → conflicts_with
-- [[Мессианство]] (Поведение) → balances
-- [[Одержимость]] (Поведение) → transforms_into
-- [[Призвание]] (Поведение) → conflicts_with
-- [[Цель vs Свобода]] (Компромисс) → conflicts_with
-- [[Достоинство]] (Ценность) → conflicts_with
-- [[Тщеславие]] (Поведение) → transforms_into
-- [[Агрессия]] (Поведение) → transforms_into
-- [[Самоуважение]] (Поведение) → manifests_as
-- [[Мазохизм]] (Поведение) → conflicts_with
-- [[Подчинение]] (Поведение) → manifests_as
-- [[Скромность]] (Поведение) → manifests_as
-- [[Вандализм]] (Поведение) → manifests_as
-- [[Вторжение]] (Поведение) → transforms_into
-- [[Исследование]] (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
 - [[Перфекционизм]] (Поведение) → conflicts_with
-- [[Контроль]] (Поведение) → manifests_as
-- [[Последовательность]] (Поведение) → balances
-- [[Тщеславие]] (Поведение) → manifests_as
-- [[Эстетизм]] (Поведение) → balances
-- [[Творчество]] (Поведение) → balances
-- [[Власть]] (Ценность) → conflicts_with
-- [[Доминирование]] (Поведение) → balances
-- [[Манипуляция]] (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Ценность) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
 - [[Лидерство]] (Поведение) → manifests_as
-- [[Равенство]] (Ценность) → conflicts_with
-- [[Унификация]] (Поведение) → conflicts_with
-- [[Ревность]] (Поведение) → conflicts_with
-- [[Справедливость]] (Поведение) → manifests_as
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Конформизм]] (Поведение) → balances
-- [[Групповой менталитет]] (Поведение) → conflicts_with
-- [[Солидарность]] (Поведение) → balances
-- [[Сообщество vs Свобода]] (Компромисс) → conflicts_with
-- [[Накопительство]] (Поведение) → conflicts_with
-- [[Эксплуатация]] (Поведение) → transforms_into
-- [[Щедрость]] (Поведение) → conflicts_with
-- [[Мученичество]] (Поведение) → balances
-- [[Бескорыстие]] (Поведение) → transforms_into
-- [[Поддержка]] (Поведение) → balances
-- [[Деструкция]] (Поведение) → transforms_into
-- [[Дисruption]] (Поведение) → balances
-- [[Эволюция]] (Поведение) → balances
-- [[Умиротворение]] (Поведение) → transforms_into
-- [[Избегание]] (Поведение) → manifests_as
-- [[Ненасилие]] (Поведение) → transforms_into
-- [[Мужество]] (Ценность) → conflicts_with
-- [[Героизм]] (Поведение) → conflicts_with
-- [[Вооружённое сопротивление]] (Поведение) → balances
-- [[Смелость]] (Поведение) → balances
-- [[Забвение]] (Поведение) → manifests_as
-- [[Оправдание]] (Поведение) → conflicts_with
-- [[Освобождение]] (Поведение) → balances
-- [[Ностальгия]] (Поведение) → conflicts_with
-- [[Травма]] (Поведение) → conflicts_with
-- [[Мемориал]] (Поведение) → conflicts_with
-- [[Зависимость]] (Поведение) → conflicts_with
-- [[Страх потери]] (Поведение) → conflicts_with
-- [[Привязанность]] (Поведение) → manifests_as
-- [[Безразличие]] (Поведение) → balances
-- [[Апатия]] (Поведение) → manifests_as
-- [[Присутствие]] (Поведение) → transforms_into
-- [[Юмор]] (Ценность) → conflicts_with
-- [[Сарказм]] (Поведение) → balances
-- [[Чёрный юмор]] (Поведение) → transforms_into
-- [[Игривость]] (Поведение) → balances
-- [[Мрачность]] (Поведение) → transforms_into
-- [[Ответственность]] (Поведение) → balances
-- [[Глубина]] (Поведение) → conflicts_with
-- [[Эгоцентризм]] (Поведение) → transforms_into
-- [[Нарциссизм]] (Поведение) → manifests_as
-- [[Самопознание]] (Поведение) → transforms_into
-- [[Вина]] (Поведение) → transforms_into
-- [[Контроль]] (Поведение) → conflicts_with
-- [[Обязательства]] (Поведение) → conflicts_with
-- [[Ответственность vs Свобода]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Ценность) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Компромисс) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → transforms_into
+-  (Ценность) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → transforms_into
+-  (Ценность) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Компромисс) → conflicts_with
 
 ---
 

@@ -10,7 +10,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203155031.png]]
+!
 
 -----
 ## Гонка Anthropic и Open Code в самом разгаре 

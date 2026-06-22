@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of communication technologies and media evolution throughout history.
 
 ## Related Concepts
-- [[History_PrintMedia_v1]]
-- [[History_DigitalMedia_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Expression]]
 - [[Curiosity_Questioning]]
 
 ## Related Projects
-- [[Project_MediaHistory]]
+- 
 
 ## Statistics
 - Total Concepts: 33

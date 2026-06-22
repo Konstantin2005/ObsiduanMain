@@ -17,14 +17,14 @@ title: "Жизнь как игра"
 
 ## 📂 Структура
 
-- [[#Quests]]
-- [[#Skills]]
-- [[#Levels]]
-- [[#Achievements]]
-- [[#Challenges]]
-- [[#Bosses]]
-- [[#Obstacles]]
-- [[#Rewards]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ---
 
@@ -143,10 +143,10 @@ title: "Жизнь как игра"
 
 ## 🌉 Мосты
 
-- → [[Игра в тенях]] → 10-Umbra
-- → [[Навык и знание]] → 01-Gnosis
-- → [[Игровые противоречия]] → 05-Antinomy
-- ← [[Парадокс выбора]] ← 05-Antinomy
+- →  → 10-Umbra
+- →  → 01-Gnosis
+- →  → 05-Antinomy
+- ←  ← 05-Antinomy
 
 ---
 

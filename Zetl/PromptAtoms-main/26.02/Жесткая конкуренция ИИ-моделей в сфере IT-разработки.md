@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260205230457.png]]
+!
 
 -----
 ## Анализ рейтинга ECI 

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153832.png]]
+!
 
 -----
 ## Лучшие практики генерации кода и тестирования Web UI

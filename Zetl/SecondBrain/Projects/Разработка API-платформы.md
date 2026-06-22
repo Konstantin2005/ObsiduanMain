@@ -27,7 +27,7 @@ status: active
 - [[Authentication Methods]]
 - [[Microservices]]
 - [[API Security]]
-- [[API Analytics]]
+- 
 
 ## Этапы проекта
 

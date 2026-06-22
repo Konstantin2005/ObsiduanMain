@@ -20,11 +20,11 @@ This value matters because truth is the foundation of trust and effective decisi
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
-- [[Freedom_Constraint]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Honesty_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because truth is the foundation of trust and effective decisi
 - [[Honesty_Accountability]]
 
 ## Related Concepts
-- [[Concept_Truthfulness_v1]]
-- [[Concept_FactualAccuracy_v1]]
-- [[Concept_RealityAlignment_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Honesty_v1]]
+- 
 
 ## Application
 I apply this value by admitting mistakes, presenting data accurately, and avoiding self-deception.
@@ -51,4 +51,4 @@ I apply this value by admitting mistakes, presenting data accurately, and avoidi
 - Correcting misinformation when I spread it
 
 ## See Also
-- [[Value_MOC_Honesty]]
+- 

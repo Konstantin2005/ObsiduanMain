@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260211153552.png]]
+!
 
 -----
 ##  Глобальный успех Claude и преимущество Perplexity в России

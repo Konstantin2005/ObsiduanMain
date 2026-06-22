@@ -42,8 +42,8 @@ I learned about intelligence through research on cognitive psychology and educat
 Intelligence research is essential for improving educational and organizational outcomes.
 
 ## Resources
-- [[Resource_IntelligenceResearch]]
-- [[Resource_CognitivePsychology]]
+- 
+- 
 
 ## See Also
 - [[Cognition_Consciousness_v1]]

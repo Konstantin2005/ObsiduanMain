@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Entrepreneurship]]
-- [[E-Commerce]]
-- [[Technology]]
+- 
+- 
 
 ## Используемые концепции
 
-- [[Virtual Try-On]]
-- [[Sustainability]]
+- 
+- 
 - [[Supply Chain]]
-- [[User Experience]]
+- 
 - [[Mobile Development]]
-- [[Personalization]]
-- [[Community Features]]
-- [[Marketing Strategy]]
-- [[Analytics]]
-- [[Scalability]]
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

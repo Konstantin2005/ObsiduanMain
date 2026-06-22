@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124135104.png]]
+!
 
 -----
 ## Google готовит мощный удар по позициям Claude в сфере ИИ-агентов и разработки

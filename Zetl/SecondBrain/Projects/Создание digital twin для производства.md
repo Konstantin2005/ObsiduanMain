@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Sensor Networks]]
-- [[Real-Time Monitoring]]
+- 
 - [[Predictive Analytics]]
-- [[Simulation]]
-- [[Process Optimization]]
+- 
+- 
 - [[Quality Control]]
 - [[Energy Management]]
-- [[Maintenance Planning]]
-- [[Integration]]
-- [[ROI Measurement]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

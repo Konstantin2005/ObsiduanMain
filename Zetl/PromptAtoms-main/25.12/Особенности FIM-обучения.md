@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155326.png]]
+!
 
 -----
 ## почему LLM предпочитают переписывать код заново и игнорируют RAG

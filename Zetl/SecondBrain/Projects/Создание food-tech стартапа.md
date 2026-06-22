@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Entrepreneurship]]
-- [[Technology]]
+- 
 - [[Health & Fitness]]
 
 ## Используемые концепции
 
 - [[Marketplace Model]]
 - [[Supply Chain]]
-- [[Nutrition Data]]
-- [[User Experience]]
+- 
+- 
 - [[Mobile Development]]
-- [[Logistics]]
-- [[Partnership Strategy]]
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Sustainability]]
-- [[Growth Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

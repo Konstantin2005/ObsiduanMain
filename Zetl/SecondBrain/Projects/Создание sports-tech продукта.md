@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Performance Tracking]]
-- [[Wearable Integration]]
-- [[Training Optimization]]
-- [[Analytics Dashboard]]
-- [[Community Features]]
-- [[Personalization]]
-- [[Gamification]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Mobile Development]]
-- [[Partnership]]
-- [[Monetization Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

@@ -7,7 +7,7 @@ last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Authenticity_Truth]]
 project: [[Project_TransparentCommunication]]
-project2: [[Project_ValuesAlignment]]
+project2: 
 ---
 
 # Goal_LiveAuthenticLife
@@ -29,4 +29,4 @@ Not Started
 
 ## Related Projects
 - [[Project_TransparentCommunication]]
-- [[Project_ValuesAlignment]]
+- 

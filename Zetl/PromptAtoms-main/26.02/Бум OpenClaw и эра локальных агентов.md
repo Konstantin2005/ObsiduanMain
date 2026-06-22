@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260222121437.png]]
+!
 
 -----
 ## Ключевой технологический тренд 2026 года 

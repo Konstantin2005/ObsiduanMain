@@ -42,8 +42,8 @@ I learned about coping strategies through research on stress psychology and heal
 Coping strategies research is essential for improving mental health and workplace wellness.
 
 ## Resources
-- [[Resource_CopingStrategies]]
-- [[Resource_StressManagement]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153635.png]]
+!
 
 -----
 ## ставка на Reinforcement Learning обеспечила лидерство Gemini 3 Flash в тестах SWE Bench 

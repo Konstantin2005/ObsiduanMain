@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230154825.png]]
+!
 
 -----
 ## Как найти и проанализировать историю чатов в Kilo Code

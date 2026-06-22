@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251130164428.png]]
+!
 
 -----
 ## сравнительный анализ ИИ-агентов

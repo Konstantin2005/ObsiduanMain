@@ -23,7 +23,7 @@ created: 2026-06-22
 - [[Responsive Design]]
 - [[Gesture Navigation]]
 - [[Accessibility]]
-- [[Mobile CI/CD]]
+- 
 - [[Progressive Web Apps]]
 
 ## Проекты (4)

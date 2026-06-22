@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[A/B Testing|A/B Testing]]
+- 
 - [[Private Label|Private Label]]
 - [[Customer Journey|Customer Journey]]
 

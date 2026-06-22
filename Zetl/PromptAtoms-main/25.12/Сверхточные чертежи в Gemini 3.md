@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230150109.png]]
+!
 
 -----
 ## Google раскрыл промпт, угрожающий позициям Autodesk

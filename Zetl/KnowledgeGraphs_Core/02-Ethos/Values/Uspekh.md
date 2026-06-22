@@ -7,7 +7,7 @@ title: "Успех"
 # 💎 Успех
 
 **Тип:** Ценность
-**Кластер:** [[Успех]]
+**Кластер:** 
 
 ---
 
@@ -17,34 +17,34 @@ title: "Успех"
 
 ## Связи
 
-- manifests_as → [[Выгорание]] (Тень)
+- manifests_as →  (Тень)
 - manifests_as → [[Перфекционизм]] (Поведение)
-- manifests_as → [[Соревновательность]] (Поведение)
-- manifests_as → [[Посвящение]] (Поведение)
-- balances → [[Успех vs Баланс]] (Компромисс)
-- conflicts_with → [[Власть]] (Ценность)
-- conflicts_with → [[Богатство]] (Ценность)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Цель]] (Ценность)
-- balances → [[Баланс vs Успех]] (Компромисс)
-- conflicts_with → [[Цель]] (Ценность)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Власть]] (Ценность)
-- conflicts_with → [[Богатство]] (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Выгорание]] (Тень) → transforms_into
-- [[Успех vs Баланс]] (Компромисс) → conflicts_with
-- [[Баланс vs Успех]] (Компромисс) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Власть]] (Ценность) → conflicts_with
-- [[Власть]] (Ценность) → conflicts_with
-- [[Богатство]] (Ценность) → conflicts_with
-- [[Богатство]] (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

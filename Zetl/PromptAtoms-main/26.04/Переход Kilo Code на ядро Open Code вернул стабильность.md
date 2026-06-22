@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260402160150.png]]
+!
 
 -----
 ## Переход Kilo Code на ядро Open Code вернул стабильность 
@@ -22,10 +22,10 @@ https://blog.kilo.ai/p/we-completely-rebuilt-the-kilo-vs-code-extension
 ---
 ## Zero-links
 ---
-- [[0 Инструменты для разработки]]
-- [[0 Фундаментальные технологии и принципы]]
-- [[0 Техники интеграции моделей]]
-- [[0 Концепции рассуждений и взаимодействия между ИИ]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

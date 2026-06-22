@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203171427.png]]
+!
 
 -----
 ## Почему предвзятая критика в Claude 4.5 и ChatGPT опасна для архитекторов кода

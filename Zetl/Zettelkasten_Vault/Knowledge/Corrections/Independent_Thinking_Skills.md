@@ -40,9 +40,9 @@ Independent thinking skills provide a framework for developing the ability to th
 - Encourage constructive dissent
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Bandwagon_Effect]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for overcoming social validation and improving independent thinking, particularly in group settings and professional environments.

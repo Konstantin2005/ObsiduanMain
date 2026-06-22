@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Logistics]]
-- [[Technology]]
+- 
+- 
 - [[Operations]]
 
 ## Используемые концепции
 
-- [[Route Optimization]]
-- [[Fleet Management]]
-- [[Customer Experience]]
-- [[Real-Time Tracking]]
-- [[Automated Dispatch]]
-- [[Analytics]]
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Cost Optimization]]
-- [[Partnership]]
-- [[Scalability]]
-- [[Quality Assurance]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

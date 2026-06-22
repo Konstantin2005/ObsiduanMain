@@ -17,9 +17,9 @@ title: "Мемориал"
 
 ## Связи
 
-- transforms_into → [[Ностальгия]] (Тень)
-- conflicts_with → [[Свобода]] (Ценность)
-- balances → [[Хаос]] (Тень)
+- transforms_into →  (Тень)
+- conflicts_with →  (Ценность)
+- balances →  (Тень)
 
 ## На что ссылаются
 

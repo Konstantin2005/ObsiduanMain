@@ -9,10 +9,10 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203154418.png]]
+!
 
 _____
-![[Pasted image 20260203154426.png]]
+!
 
 -----
 ## Алгоритмическая слепота Claude

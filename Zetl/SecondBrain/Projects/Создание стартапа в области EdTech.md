@@ -14,17 +14,17 @@ status: active
 
 - [[Entrepreneurship]]
 - [[Teaching Methods]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
 - [[Lean Startup]]
-- [[Course Design]]
-- [[Gamification]]
-- [[Mobile Learning]]
-- [[Content Management]]
+- 
+- 
+- 
+- 
 - [[User Research]]
-- [[Community Building]]
+- 
 - [[Freemium Model]]
 - [[Viral Coefficient]]
 - [[Customer Development]]

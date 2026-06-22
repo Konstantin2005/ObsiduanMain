@@ -41,8 +41,8 @@ A project to create meaningful impact.
 - [[WebDevelopment_v2]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

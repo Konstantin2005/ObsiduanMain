@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260521121730.png]]
+!
 
 -----
 ## Миллиардные ИИ-сделки Маска
@@ -21,10 +21,10 @@ https://www.businessinsider.com/spacex-ipo-anthropic-paying-ai-compute-2026-5
 ---
 ## Zero-links
 ---
-- [[0 Компании и организации]]
-- [[0 Фундаментальные технологии и принципы]]
-- [[0 Инструменты для разработки]]
-- [[0 ИИ-модели и системы]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Integration Testing|Integration Testing]]
-- [[CI/CD Pipelines|CI/CD Pipelines]]
+- 
 - [[Memory Palace Journey|Memory Palace Journey]]
 
 ## Связанные проекты

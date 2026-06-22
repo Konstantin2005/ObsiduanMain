@@ -32,25 +32,25 @@ Practice various art forms to express creativity and develop aesthetic sense.
 - [ ] Sell artwork
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Values
 - [[Creativity_Expression]]
 - [[Beauty_Expression]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_BlogDevelopment]]
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones

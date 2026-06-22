@@ -10,7 +10,7 @@ tags: [knowledge, programming]
 - [[Prolog]]
 - [[Svelte]]
 - [[Asymmetric Encryption]]
-- [[SSL/TLS]]
+- 
 - [[Bug Bounty]]
 - [[Zettelkasten System]]
 - [[Thalamus]]

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260212124021.png]]
+!
 
 -----
 ## мощная специализированная модель для кода с поддержкой в Google Vertex

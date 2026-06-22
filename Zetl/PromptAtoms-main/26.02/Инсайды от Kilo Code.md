@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260224112951.png]]
+!
 
 -----
 ## DeepSeek V4 выйдет в феврале и предложит качество Opus в 40 раз дешевле

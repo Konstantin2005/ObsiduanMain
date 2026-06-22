@@ -27,9 +27,9 @@ https://www.reuters.com/business/anthropic-commits-spending-200-billion-googles-
 ---
 ## Zero-links
 ---
-- [[0 Компании и организации]]
-- [[0 Технологические гиганты]]
-- [[0 ИИ-модели и системы]]
+- 
+- 
+- 
 
 ---
 ## Links

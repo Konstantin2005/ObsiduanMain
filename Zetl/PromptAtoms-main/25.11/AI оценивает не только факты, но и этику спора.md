@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251109131746.png]]
+!
 
 -----
 ## Чему нейросеть может научит человека

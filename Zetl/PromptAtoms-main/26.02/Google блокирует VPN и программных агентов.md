@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203212736.png]]
+!
 
 -----
 ## Сбои в работе Gemini API

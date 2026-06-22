@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124143034.png]]
+!
 
 -----
 ## Как интеграция с DiT подарила Gemini 3 мощное «визуальное мышление»

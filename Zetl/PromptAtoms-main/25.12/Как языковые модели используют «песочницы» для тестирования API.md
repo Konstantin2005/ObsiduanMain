@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155515.png]]
+!
 
 -----
 ## Секрет обучения ИИ-программистов

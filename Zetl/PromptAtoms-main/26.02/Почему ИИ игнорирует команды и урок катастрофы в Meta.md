@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260224212206.png]]
+!
 
 -----
 ## Астрал автономности

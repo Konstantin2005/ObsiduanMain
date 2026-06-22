@@ -10,7 +10,7 @@ tags: [knowledge, programming]
 - [[Floyd-Warshall]]
 - [[Factory]]
 - [[Cybersecurity]]
-- [[A/B Testing]]
+- 
 - [[System]]
 - [[Roadmap]]
 - [[Correspondence Theory]]

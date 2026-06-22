@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Competence_Standards]]
-project: [[Project_Quality]]
-project2: [[Project_Excellence]]
+project: 
+project2: 
 ---
 
 # Goal_SetHighStandards
@@ -28,5 +28,5 @@ Not Started
 - [[Competence_Standards]]
 
 ## Related Projects
-- [[Project_Quality]]
-- [[Project_Excellence]]
+- 
+- 

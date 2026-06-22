@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Legal Framework]]
-- [[Technology]]
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Document Automation]]
-- [[Contract Analysis]]
-- [[Compliance Monitoring]]
-- [[Client Management]]
-- [[Legal Research]]
-- [[Billing Systems]]
-- [[Security]]
-- [[Integration]]
-- [[User Experience]]
-- [[Market Analysis]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Closing Techniques|Closing Techniques]]
 - [[Managerial Accounting|Managerial Accounting]]
-- [[A/B Testing|A/B Testing]]
+- 
 
 ## Связанные проекты
 

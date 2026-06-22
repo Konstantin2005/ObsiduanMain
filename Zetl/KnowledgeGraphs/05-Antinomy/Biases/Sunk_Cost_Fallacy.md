@@ -33,17 +33,17 @@ The sunk cost fallacy causes people to make irrational decisions by allowing pas
 The fallacy combines loss aversion with commitment bias, creating powerful inertia against change even when change is beneficial.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Availability_Heuristic_Error]]
-- [[Knowledge/Errors/Overconfidence_Error]]
-- [[Knowledge/Errors/Confirmation_Bias_Error]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Opportunity_Cost_Analysis]]
-- [[Knowledge/Corrections/Precommitment_Strategies]]
+- 
+- 
 
 ## Examples
 - Continuing to fund a failing business project

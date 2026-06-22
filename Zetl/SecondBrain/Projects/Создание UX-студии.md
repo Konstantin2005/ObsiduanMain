@@ -24,10 +24,10 @@ status: active
 - [[Design Systems]]
 - [[Service Design]]
 - [[Experience Design]]
-- [[Client Management]]
+- 
 - [[Project Management]]
-- [[Portfolio Building]]
-- [[Business Development]]
+- 
+- 
 
 ## Этапы проекта
 

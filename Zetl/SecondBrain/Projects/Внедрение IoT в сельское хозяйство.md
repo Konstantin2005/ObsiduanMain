@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[IoT]]
-- [[Agriculture]]
+- 
 - [[Data Engineering]]
 
 ## Используемые концепции
 
-- [[Precision Agriculture]]
+- 
 - [[Sensor Networks]]
-- [[Data Analytics]]
-- [[Weather Prediction]]
-- [[Crop Optimization]]
+- 
+- 
+- 
 - [[Supply Chain]]
-- [[Sustainability]]
-- [[Integration]]
-- [[ROI Measurement]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

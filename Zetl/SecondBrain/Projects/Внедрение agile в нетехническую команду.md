@@ -18,15 +18,15 @@ status: active
 
 ## Используемые концепции
 
-- [[Agile Principles]]
-- [[Kanban Method]]
-- [[Sprint Planning]]
-- [[Retrospectives]]
+- 
+- 
+- 
+- 
 - [[Team Building]]
-- [[Communication]]
+- 
 - [[Performance Metrics]]
-- [[Training Programs]]
-- [[Culture Change]]
+- 
+- 
 - [[Continuous Improvement]]
 
 ## Этапы проекта

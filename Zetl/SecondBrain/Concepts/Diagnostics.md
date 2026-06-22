@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[CI/CD Pipelines|CI/CD Pipelines]]
+- 
 - [[SaaS Model|SaaS Model]]
 - [[Design Patterns|Design Patterns]]
 

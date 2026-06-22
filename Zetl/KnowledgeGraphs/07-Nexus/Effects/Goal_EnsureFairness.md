@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Justice_Fairness]]
-project: [[Project_Justice]]
-project2: [[Project_Equity]]
+project: 
+project2: 
 ---
 
 # Goal_EnsureFairness
@@ -28,5 +28,5 @@ Not Started
 - [[Justice_Fairness]]
 
 ## Related Projects
-- [[Project_Justice]]
-- [[Project_Equity]]
+- 
+- 

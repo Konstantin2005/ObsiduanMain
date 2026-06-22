@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155338.png]]
+!
 
 -----
 ## прогноз развития до 2026 года

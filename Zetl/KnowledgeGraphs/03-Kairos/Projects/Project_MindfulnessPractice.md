@@ -32,25 +32,25 @@ Daily mindfulness and meditation practice to improve mental health and well-bein
 - [ ] Teach others meditation techniques
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Values
 - [[Wisdom_Reflection]]
 - [[Freedom_Thought]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_FitnessProgram]]
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones

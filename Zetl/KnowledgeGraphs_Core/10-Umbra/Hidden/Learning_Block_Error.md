@@ -36,14 +36,14 @@ Learning block error occurs when cognitive biases and thinking errors prevent in
 - Practice reflective thinking
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Hindsight_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Career_Stagnation_Error]]
-- [[Knowledge/Errors/Skill_Deficiency_Error]]
-- [[Knowledge/Errors/Confidence_Inflation_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Practice reflective learning

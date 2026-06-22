@@ -20,13 +20,13 @@ status: active
 
 - [[Energy Trading]]
 - [[Grid Management]]
-- [[Carbon Credits]]
-- [[Renewable Certificates]]
+- 
+- 
 - [[Smart Contracts]]
 - [[Regulatory Compliance]]
-- [[Integration]]
-- [[Scalability]]
-- [[Partner Onboarding]]
+- 
+- 
+- 
 - [[Innovation Management]]
 
 ## Этапы проекта

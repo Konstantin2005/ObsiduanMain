@@ -5,7 +5,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251109130757.png]]
+!
 
 -----
 ##  Под натиском ИИ

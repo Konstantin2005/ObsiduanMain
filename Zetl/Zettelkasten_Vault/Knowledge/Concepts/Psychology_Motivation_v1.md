@@ -42,8 +42,8 @@ I studied motivation through research on behavioral psychology and achievement t
 Motivation research is crucial for improving performance in education, work, and personal development.
 
 ## Resources
-- [[Resource_MotivationResearch]]
-- [[Resource_AchievementTheory]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Emotion_v1]]

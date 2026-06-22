@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124135923.png]]
+!
 
 -----
 ## мультиагентность Antigravity и замена векторного поиска на LLM

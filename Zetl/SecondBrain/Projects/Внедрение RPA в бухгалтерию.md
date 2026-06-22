@@ -14,20 +14,20 @@ status: active
 
 - [[Accounting]]
 - [[Operations]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Process Automation]]
-- [[Invoice Processing]]
-- [[Reconciliation]]
+- 
+- 
+- 
 - [[Compliance]]
-- [[Error Detection]]
-- [[Integration]]
-- [[ROI Measurement]]
-- [[Training]]
-- [[Governance]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

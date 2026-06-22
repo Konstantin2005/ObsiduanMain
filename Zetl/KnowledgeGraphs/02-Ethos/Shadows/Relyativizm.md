@@ -7,7 +7,7 @@ title: "Релятивизм"
 # 🌑 Релятивизм
 
 **Тип:** Тень
-**Кластер:** [[Tolerantность]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Релятивизм"
 
 ## Связи
 
-- transforms_into → [[Tolerantность]] (Ценность)
-- manifests_as → [[Безразличие]] (Поведение)
-- manifests_as → [[Мультикультурализм]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Tolerantность]] (Ценность) → manifests_as
-- [[Безразличие]] (Поведение) → transforms_into
-- [[Мультикультурализм]] (Поведение) → transforms_into
-- [[Пассивность]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

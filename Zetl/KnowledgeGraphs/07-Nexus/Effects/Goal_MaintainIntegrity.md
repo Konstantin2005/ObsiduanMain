@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Justice_Integrity]]
-project: [[Project_Ethics]]
-project2: [[Project_Morality]]
+project: 
+project2: 
 ---
 
 # Goal_MaintainIntegrity
@@ -28,5 +28,5 @@ Not Started
 - [[Justice_Integrity]]
 
 ## Related Projects
-- [[Project_Ethics]]
-- [[Project_Morality]]
+- 
+- 

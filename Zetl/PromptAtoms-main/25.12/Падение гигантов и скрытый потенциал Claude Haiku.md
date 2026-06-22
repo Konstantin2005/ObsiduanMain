@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155241.png]]
+!
 
 -----
 ## Перестановки в Web Dev Arena

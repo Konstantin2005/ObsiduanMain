@@ -7,7 +7,7 @@ title: "Равенство"
 # 💎 Равенство
 
 **Тип:** Ценность
-**Кластер:** [[Равенство]]
+**Кластер:** 
 
 ---
 
@@ -17,34 +17,34 @@ title: "Равенство"
 
 ## Связи
 
-- conflicts_with → [[Порядок]] (Ценность)
-- conflicts_with → [[Tolerantность]] (Ценность)
-- conflicts_with → [[Справедливость]] (Ценность)
-- balances → [[Власть vs Равенство]] (Компромисс)
-- manifests_as → [[Униформизм]] (Тень)
-- manifests_as → [[Унификация]] (Поведение)
-- manifests_as → [[Ревность]] (Поведение)
-- manifests_as → [[Справедливость]] (Поведение)
-- balances → [[Равенство vs Власть]] (Компромисс)
-- conflicts_with → [[Справедливость]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Достоинство]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Порядок]] (Ценность) → conflicts_with
-- [[Tolerantность]] (Ценность) → conflicts_with
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Достоинство]] (Ценность) → conflicts_with
-- [[Власть vs Равенство]] (Компромисс) → conflicts_with
-- [[Униформизм]] (Тень) → transforms_into
-- [[Равенство vs Власть]] (Компромисс) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

@@ -7,7 +7,7 @@ title: "Разрушение"
 # 🌑 Разрушение
 
 **Тип:** Тень
-**Кластер:** [[Инновация]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Разрушение"
 
 ## Связи
 
-- transforms_into → [[Инновация]] (Ценность)
-- manifests_as → [[Деструкция]] (Поведение)
-- manifests_as → [[Дисruption]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Инновация]] (Ценность) → manifests_as
-- [[Деструкция]] (Поведение) → transforms_into
-- [[Дисruption]] (Поведение) → transforms_into
-- [[Эволюция]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

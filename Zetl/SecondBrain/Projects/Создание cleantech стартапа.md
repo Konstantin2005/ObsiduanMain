@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Waste Reduction]]
-- [[Recycling Technology]]
-- [[Clean Water]]
-- [[Air Quality]]
-- [[Renewable Energy]]
+- 
+- 
+- 
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Partnership]]
-- [[Funding Strategy]]
-- [[Scalability]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

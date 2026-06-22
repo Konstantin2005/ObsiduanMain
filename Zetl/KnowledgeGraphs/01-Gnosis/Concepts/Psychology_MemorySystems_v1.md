@@ -42,8 +42,8 @@ I learned about memory systems through research on cognitive neuroscience and me
 Memory systems research is crucial for improving learning outcomes and memory performance.
 
 ## Resources
-- [[Resource_MemorySystems]]
-- [[Resource_CognitiveNeuroscience]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Memory_v1]]

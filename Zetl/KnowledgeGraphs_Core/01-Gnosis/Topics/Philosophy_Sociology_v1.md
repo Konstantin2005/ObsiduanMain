@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of society, social institutions, and the social nature of human beings.
 
 ## Related Concepts
-- [[Philosophy_Society_v1]]
-- [[Philosophy_Institution_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Association]]
 - [[Justice_Equality]]
 
 ## Related Projects
-- [[Project_SocialResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 37

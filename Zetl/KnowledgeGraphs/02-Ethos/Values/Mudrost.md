@@ -7,7 +7,7 @@ title: "Мудрость"
 # 💎 Мудрость
 
 **Тип:** Ценность
-**Кластер:** [[Мудрость]]
+**Кластер:** 
 
 ---
 
@@ -17,44 +17,44 @@ title: "Мудрость"
 
 ## Связи
 
-- conflicts_with → [[Истина]] (Ценность)
-- balances → [[Знание vs Мудрость]] (Компромисс)
-- manifests_as → [[Консерватизм]] (Тень)
-- manifests_as → [[Консерватизм]] (Поведение)
-- manifests_as → [[Авторитарность]] (Поведение)
-- manifests_as → [[Созерцание]] (Поведение)
-- balances → [[Мудрость vs Знание]] (Компромисс)
-- conflicts_with → [[Истина]] (Ценность)
-- conflicts_with → [[Традиция]] (Ценность)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Цель]] (Ценность)
-- conflicts_with → [[Традиция]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- conflicts_with → [[Вера]] (Ценность)
-- conflicts_with → [[Цель]] (Ценность)
-- conflicts_with → [[Смирение]] (Ценность)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Отрешённость]] (Ценность)
-- conflicts_with → [[Серьёзность]] (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Истина]] (Ценность) → conflicts_with
-- [[Истина]] (Ценность) → conflicts_with
-- [[Знание vs Мудрость]] (Компромисс) → conflicts_with
-- [[Консерватизм]] (Тень) → transforms_into
-- [[Мудрость vs Знание]] (Компромисс) → conflicts_with
-- [[Традиция]] (Ценность) → conflicts_with
-- [[Традиция]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Вера]] (Ценность) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Смирение]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Отрешённость]] (Ценность) → conflicts_with
-- [[Серьёзность]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

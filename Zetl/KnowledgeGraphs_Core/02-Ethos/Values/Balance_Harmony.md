@@ -35,11 +35,11 @@ Balance prevents burnout and creates sustainable progress. Harmony brings peace 
 - [[Life_WorkLifeBalance]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Regularly assess and adjust balance between work, rest, relationships, and personal interests.
@@ -50,4 +50,4 @@ Regularly assess and adjust balance between work, rest, relationships, and perso
 - Prioritizing different life areas
 
 ## See Also
-- [[Value_MOC]]
+- 

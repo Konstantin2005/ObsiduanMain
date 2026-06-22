@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124142230.png]]
+!
 
 -----
 ## Технологический прорыв Google

@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Influence_Impact]]
-project: [[Project_LeadershipInitiative]]
-project2: [[Project_ProjectLeadership]]
+project: 
+project2: 
 ---
 
 # Goal_ExpandInfluence
@@ -28,5 +28,5 @@ Not Started
 - [[Influence_Impact]]
 
 ## Related Projects
-- [[Project_LeadershipInitiative]]
-- [[Project_ProjectLeadership]]
+- 
+- 

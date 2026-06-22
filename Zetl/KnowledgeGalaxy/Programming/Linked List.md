@@ -10,7 +10,7 @@ tags: [knowledge, programming]
 - [[Django]]
 - [[Data Analysis]]
 - [[Quick Sort]]
-- [[SSL/TLS]]
+- 
 - [[Dynamic Array]]
 - [[TypeScript]]
 - [[ReAct]]

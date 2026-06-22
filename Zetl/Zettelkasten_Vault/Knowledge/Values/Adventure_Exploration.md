@@ -35,11 +35,11 @@ Adventure prevents stagnation and broadens perspective. Exploration leads to dis
 - [[Competence_Application]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Seek out new experiences, travel to new places, and try unfamiliar activities regularly.
@@ -50,4 +50,4 @@ Seek out new experiences, travel to new places, and try unfamiliar activities re
 - Exploring a different neighborhood
 
 ## See Also
-- [[Value_MOC]]
+- 

@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203160919.png]]
+!
 
 -----
 ## Gemini 3 освоил «хакерский» подход для работы с глючными API

@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Adventure_Exploration]]
-project: [[Project_NewCountry]]
-project2: [[Project_NewSport]]
+project: 
+project2: 
 ---
 
 # Goal_TravelToNewPlace
@@ -28,5 +28,5 @@ Not Started
 - [[Adventure_Exploration]]
 
 ## Related Projects
-- [[Project_NewCountry]]
-- [[Project_NewSport]]
+- 
+- 

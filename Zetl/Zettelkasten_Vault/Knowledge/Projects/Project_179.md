@@ -41,8 +41,8 @@ A project to create meaningful impact.
 - [[Decision_Theory_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

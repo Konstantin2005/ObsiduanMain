@@ -20,13 +20,13 @@ status: active
 
 - [[Lean Manufacturing]]
 - [[Quality Control]]
-- [[Process Optimization]]
+- 
 - [[Automation]]
 - [[Predictive Analytics]]
 - [[Energy Management]]
-- [[Safety Systems]]
-- [[Integration]]
-- [[ROI Measurement]]
+- 
+- 
+- 
 - [[Continuous Improvement]]
 
 ## Этапы проекта

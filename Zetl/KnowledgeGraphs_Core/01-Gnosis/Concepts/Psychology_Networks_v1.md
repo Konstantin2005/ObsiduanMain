@@ -42,8 +42,8 @@ I learned about psychological networks through research on network theory and so
 Psychological networks research is essential for understanding the complex relationships underlying psychological functioning.
 
 ## Resources
-- [[Resource_PsychologicalNetworks]]
-- [[Resource_NetworkTheory]]
+- 
+- 
 
 ## See Also
 - [[Psychology_GroupDynamics_v1]]

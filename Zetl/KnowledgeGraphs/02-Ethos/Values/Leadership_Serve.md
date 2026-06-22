@@ -35,11 +35,11 @@ Leadership creates positive change and helps others reach their potential. Servi
 - [[Honesty_Integrity]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Take on leadership roles, mentor others, and find ways to serve your community and organization.
@@ -50,4 +50,4 @@ Take on leadership roles, mentor others, and find ways to serve your community a
 - Volunteering in the community
 
 ## See Also
-- [[Value_MOC]]
+- 

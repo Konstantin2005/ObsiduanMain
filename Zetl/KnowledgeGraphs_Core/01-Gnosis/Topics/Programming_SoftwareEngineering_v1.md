@@ -14,15 +14,15 @@ review_frequency: monthly
 Systematic approach to designing, developing, and maintaining software systems.
 
 ## Related Concepts
-- [[Programming_SoftwareDesign_v1]]
-- [[Programming_Testing_v1]]
+- 
+- 
 
 ## Related Values
 - [[Competence_Learning]]
 - [[Curiosity_Exploration]]
 
 ## Related Projects
-- [[Project_SoftwareArchitecture]]
+- 
 
 ## Statistics
 - Total Concepts: 46

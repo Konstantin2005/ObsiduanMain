@@ -36,14 +36,14 @@ Social validation error occurs when individuals base their beliefs and decisions
 - Practice critical thinking
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Bandwagon_Effect]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Echo_Chamber_Error]]
-- [[Knowledge/Errors/Independent_Thinking_Error]]
-- [[Knowledge/Errors/Innovation_Block_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Encourage dissent

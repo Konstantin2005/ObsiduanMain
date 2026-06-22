@@ -7,7 +7,7 @@ title: "Юмор"
 # 💎 Юмор
 
 **Тип:** Ценность
-**Кластер:** [[Юмор]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Юмор"
 
 ## Связи
 
-- manifests_as → [[Сарказм]] (Тень)
-- manifests_as → [[Сарказм]] (Поведение)
-- manifests_as → [[Чёрный юмор]] (Поведение)
-- manifests_as → [[Игривость]] (Поведение)
-- balances → [[Юмор vs Серьёзность]] (Компромисс)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- balances → [[Серьёзность vs Юмор]] (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Сарказм]] (Тень) → transforms_into
-- [[Юмор vs Серьёзность]] (Компромисс) → conflicts_with
-- [[Серьёзность vs Юмор]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
 
 ---
 

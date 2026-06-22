@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Resilience Research|Resilience Research]]
 - [[Energy Management|Energy Management]]
-- [[AML/KYC|AML/KYC]]
+- 
 
 ## Связанные проекты
 

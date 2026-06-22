@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124141943.png]]
+!
 
 -----
 ##  как избежать лишних расходов 

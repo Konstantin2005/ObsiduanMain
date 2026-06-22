@@ -37,14 +37,14 @@ Financial stress error occurs when cognitive biases and thinking errors lead to 
 - Seek financial advice
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Loss_Aversion_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
-- [[Knowledge/Biases/Confirmation_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Career_Stagnation_Error]]
-- [[Knowledge/Errors/Health_Stress_Error]]
-- [[Knowledge/Errors/Relationship_Stress_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Practice financial discipline

@@ -22,10 +22,10 @@ https://www.wired.com/story/trump-administration-refuses-to-say-it-wont-take-fur
 ---
 ## Zero-links
 ---
-- [[0 Компании и организации]]
-- [[0 Страны]]
-- [[0 Бизнес-процессы и стратегии]]
-- [[0 Глобальные процессы и тренды]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

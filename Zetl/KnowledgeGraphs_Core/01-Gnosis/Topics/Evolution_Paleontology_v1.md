@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of fossil records and ancient life forms to understand evolutionary history.
 
 ## Related Concepts
-- [[Evolution_Fossils_v1]]
-- [[Evolution_Extinction_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Discovery]]
 - [[Life_WorkLifeBalance]]
 
 ## Related Projects
-- [[Project_PaleontologyResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 34
@@ -32,4 +32,4 @@ Study of fossil records and ancient life forms to understand evolutionary histor
 
 ## See Also
 - [[Science_Biology_v1]]
-- [[Systems_Thinking_v1]]
+- 

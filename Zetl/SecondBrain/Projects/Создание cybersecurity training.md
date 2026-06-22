@@ -14,20 +14,20 @@ status: active
 
 - [[Cybersecurity]]
 - [[Teaching Methods]]
-- [[E-Learning Platform]]
+- 
 
 ## Используемые концепции
 
-- [[Phishing Simulation]]
-- [[Security Awareness]]
-- [[Hands-on Labs]]
-- [[Progress Tracking]]
-- [[Certification]]
-- [[Content Management]]
-- [[Community Features]]
-- [[Assessment Tools]]
-- [[Analytics Dashboard]]
-- [[Enterprise Features]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

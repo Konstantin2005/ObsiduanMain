@@ -41,8 +41,8 @@ A project to create meaningful impact.
 - [[Complexity_Science_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

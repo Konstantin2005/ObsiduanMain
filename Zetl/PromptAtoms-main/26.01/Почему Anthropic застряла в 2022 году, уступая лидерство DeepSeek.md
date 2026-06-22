@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203163229.png]]
+!
 
 -----
 ## Почему Anthropic застряла в 2022 году, уступая лидерство DeepSeek 

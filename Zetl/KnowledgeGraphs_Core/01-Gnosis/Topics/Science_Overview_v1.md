@@ -22,7 +22,7 @@ Systematic study of the natural world through observation, experimentation, and 
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_ScientificResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 60

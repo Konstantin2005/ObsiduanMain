@@ -5,7 +5,7 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 project: [[Project_MindfulnessPractice]]
-reflection: [[Reflection_MindfulnessGrowth]]
+reflection: 
 ---
 
 # Decision_MeditationDaily
@@ -30,4 +30,4 @@ Decided to practice daily meditation for mental clarity.
 Improved focus and reduced stress
 
 ## Related Reflections
-- [[Reflection_MindfulnessGrowth]]
+- 

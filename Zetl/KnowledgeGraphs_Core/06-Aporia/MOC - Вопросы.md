@@ -17,13 +17,13 @@ title: "Вопросы"
 
 ## 📂 Структура
 
-- [[#Questions]]
-- [[#Hypotheses]]
-- [[#Methods]]
-- [[#Discoveries]]
-- [[#Frontiers]]
-- [[#Corrections]]
-- [[#Errors]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ---
 
@@ -76,9 +76,9 @@ title: "Вопросы"
 
 ## 🌉 Мосты
 
-- → [[ФронтIER знаний]] → 01-Gnosis
-- → [[Вопросы о ценностях]] → 02-Ethos
-- → [[Открытые вопросы личности]] → 04-Psyche
+- →  → 01-Gnosis
+- →  → 02-Ethos
+- →  → 04-Psyche
 
 ---
 

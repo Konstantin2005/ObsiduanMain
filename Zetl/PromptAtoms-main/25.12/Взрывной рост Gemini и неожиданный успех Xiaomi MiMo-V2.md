@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230154857.png]]
+!
 
 -----
 ## Новые тренды Open Router

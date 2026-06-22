@@ -7,7 +7,7 @@ title: "Автономия"
 # 💎 Автономия
 
 **Тип:** Ценность
-**Кластер:** [[Автономия]]
+**Кластер:** 
 
 ---
 
@@ -17,30 +17,30 @@ title: "Автономия"
 
 ## Связи
 
-- balances → [[Любовь vs Автономия]] (Компромисс)
-- manifests_as → [[Отчуждение]] (Тень)
-- manifests_as → [[Эмоциональная стена]] (Поведение)
-- manifests_as → [[Самодостаточность]] (Поведение)
-- manifests_as → [[Отстранённость]] (Поведение)
-- balances → [[Автономия vs Любовь]] (Компромисс)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Достоинство]] (Ценность)
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Границы]] (Ценность)
-- conflicts_with → [[Границы]] (Ценность)
-- conflicts_with → [[Идентичность]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Любовь vs Автономия]] (Компромисс) → conflicts_with
-- [[Отчуждение]] (Тень) → transforms_into
-- [[Автономия vs Любовь]] (Компромисс) → conflicts_with
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Границы]] (Ценность) → conflicts_with
-- [[Границы]] (Ценность) → conflicts_with
-- [[Достоинство]] (Ценность) → conflicts_with
-- [[Идентичность]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

@@ -41,8 +41,8 @@ A project to achieve specific goals.
 - [[Philosophy_Sociology_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_49]]

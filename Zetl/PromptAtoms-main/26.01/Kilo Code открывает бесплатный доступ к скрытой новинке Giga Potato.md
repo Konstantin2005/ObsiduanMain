@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203161541.png]]
+!
 
 -----
 ## Kilo Code открывает бесплатный доступ к скрытой новинке Giga Potato 

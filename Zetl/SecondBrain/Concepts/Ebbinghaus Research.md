@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Nanomaterials|Nanomaterials]]
-- [[A/B Testing|A/B Testing]]
+- 
 - [[Challenger Sale|Challenger Sale]]
 
 ## Связанные проекты

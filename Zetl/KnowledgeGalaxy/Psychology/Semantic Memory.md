@@ -16,4 +16,4 @@ tags: [knowledge, psychology]
 - [[OOP]]
 - [[Flyweight]]
 - [[Fear]]
-- [[CI/CD]]
+- 

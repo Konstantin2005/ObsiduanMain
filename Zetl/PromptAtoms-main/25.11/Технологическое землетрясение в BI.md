@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124142753.png]]
+!
 
 -----
 ## почему архитектура DiT превосходит UNet и меняет правила игры

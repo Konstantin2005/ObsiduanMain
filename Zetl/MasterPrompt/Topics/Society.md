@@ -114,6 +114,6 @@ tags: [topic]
 
 - [[Psychology|Psychology]]
 - [[Economics|Economics]]
-- [[Politics|Politics]]
+- 
 - [[Culture|Culture]]
 - [[Media|Media]]

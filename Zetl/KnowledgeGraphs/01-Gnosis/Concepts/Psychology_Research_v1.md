@@ -42,8 +42,8 @@ I learned about psychological research through research on scientific methodolog
 Psychological research is crucial for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalResearch]]
-- [[Resource_ScientificMethod]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Market Share Analysis|Market Share Analysis]]
 - [[Fog Computing|Fog Computing]]
-- [[HTTP/HTTPS|HTTP/HTTPS]]
+- 
 
 ## Связанные проекты
 

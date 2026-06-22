@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260226130655.png]]
+!
 
 -----
 ## Опасность vendor lock и важность независимости от истории чата 

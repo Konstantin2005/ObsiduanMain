@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of environmental economics, sustainability, and resource management.
 
 ## Related Concepts
-- [[Economics_Sustainability_v1]]
-- [[Economics_Resource_v1]]
+- 
+- 
 
 ## Related Values
 - [[Life_WorkLifeBalance]]
 - [[Curiosity_Discovery]]
 
 ## Related Projects
-- [[Project_EnvironmentalResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 36

@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Innovation_Progress]]
-project: [[Project_NewApp]]
-project2: [[Project_ProcessImprovement]]
+project: 
+project2: 
 ---
 
 # Goal_DevelopInnovativeSolution
@@ -28,5 +28,5 @@ In Progress
 - [[Innovation_Progress]]
 
 ## Related Projects
-- [[Project_NewApp]]
-- [[Project_ProcessImprovement]]
+- 
+- 

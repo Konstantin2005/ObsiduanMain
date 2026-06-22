@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260212162657.png]]
+!
 
 -----
 ## рекордная скорость Gemini 3 Pro и критическая важность промптинга для Flash 

@@ -12,7 +12,7 @@ tags: [knowledge, programming]
 - [[Trees]]
 - [[Cloud Computing]]
 - [[Creational Patterns]]
-- [[A/B Testing]]
+- 
 - [[Prospective Memory]]
 - [[Venture Capital]]
 - [[Differentiation]]

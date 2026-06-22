@@ -14,7 +14,7 @@ tags: [knowledge, psychology]
 - [[Anxious Attachment]]
 - [[Neurocognitive Processes]]
 - [[DQN]]
-- [[80/20 Rule]]
+- 
 - [[Presentations]]
 - [[Dialectics]]
 - [[Gradient Descent]]

@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251130164022.png]]
+!
 
 -----
 ## Мультиагентная революция в коде

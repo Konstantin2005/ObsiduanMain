@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Health & Fitness]]
-- [[Technology]]
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Women's Health]]
-- [[Wearable Integration]]
-- [[Data Analytics]]
-- [[Privacy Protection]]
-- [[User Experience]]
+- 
+- 
+- 
+- 
+- 
 - [[Mobile Development]]
-- [[Community Features]]
-- [[Evidence-Based Design]]
-- [[Partnership]]
-- [[Growth Strategy]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

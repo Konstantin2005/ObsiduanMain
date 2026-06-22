@@ -16,5 +16,5 @@ tags: [knowledge, gametheory]
 - [[Self-efficacy]]
 - [[Command]]
 - [[Adaptability]]
-- [[CI/CD]]
+- 
 - [[Bubble Sort]]

@@ -20,11 +20,11 @@ This value matters because mobility enables opportunity, exploration, and the ex
 
 ## Conflicts
 ### Direct Conflicts
-- [[Responsibility_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Freedom_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because mobility enables opportunity, exploration, and the ex
 - [[Freedom_Thought]]
 
 ## Related Concepts
-- [[Concept_Travel_v1]]
-- [[Concept_Mobility_v1]]
-- [[Concept_Access_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Freedom_v1]]
+- 
 
 ## Application
 I apply this value by traveling regularly, trying new restaurants, and networking with people from different backgrounds.
@@ -51,4 +51,4 @@ I apply this value by traveling regularly, trying new restaurants, and networkin
 - Joining diverse social groups
 
 ## See Also
-- [[Value_MOC_Freedom]]
+- 

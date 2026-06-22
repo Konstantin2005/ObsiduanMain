@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260220123330.png]]
+!
 
 -----
 ## Китайский гамбит

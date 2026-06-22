@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153451.png]]
+!
 
 -----
 ## Gemini 3 Flash против Sonnet

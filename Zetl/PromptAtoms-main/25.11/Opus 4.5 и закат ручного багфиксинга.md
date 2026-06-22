@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251126123238.png]]
+!
 
 -----
 ## индустрия переключается на генерацию кода

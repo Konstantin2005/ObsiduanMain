@@ -7,7 +7,7 @@ title: "Идентичность"
 # 💎 Идентичность
 
 **Тип:** Ценность
-**Кластер:** [[Идентичность]]
+**Кластер:** 
 
 ---
 
@@ -18,25 +18,25 @@ title: "Идентичность"
 ## Связи
 
 - conflicts_with → [[Память]] (Ценность)
-- manifests_as → [[Эгоцентризм]] (Тень)
-- manifests_as → [[Эгоцентризм]] (Поведение)
-- manifests_as → [[Нарциссизм]] (Поведение)
-- manifests_as → [[Самопознание]] (Поведение)
-- balances → [[Идентичность vs Эмпатия]] (Компромисс)
-- conflicts_with → [[Достоинство]] (Ценность)
-- conflicts_with → [[Автономия]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Цель]] (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Автономия]] (Ценность) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Достоинство]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 - [[Память]] (Ценность) → conflicts_with
-- [[Эгоцентризм]] (Тень) → transforms_into
-- [[Идентичность vs Эмпатия]] (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

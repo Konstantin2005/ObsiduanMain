@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of living organisms, their structure, function, and interactions.
 
 ## Related Concepts
-- [[Science_Genetics_v1]]
-- [[Science_Ecology_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Discovery]]
 - [[Life_WorkLifeBalance]]
 
 ## Related Projects
-- [[Project_BiologyResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 57

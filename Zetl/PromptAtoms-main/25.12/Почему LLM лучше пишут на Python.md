@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155435.png]]
+!
 
 -----
 ## роль запуска кода в процессе обучения

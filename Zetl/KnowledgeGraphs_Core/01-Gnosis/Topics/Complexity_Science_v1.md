@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of complex adaptive systems, emergence, and self-organizing behaviors.
 
 ## Related Concepts
-- [[Complexity_Science_Emergence_v1]]
-- [[Complexity_Science_Adaptation_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Discovery]]
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_ComplexityResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 42

@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Clinical Validation]]
+- 
 - [[Regulatory Approval]]
-- [[User Experience]]
-- [[Data Security]]
-- [[Integration with Systems]]
-- [[Evidence-Based Design]]
-- [[Patient Engagement]]
-- [[Insurance Integration]]
-- [[Scalability]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

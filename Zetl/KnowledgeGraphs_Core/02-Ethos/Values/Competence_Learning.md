@@ -20,11 +20,11 @@ This value matters because the world changes rapidly, and stagnation leads to ir
 
 ## Conflicts
 ### Direct Conflicts
-- [[Freedom_Constraint]]
-- [[Authority_Abuse]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Competence_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because the world changes rapidly, and stagnation leads to ir
 - [[Competence_Standards]]
 
 ## Related Concepts
-- [[Concept_LifelongLearning_v1]]
-- [[Concept_SkillDevelopment_v1]]
-- [[Concept_KnowledgeGrowth_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Competence_v1]]
+- 
 
 ## Application
 I apply this value by taking courses, reading books, practicing new skills, and seeking mentors.
@@ -51,4 +51,4 @@ I apply this value by taking courses, reading books, practicing new skills, and 
 - Practicing musical instruments
 
 ## See Also
-- [[Value_MOC_Competence]]
+- 

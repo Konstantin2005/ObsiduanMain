@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260220123306.png]]
+!
 
 -----
 ## Результаты на Arena показывают статистическое равенство 

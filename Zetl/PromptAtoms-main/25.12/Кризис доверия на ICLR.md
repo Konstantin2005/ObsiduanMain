@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230145018.png]]
+!
 
 -----
 ## ИИ пишет научные работы, обходя детекторы

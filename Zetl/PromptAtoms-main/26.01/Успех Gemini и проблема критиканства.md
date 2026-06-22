@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203153047.png]]
+!
 
 -----
 ## Успех Gemini и проблема «критиканства»

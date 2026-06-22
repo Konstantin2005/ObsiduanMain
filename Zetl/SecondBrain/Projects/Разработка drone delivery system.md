@@ -13,20 +13,20 @@ status: active
 ## Связанные темы
 
 - [[Robotics]]
-- [[Logistics]]
+- 
 - [[IoT]]
 
 ## Используемые концепции
 
 - [[Path Planning]]
 - [[Regulatory Compliance]]
-- [[Safety Systems]]
-- [[Fleet Management]]
-- [[Customer Experience]]
-- [[Weather Adaptation]]
-- [[Payload Management]]
-- [[Real-Time Tracking]]
-- [[Community Acceptance]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Cost Optimization]]
 
 ## Этапы проекта

@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of political systems, power, and the organization of society.
 
 ## Related Concepts
-- [[Philosophy_Government_v1]]
-- [[Philosophy_Liberty_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Choice]]
 - [[Justice_Equality]]
 
 ## Related Projects
-- [[Project_PoliticalPhilosophy]]
+- 
 
 ## Statistics
 - Total Concepts: 38
@@ -32,4 +32,4 @@ Study of political systems, power, and the organization of society.
 
 ## See Also
 - [[Psychology_Development_v1]]
-- [[Systems_Thinking_v1]]
+- 

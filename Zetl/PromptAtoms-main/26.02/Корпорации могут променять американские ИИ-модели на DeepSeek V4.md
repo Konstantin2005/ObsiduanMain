@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260216124905.png]]
+!
 
 -----
 ## почему корпорации могут променять американские ИИ-модели на DeepSeek V4

@@ -41,8 +41,8 @@ I learned about psychological wisdom through research on cognitive psychology an
 Psychological wisdom is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalWisdom]]
-- [[Resource_CognitiveInsight]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

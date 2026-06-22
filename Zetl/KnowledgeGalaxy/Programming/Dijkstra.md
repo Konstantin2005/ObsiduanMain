@@ -11,7 +11,7 @@ tags: [knowledge, programming]
 - [[Viruses]]
 - [[Trojans]]
 - [[Matplotlib]]
-- [[A/B Testing]]
+- 
 - [[Transcendence]]
 - [[Clustering]]
 - [[Macroeconomics]]

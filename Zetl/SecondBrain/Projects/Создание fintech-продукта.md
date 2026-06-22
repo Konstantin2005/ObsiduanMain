@@ -14,20 +14,20 @@ status: active
 
 - [[Entrepreneurship]]
 - [[Finance]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
 - [[Financial Modeling]]
 - [[Regulatory Compliance]]
 - [[API Design]]
-- [[Security Architecture]]
-- [[User Experience]]
+- 
+- 
 - [[Mobile Development]]
-- [[Payment Systems]]
-- [[Fraud Detection]]
-- [[Customer Onboarding]]
-- [[Data Analytics]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

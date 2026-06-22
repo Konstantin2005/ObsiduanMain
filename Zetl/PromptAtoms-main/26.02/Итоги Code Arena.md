@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260220123453.png]]
+!
 
 -----
 ##  успех Gemini, доминирование Opus и «дизайнерский» дефект Codex 5.3

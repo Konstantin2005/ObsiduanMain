@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230152546.png]]
+!
 
 -----
 ## доступ из РФ без VPN, надежность и отмена комиссий

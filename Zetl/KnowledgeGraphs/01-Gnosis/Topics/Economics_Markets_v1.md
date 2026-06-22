@@ -14,15 +14,15 @@ review_frequency: monthly
 Analysis of market behaviors, resource allocation, and economic systems that govern production and consumption.
 
 ## Related Concepts
-- [[Economics_SupplyDemand_v1]]
-- [[Economics_Innovation_v1]]
+- 
+- 
 
 ## Related Values
 - [[Career_LearningContinuity]]
 - [[Freedom_Choice]]
 
 ## Related Projects
-- [[Project_MarketAnalysis]]
+- 
 
 ## Statistics
 - Total Concepts: 42
@@ -31,5 +31,5 @@ Analysis of market behaviors, resource allocation, and economic systems that gov
 - Last Updated: 2026-01-01
 
 ## See Also
-- [[Business_Overview_v1]]
-- [[Systems_Thinking_v1]]
+- 
+- 

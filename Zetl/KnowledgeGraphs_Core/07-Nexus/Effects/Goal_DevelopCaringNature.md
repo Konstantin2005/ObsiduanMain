@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Responsibility_Care]]
-project: [[Project_Kindness]]
-project2: [[Project_Caring]]
+project: 
+project2: 
 ---
 
 # Goal_DevelopCaringNature
@@ -28,5 +28,5 @@ Not Started
 - [[Responsibility_Care]]
 
 ## Related Projects
-- [[Project_Kindness]]
-- [[Project_Caring]]
+- 
+- 

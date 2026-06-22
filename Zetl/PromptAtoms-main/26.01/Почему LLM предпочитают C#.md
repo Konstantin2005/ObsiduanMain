@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203151835.png]]
+!
 
 -----
 ##  роль явного синтаксиса и XML-разметки в обучении нейросетей на Python 

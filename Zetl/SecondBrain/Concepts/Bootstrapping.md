@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Account Management|Account Management]]
 - [[SPIN Selling|SPIN Selling]]
-- [[A/B Testing|A/B Testing]]
+- 
 
 ## Связанные проекты
 

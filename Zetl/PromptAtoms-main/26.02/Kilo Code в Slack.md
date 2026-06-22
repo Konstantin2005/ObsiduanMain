@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260210121016.png]]
+!
 
 -----
 ## бесплатная оркестрация через Claude Opus и фабрика дешевых агентов Grok 

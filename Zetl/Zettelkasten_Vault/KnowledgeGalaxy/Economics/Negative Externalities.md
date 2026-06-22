@@ -14,5 +14,5 @@ tags: [knowledge, economics]
 - [[Flexibility]]
 - [[Emotion Regulation]]
 - [[Mechanism Design Theory]]
-- [[A*]]
+- 
 - [[Entity Extraction]]

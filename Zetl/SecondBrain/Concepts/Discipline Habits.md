@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Quantum Networking|Quantum Networking]]
 - [[Analytics Strategy|Analytics Strategy]]
-- [[10/10/10 Rule|10/10/10 Rule]]
+- 
 
 ## Связанные проекты
 

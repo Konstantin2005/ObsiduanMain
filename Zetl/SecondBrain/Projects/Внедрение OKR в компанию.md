@@ -20,14 +20,14 @@ status: active
 
 - [[OKR Framework]]
 - [[Goal Setting]]
-- [[Alignment Process]]
-- [[Check-in Cadence]]
-- [[Scoring Method]]
-- [[Cascade Process]]
-- [[OKR Software]]
-- [[Team OKRs]]
-- [[Individual OKRs]]
-- [[OKR Retrospective]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

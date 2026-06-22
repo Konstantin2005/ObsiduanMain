@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[MRR/ARR Metrics]]
+- 
 - [[Churn Analysis]]
-- [[CAC/LTV Ratio]]
+- 
 - [[Cohort Analysis]]
 - [[Product Analytics]]
 - [[Growth Metrics]]
 - [[Financial Modeling]]
-- [[Unit Economics]]
-- [[Benchmark Analysis]]
-- [[Investor Reporting]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

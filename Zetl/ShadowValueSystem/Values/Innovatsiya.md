@@ -7,7 +7,7 @@ title: "Инновация"
 # 💎 Инновация
 
 **Тип:** Ценность
-**Кластер:** [[Инновация]]
+**Кластер:** 
 
 ---
 
@@ -17,32 +17,32 @@ title: "Инновация"
 
 ## Связи
 
-- conflicts_with → [[Риск]] (Ценность)
-- conflicts_with → [[Знание]] (Ценность)
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Любопытство]] (Ценность)
-- manifests_as → [[Разрушение]] (Тень)
-- manifests_as → [[Деструкция]] (Поведение)
-- manifests_as → [[Дисruption]] (Поведение)
-- manifests_as → [[Эволюция]] (Поведение)
-- balances → [[Инновация vs Традиция]] (Компромисс)
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Любопытство]] (Ценность)
-- conflicts_with → [[Риск]] (Ценность)
-- conflicts_with → [[Знание]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Риск]] (Ценность) → conflicts_with
-- [[Риск]] (Ценность) → conflicts_with
-- [[Знание]] (Ценность) → conflicts_with
-- [[Знание]] (Ценность) → conflicts_with
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Любопытство]] (Ценность) → conflicts_with
-- [[Любопытство]] (Ценность) → conflicts_with
-- [[Разрушение]] (Тень) → transforms_into
-- [[Инновация vs Традиция]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

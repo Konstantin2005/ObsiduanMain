@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251130164400.png]]
+!
 
 -----
 ## Эффективность против инструкций

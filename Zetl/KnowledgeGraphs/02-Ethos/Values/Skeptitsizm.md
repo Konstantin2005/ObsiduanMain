@@ -7,7 +7,7 @@ title: "Скептицизм"
 # 💎 Скептицизм
 
 **Тип:** Ценность
-**Кластер:** [[Скептицизм]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Скептицизм"
 
 ## Связи
 
-- balances → [[Вера vs Скептицизм]] (Компромисс)
-- manifests_as → [[Цинизм]] (Тень)
-- manifests_as → [[Нигилизм]] (Поведение)
-- manifests_as → [[Паранойя]] (Поведение)
-- manifests_as → [[Критика]] (Поведение)
-- balances → [[Скептицизм vs Вера]] (Компромисс)
-- conflicts_with → [[Истина]] (Ценность)
-- conflicts_with → [[Знание]] (Ценность)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Мужество]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Истина]] (Ценность) → conflicts_with
-- [[Знание]] (Ценность) → conflicts_with
-- [[Вера vs Скептицизм]] (Компромисс) → conflicts_with
-- [[Цинизм]] (Тень) → transforms_into
-- [[Скептицизм vs Вера]] (Компромисс) → conflicts_with
-- [[Мужество]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

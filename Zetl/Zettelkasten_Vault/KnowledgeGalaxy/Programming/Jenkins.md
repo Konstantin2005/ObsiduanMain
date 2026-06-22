@@ -9,7 +9,7 @@ tags: [knowledge, programming]
 - [[Hypothesis Testing]]
 - [[Binary Tree]]
 - [[Microservices]]
-- [[SSL/TLS]]
+- 
 - [[Proxy]]
 - [[Flask]]
 - [[Command]]

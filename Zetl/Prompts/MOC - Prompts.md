@@ -35,13 +35,13 @@ created: 2026-06-22
 
 ### Для полной реализации
 1. Начни с [[Graph Implementation Prompt]]
-2. Следи за进度 по [[MOC - Graph Implementation Plan]]
+2. Следи за进度 по 
 3. Проверяй результат [[Verification Prompt]]
 
 ---
 
 ## Связи
 
-- [[MOC - Graph Implementation Plan]] — план реализации
-- [[MOC - Realized Graphs]] — реализованные графы
-- [[MOC - Zetl]] — главный индекс
+-  — план реализации
+-  — реализованные графы
+-  — главный индекс

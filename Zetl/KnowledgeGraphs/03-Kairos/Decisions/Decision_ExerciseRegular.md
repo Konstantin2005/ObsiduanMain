@@ -5,7 +5,7 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 project: [[Project_FitnessProgram]]
-reflection: [[Reflection_FitnessJourney]]
+reflection: 
 ---
 
 # Decision_ExerciseRegular
@@ -30,4 +30,4 @@ Home-based workout program
 Improved physical fitness and energy levels
 
 ## Related Reflections
-- [[Reflection_FitnessJourney]]
+- 

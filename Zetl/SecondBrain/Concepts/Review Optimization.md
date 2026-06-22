@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Feature Flags|Feature Flags]]
-- [[Mobile CI/CD|Mobile CI/CD]]
+- 
 - [[Search Algorithms|Search Algorithms]]
 
 ## Связанные проекты

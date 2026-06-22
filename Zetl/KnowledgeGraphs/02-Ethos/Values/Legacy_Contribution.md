@@ -35,11 +35,11 @@ Legacy provides purpose beyond one's lifetime. Contribution ensures positive imp
 - [[Competence_Application]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Create work, knowledge, or relationships that will endure and benefit others.
@@ -50,4 +50,4 @@ Create work, knowledge, or relationships that will endure and benefit others.
 - Mentoring for years
 
 ## See Also
-- [[Value_MOC]]
+- 

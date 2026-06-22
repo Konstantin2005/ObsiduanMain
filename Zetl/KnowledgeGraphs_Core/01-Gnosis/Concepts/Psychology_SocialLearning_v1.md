@@ -42,8 +42,8 @@ I learned about social learning through research on behavioral psychology and ob
 Social learning research is crucial for understanding how people learn and develop behaviors.
 
 ## Resources
-- [[Resource_SocialLearning]]
-- [[Resource_ObservationalLearning]]
+- 
+- 
 
 ## See Also
 - [[Psychology_GroupDynamics_v1]]

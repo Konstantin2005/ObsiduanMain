@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155447.png]]
+!
 
 -----
 ##  снижение Python, бегство в C и трансформация профессии разработчика

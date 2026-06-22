@@ -7,7 +7,7 @@ title: "Отрешённость"
 # 💎 Отрешённость
 
 **Тип:** Ценность
-**Кластер:** [[Отрешённость]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Отрешённость"
 
 ## Связи
 
-- balances → [[Привязанность vs Отрешённость]] (Компромисс)
-- manifests_as → [[Безразличие]] (Тень)
-- manifests_as → [[Безразличие]] (Поведение)
-- manifests_as → [[Апатия]] (Поведение)
-- manifests_as → [[Присутствие]] (Поведение)
-- balances → [[Отрешённость vs Привязанность]] (Компромисс)
-- conflicts_with → [[Мудрость]] (Ценность)
-- conflicts_with → [[Вера]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- conflicts_with → [[Мир]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Мудрость]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Вера]] (Ценность) → conflicts_with
-- [[Мир]] (Ценность) → conflicts_with
-- [[Привязанность vs Отрешённость]] (Компромисс) → conflicts_with
-- [[Безразличие]] (Тень) → transforms_into
-- [[Отрешённость vs Привязанность]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

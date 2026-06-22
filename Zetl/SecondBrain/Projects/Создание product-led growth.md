@@ -20,14 +20,14 @@ status: active
 
 - [[Product-Led Growth]]
 - [[Freemium Model]]
-- [[Onboarding Optimization]]
-- [[Viral Loops]]
-- [[User Activation]]
-- [[Retention Strategy]]
+- 
+- 
+- 
+- 
 - [[Feature Adoption]]
-- [[Expansion Revenue]]
+- 
 - [[Product Analytics]]
-- [[Self-Service Model]]
+- 
 
 ## Этапы проекта
 

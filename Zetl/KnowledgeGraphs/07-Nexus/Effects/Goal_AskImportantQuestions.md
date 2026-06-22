@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Curiosity_Questioning]]
-project: [[Project_Research]]
-project2: [[Project_Learning]]
+project: 
+project2: 
 ---
 
 # Goal_AskImportantQuestions
@@ -28,5 +28,5 @@ Not Started
 - [[Curiosity_Questioning]]
 
 ## Related Projects
-- [[Project_Research]]
-- [[Project_Learning]]
+- 
+- 

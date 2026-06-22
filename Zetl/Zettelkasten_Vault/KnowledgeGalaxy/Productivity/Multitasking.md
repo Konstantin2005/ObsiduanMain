@@ -10,7 +10,7 @@ tags: [knowledge, productivity]
 - [[Building a Second Brain]]
 - [[Alternative Hypotheses]]
 - [[Habit Formation]]
-- [[80/20 Rule]]
+- 
 - [[Task Switching]]
 - [[Second-order Effects]]
 - [[COBOL]]

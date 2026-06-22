@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203163049.png]]
+!
 
 -----
 ## Статистика Open Router доказывает реальную фрагментацию рынка ИИ

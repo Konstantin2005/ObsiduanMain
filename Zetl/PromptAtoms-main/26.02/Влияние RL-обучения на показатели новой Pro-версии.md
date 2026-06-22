@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260205230651.png]]
+!
 
 -----
 ## Релиз Gemini 3 на Arena

@@ -24,7 +24,7 @@ created: 2026-06-22
 - [[Elimination by Aspects]]
 - [[Tallying]]
 - [[Recognition]]
-- [[1/N Heuristic]]
+- 
 
 ## Проекты (0)
 

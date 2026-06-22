@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203151624.png]]
+!
 
 -----
 ##  архитектура большой LLM в компактном формате для RTX 5080

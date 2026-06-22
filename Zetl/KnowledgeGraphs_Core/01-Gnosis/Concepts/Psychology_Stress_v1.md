@@ -42,8 +42,8 @@ I studied stress through research on health psychology and coping mechanisms.
 Stress research is essential for creating effective wellness programs and improving overall health.
 
 ## Resources
-- [[Resource_StressResearch]]
-- [[Resource_CopingMechanisms]]
+- 
+- 
 
 ## See Also
 - [[Emotion_Regulation_v1]]

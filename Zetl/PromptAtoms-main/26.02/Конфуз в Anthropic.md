@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260208222020.png]]
+!
 
 -----
 ## исследователи с миллионными контрактами слили скриншоты на фоне промо Claude Code

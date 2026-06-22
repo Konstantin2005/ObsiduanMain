@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Agriculture]]
+- 
 - [[IoT]]
 - [[Machine Learning]]
 
 ## Используемые концепции
 
-- [[Precision Agriculture]]
-- [[Drone Monitoring]]
-- [[Soil Analysis]]
-- [[Weather Prediction]]
-- [[Crop Optimization]]
+- 
+- 
+- 
+- 
+- 
 - [[Supply Chain]]
-- [[Marketplace]]
-- [[Mobile Application]]
-- [[Data Analytics]]
-- [[Sustainability]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

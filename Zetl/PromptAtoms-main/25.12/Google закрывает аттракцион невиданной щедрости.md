@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155728.png]]
+!
 
 -----
 ## масштабное урезание Free Tier для Gemini

@@ -41,8 +41,8 @@ I learned about psychological behavior through research on behavioral psychology
 Psychological behavior is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalBehavior]]
-- [[Resource_BehavioralPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

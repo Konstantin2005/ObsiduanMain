@@ -14,20 +14,20 @@ status: active
 
 - [[Quantum Computing]]
 - [[Cybersecurity]]
-- [[Cryptography]]
+- 
 
 ## Используемые концепции
 
 - [[Quantum Cryptography]]
 - [[Post-Quantum Cryptography]]
-- [[Key Distribution]]
-- [[Security Proofs]]
-- [[Implementation]]
-- [[Scalability]]
+- 
+- 
+- 
+- 
 - [[Regulatory Approval]]
-- [[Commercial Applications]]
-- [[Standards Development]]
-- [[Integration]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

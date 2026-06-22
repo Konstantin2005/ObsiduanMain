@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Spaced Repetition]]
-- [[Speech Recognition]]
-- [[Personalized Learning]]
-- [[Gamification]]
-- [[Progress Tracking]]
-- [[Community Features]]
-- [[Content Management]]
-- [[Mobile UX]]
-- [[Analytics]]
-- [[Monetization Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

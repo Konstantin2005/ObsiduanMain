@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260212162612.png]]
+!
 
 -----
 ## выводы из новых бенчмарков vals.ai

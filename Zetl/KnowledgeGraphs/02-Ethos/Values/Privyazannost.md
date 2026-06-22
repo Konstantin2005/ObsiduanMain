@@ -7,7 +7,7 @@ title: "Привязанность"
 # 💎 Привязанность
 
 **Тип:** Ценность
-**Кластер:** [[Привязанность]]
+**Кластер:** 
 
 ---
 
@@ -17,24 +17,24 @@ title: "Привязанность"
 
 ## Связи
 
-- conflicts_with → [[Любовь]] (Ценность)
-- manifests_as → [[Зависимость]] (Тень)
-- manifests_as → [[Зависимость]] (Поведение)
-- manifests_as → [[Страх потери]] (Поведение)
-- manifests_as → [[Привязанность]] (Поведение)
-- balances → [[Привязанность vs Отрешённость]] (Компромисс)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- balances → [[Отрешённость vs Привязанность]] (Компромисс)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 
 ## На что ссылаются
 
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Зависимость]] (Тень) → transforms_into
-- [[Привязанность vs Отрешённость]] (Компромисс) → conflicts_with
-- [[Отрешённость vs Привязанность]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
 
 ---
 

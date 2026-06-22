@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Process Optimization]]
+- 
 - [[Quality Control]]
 - [[Predictive Maintenance]]
 - [[Energy Management]]
-- [[Safety Systems]]
-- [[Integration]]
-- [[Analytics]]
-- [[ROI Measurement]]
+- 
+- 
+- 
+- 
 - [[Continuous Improvement]]
-- [[Scaling Strategy]]
+- 
 
 ## Этапы проекта
 

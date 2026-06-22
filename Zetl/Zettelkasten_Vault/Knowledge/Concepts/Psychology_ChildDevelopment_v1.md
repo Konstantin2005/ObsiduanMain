@@ -42,8 +42,8 @@ I learned about child development through studying developmental psychology and 
 Understanding child development is crucial for creating effective educational systems and supporting healthy growth.
 
 ## Resources
-- [[Resource_ChildDevelopment]]
-- [[Resource_EducationalPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Development_v1]]

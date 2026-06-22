@@ -7,7 +7,7 @@ title: "Забвение"
 # 🌑 Забвение
 
 **Тип:** Тень
-**Кластер:** [[Прощение]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Забвение"
 
 ## Связи
 
-- transforms_into → [[Прощение]] (Ценность)
-- manifests_as → [[Забвение]] (Поведение)
-- manifests_as → [[Оправдание]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Прощение]] (Ценность) → manifests_as
-- [[Забвение]] (Поведение) → transforms_into
-- [[Оправдание]] (Поведение) → transforms_into
-- [[Освобождение]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

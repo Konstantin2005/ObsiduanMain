@@ -14,19 +14,19 @@ status: active
 
 - [[Artificial Intelligence]]
 - [[Product Management]]
-- [[User Experience]]
+- 
 
 ## Используемые концепции
 
 - [[Natural Language Processing]]
-- [[Conversational AI]]
-- [[Intent Recognition]]
-- [[Multi-Turn Dialogue]]
-- [[Personalization]]
-- [[Privacy Protection]]
-- [[Integration APIs]]
-- [[User Feedback]]
-- [[Continuous Learning]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Performance Metrics]]
 
 ## Этапы проекта

@@ -7,7 +7,7 @@ title: "Цинизм"
 # 🌑 Цинизм
 
 **Тип:** Тень
-**Кластер:** [[Скептицизм]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Цинизм"
 
 ## Связи
 
-- transforms_into → [[Скептицизм]] (Ценность)
-- manifests_as → [[Нигилизм]] (Поведение)
-- manifests_as → [[Паранойя]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Скептицизм]] (Ценность) → manifests_as
-- [[Нигилизм]] (Поведение) → transforms_into
-- [[Паранойя]] (Поведение) → transforms_into
-- [[Критика]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

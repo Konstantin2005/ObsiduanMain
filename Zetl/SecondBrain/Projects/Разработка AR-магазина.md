@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[AR/VR Technologies]]
-- [[E-Commerce]]
-- [[User Experience]]
+- 
+- 
+- 
 
 ## Используемые концепции
 
 - [[Spatial Computing]]
-- [[3D Product Visualization]]
-- [[Virtual Try-On]]
+- 
+- 
 - [[Mobile Development]]
-- [[User Experience]]
-- [[Payment Integration]]
+- 
+- 
 - [[Inventory Management]]
-- [[Analytics]]
+- 
 - [[Performance Optimization]]
-- [[Marketing Strategy]]
+- 
 
 ## Этапы проекта
 

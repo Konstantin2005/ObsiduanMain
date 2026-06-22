@@ -7,7 +7,7 @@ title: "Достоинство"
 # 💎 Достоинство
 
 **Тип:** Ценность
-**Кластер:** [[Достоинство]]
+**Кластер:** 
 
 ---
 
@@ -17,42 +17,42 @@ title: "Достоинство"
 
 ## Связи
 
-- conflicts_with → [[Справедливость]] (Ценность)
-- conflicts_with → [[Милосердие]] (Ценность)
-- conflicts_with → [[Автономия]] (Ценность)
-- conflicts_with → [[Границы]] (Ценность)
-- conflicts_with → [[Целостность]] (Ценность)
-- manifests_as → [[Гордыня]] (Тень)
-- manifests_as → [[Тщеславие]] (Поведение)
-- manifests_as → [[Агрессия]] (Поведение)
-- manifests_as → [[Самоуважение]] (Поведение)
-- balances → [[Достоинство vs Смирение]] (Компромисс)
-- conflicts_with → [[Истина]] (Ценность)
-- conflicts_with → [[Справедливость]] (Ценность)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Целостность]] (Ценность)
-- balances → [[Смирение vs Достоинство]] (Компромисс)
-- conflicts_with → [[Равенство]] (Ценность)
-- conflicts_with → [[Идентичность]] (Ценность)
-- conflicts_with → [[Ответственность]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Истина]] (Ценность) → conflicts_with
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Милосердие]] (Ценность) → conflicts_with
-- [[Автономия]] (Ценность) → conflicts_with
-- [[Границы]] (Ценность) → conflicts_with
-- [[Целостность]] (Ценность) → conflicts_with
-- [[Целостность]] (Ценность) → conflicts_with
-- [[Гордыня]] (Тень) → transforms_into
-- [[Достоинство vs Смирение]] (Компромисс) → conflicts_with
-- [[Смирение vs Достоинство]] (Компромисс) → conflicts_with
-- [[Равенство]] (Ценность) → conflicts_with
-- [[Идентичность]] (Ценность) → conflicts_with
-- [[Ответственность]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

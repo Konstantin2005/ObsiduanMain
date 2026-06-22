@@ -20,11 +20,11 @@ This value matters because accountability builds trust and enables growth. When 
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
-- [[Freedom_Constraint]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Honesty_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because accountability builds trust and enables growth. When 
 - [[Honesty_Transparency]]
 
 ## Related Concepts
-- [[Concept_Responsibility_v1]]
-- [[Concept_Ownership_v1]]
-- [[Concept_Correction_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Honesty_v1]]
+- 
 
 ## Application
 I apply this value by admitting mistakes, taking responsibility for outcomes, and making amends when needed.
@@ -51,4 +51,4 @@ I apply this value by admitting mistakes, taking responsibility for outcomes, an
 - Making amends after hurting others
 
 ## See Also
-- [[Value_MOC_Honesty]]
+- 

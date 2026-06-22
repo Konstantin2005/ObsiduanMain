@@ -18,15 +18,15 @@ status: active
 
 ## Используемые концепции
 
-- [[Information Architecture]]
-- [[Search Optimization]]
-- [[Content Management]]
-- [[Taxonomy Design]]
-- [[Version Control]]
-- [[User Contributions]]
-- [[Analytics]]
-- [[API Access]]
-- [[Quality Assurance]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Knowledge Graphs]]
 
 ## Этапы проекта

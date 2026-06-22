@@ -19,4 +19,4 @@ tags: [reward, life-rpg]
 - [[Machine Learning]]
 
 ## Локация
-- [[Домашний офис]]
+- 

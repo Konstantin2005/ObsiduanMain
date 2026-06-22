@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155710.png]]
+!
 
 -----
 ## Скрытые механизмы SWE Bench

@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Natural Language Processing]]
-- [[Document Understanding]]
-- [[Process Mining]]
-- [[Exception Handling]]
-- [[Human-in-the-Loop]]
-- [[ROI Measurement]]
+- 
+- 
+- 
+- 
+- 
 - [[Change Management]]
-- [[Governance]]
-- [[Training]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

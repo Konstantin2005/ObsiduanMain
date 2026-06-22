@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251231153725.png]]
+!
 
 -----
 ## Провал прогнозов о крахе ИИ

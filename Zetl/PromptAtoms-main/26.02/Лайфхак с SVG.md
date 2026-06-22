@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260220122824.png]]
+!
 
 -----
 ## неочевидный способ проверить Gemini 3.1 Pro на качество верстки

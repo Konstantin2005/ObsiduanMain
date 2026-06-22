@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Design Sprint Process]]
+- 
 - [[Rapid Prototyping]]
 - [[User Testing]]
-- [[Problem Framing]]
-- [[Solution Sketching]]
+- 
+- 
 - [[Decision Making]]
-- [[Team Collaboration]]
-- [[Time-Boxed Process]]
+- 
+- 
 - [[Innovation Culture]]
-- [[Learning & Iteration]]
+- 
 
 ## Этапы проекта
 

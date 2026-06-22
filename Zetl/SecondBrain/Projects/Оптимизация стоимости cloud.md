@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Cost Optimization]]
-- [[Reserved Instances]]
+- 
 - [[Auto Scaling]]
-- [[Cost Allocation]]
-- [[FinOps]]
+- 
+- 
 - [[Monitoring & Alerting]]
-- [[Resource Right-Sizing]]
-- [[Spot Instances]]
+- 
+- 
 - [[Multi-Cloud Strategy]]
-- [[Cost Forecasting]]
+- 
 
 ## Этапы проекта
 

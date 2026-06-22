@@ -42,8 +42,8 @@ I learned about psychological theory through research on theoretical frameworks 
 Psychological theory research is crucial for understanding and explaining human behavior.
 
 ## Resources
-- [[Resource_PsychologicalTheory]]
-- [[Resource_TheoreticalPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Memory_v1]]

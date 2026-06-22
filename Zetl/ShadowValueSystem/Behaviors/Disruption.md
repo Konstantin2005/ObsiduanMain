@@ -7,7 +7,7 @@ title: "Дисruption"
 # ⚡ Дисruption
 
 **Тип:** Поведение
-**Кластер:** [[Инновация]]
+**Кластер:** 
 
 ---
 
@@ -17,13 +17,13 @@ title: "Дисruption"
 
 ## Связи
 
-- transforms_into → [[Разрушение]] (Тень)
-- balances → [[Свобода]] (Ценность)
+- transforms_into →  (Тень)
+- balances →  (Ценность)
 
 ## На что ссылаются
 
-- [[Инновация]] (Ценность) → manifests_as
-- [[Разрушение]] (Тень) → manifests_as
+-  (Ценность) → manifests_as
+-  (Тень) → manifests_as
 
 ---
 

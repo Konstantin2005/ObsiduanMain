@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Character Strengths|Character Strengths]]
 - [[Equity Financing|Equity Financing]]
-- [[TCP/IP Protocol|TCP/IP Protocol]]
+- 
 
 ## Связанные проекты
 

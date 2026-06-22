@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155858.png]]
+!
 
 -----
 ## Скорость и надежность против интеллекта

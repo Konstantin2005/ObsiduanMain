@@ -16,7 +16,7 @@ tags: [knowledge, philosophy]
 - [[Duty]]
 - [[Neuroplasticity]]
 - [[SMART Goals]]
-- [[80/20 Rule]]
+- 
 - [[NER]]
 - [[ABCDE System]]
 - [[Nuclear Deterrence]]

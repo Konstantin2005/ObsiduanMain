@@ -5,7 +5,7 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 project: [[Project_BlogDevelopment]]
-reflection: [[Reflection_WritingGrowth]]
+reflection: 
 ---
 
 # Decision_StartBlog
@@ -30,4 +30,4 @@ Personal blog
 Improved writing skills and audience engagement
 
 ## Related Reflections
-- [[Reflection_WritingGrowth]]
+- 

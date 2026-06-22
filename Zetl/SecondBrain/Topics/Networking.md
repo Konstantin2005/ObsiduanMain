@@ -10,8 +10,8 @@ created: 2026-06-22
 
 ## Концепции (15)
 
-- [[TCP/IP Protocol]]
-- [[HTTP/HTTPS]]
+- 
+- 
 - [[DNS Architecture]]
 - [[Network Segmentation]]
 - [[VPN Technologies]]

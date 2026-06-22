@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251231153743.png]]
+!
 
 -----
 ## Крах мифа о «пузыре»

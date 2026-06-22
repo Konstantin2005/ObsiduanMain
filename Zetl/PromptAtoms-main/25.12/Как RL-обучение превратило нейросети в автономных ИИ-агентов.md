@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251231153505.png]]
+!
 
 -----
 ## Революция 2025 года

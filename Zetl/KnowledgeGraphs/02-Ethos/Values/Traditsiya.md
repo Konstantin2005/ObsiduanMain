@@ -7,7 +7,7 @@ title: "Традиция"
 # 💎 Традиция
 
 **Тип:** Ценность
-**Кластер:** [[Традиция]]
+**Кластер:** 
 
 ---
 
@@ -17,41 +17,41 @@ title: "Традиция"
 
 ## Связи
 
-- conflicts_with → [[Порядок]] (Ценность)
-- conflicts_with → [[Мудрость]] (Ценность)
-- balances → [[Творчество vs Традиция]] (Компромисс)
-- manifests_as → [[Застой]] (Тень)
-- manifests_as → [[Ностальгия]] (Поведение)
-- manifests_as → [[Обрядоверие]] (Поведение)
-- manifests_as → [[Консерватизм]] (Поведение)
-- balances → [[Традиция vs Творчество]] (Компромисс)
-- conflicts_with → [[Мудрость]] (Ценность)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Красота]] (Ценность)
-- conflicts_with → [[Верность]] (Ценность)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Красота]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- balances → [[Инновация vs Традиция]] (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 - conflicts_with → [[Память]] (Ценность)
 
 ## На что ссылаются
 
-- [[Порядок]] (Ценность) → conflicts_with
-- [[Мудрость]] (Ценность) → conflicts_with
-- [[Мудрость]] (Ценность) → conflicts_with
-- [[Творчество vs Традиция]] (Компромисс) → conflicts_with
-- [[Застой]] (Тень) → transforms_into
-- [[Традиция vs Творчество]] (Компромисс) → conflicts_with
-- [[Верность]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Красота]] (Ценность) → conflicts_with
-- [[Красота]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Инновация vs Традиция]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
 - [[Память]] (Ценность) → conflicts_with
 
 ---

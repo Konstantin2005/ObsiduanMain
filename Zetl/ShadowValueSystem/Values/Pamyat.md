@@ -7,7 +7,7 @@ title: "Память"
 # 💎 Память
 
 **Тип:** Ценность
-**Кластер:** [[Память]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Память"
 
 ## Связи
 
-- balances → [[Прощение vs Память]] (Компромисс)
-- manifests_as → [[Ностальгия]] (Тень)
-- manifests_as → [[Ностальгия]] (Поведение)
-- manifests_as → [[Травма]] (Поведение)
-- manifests_as → [[Мемориал]] (Поведение)
-- balances → [[Память vs Прощение]] (Компромисс)
-- conflicts_with → [[Традиция]] (Ценность)
-- conflicts_with → [[Идентичность]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Истина]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Истина]] (Ценность) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Традиция]] (Ценность) → conflicts_with
-- [[Прощение vs Память]] (Компромисс) → conflicts_with
-- [[Ностальгия]] (Тень) → transforms_into
-- [[Память vs Прощение]] (Компромисс) → conflicts_with
-- [[Идентичность]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

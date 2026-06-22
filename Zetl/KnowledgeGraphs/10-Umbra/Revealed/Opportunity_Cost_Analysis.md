@@ -39,9 +39,9 @@ Opportunity cost analysis forces decision-makers to consider the value of the ne
 - Seek devil's advocate perspectives
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Sunk_Cost_Fallacy]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 Very high effectiveness for overcoming sunk cost fallacy and improving strategic decision-making.

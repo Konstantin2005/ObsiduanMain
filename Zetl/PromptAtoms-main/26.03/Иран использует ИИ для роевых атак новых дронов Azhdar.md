@@ -22,9 +22,9 @@ https://defencesecurityasia.com/en/iran-azhdar-stealth-underwater-drone-strait-o
 ---
 ## Zero-links
 ---
-- [[0 Военные системы]]
-- [[0 Фундаментальные технологии и принципы]]
-- [[0 Прикладные подходы и кейсы]]
+- 
+- 
+- 
 
 ---
 ## Links

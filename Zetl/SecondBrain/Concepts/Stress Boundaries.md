@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Planning Strategies|Planning Strategies]]
 - [[Adaptive Leadership|Adaptive Leadership]]
-- [[Mobile CI/CD|Mobile CI/CD]]
+- 
 
 ## Связанные проекты
 

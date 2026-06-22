@@ -12,7 +12,7 @@ tags: [knowledge, programming]
 - [[Express.js]]
 - [[Clean Architecture]]
 - [[Tracing]]
-- [[A*]]
+- 
 - [[Asymmetric Encryption]]
 - [[Dunning-Kruger Effect]]
 - [[Preferences]]

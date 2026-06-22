@@ -40,9 +40,9 @@ Reflective learning practice provides a framework for effectively learning from 
 - Document lessons learned
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Hindsight_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for improving learning capacity and overcoming cognitive biases, particularly for personal and professional development.

@@ -14,7 +14,7 @@ tags: [knowledge, ai]
 - [[Camera Matrix]]
 - [[Face Recognition]]
 - [[Subsidies]]
-- [[A*]]
+- 
 - [[Singleton]]
 - [[Conceptual Thinking]]
 - [[Opinion]]

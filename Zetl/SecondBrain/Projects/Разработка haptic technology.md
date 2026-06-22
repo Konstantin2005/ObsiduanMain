@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[AR/VR Technologies]]
+- 
 - [[Robotics]]
 - [[Materials Science]]
 
 ## Используемые концепции
 
 - [[Haptic Feedback]]
-- [[Force Sensing]]
-- [[Wearable Design]]
-- [[Integration]]
-- [[User Experience]]
-- [[Testing]]
-- [[Commercial Applications]]
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Patent Strategy]]
-- [[Partnership]]
-- [[Scaling Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

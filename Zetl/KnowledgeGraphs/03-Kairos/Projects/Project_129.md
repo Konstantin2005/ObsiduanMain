@@ -41,8 +41,8 @@ A project to create meaningful impact.
 - [[Philosophy_Politics_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_PrioritySetting]]

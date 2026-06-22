@@ -7,7 +7,7 @@ title: "Нарциссизм"
 # 🌑 Нарциссизм
 
 **Тип:** Тень
-**Кластер:** [[Красота]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Нарциссизм"
 
 ## Связи
 
-- transforms_into → [[Красота]] (Ценность)
-- manifests_as → [[Тщеславие]] (Поведение)
-- manifests_as → [[Эстетизм]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Красота]] (Ценность) → manifests_as
-- [[Тщеславие]] (Поведение) → transforms_into
-- [[Эстетизм]] (Поведение) → transforms_into
-- [[Творчество]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

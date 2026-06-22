@@ -14,15 +14,15 @@ review_frequency: monthly
 Principles and practices of creating, communicating, and delivering value to customers.
 
 ## Related Concepts
-- [[Business_MarketingStrategy_v1]]
-- [[Business_CustomerRelations_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Expression]]
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_MarketingCampaign]]
+- 
 
 ## Statistics
 - Total Concepts: 44

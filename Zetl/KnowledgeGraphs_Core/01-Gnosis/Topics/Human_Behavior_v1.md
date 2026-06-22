@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of human behavioral patterns, social psychology, and cultural influences.
 
 ## Related Concepts
-- [[Human_Behavior_Social_v1]]
-- [[Human_Behavior_Cultural_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Association]]
 - [[Justice_Equality]]
 
 ## Related Projects
-- [[Project_BehaviorResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 46

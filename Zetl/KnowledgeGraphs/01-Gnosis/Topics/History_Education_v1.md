@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of educational systems, learning methods, and knowledge transmission throughout history.
 
 ## Related Concepts
-- [[History_TraditionalEducation_v1]]
-- [[History_ModernEducation_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Questioning]]
 - [[Competence_Standards]]
 
 ## Related Projects
-- [[Project_EducationHistory]]
+- 
 
 ## Statistics
 - Total Concepts: 32

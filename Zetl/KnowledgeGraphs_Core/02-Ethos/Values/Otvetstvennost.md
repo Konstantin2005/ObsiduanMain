@@ -7,7 +7,7 @@ title: "Ответственность"
 # 💎 Ответственность
 
 **Тип:** Ценность
-**Кластер:** [[Ответственность]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Ответственность"
 
 ## Связи
 
-- conflicts_with → [[Власть]] (Ценность)
-- manifests_as → [[Вина]] (Тень)
-- manifests_as → [[Вина]] (Поведение)
-- manifests_as → [[Контроль]] (Поведение)
-- manifests_as → [[Обязательства]] (Поведение)
-- balances → [[Ответственность vs Свобода]] (Компромисс)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Целостность]] (Ценность)
-- conflicts_with → [[Достоинство]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Целостность]] (Ценность) → conflicts_with
-- [[Достоинство]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Власть]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Вина]] (Тень) → transforms_into
-- [[Ответственность vs Свобода]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124135747.png]]
+!
 
 -----
 ## почему Development Plans становятся новым стандартом разработки с ИИ

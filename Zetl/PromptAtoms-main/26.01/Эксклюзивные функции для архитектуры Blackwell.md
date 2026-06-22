@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203153349.png]]
+!
 
 -----
 ## Трансформерный ИИ и эксклюзивные функции для архитектуры Blackwell 

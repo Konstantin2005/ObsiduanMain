@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230144944.png]]
+!
 
 -----
 ## как научить SLM сложной многошаговой логике

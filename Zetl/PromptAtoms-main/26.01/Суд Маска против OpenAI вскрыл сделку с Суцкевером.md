@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203154610.png]]
+!
 
 -----
 ## суд Маска против OpenAI вскрыл сделку с Суцкевером на $4 млрд

@@ -20,11 +20,11 @@ This value matters because self-determination is fundamental to human dignity an
 
 ## Conflicts
 ### Direct Conflicts
-- [[Responsibility_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Freedom_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because self-determination is fundamental to human dignity an
 - [[Freedom_Thought]]
 
 ## Related Concepts
-- [[Concept_Autonomy_v1]]
-- [[Concept_DecisionMaking_v1]]
-- [[Concept_Individualism_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Freedom_v1]]
+- 
 
 ## Application
 I apply this value by setting boundaries with others and making decisions based on my own values rather than external pressure.
@@ -51,4 +51,4 @@ I apply this value by setting boundaries with others and making decisions based 
 - Making health decisions based on personal research
 
 ## See Also
-- [[Value_MOC_Freedom]]
+- 

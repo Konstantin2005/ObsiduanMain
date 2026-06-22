@@ -14,18 +14,18 @@ status: active
 
 - [[Blockchain]]
 - [[Supply Chain]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Traceability]]
+- 
 - [[Smart Contracts]]
 - [[Consensus Mechanisms]]
-- [[Data Integrity]]
-- [[Integration]]
-- [[Scalability]]
+- 
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Partner Onboarding]]
+- 
 - [[Cost-Benefit Analysis]]
 - [[Innovation Management]]
 

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260213001320.png]]
+!
 
 -----
 ## стремительный темп развития нейросетей 

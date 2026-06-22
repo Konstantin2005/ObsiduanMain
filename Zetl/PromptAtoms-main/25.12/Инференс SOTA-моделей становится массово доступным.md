@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251231153635.png]]
+!
 
 -----
 ## Экономика ИИ в 2025 году

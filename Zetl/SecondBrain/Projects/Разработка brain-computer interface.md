@@ -14,20 +14,20 @@ status: active
 
 - [[Biotechnology]]
 - [[Machine Learning]]
-- [[AR/VR Technologies]]
+- 
 
 ## Используемые концепции
 
-- [[Neural Signal Processing]]
+- 
 - [[Deep Learning]]
-- [[Real-Time Systems]]
-- [[Hardware Integration]]
-- [[Ethical Considerations]]
-- [[Clinical Testing]]
+- 
+- 
+- 
+- 
 - [[Regulatory Approval]]
-- [[Commercial Applications]]
-- [[Partnership]]
-- [[Funding Strategy]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

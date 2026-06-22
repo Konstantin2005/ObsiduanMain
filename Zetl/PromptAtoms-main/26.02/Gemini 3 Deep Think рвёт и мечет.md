@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260213001431.png]]
+!
 
 -----
 ## Gemini 3 Deep Think

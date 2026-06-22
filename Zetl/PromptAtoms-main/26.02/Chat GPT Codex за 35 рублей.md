@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260220123516.png]]
+!
 
 -----
 ## бюджетная альтернатива Opus и нюансы настройки в Kilo Code

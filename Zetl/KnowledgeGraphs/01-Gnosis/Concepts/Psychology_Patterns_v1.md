@@ -42,8 +42,8 @@ I learned about psychological patterns through research on pattern recognition a
 Psychological patterns research is essential for understanding recurring patterns in psychological phenomena.
 
 ## Resources
-- [[Resource_PsychologicalPatterns]]
-- [[Resource_PatternRecognition]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

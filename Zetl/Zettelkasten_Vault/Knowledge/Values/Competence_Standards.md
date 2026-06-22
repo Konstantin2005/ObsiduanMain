@@ -20,11 +20,11 @@ This value matters because standards define quality and character. High standard
 
 ## Conflicts
 ### Direct Conflicts
-- [[Freedom_Constraint]]
-- [[Authority_Abuse]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Competence_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because standards define quality and character. High standard
 - [[Competence_Application]]
 
 ## Related Concepts
-- [[Concept_ProfessionalStandards_v1]]
-- [[Concept_QualityAssurance_v1]]
-- [[Concept_Excellence_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Competence_v1]]
+- 
 
 ## Application
 I apply this value by setting and maintaining high standards, refusing subpar work, and mentoring others.
@@ -51,4 +51,4 @@ I apply this value by setting and maintaining high standards, refusing subpar wo
 - Mentoring junior team members
 
 ## See Also
-- [[Value_MOC_Competence]]
+- 

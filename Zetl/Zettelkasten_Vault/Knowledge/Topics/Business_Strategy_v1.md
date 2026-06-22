@@ -14,15 +14,15 @@ review_frequency: monthly
 Principles and practices for creating, delivering, and capturing value in competitive markets.
 
 ## Related Concepts
-- [[Business_StrategicPlanning_v1]]
-- [[Business_Innovation_v1]]
+- 
+- 
 
 ## Related Values
 - [[Competence_Excellence]]
 - [[Career_LearningContinuity]]
 
 ## Related Projects
-- [[Project_StrategyImplementation]]
+- 
 
 ## Statistics
 - Total Concepts: 48

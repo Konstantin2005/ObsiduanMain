@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260207152907.png]]
+!
 
 -----
 ## Pony Alpha это бета Claude Sonnet 5
@@ -19,9 +19,9 @@ author:
 ---
 ## Zero-links
 ---
-- [[0 ИИ-модели и системы]]
-- [[0 Платформы, бенчмарки и стандарты]]
-- [[0 Техники адаптации моделей]]
+- 
+- 
+- 
 
 ---
 ## Links

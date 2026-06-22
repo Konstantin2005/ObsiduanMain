@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[ESG Framework]]
-- [[Carbon Footprint]]
-- [[Renewable Energy]]
+- 
+- 
+- 
 - [[Circular Economy]]
-- [[Stakeholder Reporting]]
-- [[Sustainability Metrics]]
+- 
+- 
 - [[Green Supply Chain]]
-- [[Environmental Compliance]]
+- 
 - [[Sustainable Materials]]
-- [[Impact Measurement]]
+- 
 
 ## Этапы проекта
 

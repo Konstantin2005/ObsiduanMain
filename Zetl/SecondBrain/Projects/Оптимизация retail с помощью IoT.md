@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[IoT]]
-- [[Retail Operations]]
+- 
 - [[Data Engineering]]
 
 ## Используемые концепции
 
-- [[Inventory Tracking]]
-- [[Customer Analytics]]
-- [[Smart Shelves]]
+- 
+- 
+- 
 - [[Energy Management]]
 - [[Supply Chain]]
-- [[Integration]]
-- [[ROI Measurement]]
-- [[Training]]
-- [[Governance]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

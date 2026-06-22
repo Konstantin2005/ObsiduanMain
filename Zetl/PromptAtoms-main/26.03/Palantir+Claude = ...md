@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260316085524.png]]
+!
 
 -----
 ## Palantir+Claude = ??? 
@@ -17,9 +17,9 @@ author:
 ---
 ## Zero-links
 ---
-- [[0 Военные системы]]
-- [[0 Прикладные подходы и кейсы]]
-- [[0 ИИ-модели и системы]]
+- 
+- 
+- 
 
 ---
 ## Links

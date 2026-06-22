@@ -38,26 +38,26 @@ title: "Мегаграф знаний"
 
 ## Мосты между графами
 
-- [[Энтропия и Хаос]]: 01-Gnosis -> 02-Ethos
-- [[Свобода воли и Решение]]: 01-Gnosis -> 03-Kairos
-- [[Тень архетипа]]: 04-Psyche -> 10-Umbra
-- [[Парадокс выбора]]: 05-Antinomy -> 08-Quest
-- [[Мемы ценностей]]: 09-Meme -> 02-Ethos
-- [[Каскад решений]]: 07-Nexus -> 03-Kairos
-- [[ФронтIER знаний]]: 06-Aporia -> 01-Gnosis
-- [[Игра в тенях]]: 08-Quest -> 10-Umbra
-- [[Психология решений]]: 04-Psyche -> 03-Kairos
-- [[Эволюция конфликтов]]: 09-Meme -> 05-Antinomy
-- [[Причинность и личность]]: 07-Nexus -> 04-Psyche
-- [[Вопросы о ценностях]]: 06-Aporia -> 02-Ethos
-- [[Навык и знание]]: 08-Quest -> 01-Gnosis
-- [[Тень знания]]: 10-Umbra -> 01-Gnosis
-- [[Конфликт ценностей]]: 05-Antinomy -> 02-Ethos
-- [[Эволюция психологии]]: 09-Meme -> 04-Psyche
-- [[Обратная связь и поведение]]: 07-Nexus -> 04-Psyche
-- [[Открытые вопросы личности]]: 06-Aporia -> 04-Psyche
-- [[Игровые противоречия]]: 08-Quest -> 05-Antinomy
-- [[Скрытые причины]]: 10-Umbra -> 07-Nexus
+- : 01-Gnosis -> 02-Ethos
+- : 01-Gnosis -> 03-Kairos
+- : 04-Psyche -> 10-Umbra
+- : 05-Antinomy -> 08-Quest
+- : 09-Meme -> 02-Ethos
+- : 07-Nexus -> 03-Kairos
+- : 06-Aporia -> 01-Gnosis
+- : 08-Quest -> 10-Umbra
+- : 04-Psyche -> 03-Kairos
+- : 09-Meme -> 05-Antinomy
+- : 07-Nexus -> 04-Psyche
+- : 06-Aporia -> 02-Ethos
+- : 08-Quest -> 01-Gnosis
+- : 10-Umbra -> 01-Gnosis
+- : 05-Antinomy -> 02-Ethos
+- : 09-Meme -> 04-Psyche
+- : 07-Nexus -> 04-Psyche
+- : 06-Aporia -> 04-Psyche
+- : 08-Quest -> 05-Antinomy
+- : 10-Umbra -> 07-Nexus
 
 ---
 

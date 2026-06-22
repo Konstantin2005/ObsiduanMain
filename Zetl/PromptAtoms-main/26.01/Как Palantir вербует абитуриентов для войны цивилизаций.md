@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203154703.png]]
+!
 
 -----
 ## как Palantir вербует школьников для «войны цивилизаций»

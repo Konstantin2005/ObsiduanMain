@@ -41,8 +41,8 @@ A project to improve personal growth.
 - [[Economics_International_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

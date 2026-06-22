@@ -16,7 +16,7 @@ Practice kindness and compassion towards others.
 ## Goals
 - [[Goal_DevelopCaringNature]]
 - [[Goal_DevelopCompassion]]
-- [[Goal_Service_Community]]
+- 
 
 ## Current Progress
 ### Completed
@@ -32,25 +32,25 @@ Practice kindness and compassion towards others.
 - [ ] Create kindness program
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Values
 - [[Responsibility_Care]]
 - [[Service_Community]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - None
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones

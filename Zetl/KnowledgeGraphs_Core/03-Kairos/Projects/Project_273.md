@@ -41,8 +41,8 @@ A project to improve personal growth.
 - [[Science_Physics_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_145]]

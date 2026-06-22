@@ -20,11 +20,11 @@ This value matters because equality sustains social cohesion and justice. When e
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
-- [[Freedom_Constraint]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Justice_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because equality sustains social cohesion and justice. When e
 - [[Justice_Integrity]]
 
 ## Related Concepts
-- [[Concept_Equality_v1]]
-- [[Concept_Rights_v1]]
-- [[Concept_Opportunity_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Justice_v1]]
+- 
 
 ## Application
 I apply this value by advocating for equal rights, ensuring equal opportunities, and fighting discrimination.
@@ -51,4 +51,4 @@ I apply this value by advocating for equal rights, ensuring equal opportunities,
 - Advocating for equal education
 
 ## See Also
-- [[Value_MOC_Justice]]
+- 

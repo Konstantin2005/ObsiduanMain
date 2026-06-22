@@ -14,20 +14,20 @@ status: active
 
 - [[Health & Fitness]]
 - [[Human Resources]]
-- [[Wellness Program]]
+- 
 
 ## Используемые концепции
 
 - [[Exercise Programming]]
-- [[Nutrition Guidance]]
+- 
 - [[Stress Management]]
 - [[Sleep Optimization]]
-- [[Mental Health Support]]
+- 
 - [[Health Metrics]]
 - [[Employee Engagement]]
-- [[Program Design]]
-- [[ROI Measurement]]
-- [[Sustainability]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

@@ -17,6 +17,6 @@ tags: [knowledge, gametheory]
 - [[Aggression]]
 - [[Gradient Boosting]]
 - [[Supervised Learning]]
-- [[A/B Testing]]
+- 
 - [[Directors]]
 - [[Epipolar Geometry]]

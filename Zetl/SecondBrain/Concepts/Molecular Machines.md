@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Monitoring & Alerting|Monitoring & Alerting]]
 - [[Project Management|Project Management]]
-- [[CI/CD Pipelines|CI/CD Pipelines]]
+- 
 
 ## Связанные проекты
 

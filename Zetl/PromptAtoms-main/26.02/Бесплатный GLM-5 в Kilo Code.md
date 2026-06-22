@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260211220404.png]]
+!
 
 -----
 ##  проблема низкой скорости и преимущество Gemini 3 Flash

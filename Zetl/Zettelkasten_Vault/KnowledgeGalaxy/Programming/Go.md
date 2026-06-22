@@ -6,7 +6,7 @@ tags: [knowledge, programming]
 # Go
 
 ## Related Concepts
-- [[SSL/TLS]]
+- 
 - [[Lua]]
 - [[Adapter]]
 - [[Insertion Sort]]

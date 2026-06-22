@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Security Automation]]
-- [[Vulnerability Scanning]]
-- [[Container Security]]
-- [[Secret Management]]
-- [[Security Testing]]
-- [[Compliance Automation]]
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Incident Response]]
-- [[Security Metrics]]
-- [[Security Training]]
-- [[Threat Modeling]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

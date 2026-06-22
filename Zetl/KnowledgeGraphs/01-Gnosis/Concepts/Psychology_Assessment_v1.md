@@ -42,8 +42,8 @@ I learned about psychological assessment through research on clinical psychology
 Psychological assessment research is crucial for accurate diagnosis and effective treatment planning.
 
 ## Resources
-- [[Resource_PsychologicalAssessment]]
-- [[Resource_ClinicalMeasurement]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Memory_v1]]

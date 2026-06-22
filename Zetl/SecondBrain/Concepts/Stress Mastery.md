@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[BCG Matrix|BCG Matrix]]
 - [[Just-in-Time|Just-in-Time]]
-- [[A/B Testing|A/B Testing]]
+- 
 
 ## Связанные проекты
 

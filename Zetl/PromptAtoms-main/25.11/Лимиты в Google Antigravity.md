@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124135738.png]]
+!
 
 -----
 ##  преференции для Gemini 3 и сброс квот каждые 5 часов

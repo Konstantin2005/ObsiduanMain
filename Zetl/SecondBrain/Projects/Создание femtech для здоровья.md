@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Health Tracking]]
-- [[Telemedicine]]
-- [[Data Analytics]]
-- [[Privacy Protection]]
-- [[Evidence-Based Design]]
-- [[User Experience]]
-- [[Community Features]]
-- [[Integration]]
-- [[Partnership]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

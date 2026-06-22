@@ -10,7 +10,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260205230322.png]]
+!
 
 -----
 ## Поддержка MCP и техническое превосходство скорости над vLLM 

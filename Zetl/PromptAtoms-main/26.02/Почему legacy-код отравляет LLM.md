@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260213210144.png]]
+!
 
 -----
 ## Почему legacy-код «отравляет» LLM и как ручное вмешательство ломает генерацию 

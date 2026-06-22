@@ -7,7 +7,7 @@ title: "Любовь"
 # 💎 Любовь
 
 **Тип:** Ценность
-**Кластер:** [[Любовь]]
+**Кластер:** 
 
 ---
 
@@ -17,52 +17,52 @@ title: "Любовь"
 
 ## Связи
 
-- conflicts_with → [[Безопасность]] (Ценность)
-- conflicts_with → [[Tolerantность]] (Ценность)
-- conflicts_with → [[Справедливость]] (Ценность)
-- conflicts_with → [[Милосердие]] (Ценность)
-- manifests_as → [[Зависимость]] (Тень)
-- manifests_as → [[Контроль]] (Поведение)
-- manifests_as → [[Созависимость]] (Поведение)
-- manifests_as → [[Жертвенность]] (Поведение)
-- balances → [[Любовь vs Автономия]] (Компромисс)
-- conflicts_with → [[Эмпатия]] (Ценность)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Привязанность]] (Ценность)
-- balances → [[Автономия vs Любовь]] (Компромисс)
-- conflicts_with → [[Честность]] (Ценность)
-- conflicts_with → [[Эмпатия]] (Ценность)
-- conflicts_with → [[Границы]] (Ценность)
-- conflicts_with → [[Верность]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Щедрость]] (Ценность)
-- conflicts_with → [[Мир]] (Ценность)
-- conflicts_with → [[Прощение]] (Ценность)
-- conflicts_with → [[Память]] (Ценность)
-- conflicts_with → [[Привязанность]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Безопасность]] (Ценность) → conflicts_with
-- [[Tolerantность]] (Ценность) → conflicts_with
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Милосердие]] (Ценность) → conflicts_with
-- [[Зависимость]] (Тень) → transforms_into
-- [[Любовь vs Автономия]] (Компромисс) → conflicts_with
-- [[Автономия vs Любовь]] (Компромисс) → conflicts_with
-- [[Честность]] (Ценность) → conflicts_with
-- [[Эмпатия]] (Ценность) → conflicts_with
-- [[Эмпатия]] (Ценность) → conflicts_with
-- [[Границы]] (Ценность) → conflicts_with
-- [[Верность]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Щедрость]] (Ценность) → conflicts_with
-- [[Мир]] (Ценность) → conflicts_with
-- [[Прощение]] (Ценность) → conflicts_with
-- [[Память]] (Ценность) → conflicts_with
-- [[Привязанность]] (Ценность) → conflicts_with
-- [[Привязанность]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

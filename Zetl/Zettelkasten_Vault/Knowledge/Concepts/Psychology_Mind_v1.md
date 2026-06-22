@@ -41,8 +41,8 @@ I learned about psychological mind through research on cognitive psychology and 
 Psychological mind is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalMind]]
-- [[Resource_CognitiveFunctions]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

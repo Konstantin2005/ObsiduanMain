@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Finance]]
-- [[Technology]]
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
 - [[Risk Assessment]]
-- [[Claims Processing]]
-- [[Customer Onboarding]]
-- [[Fraud Detection]]
+- 
+- 
+- 
 - [[Mobile Development]]
-- [[Integration]]
-- [[Analytics]]
+- 
+- 
 - [[Compliance]]
-- [[Partnership]]
-- [[Growth Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

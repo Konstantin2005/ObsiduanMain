@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203143552.png]]
+!
 
 -----
 ## Гигантские ЦОД для обучения LLM невозможно утаить

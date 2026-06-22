@@ -17,10 +17,10 @@ https://www.indiatoday.in/technology/news/story/meta-delays-ai-model-avocado-rol
 ---
 ## Zero-links
 ---
-- [[0 Технологические гиганты]]
-- [[0 ИИ-модели и системы]]
-- [[0 Исследователи и идеологи]]
-- [[0 Платформы, бенчмарки и стандарты]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

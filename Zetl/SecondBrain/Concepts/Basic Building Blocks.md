@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[TCP/IP Protocol|TCP/IP Protocol]]
+- 
 - [[Circular Economy|Circular Economy]]
 - [[Azure Services|Azure Services]]
 

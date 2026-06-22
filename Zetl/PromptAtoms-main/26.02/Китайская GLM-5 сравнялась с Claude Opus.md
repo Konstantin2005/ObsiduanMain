@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260213001550.png]]
+!
 
 -----
 ## ничья в дуэлях и парадоксы CoT

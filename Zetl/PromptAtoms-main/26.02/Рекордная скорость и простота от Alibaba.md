@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260222121508.png]]
+!
 
 -----
 ## библиотека zvec от Alibaba покоряет GitHub

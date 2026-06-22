@@ -35,14 +35,14 @@ The availability heuristic error occurs when individuals overestimate the import
 - Consider base rates and long-term trends
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Availability_Heuristic]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Overconfidence_Error]]
-- [[Knowledge/Errors/Risk_Aversion_Error]]
-- [[Knowledge/Errors/Irrational_Fear_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Use statistical thinking tools

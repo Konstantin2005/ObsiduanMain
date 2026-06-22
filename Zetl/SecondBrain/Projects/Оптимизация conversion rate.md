@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[A/B Testing]]
-- [[Heat Maps]]
+- 
+- 
 - [[User Testing]]
-- [[Form Optimization]]
-- [[Trust Signals]]
-- [[Page Speed]]
-- [[Mobile Optimization]]
-- [[Personalization]]
-- [[Analytics Dashboard]]
-- [[CRO Process]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

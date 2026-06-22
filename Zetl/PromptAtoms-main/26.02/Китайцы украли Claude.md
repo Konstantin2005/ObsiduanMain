@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260207153019.png]]
+!
 
 -----
 ## как дистилляция Opus и технология GRPO могут вывести GLM 5 в лидеры рынка

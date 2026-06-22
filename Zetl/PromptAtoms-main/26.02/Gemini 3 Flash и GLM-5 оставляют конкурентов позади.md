@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260216124922.png]]
+!
 
 -----
 ## Скорость LLM в разработке

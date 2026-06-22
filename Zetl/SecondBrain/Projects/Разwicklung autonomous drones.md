@@ -13,7 +13,7 @@ status: active
 ## Связанные темы
 
 - [[Robotics]]
-- [[AI]]
+- 
 - [[Energy Technology]]
 
 ## Используемые концепции
@@ -22,12 +22,12 @@ status: active
 - [[Computer Vision]]
 - [[Battery Technology]]
 - [[Regulatory Compliance]]
-- [[Safety Systems]]
-- [[Fleet Management]]
-- [[Data Processing]]
-- [[Community Acceptance]]
+- 
+- 
+- 
+- 
 - [[Cost Optimization]]
-- [[Commercial Applications]]
+- 
 
 ## Этапы проекта
 

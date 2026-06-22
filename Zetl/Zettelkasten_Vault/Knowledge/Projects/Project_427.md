@@ -41,8 +41,8 @@ A project to achieve specific goals.
 - [[Productivity_Tips_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

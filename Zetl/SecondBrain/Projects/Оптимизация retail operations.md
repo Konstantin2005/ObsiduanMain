@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Operations]]
-- [[E-Commerce]]
+- 
 - [[Business Analytics]]
 
 ## Используемые концепции
 
 - [[Inventory Management]]
-- [[Customer Analytics]]
-- [[Omnichannel Strategy]]
+- 
+- 
 - [[Supply Chain]]
 - [[Automation]]
-- [[User Experience]]
+- 
 - [[Mobile Development]]
-- [[Analytics Dashboard]]
-- [[Partnership]]
-- [[Growth Strategy]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

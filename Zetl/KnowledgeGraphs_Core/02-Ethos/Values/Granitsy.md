@@ -7,7 +7,7 @@ title: "Границы"
 # 💎 Границы
 
 **Тип:** Ценность
-**Кластер:** [[Границы]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Границы"
 
 ## Связи
 
-- conflicts_with → [[Автономия]] (Ценность)
-- balances → [[Эмпатия vs Границы]] (Компромисс)
-- manifests_as → [[Стена]] (Тень)
-- manifests_as → [[Изоляция]] (Поведение)
-- manifests_as → [[Холодность]] (Поведение)
-- manifests_as → [[Самозащита]] (Поведение)
-- balances → [[Границы vs Эмпатия]] (Компромисс)
-- conflicts_with → [[Автономия]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Достоинство]] (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Автономия]] (Ценность) → conflicts_with
-- [[Автономия]] (Ценность) → conflicts_with
-- [[Эмпатия vs Границы]] (Компромисс) → conflicts_with
-- [[Стена]] (Тень) → transforms_into
-- [[Границы vs Эмпатия]] (Компромисс) → conflicts_with
-- [[Достоинство]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

@@ -41,8 +41,8 @@ A project to build better habits.
 - [[WebDevelopment_v2]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_255]]

@@ -20,11 +20,11 @@ https://www.theinformation.com/articles/deepseeks-new-ai-model-will-victory-huaw
 ---
 ## Zero-links
 ---
-- [[0 Технологические гиганты]]
-- [[0 Компании и организации]]
-- [[0 ИИ-модели и системы]]
-- [[0 Страны]]
-- [[0 Производители робототехники]]
+- 
+- 
+- 
+- 
+- 
 
 ---
 ## Links

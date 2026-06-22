@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251231153417.png]]
+!
 
 -----
 ## итоги эволюции обучения ИИ к 2025 году

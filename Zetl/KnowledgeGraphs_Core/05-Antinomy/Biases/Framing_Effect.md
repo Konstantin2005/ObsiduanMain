@@ -33,17 +33,17 @@ The framing effect demonstrates how the presentation of information influences d
 Framing effects reveal the dual-process nature of decision-making, where emotional and rational systems respond differently to framed information.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Confirmation_Bias]]
-- [[Knowledge/Errors/Hindsight_Bias]]
-- [[Knowledge/Errors/OVERCONFIDENCE_Bias]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Anchoring_Bias]]
-- [[Knowledge/Biases/Framing_Effect]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Evidence_Review_Process]]
-- [[Knowledge/Corrections/Belief_Updating_Exercises]]
+- 
+- 
 
 ## Examples
 - Choosing surgery with 90% survival rate vs. 10% mortality rate

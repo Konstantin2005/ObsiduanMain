@@ -22,9 +22,9 @@ https://www.techcentral.ie/gartner-40-of-agentic-ai-projects-flop/
 ---
 ## Zero-links
 ---
-- [[0 Компании и организации]]
-- [[0 ИИ-модели и системы]]
-- [[0 Эмерджентные явления и новое поведение]]
+- 
+- 
+- 
 
 ---
 ## Links

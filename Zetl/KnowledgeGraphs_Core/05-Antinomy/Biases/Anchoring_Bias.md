@@ -33,17 +33,17 @@ Anchoring bias occurs when initial information, even if irrelevant, disproportio
 Anchors create mental reference points that serve as starting points for cognitive adjustments, but these adjustments are often insufficient.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Confirmation_Bias]]
-- [[Knowledge/Errors/Hindsight_Bias]]
-- [[Knowledge/Errors/OVERCONFIDENCE_Bias]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Anchoring_Bias]]
-- [[Knowledge/Biases/Framing_Effect]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Evidence_Review_Process]]
-- [[Knowledge/Corrections/Belief_Updating_Exercises]]
+- 
+- 
 
 ## Examples
 - Being influenced by initial price offers in negotiations

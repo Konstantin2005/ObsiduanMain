@@ -36,14 +36,14 @@ Escalation of commitment error occurs when individuals or organizations increase
 - Analyze opportunity costs
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Sunk_Cost_Fallacy]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Resource_Waste_Error]]
-- [[Knowledge/Errors/Learning_Block_Error]]
-- [[Knowledge/Errors/Team_Dysfunction_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Set clear success criteria

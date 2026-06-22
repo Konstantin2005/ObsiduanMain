@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203212340.png]]
+!
 
 -----
 ## Anthropic, Google форсируют запуск Claude Sonnet 5 в ответ на угрозу DeepSeek V4 

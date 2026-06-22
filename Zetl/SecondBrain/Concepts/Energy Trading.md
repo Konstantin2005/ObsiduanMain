@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Automation Strategy|Automation Strategy]]
 - [[Balance Sheet Analysis|Balance Sheet Analysis]]
-- [[Mobile CI/CD|Mobile CI/CD]]
+- 
 
 ## Связанные проекты
 

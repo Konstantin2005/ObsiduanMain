@@ -40,9 +40,9 @@ Risk-reward analysis provides a structured framework for evaluating the potentia
 - Implement gradual exposure
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Loss_Aversion_Bias]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for overcoming loss aversion and improving risk assessment, particularly in investment and career contexts.

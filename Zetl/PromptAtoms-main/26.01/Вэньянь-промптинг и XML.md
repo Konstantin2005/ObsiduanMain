@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203161957.png]]
+!
 
 -----
 ## как краткость повышает эффективность работы с AI

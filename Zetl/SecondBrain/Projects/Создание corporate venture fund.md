@@ -19,14 +19,14 @@ status: active
 ## Используемые концепции
 
 - [[Corporate Venturing]]
-- [[Deal Flow]]
+- 
 - [[Due Diligence]]
-- [[Portfolio Management]]
-- [[Strategic Fit Assessment]]
-- [[Synergy Creation]]
-- [[Exit Planning]]
-- [[Governance Framework]]
-- [[Investment Committee]]
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Innovation Pipeline]]
 
 ## Этапы проекта

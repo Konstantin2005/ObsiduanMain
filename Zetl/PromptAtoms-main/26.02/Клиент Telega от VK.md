@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260218123845.png]]
+!
 
 -----
 ## обход блокировок Telegram ценой встроенной цензуры

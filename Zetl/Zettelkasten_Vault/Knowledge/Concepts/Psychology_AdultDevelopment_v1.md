@@ -42,8 +42,8 @@ I studied adult development through research on lifespan psychology and successf
 Adult development research helps create better workplace policies and support systems for all ages.
 
 ## Resources
-- [[Resource_AdultDevelopment]]
-- [[Resource_LifespanPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Development_v1]]

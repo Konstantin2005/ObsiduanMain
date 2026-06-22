@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203163030.png]]
+!
 
 -----
 ## реальная конкуренция LLM во фронтенде и ценовой барьер Claude Opus

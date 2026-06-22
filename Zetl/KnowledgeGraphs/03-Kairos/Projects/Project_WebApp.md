@@ -43,11 +43,11 @@ Build a web application with React and integrate machine learning capabilities.
 - [[Career_LearningContinuity]]
 
 ## Dependencies
-- [[Project1]]
-- [[Project2]]
+- 
+- 
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones
@@ -61,4 +61,4 @@ Build a web application with React and integrate machine learning capabilities.
 This project is focused on building a modern web application with React and ML capabilities.
 
 ## See Also
-- [[RelatedProject1]]
+- 

@@ -22,15 +22,15 @@ title: "Ностальгия"
 ## Связи
 
 - transforms_into → [[Память]] (Ценность)
-- manifests_as → [[Ностальгия]] (Поведение)
-- manifests_as → [[Травма]] (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
 - [[Память]] (Ценность) → manifests_as
-- [[Ностальгия]] (Поведение) → transforms_into
-- [[Травма]] (Поведение) → transforms_into
-- [[Мемориал]] (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

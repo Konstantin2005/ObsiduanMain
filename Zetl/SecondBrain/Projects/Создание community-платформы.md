@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Entrepreneurship]]
-- [[Community Building]]
+- 
 - [[Software Architecture]]
 
 ## Используемые концепции
 
-- [[Community Features]]
-- [[Content Management]]
-- [[Moderation Tools]]
-- [[Gamification]]
-- [[Monetization]]
+- 
+- 
+- 
+- 
+- 
 - [[API Design]]
 - [[Mobile Development]]
-- [[Analytics Dashboard]]
-- [[User Experience]]
-- [[Growth Strategy]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

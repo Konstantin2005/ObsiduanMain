@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260204130714.png]]
+!
 
 -----
 ## почему Nvidia и инвесторы отказываются от эксклюзивности OpenAI 

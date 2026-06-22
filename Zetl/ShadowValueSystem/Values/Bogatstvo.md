@@ -7,7 +7,7 @@ title: "Богатство"
 # 💎 Богатство
 
 **Тип:** Ценность
-**Кластер:** [[Богатство]]
+**Кластер:** 
 
 ---
 
@@ -17,28 +17,28 @@ title: "Богатство"
 
 ## Связи
 
-- conflicts_with → [[Успех]] (Ценность)
-- manifests_as → [[Жадность]] (Тень)
-- manifests_as → [[Накопительство]] (Поведение)
-- manifests_as → [[Эксплуатация]] (Поведение)
-- manifests_as → [[Щедрость]] (Поведение)
-- balances → [[Богатство vs Щедрость]] (Компромисс)
-- conflicts_with → [[Успех]] (Ценность)
-- conflicts_with → [[Власть]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Цель]] (Ценность)
-- balances → [[Щедрость vs Богатство]] (Компромисс)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 
 ## На что ссылаются
 
-- [[Успех]] (Ценность) → conflicts_with
-- [[Успех]] (Ценность) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Власть]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Жадность]] (Тень) → transforms_into
-- [[Богатство vs Щедрость]] (Компромисс) → conflicts_with
-- [[Щедрость vs Богатство]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
 
 ---
 

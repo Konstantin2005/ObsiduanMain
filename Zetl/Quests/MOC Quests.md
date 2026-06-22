@@ -12,5 +12,5 @@ Map of Content for Quests cluster in zetl
 - [[Написать первый код]]
 
 ## Connected MOCs
-- [[MOC Global]]
-- [[MOC Skills]]
+- 
+- 

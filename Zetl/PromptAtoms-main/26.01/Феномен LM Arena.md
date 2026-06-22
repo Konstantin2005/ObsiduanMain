@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203152945.png]]
+!
 
 -----
 ##  Феномен LM Arena 

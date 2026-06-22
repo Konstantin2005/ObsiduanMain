@@ -11,7 +11,7 @@ tags: [knowledge, programming]
 - [[Circular List]]
 - [[Insertion Sort]]
 - [[Imperative Programming]]
-- [[A/B Testing]]
+- 
 - [[JavaScript]]
 - [[Programming Languages]]
 - [[Social Ethics]]

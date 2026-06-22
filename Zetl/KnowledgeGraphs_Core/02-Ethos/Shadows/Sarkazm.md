@@ -7,7 +7,7 @@ title: "Сарказм"
 # 🌑 Сарказм
 
 **Тип:** Тень
-**Кластер:** [[Юмор]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Сарказм"
 
 ## Связи
 
-- transforms_into → [[Юмор]] (Ценность)
-- manifests_as → [[Сарказм]] (Поведение)
-- manifests_as → [[Чёрный юмор]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Юмор]] (Ценность) → manifests_as
-- [[Сарказм]] (Поведение) → transforms_into
-- [[Чёрный юмор]] (Поведение) → transforms_into
-- [[Игривость]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

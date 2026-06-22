@@ -33,17 +33,17 @@ Loss aversion bias is a cognitive bias where people experience the pain of losse
 Loss aversion is thought to be an evolutionary adaptation, where avoiding losses was more critical for survival than acquiring gains.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Availability_Heuristic_Error]]
-- [[Knowledge/Errors/Overconfidence_Error]]
-- [[Knowledge/Errors/Confirmation_Bias_Error]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Opportunity_Cost_Analysis]]
-- [[Knowledge/Corrections/Probabilistic_Thinking]]
+- 
+- 
 
 ## Examples
 - Holding losing investments too long

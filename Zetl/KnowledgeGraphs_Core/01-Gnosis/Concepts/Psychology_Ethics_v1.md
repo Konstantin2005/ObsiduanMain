@@ -42,8 +42,8 @@ I learned about psychological ethics through research on professional ethics and
 Psychological ethics is essential for maintaining professional standards and protecting clients.
 
 ## Resources
-- [[Resource_PsychologicalEthics]]
-- [[Resource_ProfessionalEthics]]
+- 
+- 
 
 ## See Also
 - [[Philosophy_Ethics_v1]]

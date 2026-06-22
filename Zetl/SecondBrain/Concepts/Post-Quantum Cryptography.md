@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Balance Sheet Analysis|Balance Sheet Analysis]]
-- [[CI/CD Pipelines|CI/CD Pipelines]]
+- 
 - [[Robotics AI|Robotics AI]]
 
 ## Связанные проекты

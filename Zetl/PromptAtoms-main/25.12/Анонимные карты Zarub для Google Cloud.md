@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230160410.png]]
+!
 
 -----
 ## Как получить $300 на ИИ и обойти ограничения Free Tier

@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Medical Imaging]]
-- [[Diagnostic Algorithms]]
-- [[Clinical Validation]]
+- 
+- 
+- 
 - [[Regulatory Approval]]
 - [[Data Privacy]]
-- [[Integration]]
-- [[User Experience]]
-- [[Scalability]]
-- [[Partnership]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

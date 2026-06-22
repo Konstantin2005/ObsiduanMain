@@ -42,8 +42,8 @@ I learned about cognitive development through research on developmental psycholo
 Cognitive development research is essential for creating effective educational systems and supporting healthy development.
 
 ## Resources
-- [[Resource_CognitiveDevelopment]]
-- [[Resource_DevelopmentalPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_ChildDevelopment_v1]]

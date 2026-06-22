@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Food & Beverage]]
-- [[Technology]]
+- 
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Order Management]]
-- [[Inventory Optimization]]
-- [[Customer Experience]]
-- [[Delivery Integration]]
-- [[Analytics]]
-- [[Mobile Application]]
-- [[Partnership]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Compliance]]
-- [[Scaling Strategy]]
-- [[Marketing Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

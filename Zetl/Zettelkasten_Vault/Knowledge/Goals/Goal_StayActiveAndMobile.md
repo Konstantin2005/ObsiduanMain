@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Freedom_Movement]]
-project: [[Project_FitnessJourney]]
-project2: [[Project_Exploration]]
+project: 
+project2: 
 ---
 
 # Goal_StayActiveAndMobile
@@ -28,5 +28,5 @@ Not Started
 - [[Freedom_Movement]]
 
 ## Related Projects
-- [[Project_FitnessJourney]]
-- [[Project_Exploration]]
+- 
+- 

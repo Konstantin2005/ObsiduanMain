@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Beauty_Harmony]]
-project: [[Project_BalanceDevelopment]]
-project2: [[Project_RelationshipBuilding]]
+project: 
+project2: 
 ---
 
 # Goal_CreateHarmonyInLife
@@ -28,5 +28,5 @@ Not Started
 - [[Beauty_Harmony]]
 
 ## Related Projects
-- [[Project_BalanceDevelopment]]
-- [[Project_RelationshipBuilding]]
+- 
+- 

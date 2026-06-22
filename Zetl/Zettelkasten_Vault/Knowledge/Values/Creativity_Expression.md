@@ -35,11 +35,11 @@ Creativity fuels progress and brings joy to life. It allows us to see the world 
 - [[Competence_Application]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Engage in creative activities regularly, whether through art, writing, problem-solving, or innovation.
@@ -50,4 +50,4 @@ Engage in creative activities regularly, whether through art, writing, problem-s
 - Designing a new process
 
 ## See Also
-- [[Value_MOC]]
+- 

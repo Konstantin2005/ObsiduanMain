@@ -42,8 +42,8 @@ I learned about psychopathology through research on clinical psychology and abno
 Psychopathology research is crucial for understanding and treating mental disorders.
 
 ## Resources
-- [[Resource_Psychopathology]]
-- [[Resource_ClinicalPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

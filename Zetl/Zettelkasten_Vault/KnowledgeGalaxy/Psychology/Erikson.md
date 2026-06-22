@@ -16,7 +16,7 @@ tags: [knowledge, psychology]
 - [[Negative Reinforcement]]
 - [[Multinational Corporations]]
 - [[Aesthetic Experience]]
-- [[A*]]
+- 
 - [[Language]]
 - [[Fixed Mindset]]
 - [[Public Goods]]

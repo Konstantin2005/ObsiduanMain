@@ -41,8 +41,8 @@ I learned about psychological understanding through research on cognitive psycho
 Psychological understanding is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalUnderstanding]]
-- [[Resource_CognitiveComprehension]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

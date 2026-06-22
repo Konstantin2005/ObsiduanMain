@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260209154034.png]]
+!
 
 -----
 ## GLM-5 заимствует архитектуру внимания DeepSeek V3.2, отказываясь от классики Gemini 

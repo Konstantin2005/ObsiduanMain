@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203153734.png]]
+!
 
 -----
 ## почему качество моделей диктует срочный апгрейд на Blackwell

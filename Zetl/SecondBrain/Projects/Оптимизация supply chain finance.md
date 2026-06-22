@@ -14,20 +14,20 @@ status: active
 
 - [[Finance]]
 - [[Supply Chain]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Dynamic Discounting]]
-- [[Reverse Factoring]]
+- 
+- 
 - [[Risk Assessment]]
 - [[Working Capital]]
 - [[Automation]]
-- [[Integration]]
+- 
 - [[Compliance]]
-- [[Analytics]]
-- [[Partner Management]]
-- [[Innovation]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230145719.png]]
+!
 
 -----
 ## Практический тест SLM

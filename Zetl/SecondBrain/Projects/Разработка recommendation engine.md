@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Collaborative Filtering]]
-- [[Content-Based Filtering]]
+- 
+- 
 - [[Deep Learning]]
-- [[Data Pipeline]]
-- [[A/B Testing]]
-- [[User Profiling]]
-- [[Cold Start Problem]]
-- [[Scalability]]
-- [[Real-Time Recommendations]]
-- [[Recommendation Metrics]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

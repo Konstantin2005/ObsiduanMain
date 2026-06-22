@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Logistics]]
+- 
 - [[Artificial Intelligence]]
 - [[Operations]]
 
 ## Используемые концепции
 
-- [[Route Optimization]]
+- 
 - [[Demand Forecasting]]
-- [[Fleet Management]]
-- [[Warehouse Automation]]
-- [[Customer Experience]]
-- [[Analytics]]
-- [[Integration]]
+- 
+- 
+- 
+- 
+- 
 - [[Cost Optimization]]
-- [[Scalability]]
-- [[Training Programs]]
+- 
+- 
 
 ## Этапы проекта
 

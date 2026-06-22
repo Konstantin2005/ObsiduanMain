@@ -23,22 +23,22 @@ This value matters because technology evolves quickly, and staying current is cr
 - [[Life_WorkLifeBalance]]
 
 ### Indirect Conflicts
-- [[Value3]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
-- [[Value1]]
-- [[Value2]]
+- 
+- 
 
 ### Indirectly Supporting
-- [[Value3]]
+- 
 
 ## Related Concepts
 - [[ML_NeuralNetworks_v1]]
 - [[Productivity_Pomodoro]]
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 I apply this value by dedicating time each week to learn new technologies and frameworks.
@@ -49,4 +49,4 @@ I apply this value by dedicating time each week to learn new technologies and fr
 - Attending tech meetups
 
 ## See Also
-- [[Value_MOC]]
+- 

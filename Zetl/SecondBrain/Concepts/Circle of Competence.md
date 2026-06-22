@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Mental Representations|Mental Representations]]
 - [[Compliance Training|Compliance Training]]
-- [[10/10/10 Rule|10/10/10 Rule]]
+- 
 
 ## Связанные проекты
 

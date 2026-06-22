@@ -18,4 +18,4 @@ tags: [knowledge, psychology]
 - [[Anchoring Effect]]
 - [[Thought Experiments]]
 - [[Fixed Exchange Rate]]
-- [[CI/CD]]
+- 

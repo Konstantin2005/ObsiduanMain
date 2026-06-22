@@ -20,11 +20,11 @@ This value matters because exploration leads to growth and innovation. Without c
 
 ## Conflicts
 ### Direct Conflicts
-- [[Responsibility_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Curiosity_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because exploration leads to growth and innovation. Without c
 - [[Curiosity_Questioning]]
 
 ## Related Concepts
-- [[Concept_Exploration_v1]]
-- [[Concept_Discovery_v1]]
-- [[Concept_Innovation_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Curiosity_v1]]
+- 
 
 ## Application
 I apply this value by trying new restaurants, exploring different neighborhoods, and reading books outside my field.
@@ -51,4 +51,4 @@ I apply this value by trying new restaurants, exploring different neighborhoods,
 - Exploring different cultures
 
 ## See Also
-- [[Value_MOC_Curiosity]]
+- 

@@ -41,8 +41,8 @@ I learned about psychological consciousness through research on cognitive psycho
 Psychological consciousness is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalConsciousness]]
-- [[Resource_ConsciousnessStudies]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

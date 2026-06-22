@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Data Pipeline]]
+- 
 - [[Dashboard Design]]
 - [[Real-Time Analytics]]
 - [[API Design]]
 - [[Subscription Model]]
-- [[Customer Success]]
+- 
 - [[Pricing Strategy]]
 - [[Competitive Analysis]]
-- [[Security]]
-- [[Scalability]]
+- 
+- 
 
 ## Этапы проекта
 

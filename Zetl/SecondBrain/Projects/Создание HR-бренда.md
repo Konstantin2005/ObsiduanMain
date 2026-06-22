@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Employer Branding]]
-- [[Employee Value Proposition]]
-- [[Career Site]]
-- [[Social Media Recruiting]]
-- [[Employee Testimonials]]
-- [[University Relations]]
+- 
+- 
+- 
+- 
+- 
 - [[Diversity & Inclusion]]
-- [[Referral Program]]
+- 
 - [[HR Analytics]]
-- [[Talent Pipeline]]
+- 
 
 ## Этапы проекта
 

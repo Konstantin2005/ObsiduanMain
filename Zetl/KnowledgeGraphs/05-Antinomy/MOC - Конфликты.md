@@ -17,13 +17,13 @@ title: "Конфликты"
 
 ## 📂 Структура
 
-- [[#Paradoxes]]
-- [[#Dilemmas]]
-- [[#Tradeoffs]]
-- [[#Resolutions]]
-- [[#Tensions]]
-- [[#Reflections]]
-- [[#Biases]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ---
 
@@ -56,7 +56,7 @@ title: "Конфликты"
 - [[Anchoring_Bias]]
 - [[Availability_Heuristic]]
 - [[Bandwagon_Effect]]
-- [[Bias_Template]]
+- 
 - [[Confirmation_Bias]]
 - [[Dunning-Kruger_Effect]]
 - [[Framing_Effect]]
@@ -85,10 +85,10 @@ title: "Конфликты"
 
 ## 🌉 Мосты
 
-- → [[Парадокс выбора]] → 08-Quest
-- → [[Конфликт ценностей]] → 02-Ethos
-- ← [[Эволюция конфликтов]] ← 09-Meme
-- ← [[Игровые противоречия]] ← 08-Quest
+- →  → 08-Quest
+- →  → 02-Ethos
+- ←  ← 09-Meme
+- ←  ← 08-Quest
 
 ---
 

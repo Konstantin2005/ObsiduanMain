@@ -9,8 +9,8 @@ tags: [knowledge, programming]
 - [[BST]]
 - [[Adapter]]
 - [[Node.js]]
-- [[SSL/TLS]]
-- [[A/B Testing]]
+- 
+- 
 - [[React]]
 - [[Mediator]]
 - [[Prometheus]]

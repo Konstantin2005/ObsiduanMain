@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124134056.png]]
+!
 
 -----
 ## Чем браузер Comet от Perplexity превосходит оригинал

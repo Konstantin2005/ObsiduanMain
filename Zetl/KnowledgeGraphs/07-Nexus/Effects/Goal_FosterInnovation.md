@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Curiosity_Innovation]]
-project: [[Project_Innovation]]
-project2: [[Project_Creation]]
+project: 
+project2: 
 ---
 
 # Goal_FosterInnovation
@@ -28,5 +28,5 @@ Not Started
 - [[Curiosity_Innovation]]
 
 ## Related Projects
-- [[Project_Innovation]]
-- [[Project_Creation]]
+- 
+- 

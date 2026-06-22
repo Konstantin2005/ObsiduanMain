@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203171724.png]]
+!
 
 -----
 ## новый тяжеловес в Open Source с интеллектом уровня SOTA доступен для тестов

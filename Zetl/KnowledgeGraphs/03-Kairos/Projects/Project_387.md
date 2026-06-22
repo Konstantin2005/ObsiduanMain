@@ -41,8 +41,8 @@ A project to build better habits.
 - [[Psychology_Neuro_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_173]]

@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Speech Analytics]]
-- [[Sentiment Analysis]]
-- [[Automated Routing]]
-- [[Quality Assurance]]
-- [[Training Programs]]
+- 
+- 
+- 
+- 
+- 
 - [[Performance Metrics]]
-- [[Integration]]
+- 
 - [[Cost Optimization]]
-- [[Customer Experience]]
-- [[Scaling Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

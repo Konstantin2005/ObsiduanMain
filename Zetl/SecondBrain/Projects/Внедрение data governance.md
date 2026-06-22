@@ -21,12 +21,12 @@ status: active
 - [[Data Quality]]
 - [[Data Lineage]]
 - [[Data Catalog]]
-- [[Access Control]]
-- [[Privacy Protection]]
-- [[Stewardship Framework]]
-- [[Metadata Management]]
+- 
+- 
+- 
+- 
 - [[Data Ethics]]
-- [[Tool Selection]]
+- 
 - [[Change Management]]
 
 ## Этапы проекта

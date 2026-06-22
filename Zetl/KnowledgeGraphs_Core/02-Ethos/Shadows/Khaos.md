@@ -7,7 +7,7 @@ title: "Хаос"
 # 🌑 Хаос
 
 **Тип:** Тень
-**Кластер:** [[Свобода]]
+**Кластер:** 
 
 ---
 
@@ -21,61 +21,61 @@ title: "Хаос"
 
 ## Связи
 
-- transforms_into → [[Свобода]] (Ценность)
-- manifests_as → [[Анархизм]] (Поведение)
-- manifests_as → [[Нонконформизм]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → manifests_as
-- [[Анархизм]] (Поведение) → transforms_into
-- [[Нонконформизм]] (Поведение) → transforms_into
-- [[Самоопределение]] (Поведение) → transforms_into
-- [[Контроль]] (Поведение) → conflicts_with
-- [[Зависимость]] (Поведение) → conflicts_with
-- [[Смелость]] (Поведение) → balances
-- [[Научный ригоризм]] (Поведение) → manifests_as
-- [[Пассивность]] (Поведение) → manifests_as
-- [[Судилище]] (Поведение) → manifests_as
-- [[Отпущение]] (Поведение) → conflicts_with
-- [[Наставничество]] (Поведение) → conflicts_with
-- [[Созерцание]] (Поведение) → conflicts_with
-- [[Жертвенность]] (Поведение) → conflicts_with
-- [[Отстранённость]] (Поведение) → conflicts_with
-- [[Эксперимент]] (Поведение) → manifests_as
-- [[Консерватизм]] (Поведение) → manifests_as
-- [[Посвящение]] (Поведение) → conflicts_with
-- [[Умеренность]] (Поведение) → transforms_into
-- [[Директ]] (Поведение) → manifests_as
-- [[Тактичность]] (Поведение) → manifests_as
-- [[Духовность]] (Поведение) → balances
-- [[Критика]] (Поведение) → transforms_into
-- [[Сочувствие]] (Поведение) → balances
-- [[Самозащита]] (Поведение) → transforms_into
-- [[Преданность]] (Поведение) → transforms_into
-- [[Последовательность]] (Поведение) → balances
-- [[Призвание]] (Поведение) → transforms_into
-- [[Самоуважение]] (Поведение) → conflicts_with
-- [[Скромность]] (Поведение) → conflicts_with
-- [[Исследование]] (Поведение) → transforms_into
-- [[Последовательность]] (Поведение) → conflicts_with
-- [[Творчество]] (Поведение) → manifests_as
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
 - [[Лидерство]] (Поведение) → transforms_into
-- [[Справедливость]] (Поведение) → manifests_as
-- [[Солидарность]] (Поведение) → conflicts_with
-- [[Щедрость]] (Поведение) → balances
-- [[Поддержка]] (Поведение) → manifests_as
-- [[Эволюция]] (Поведение) → manifests_as
-- [[Ненасилие]] (Поведение) → transforms_into
-- [[Смелость]] (Поведение) → conflicts_with
-- [[Освобождение]] (Поведение) → balances
-- [[Мемориал]] (Поведение) → balances
-- [[Привязанность]] (Поведение) → conflicts_with
-- [[Присутствие]] (Поведение) → balances
-- [[Игривость]] (Поведение) → transforms_into
-- [[Глубина]] (Поведение) → conflicts_with
-- [[Самопознание]] (Поведение) → transforms_into
-- [[Обязательства]] (Поведение) → conflicts_with
+-  (Поведение) → manifests_as
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → manifests_as
+-  (Поведение) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → balances
+-  (Поведение) → conflicts_with
+-  (Поведение) → balances
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
+-  (Поведение) → transforms_into
+-  (Поведение) → conflicts_with
 
 ---
 

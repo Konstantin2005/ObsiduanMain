@@ -22,7 +22,7 @@ Study of mental processes including perception, memory, thinking, and problem-so
 - [[Curiosity_Questioning]]
 
 ## Related Projects
-- [[Project_CognitiveResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 48

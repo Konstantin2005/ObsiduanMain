@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of global trade, international finance, and cross-border economic interactions.
 
 ## Related Concepts
-- [[Economics_Globalization_v1]]
-- [[Economics_Trade_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Choice]]
 - [[Justice_Equality]]
 
 ## Related Projects
-- [[Project_InternationalTrade]]
+- 
 
 ## Statistics
 - Total Concepts: 37

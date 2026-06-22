@@ -37,14 +37,14 @@ Career stagnation error occurs when cognitive biases and thinking errors lead to
 - Evaluate opportunities objectively
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Status_Quo_Bias]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Skill_Deficiency_Error]]
-- [[Knowledge/Errors/Confidence_Inflation_Error]]
-- [[Knowledge/Errors/Job_Security_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Set career development goals

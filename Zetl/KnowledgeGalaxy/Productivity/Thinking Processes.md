@@ -9,7 +9,7 @@ tags: [knowledge, productivity]
 - [[Workplace]]
 - [[KPI]]
 - [[SMART Goals]]
-- [[80/20 Rule]]
+- 
 - [[Transformation]]
 - [[Micro-habits]]
 - [[Second Brain]]

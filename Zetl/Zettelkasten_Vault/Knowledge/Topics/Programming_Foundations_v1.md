@@ -14,15 +14,15 @@ review_frequency: monthly
 Fundamental principles and practices of software development, coding, and system design.
 
 ## Related Concepts
-- [[Programming_Algorithms_v1]]
-- [[Programming_DesignPatterns_v1]]
+- 
+- 
 
 ## Related Values
 - [[Competence_Standards]]
 - [[Curiosity_Exploration]]
 
 ## Related Projects
-- [[Project_SoftwareDevelopment]]
+- 
 
 ## Statistics
 - Total Concepts: 52

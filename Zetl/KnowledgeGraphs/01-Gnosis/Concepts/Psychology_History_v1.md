@@ -42,8 +42,8 @@ I learned about psychological history through research on the history of psychol
 Psychological history is essential for understanding the development of psychological knowledge.
 
 ## Resources
-- [[Resource_PsychologicalHistory]]
-- [[Resource_HistoryOfPsychology]]
+- 
+- 
 
 ## See Also
 - [[History_Education_v1]]

@@ -7,7 +7,7 @@ title: "Щедрость"
 # 💎 Щедрость
 
 **Тип:** Ценность
-**Кластер:** [[Щедрость]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Щедрость"
 
 ## Связи
 
-- balances → [[Богатство vs Щедрость]] (Компромисс)
-- manifests_as → [[Самопожертвование]] (Тень)
-- manifests_as → [[Мученичество]] (Поведение)
-- manifests_as → [[Бескорыстие]] (Поведение)
-- manifests_as → [[Поддержка]] (Поведение)
-- balances → [[Щедрость vs Богатство]] (Компромисс)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Эмпатия]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Эмпатия]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Богатство vs Щедрость]] (Компромисс) → conflicts_with
-- [[Самопожертвование]] (Тень) → transforms_into
-- [[Щедрость vs Богатство]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

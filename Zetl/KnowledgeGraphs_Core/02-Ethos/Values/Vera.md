@@ -7,7 +7,7 @@ title: "Вера"
 # 💎 Вера
 
 **Тип:** Ценность
-**Кластер:** [[Вера]]
+**Кластер:** 
 
 ---
 
@@ -17,32 +17,32 @@ title: "Вера"
 
 ## Связи
 
-- manifests_as → [[Фанатизм]] (Тень)
-- manifests_as → [[Сектантство]] (Поведение)
-- manifests_as → [[Прозелитизм]] (Поведение)
-- manifests_as → [[Духовность]] (Поведение)
-- balances → [[Вера vs Скептицизм]] (Компромисс)
-- conflicts_with → [[Мудрость]] (Ценность)
-- conflicts_with → [[Истина]] (Ценность)
-- conflicts_with → [[Цель]] (Ценность)
-- conflicts_with → [[Мужество]] (Ценность)
-- balances → [[Скептицизм vs Вера]] (Компромисс)
-- conflicts_with → [[Цель]] (Ценность)
-- conflicts_with → [[Смирение]] (Ценность)
-- conflicts_with → [[Отрешённость]] (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Истина]] (Ценность) → conflicts_with
-- [[Мудрость]] (Ценность) → conflicts_with
-- [[Фанатизм]] (Тень) → transforms_into
-- [[Вера vs Скептицизм]] (Компромисс) → conflicts_with
-- [[Скептицизм vs Вера]] (Компромисс) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Смирение]] (Ценность) → conflicts_with
-- [[Мужество]] (Ценность) → conflicts_with
-- [[Отрешённость]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

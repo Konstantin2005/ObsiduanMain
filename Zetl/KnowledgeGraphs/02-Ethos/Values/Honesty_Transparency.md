@@ -20,11 +20,11 @@ This value matters because transparency builds trust and prevents corruption. Wh
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
-- [[Freedom_Constraint]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Honesty_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because transparency builds trust and prevents corruption. Wh
 - [[Honesty_Accountability]]
 
 ## Related Concepts
-- [[Concept_Openness_v1]]
-- [[Concept_Disclosure_v1]]
-- [[Concept_Accountability_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Honesty_v1]]
+- 
 
 ## Application
 I apply this value by sharing information openly, being clear about my intentions, and avoiding hidden agendas.
@@ -51,4 +51,4 @@ I apply this value by sharing information openly, being clear about my intention
 - Publishing my progress and setbacks
 
 ## See Also
-- [[Value_MOC_Honesty]]
+- 

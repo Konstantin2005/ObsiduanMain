@@ -21,13 +21,13 @@ status: active
 - [[Solar Energy]]
 - [[Financial Modeling]]
 - [[Regulatory Approval]]
-- [[Community Engagement]]
-- [[Environmental Impact]]
-- [[Grid Integration]]
-- [[Maintenance Planning]]
-- [[Performance Monitoring]]
+- 
+- 
+- 
+- 
+- 
 - [[Risk Management]]
-- [[Scaling Strategy]]
+- 
 
 ## Этапы проекта
 

@@ -42,8 +42,8 @@ I learned about behavioral analysis through research on behaviorism and observat
 Behavioral analysis research is essential for understanding and modifying human behavior.
 
 ## Resources
-- [[Resource_BehavioralAnalysis]]
-- [[Resource_ObservationalResearch]]
+- 
+- 
 
 ## See Also
 - [[Psychology_GroupDynamics_v1]]

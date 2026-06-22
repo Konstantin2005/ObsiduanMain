@@ -36,14 +36,14 @@ Echo chamber error occurs when individuals or groups surround themselves with li
 - Practice viewpoint diversity
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Bandwagon_Effect]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Decision_Distortion_Error]]
-- [[Knowledge/Errors/Learning_Block_Error]]
-- [[Knowledge/Errors/Social_Isolation_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Seek diverse perspectives

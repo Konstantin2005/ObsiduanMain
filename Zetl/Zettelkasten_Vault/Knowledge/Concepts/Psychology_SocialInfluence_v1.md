@@ -42,8 +42,8 @@ I learned about social influence through research on social psychology and group
 Social influence research is essential for understanding consumer behavior and social change.
 
 ## Resources
-- [[Resource_SocialInfluence]]
-- [[Resource_SocialPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Social_v1]]

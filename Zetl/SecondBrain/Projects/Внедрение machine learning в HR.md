@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Talent Acquisition]]
-- [[Performance Prediction]]
+- 
 - [[Employee Retention]]
-- [[Workforce Planning]]
-- [[Bias Mitigation]]
+- 
+- 
 - [[Data Privacy]]
-- [[Ethical AI]]
+- 
 - [[Change Management]]
-- [[ROI Measurement]]
-- [[Training Programs]]
+- 
+- 
 
 ## Этапы проекта
 

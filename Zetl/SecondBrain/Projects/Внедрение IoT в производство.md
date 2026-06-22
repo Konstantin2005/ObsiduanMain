@@ -22,12 +22,12 @@ status: active
 - [[Predictive Maintenance]]
 - [[Quality Control]]
 - [[Energy Management]]
-- [[Process Optimization]]
-- [[Data Analytics]]
-- [[Integration]]
-- [[Security]]
-- [[ROI Measurement]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

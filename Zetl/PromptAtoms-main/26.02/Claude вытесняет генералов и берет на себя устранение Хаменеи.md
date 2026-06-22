@@ -23,11 +23,11 @@ https://www.reuters.com/world/iran-crisis-live-explosions-tehran-israel-announce
 ---
 ## Zero-links
 ---
-- [[0 ИИ-модели и системы]]
-- [[0 Ключевые фигуры]]
-- [[0 Страны]]
-- [[0 Военные системы]]
-- [[0 Глобальные процессы и тренды]]
+- 
+- 
+- 
+- 
+- 
 
 ---
 ## Links

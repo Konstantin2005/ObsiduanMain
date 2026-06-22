@@ -19,4 +19,4 @@ tags: [knowledge, philosophy]
 - [[Doubly Linked List]]
 - [[Ansible]]
 - [[Kotlin]]
-- [[A*]]
+- 

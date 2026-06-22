@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Subvocalization Control|Subvocalization Control]]
 - [[Ecosystem Building|Ecosystem Building]]
-- [[HTTP/HTTPS|HTTP/HTTPS]]
+- 
 
 ## Связанные проекты
 

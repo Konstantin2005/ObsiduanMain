@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260208221729.png]]
+!
 
 -----
 ## что происходит с китайскими нейросетями?

@@ -16,4 +16,4 @@ tags: [knowledge, philosophy]
 - [[Machine Learning]]
 - [[Psychophysics]]
 - [[DDoS Attacks]]
-- [[SSL/TLS]]
+- 

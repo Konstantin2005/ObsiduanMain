@@ -16,7 +16,7 @@ created: 2026-06-22
 - [[Decision Trees]]
 - [[Expected Value]]
 - [[Reversibility Test]]
-- [[10/10/10 Rule]]
+- 
 - [[Pre-Mortem Analysis]]
 - [[Second-Order Thinking]]
 - [[Inversion Method]]

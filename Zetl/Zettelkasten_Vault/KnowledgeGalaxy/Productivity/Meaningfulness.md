@@ -12,7 +12,7 @@ tags: [knowledge, productivity]
 - [[Ivy Lee Method]]
 - [[Inversion]]
 - [[Circadian Rhythms]]
-- [[SSL/TLS]]
+- 
 - [[Short-term Memory]]
 - [[Interests]]
 - [[Bash]]

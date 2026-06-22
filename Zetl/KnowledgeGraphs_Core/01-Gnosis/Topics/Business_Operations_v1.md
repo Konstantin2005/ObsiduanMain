@@ -14,15 +14,15 @@ review_frequency: monthly
 Principles and practices of managing business processes and operations efficiently.
 
 ## Related Concepts
-- [[Business_Process_v1]]
-- [[Business_Quality_v1]]
+- 
+- 
 
 ## Related Values
 - [[Competence_Standards]]
 - [[Career_LearningContinuity]]
 
 ## Related Projects
-- [[Project_OperationsOptimization]]
+- 
 
 ## Statistics
 - Total Concepts: 43

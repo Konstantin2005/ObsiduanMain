@@ -22,7 +22,7 @@ Study of human development from infancy through adulthood, including cognitive a
 - [[Career_LearningContinuity]]
 
 ## Related Projects
-- [[Project_DevelopmentResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 46
@@ -32,4 +32,4 @@ Study of human development from infancy through adulthood, including cognitive a
 
 ## See Also
 - [[Philosophy_Ethics_v1]]
-- [[Systems_Thinking_v1]]
+- 

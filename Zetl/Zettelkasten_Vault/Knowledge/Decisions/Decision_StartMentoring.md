@@ -5,7 +5,7 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 project: [[Project_MentoringProgram]]
-reflection: [[Reflection_MentoringJourney]]
+reflection: 
 ---
 
 # Decision_StartMentoring
@@ -30,4 +30,4 @@ One-on-one mentoring
 Meaningful relationships and personal growth
 
 ## Related Reflections
-- [[Reflection_MentoringJourney]]
+- 

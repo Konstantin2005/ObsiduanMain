@@ -18,7 +18,7 @@ status: active
 
 ## Используемые концепции
 
-- [[CI/CD Pipelines]]
+- 
 - [[GitOps]]
 - [[SRE Practices]]
 - [[Monitoring & Alerting]]

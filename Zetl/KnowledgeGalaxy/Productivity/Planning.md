@@ -16,6 +16,6 @@ tags: [knowledge, productivity]
 - [[Long-term Depression]]
 - [[Grafana]]
 - [[Monopoly]]
-- [[A*]]
+- 
 - [[Allais Paradox]]
 - [[DeFi]]

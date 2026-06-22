@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124132310.png]]
+!
 
 -----
 ## почему чипы Asmedia вытесняют решения Razer и Intel

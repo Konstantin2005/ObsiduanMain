@@ -36,14 +36,14 @@ Hindsight bias error occurs when people reconstruct their past predictions to ma
 - Seek objective evidence
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Overconfidence_Bias]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Availability_Heuristic]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Overconfidence_Error]]
-- [[Knowledge/Errors/Learning_Block_Error]]
-- [[Knowledge/Errors/Decision_Review_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Document initial predictions

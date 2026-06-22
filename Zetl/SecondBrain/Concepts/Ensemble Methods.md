@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Serverless|Serverless]]
 - [[Recursion|Recursion]]
-- [[A/B Testing|A/B Testing]]
+- 
 
 ## Связанные проекты
 

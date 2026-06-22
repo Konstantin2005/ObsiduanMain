@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230145907.png]]
+!
 
 -----
 ## Почему инженеров Сбербанка подозревают в экономии на полноценном Reinforcement Learning

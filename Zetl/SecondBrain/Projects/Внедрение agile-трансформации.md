@@ -18,15 +18,15 @@ status: active
 
 ## Используемые концепции
 
-- [[Agile Principles]]
-- [[Scrum Implementation]]
-- [[Kanban Adoption]]
-- [[Coaching & Mentoring]]
+- 
+- 
+- 
+- 
 - [[Organizational Design]]
-- [[Culture Change]]
-- [[Metrics & Reporting]]
-- [[Scaling Agile]]
-- [[Training Programs]]
+- 
+- 
+- 
+- 
 - [[Continuous Improvement]]
 
 ## Этапы проекта

@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230150447.png]]
+!
 
 -----
 ## Как Python заменяет JSON в стратегиях планирования ИИ-агентов

@@ -18,15 +18,15 @@ status: active
 
 ## Используемые концепции
 
-- [[Decentralized Platform]]
-- [[Trust Mechanisms]]
+- 
+- 
 - [[Smart Contracts]]
 - [[Network Effects]]
-- [[Community Governance]]
+- 
 - [[Token Economics]]
-- [[Privacy Protection]]
-- [[Dispute Resolution]]
-- [[Scalability]]
+- 
+- 
+- 
 - [[Regulatory Compliance]]
 
 ## Этапы проекта

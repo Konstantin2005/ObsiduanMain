@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260220123635.png]]
+!
 
 -----
 ## Проигрыш в тестах и вопросы к архитектуре Mamba

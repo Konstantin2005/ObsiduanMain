@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Real Estate]]
-- [[Technology]]
+- 
+- 
 - [[Finance]]
 
 ## Используемые концепции
 
-- [[Property Analytics]]
-- [[Transaction Management]]
-- [[Document Automation]]
-- [[User Experience]]
-- [[Integration]]
+- 
+- 
+- 
+- 
+- 
 - [[Mobile Development]]
-- [[Market Analysis]]
-- [[Partnership]]
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Growth Strategy]]
+- 
 
 ## Этапы проекта
 

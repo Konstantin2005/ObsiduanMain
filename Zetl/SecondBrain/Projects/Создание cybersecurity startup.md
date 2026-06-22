@@ -14,19 +14,19 @@ status: active
 
 - [[Cybersecurity]]
 - [[Entrepreneurship]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Threat Detection]]
+- 
 - [[Incident Response]]
 - [[Compliance]]
 - [[Cloud Security]]
-- [[Identity Management]]
+- 
 - [[API Security]]
-- [[User Experience]]
-- [[Integration]]
-- [[Partnership]]
+- 
+- 
+- 
 - [[Go-to-Market Strategy]]
 
 ## Этапы проекта

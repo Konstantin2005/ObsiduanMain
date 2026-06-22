@@ -41,8 +41,8 @@ I learned about psychological insights through research on cognitive psychology 
 Psychological insights are essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalInsights]]
-- [[Resource_CognitivePsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

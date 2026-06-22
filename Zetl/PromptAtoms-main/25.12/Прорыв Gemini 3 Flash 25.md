@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153504.png]]
+!
 
 -----
 ## Бюджетная модель Google теснит флагманы в сложных задачах

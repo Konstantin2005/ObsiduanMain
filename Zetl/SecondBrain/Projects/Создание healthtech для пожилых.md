@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Health & Fitness]]
-- [[Technology]]
-- [[User Experience]]
+- 
+- 
 
 ## Используемые концепции
 
-- [[Remote Monitoring]]
-- [[Emergency Response]]
-- [[Medication Management]]
-- [[Social Connection]]
-- [[User-Friendly Design]]
-- [[Integration]]
-- [[Privacy Protection]]
-- [[Analytics]]
-- [[Partnership]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

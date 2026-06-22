@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Agriculture]]
+- 
 - [[IoT]]
 - [[Robotics]]
 
 ## Используемые концепции
 
-- [[Climate Control]]
-- [[Nutrient Management]]
-- [[Crop Monitoring]]
+- 
+- 
+- 
 - [[Automation]]
-- [[Data Analytics]]
+- 
 - [[Energy Management]]
-- [[Scalability]]
-- [[Sustainability]]
-- [[Integration]]
-- [[Market Analysis]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

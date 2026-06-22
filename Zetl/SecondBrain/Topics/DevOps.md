@@ -10,7 +10,7 @@ created: 2026-06-22
 
 ## Концепции (15)
 
-- [[CI/CD Pipelines]]
+- 
 - [[Infrastructure as Code]]
 - [[Configuration Management]]
 - [[Monitoring & Alerting]]

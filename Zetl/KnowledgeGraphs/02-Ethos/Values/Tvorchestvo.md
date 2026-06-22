@@ -7,7 +7,7 @@ title: "Творчество"
 # 💎 Творчество
 
 **Тип:** Ценность
-**Кластер:** [[Творчество]]
+**Кластер:** 
 
 ---
 
@@ -17,42 +17,42 @@ title: "Творчество"
 
 ## Связи
 
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Риск]] (Ценность)
-- conflicts_with → [[Автономия]] (Ценность)
-- manifests_as → [[Деструктивность]] (Тень)
-- manifests_as → [[Нигилизм]] (Поведение)
-- manifests_as → [[Импульсивность]] (Поведение)
-- manifests_as → [[Эксперимент]] (Поведение)
-- balances → [[Творчество vs Традиция]] (Компромисс)
-- conflicts_with → [[Инновация]] (Ценность)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Риск]] (Ценность)
-- conflicts_with → [[Красота]] (Ценность)
-- balances → [[Традиция vs Творчество]] (Компромисс)
-- conflicts_with → [[Любопытство]] (Ценность)
-- balances → [[Дисциплина vs Творчество]] (Компромисс)
-- conflicts_with → [[Красота]] (Ценность)
-- conflicts_with → [[Инновация]] (Ценность)
-- conflicts_with → [[Юмор]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Риск]] (Ценность) → conflicts_with
-- [[Риск]] (Ценность) → conflicts_with
-- [[Автономия]] (Ценность) → conflicts_with
-- [[Деструктивность]] (Тень) → transforms_into
-- [[Творчество vs Традиция]] (Компромисс) → conflicts_with
-- [[Традиция vs Творчество]] (Компромисс) → conflicts_with
-- [[Любопытство]] (Ценность) → conflicts_with
-- [[Дисциплина vs Творчество]] (Компромисс) → conflicts_with
-- [[Красота]] (Ценность) → conflicts_with
-- [[Красота]] (Ценность) → conflicts_with
-- [[Инновация]] (Ценность) → conflicts_with
-- [[Инновация]] (Ценность) → conflicts_with
-- [[Юмор]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

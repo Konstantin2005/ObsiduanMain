@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Wearable Integration]]
-- [[Workout Tracking]]
-- [[Nutrition Planning]]
-- [[Community Features]]
-- [[Personalization]]
-- [[Gamification]]
-- [[Data Analytics]]
-- [[Monetization]]
-- [[User Experience]]
-- [[Scalability]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

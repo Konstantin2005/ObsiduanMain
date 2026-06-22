@@ -14,20 +14,20 @@ status: active
 
 - [[Space Technology]]
 - [[Entrepreneurship]]
-- [[Engineering]]
+- 
 
 ## Используемые концепции
 
 - [[Satellite Systems]]
 - [[Launch Vehicles]]
-- [[Mission Planning]]
-- [[Data Processing]]
-- [[Commercial Applications]]
+- 
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Partnership Strategy]]
-- [[Funding]]
+- 
+- 
 - [[Risk Management]]
-- [[Scaling Strategy]]
+- 
 
 ## Этапы проекта
 

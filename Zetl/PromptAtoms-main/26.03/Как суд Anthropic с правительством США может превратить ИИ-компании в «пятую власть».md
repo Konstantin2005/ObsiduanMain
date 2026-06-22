@@ -23,11 +23,11 @@ https://www.rollingstone.com/culture/culture-features/anthropic-lawsuit-artifici
 ---
 ## Zero-links
 ---
-- [[0 Критика и этические вопросы]]
-- [[0 ИИ-модели и системы]]
-- [[0 Военные системы]]
-- [[0 Ключевые фигуры]]
-- [[0 Технологические гиганты]]
+- 
+- 
+- 
+- 
+- 
 
 ---
 ## Links

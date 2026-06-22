@@ -11,7 +11,7 @@ tags: [knowledge, programming]
 - [[Google Cloud Platform]]
 - [[Cryptography]]
 - [[Fortran]]
-- [[A*]]
+- 
 - [[Public Goods Game]]
 - [[Procedure]]
 - [[Cost Minimization]]

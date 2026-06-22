@@ -14,20 +14,20 @@ status: active
 
 - [[Entrepreneurship]]
 - [[Business Models]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
 - [[Marketplace Model]]
-- [[Enterprise Sales]]
-- [[API Integration]]
-- [[Payment Systems]]
-- [[Trust & Safety]]
+- 
+- 
+- 
+- 
 - [[Supply Chain]]
-- [[Data Analytics]]
-- [[Scalability]]
-- [[Partnership Strategy]]
-- [[Customer Success]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

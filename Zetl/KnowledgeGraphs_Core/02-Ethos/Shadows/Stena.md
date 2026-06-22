@@ -7,7 +7,7 @@ title: "Стена"
 # 🌑 Стена
 
 **Тип:** Тень
-**Кластер:** [[Границы]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Стена"
 
 ## Связи
 
-- transforms_into → [[Границы]] (Ценность)
-- manifests_as → [[Изоляция]] (Поведение)
-- manifests_as → [[Холодность]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Границы]] (Ценность) → manifests_as
-- [[Изоляция]] (Поведение) → transforms_into
-- [[Холодность]] (Поведение) → transforms_into
-- [[Самозащита]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

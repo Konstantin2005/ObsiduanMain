@@ -14,20 +14,20 @@ status: active
 
 - [[Robotics]]
 - [[IoT]]
-- [[Agriculture]]
+- 
 
 ## Используемые концепции
 
 - [[Path Planning]]
 - [[Sensor Fusion]]
-- [[Crop Monitoring]]
-- [[Fleet Management]]
-- [[Weather Adaptation]]
-- [[Safety Systems]]
-- [[Integration]]
+- 
+- 
+- 
+- 
+- 
 - [[Cost Optimization]]
 - [[Regulatory Compliance]]
-- [[Scaling Strategy]]
+- 
 
 ## Этапы проекта
 

@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Porter Five Forces|Porter Five Forces]]
 - [[Email Marketing|Email Marketing]]
-- [[A/B Testing|A/B Testing]]
+- 
 
 ## Связанные проекты
 

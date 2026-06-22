@@ -12,7 +12,7 @@ tags: [knowledge, programming]
 - [[XSS]]
 - [[GitHub Actions]]
 - [[Kubernetes]]
-- [[SSL/TLS]]
+- 
 - [[Service-Oriented Architecture]]
 - [[Underfitting]]
 - [[Force Field Analysis]]

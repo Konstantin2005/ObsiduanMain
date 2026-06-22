@@ -42,8 +42,8 @@ I learned about goal setting through research on motivation theory and achieveme
 Goal setting research is essential for improving performance and achieving desired outcomes.
 
 ## Resources
-- [[Resource_GoalSetting]]
-- [[Resource_MotivationTheory]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Motivation_v1]]

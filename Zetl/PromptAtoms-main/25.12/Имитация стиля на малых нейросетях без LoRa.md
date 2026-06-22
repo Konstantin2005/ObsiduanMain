@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230144927.png]]
+!
 
 -----
 ## метод «словаря фраз» для Qwen 3 14B

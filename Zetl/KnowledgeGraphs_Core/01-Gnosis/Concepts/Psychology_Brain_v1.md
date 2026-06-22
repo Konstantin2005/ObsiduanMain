@@ -42,8 +42,8 @@ I learned about brain function through neuroscience research and cognitive scien
 Brain research has applications in medicine, technology, and education.
 
 ## Resources
-- [[Resource_BrainResearch]]
-- [[Resource_Neuroscience]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Neuro_v1]]

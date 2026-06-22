@@ -1,1 +1,0 @@
-**Cassandra** — CQL (Cassandra Query Language), похож на SQL, но адаптирован для распределённых данных.

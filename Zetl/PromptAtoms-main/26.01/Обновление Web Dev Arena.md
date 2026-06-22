@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203154340.png]]
+!
 
 -----
 ## лидерство топ-моделей и конкурентное преимущество Gemini 3 Flash

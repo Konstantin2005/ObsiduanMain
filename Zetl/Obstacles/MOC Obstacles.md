@@ -12,7 +12,7 @@ Map of Content for Obstacles cluster in zetl
 - [[Низкая конверсия]]
 
 ## Connected MOCs
-- [[MOC Global]]
-- [[MOC Skills]]
-- [[MOC Quests]]
-- [[MOC Bosses]]
+- 
+- 
+- 
+- 

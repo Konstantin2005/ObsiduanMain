@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[10/10/10 Rule|10/10/10 Rule]]
+- 
 - [[Financial Ratios|Financial Ratios]]
 - [[Data Ingestion|Data Ingestion]]
 

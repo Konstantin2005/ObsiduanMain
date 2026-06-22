@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Health & Fitness]]
-- [[Technology]]
+- 
 - [[Teaching Methods]]
 
 ## Используемые концепции
 
-- [[Teletherapy]]
-- [[Self-Help Tools]]
-- [[Crisis Intervention]]
-- [[Privacy Protection]]
-- [[Evidence-Based Design]]
-- [[User Experience]]
-- [[Community Features]]
-- [[Integration]]
-- [[Impact Measurement]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

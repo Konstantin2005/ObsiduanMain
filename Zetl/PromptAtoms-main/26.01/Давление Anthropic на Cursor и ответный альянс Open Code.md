@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203154626.png]]
+!
 
 -----
 ## давление Anthropic на Cursor и ответный альянс Open Code с ChatGPT

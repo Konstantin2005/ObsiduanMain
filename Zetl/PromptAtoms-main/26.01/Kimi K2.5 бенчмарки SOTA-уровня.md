@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203171540.png]]
+!
 
 -----
 ## Kimi K2.5 бенчмарки SOTA-уровня 

@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203212713.png]]
+!
 
 -----
 ## как китайские модели меняют расклад сил в Code Arena

@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260206115113.png]]
+!
 
 -----
 ## Codex 5.3 превосходит Opus 4.6 по цене и качеству кода

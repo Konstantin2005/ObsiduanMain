@@ -42,8 +42,8 @@ I learned about group dynamics through studying social psychology and organizati
 Group dynamics research is essential for creating effective teams and organizations.
 
 ## Resources
-- [[Resource_GroupDynamics]]
-- [[Resource_SocialPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Social_v1]]

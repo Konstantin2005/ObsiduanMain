@@ -1,6 +1,6 @@
 ---
 type: concept
-topic: [[$safe_t|Mentoring]]
+topic: 
 created: 2026-06-22
 tags: [concept]
 ---

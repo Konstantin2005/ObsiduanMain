@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Life_WorkLifeBalance]]
-project: [[Project_Boundaries]]
-project2: [[Project_Priority]]
+project: 
+project2: 
 ---
 
 # Goal_FindWorkLifeBalance
@@ -28,5 +28,5 @@ Not Started
 - [[Life_WorkLifeBalance]]
 
 ## Related Projects
-- [[Project_Boundaries]]
-- [[Project_Priority]]
+- 
+- 

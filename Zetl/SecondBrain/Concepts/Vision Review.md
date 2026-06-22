@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Contrast Effect|Contrast Effect]]
 - [[Second-Order Thinking|Second-Order Thinking]]
-- [[A/B Testing|A/B Testing]]
+- 
 
 ## Связанные проекты
 

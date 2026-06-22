@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Genomic Data Analysis]]
-- [[Drug Discovery]]
+- 
+- 
 - [[Clinical Trials]]
-- [[Patient Matching]]
+- 
 - [[Data Privacy]]
 - [[Regulatory Compliance]]
-- [[Evidence-Based Medicine]]
-- [[Scalability]]
-- [[Integration]]
-- [[Ethics]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

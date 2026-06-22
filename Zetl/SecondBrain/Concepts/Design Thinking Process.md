@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[TCP/IP Protocol|TCP/IP Protocol]]
+- 
 - [[Market Expansion|Market Expansion]]
 - [[Business Process Reengineering|Business Process Reengineering]]
 

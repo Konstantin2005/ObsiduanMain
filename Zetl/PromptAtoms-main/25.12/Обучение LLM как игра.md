@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230151846.png]]
+!
 
 -----
 ## почему метод PRM требует пошагового промптинга 

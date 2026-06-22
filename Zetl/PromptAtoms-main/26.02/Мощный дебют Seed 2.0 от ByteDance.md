@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260216125033.png]]
+!
 
 -----
 ## Мощный дебют Seed 2.0 от ByteDance и успехи Gemini

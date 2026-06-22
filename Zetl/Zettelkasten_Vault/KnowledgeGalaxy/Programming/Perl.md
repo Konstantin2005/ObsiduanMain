@@ -8,7 +8,7 @@ tags: [knowledge, programming]
 ## Related Concepts
 - [[Dimensionality Reduction]]
 - [[Abstract Factory]]
-- [[SSL/TLS]]
+- 
 - [[String]]
 - [[Scaling]]
 - [[MLOps]]

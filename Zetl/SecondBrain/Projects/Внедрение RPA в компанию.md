@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Operations]]
-- [[Technology]]
+- 
 - [[Change Management]]
 
 ## Используемые концепции
 
-- [[Process Automation]]
-- [[Bot Development]]
-- [[Workflow Design]]
+- 
+- 
+- 
 - [[Change Management]]
-- [[ROI Analysis]]
-- [[Process Documentation]]
-- [[Governance Framework]]
-- [[Training Program]]
-- [[Performance Monitoring]]
-- [[Scaling Automation]]
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

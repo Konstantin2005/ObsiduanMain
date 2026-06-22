@@ -15,8 +15,8 @@ review_frequency: monthly
 Artificial intelligence systems that can learn, reason, and adapt to solve complex problems and make decisions.
 
 ## Related Concepts
-- [[AI_MachineLearning_v1]]
-- [[AI_NaturalLanguage_v1]]
+- 
+- 
 
 ## Related Values
 - [[Career_LearningContinuity]]

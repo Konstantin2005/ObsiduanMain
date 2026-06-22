@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Balance Sheet Analysis|Balance Sheet Analysis]]
-- [[A/B Testing|A/B Testing]]
+- 
 - [[Cross-Selling|Cross-Selling]]
 
 ## Связанные проекты

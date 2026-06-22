@@ -12,7 +12,7 @@ tags: [knowledge, ai]
 - [[Posthumanism]]
 - [[Supervised Learning]]
 - [[RNN]]
-- [[80/20 Rule]]
+- 
 - [[Stock Exchange]]
 - [[Nuclear Deterrence]]
 - [[International Investment]]

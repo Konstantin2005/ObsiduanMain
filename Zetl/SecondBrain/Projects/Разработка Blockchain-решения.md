@@ -27,7 +27,7 @@ status: active
 - [[Privacy Coins]]
 - [[Digital Identity]]
 - [[Regulatory Framework]]
-- [[Smart Contract Security]]
+- 
 
 ## Этапы проекта
 

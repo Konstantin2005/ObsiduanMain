@@ -41,8 +41,8 @@ A project to build better habits.
 - [[Business_Strategy_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_115]]

@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Disruption Theory|Disruption Theory]]
-- [[A/B Testing|A/B Testing]]
+- 
 - [[SWOT Analysis|SWOT Analysis]]
 
 ## Связанные проекты

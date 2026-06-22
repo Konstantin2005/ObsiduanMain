@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203143910.png]]
+!
 
 -----
 ##  Глубокое понимание и идеологическая верность GLM 4.7 

@@ -41,8 +41,8 @@ I learned about psychological awareness through research on cognitive psychology
 Psychological awareness is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalAwareness]]
-- [[Resource_ConsciousnessAwareness]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

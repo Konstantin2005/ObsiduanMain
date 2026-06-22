@@ -7,7 +7,7 @@ title: "Власть"
 # 💎 Власть
 
 **Тип:** Ценность
-**Кластер:** [[Власть]]
+**Кластер:** 
 
 ---
 
@@ -17,30 +17,30 @@ title: "Власть"
 
 ## Связи
 
-- conflicts_with → [[Успех]] (Ценность)
-- manifests_as → [[Тирания]] (Тень)
-- manifests_as → [[Доминирование]] (Поведение)
-- manifests_as → [[Манипуляция]] (Поведение)
-- manifests_as → [[Лидерство]] (Поведение)
-- balances → [[Власть vs Равенство]] (Компромисс)
-- conflicts_with → [[Успех]] (Ценность)
-- conflicts_with → [[Справедливость]] (Ценность)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Ответственность]] (Ценность)
-- balances → [[Равенство vs Власть]] (Компромисс)
-- conflicts_with → [[Богатство]] (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Справедливость]] (Ценность) → conflicts_with
-- [[Успех]] (Ценность) → conflicts_with
-- [[Успех]] (Ценность) → conflicts_with
-- [[Тирания]] (Тень) → transforms_into
-- [[Власть vs Равенство]] (Компромисс) → conflicts_with
-- [[Равенство vs Власть]] (Компромисс) → conflicts_with
-- [[Богатство]] (Ценность) → conflicts_with
-- [[Ответственность]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

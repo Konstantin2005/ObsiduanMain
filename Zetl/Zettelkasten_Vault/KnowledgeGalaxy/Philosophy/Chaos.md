@@ -17,6 +17,6 @@ tags: [knowledge, philosophy]
 - [[JavaScript]]
 - [[Cooperative Games]]
 - [[CSS3]]
-- [[SSL/TLS]]
+- 
 - [[Cognitive Development]]
 - [[Unsupervised Learning]]

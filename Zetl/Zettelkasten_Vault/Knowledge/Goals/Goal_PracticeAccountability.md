@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Honesty_Accountability]]
-project: [[Project_Transparency]]
-project2: [[Project_Truthfulness]]
+project: 
+project2: 
 ---
 
 # Goal_PracticeAccountability
@@ -28,5 +28,5 @@ Not Started
 - [[Honesty_Accountability]]
 
 ## Related Projects
-- [[Project_Transparency]]
-- [[Project_Truthfulness]]
+- 
+- 

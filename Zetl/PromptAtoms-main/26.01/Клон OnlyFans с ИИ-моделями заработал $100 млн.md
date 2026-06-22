@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203171238.png]]
+!
 
 -----
 ## Феномен Fanvue

@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260226130705.png]]
+!
 
 -----
 ## Изоляция от Nvidia и завышенные ожидания перед скорым релизом
@@ -23,10 +23,10 @@ https://www.reuters.com/world/china/deepseek-withholds-latest-ai-model-us-chipma
 ---
 ## Zero-links
 ---
-- [[0 ИИ-модели и системы]]
-- [[0 Компании и организации]]
-- [[0 Технологические гиганты]]
-- [[0 Физические компоненты робототехники]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

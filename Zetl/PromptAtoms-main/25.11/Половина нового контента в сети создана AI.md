@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251109131813.png]]
+!
 
 -----
 ## Кто автор в новом интернете?

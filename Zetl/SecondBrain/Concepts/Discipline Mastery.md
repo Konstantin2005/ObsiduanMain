@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[TRIZ Method|TRIZ Method]]
-- [[Mobile CI/CD|Mobile CI/CD]]
+- 
 - [[Edge Devices|Edge Devices]]
 
 ## Связанные проекты

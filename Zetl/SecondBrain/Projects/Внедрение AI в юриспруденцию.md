@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Document Analysis]]
-- [[Contract Review]]
-- [[Legal Research]]
+- 
+- 
+- 
 - [[Risk Assessment]]
-- [[Compliance Monitoring]]
-- [[User Experience]]
-- [[Integration]]
-- [[Ethics]]
-- [[Scalability]]
-- [[Training Programs]]
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

@@ -7,7 +7,7 @@ title: "Прощение"
 # 💎 Прощение
 
 **Тип:** Ценность
-**Кластер:** [[Прощение]]
+**Кластер:** 
 
 ---
 
@@ -17,28 +17,28 @@ title: "Прощение"
 
 ## Связи
 
-- conflicts_with → [[Милосердие]] (Ценность)
-- manifests_as → [[Забвение]] (Тень)
-- manifests_as → [[Забвение]] (Поведение)
-- manifests_as → [[Оправдание]] (Поведение)
-- manifests_as → [[Освобождение]] (Поведение)
-- balances → [[Прощение vs Память]] (Компромисс)
-- conflicts_with → [[Милосердие]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Мир]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- balances → [[Память vs Прощение]] (Компромисс)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 
 ## На что ссылаются
 
-- [[Милосердие]] (Ценность) → conflicts_with
-- [[Милосердие]] (Ценность) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Мир]] (Ценность) → conflicts_with
-- [[Забвение]] (Тень) → transforms_into
-- [[Прощение vs Память]] (Компромисс) → conflicts_with
-- [[Память vs Прощение]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
 
 ---
 

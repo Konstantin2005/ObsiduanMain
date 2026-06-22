@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Renewable Energy]]
-- [[Carbon Footprint]]
+- 
+- 
 - [[Circular Economy]]
-- [[Life Cycle Assessment]]
-- [[Green Materials]]
-- [[Supply Chain Ethics]]
-- [[Certification]]
-- [[Impact Measurement]]
-- [[Consumer Education]]
-- [[Market Positioning]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

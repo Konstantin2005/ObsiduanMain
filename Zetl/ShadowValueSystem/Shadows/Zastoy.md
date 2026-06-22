@@ -7,7 +7,7 @@ title: "Застой"
 # 🌑 Застой
 
 **Тип:** Тень
-**Кластер:** [[Традиция]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Застой"
 
 ## Связи
 
-- transforms_into → [[Традиция]] (Ценность)
-- manifests_as → [[Ностальгия]] (Поведение)
-- manifests_as → [[Обрядоверие]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Традиция]] (Ценность) → manifests_as
-- [[Ностальгия]] (Поведение) → transforms_into
-- [[Обрядоверие]] (Поведение) → transforms_into
-- [[Консерватизм]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

@@ -14,20 +14,20 @@ status: active
 
 - [[Entrepreneurship]]
 - [[Teaching Methods]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Learning Management System]]
-- [[Course Creation]]
-- [[Gamification]]
-- [[Progress Tracking]]
-- [[Mobile Learning]]
-- [[Content Management]]
-- [[Community Features]]
-- [[Assessment Tools]]
-- [[Analytics Dashboard]]
-- [[Monetization Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

@@ -7,7 +7,7 @@ title: "Верность"
 # 💎 Верность
 
 **Тип:** Ценность
-**Кластер:** [[Верность]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Верность"
 
 ## Связи
 
-- manifests_as → [[Слепота]] (Тень)
-- manifests_as → [[Племенной менталитет]] (Поведение)
-- manifests_as → [[Апология]] (Поведение)
-- manifests_as → [[Преданность]] (Поведение)
-- balances → [[Верность vs Целостность]] (Компромисс)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Традиция]] (Ценность)
-- balances → [[Целостность vs Верность]] (Компромисс)
-- conflicts_with → [[Сообщество]] (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Традиция]] (Ценность) → conflicts_with
-- [[Слепота]] (Тень) → transforms_into
-- [[Верность vs Целостность]] (Компромисс) → conflicts_with
-- [[Целостность vs Верность]] (Компромисс) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

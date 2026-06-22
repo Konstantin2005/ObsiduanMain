@@ -7,7 +7,7 @@ tags: [knowledge, programming]
 
 ## Related Concepts
 - [[HTML5]]
-- [[SSL/TLS]]
+- 
 - [[NestJS]]
 - [[Malware]]
 - [[Fullstack]]

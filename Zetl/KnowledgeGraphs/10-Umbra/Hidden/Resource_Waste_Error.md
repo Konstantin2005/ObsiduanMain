@@ -36,14 +36,14 @@ Resource waste error occurs when cognitive biases and thinking errors lead to in
 - Track project outcomes
 
 ## Caused By (causes)
-- [[Knowledge/Biases/Sunk_Cost_Fallacy]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Overconfidence_Bias]]
+- 
+- 
+- 
 
 ## Consequences (leads_to)
-- [[Knowledge/Errors/Learning_Block_Error]]
-- [[Knowledge/Errors/Financial_Stress_Error]]
-- [[Knowledge/Errors/Team_Dysfunction_Error]]
+- 
+- 
+- 
 
 ## Prevention Strategies
 - Implement opportunity cost analysis

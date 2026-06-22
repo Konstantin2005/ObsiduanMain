@@ -35,11 +35,11 @@ Excellence creates quality outcomes and builds confidence. Mastery provides comp
 - [[Justice_Fairness]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Set high standards and continuously work to improve performance in all areas.
@@ -50,4 +50,4 @@ Set high standards and continuously work to improve performance in all areas.
 - Striving for perfection in small tasks
 
 ## See Also
-- [[Value_MOC]]
+- 

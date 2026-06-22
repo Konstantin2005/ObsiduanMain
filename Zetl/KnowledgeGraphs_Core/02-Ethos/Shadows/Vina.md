@@ -7,7 +7,7 @@ title: "Вина"
 # 🌑 Вина
 
 **Тип:** Тень
-**Кластер:** [[Ответственность]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Вина"
 
 ## Связи
 
-- transforms_into → [[Ответственность]] (Ценность)
-- manifests_as → [[Вина]] (Поведение)
-- manifests_as → [[Контроль]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Ответственность]] (Ценность) → manifests_as
-- [[Вина]] (Поведение) → transforms_into
-- [[Контроль]] (Поведение) → transforms_into
-- [[Обязательства]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

@@ -20,11 +20,11 @@ This value matters because critical thinking drives progress and personal growth
 
 ## Conflicts
 ### Direct Conflicts
-- [[Responsibility_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Freedom_Constraint]]\n
+- \n
 ## Supporting Values
 ### Directly Supporting
 - [[Freedom_Choice]]
@@ -34,12 +34,12 @@ This value matters because critical thinking drives progress and personal growth
 - [[Freedom_Movement]]
 
 ## Related Concepts
-- [[Concept_CriticalThinking_v1]]
-- [[Concept_Skepticism_v1]]
-- [[Concept_Questioning_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Freedom_v1]]
+- 
 
 ## Application
 I apply this value by reading opposing viewpoints, questioning authority, and exploring controversial topics.
@@ -50,4 +50,4 @@ I apply this value by reading opposing viewpoints, questioning authority, and ex
 - Exploring alternative philosophical systems
 
 ## See Also
-- [[Value_MOC_Freedom]]
+- 

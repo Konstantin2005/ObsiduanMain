@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Honesty_Truth]]
-project: [[Project_Authorship]]
-project2: [[Project_Authenticity]]
+project: 
+project2: 
 ---
 
 # Goal_SpeakTruth
@@ -28,5 +28,5 @@ Not Started
 - [[Honesty_Truth]]
 
 ## Related Projects
-- [[Project_Authorship]]
-- [[Project_Authenticity]]
+- 
+- 

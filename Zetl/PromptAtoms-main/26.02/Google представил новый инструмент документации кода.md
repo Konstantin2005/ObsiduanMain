@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260216124811.png]]
+!
 
 -----
 ## Google представил новый инструмент документации кода для репозиториев GitHub 

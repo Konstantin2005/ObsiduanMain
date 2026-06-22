@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260215120852.png]]
+!
 
 -----
 ## почему грамотный фреймворк делает выбор LLM неважным

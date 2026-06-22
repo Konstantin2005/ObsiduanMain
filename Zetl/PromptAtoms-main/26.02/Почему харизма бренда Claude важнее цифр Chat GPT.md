@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[GHR.png]]
+!
 
 -----
 ## Почему харизма бренда Claude важнее цифр Chat GPT

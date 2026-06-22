@@ -7,7 +7,7 @@ title: "Дипломатичность"
 # 💎 Дипломатичность
 
 **Тип:** Ценность
-**Кластер:** [[Дипломатичность]]
+**Кластер:** 
 
 ---
 
@@ -17,24 +17,24 @@ title: "Дипломатичность"
 
 ## Связи
 
-- balances → [[Честность vs Дипломатичность]] (Компромисс)
-- manifests_as → [[Лицемерие]] (Тень)
-- manifests_as → [[Манипуляция]] (Поведение)
-- manifests_as → [[Угодничество]] (Поведение)
-- manifests_as → [[Тактичность]] (Поведение)
-- balances → [[Дипломатичность vs Честность]] (Компромисс)
-- conflicts_with → [[Истина]] (Ценность)
-- conflicts_with → [[Эмпатия]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Истина]] (Ценность) → conflicts_with
-- [[Честность vs Дипломатичность]] (Компромисс) → conflicts_with
-- [[Лицемерие]] (Тень) → transforms_into
-- [[Дипломатичность vs Честность]] (Компромисс) → conflicts_with
-- [[Эмпатия]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

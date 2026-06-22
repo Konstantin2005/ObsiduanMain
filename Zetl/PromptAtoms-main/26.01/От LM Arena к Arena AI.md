@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203171916.png]]
+!
 
 -----
 ## почему новый бенчмарк Coding Arena может стать стандартом оценки ИИ-программистов 

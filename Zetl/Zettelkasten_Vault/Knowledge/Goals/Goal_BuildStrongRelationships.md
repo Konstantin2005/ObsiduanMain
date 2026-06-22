@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Freedom_Association]]
-project: [[Project_RelationshipBuilding]]
-project2: [[Project_CommunityEngagement]]
+project: 
+project2: 
 ---
 
 # Goal_BuildStrongRelationships
@@ -28,5 +28,5 @@ Not Started
 - [[Freedom_Association]]
 
 ## Related Projects
-- [[Project_RelationshipBuilding]]
-- [[Project_CommunityEngagement]]
+- 
+- 

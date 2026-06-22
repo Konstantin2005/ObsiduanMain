@@ -10,7 +10,7 @@ tags: [knowledge, programming]
 - [[Greedy Algorithms]]
 - [[Command]]
 - [[Fastify]]
-- [[A/B Testing]]
+- 
 - [[Selection Sort]]
 - [[NestJS]]
 - [[Exploits]]

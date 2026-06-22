@@ -18,12 +18,12 @@ status: active
 
 ## Используемые концепции
 
-- [[Data Lake Architecture]]
+- 
 - [[ETL Processes]]
 - [[Data Quality]]
-- [[Schema-on-Read]]
+- 
 - [[Data Catalog]]
-- [[Security & Governance]]
+- 
 - [[Cost Optimization]]
 - [[Performance Tuning]]
 - [[Data Lineage]]

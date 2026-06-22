@@ -20,11 +20,11 @@ This value matters because excellence raises standards and creates value. Strivi
 
 ## Conflicts
 ### Direct Conflicts
-- [[Freedom_Constraint]]
-- [[Authority_Abuse]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Competence_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because excellence raises standards and creates value. Strivi
 - [[Competence_Standards]]
 
 ## Related Concepts
-- [[Concept_Mastery_v1]]
-- [[Concept_Quality_v1]]
-- [[Concept_Perfection_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Competence_v1]]
+- 
 
 ## Application
 I apply this value by setting high standards for my work, seeking feedback for improvement, and continuously refining my skills.
@@ -51,4 +51,4 @@ I apply this value by setting high standards for my work, seeking feedback for i
 - Refining my writing style
 
 ## See Also
-- [[Value_MOC_Competence]]
+- 

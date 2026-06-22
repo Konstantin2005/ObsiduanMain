@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of political systems, governance, and power structures throughout history.
 
 ## Related Concepts
-- [[History_Government_v1]]
-- [[History_Diplomacy_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Choice]]
 - [[Justice_Equality]]
 
 ## Related Projects
-- [[Project_PoliticalResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 34

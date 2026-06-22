@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153849.png]]
+!
 
 -----
 ## Gradio вместо React

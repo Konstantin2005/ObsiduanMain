@@ -20,11 +20,11 @@ This value matters because care sustains human connection and social harmony. Wh
 
 ## Conflicts
 ### Direct Conflicts
-- [[Freedom_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Responsibility_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because care sustains human connection and social harmony. Wh
 - [[Responsibility_Integrity]]
 
 ## Related Concepts
-- [[Concept_Care_v1]]
-- [[Concept_Wellbeing_v1]]
-- [[Concept_Ethics_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Responsibility_v1]]
+- 
 
 ## Application
 I apply this value by considering others' needs, helping those in need, and making decisions that minimize harm.
@@ -51,4 +51,4 @@ I apply this value by considering others' needs, helping those in need, and maki
 - Supporting team members
 
 ## See Also
-- [[Value_MOC_Responsibility]]
+- 

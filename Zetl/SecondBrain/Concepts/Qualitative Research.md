@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[A/B Testing|A/B Testing]]
+- 
 - [[Post-Quantum Cryptography|Post-Quantum Cryptography]]
 - [[Testing Effect|Testing Effect]]
 

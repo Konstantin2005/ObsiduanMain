@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230152126.png]]
+!
 
 -----
 ## Копирование DeepSeek как сигнал кризиса европейских компетенций в сфере ИИ

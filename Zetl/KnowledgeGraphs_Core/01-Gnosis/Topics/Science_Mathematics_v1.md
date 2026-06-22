@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of numbers, quantities, and abstract structures.
 
 ## Related Concepts
-- [[Science_Algebra_v1]]
-- [[Science_Calculus_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Discovery]]
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_MathematicsResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 59

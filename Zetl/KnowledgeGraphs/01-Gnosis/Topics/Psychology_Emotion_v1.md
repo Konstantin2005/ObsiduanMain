@@ -14,7 +14,7 @@ review_frequency: monthly
 Study of emotional processes, regulation, and their impact on behavior and decision-making.
 
 ## Related Concepts
-- [[Psychology_EmotionRegulation_v1]]
+- 
 - [[Psychology_Motivation_v1]]
 
 ## Related Values
@@ -22,7 +22,7 @@ Study of emotional processes, regulation, and their impact on behavior and decis
 - [[Curiosity_Questioning]]
 
 ## Related Projects
-- [[Project_EmotionResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 45
@@ -32,4 +32,4 @@ Study of emotional processes, regulation, and their impact on behavior and decis
 
 ## See Also
 - [[Philosophy_Ethics_v1]]
-- [[Systems_Thinking_v1]]
+- 

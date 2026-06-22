@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Network Effects|Network Effects]]
-- [[A/B Testing|A/B Testing]]
+- 
 - [[Saga Pattern|Saga Pattern]]
 
 ## Связанные проекты

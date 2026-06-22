@@ -42,8 +42,8 @@ I learned about psychological knowledge through research on cognitive psychology
 Psychological knowledge is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalKnowledge]]
-- [[Resource_BehavioralScience]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

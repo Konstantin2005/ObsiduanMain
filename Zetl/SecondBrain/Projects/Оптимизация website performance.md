@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Page Speed Optimization]]
-- [[Core Web Vitals]]
+- 
+- 
 - [[CDN Architecture]]
-- [[Image Optimization]]
-- [[Code Splitting]]
-- [[Caching Strategies]]
-- [[Performance Monitoring]]
-- [[Mobile Performance]]
-- [[User Experience]]
-- [[SEO Impact]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

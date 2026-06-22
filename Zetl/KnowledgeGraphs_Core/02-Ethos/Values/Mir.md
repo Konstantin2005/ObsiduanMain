@@ -7,7 +7,7 @@ title: "Мир"
 # 💎 Мир
 
 **Тип:** Ценность
-**Кластер:** [[Мир]]
+**Кластер:** 
 
 ---
 
@@ -17,30 +17,30 @@ title: "Мир"
 
 ## Связи
 
-- manifests_as → [[Пассивность]] (Тень)
-- manifests_as → [[Умиротворение]] (Поведение)
-- manifests_as → [[Избегание]] (Поведение)
-- manifests_as → [[Ненасилие]] (Поведение)
-- balances → [[Мир vs Мужество]] (Компромисс)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Эмпатия]] (Ценность)
-- balances → [[Мужество vs Мир]] (Компромисс)
-- conflicts_with → [[Прощение]] (Ценность)
-- conflicts_with → [[Отрешённость]] (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Эмпатия]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
-- [[Пассивность]] (Тень) → transforms_into
-- [[Мир vs Мужество]] (Компромисс) → conflicts_with
-- [[Мужество vs Мир]] (Компромисс) → conflicts_with
-- [[Прощение]] (Ценность) → conflicts_with
-- [[Отрешённость]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

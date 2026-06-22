@@ -10,7 +10,7 @@ tags: [knowledge, programming]
 - [[Interpreter]]
 - [[Scheme]]
 - [[Business Intelligence]]
-- [[SSL/TLS]]
+- 
 - [[Programming Languages]]
 - [[Microservices Architecture]]
 - [[Macroeconomics]]

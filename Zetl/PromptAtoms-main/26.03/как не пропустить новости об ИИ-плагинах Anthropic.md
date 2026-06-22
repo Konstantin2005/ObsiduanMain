@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260319195824.png]]
+!
 
 -----
 ## Неожиданная польза мемов
@@ -19,8 +19,8 @@ https://www.inc.com/ben-sherry/anthropics-new-claude-plugins-take-aim-at-finance
 ---
 ## Zero-links
 ---
-- [[0 Компании и организации]]
-- [[0 Метафоры и аналогии]]
+- 
+- 
 
 ---
 ## Links

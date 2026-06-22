@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124142012.png]]
+!
 
 -----
 ## Gemini 3 генерирует реальные дешборды с абсолютной точностью данных

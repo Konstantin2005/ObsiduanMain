@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260211213738.png]]
+!
 
 -----
 ## Скорость решает

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124135608.png]]
+!
 
 -----
 ## от понимания схем до роли ИИ-архитектора

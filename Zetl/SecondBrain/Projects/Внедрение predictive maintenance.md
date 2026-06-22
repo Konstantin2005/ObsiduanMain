@@ -18,15 +18,15 @@ status: active
 
 ## Используемые концепции
 
-- [[Sensor Data Analysis]]
-- [[Failure Prediction]]
-- [[Maintenance Scheduling]]
-- [[Cost Reduction]]
-- [[Integration]]
-- [[ROI Measurement]]
-- [[Scalability]]
-- [[Training]]
-- [[Governance]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Continuous Improvement]]
 
 ## Этапы проекта

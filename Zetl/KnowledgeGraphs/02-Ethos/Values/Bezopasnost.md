@@ -7,7 +7,7 @@ title: "Безопасность"
 # 💎 Безопасность
 
 **Тип:** Ценность
-**Кластер:** [[Безопасность]]
+**Кластер:** 
 
 ---
 
@@ -17,30 +17,30 @@ title: "Безопасность"
 
 ## Связи
 
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Порядок]] (Ценность)
-- manifests_as → [[Страх]] (Тень)
-- manifests_as → [[Избегание]] (Поведение)
-- manifests_as → [[Гиперконтроль]] (Поведение)
-- manifests_as → [[Зависимость]] (Поведение)
-- balances → [[Безопасность vs Риск]] (Компромисс)
-- conflicts_with → [[Порядок]] (Ценность)
-- conflicts_with → [[Свобода]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Мужество]] (Ценность)
-- balances → [[Риск vs Безопасность]] (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 
 ## На что ссылаются
 
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Свобода]] (Ценность) → conflicts_with
-- [[Порядок]] (Ценность) → conflicts_with
-- [[Порядок]] (Ценность) → conflicts_with
-- [[Страх]] (Тень) → transforms_into
-- [[Безопасность vs Риск]] (Компромисс) → conflicts_with
-- [[Риск vs Безопасность]] (Компромисс) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Мужество]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

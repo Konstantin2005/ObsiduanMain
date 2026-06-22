@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Demand Forecasting]]
-- [[ABC Analysis]]
-- [[Safety Stock]]
-- [[Reorder Point]]
+- 
+- 
+- 
 - [[Just-in-Time]]
-- [[Vendor Management]]
-- [[Warehouse Optimization]]
+- 
+- 
 - [[Inventory Turnover]]
-- [[Stockout Prevention]]
-- [[Overstock Management]]
+- 
+- 
 
 ## Этапы проекта
 

@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Supplier Management]]
-- [[Contract Negotiation]]
-- [[Spend Analysis]]
+- 
+- 
+- 
 - [[Risk Assessment]]
 - [[Automation]]
 - [[Compliance]]
 - [[Performance Metrics]]
-- [[Sustainability]]
-- [[Vendor Portal]]
-- [[Strategic Sourcing]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

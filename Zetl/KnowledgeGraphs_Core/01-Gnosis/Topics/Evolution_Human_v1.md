@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of human evolution, development, and unique characteristics among species.
 
 ## Related Concepts
-- [[Evolution_HumanDevelopment_v1]]
-- [[Evolution_Behavior_v1]]
+- 
+- 
 
 ## Related Values
 - [[Life_WorkLifeBalance]]
 - [[Curiosity_Discovery]]
 
 ## Related Projects
-- [[Project_HumanEvolution]]
+- 
 
 ## Statistics
 - Total Concepts: 39
@@ -32,4 +32,4 @@ Study of human evolution, development, and unique characteristics among species.
 
 ## See Also
 - [[Science_Physics_v1]]
-- [[Systems_Thinking_v1]]
+- 

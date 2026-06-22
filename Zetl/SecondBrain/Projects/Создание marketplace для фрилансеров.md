@@ -19,13 +19,13 @@ status: active
 ## Используемые концепции
 
 - [[Marketplace Model]]
-- [[Payment Systems]]
-- [[Trust & Safety]]
-- [[Search & Matching]]
-- [[Review Systems]]
-- [[Dispute Resolution]]
+- 
+- 
+- 
+- 
+- 
 - [[Freemium Model]]
-- [[Community Building]]
+- 
 - [[Mobile Development]]
 - [[Growth Hacking]]
 

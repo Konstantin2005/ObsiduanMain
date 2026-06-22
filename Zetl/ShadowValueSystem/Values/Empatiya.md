@@ -7,7 +7,7 @@ title: "Эмпатия"
 # 💎 Эмпатия
 
 **Тип:** Ценность
-**Кластер:** [[Эмпатия]]
+**Кластер:** 
 
 ---
 
@@ -17,40 +17,40 @@ title: "Эмпатия"
 
 ## Связи
 
-- conflicts_with → [[Tolerantность]] (Ценность)
-- conflicts_with → [[Милосердие]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- conflicts_with → [[Дипломатичность]] (Ценность)
-- manifests_as → [[Кодependентность]] (Тень)
-- manifests_as → [[Поглощение]] (Поведение)
-- manifests_as → [[Спасательство]] (Поведение)
-- manifests_as → [[Сочувствие]] (Поведение)
-- balances → [[Эмпатия vs Границы]] (Компромисс)
-- conflicts_with → [[Любовь]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- balances → [[Границы vs Эмпатия]] (Компромисс)
-- conflicts_with → [[Смирение]] (Ценность)
-- conflicts_with → [[Щедрость]] (Ценность)
-- conflicts_with → [[Мир]] (Ценность)
-- balances → [[Идентичность vs Эмпатия]] (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
 
 ## На что ссылаются
 
-- [[Tolerantность]] (Ценность) → conflicts_with
-- [[Милосердие]] (Ценность) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Дипломатичность]] (Ценность) → conflicts_with
-- [[Кодependентность]] (Тень) → transforms_into
-- [[Эмпатия vs Границы]] (Компромисс) → conflicts_with
-- [[Границы vs Эмпатия]] (Компромисс) → conflicts_with
-- [[Смирение]] (Ценность) → conflicts_with
-- [[Щедрость]] (Ценность) → conflicts_with
-- [[Мир]] (Ценность) → conflicts_with
-- [[Идентичность vs Эмпатия]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
 
 ---
 

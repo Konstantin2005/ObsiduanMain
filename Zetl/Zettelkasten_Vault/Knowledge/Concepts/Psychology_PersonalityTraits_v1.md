@@ -42,8 +42,8 @@ I learned about personality traits through research on trait theory and psycholo
 Personality traits research is crucial for understanding human behavior and improving interpersonal relationships.
 
 ## Resources
-- [[Resource_PersonalityTraits]]
-- [[Resource_TraitTheory]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Personality_v1]]

@@ -20,11 +20,11 @@ This value matters because discovery fuels progress and satisfaction. The proces
 
 ## Conflicts
 ### Direct Conflicts
-- [[Responsibility_Constraint]]
-- [[Competence_Authority]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Curiosity_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because discovery fuels progress and satisfaction. The proces
 - [[Curiosity_Questioning]]
 
 ## Related Concepts
-- [[Concept_Discovery_v1]]
-- [[Concept_Unexplored_v1]]
-- [[Concept_Revelation_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Curiosity_v1]]
+- 
 
 ## Application
 I apply this value by investigating mysteries, exploring data, and seeking answers to unanswered questions.
@@ -51,4 +51,4 @@ I apply this value by investigating mysteries, exploring data, and seeking answe
 - Exploring historical mysteries
 
 ## See Also
-- [[Value_MOC_Curiosity]]
+- 

@@ -42,8 +42,8 @@ I learned about psychological practice through research on applied psychology an
 Psychological practice is essential for applying psychological knowledge and skills in real-world settings.
 
 ## Resources
-- [[Resource_PsychologicalPractice]]
-- [[Resource_AppliedPsychology]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

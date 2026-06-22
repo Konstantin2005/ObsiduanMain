@@ -13,7 +13,7 @@ tags: [knowledge, programming]
 - [[Tracing]]
 - [[Vercel]]
 - [[Event Sourcing]]
-- [[SSL/TLS]]
+- 
 - [[Cornell System]]
 - [[Second-order Effects]]
 - [[Absurd]]

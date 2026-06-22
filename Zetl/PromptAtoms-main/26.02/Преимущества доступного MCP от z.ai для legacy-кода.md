@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260216124831.png]]
+!
 
 -----
 ## Преимущества доступного MCP от z.ai для работы с legacy-кодом 

@@ -41,8 +41,8 @@ A project to develop new skills.
 - [[Programming_Databases_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

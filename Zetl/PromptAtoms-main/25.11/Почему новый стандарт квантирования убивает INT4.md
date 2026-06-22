@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251130163818.png]]
+!
 
 -----
 ## Почему новый стандарт квантирования убивает INT4 и как это работает на чипах Blackwell

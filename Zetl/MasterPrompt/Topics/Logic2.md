@@ -197,7 +197,7 @@ tags: [topic]
 
 ## Связанные кластеры
 
-- [[AI|AI]]
+- 
 - [[Cognition|Cognition]]
 - [[Psychology|Psychology]]
 - [[Philosophy|Philosophy]]

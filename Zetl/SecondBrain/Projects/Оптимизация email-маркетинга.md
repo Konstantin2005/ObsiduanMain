@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[List Segmentation]]
-- [[A/B Testing]]
-- [[Automation Sequences]]
-- [[Deliverability]]
-- [[Personalization]]
-- [[Conversion Optimization]]
-- [[Analytics Dashboard]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Content Strategy]]
-- [[Timing Optimization]]
-- [[Re-engagement Campaigns]]
+- 
+- 
 
 ## Этапы проекта
 

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153359.png]]
+!
 
 -----
 ## почему амбициозная идея Nvidia обернулась критикой

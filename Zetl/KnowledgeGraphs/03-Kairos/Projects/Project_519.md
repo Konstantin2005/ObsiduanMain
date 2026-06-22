@@ -41,8 +41,8 @@ A project to build better habits.
 - [[System_Thinking_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_415]]

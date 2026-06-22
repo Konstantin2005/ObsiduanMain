@@ -42,8 +42,8 @@ I learned about decision-making through research on cognitive psychology and beh
 Decision-making research is crucial for improving outcomes in business, healthcare, and personal life.
 
 ## Resources
-- [[Resource_DecisionMaking]]
-- [[Resource_BehavioralEconomics]]
+- 
+- 
 
 ## See Also
 - [[Decision_Theory_v1]]

@@ -21,13 +21,13 @@ status: active
 - [[Natural Language Processing]]
 - [[Predictive Analytics]]
 - [[Customer Segmentation]]
-- [[Recommendation Systems]]
-- [[Process Automation]]
+- 
+- 
 - [[Data Governance]]
 - [[AI Ethics]]
 - [[Explainable AI]]
 - [[Model Evaluation]]
-- [[Business Intelligence]]
+- 
 
 ## Этапы проекта
 

@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[IoT]]
-- [[Urban Planning]]
+- 
 - [[Energy Technology]]
 
 ## Используемые концепции
 
 - [[Sensor Networks]]
-- [[Data Platform]]
-- [[Citizen Engagement]]
-- [[Sustainability]]
-- [[Transportation]]
-- [[Public Safety]]
+- 
+- 
+- 
+- 
+- 
 - [[Energy Management]]
-- [[Infrastructure]]
-- [[Governance]]
-- [[Scalability]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

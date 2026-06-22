@@ -22,11 +22,11 @@ status: active
 - [[Data Quality]]
 - [[Dashboard Design]]
 - [[Statistical Modeling]]
-- [[A/B Testing]]
+- 
 - [[Data Visualization]]
 - [[Self-Service BI]]
-- [[Data Literacy]]
-- [[Evidence-Based Management]]
+- 
+- 
 - [[Data Ethics]]
 
 ## Этапы проекта

@@ -7,7 +7,7 @@ title: "Кодependентность"
 # 🌑 Кодependентность
 
 **Тип:** Тень
-**Кластер:** [[Эмпатия]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Кодependентность"
 
 ## Связи
 
-- transforms_into → [[Эмпатия]] (Ценность)
-- manifests_as → [[Поглощение]] (Поведение)
-- manifests_as → [[Спасательство]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Эмпатия]] (Ценность) → manifests_as
-- [[Поглощение]] (Поведение) → transforms_into
-- [[Спасательство]] (Поведение) → transforms_into
-- [[Сочувствие]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

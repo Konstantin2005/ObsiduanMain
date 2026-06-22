@@ -22,11 +22,11 @@ status: active
 - [[Design Sprints]]
 - [[User Research]]
 - [[MVP Development]]
-- [[A/B Testing]]
+- 
 - [[Feature Prioritization]]
-- [[Sprint Planning]]
-- [[Retrospectives]]
-- [[Metrics Definition]]
+- 
+- 
+- 
 - [[Stakeholder Management]]
 
 ## Этапы проекта

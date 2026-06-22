@@ -8,7 +8,7 @@ tags: [knowledge, programming]
 ## Related Concepts
 - [[Social Engineering]]
 - [[HTML]]
-- [[CI/CD]]
+- 
 - [[Design Patterns]]
 - [[RStudio]]
 - [[Builder]]

@@ -20,10 +20,10 @@ https://www.forbes.ru/tekhnologii/559400-nornikel-s-pomos-u-tehnologij-andeksa-v
 ---
 ## Zero-links
 ---
-- [[0 Российские IT-компании]]
-- [[0 AI-ориентированные подходы]]
-- [[0 Компании и организации]]
-- [[0 ИИ-модели и системы]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

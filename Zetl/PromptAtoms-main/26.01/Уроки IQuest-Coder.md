@@ -9,10 +9,10 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203151758.png]]
+!
 
 _____
-![[Pasted image 20260203151804.png]]
+!
 
 -----
 ##  Уроки IQuest-Coder

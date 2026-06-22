@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260213210116.png]]
+!
 
 -----
 ## скорость LLM становится новым IQ 

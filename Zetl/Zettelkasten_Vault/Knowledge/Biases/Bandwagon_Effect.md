@@ -33,17 +33,17 @@ The bandwagon effect is a cognitive bias where people adopt certain beliefs or b
 The bandwagon effect combines social psychology with cognitive biases, creating powerful pressures to conform and follow group behavior.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Availability_Heuristic_Error]]
-- [[Knowledge/Errors/Confirmation_Bias_Error]]
-- [[Knowledge/Errors/Social_Validation_Error]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Statistical_Thinking]]
-- [[Knowledge/Corrections/Metacognitive_Skills]]
+- 
+- 
 
 ## Examples
 - Buying products because they're popular

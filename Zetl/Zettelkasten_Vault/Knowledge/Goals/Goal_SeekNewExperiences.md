@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Curiosity_Exploration]]
-project: [[Project_Travel]]
-project2: [[Project_Experience]]
+project: 
+project2: 
 ---
 
 # Goal_SeekNewExperiences
@@ -28,5 +28,5 @@ Not Started
 - [[Curiosity_Exploration]]
 
 ## Related Projects
-- [[Project_Travel]]
-- [[Project_Experience]]
+- 
+- 

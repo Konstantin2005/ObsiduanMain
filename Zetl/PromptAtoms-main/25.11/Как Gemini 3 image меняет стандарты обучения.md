@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124142108.png]]
+!
 
 -----
 ## Как Gemini 3 image меняет стандарты обучения  и грозит уничтожить конкурентов Google

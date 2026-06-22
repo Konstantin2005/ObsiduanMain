@@ -12,7 +12,7 @@ Map of Content for Locations cluster in zetl
 - [[Мастерская]]
 
 ## Connected MOCs
-- [[MOC Global]]
-- [[MOC Skills]]
-- [[MOC Quests]]
-- [[MOC Bosses]]
+- 
+- 
+- 
+- 

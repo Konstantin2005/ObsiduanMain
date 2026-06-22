@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Travel & Tourism]]
-- [[Technology]]
+- 
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
 - [[Marketplace Model]]
-- [[Personalization]]
+- 
 - [[Mobile Development]]
-- [[User Experience]]
-- [[Payment Systems]]
-- [[Logistics]]
-- [[Community Features]]
-- [[Analytics]]
-- [[Partnership Strategy]]
-- [[Growth Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

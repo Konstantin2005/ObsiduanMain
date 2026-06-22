@@ -21,13 +21,13 @@ status: active
 - [[Path Planning]]
 - [[Sensor Fusion]]
 - [[Computer Vision]]
-- [[Real-Time Processing]]
-- [[Safety Systems]]
-- [[HD Maps]]
-- [[V2X Communication]]
+- 
+- 
+- 
+- 
 - [[Edge Computing]]
 - [[Regulatory Compliance]]
-- [[Testing Framework]]
+- 
 
 ## Этапы проекта
 

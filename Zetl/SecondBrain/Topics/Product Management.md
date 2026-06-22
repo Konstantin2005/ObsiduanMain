@@ -18,7 +18,7 @@ created: 2026-06-22
 - [[Go-to-Market Strategy]]
 - [[Feature Adoption]]
 - [[Product Analytics]]
-- [[A/B Testing]]
+- 
 - [[User Research]]
 - [[Prototyping]]
 - [[Minimum Viable Product]]

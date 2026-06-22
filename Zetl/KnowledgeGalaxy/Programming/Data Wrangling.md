@@ -10,7 +10,7 @@ tags: [knowledge, programming]
 - [[Composite]]
 - [[Redis]]
 - [[Data Security]]
-- [[A/B Testing]]
+- 
 - [[NumPy]]
 - [[Existence]]
 - [[LightGBM]]

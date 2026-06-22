@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230145845.png]]
+!
 
 -----
 ##  GigaChat может оказаться клоном китайских моделей и чем это грозит Сберу

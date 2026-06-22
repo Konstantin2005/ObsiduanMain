@@ -7,7 +7,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260205230127.png]]
+!
 
 -----
 ##  Почему медики предпочитают OpenEvidence и как получить доступ к этой базе знаний 

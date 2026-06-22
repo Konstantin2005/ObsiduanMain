@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260216144125.png]]
+!
 
 -----
 ## преимущества гибрида Mamba-Transformer для больших контекстов и нюансы точного цитирования

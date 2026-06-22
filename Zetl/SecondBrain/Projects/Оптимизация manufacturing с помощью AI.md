@@ -20,14 +20,14 @@ status: active
 
 - [[Quality Control]]
 - [[Predictive Maintenance]]
-- [[Process Optimization]]
+- 
 - [[Supply Chain]]
 - [[Energy Management]]
-- [[Integration]]
-- [[ROI Measurement]]
-- [[Training]]
-- [[Governance]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

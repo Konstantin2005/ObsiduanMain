@@ -33,17 +33,17 @@ Overconfidence bias is a cognitive bias where individuals overestimate their kno
 Overconfidence stems from the brain's tendency to create coherent narratives and fill gaps in knowledge with plausible but potentially incorrect information.
 
 ## Connected Errors (causes)
-- [[Knowledge/Errors/Availability_Heuristic_Error]]
-- [[Knowledge/Errors/Hindsight_Bias_Error]]
-- [[Knowledge/Errors/Confirmation_Bias_Error]]
+- 
+- 
+- 
 
 ## Related Biases (amplifies)
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Dunning_Kruger_Effect]]
+- 
+- 
 
 ## Correction Strategies
-- [[Knowledge/Corrections/Opportunity_Cost_Analysis]]
-- [[Knowledge/Corrections/Statistical_Thinking]]
+- 
+- 
 
 ## Examples
 - Traders believing they can predict market movements

@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Transportation]]
-- [[Technology]]
+- 
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Route Optimization]]
-- [[Fleet Management]]
-- [[User Experience]]
-- [[Payment Systems]]
-- [[Integration]]
-- [[Analytics]]
-- [[Sustainability]]
-- [[Partnership]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Growth Strategy]]
+- 
 
 ## Этапы проекта
 

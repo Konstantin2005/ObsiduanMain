@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251126123317.png]]
+!
 
 -----
 ## Эпоха визуального мышления

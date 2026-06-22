@@ -7,7 +7,7 @@ tags: [knowledge, programming]
 
 ## Related Concepts
 - [[Algorithms]]
-- [[A/B Testing]]
+- 
 - [[Creational Patterns]]
 - [[C++]]
 - [[DevOps]]

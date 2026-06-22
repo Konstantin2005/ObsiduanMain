@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153258.png]]
+!
 
 -----
 ## Gemini 3 Flash и конкуренция с Grok за лидерство в кодинге

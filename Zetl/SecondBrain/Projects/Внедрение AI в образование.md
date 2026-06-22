@@ -14,20 +14,20 @@ status: active
 
 - [[Artificial Intelligence]]
 - [[Teaching Methods]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Personalized Learning]]
-- [[Intelligent Tutoring]]
-- [[Automated Assessment]]
-- [[Content Recommendation]]
-- [[Learning Analytics]]
-- [[Ethics]]
-- [[Integration]]
-- [[Training]]
-- [[Scalability]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

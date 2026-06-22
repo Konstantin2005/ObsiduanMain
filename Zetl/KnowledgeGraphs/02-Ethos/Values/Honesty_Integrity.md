@@ -20,11 +20,11 @@ This value matters because integrity builds trust and character. When our intern
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
-- [[Freedom_Constraint]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Honesty_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because integrity builds trust and character. When our intern
 - [[Honesty_Accountability]]
 
 ## Related Concepts
-- [[Concept_MoralConsistency_v1]]
-- [[Concept_EthicalAlignment_v1]]
-- [[Concept_ValueAlignment_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Honesty_v1]]
+- 
 
 ## Application
 I apply this value by keeping promises, standing by my principles even when inconvenient, and being consistent in my behavior.
@@ -51,4 +51,4 @@ I apply this value by keeping promises, standing by my principles even when inco
 - Refusing bribes or unethical offers
 
 ## See Also
-- [[Value_MOC_Honesty]]
+- 

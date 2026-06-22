@@ -16,6 +16,6 @@ tags: [knowledge, gametheory]
 - [[Anchoring Effect]]
 - [[Blockchain]]
 - [[Primacy Effect]]
-- [[80/20 Rule]]
+- 
 - [[Loss]]
 - [[Export]]

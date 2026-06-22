@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203162911.png]]
+!
 
 -----
 ## сообщество по AI-кодингу показывает уверенный рост 

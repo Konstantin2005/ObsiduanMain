@@ -14,20 +14,20 @@ status: active
 
 - [[Robotics]]
 - [[Health & Fitness]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Surgical Robots]]
-- [[Rehabilitation Robots]]
-- [[Patient Care]]
-- [[Sterilization]]
-- [[Integration]]
+- 
+- 
+- 
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Training]]
-- [[ROI Measurement]]
-- [[Ethics]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

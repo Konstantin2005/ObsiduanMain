@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124140750.png]]
+!
 
 -----
 ## «закладки» и незакрытые сессии

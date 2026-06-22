@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155213.png]]
+!
 
 -----
 ## KAT-Coder-Pro V1 — как обучение на патчах меняет подход к исправлению кода и промптингу

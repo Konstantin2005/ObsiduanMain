@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124135851.png]]
+!
 
 -----
 ## почему простой текст эффективнее для хранения знаний LLM

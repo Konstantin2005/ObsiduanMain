@@ -7,7 +7,7 @@ title: "Серьёзность"
 # 💎 Серьёзность
 
 **Тип:** Ценность
-**Кластер:** [[Серьёзность]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Серьёзность"
 
 ## Связи
 
-- balances → [[Юмор vs Серьёзность]] (Компромисс)
-- manifests_as → [[Мрачность]] (Тень)
-- manifests_as → [[Мрачность]] (Поведение)
-- manifests_as → [[Ответственность]] (Поведение)
-- manifests_as → [[Глубина]] (Поведение)
-- balances → [[Серьёзность vs Юмор]] (Компромисс)
-- conflicts_with → [[Дисциплина]] (Ценность)
-- conflicts_with → [[Цель]] (Ценность)
-- conflicts_with → [[Мудрость]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Мудрость]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Цель]] (Ценность) → conflicts_with
-- [[Дисциплина]] (Ценность) → conflicts_with
-- [[Юмор vs Серьёзность]] (Компромисс) → conflicts_with
-- [[Мрачность]] (Тень) → transforms_into
-- [[Серьёзность vs Юмор]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

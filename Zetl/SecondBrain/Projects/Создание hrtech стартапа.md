@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Human Resources]]
-- [[Technology]]
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Recruitment Platform]]
+- 
 - [[Performance Management]]
-- [[Learning & Development]]
-- [[Employee Experience]]
-- [[Analytics]]
-- [[Integration]]
+- 
+- 
+- 
+- 
 - [[Mobile Development]]
 - [[Compliance]]
-- [[Partnership]]
-- [[Growth Strategy]]
+- 
+- 
 
 ## Этапы проекта
 

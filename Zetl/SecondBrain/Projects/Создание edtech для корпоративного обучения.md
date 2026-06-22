@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Learning Management System]]
-- [[Competency Framework]]
-- [[Content Creation]]
-- [[Assessment Tools]]
-- [[Analytics]]
-- [[Integration]]
-- [[Mobile Learning]]
-- [[Social Learning]]
-- [[Certification]]
-- [[Enterprise Features]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

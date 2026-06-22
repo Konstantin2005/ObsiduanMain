@@ -14,20 +14,20 @@ status: active
 
 - [[Customer Development]]
 - [[Operations]]
-- [[Technology]]
+- 
 
 ## Используемые концепции
 
-- [[Ticketing System]]
+- 
 - [[Knowledge Base]]
-- [[Chatbot Integration]]
-- [[SLA Management]]
+- 
+- 
 - [[Performance Metrics]]
-- [[Quality Assurance]]
-- [[Training Programs]]
-- [[Customer Feedback]]
+- 
+- 
+- 
 - [[Automation]]
-- [[Omnichannel Support]]
+- 
 
 ## Этапы проекта
 

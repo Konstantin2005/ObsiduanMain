@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Honesty_Integrity]]
-project: [[Project_Ethics]]
-project2: [[Project_Principles]]
+project: 
+project2: 
 ---
 
 # Goal_UpholdIntegrity
@@ -28,5 +28,5 @@ Not Started
 - [[Honesty_Integrity]]
 
 ## Related Projects
-- [[Project_Ethics]]
-- [[Project_Principles]]
+- 
+- 

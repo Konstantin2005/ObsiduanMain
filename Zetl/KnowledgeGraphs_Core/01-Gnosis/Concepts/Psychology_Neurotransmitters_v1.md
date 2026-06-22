@@ -42,8 +42,8 @@ I studied neurotransmitters through research on brain chemistry and mental healt
 Neurotransmitter research is crucial for understanding mental health and developing effective treatments.
 
 ## Resources
-- [[Resource_NeurotransmitterResearch]]
-- [[Resource_BrainChemistry]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Neuro_v1]]

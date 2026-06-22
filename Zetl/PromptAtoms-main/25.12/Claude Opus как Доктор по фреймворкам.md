@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230155136.png]]
+!
 
 -----
 ## почему модель Anthropic лучше справляется со сложными API

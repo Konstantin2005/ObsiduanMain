@@ -7,7 +7,7 @@ title: "Красота"
 # 💎 Красота
 
 **Тип:** Ценность
-**Кластер:** [[Красота]]
+**Кластер:** 
 
 ---
 
@@ -17,28 +17,28 @@ title: "Красота"
 
 ## Связи
 
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Традиция]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
-- manifests_as → [[Нарциссизм]] (Тень)
-- manifests_as → [[Тщеславие]] (Поведение)
-- manifests_as → [[Эстетизм]] (Поведение)
-- manifests_as → [[Творчество]] (Поведение)
-- balances → [[Красота vs Истина]] (Компромисс)
-- conflicts_with → [[Творчество]] (Ценность)
-- conflicts_with → [[Традиция]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Творчество]] (Ценность) → conflicts_with
-- [[Традиция]] (Ценность) → conflicts_with
-- [[Традиция]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Нарциссизм]] (Тень) → transforms_into
-- [[Красота vs Истина]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

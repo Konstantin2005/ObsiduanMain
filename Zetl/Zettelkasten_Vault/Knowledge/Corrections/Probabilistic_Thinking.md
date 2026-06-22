@@ -40,9 +40,9 @@ Probabilistic thinking provides a framework for understanding uncertainty and ma
 - Seek probabilistic perspectives
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Overconfidence_Bias]]
-- [[Knowledge/Biases/Hindsight_Bias]]
-- [[Knowledge/Biases/Confirmation_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for overcoming overconfidence and hindsight bias, particularly in analytical and strategic contexts.

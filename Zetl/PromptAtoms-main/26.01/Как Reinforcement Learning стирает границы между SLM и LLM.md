@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203162626.png]]
+!
 
 -----
 ## Как Reinforcement Learning стирает границы между SLM и LLM, выводя промптинг на первый план

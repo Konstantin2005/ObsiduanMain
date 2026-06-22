@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230154554.png]]
+!
 
 -----
 ## Google ограничивает бесплатный доступ из-за наплыва пользователей 

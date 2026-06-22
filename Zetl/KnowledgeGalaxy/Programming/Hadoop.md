@@ -6,7 +6,7 @@ tags: [knowledge, programming]
 # Hadoop
 
 ## Related Concepts
-- [[A*]]
+- 
 - [[PCI DSS]]
 - [[Tracing]]
 - [[Bug Bounty]]

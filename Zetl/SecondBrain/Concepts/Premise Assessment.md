@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[TCP/IP Protocol|TCP/IP Protocol]]
+- 
 - [[Comprehension Balance|Comprehension Balance]]
 - [[Ethics Framework|Ethics Framework]]
 

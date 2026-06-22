@@ -20,10 +20,10 @@ https://www.reuters.com/world/asia-pacific/deepseek-nears-45-billion-valuation-c
 ---
 ## Zero-links
 ---
-- [[0 Компании и организации]]
-- [[0 ИИ-модели и системы]]
-- [[0 Технологические гиганты]]
-- [[0 Глобальные процессы и тренды]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

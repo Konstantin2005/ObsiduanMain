@@ -20,14 +20,14 @@ status: active
 
 - [[Demand Forecasting]]
 - [[Time Series Analysis]]
-- [[Seasonality Modeling]]
-- [[External Data Integration]]
+- 
+- 
 - [[Model Evaluation]]
-- [[Real-Time Updates]]
-- [[Accuracy Metrics]]
+- 
+- 
 - [[Automation]]
-- [[Scalability]]
-- [[Actionable Insights]]
+- 
+- 
 
 ## Этапы проекта
 

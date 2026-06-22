@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of decision-making processes, choice theory, and rational behavior.
 
 ## Related Concepts
-- [[Decision_Theory_Choice_v1]]
-- [[Decision_Theory_Risk_v1]]
+- 
+- 
 
 ## Related Values
 - [[Freedom_Choice]]
 - [[Justice_Equality]]
 
 ## Related Projects
-- [[Project_DecisionResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 40

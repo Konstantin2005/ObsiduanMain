@@ -11,7 +11,7 @@ tags: [knowledge, programming]
 - [[Horizontal Scaling]]
 - [[Hexagonal Architecture]]
 - [[Software Architecture]]
-- [[CI/CD]]
+- 
 - [[Lua]]
 - [[Prometheus]]
 - [[Hope]]

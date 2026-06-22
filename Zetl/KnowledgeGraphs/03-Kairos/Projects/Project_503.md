@@ -41,8 +41,8 @@ A project to improve personal growth.
 - [[WebDevelopment_v2]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[]]

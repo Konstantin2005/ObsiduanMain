@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Freedom_Expression]]
-project: [[Project_ArtisticDevelopment]]
-project2: [[Project_CommunicationSkills]]
+project: 
+project2: 
 ---
 
 # Goal_ExpressOneselfFully
@@ -28,5 +28,5 @@ Not Started
 - [[Freedom_Expression]]
 
 ## Related Projects
-- [[Project_ArtisticDevelopment]]
-- [[Project_CommunicationSkills]]
+- 
+- 

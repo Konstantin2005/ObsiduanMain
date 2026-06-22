@@ -42,8 +42,8 @@ I learned about values through research on moral psychology and cultural anthrop
 Values research is essential for understanding human motivation and creating ethical systems.
 
 ## Resources
-- [[Resource_ValuesResearch]]
-- [[Resource_MoralPsychology]]
+- 
+- 
 
 ## See Also
 - [[Philosophy_Ethics_v1]]

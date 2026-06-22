@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Customer Segmentation]]
-- [[Retention Strategy]]
-- [[Upselling Strategy]]
-- [[Loyalty Programs]]
-- [[Personalization]]
+- 
+- 
+- 
+- 
 - [[Predictive Analytics]]
-- [[Engagement Metrics]]
-- [[Revenue Optimization]]
-- [[Churn Prevention]]
-- [[Growth Strategy]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

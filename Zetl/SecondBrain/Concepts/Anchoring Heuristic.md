@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[HTTP/HTTPS|HTTP/HTTPS]]
+- 
 - [[Stage-Gate Process|Stage-Gate Process]]
 - [[Joint Venture|Joint Venture]]
 

@@ -41,8 +41,8 @@ I learned about psychological thought through research on cognitive psychology a
 Psychological thought is essential for advancing our understanding of human behavior.
 
 ## Resources
-- [[Resource_PsychologicalThought]]
-- [[Resource_CognitiveThinking]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Stress_v1]]

@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Supply Chain]]
-- [[E-Commerce]]
+- 
 - [[Operations]]
 
 ## Используемые концепции
 
-- [[Warehouse Automation]]
+- 
 - [[Last Mile Delivery]]
 - [[Inventory Management]]
-- [[Returns Processing]]
-- [[Customer Experience]]
-- [[Analytics]]
+- 
+- 
+- 
 - [[Cost Optimization]]
-- [[Integration]]
-- [[Partnership]]
-- [[Scaling Strategy]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

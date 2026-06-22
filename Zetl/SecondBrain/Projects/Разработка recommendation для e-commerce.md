@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Collaborative Filtering]]
-- [[Purchase History Analysis]]
-- [[Real-Time Recommendations]]
-- [[A/B Testing]]
-- [[Catalogue Analysis]]
-- [[User Profiling]]
-- [[Personalization Engine]]
-- [[Conversion Optimization]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Customer Segmentation]]
-- [[Recommendation Metrics]]
+- 
 
 ## Этапы проекта
 

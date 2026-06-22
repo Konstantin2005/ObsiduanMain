@@ -42,8 +42,8 @@ I learned about memory through studying cognitive neuroscience and research on m
 Memory research has applications in education, therapy, and artificial intelligence development.
 
 ## Resources
-- [[Resource_MemoryResearch]]
-- [[Resource_CognitiveScience]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Cognition_v1]]

@@ -43,11 +43,11 @@ Research and implement machine learning models for practical applications.
 - [[Career_LearningContinuity]]
 
 ## Dependencies
-- [[Project1]]
-- [[Project2]]
+- 
+- 
 
 ## Related MOCs
-- [[Topic1_MOC]]
+- 
 
 ## Timeline
 ### Upcoming Milestones
@@ -61,4 +61,4 @@ Research and implement machine learning models for practical applications.
 This project is focused on advancing our understanding of neural networks and their practical applications.
 
 ## See Also
-- [[RelatedProject1]]
+- 

@@ -22,7 +22,7 @@ created: 2026-06-22
 
 ## Связанные концепции
 
-- [[1/N Heuristic|1/N Heuristic]]
+- 
 - [[Retention Rate|Retention Rate]]
 - [[Competitor Profiling|Competitor Profiling]]
 

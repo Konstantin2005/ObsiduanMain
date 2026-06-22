@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260211153643.png]]
+!
 
 -----
 ##  Gemini и Grok теснят ChatGPT, а DeepSeek уходит в тень

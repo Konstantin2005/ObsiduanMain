@@ -6,8 +6,8 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Freedom_Thought]]
-project: [[Project_Thinking]]
-project2: [[Project_Mind]]
+project: 
+project2: 
 ---
 
 # Goal_ExpandMind
@@ -28,5 +28,5 @@ Not Started
 - [[Freedom_Thought]]
 
 ## Related Projects
-- [[Project_Thinking]]
-- [[Project_Mind]]
+- 
+- 

@@ -12,7 +12,7 @@ Map of Content for Rewards cluster in zetl
 - [[Финансовая безопасность]]
 
 ## Connected MOCs
-- [[MOC Global]]
-- [[MOC Skills]]
-- [[MOC Quests]]
-- [[MOC Bosses]]
+- 
+- 
+- 
+- 

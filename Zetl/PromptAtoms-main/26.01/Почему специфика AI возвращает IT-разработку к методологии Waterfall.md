@@ -10,7 +10,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203152119.png]]
+!
 
 -----
 ## Почему специфика AI возвращает IT-разработку к методологии Waterfall

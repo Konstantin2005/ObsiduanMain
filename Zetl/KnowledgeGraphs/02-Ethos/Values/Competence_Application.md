@@ -20,11 +20,11 @@ This value matters because knowledge without application is wasted. Putting our 
 
 ## Conflicts
 ### Direct Conflicts
-- [[Freedom_Constraint]]
-- [[Authority_Abuse]]
+- 
+- 
 
 ### Indirect Conflicts
-- [[Competence_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -35,12 +35,12 @@ This value matters because knowledge without application is wasted. Putting our 
 - [[Competence_Standards]]
 
 ## Related Concepts
-- [[Concept_PracticalApplication_v1]]
-- [[Concept_ProblemSolving_v1]]
-- [[Concept_Impact_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Competence_v1]]
+- 
 
 ## Application
 I apply this value by taking on challenging projects, volunteering to help others, and implementing what I learn.
@@ -51,4 +51,4 @@ I apply this value by taking on challenging projects, volunteering to help other
 - Contributing to open source projects
 
 ## See Also
-- [[Value_MOC_Competence]]
+- 

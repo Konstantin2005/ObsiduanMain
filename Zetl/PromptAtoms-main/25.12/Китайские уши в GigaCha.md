@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230150007.png]]
+!
 
 -----
 ## Почему обучение модели Сбера невозможно без участия Qwen и DeepSeek 

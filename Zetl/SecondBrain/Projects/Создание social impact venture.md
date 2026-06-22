@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Entrepreneurship]]
-- [[Impact Investing]]
-- [[Nonprofit Management]]
+- 
+- 
 
 ## Используемые концепции
 
-- [[Theory of Change]]
-- [[Impact Measurement]]
-- [[Blended Finance]]
-- [[Stakeholder Engagement]]
-- [[Scalability]]
-- [[Sustainability]]
-- [[Partnership Strategy]]
-- [[Communication Strategy]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - [[Team Building]]
-- [[Governance]]
+- 
 
 ## Этапы проекта
 

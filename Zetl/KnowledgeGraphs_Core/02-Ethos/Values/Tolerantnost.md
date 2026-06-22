@@ -7,7 +7,7 @@ title: "Tolerantность"
 # 💎 Tolerantность
 
 **Тип:** Ценность
-**Кластер:** [[Tolerantность]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Tolerantность"
 
 ## Связи
 
-- balances → [[Истина vs Tolerantность]] (Компромисс)
-- manifests_as → [[Релятивизм]] (Тень)
-- manifests_as → [[Безразличие]] (Поведение)
-- manifests_as → [[Мультикультурализм]] (Поведение)
-- manifests_as → [[Пассивность]] (Поведение)
-- balances → [[Tolerantность vs Истина]] (Компромисс)
-- conflicts_with → [[Равенство]] (Ценность)
-- conflicts_with → [[Сообщество]] (Ценность)
-- conflicts_with → [[Эмпатия]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Истина vs Tolerantность]] (Компромисс) → conflicts_with
-- [[Релятивизм]] (Тень) → transforms_into
-- [[Tolerantность vs Истина]] (Компромисс) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Эмпатия]] (Ценность) → conflicts_with
-- [[Равенство]] (Ценность) → conflicts_with
-- [[Сообщество]] (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

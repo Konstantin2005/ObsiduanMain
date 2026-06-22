@@ -12,22 +12,22 @@ status: active
 
 ## Связанные темы
 
-- [[Real Estate]]
-- [[Technology]]
+- 
+- 
 - [[Entrepreneurship]]
 
 ## Используемые концепции
 
-- [[Property Valuation]]
-- [[Virtual Tours]]
+- 
+- 
 - [[Marketplace Model]]
-- [[Transaction Management]]
-- [[Document Automation]]
-- [[Analytics]]
+- 
+- 
+- 
 - [[Mobile Development]]
-- [[User Experience]]
-- [[Integration]]
-- [[Marketing Strategy]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

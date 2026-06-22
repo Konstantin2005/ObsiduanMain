@@ -23,7 +23,7 @@ created: 2026-06-22
 ## Связанные концепции
 
 - [[Blue-Green Deployment|Blue-Green Deployment]]
-- [[Mobile CI/CD|Mobile CI/CD]]
+- 
 - [[Data Pipelines|Data Pipelines]]
 
 ## Связанные проекты

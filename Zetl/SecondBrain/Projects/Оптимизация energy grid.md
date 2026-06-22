@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Smart Grid]]
-- [[Demand Response]]
+- 
 - [[Renewable Integration]]
-- [[Grid Stability]]
+- 
 - [[Predictive Analytics]]
 - [[Automation]]
-- [[Security]]
+- 
 - [[Cost Optimization]]
 - [[Regulatory Compliance]]
-- [[Scaling Strategy]]
+- 
 
 ## Этапы проекта
 

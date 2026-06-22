@@ -42,8 +42,8 @@ I learned about identity through research on social psychology and cultural stud
 Identity research is essential for understanding human behavior and creating inclusive environments.
 
 ## Resources
-- [[Resource_IdentityResearch]]
-- [[Resource_SocialIdentity]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Social_v1]]

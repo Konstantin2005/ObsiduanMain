@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230154607.png]]
+!
 
 -----
 ## связка Google AI Studio и Kilo Code для эффективной работы с GitHub

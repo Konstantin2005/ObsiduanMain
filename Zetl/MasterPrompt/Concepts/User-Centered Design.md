@@ -1,6 +1,6 @@
 ---
 type: concept
-topic: [[$safe_t|Creativity]]
+topic: 
 created: 2026-06-22
 tags: [concept]
 ---

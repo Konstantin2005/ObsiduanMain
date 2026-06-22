@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203155247.png]]
+!
 
 -----
 ## Как метод Logit Lens меняет подход к инженерному промптингу 

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260219121150.png]]
+!
 
 -----
 ## Ожидаемое лидерство Claude Opus и внезапный прорыв китайского ИИ в медицине

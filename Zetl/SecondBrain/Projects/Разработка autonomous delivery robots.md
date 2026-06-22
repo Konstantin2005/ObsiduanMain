@@ -14,20 +14,20 @@ status: active
 
 - [[Robotics]]
 - [[IoT]]
-- [[Logistics]]
+- 
 
 ## Используемые концепции
 
 - [[Path Planning]]
-- [[Obstacle Avoidance]]
-- [[Fleet Management]]
-- [[Customer Experience]]
+- 
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Safety Systems]]
+- 
 - [[Cost Optimization]]
-- [[Community Acceptance]]
-- [[Scaling Strategy]]
-- [[Technology Development]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

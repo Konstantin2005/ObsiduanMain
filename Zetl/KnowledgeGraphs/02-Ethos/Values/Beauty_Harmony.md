@@ -20,10 +20,10 @@ This value matters because harmony creates stability and beauty. When elements w
 
 ## Conflicts
 ### Direct Conflicts
-- [[Competence_Authority]]
+- 
 
 ### Indirect Conflicts
-- [[Beauty_Constraint]]
+- 
 
 ## Supporting Values
 ### Directly Supporting
@@ -34,12 +34,12 @@ This value matters because harmony creates stability and beauty. When elements w
 - [[Beauty_Perfection]]
 
 ## Related Concepts
-- [[Concept_Harmony_v1]]
-- [[Concept_Balance_v1]]
-- [[Concept_Synergy_v1]]
+- 
+- 
+- 
 
 ## Related Topics
-- [[Topic_Beauty_v1]]
+- 
 
 ## Application
 I apply this value by creating balanced designs, fostering team harmony, and seeking equilibrium in all things.
@@ -50,4 +50,4 @@ I apply this value by creating balanced designs, fostering team harmony, and see
 - Designing balanced ecosystems
 
 ## See Also
-- [[Value_MOC_Beauty]]
+- 

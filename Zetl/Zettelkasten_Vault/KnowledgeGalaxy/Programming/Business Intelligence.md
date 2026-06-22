@@ -10,7 +10,7 @@ tags: [knowledge, programming]
 - [[Dashboard]]
 - [[Logic Programming]]
 - [[Seaborn]]
-- [[A*]]
+- 
 - [[HashiCorp Vault]]
 - [[Digital Signatures]]
 - [[Self-knowledge]]

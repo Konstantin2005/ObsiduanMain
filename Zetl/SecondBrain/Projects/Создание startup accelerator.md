@@ -14,20 +14,20 @@ status: active
 
 - [[Entrepreneurship]]
 - [[Investment]]
-- [[Mentorship]]
+- 
 
 ## Используемые концепции
 
-- [[Application Process]]
-- [[Cohort Management]]
-- [[Demo Day]]
-- [[Mentor Network]]
-- [[Legal Support]]
-- [[Investor Network]]
-- [[Alumni Network]]
-- [[Program Design]]
-- [[Impact Measurement]]
-- [[Sustainability]]
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

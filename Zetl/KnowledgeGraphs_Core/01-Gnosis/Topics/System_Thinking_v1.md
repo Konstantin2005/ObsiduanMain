@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of interconnections and relationships within complex systems and their behavior patterns.
 
 ## Related Concepts
-- [[Systems_Thinking_Systems_v1]]
-- [[Systems_Thinking_Feedback_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Discovery]]
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_SystemsResearch]]
+- 
 
 ## Statistics
 - Total Concepts: 45

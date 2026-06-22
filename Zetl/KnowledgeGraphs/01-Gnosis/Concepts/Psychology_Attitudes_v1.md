@@ -42,8 +42,8 @@ I learned about attitudes through research on social psychology and persuasion.
 Attitude research is crucial for understanding consumer behavior and social change.
 
 ## Resources
-- [[Resource_AttitudeResearch]]
-- [[Resource_SocialPersuasion]]
+- 
+- 
 
 ## See Also
 - [[Psychology_SocialInfluence_v1]]

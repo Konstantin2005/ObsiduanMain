@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230145701.png]]
+!
 
 -----
 ## инструкция по обходу ограничений и настройке Docker

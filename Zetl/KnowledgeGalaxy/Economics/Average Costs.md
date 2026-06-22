@@ -18,5 +18,5 @@ tags: [knowledge, economics]
 - [[KPI]]
 - [[Disjunction]]
 - [[Sigmoid]]
-- [[A*]]
+- 
 - [[Music Therapy]]

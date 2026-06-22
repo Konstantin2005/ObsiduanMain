@@ -42,8 +42,8 @@ I learned about social cognition through research on social psychology and inter
 Social cognition research is crucial for understanding human behavior and improving interpersonal relationships.
 
 ## Resources
-- [[Resource_SocialCognition]]
-- [[Resource_InterpersonalRelationships]]
+- 
+- 
 
 ## See Also
 - [[Psychology_Social_v1]]

@@ -10,7 +10,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203164607.png]]
+!
 
 -----
 ## крайне компактные модели Qwen 

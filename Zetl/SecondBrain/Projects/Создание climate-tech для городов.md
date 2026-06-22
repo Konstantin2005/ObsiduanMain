@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Energy Technology]]
-- [[Urban Planning]]
+- 
 - [[IoT]]
 
 ## Используемые концепции
 
-- [[Smart Buildings]]
-- [[Air Quality Monitoring]]
-- [[Waste Management]]
-- [[Transportation]]
+- 
+- 
+- 
+- 
 - [[Energy Efficiency]]
-- [[Citizen Engagement]]
-- [[Integration]]
-- [[Governance]]
-- [[Funding Strategy]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

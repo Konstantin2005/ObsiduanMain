@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203210708.png]]
+!
 
 -----
 ## почему «микро-ТЗ» и Docstrings вытеснили логику Хоара в эпоху нейросетей 

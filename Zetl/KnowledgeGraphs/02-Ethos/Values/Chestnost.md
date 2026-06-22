@@ -7,7 +7,7 @@ title: "Честность"
 # 💎 Честность
 
 **Тип:** Ценность
-**Кластер:** [[Честность]]
+**Кластер:** 
 
 ---
 
@@ -17,28 +17,28 @@ title: "Честность"
 
 ## Связи
 
-- conflicts_with → [[Истина]] (Ценность)
-- manifests_as → [[Жестокость]] (Тень)
-- manifests_as → [[Грубость]] (Поведение)
-- manifests_as → [[Нарциссизм]] (Поведение)
-- manifests_as → [[Директ]] (Поведение)
-- balances → [[Честность vs Дипломатичность]] (Компромисс)
-- conflicts_with → [[Истина]] (Ценность)
-- conflicts_with → [[Целостность]] (Ценность)
-- conflicts_with → [[Любовь]] (Ценность)
-- balances → [[Дипломатичность vs Честность]] (Компромисс)
-- conflicts_with → [[Целостность]] (Ценность)
+- conflicts_with →  (Ценность)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Истина]] (Ценность) → conflicts_with
-- [[Истина]] (Ценность) → conflicts_with
-- [[Любовь]] (Ценность) → conflicts_with
-- [[Жестокость]] (Тень) → transforms_into
-- [[Честность vs Дипломатичность]] (Компромисс) → conflicts_with
-- [[Дипломатичность vs Честность]] (Компромисс) → conflicts_with
-- [[Целостность]] (Ценность) → conflicts_with
-- [[Целостность]] (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
 
 ---
 

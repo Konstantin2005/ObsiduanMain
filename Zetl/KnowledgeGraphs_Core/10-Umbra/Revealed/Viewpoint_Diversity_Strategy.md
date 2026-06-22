@@ -40,9 +40,9 @@ Viewpoint diversity strategy provides a framework for actively seeking and integ
 - Seek external feedback
 
 ## Fixes Biases (fixes)
-- [[Knowledge/Biases/Bandwagon_Effect]]
-- [[Knowledge/Biases/Confirmation_Bias]]
-- [[Knowledge/Biases/Anchoring_Bias]]
+- 
+- 
+- 
 
 ## Effectiveness Rating
 High effectiveness for overcoming echo chamber effects and improving decision quality, particularly in group settings and organizational contexts.

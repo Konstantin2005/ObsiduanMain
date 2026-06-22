@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Carbon Capture]]
-- [[Renewable Energy]]
-- [[Environmental Impact]]
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Funding Strategy]]
-- [[Partnership]]
-- [[Scalability]]
-- [[Market Analysis]]
-- [[Technology Development]]
-- [[Impact Measurement]]
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

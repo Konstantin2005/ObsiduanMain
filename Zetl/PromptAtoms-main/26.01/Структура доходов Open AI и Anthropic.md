@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203155018.png]]
+!
 
 -----
 ## Структура доходов Open AI и Anthropic

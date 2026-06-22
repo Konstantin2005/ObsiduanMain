@@ -24,7 +24,7 @@ created: 2026-06-22
 
 - [[Compliance Program|Compliance Program]]
 - [[Sharing Economy|Sharing Economy]]
-- [[CI/CD Pipelines|CI/CD Pipelines]]
+- 
 
 ## Связанные проекты
 

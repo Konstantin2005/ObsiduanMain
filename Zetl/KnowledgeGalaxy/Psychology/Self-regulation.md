@@ -14,7 +14,7 @@ tags: [knowledge, psychology]
 - [[Developmental Psychology]]
 - [[Divergent Thinking]]
 - [[Melancholic]]
-- [[CI/CD]]
+- 
 - [[Learning]]
 - [[Cardiology]]
 - [[Existential Risk]]

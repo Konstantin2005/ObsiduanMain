@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230153733.png]]
+!
 
 -----
 ## Практический тест Gemini 3 Flash

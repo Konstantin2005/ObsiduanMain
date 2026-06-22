@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Fraud Detection]]
-- [[Algorithmic Trading]]
+- 
+- 
 - [[Risk Assessment]]
-- [[Customer Service]]
+- 
 - [[Regulatory Compliance]]
 - [[Explainable AI]]
 - [[Data Privacy]]
-- [[Integration]]
-- [[Ethics]]
-- [[Scalability]]
+- 
+- 
+- 
 
 ## Этапы проекта
 

@@ -10,7 +10,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203153003.png]]
+!
 
 -----
 ## Кризис OpenAI: массовая миграция пользователей в Gemini и риск стать «второй Nokia»

@@ -16,4 +16,4 @@ tags: [knowledge, gametheory]
 - [[Default Design]]
 - [[Big Five]]
 - [[Intersubjectivity]]
-- [[SSL/TLS]]
+- 

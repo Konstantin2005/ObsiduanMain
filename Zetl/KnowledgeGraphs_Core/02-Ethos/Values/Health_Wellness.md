@@ -35,11 +35,11 @@ Health is the foundation for pursuing all other goals and values. Without good h
 - [[Responsibility_Care]]
 
 ## Related Concepts
-- [[Concept1_v1]]
-- [[Concept2_v1]]
+- 
+- 
 
 ## Related Topics
-- [[Topic1_v1]]
+- 
 
 ## Application
 Apply health practices daily through regular exercise, proper nutrition, adequate sleep, and stress management techniques.
@@ -50,4 +50,4 @@ Apply health practices daily through regular exercise, proper nutrition, adequat
 - Practicing meditation or mindfulness
 
 ## See Also
-- [[Value_MOC]]
+- 

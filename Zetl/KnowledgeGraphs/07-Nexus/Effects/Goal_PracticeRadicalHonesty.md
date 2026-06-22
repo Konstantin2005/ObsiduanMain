@@ -6,7 +6,7 @@ created: 2026-06-22
 last_reviewed: 2026-06-22
 review_frequency: monthly
 value: [[Honesty_Integrity]]
-project: [[Project_TransparencyPractice]]
+project: 
 project2: [[Project_ConflictResolution]]
 ---
 
@@ -28,5 +28,5 @@ Not Started
 - [[Honesty_Integrity]]
 
 ## Related Projects
-- [[Project_TransparencyPractice]]
+- 
 - [[Project_ConflictResolution]]

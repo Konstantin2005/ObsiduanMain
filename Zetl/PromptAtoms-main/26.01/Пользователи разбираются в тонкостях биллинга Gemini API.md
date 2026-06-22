@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203143814.png]]
+!
 
 -----
 ## Пользователи разбираются в тонкостях биллинга Gemini API 

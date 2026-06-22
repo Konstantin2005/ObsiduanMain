@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260207112153.png]]
+!
 
 -----
 ## LLM-агентов массово внедряют Enterprise-стандарты в малую разработку

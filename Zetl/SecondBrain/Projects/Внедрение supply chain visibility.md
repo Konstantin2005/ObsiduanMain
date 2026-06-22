@@ -13,21 +13,21 @@ status: active
 ## Связанные темы
 
 - [[Supply Chain]]
-- [[Technology]]
+- 
 - [[Data Engineering]]
 
 ## Используемые концепции
 
-- [[Real-Time Tracking]]
-- [[IoT Sensors]]
-- [[Data Integration]]
+- 
+- 
+- 
 - [[Predictive Analytics]]
-- [[Exception Management]]
-- [[Supplier Portal]]
-- [[Control Tower]]
-- [[Blockchain Traceability]]
-- [[Risk Monitoring]]
-- [[Performance Dashboards]]
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 

@@ -7,7 +7,7 @@ title: "Истина vs Tolerantность"
 # ⚖️ Истина vs Tolerantность
 
 **Тип:** Компромисс
-**Кластер:** [[Истина]]
+**Кластер:** 
 
 ---
 
@@ -21,13 +21,13 @@ title: "Истина vs Tolerantность"
 
 ## Связи
 
-- conflicts_with → [[Истина]] (Ценность)
-- conflicts_with → [[Tolerantность]] (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Истина]] (Ценность) → balances
-- [[Tolerantность]] (Ценность) → balances
+-  (Ценность) → balances
+-  (Ценность) → balances
 
 ---
 

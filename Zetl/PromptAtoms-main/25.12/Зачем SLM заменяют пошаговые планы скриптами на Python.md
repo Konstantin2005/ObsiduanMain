@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230145629.png]]
+!
 
 -----
 ## Код как стратегия

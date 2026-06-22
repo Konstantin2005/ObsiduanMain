@@ -7,7 +7,7 @@ title: "Фанатизм"
 # 🌑 Фанатизм
 
 **Тип:** Тень
-**Кластер:** [[Цель]]
+**Кластер:** 
 
 ---
 
@@ -21,16 +21,16 @@ title: "Фанатизм"
 
 ## Связи
 
-- transforms_into → [[Цель]] (Ценность)
-- manifests_as → [[Мессианство]] (Поведение)
-- manifests_as → [[Одержимость]] (Поведение)
+- transforms_into →  (Ценность)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
 
 ## На что ссылаются
 
-- [[Цель]] (Ценность) → manifests_as
-- [[Мессианство]] (Поведение) → transforms_into
-- [[Одержимость]] (Поведение) → transforms_into
-- [[Призвание]] (Поведение) → transforms_into
+-  (Ценность) → manifests_as
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
+-  (Поведение) → transforms_into
 
 ---
 

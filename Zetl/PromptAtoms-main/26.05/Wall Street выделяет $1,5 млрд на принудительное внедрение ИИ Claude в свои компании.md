@@ -20,10 +20,10 @@ https://www.wsj.com/business/deals/anthropic-nears-1-5-billion-joint-venture-wit
 ---
 ## Zero-links
 ---
-- [[0 Ключевые фигуры]]
-- [[0 Компании и организации]]
-- [[0 Бизнес-процессы и стратегии]]
-- [[0 ИИ-модели и системы]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

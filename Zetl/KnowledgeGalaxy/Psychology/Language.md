@@ -11,7 +11,7 @@ tags: [knowledge, psychology]
 - [[Motivation]]
 - [[Microexpressions]]
 - [[Shame]]
-- [[CI/CD]]
+- 
 - [[Game Theory]]
 - [[Scientific Revolution]]
 - [[In Ecology]]

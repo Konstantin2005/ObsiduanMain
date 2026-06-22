@@ -7,7 +7,7 @@ title: "Смирение"
 # 💎 Смирение
 
 **Тип:** Ценность
-**Кластер:** [[Смирение]]
+**Кластер:** 
 
 ---
 
@@ -17,26 +17,26 @@ title: "Смирение"
 
 ## Связи
 
-- balances → [[Достоинство vs Смирение]] (Компромисс)
-- manifests_as → [[Самоуничижение]] (Тень)
-- manifests_as → [[Мазохизм]] (Поведение)
-- manifests_as → [[Подчинение]] (Поведение)
-- manifests_as → [[Скромность]] (Поведение)
-- balances → [[Смирение vs Достоинство]] (Компромисс)
-- conflicts_with → [[Мудрость]] (Ценность)
-- conflicts_with → [[Эмпатия]] (Ценность)
-- conflicts_with → [[Вера]] (Ценность)
-- conflicts_with → [[Баланс]] (Ценность)
+- balances →  (Компромисс)
+- manifests_as →  (Тень)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- manifests_as →  (Поведение)
+- balances →  (Компромисс)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
+- conflicts_with →  (Ценность)
 
 ## На что ссылаются
 
-- [[Мудрость]] (Ценность) → conflicts_with
-- [[Баланс]] (Ценность) → conflicts_with
-- [[Вера]] (Ценность) → conflicts_with
-- [[Эмпатия]] (Ценность) → conflicts_with
-- [[Достоинство vs Смирение]] (Компромисс) → conflicts_with
-- [[Самоуничижение]] (Тень) → transforms_into
-- [[Смирение vs Достоинство]] (Компромисс) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Ценность) → conflicts_with
+-  (Компромисс) → conflicts_with
+-  (Тень) → transforms_into
+-  (Компромисс) → conflicts_with
 
 ---
 

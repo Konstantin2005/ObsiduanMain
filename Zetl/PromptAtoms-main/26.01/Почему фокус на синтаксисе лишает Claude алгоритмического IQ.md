@@ -9,7 +9,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20260203154402.png]]
+!
 
 -----
 ## почему фокус на синтаксисе лишает Claude алгоритмического «IQ»

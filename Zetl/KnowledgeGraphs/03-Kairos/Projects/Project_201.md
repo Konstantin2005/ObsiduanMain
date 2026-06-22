@@ -41,8 +41,8 @@ A project to build better habits.
 - [[History_Civilizations_v1]]
 
 ## Resources
-- [[Resource1]]
-- [[Resource2]]
+- 
+- 
 
 ## Dependencies
 - [[Project_97]]

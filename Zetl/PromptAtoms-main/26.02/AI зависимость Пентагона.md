@@ -21,10 +21,10 @@ https://www.axios.com/2026/02/27/anthropic-pentagon-supply-chain-risk-claude
 ---
 ## Zero-links
 ---
-- [[0 Военные системы]]
-- [[0 Ключевые фигуры]]
-- [[0 ИИ-модели и системы]]
-- [[0 Технологические гиганты]]
+- 
+- 
+- 
+- 
 
 ---
 ## Links

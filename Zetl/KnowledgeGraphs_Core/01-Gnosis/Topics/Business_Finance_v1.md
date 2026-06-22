@@ -14,15 +14,15 @@ review_frequency: monthly
 Principles and practices of financial management, investment, and capital allocation.
 
 ## Related Concepts
-- [[Business_Investment_v1]]
-- [[Business_CashFlow_v1]]
+- 
+- 
 
 ## Related Values
 - [[Competence_Standards]]
 - [[Career_LearningContinuity]]
 
 ## Related Projects
-- [[Project_FinancialManagement]]
+- 
 
 ## Statistics
 - Total Concepts: 44

@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251124140316.png]]
+!
 
 -----
 ## новые возможности для архитектуры кода и интеграции с GitHub 

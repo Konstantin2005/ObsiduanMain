@@ -19,15 +19,15 @@ status: active
 ## Используемые концепции
 
 - [[Smart Contracts]]
-- [[Liquidity Pools]]
-- [[Yield Farming]]
-- [[Governance Tokens]]
-- [[Security Audits]]
-- [[User Experience]]
+- 
+- 
+- 
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Scalability]]
+- 
 - [[Risk Management]]
-- [[Community Building]]
+- 
 
 ## Этапы проекта
 

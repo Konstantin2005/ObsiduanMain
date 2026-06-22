@@ -14,15 +14,15 @@ review_frequency: monthly
 Study of technological impact on economic development and productivity.
 
 ## Related Concepts
-- [[Economics_TechnologicalChange_v1]]
-- [[Economics_Productivity_v1]]
+- 
+- 
 
 ## Related Values
 - [[Curiosity_Innovation]]
 - [[Competence_Excellence]]
 
 ## Related Projects
-- [[Project_TechnologyEconomics]]
+- 
 
 ## Statistics
 - Total Concepts: 39

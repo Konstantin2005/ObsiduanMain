@@ -8,7 +8,7 @@ tags:
 author:
 - Vladimir Ivanov
 ---
-![[Pasted image 20251230150330.png]]
+!
 
 -----
 ## Уроки Arena Expert

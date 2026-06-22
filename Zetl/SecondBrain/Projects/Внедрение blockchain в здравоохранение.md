@@ -18,15 +18,15 @@ status: active
 
 ## Используемые концепции
 
-- [[Health Records]]
-- [[Drug Traceability]]
+- 
+- 
 - [[Clinical Trials]]
-- [[Data Security]]
-- [[Patient Consent]]
+- 
+- 
 - [[Regulatory Compliance]]
-- [[Integration]]
-- [[Scalability]]
-- [[Partner Onboarding]]
+- 
+- 
+- 
 - [[Innovation Management]]
 
 ## Этапы проекта

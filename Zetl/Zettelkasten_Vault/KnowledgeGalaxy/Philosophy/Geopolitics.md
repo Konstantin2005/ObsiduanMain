@@ -13,7 +13,7 @@ tags: [knowledge, philosophy]
 - [[Verification]]
 - [[Identity]]
 - [[Others]]
-- [[SSL/TLS]]
+- 
 - [[Hierarchy]]
 - [[Automatic Enrollment]]
 - [[Recession]]

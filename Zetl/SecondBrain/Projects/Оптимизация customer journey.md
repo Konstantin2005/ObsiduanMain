@@ -18,16 +18,16 @@ status: active
 
 ## Используемые концепции
 
-- [[Customer Journey Mapping]]
-- [[Touchpoint Analysis]]
+- 
+- 
 - [[Persona Development]]
 - [[Voice of Customer]]
 - [[Net Promoter Score]]
 - [[Customer Feedback Loops]]
-- [[Journey Analytics]]
-- [[Personalization]]
-- [[Omnichannel Experience]]
-- [[Customer Success]]
+- 
+- 
+- 
+- 
 
 ## Этапы проекта
 
