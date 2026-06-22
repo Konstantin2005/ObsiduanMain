@@ -179,7 +179,6 @@
       "command-palette:Открыть палитру команд": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:Создать новый чертеж": false,
-      "live-graph:Open Жизнь panel": false,
       "obsidian42-brat:BRAT": false,
       "zettelflow:Create a new Zettel Note": false
     }
