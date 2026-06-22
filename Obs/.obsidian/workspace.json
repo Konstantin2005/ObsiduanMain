@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "17-06-26"
             }
+          },
+          {
+            "id": "f389695fe2ea9aa4",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -180,8 +191,9 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "471c6939225e2748",
+  "active": "f389695fe2ea9aa4",
   "lastOpenFiles": [
+    "Личная библиотека/2026/Июнь/17-06-26.md",
     "Топики/Z Picters/Pasted image 20260619203426.png",
     "Топики/Z Picters/Pasted image 20260619203420.png",
     "Топики/Z Picters/Pasted image 20260619203249.png",
@@ -206,7 +218,6 @@
     "Вечно зеленные/PGR/Без названия.md",
     "Вечно зеленные/Замысел/1 Programming.md",
     "Вечно зеленные/Z Picters/Pasted image 20260619203426.png",
-    "Вечно зеленные/Z Picters/Pasted image 20260619203420.png",
     "Вечно зеленные/Z Picters",
     "Вечно зеленные/Искра/0 Алгоритмы.md",
     "Вечно зеленные/OB/OB-001 Text source.md",
