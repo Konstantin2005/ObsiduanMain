@@ -57,8 +57,16 @@ function Commit-Changes {
     Write-Log "Committing changes..."
     Invoke-Git -Args @('add', '-A')
     $msg = "Auto-commit: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-    Invoke-Git -Args @('commit', '-m', $msg)
-    Write-Log "Commit completed"
+    $prevEAP = $ErrorActionPreference
+    $ErrorActionPreference = 'SilentlyContinue'
+    & $GitPath @('commit', '-m', $msg) 2>&1 | ForEach-Object { Write-Log "$_" }
+    $commitCode = $LASTEXITCODE
+    $ErrorActionPreference = $prevEAP
+    if ($commitCode -eq 0) {
+        Write-Log "Commit completed"
+    } else {
+        Write-Log "Nothing to commit (clean tree)"
+    }
 }
 
 function Ensure-OnBranch {
