@@ -331,3 +331,56 @@ $insightData = @(
     @{t="Время — деньги 4";d=@("society");c=7}
 )
 Write-Host "Total insights: $($insightData.Count)" -ForegroundColor Green
+function Get-RelatedIndices($currentIndex, $total, $count) {
+    $related = @()
+    $maxTries = $count * 3
+    $tries = 0
+    while ($related.Count -lt $count -and $tries -lt $maxTries) {
+        $idx = Get-Random -Minimum 0 -Maximum $total
+        if ($idx -ne $currentIndex -and $related -notcontains $idx) {
+            $related += $idx
+        }
+        $tries++
+    }
+    if ($related.Count -lt $count) {
+        for ($i = 0; $i -lt $count -and $related.Count -lt $count; $i++) {
+            if ($related -notcontains $i -and $i -ne $currentIndex) {
+                $related += $i
+            }
+        }
+    }
+    return $related
+}
+
+$questionCount = 0
+foreach ($q in $allQuestions) {
+    $fileName = Get-SafeFileName $q.title
+    $related = Get-RelatedIndices $q.index $allQuestions.Count 4
+    $insightRefs = @()
+    for ($i = 0; $i -lt 2; $i++) {
+        $ri = Get-Random -Minimum 0 -Maximum $insightData.Count
+        $insightRefs += $insightData[$ri].t
+    }
+    $frontmatter = @"
+---
+type: Question
+domain: $($q.domain)
+depth: $($q.depth)
+tags: [question, fractal]
+---
+"@
+    $genQ = ""
+    for ($i = 0; $i -lt 2; $i++) { $genQ += "- [[$($allQuestions[$related[$i]].title)]]`n" }
+    $expQ = ""
+    for ($i = 2; $i -lt 4; $i++) { $expQ += "- [[$($allQuestions[$related[$i]].title)]]`n" }
+    $ansI = ""
+    foreach ($ref in $insightRefs) { $ansI += "- [[$ref]]`n" }
+    $contr = "- [[$($allQuestions[$related[0]].title)]]`n"
+    $rel = ""
+    for ($i = 0; $i -lt 3; $i++) { $rel += "- [[$($allQuestions[$related[$i]].title)]]`n" }
+    $content = "$frontmatter`n`n# $($q.title)`n`n## Описание`nВопрос из области $($q.domain) глубиной $($q.depth).`n`n## Порождает вопросы`n$genQ`n## Расширяется в`n$expQ`n## Отвечает`n$ansI`n## Противоречит`n$contr`n## Связано с`n$rel"
+    $filePath = Join-Path $QuestionsPath "$fileName.md"
+    $content | Out-File -FilePath $filePath -Encoding UTF8
+    $questionCount++
+}
+Write-Host "Questions created: $questionCount" -ForegroundColor Yellow
