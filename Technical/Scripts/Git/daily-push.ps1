@@ -8,7 +8,7 @@ param(
     [switch]$DryRun
 )
 
-$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Continue'
 
 $lockFile = Join-Path $RepoPath "Technical\Scripts\Logs\.daily-push.lock"
 if (Test-Path $lockFile) {
@@ -128,36 +128,21 @@ if ($DryRun) {
 
 $lastPush = [DateTime]::MinValue
 $pushInterval = New-TimeSpan -Minutes $PushIntervalMinutes
-$isRunning = $false
 
-try {
-    while ($true) {
-        if (-not $isRunning) {
-            $isRunning = $true
-            $now = Get-Date
-            
-            Commit-Changes
-            
-            if ($now - $lastPush -ge $pushInterval) {
-                try {
-                    Push-Changes
-                    $lastPush = $now
-                }
-                catch {
-                    Write-Log "PUSH FAILED: $($_.Exception.Message)"
-                }
-            }
-            
-            $isRunning = $false
-        }
+while ($true) {
+    try {
+        $now = Get-Date
         
-        Start-Sleep -Seconds $CommitIntervalSeconds
+        Commit-Changes
+        
+        if ($now - $lastPush -ge $pushInterval) {
+            Push-Changes
+            $lastPush = $now
+        }
     }
+    catch {
+        Write-Log "LOOP ERROR: $($_.Exception.Message)"
+    }
+    
+    Start-Sleep -Seconds $CommitIntervalSeconds
 }
-catch {
-    Write-Log "ERROR: $($_.Exception.Message)"
-    Remove-Item $lockFile -Force -ErrorAction SilentlyContinue
-    exit 1
-}
-
-Remove-Item $lockFile -Force -ErrorAction SilentlyContinue
