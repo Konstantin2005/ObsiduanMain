@@ -22,16 +22,6 @@
             }
           },
           {
-            "id": "c6d3d7c14706601c",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          },
-          {
             "id": "67c143c38e6198eb",
             "type": "leaf",
             "state": {
@@ -45,8 +35,23 @@
               "title": "15.01-06-26"
             }
           }
-        ],
-        "currentTab": 2
+        ]
+      },
+      {
+        "id": "9081bf38e8656c31",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c6d3d7c14706601c",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,7 +208,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "67c143c38e6198eb",
+  "active": "8d12e239d08b5f60",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/15.01-06-26.md",
     "Calendula/2026/Июнь/15-06-26.md",
