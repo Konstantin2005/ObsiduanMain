@@ -1,4 +1,4 @@
-﻿param(
+param(
     [string]$BasePath = "C:\obsidian\Main\IdeaEcosystem"
 )
 
@@ -629,7 +629,7 @@ foreach ($ci in $counterideas) {
     $conceptsStr = if ($ci.Concepts.Count -gt 0) { ($ci.Concepts | ForEach-Object { "- [[$_]]" }) -join "`n" } else { "- Нет связанных концепций" }
     $memesStr = if ($ci.Memes.Count -gt 0) { ($ci.Memes | ForEach-Object { "- [[$_]]" }) -join "`n" } else { "- Нет связанных мемов" }
     
-    $against = $ci.Aggregate
+    $against = $ci.Against
     $content = "---`ntype: Counteridea`ntags: [counteridea, ecosystem, anti-$against]`n---`n`n# $($ci.Name)`n`n## Описание`n$($ci.Desc)`n`n## Противоядие для`n- [[$against]]`n`n## Связанные концепции`n$conceptsStr`n`n## Связанные мемы`n$memesStr`n`n## Аргументы`n- Предлагает альтернативный взгляд на проблему`n- Критикует предпосылки оригинальной идеи`n- Предлагает другие решения`n`n## Контекст`nДанная контр-идея является частью экосистемы идей, обеспечивая баланс и альтернативные перспективы."
 
     Set-Content -Path $filePath -Value $content -Encoding UTF8
