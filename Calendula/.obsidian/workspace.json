@@ -27,10 +27,14 @@
             "id": "72a9cfd16925e751",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Личная библиотека/2026/Май/01-05-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01-05-26"
             }
           }
         ]
@@ -190,7 +194,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "a1ef4b3f866d1783",
+  "active": "72a9cfd16925e751",
   "lastOpenFiles": [
     "Личная библиотека/2026/Декабрь/31-12-26.md",
     "Личная библиотека/2026/Декабрь/30-12-26.md",
