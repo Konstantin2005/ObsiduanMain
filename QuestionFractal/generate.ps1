@@ -384,3 +384,40 @@ tags: [question, fractal]
     $questionCount++
 }
 Write-Host "Questions created: $questionCount" -ForegroundColor Yellow
+$insightCount = 0
+foreach ($ins in $insightData) {
+    $fileName = Get-SafeFileName $ins.t
+    $questionRefs = @()
+    for ($i = 0; $i -lt 3; $i++) {
+        $qi = Get-Random -Minimum 0 -Maximum $allQuestions.Count
+        $questionRefs += $allQuestions[$qi].title
+    }
+    $genQuestions = @()
+    for ($i = 0; $i -lt 3; $i++) {
+        $qi = Get-Random -Minimum 0 -Maximum $allQuestions.Count
+        $genQuestions += $allQuestions[$qi].title
+    }
+    $otherIns = Get-Random -Minimum 0 -Maximum $insightData.Count
+    $suppIns = Get-Random -Minimum 0 -Maximum $insightData.Count
+    $frontmatter = @"
+---
+type: Insight
+confidence: $($ins.c)
+tags: [insight, fractal]
+---
+"@
+    $ansQ = ""
+    foreach ($ref in $questionRefs) { $ansQ += "- [[$ref]]`n" }
+    $genQ = ""
+    foreach ($gq in $genQuestions) { $genQ += "- [[$gq]]`n" }
+    $contr = "- [[$($insightData[$otherIns].t)]]`n"
+    $supp = "- [[$($insightData[$suppIns].t)]]`n"
+    $content = "$frontmatter`n`n# $($ins.t)`n`n## Описание`nИнсайт с уверенностью $($ins.c)/10. Затрагивает области: $($ins.d -join ', ').`n`n## Отвечает на`n$ansQ`n## Порождает вопросы`n$genQ`n## Противоречит`n$contr`n## Поддерживается`n$supp"
+    $filePath = Join-Path $InsightsPath "$fileName.md"
+    $content | Out-File -FilePath $filePath -Encoding UTF8
+    $insightCount++
+}
+Write-Host "`nGeneration complete!" -ForegroundColor Cyan
+Write-Host "Questions created: $questionCount" -ForegroundColor Yellow
+Write-Host "Insights created: $insightCount" -ForegroundColor Yellow
+Write-Host "Total notes: $($questionCount + $insightCount)" -ForegroundColor Green
