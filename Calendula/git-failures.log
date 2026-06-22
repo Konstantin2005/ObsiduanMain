@@ -1,2 +1,4 @@
 2026-06-23 01:30:04 - FAILURE: Failed to check last commit: Exception calling "ParseExact" with "3" argument(s): "String was not recognized as a valid DateTime."
 2026-06-23 01:30:04 - FAILURE: Uncommitted changes detected: ?? Calendula/git-failures.log ?? Calendula/git-monitor.log ?? Calendula/logs/
+2026-06-23 01:39:47 - FAILURE: Failed to check last commit: Exception calling "ParseExact" with "3" argument(s): "String was not recognized as a valid DateTime."
+2026-06-23 01:39:47 - FAILURE: Uncommitted changes detected:  M Calendula/.obsidian/workspace.json  M Calendula/git-failures.log  M Calendula/git-monitor.log
