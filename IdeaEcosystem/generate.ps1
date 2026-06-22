@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$BasePath = "C:\obsidian\Main\IdeaEcosystem"
 )
 
