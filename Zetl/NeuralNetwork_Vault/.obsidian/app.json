@@ -1,0 +1,15 @@
+{
+  "livePreview": true,
+  "showFrontmatter": true,
+  "defaultViewMode": "preview",
+  "newFileLocation": "current",
+  "attachmentFolderPath": "",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "strictLineBreaks": false,
+  "showLineNumber": true,
+  "readableLineLength": true,
+  "tabSize": 4,
+  "spellcheck": true,
+  "promptDelete": true
+}

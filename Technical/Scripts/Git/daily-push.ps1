@@ -59,23 +59,34 @@ function Test-HasChanges {
 }
 
 function Commit-Changes {
-    Ensure-OnBranch
-    if (-not (Test-HasChanges)) {
-        Write-Log "No changes to commit"
-        return
+    try {
+        Ensure-OnBranch
+        if (-not (Test-HasChanges)) {
+            Write-Log "No changes to commit"
+            return
+        }
+        Write-Log "Committing changes..."
+        $prevEAP = $ErrorActionPreference
+        $ErrorActionPreference = 'SilentlyContinue'
+        & $GitPath @('add', '-A') 2>&1 | Out-Null
+        $addCode = $LASTEXITCODE
+        if ($addCode -ne 0) {
+            Write-Log "git add failed with code $addCode, skipping"
+            $ErrorActionPreference = $prevEAP
+            return
+        }
+        $msg = "Auto-commit: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        & $GitPath @('commit', '-m', $msg) 2>&1 | ForEach-Object { Write-Log "$_" }
+        $commitCode = $LASTEXITCODE
+        $ErrorActionPreference = $prevEAP
+        if ($commitCode -eq 0) {
+            Write-Log "Commit completed"
+        } else {
+            Write-Log "Nothing to commit (clean tree)"
+        }
     }
-    Write-Log "Committing changes..."
-    Invoke-Git -Args @('add', '-A')
-    $msg = "Auto-commit: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-    $prevEAP = $ErrorActionPreference
-    $ErrorActionPreference = 'SilentlyContinue'
-    & $GitPath @('commit', '-m', $msg) 2>&1 | ForEach-Object { Write-Log "$_" }
-    $commitCode = $LASTEXITCODE
-    $ErrorActionPreference = $prevEAP
-    if ($commitCode -eq 0) {
-        Write-Log "Commit completed"
-    } else {
-        Write-Log "Nothing to commit (clean tree)"
+    catch {
+        Write-Log "Commit-Changes error: $($_.Exception.Message)"
     }
 }
 

@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "1552fe92fed8bf46",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e5652c0bf9b42a6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c562b20f65df742",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5acf638c0c839af7",
+    "type": "split",
+    "children": [
+      {
+        "id": "7da3d2dc587175ee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "959fcf853317968d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "3b6d19b380b76361",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "d06daf2d9d36d96e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8bb3e253a5355bdb",
+    "type": "split",
+    "children": [
+      {
+        "id": "417ed40c93e0d56c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4bfd632a8dc50a7c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки"
+            }
+          },
+          {
+            "id": "8b6ae47c76139cea",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки"
+            }
+          },
+          {
+            "id": "d685d25915076e6d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "22c3e200231d8211",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "a049ccecde9b14aa",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "0c562b20f65df742",
+  "lastOpenFiles": [
+    "09-Meme/MOC - Эволюция идей.md",
+    "09-Meme/IdeaEcosystem",
+    "09-Meme/Selections",
+    "09-Meme/Mutations",
+    "09-Meme/Ideas",
+    "09-Meme/Memes",
+    "09-Meme/Adaptations",
+    "09-Meme/Extinctions",
+    "09-Meme/Concepts",
+    "09-Meme",
+    "08-Quest/Skills/Эмоциональный интеллект.md",
+    "08-Quest/Skills/Фотография.md",
+    "08-Quest/Skills/Финансовая грамотность.md",
+    "08-Quest/Skills/Физическая форма.md",
+    "08-Quest/Skills/Управление проектами.md",
+    "08-Quest/Skills/Тайм-менеджмент.md",
+    "08-Quest/Skills/Социальные сети.md",
+    "08-Quest/Skills/Создание контента.md",
+    "08-Quest/Skills/Садоводство.md",
+    "08-Quest/Skills/Рисование.md",
+    "08-Quest/Skills/Решение проблем.md",
+    "08-Quest/Skills/Ремонт дома.md",
+    "08-Quest/Skills/Ремонт автомобиля.md",
+    "08-Quest/Skills/Публичные выступления.md",
+    "08-Quest/Skills/Продажи.md",
+    "08-Quest/Skills/Программирование.md",
+    "08-Quest/Skills/Преподавание.md",
+    "08-Quest/Skills/Переговоры.md",
+    "08-Quest/Skills/Первая помощь.md",
+    "08-Quest/Skills/Нетворкинг.md",
+    "08-Quest/Skills/Написание текстов.md",
+    "08-Quest/Skills/Музыкальное производство.md",
+    "08-Quest/Skills/Мобильная разработка.md",
+    "08-Quest/Skills/Медитация.md",
+    "08-Quest/Skills/Менторство.md",
+    "08-Quest/Levels"
+  ]
+}
