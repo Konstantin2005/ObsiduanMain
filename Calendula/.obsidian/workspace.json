@@ -30,9 +30,23 @@
               "icon": "lucide-git-fork",
               "title": "Граф"
             }
+          },
+          {
+            "id": "67c143c38e6198eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calendula/2026/Июнь/15.01-06-26.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15.01-06-26"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -189,7 +203,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "c6d3d7c14706601c",
+  "active": "67c143c38e6198eb",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/15.01-06-26.md",
     "Calendula/2026/Июнь/15-06-26.md",
