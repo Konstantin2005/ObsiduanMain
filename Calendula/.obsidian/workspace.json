@@ -36,10 +36,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Доска.md"
+                "file": "Excalidraw/Англиский.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Доска"
+              "title": "Англиский"
             }
           }
         ],
@@ -202,6 +202,7 @@
   },
   "active": "69baf0c3a243d95c",
   "lastOpenFiles": [
+    "Excalidraw/Доска.md",
     "Excalidraw/Deltaав.md",
     "План/2026/2026 - Июль.md",
     "План/2026/2026 - Июнь.md",
@@ -216,7 +217,6 @@
     "План/2026/2026.md",
     "Excalidraw/План.md",
     "Excalidraw/Общаться с людьми.md",
-    "Excalidraw/Доска.md",
     "Excalidraw/Алгоритмы.md",
     "Excalidraw/Stack.md",
     "Excalidraw/Drawing 2026-05-18 23.26.42.excalidraw.md",
