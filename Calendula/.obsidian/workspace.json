@@ -6,7 +6,6 @@
       {
         "id": "3d02b90e553ccf27",
         "type": "tabs",
-        "dimension": 36.9928400954654,
         "children": [
           {
             "id": "8d12e239d08b5f60",
@@ -38,23 +37,6 @@
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "9081bf38e8656c31",
-        "type": "tabs",
-        "dimension": 63.0071599045346,
-        "children": [
-          {
-            "id": "c6d3d7c14706601c",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -111,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9a8c846c04db923f",
@@ -211,7 +194,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "c6d3d7c14706601c",
+  "active": "67c143c38e6198eb",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/22-06-26/22-06-26 - Copy (2).md",
     "Calendula/2026/Июнь/22-06-26/22-06-26 - Copy.md",
