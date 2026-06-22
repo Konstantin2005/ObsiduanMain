@@ -113,7 +113,7 @@
       }
     },
     {
-      "query": "#X",
+      "query": "#Что д",
       "color": {
         "a": 1,
         "rgb": 0
@@ -181,4 +181,3 @@
   "linkDistance": 412,
   "scale": 0.3823010968769749,
   "close": false
-}
