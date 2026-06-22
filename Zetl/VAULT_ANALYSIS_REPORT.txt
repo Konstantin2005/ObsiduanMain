@@ -1,0 +1,291 @@
+VAULT ANALYSIS REPORT
+============================================================
+
+Total vaults analyzed: 39
+Total notes: 32,179
+Total orphaned notes: 33
+Total notes with no incoming links: 15,464
+Total notes with no outgoing links: 187
+Total broken links: 88,458
+
+VAULT DETAILS
+------------------------------------------------------------
+
+KnowledgeGraphs:
+  Total notes: 4,883
+  Orphaned: 3
+  No incoming: 3,812
+  No outgoing: 44
+  Broken links: 24,460
+  Orphaned notes: Каждый день важен, Сон мини смерть, MOC - Neural Network
+
+MasterPrompt:
+  Total notes: 4,558
+  Orphaned: 0
+  No incoming: 5
+  No outgoing: 0
+  Broken links: 4,480
+
+Zettelkasten_Vault:
+  Total notes: 3,355
+  Orphaned: 0
+  No incoming: 572
+  No outgoing: 19
+  Broken links: 1,867
+
+NeuralNetwork_Vault:
+  Total notes: 3,003
+  Orphaned: 1
+  No incoming: 2,996
+  No outgoing: 0
+  Broken links: 15,900
+  Orphaned notes: MOC - Neural Network
+
+KnowledgeGraphs_Core:
+  Total notes: 2,076
+  Orphaned: 2
+  No incoming: 1,006
+  No outgoing: 44
+  Broken links: 8,591
+  Orphaned notes: Каждый день важен, Сон мини смерть
+
+ZettelkastenUltra:
+  Total notes: 2,000
+  Orphaned: 0
+  No incoming: 1,385
+  No outgoing: 0
+  Broken links: 0
+
+DecisionMakingGraph:
+  Total notes: 1,991
+  Orphaned: 0
+  No incoming: 1,980
+  No outgoing: 0
+  Broken links: 13,210
+
+PromptAtoms-main:
+  Total notes: 1,783
+  Orphaned: 0
+  No incoming: 1,783
+  No outgoing: 0
+  Broken links: 7,644
+
+KnowledgeGalaxy:
+  Total notes: 1,716
+  Orphaned: 0
+  No incoming: 5
+  No outgoing: 0
+  Broken links: 91
+
+SecondBrain:
+  Total notes: 1,705
+  Orphaned: 0
+  No incoming: 8
+  No outgoing: 0
+  Broken links: 1,124
+
+Knowledge:
+  Total notes: 1,204
+  Orphaned: 0
+  No incoming: 565
+  No outgoing: 21
+  Broken links: 1,759
+
+DecisionMaze:
+  Total notes: 945
+  Orphaned: 0
+  No incoming: 2
+  No outgoing: 0
+  Broken links: 38
+
+QuestionFractal:
+  Total notes: 646
+  Orphaned: 0
+  No incoming: 356
+  No outgoing: 0
+  Broken links: 3,189
+
+PersonalityGraph:
+  Total notes: 276
+  Orphaned: 0
+  No incoming: 6
+  No outgoing: 0
+  Broken links: 31
+
+BiasGraph:
+  Total notes: 265
+  Orphaned: 0
+  No incoming: 1
+  No outgoing: 0
+  Broken links: 43
+
+ConflictGraph:
+  Total notes: 259
+  Orphaned: 0
+  No incoming: 61
+  No outgoing: 0
+  Broken links: 265
+
+IdeaEcosystem:
+  Total notes: 257
+  Orphaned: 0
+  No incoming: 65
+  No outgoing: 0
+  Broken links: 1,150
+
+ShadowValueSystem:
+  Total notes: 237
+  Orphaned: 0
+  No incoming: 237
+  No outgoing: 0
+  Broken links: 1,608
+
+IntellectualNetwork:
+  Total notes: 170
+  Orphaned: 0
+  No incoming: 161
+  No outgoing: 0
+  Broken links: 974
+
+CausalLoop:
+  Total notes: 155
+  Orphaned: 23
+  No incoming: 5
+  No outgoing: 55
+  Broken links: 109
+  Orphaned notes: Адаптация, Альянсы, Глобализация, Деградация, Деструкция, Децентрализация, Диверсификация, Инвестиции, Инновации, Интеграция, Концентрация, Локализация, Оптимизация, Переговоры, Разрушение, Революция, Санкции, Созидание, Спекуляция, Трансформация
+
+WorldModelGraph:
+  Total notes: 136
+  Orphaned: 0
+  No incoming: 20
+  No outgoing: 0
+  Broken links: 4
+
+Index:
+  Total notes: 117
+  Orphaned: 0
+  No incoming: 60
+  No outgoing: 1
+  Broken links: 273
+
+Quests:
+  Total notes: 81
+  Orphaned: 0
+  No incoming: 46
+  No outgoing: 0
+  Broken links: 411
+
+Skills:
+  Total notes: 41
+  Orphaned: 0
+  No incoming: 40
+  No outgoing: 0
+  Broken links: 200
+
+Emotions:
+  Total notes: 35
+  Orphaned: 0
+  No incoming: 35
+  No outgoing: 0
+  Broken links: 70
+
+Obstacles:
+  Total notes: 31
+  Orphaned: 0
+  No incoming: 19
+  No outgoing: 0
+  Broken links: 170
+
+Rewards:
+  Total notes: 31
+  Orphaned: 0
+  No incoming: 30
+  No outgoing: 0
+  Broken links: 124
+
+Fears:
+  Total notes: 30
+  Orphaned: 0
+  No incoming: 30
+  No outgoing: 0
+  Broken links: 60
+
+Traits:
+  Total notes: 30
+  Orphaned: 0
+  No incoming: 30
+  No outgoing: 0
+  Broken links: 60
+
+Locations:
+  Total notes: 26
+  Orphaned: 0
+  No incoming: 24
+  No outgoing: 0
+  Broken links: 135
+
+Habits:
+  Total notes: 25
+  Orphaned: 0
+  No incoming: 25
+  No outgoing: 0
+  Broken links: 75
+
+Desires:
+  Total notes: 22
+  Orphaned: 0
+  No incoming: 22
+  No outgoing: 0
+  Broken links: 44
+
+Goals:
+  Total notes: 22
+  Orphaned: 0
+  No incoming: 22
+  No outgoing: 0
+  Broken links: 44
+
+Values:
+  Total notes: 22
+  Orphaned: 0
+  No incoming: 22
+  No outgoing: 0
+  Broken links: 44
+
+Bosses:
+  Total notes: 21
+  Orphaned: 0
+  No incoming: 15
+  No outgoing: 0
+  Broken links: 176
+
+Inbox:
+  Total notes: 12
+  Orphaned: 0
+  No incoming: 8
+  No outgoing: 1
+  Broken links: 8
+
+Node:
+  Total notes: 7
+  Orphaned: 4
+  No incoming: 3
+  No outgoing: 0
+  Broken links: 4
+  Orphaned notes: CQL, RESP, String Builder, String Pool
+
+Prompts:
+  Total notes: 5
+  Orphaned: 0
+  No incoming: 1
+  No outgoing: 2
+  Broken links: 15
+
+Documentation:
+  Total notes: 1
+  Orphaned: 0
+  No incoming: 1
+  No outgoing: 0
+  Broken links: 8
+
