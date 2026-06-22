@@ -29,8 +29,21 @@
               "icon": "lucide-trello",
               "title": "2026 - Июль"
             }
+          },
+          {
+            "id": "69baf0c3a243d95c",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Deltaав.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Deltaав"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -187,11 +200,11 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "8d12e239d08b5f60",
+  "active": "69baf0c3a243d95c",
   "lastOpenFiles": [
+    "План/2026/2026 - Июль.md",
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Май.md",
-    "План/2026/2026 - Июль.md",
     "План/2026/2026 - Декабрь.md",
     "План/2026/2026 - Апрель.md",
     "План/2026/2026 - Август.md",
