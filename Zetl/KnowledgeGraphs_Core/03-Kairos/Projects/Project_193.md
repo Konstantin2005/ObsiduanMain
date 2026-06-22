@@ -22,7 +22,7 @@ A project to develop new skills.
 - [x] Initial planning
 
 ### In Progress
-- [ ] Project implementation
+- [x] Project implementation
 - [ ] Progress tracking
 
 ### Not Started
