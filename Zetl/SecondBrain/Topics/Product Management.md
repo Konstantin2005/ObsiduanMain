@@ -26,7 +26,15 @@ created: 2026-06-22
 - [[Growth Loops]]
 - [[Product-Led Growth]]
 
-## Проекты (2)
+## Проекты (10)
 
 - [[Запуск SaaS-продукта|Запуск SaaS-продукта]]
 - [[Разработка мобильного приложения|Разработка мобильного приложения]]
+- [[Создание SaaS-метрик|Создание SaaS-метрик]]
+- [[Создание системы обратной связи|Создание системы обратной связи]]
+- [[Разработка recommendation engine|Разработка recommendation engine]]
+- [[Создание product-led growth|Создание product-led growth]]
+- [[Разработка recommendation для e-commerce|Разработка recommendation для e-commerce]]
+- [[Внедрение Design Sprint|Внедрение Design Sprint]]
+- [[Создание AI-ассистента|Создание AI-ассистента]]
+- [[Оптимизация product development|Оптимизация product development]]

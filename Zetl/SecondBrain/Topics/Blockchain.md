@@ -26,6 +26,11 @@ created: 2026-06-22
 - [[Blockchain Interoperability]]
 - [[Regulatory Framework]]
 
-## Проекты (0)
+## Проекты (6)
 
-
+- [[Разработка Blockchain-решения|Разработка Blockchain-решения]]
+- [[Создание peer-to-peer платформы|Создание peer-to-peer платформы]]
+- [[Внедрение blockchain в логистику|Внедрение blockchain в логистику]]
+- [[Создание decentralized finance платформы|Создание decentralized finance платформы]]
+- [[Внедрение blockchain в здравоохранение|Внедрение blockchain в здравоохранение]]
+- [[Внедрение blockchain в energy sector|Внедрение blockchain в energy sector]]

@@ -26,6 +26,6 @@ created: 2026-06-22
 - [[Lunar Exploration]]
 - [[Mars Colonization]]
 
-## Проекты (0)
+## Проекты (1)
 
-
+- [[Создание space-tech стартапа|Создание space-tech стартапа]]

@@ -26,6 +26,9 @@ created: 2026-06-22
 - [[Spatial Audio]]
 - [[XR Development]]
 
-## Проекты (0)
+## Проекты (4)
 
-
+- [[Создание нейроинтерфейса|Создание нейроинтерфейса]]
+- [[Разработка AR-магазина|Разработка AR-магазина]]
+- [[Разработка haptic technology|Разработка haptic technology]]
+- [[Разработка brain-computer interface|Разработка brain-computer interface]]

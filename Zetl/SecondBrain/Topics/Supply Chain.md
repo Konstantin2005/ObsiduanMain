@@ -26,6 +26,13 @@ created: 2026-06-22
 - [[Transportation Management]]
 - [[Reverse Logistics]]
 
-## Проекты (0)
+## Проекты (8)
 
-
+- [[Оптимизация supply chain|Оптимизация supply chain]]
+- [[Оптимизация inventory management|Оптимизация inventory management]]
+- [[Внедрение supply chain visibility|Внедрение supply chain visibility]]
+- [[Оптимизация procurement|Оптимизация procurement]]
+- [[Оптимизация inventory forecasting|Оптимизация inventory forecasting]]
+- [[Оптимизация supply chain finance|Оптимизация supply chain finance]]
+- [[Внедрение blockchain в логистику|Внедрение blockchain в логистику]]
+- [[Оптимизация supply chain для e-commerce|Оптимизация supply chain для e-commerce]]

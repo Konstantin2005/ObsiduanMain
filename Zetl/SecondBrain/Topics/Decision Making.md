@@ -26,6 +26,6 @@ created: 2026-06-22
 - [[Decision Journal]]
 - [[Group Decision Making]]
 
-## Проекты (0)
+## Проекты (1)
 
-
+- [[Внедрение Data-Driven подхода|Внедрение Data-Driven подхода]]

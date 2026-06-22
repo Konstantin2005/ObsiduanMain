@@ -1,0 +1,67 @@
+---
+type: project
+created: 2026-06-22
+status: active
+---
+
+# Разработка recommendation для e-commerce
+
+## Цель
+
+Описание проекта Разработка recommendation для e-commerce и его основных задач.
+
+## Связанные темы
+
+- [[Machine Learning]]
+- [[Marketing]]
+- [[Product Management]]
+
+## Используемые концепции
+
+- [[Collaborative Filtering]]
+- [[Purchase History Analysis]]
+- [[Real-Time Recommendations]]
+- [[A/B Testing]]
+- [[Catalogue Analysis]]
+- [[User Profiling]]
+- [[Personalization Engine]]
+- [[Conversion Optimization]]
+- [[Customer Segmentation]]
+- [[Recommendation Metrics]]
+
+## Этапы проекта
+
+1. Исследование и планирование
+2. Разработка MVP
+3. Тестирование и iteration
+4. Запуск и масштабирование
+5. Оптимизация и развитие
+
+## Ресурсы
+
+- Время: ____ недель
+- Бюджет: ____
+- Команда: ____
+
+## Метрики успеха
+
+- Ключевая метрика 1: ____
+- Ключевая метрика 2: ____
+- Ключевая метрика 3: ____
+
+## Риски
+
+| Риск | Вероятность | Влияние | Митигация |
+|------|-------------|---------|-----------|
+| Риск 1 | Средняя | Высокое | ... |
+| Риск 2 | Низкая | Среднее | ... |
+| Риск 3 | Высокая | Низкое | ... |
+
+## Связанные проекты
+
+- [[Внедрение AI в юриспруденцию|Внедрение AI в юриспруденцию]]
+- [[Оптимизация website performance|Оптимизация website performance]]
+- [[Создание climate tech стартапа|Создание climate tech стартапа]]
+
+## Заметки
+

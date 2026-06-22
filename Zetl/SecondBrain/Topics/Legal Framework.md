@@ -26,6 +26,8 @@ created: 2026-06-22
 - [[Liability Protection]]
 - [[Regulatory Compliance]]
 
-## Проекты (0)
+## Проекты (3)
 
-
+- [[Создание legal tech платформы|Создание legal tech платформы]]
+- [[Создание legaltech стартапа|Создание legaltech стартапа]]
+- [[Внедрение AI в юриспруденцию|Внедрение AI в юриспруденцию]]

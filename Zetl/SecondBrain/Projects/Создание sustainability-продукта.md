@@ -1,0 +1,67 @@
+---
+type: project
+created: 2026-06-22
+status: active
+---
+
+# Создание sustainability-продукта
+
+## Цель
+
+Описание проекта Создание sustainability-продукта и его основных задач.
+
+## Связанные темы
+
+- [[Energy Technology]]
+- [[Entrepreneurship]]
+- [[Materials Science]]
+
+## Используемые концепции
+
+- [[Renewable Energy]]
+- [[Carbon Footprint]]
+- [[Circular Economy]]
+- [[Life Cycle Assessment]]
+- [[Green Materials]]
+- [[Supply Chain Ethics]]
+- [[Certification]]
+- [[Impact Measurement]]
+- [[Consumer Education]]
+- [[Market Positioning]]
+
+## Этапы проекта
+
+1. Исследование и планирование
+2. Разработка MVP
+3. Тестирование и iteration
+4. Запуск и масштабирование
+5. Оптимизация и развитие
+
+## Ресурсы
+
+- Время: ____ недель
+- Бюджет: ____
+- Команда: ____
+
+## Метрики успеха
+
+- Ключевая метрика 1: ____
+- Ключевая метрика 2: ____
+- Ключевая метрика 3: ____
+
+## Риски
+
+| Риск | Вероятность | Влияние | Митигация |
+|------|-------------|---------|-----------|
+| Риск 1 | Средняя | Высокое | ... |
+| Риск 2 | Низкая | Среднее | ... |
+| Риск 3 | Высокая | Низкое | ... |
+
+## Связанные проекты
+
+- [[Создание product-led growth|Создание product-led growth]]
+- [[Внедрение AI в бизнес|Внедрение AI в бизнес]]
+- [[Внедрение cognitive automation|Внедрение cognitive automation]]
+
+## Заметки
+

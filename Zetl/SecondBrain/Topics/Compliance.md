@@ -26,6 +26,9 @@ created: 2026-06-22
 - [[Reporting Framework]]
 - [[Continuous Monitoring]]
 
-## Проекты (0)
+## Проекты (4)
 
-
+- [[Кибербезопасность для бизнеса|Кибербезопасность для бизнеса]]
+- [[Внедрение DevSecOps|Внедрение DevSecOps]]
+- [[Создание sustainability-стратегии|Создание sustainability-стратегии]]
+- [[Внедрение data governance|Внедрение data governance]]

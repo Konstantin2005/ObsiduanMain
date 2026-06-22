@@ -1,0 +1,67 @@
+---
+type: project
+created: 2026-06-22
+status: active
+---
+
+# Создание marketplace для фрилансеров
+
+## Цель
+
+Описание проекта Создание marketplace для фрилансеров и его основных задач.
+
+## Связанные темы
+
+- [[Entrepreneurship]]
+- [[Web Development]]
+- [[Marketing]]
+
+## Используемые концепции
+
+- [[Marketplace Model]]
+- [[Payment Systems]]
+- [[Trust & Safety]]
+- [[Search & Matching]]
+- [[Review Systems]]
+- [[Dispute Resolution]]
+- [[Freemium Model]]
+- [[Community Building]]
+- [[Mobile Development]]
+- [[Growth Hacking]]
+
+## Этапы проекта
+
+1. Исследование и планирование
+2. Разработка MVP
+3. Тестирование и iteration
+4. Запуск и масштабирование
+5. Оптимизация и развитие
+
+## Ресурсы
+
+- Время: ____ недель
+- Бюджет: ____
+- Команда: ____
+
+## Метрики успеха
+
+- Ключевая метрика 1: ____
+- Ключевая метрика 2: ____
+- Ключевая метрика 3: ____
+
+## Риски
+
+| Риск | Вероятность | Влияние | Митигация |
+|------|-------------|---------|-----------|
+| Риск 1 | Средняя | Высокое | ... |
+| Риск 2 | Низкая | Среднее | ... |
+| Риск 3 | Высокая | Низкое | ... |
+
+## Связанные проекты
+
+- [[Создание smart city solution|Создание smart city solution]]
+- [[Оптимизация customer lifetime value|Оптимизация customer lifetime value]]
+- [[Создание personalized medicine platform|Создание personalized medicine platform]]
+
+## Заметки
+

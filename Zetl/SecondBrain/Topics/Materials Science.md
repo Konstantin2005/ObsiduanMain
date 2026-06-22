@@ -26,6 +26,9 @@ created: 2026-06-22
 - [[Additive Manufacturing]]
 - [[Material Characterization]]
 
-## Проекты (0)
+## Проекты (4)
 
-
+- [[Создание sustainability-продукта|Создание sustainability-продукта]]
+- [[Разработка haptic technology|Разработка haptic technology]]
+- [[Создание climate tech стартапа|Создание climate tech стартапа]]
+- [[Создание cleantech стартапа|Создание cleantech стартапа]]

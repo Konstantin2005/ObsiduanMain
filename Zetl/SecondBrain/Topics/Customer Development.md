@@ -26,6 +26,10 @@ created: 2026-06-22
 - [[Customer Advisory Board]]
 - [[Empathy Mapping]]
 
-## Проекты (0)
+## Проекты (5)
 
-
+- [[Программа лояльности|Программа лояльности]]
+- [[Оптимизация customer journey|Оптимизация customer journey]]
+- [[Оптимизация customer support|Оптимизация customer support]]
+- [[Оптимизация customer lifetime value|Оптимизация customer lifetime value]]
+- [[Оптимизация call center|Оптимизация call center]]

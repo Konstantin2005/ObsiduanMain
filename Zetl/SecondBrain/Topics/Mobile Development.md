@@ -26,6 +26,9 @@ created: 2026-06-22
 - [[Mobile CI/CD]]
 - [[Progressive Web Apps]]
 
-## Проекты (1)
+## Проекты (4)
 
 - [[Разработка мобильного приложения|Разработка мобильного приложения]]
+- [[Создание language learning app|Создание language learning app]]
+- [[Создание fitness-tech продукта|Создание fitness-tech продукта]]
+- [[Создание femtech для здоровья|Создание femtech для здоровья]]

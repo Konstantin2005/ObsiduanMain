@@ -26,6 +26,10 @@ created: 2026-06-22
 - [[Real-Time Web]]
 - [[Micro-Frontends]]
 
-## Проекты (0)
+## Проекты (5)
 
-
+- [[Оптимизация конверсии сайта|Оптимизация конверсии сайта]]
+- [[Создание UX-студии|Создание UX-студии]]
+- [[Создание marketplace для фрилансеров|Создание marketplace для фрилансеров]]
+- [[Оптимизация website performance|Оптимизация website performance]]
+- [[Оптимизация conversion rate|Оптимизация conversion rate]]

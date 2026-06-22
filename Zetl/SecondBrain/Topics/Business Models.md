@@ -26,6 +26,7 @@ created: 2026-06-22
 - [[Sharing Economy]]
 - [[Circular Economy]]
 
-## Проекты (1)
+## Проекты (2)
 
 - [[Запуск маркетплейса|Запуск маркетплейса]]
+- [[Создание B2B marketplace|Создание B2B marketplace]]

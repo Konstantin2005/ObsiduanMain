@@ -26,6 +26,12 @@ created: 2026-06-22
 - [[Malware Analysis]]
 - [[Security Auditing]]
 
-## Проекты (1)
+## Проекты (7)
 
 - [[Миграция в облако|Миграция в облако]]
+- [[Кибербезопасность для бизнеса|Кибербезопасность для бизнеса]]
+- [[Разработка Blockchain-решения|Разработка Blockchain-решения]]
+- [[Внедрение DevSecOps|Внедрение DevSecOps]]
+- [[Создание cybersecurity training|Создание cybersecurity training]]
+- [[Разработка quantum-шифрования|Разработка quantum-шифрования]]
+- [[Создание cybersecurity startup|Создание cybersecurity startup]]

@@ -26,6 +26,7 @@ created: 2026-06-22
 - [[Design Critique]]
 - [[Design Systems]]
 
-## Проекты (0)
+## Проекты (2)
 
-
+- [[Создание UX-студии|Создание UX-студии]]
+- [[Внедрение Design Sprint|Внедрение Design Sprint]]

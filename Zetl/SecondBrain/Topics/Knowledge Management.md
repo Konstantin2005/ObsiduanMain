@@ -26,6 +26,7 @@ created: 2026-06-22
 - [[Expert Systems]]
 - [[Knowledge Graphs]]
 
-## Проекты (1)
+## Проекты (2)
 
 - [[Система управления знаниями|Система управления знаниями]]
+- [[Создание knowledge base|Создание knowledge base]]

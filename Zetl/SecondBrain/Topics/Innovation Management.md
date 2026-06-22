@@ -26,6 +26,7 @@ created: 2026-06-22
 - [[Sustaining Innovation]]
 - [[Business Model Innovation]]
 
-## Проекты (0)
+## Проекты (2)
 
-
+- [[Внедрение Design Sprint|Внедрение Design Sprint]]
+- [[Оптимизация product development|Оптимизация product development]]
