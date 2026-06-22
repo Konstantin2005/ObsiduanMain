@@ -21,10 +21,14 @@
             "id": "d0bf405d11c26092",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "ARCHITECTURE_SUMMARY.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ARCHITECTURE_SUMMARY"
             }
           },
           {
@@ -221,12 +225,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "ARCHITECTURE_SUMMARY.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура ARCHITECTURE_SUMMARY"
             }
           }
         ],
@@ -249,7 +254,7 @@
       "templates:Вставить шаблон": false
     }
   },
-  "active": "d0bf405d11c26092",
+  "active": "67c49c3a2388086b",
   "lastOpenFiles": [
     "Obstacles/Нет видимости.md",
     "Obstacles/Ложные убеждения.md",
