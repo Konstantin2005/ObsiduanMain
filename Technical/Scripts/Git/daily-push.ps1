@@ -22,11 +22,17 @@ function Write-Log {
 
 function Invoke-Git {
     param([Parameter(Mandatory=$true)][string[]]$Args)
+    $prevEAP = $ErrorActionPreference
+    $ErrorActionPreference = 'SilentlyContinue'
     $output = & $GitPath @Args 2>&1
     $code = $LASTEXITCODE
+    $ErrorActionPreference = $prevEAP
     if ($output) { 
         $output | ForEach-Object { 
             $line = $_
+            if ($line -is [System.Management.Automation.ErrorRecord]) {
+                $line = $line.Exception.Message
+            }
             if ($line -match '^(From |Already up|Everything up|remote: |Unpacking |Total |Resolving |Compressing |Writing |To https)') {
                 Write-Log "[git] $line"
             } else {
