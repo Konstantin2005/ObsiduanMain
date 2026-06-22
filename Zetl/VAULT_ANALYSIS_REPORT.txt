@@ -3,10 +3,10 @@ VAULT ANALYSIS REPORT
 
 Total vaults analyzed: 30
 Total notes: 20,994
-Total orphaned notes: 0
-Total notes with no incoming links: 4,312
+Total orphaned notes: 259
+Total notes with no incoming links: 4,053
 Total notes with no outgoing links: 550
-Total broken links: 5,116
+Total broken links: 499
 
 VAULT DETAILS
 ------------------------------------------------------------
@@ -34,10 +34,11 @@ ZettelkastenUltra:
 
 KnowledgeGraphs:
   Total notes: 1,784
-  Orphaned: 0
-  No incoming: 716
+  Orphaned: 213
+  No incoming: 503
   No outgoing: 203
-  Broken links: 4,652
+  Broken links: 207
+  Orphaned notes: Bezrazlichie, Egotsentrizm, Fanatizm, Geroizm, Konformizm, Konservatizm, Mrachnost, Nartsissizm, Otvetstvennost, Passivnost, Privyazannost, Sarkazm, Schedrost, Spravedlivost, Tvorchestvo, Vina, Zabvenie, Zavisimost, Первая помощь, Садоводство
 
 KnowledgeGalaxy:
   Total notes: 1,716
@@ -55,10 +56,11 @@ SecondBrain:
 
 KnowledgeGraphs_Core:
   Total notes: 1,590
-  Orphaned: 0
-  No incoming: 522
+  Orphaned: 20
+  No incoming: 502
   No outgoing: 203
-  Broken links: 277
+  Broken links: 207
+  Orphaned notes: Bezrazlichie, Egotsentrizm, Fanatizm, Geroizm, Konformizm, Konservatizm, Mrachnost, Nartsissizm, Otvetstvennost, Passivnost, Privyazannost, Sarkazm, Schedrost, Spravedlivost, Tvorchestvo, Vina, Zabvenie, Zavisimost, Первая помощь, Садоводство
 
 Knowledge:
   Total notes: 1,171
@@ -125,10 +127,11 @@ CausalLoop:
 
 Index:
   Total notes: 86
-  Orphaned: 0
-  No incoming: 29
+  Orphaned: 5
+  No incoming: 24
   No outgoing: 13
-  Broken links: 39
+  Broken links: 10
+  Orphaned notes: 0 Foundations Index, 0 Tenses Index, 0 Verbs Index, 0 Adjectives Index, 0 Articles Index
 
 Quests:
   Total notes: 54
@@ -139,10 +142,11 @@ Quests:
 
 ShadowValueSystem:
   Total notes: 19
-  Orphaned: 0
-  No incoming: 19
+  Orphaned: 19
+  No incoming: 0
   No outgoing: 0
-  Broken links: 63
+  Broken links: 0
+  Orphaned notes: Bezrazlichie, Egotsentrizm, Fanatizm, Geroizm, Konformizm, Konservatizm, Mrachnost, Nartsissizm, Nostalgiya, Otvetstvennost, Passivnost, Privyazannost, Sarkazm, Schedrost, Spravedlivost, Tvorchestvo, Vina, Zabvenie, Zavisimost
 
 Obstacles:
   Total notes: 18
@@ -202,10 +206,11 @@ Locations:
 
 PromptAtoms-main:
   Total notes: 2
-  Orphaned: 0
-  No incoming: 2
+  Orphaned: 2
+  No incoming: 0
   No outgoing: 0
-  Broken links: 10
+  Broken links: 0
+  Orphaned notes: Ценовая война на рынке ИИ, Конец ручного кода
 
 Rewards:
   Total notes: 2
