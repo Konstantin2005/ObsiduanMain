@@ -158,7 +158,7 @@
       "query": "#Пустой",
       "color": {
         "a": 1,
-        "rgb": 9211653
+        "rgb": 3487020
       }
     },
     {
@@ -214,6 +214,6 @@
   "repelStrength": 14.0625,
   "linkStrength": 0.645833333333333,
   "linkDistance": 412,
-  "scale": 0.2726859917359793,
+  "scale": 0.07058167567045781,
   "close": false
 }
