@@ -2,52 +2,53 @@ VAULT ANALYSIS REPORT
 ============================================================
 
 Total vaults analyzed: 39
-Total notes: 32,179
-Total orphaned notes: 33
-Total notes with no incoming links: 15,464
-Total notes with no outgoing links: 187
-Total broken links: 88,458
+Total notes: 32,147
+Total orphaned notes: 11,412
+Total notes with no incoming links: 4,053
+Total notes with no outgoing links: 550
+Total broken links: 5,116
 
 VAULT DETAILS
 ------------------------------------------------------------
 
 KnowledgeGraphs:
-  Total notes: 4,883
-  Orphaned: 3
-  No incoming: 3,812
-  No outgoing: 44
-  Broken links: 24,460
-  Orphaned notes: Каждый день важен, Сон мини смерть, MOC - Neural Network
+  Total notes: 4,880
+  Orphaned: 3,309
+  No incoming: 503
+  No outgoing: 203
+  Broken links: 4,652
+  Orphaned notes: Agressiya, Anarkhizm, Apatiya, Apologiya, Avantyurizm, Avtoritarnost, Azartnost, Beskorystie, Bezrazlichie, Byurokratizm, Chyornyy_yumor, Destruktsiya, Direkt, Disruption, Dominirovanie, Dukhovnost, Egotsentrizm, Eksperiment, Ekspluatatsiya, Emotsionalnaya_stena
 
 MasterPrompt:
   Total notes: 4,558
   Orphaned: 0
   No incoming: 5
   No outgoing: 0
-  Broken links: 4,480
+  Broken links: 64
 
 Zettelkasten_Vault:
   Total notes: 3,355
-  Orphaned: 0
-  No incoming: 572
+  Orphaned: 33
+  No incoming: 539
   No outgoing: 19
-  Broken links: 1,867
+  Broken links: 3
+  Orphaned notes: Anchoring_Bias, Availability_Heuristic, Bandwagon_Effect, Confirmation_Bias, Dunning-Kruger_Effect, Framing_Effect, Loss_Aversion_Bias, Overconfidence_Bias, Status_Quo_Bias, Sunk_Cost_Fallacy, Financial_Discipline_Practice, Independent_Thinking_Skills, Opportunity_Cost_Analysis, Probabilistic_Thinking, Reflective_Learning_Practice, Resource_Management_Discipline, Risk_Reward_Analysis, Statistical_Thinking, Structured_Decision_Making, Viewpoint_Diversity_Strategy
 
 NeuralNetwork_Vault:
-  Total notes: 3,003
-  Orphaned: 1
-  No incoming: 2,996
-  No outgoing: 0
-  Broken links: 15,900
-  Orphaned notes: MOC - Neural Network
+  Total notes: 3,002
+  Orphaned: 2,994
+  No incoming: 2
+  No outgoing: 6
+  Broken links: 0
+  Orphaned notes: n0002, n0003, n0004, n0005, n0006, n0007, n0008, n0009, n0010, n0011, n0012, n0013, n0014, n0015, n0016, n0017, n0018, n0019, n0020, n0021
 
 KnowledgeGraphs_Core:
-  Total notes: 2,076
-  Orphaned: 2
-  No incoming: 1,006
-  No outgoing: 44
-  Broken links: 8,591
-  Orphaned notes: Каждый день важен, Сон мини смерть
+  Total notes: 2,074
+  Orphaned: 504
+  No incoming: 502
+  No outgoing: 203
+  Broken links: 277
+  Orphaned notes: MOC - KnowledgeGraphs Core, Navigation, Agressiya, Anarkhizm, Apatiya, Apologiya, Avantyurizm, Avtoritarnost, Azartnost, Beskorystie, Bezrazlichie, Byurokratizm, Chyornyy_yumor, Destruktsiya, Direkt, Disruption, Dominirovanie, Dukhovnost, Egotsentrizm, Eksperiment
 
 ZettelkastenUltra:
   Total notes: 2,000
@@ -58,234 +59,256 @@ ZettelkastenUltra:
 
 DecisionMakingGraph:
   Total notes: 1,991
-  Orphaned: 0
-  No incoming: 1,980
-  No outgoing: 0
-  Broken links: 13,210
+  Orphaned: 1,980
+  No incoming: 0
+  No outgoing: 5
+  Broken links: 0
+  Orphaned notes: Accept decision about Adapt Law of Instability to Individualism, Accept decision about Adapt Law of Marginal Utility to Power, Accept decision about Adapt Law of Mutual Influence to Collectivism, Accept decision about Adapt Law of Stability to Reliability, Accept decision about Adapt Law of Sufficient Reason to Empiricism, Accept decision about Adapt Principle of Association Freedom to Persistence, Accept decision about Adapt Principle of Conscience to Patience, Accept decision about Adapt Principle of Courage to Knowledge, Accept decision about Adapt Principle of Design Thinking to Solidarity, Accept decision about Adapt Principle of Diversity to Wisdom, Accept decision about Adapt Principle of Escalation to Gratitude, Accept decision about Adapt Principle of Fairness to Equality, Accept decision about Adapt Principle of Goodness to Skepticism, Accept decision about Adapt Principle of Integration to Sincerity, Accept decision about Adapt Principle of Lazy Evaluation to Freedom, Accept decision about Adapt Principle of Maximization to Respect, Accept decision about Adapt Principle of Poka-Yoke to Egalitarianism, Accept decision about Adapt Principle of Probability to Decisiveness, Accept decision about Adapt Principle of Pull System to Community, Accept decision about Adapt Principle of Religious Freedom to Distributive Justi
 
 PromptAtoms-main:
   Total notes: 1,783
-  Orphaned: 0
-  No incoming: 1,783
+  Orphaned: 1,783
+  No incoming: 0
   No outgoing: 0
-  Broken links: 7,644
+  Broken links: 10
+  Orphaned notes: DeepSeek R1 вызвал кризис в OpenAI и тревогу в Пентагоне, GPT-4o mini уступает конкурентам в реальном понимании кода, Анатомия разочарования, Будущее AI-разработки не за редактором Cursor, Две killer фичи ИИ, которые грозят оставить BI-аналитиков без работы, Дебаты о глубине понимания ИИ и влиянии на науку, ИИ как собеседник и программист, ИИ-угроза из Китая, Как китайский векторный поиск по смыслу бросает вызов Google, Как правильно задавать вопросы к LLM, Как работает новая поисковая технология DeepSeek, Математик не тот, кто решает, а тот, кто ставит задачу, От левых взглядов до жажды власти, От математики к семантике, Почему ChatGPT не всегда лучший выбор для саммари, Почему в эпоху ИИ инсайты и чтение кода станут важнее программирования, Почему ИИ решает бизнес-задачи и не решает судоку, Почему российское образование готовит детей к прошлому, Спор о сильных и слабых сторонах ведущих моделей, Утечка о Grok 3
 
 KnowledgeGalaxy:
   Total notes: 1,716
   Orphaned: 0
   No incoming: 5
   No outgoing: 0
-  Broken links: 91
+  Broken links: 1
 
 SecondBrain:
   Total notes: 1,705
   Orphaned: 0
   No incoming: 8
   No outgoing: 0
-  Broken links: 1,124
+  Broken links: 1
 
 Knowledge:
   Total notes: 1,204
-  Orphaned: 0
-  No incoming: 565
+  Orphaned: 33
+  No incoming: 532
   No outgoing: 21
-  Broken links: 1,759
+  Broken links: 2
+  Orphaned notes: Anchoring_Bias, Availability_Heuristic, Bandwagon_Effect, Confirmation_Bias, Dunning-Kruger_Effect, Framing_Effect, Loss_Aversion_Bias, Overconfidence_Bias, Status_Quo_Bias, Sunk_Cost_Fallacy, Financial_Discipline_Practice, Independent_Thinking_Skills, Opportunity_Cost_Analysis, Probabilistic_Thinking, Reflective_Learning_Practice, Resource_Management_Discipline, Risk_Reward_Analysis, Statistical_Thinking, Structured_Decision_Making, Viewpoint_Diversity_Strategy
 
 DecisionMaze:
   Total notes: 945
   Orphaned: 0
   No incoming: 2
   No outgoing: 0
-  Broken links: 38
+  Broken links: 0
 
 QuestionFractal:
   Total notes: 646
   Orphaned: 0
   No incoming: 356
   No outgoing: 0
-  Broken links: 3,189
+  Broken links: 0
 
 PersonalityGraph:
   Total notes: 276
   Orphaned: 0
   No incoming: 6
   No outgoing: 0
-  Broken links: 31
+  Broken links: 0
 
 BiasGraph:
   Total notes: 265
   Orphaned: 0
   No incoming: 1
   No outgoing: 0
-  Broken links: 43
+  Broken links: 0
 
 ConflictGraph:
   Total notes: 259
   Orphaned: 0
   No incoming: 61
   No outgoing: 0
-  Broken links: 265
+  Broken links: 0
 
 IdeaEcosystem:
   Total notes: 257
-  Orphaned: 0
-  No incoming: 65
-  No outgoing: 0
-  Broken links: 1,150
+  Orphaned: 5
+  No incoming: 60
+  No outgoing: 2
+  Broken links: 4
+  Orphaned notes: Body positivity, Class consciousness, Disability rights, Linguistic rights, TESCREAL
 
 ShadowValueSystem:
   Total notes: 237
-  Orphaned: 0
-  No incoming: 237
+  Orphaned: 237
+  No incoming: 0
   No outgoing: 0
-  Broken links: 1,608
+  Broken links: 63
+  Orphaned notes: MOC - Теневая система ценностей, Agressiya, Anarkhizm, Apatiya, Apologiya, Avantyurizm, Avtoritarnost, Azartnost, Beskorystie, Bezrazlichie, Byurokratizm, Chyornyy_yumor, Destruktsiya, Direkt, Disruption, Dominirovanie, Dukhovnost, Egotsentrizm, Eksperiment, Ekspluatatsiya
 
 IntellectualNetwork:
   Total notes: 170
-  Orphaned: 0
-  No incoming: 161
-  No outgoing: 0
-  Broken links: 974
-
-CausalLoop:
-  Total notes: 155
-  Orphaned: 23
-  No incoming: 5
-  No outgoing: 55
-  Broken links: 109
-  Orphaned notes: Адаптация, Альянсы, Глобализация, Деградация, Деструкция, Децентрализация, Диверсификация, Инвестиции, Инновации, Интеграция, Концентрация, Локализация, Оптимизация, Переговоры, Разрушение, Революция, Санкции, Созидание, Спекуляция, Трансформация
+  Orphaned: 161
+  No incoming: 0
+  No outgoing: 4
+  Broken links: 0
+  Orphaned notes: Book - Antifragile, Book - Beyond Good and Evil, Book - Conjectures and Refutations, Book - Fooled by Randomness, Book - Metaphysics, Book - Nicomachean Ethics, Book - Noise, Book - On the Genealogy of Morality, Book - On the Soul, Book - Physics, Book - Poetics, Book - Politics, Book - Poor Charlie's Almanack, Book - Skin in the Game, Book - The Bed of Procrustes, Book - The Black Swan, Book - The Education of a Value Investor, Book - The Gay Science, Book - The Logic of Scientific Discovery, Book - The Open Society and Its Enemies
 
 WorldModelGraph:
   Total notes: 136
   Orphaned: 0
   No incoming: 20
   No outgoing: 0
-  Broken links: 4
+  Broken links: 0
+
+CausalLoop:
+  Total notes: 133
+  Orphaned: 1
+  No incoming: 5
+  No outgoing: 55
+  Broken links: 0
+  Orphaned notes: Революция
 
 Index:
   Total notes: 117
-  Orphaned: 0
-  No incoming: 60
-  No outgoing: 1
-  Broken links: 273
+  Orphaned: 36
+  No incoming: 24
+  No outgoing: 13
+  Broken links: 39
+  Orphaned notes: 0 Casandra, 0 DynamoDB, 0 HBase, 0 InfluxDB, 0 LiteSql, 0 Memcached, 0 MongoDB, 0 MySQL, 0 Neo4j, 0 Postgres, 0 Prometheus, 0 Redis, GR-01 Exchange Argument, GR-02 Sorting and Greedy Sweep, GR-03 Earliest Finish Time Greedy, GR-04 Local Best with Feasibility Constraint, GR-05 Two-Sided Greedy, GR-06 Greedy by Priority Queue, 0 C++, 0 Cшарп
 
 Quests:
   Total notes: 81
-  Orphaned: 0
-  No incoming: 46
-  No outgoing: 0
-  Broken links: 411
+  Orphaned: 27
+  No incoming: 19
+  No outgoing: 7
+  Broken links: 0
+  Orphaned notes: Внедрить систему планирования, Выложить портфолио, Выпустить альбом, Выпустить короткометражку, Заключить партнёрство, Защитить проект, Избавиться от прокрастинации, Написать книгу, Написать трек, Наработать рутину, Нарисовать портрет, Настроить свет, Настроить студию, Начать бегать, Ночной режим, Подтянуться 10 раз, Поторговаться о зарплате, Приготовить ужин, Принять сложное решение, Пробежать 5к
 
 Skills:
   Total notes: 41
-  Orphaned: 0
-  No incoming: 40
-  No outgoing: 0
-  Broken links: 200
+  Orphaned: 39
+  No incoming: 1
+  No outgoing: 1
+  Broken links: 0
+  Orphaned notes: Cloud Computing, Data Analysis, Machine Learning, UX-UI Дизайн, Брендинг, Веб-разработка, Видеомонтаж, Дизайн интерьера, Изучение языков, Исследования, Кибербезопасность, Критическое мышление, Кулинария, Лидерство, Маркетинг, Медитация, Менторство, Мобильная разработка, Музыкальное производство, Написание текстов
 
 Emotions:
   Total notes: 35
-  Orphaned: 0
-  No incoming: 35
+  Orphaned: 35
+  No incoming: 0
   No outgoing: 0
-  Broken links: 70
+  Broken links: 0
+  Orphaned notes: Emotion_Ambition, Emotion_Anxiety, Emotion_Awe, Emotion_Boredom, Emotion_Compassion, Emotion_Confusion, Emotion_Contentment, Emotion_Courage, Emotion_Curiosity, Emotion_Despair, Emotion_Determination, Emotion_Disgust, Emotion_Enthusiasm, Emotion_Excitement, Emotion_Fascination, Emotion_Fearfulness, Emotion_Frustration, Emotion_Gratitude, Emotion_Guilt, Emotion_Hope
 
 Obstacles:
   Total notes: 31
-  Orphaned: 0
-  No incoming: 19
+  Orphaned: 13
+  No incoming: 6
   No outgoing: 0
-  Broken links: 170
+  Broken links: 0
+  Orphaned notes: Ложные убеждения, Непонимание, Нереальные ожидания, Нет видимости, Нет данных, Низкая самооценка, Сложная интеграция, Сложная механика, Сложные пайплайны, Страх конфликта, Финансовые ограничения, Эго, Эмоциональные реакции
 
 Rewards:
   Total notes: 31
-  Orphaned: 0
-  No incoming: 30
-  No outgoing: 0
-  Broken links: 124
+  Orphaned: 29
+  No incoming: 1
+  No outgoing: 1
+  Broken links: 0
+  Orphaned notes: ML-инженер, React-разработчик, Автор книги, Аналитический отчёт, Бегун, Благодарные ученики, Доверие команды, Железная дисциплина, Лояльная аудитория, Марафонец, Музыкант, Новичок-программист, Основатель стартапа, Пассивный доход, Первый ролик, Первый сайт, Повышение зарплаты, Приложение в Store, Публикация, Сертификат спикера
 
 Fears:
   Total notes: 30
-  Orphaned: 0
-  No incoming: 30
+  Orphaned: 30
+  No incoming: 0
   No outgoing: 0
-  Broken links: 60
+  Broken links: 0
+  Orphaned notes: Fear_Aging, Fear_Being Alone, Fear_Being Criticized, Fear_Being Different, Fear_Being Forgotten, Fear_Being Ignored, Fear_Being Incompetent, Fear_Being Judged, Fear_Being Overwhelmed, Fear_Being Replaced, Fear_Being Trapped, Fear_Being Unappreciated, Fear_Being Unheard, Fear_Being Unseen, Fear_Being Unworthy, Fear_Being Vulnerable, Fear_Being Weak, Fear_Change, Fear_Death, Fear_Failure
 
 Traits:
   Total notes: 30
-  Orphaned: 0
-  No incoming: 30
+  Orphaned: 30
+  No incoming: 0
   No outgoing: 0
-  Broken links: 60
+  Broken links: 0
+  Orphaned notes: Trait_Adaptable, Trait_Analytical, Trait_Charismatic, Trait_Confident, Trait_Creative, Trait_Curious, Trait_Decisive, Trait_Detail-oriented, Trait_Empathetic, Trait_Flexible, Trait_Imaginative, Trait_Impulsive, Trait_Insecure, Trait_Intuitive, Trait_Logical, Trait_Messy, Trait_Methodical, Trait_Optimistic, Trait_Organized, Trait_Patient
 
 Locations:
   Total notes: 26
-  Orphaned: 0
-  No incoming: 24
-  No outgoing: 0
-  Broken links: 135
+  Orphaned: 23
+  No incoming: 1
+  No outgoing: 1
+  Broken links: 0
+  Orphaned notes: Банк, Библиотека, Выставочный зал, Гараж, Дом, Домашний офис, Домашний сад, Коворкинг, Конференц-зал, Кухня, Магазин, Музыкальная студия, Онлайн-платформа, Офис, Парк, Ресторан, Серверная, Спортзал, Стартап-хаб, Студия
 
 Habits:
   Total notes: 25
-  Orphaned: 0
-  No incoming: 25
+  Orphaned: 25
+  No incoming: 0
   No outgoing: 0
-  Broken links: 75
+  Broken links: 0
+  Orphaned notes: Habit_Cleaning, Habit_Cooking, Habit_Creating, Habit_Debugging, Habit_Documenting, Habit_Exercise, Habit_Helping, Habit_Journaling, Habit_Learning, Habit_Listening, Habit_Meditation, Habit_Networking, Habit_Organizing, Habit_Planning, Habit_Practicing, Habit_Preparing, Habit_Problem-solving, Habit_Questioning, Habit_Reading, Habit_Reflecting
 
 Desires:
   Total notes: 22
-  Orphaned: 0
-  No incoming: 22
+  Orphaned: 22
+  No incoming: 0
   No outgoing: 0
-  Broken links: 44
+  Broken links: 0
+  Orphaned notes: Desire_Achievement, Desire_Adventure, Desire_Beauty, Desire_Comfort, Desire_Connection, Desire_Contribution, Desire_Control, Desire_Creativity, Desire_Excitement, Desire_Freedom, Desire_Growth, Desire_Independence, Desire_Knowledge, Desire_Legacy, Desire_Love, Desire_Peace, Desire_Purpose, Desire_Recognition, Desire_Security, Desire_Self-Expression
 
 Goals:
   Total notes: 22
-  Orphaned: 0
-  No incoming: 22
+  Orphaned: 22
+  No incoming: 0
   No outgoing: 0
-  Broken links: 44
+  Broken links: 0
+  Orphaned notes: Goal_Artistic Achievement, Goal_Career Advancement, Goal_Community Contribution, Goal_Creative Expression, Goal_Entrepreneurship, Goal_Family Legacy, Goal_Financial Independence, Goal_Health and Fitness, Goal_Innovation, Goal_Knowledge Mastery, Goal_Leadership, Goal_Legacy Building, Goal_Personal Growth, Goal_Research, Goal_Skill Development, Goal_Social Impact, Goal_Spiritual Development, Goal_Strong Relationships, Goal_Teaching, Goal_Travel and Experience
 
 Values:
   Total notes: 22
-  Orphaned: 0
-  No incoming: 22
+  Orphaned: 22
+  No incoming: 0
   No outgoing: 0
-  Broken links: 44
+  Broken links: 0
+  Orphaned notes: Value_Achievement, Value_Adventure, Value_Beauty, Value_Comfort, Value_Control, Value_Creativity, Value_Curiosity, Value_Family, Value_Freedom, Value_Growth, Value_Honesty, Value_Independence, Value_Integrity, Value_Knowledge, Value_Legacy, Value_Love, Value_Loyalty, Value_Purpose, Value_Relationships, Value_Security
 
 Bosses:
   Total notes: 21
-  Orphaned: 0
-  No incoming: 15
-  No outgoing: 0
-  Broken links: 176
+  Orphaned: 11
+  No incoming: 4
+  No outgoing: 3
+  Broken links: 0
+  Orphaned notes: Бессонница, Импульсивные покупки, Когнитивные искажения, Конфликты в команде, Множество платформ, Нет аудитории, Нет времени, Нехватка капитала, Сложные дедлайны, Страх отказать, Страх сцены
 
 Inbox:
   Total notes: 12
-  Orphaned: 0
-  No incoming: 8
-  No outgoing: 1
-  Broken links: 8
-
-Node:
-  Total notes: 7
   Orphaned: 4
-  No incoming: 3
-  No outgoing: 0
-  Broken links: 4
-  Orphaned notes: CQL, RESP, String Builder, String Pool
+  No incoming: 4
+  No outgoing: 2
+  Broken links: 0
+  Orphaned notes: 3 столба, Fire, Nexus, Читай свои заметки как чужие
 
 Prompts:
   Total notes: 5
   Orphaned: 0
   No incoming: 1
-  No outgoing: 2
-  Broken links: 15
+  No outgoing: 4
+  Broken links: 0
+
+Node:
+  Total notes: 3
+  Orphaned: 3
+  No incoming: 0
+  No outgoing: 0
+  Broken links: 0
+  Orphaned notes: Живи день как последний, Не лезь в другое голову пока в своей не разобрался, Нейронки
 
 Documentation:
   Total notes: 1
-  Orphaned: 0
-  No incoming: 1
+  Orphaned: 1
+  No incoming: 0
   No outgoing: 0
-  Broken links: 8
+  Broken links: 0
+  Orphaned notes: Scaling_Guide
 
