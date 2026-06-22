@@ -11,23 +11,12 @@
             "id": "8d12e239d08b5f60",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "excalidraw",
               "state": {
-                "file": "План/2026/2026 - Июль.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Excalidraw/Stack.md"
               },
-              "icon": "lucide-trello",
-              "title": "2026 - Июль"
+              "icon": "excalidraw-icon",
+              "title": "Stack"
             }
           },
           {
@@ -201,10 +190,10 @@
   },
   "active": "8d12e239d08b5f60",
   "lastOpenFiles": [
+    "План/2026/2026 - Июль.md",
     "Excalidraw/Англиский.md",
     "Excalidraw/Доска.md",
     "Excalidraw/Deltaав.md",
-    "План/2026/2026 - Июль.md",
     "План/2026/2026 - Июнь.md",
     "План/2026/2026 - Май.md",
     "План/2026/2026 - Декабрь.md",
