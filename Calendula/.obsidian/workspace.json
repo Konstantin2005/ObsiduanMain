@@ -11,16 +11,10 @@
             "id": "b7c32eb0598af2b5",
             "type": "leaf",
             "state": {
-              "type": "kanban",
-              "state": {
-                "file": "План/2026/2026.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": []
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "2026"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           },
           {
@@ -224,10 +218,10 @@
   },
   "active": "b7c32eb0598af2b5",
   "lastOpenFiles": [
+    "План/2026/2026.md",
     "План/2026/2026 - Декабрь.md",
     "План/2026/2026 - Апрель.md",
     "План/2026/2026 - Август.md",
-    "План/2026/2026.md",
     "Excalidraw/Поиск людей и Синк.md",
     "Excalidraw/План.md",
     "Excalidraw/Общаться с людьми.md",
