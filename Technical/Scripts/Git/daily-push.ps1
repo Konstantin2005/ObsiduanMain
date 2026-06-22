@@ -131,5 +131,10 @@ try {
 }
 catch {
     Write-Log "ERROR: $($_.Exception.Message)"
+    $mutex.ReleaseMutex()
+    $mutex.Dispose()
     exit 1
 }
+
+$mutex.ReleaseMutex()
+$mutex.Dispose()
