@@ -31,7 +31,8 @@
               "title": "17-06-26"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -189,7 +190,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "8d12e239d08b5f60",
+  "active": "9029a0e9406a4d3c",
   "lastOpenFiles": [
     "Calendula/2026/Июнь/18-06-26.md",
     "Личная библиотека/2026/Июнь/17-06-26.md",
