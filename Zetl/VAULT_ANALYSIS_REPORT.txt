@@ -1,12 +1,12 @@
 VAULT ANALYSIS REPORT
 ============================================================
 
-Total vaults analyzed: 30
-Total notes: 20,994
-Total orphaned notes: 259
-Total notes with no incoming links: 4,053
+Total vaults analyzed: 28
+Total notes: 20,738
+Total orphaned notes: 2
+Total notes with no incoming links: 4,054
 Total notes with no outgoing links: 550
-Total broken links: 499
+Total broken links: 489
 
 VAULT DETAILS
 ------------------------------------------------------------
@@ -32,14 +32,6 @@ ZettelkastenUltra:
   No outgoing: 0
   Broken links: 0
 
-KnowledgeGraphs:
-  Total notes: 1,784
-  Orphaned: 213
-  No incoming: 503
-  No outgoing: 203
-  Broken links: 207
-  Orphaned notes: Bezrazlichie, Egotsentrizm, Fanatizm, Geroizm, Konformizm, Konservatizm, Mrachnost, Nartsissizm, Otvetstvennost, Passivnost, Privyazannost, Sarkazm, Schedrost, Spravedlivost, Tvorchestvo, Vina, Zabvenie, Zavisimost, Первая помощь, Садоводство
-
 KnowledgeGalaxy:
   Total notes: 1,716
   Orphaned: 0
@@ -54,13 +46,19 @@ SecondBrain:
   No outgoing: 0
   Broken links: 1
 
+KnowledgeGraphs:
+  Total notes: 1,571
+  Orphaned: 0
+  No incoming: 503
+  No outgoing: 203
+  Broken links: 207
+
 KnowledgeGraphs_Core:
-  Total notes: 1,590
-  Orphaned: 20
+  Total notes: 1,570
+  Orphaned: 0
   No incoming: 502
   No outgoing: 203
   Broken links: 207
-  Orphaned notes: Bezrazlichie, Egotsentrizm, Fanatizm, Geroizm, Konformizm, Konservatizm, Mrachnost, Nartsissizm, Otvetstvennost, Passivnost, Privyazannost, Sarkazm, Schedrost, Spravedlivost, Tvorchestvo, Vina, Zabvenie, Zavisimost, Первая помощь, Садоводство
 
 Knowledge:
   Total notes: 1,171
@@ -126,12 +124,12 @@ CausalLoop:
   Broken links: 0
 
 Index:
-  Total notes: 86
-  Orphaned: 5
-  No incoming: 24
+  Total notes: 84
+  Orphaned: 2
+  No incoming: 25
   No outgoing: 13
-  Broken links: 10
-  Orphaned notes: 0 Foundations Index, 0 Tenses Index, 0 Verbs Index, 0 Adjectives Index, 0 Articles Index
+  Broken links: 0
+  Orphaned notes: 0 Foundations Index, 0 Verbs Index
 
 Quests:
   Total notes: 54
@@ -139,14 +137,6 @@ Quests:
   No incoming: 19
   No outgoing: 7
   Broken links: 0
-
-ShadowValueSystem:
-  Total notes: 19
-  Orphaned: 19
-  No incoming: 0
-  No outgoing: 0
-  Broken links: 0
-  Orphaned notes: Bezrazlichie, Egotsentrizm, Fanatizm, Geroizm, Konformizm, Konservatizm, Mrachnost, Nartsissizm, Nostalgiya, Otvetstvennost, Passivnost, Privyazannost, Sarkazm, Schedrost, Spravedlivost, Tvorchestvo, Vina, Zabvenie, Zavisimost
 
 Obstacles:
   Total notes: 18
@@ -203,14 +193,6 @@ Locations:
   No incoming: 1
   No outgoing: 1
   Broken links: 0
-
-PromptAtoms-main:
-  Total notes: 2
-  Orphaned: 2
-  No incoming: 0
-  No outgoing: 0
-  Broken links: 0
-  Orphaned notes: Ценовая война на рынке ИИ, Конец ручного кода
 
 Rewards:
   Total notes: 2
