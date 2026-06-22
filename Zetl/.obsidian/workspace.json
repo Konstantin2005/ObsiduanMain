@@ -11,10 +11,14 @@
             "id": "02209ca3e92389b6",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "MOC - Теневая система ценностей.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MOC - Теневая система ценностей"
             }
           }
         ]
@@ -182,12 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "MOC - Теневая система ценностей.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура MOC - Теневая система ценностей"
             }
           }
         ],
@@ -212,18 +217,22 @@
   },
   "active": "02209ca3e92389b6",
   "lastOpenFiles": [
+    "MOC - Тематические индексы.md",
+    "MOC - Игровая система.md",
+    "MOC - Жизненная система.md",
+    "MOC - База знаний.md",
+    "MOC - Zetl.md",
+    "Cycle_Cycle_17.md",
+    "Cycle_Cycle_14.md",
+    "Cycle_Cycle_13.md",
+    "Cycle_Cycle_12.md",
     "Index/Програмирование/BD/0 Redis.md",
     "Index/Програмирование/BD/0 LiteSql.md",
     "Сообщество.md",
     "ShadowValueSystem/MOC - Теневая система ценностей.md",
     "Navigation.md",
-    "MOC - Zetl.md",
-    "MOC - Тематические индексы.md",
     "MOC - Теневая система ценностей.md",
     "MOC - Экосистема идей.md",
-    "MOC - База знаний.md",
-    "MOC - Игровая система.md",
-    "MOC - Жизненная система.md",
     "organize_zetl.py",
     "ARCHITECTURE_SUMMARY.md",
     "Obstacles/Нет видимости.md",
@@ -235,10 +244,6 @@
     "Obstacles/Нет данных.md",
     "Obstacles/Непонимание.md",
     "Obstacles/Эго.md",
-    "Obstacles/Вредители.md",
-    "Obstacles/Сложная механика.md",
-    "Obstacles/Нет вдохновения.md",
-    "Obstacles/Тревожность.md",
     "Node",
     "Index/Програмирование/LeetCode",
     "Index/Програмирование/Языки",
