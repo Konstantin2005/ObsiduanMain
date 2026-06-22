@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08-Quest/Bosses/Прокрастинация.md",
+                "file": "08-Quest/Rewards/Железная дисциплина.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Прокрастинация"
+              "title": "Железная дисциплина"
             }
           }
         ],
@@ -193,6 +193,7 @@
   },
   "active": "d6b1a38875463f21",
   "lastOpenFiles": [
+    "08-Quest/Bosses/Прокрастинация.md",
     "08-Quest/Skills/Тайм-менеджмент.md"
   ]
 }
