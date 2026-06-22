@@ -20,7 +20,13 @@
               "icon": "lucide-file",
               "title": "17-06-26"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "c996444e3eff30bc",
+        "type": "tabs",
+        "children": [
           {
             "id": "72a9cfd16925e751",
             "type": "leaf",
@@ -31,8 +37,7 @@
               "title": "Новая вкладка"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
