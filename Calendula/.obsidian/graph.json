@@ -141,7 +141,7 @@
       }
     },
     {
-      "query": "",
+      "query": "#",
       "color": {
         "a": 1,
         "rgb": 5395026
@@ -223,4 +223,3 @@
   "linkDistance": 412,
   "scale": 0.38230109687697195,
   "close": false
-}
