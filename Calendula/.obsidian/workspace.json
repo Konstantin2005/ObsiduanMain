@@ -11,14 +11,23 @@
             "id": "8d12e239d08b5f60",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "Calendula/2026/Май/24-05-26.md",
-                "mode": "source",
-                "source": false
+                "file": "План/2026/2026 - Июнь.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "24-05-26"
+              "icon": "lucide-trello",
+              "title": "2026 - Июнь"
             }
           }
         ]
@@ -180,13 +189,15 @@
   },
   "active": "8d12e239d08b5f60",
   "lastOpenFiles": [
+    "План/2026/2026 - Июль.md",
+    "План/2026/2026 - Декабрь.md",
+    "План/2026/2026 - Апрель.md",
+    "План/2026/2026 - Август.md",
+    "Calendula/2026/Май/24-05-26.md",
     "Excalidraw/Поиск людей и Синк.md",
     "Excalidraw/Люди.md",
     "Excalidraw/Англиский.md",
     "План/2026/2026.md",
-    "План/2026/2026 - Декабрь.md",
-    "План/2026/2026 - Апрель.md",
-    "План/2026/2026 - Август.md",
     "Excalidraw/План.md",
     "Excalidraw/Общаться с людьми.md",
     "Excalidraw/Доска.md",
@@ -198,14 +209,12 @@
     "Excalidraw/Архив Excalidraw/GC.md",
     "Calendula/2026/Июнь/21.1-06-26.md",
     "Calendula/2026/Июнь/21-06-26.md",
-    "Calendula/2026/Май/24-05-26.md",
     "Кристина Сестра.md",
     "Сергей Брат.md",
     "Calendula/2026/Июнь/20-06-26.md",
     "Соц Капитал/2_круг/Dima Garbatenko.md",
     "Calendula/2026/Май/06-05-26.md",
     "Calendula/2026/Апрель/06-04-26.md",
-    "Calendula/2026/Июнь/19-06-26.md",
     "Excalidraw/pichers/Pasted Image 20260617104003_519.png",
     "Excalidraw/pichers/Pasted Image 20260617103553_177.png",
     "Excalidraw/Архив Excalidraw/Pasted Image 20260617103441_793.png",
