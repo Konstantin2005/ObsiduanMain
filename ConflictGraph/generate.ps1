@@ -1,4 +1,4 @@
-# Conflict Graph Vault Generator
+﻿# Conflict Graph Vault Generator
 # Generates 250+ interconnected notes for an Obsidian vault
 
 param(
