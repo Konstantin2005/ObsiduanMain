@@ -40,7 +40,7 @@ cluster_nodes = defaultdict(list)  # cluster_id -> [node_ids]
 def add_link(s, t, bidirectional=True):
     if s == t:
         return
-    if t in [x for x, _ in nodes[s]["links"]]:
+    if t in nodes[s]["links"]:
         return
     nodes[s]["links"].append(t)
     link_count[s] += 1
