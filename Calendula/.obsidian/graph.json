@@ -139,6 +139,34 @@
         "a": 1,
         "rgb": 5395026
       }
+    },
+    {
+      "query": "",
+      "color": {
+        "a": 1,
+        "rgb": 5395026
+      }
+    },
+    {
+      "query": "",
+      "color": {
+        "a": 1,
+        "rgb": 5395026
+      }
+    },
+    {
+      "query": "",
+      "color": {
+        "a": 1,
+        "rgb": 5395026
+      }
+    },
+    {
+      "query": "",
+      "color": {
+        "a": 1,
+        "rgb": 5395026
+      }
     }
   ],
   "collapse-display": true,
@@ -149,4 +177,8 @@
   "collapse-forces": true,
   "centerStrength": 0.0625,
   "repelStrength": 14.0625,
-  "linkStreng
+  "linkStrength": 0.645833333333333,
+  "linkDistance": 412,
+  "scale": 0.3823010968769749,
+  "close": false
+}
