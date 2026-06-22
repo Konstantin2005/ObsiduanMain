@@ -117,21 +117,27 @@ if ($DryRun) {
 
 $lastPush = [DateTime]::MinValue
 $pushInterval = New-TimeSpan -Minutes $PushIntervalMinutes
+$isRunning = $false
 
 try {
     while ($true) {
-        $now = Get-Date
-        
-        Commit-Changes
-        
-        if ($now - $lastPush -ge $pushInterval) {
-            try {
-                Push-Changes
-                $lastPush = $now
+        if (-not $isRunning) {
+            $isRunning = $true
+            $now = Get-Date
+            
+            Commit-Changes
+            
+            if ($now - $lastPush -ge $pushInterval) {
+                try {
+                    Push-Changes
+                    $lastPush = $now
+                }
+                catch {
+                    Write-Log "PUSH FAILED: $($_.Exception.Message)"
+                }
             }
-            catch {
-                Write-Log "PUSH FAILED: $($_.Exception.Message)"
-            }
+            
+            $isRunning = $false
         }
         
         Start-Sleep -Seconds $CommitIntervalSeconds
