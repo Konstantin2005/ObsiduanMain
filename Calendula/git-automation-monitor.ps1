@@ -57,6 +57,7 @@ function Check-RepositoryHealth {
         }
         
         $logCount = git log --oneline --since="24 hours ago" | Measure-Object -Line
+        $logCount = $logCount.Count
         Write-MonitorLog "Commits in last 24 hours: $logCount"
         
         if ($logCount -eq 0) {
