@@ -9,7 +9,7 @@ tags: [counteridea, ecosystem, anti-Classism]
 Classism alternative, asserting class awareness
 
 ## Противоядие для
-- [[]]
+- [[Classism]]
 
 ## Связанные концепции
 - [[Class]]

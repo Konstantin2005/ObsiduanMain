@@ -9,7 +9,7 @@ tags: [counteridea, ecosystem, anti-Lookism]
 Lookism alternative, asserting body acceptance
 
 ## Противоядие для
-- [[]]
+- [[Lookism]]
 
 ## Связанные концепции
 - [[Acceptance]]

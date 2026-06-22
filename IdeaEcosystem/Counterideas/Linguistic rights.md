@@ -9,7 +9,7 @@ tags: [counteridea, ecosystem, anti-Linguistic discrimination]
 Linguistic discrimination alternative, asserting language rights
 
 ## Противоядие для
-- [[]]
+- [[Linguistic discrimination]]
 
 ## Связанные концепции
 - [[Language]]

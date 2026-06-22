@@ -9,7 +9,7 @@ tags: [counteridea, ecosystem, anti-Ableism]
 Ableism alternative, asserting disability rights
 
 ## Противоядие для
-- [[]]
+- [[Ableism]]
 
 ## Связанные концепции
 - [[Rights]]
