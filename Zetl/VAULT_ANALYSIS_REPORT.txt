@@ -2,8 +2,8 @@ VAULT ANALYSIS REPORT
 ============================================================
 
 Total vaults analyzed: 28
-Total notes: 20,738
-Total orphaned notes: 2
+Total notes: 20,736
+Total orphaned notes: 0
 Total notes with no incoming links: 4,054
 Total notes with no outgoing links: 550
 Total broken links: 489
@@ -124,12 +124,11 @@ CausalLoop:
   Broken links: 0
 
 Index:
-  Total notes: 84
-  Orphaned: 2
+  Total notes: 82
+  Orphaned: 0
   No incoming: 25
   No outgoing: 13
   Broken links: 0
-  Orphaned notes: 0 Foundations Index, 0 Verbs Index
 
 Quests:
   Total notes: 54
