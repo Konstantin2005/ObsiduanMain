@@ -3,3 +3,8 @@
 2026-06-23 01:30:04 - FAILURE: Failed to check expected commit schedule: Cannot compare "Microsoft.PowerShell.Commands.TextMeasureInfo" because it is not IComparable.
 2026-06-23 01:30:05 - FAILURE: Missed expected commits: 2026-06-22 12:00:00 - Automated commit, 2026-06-22 18:00:00 - Automated commit, 2026-06-23 09:00:00 - Automated commit, 2026-06-23 15:00:00 - Automated commit
 2026-06-23 01:39:48 - FAILURE: Failed to analyze last commit: Exception calling "ParseExact" with "3" argument(s): "String was not recognized as a valid DateTime."
+2026-06-23 01:42:31 - FAILURE: Unexpected commit message: 'Auto-commit: 2026-06-23 01:42:29 2026-06-23 01:42:29 +1000' (expected: 'Automated commit')
+2026-06-23 01:42:31 - FAILURE: Failed to analyze last commit: Cannot compare "Microsoft.PowerShell.Commands.TextMeasureInfo" because it is not IComparable.
+2026-06-23 01:42:32 - FAILURE: Uncommitted changes detected:  M Calendula/git-failures.log  M Calendula/git-monitor.log  M Calendula/logs/git-failures.log  M Calendula/logs/git-monitor.log
+2026-06-23 01:42:32 - FAILURE: Failed to check expected commit schedule: Cannot compare "Microsoft.PowerShell.Commands.TextMeasureInfo" because it is not IComparable.
+2026-06-23 01:42:33 - FAILURE: Missed expected commits: 2026-06-22 12:00:00 - Automated commit, 2026-06-22 18:00:00 - Automated commit, 2026-06-23 09:00:00 - Automated commit, 2026-06-23 15:00:00 - Automated commit
