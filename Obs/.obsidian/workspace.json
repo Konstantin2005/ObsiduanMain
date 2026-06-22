@@ -31,8 +31,7 @@
               "title": "Граф"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -191,7 +190,7 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "f389695fe2ea9aa4",
+  "active": "471c6939225e2748",
   "lastOpenFiles": [
     "Личная библиотека/2026/Июнь/17-06-26.md",
     "Поиск людей.md",
