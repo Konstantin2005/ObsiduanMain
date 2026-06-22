@@ -10,12 +10,15 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$mutexName = "Global\DailyPushMutex"
-$mutex = New-Object System.Threading.Mutex($false, $mutexName)
-if (-not $mutex.WaitOne(0, $false)) {
-    Write-Host "Another instance is already running. Exiting."
-    exit 0
+$lockFile = Join-Path $RepoPath "Technical\Scripts\Logs\.daily-push.lock"
+if (Test-Path $lockFile) {
+    $lockPid = Get-Content $lockFile -ErrorAction SilentlyContinue
+    if ($lockPid -and (Get-Process -Id $lockPid -ErrorAction SilentlyContinue)) {
+        Write-Host "Another instance (PID $lockPid) is already running. Exiting."
+        exit 0
+    }
 }
+$PID | Out-File $lockFile -Force
 
 function Write-Log {
     param([string]$Message)
@@ -122,8 +125,13 @@ try {
         Commit-Changes
         
         if ($now - $lastPush -ge $pushInterval) {
-            Push-Changes
-            $lastPush = $now
+            try {
+                Push-Changes
+                $lastPush = $now
+            }
+            catch {
+                Write-Log "PUSH FAILED: $($_.Exception.Message)"
+            }
         }
         
         Start-Sleep -Seconds $CommitIntervalSeconds
@@ -131,10 +139,8 @@ try {
 }
 catch {
     Write-Log "ERROR: $($_.Exception.Message)"
-    $mutex.ReleaseMutex()
-    $mutex.Dispose()
+    Remove-Item $lockFile -Force -ErrorAction SilentlyContinue
     exit 1
 }
 
-$mutex.ReleaseMutex()
-$mutex.Dispose()
+Remove-Item $lockFile -Force -ErrorAction SilentlyContinue
