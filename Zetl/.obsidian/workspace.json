@@ -59,8 +59,7 @@
               "title": "0 Redis"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -225,13 +224,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ARCHITECTURE_SUMMARY.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура ARCHITECTURE_SUMMARY"
+              "title": "Структура"
             }
           }
         ],
@@ -254,8 +252,9 @@
       "templates:Вставить шаблон": false
     }
   },
-  "active": "67c49c3a2388086b",
+  "active": "02209ca3e92389b6",
   "lastOpenFiles": [
+    "ARCHITECTURE_SUMMARY.md",
     "Obstacles/Нет видимости.md",
     "Obstacles/Ложные убеждения.md",
     "Obstacles/Сложная интеграция.md",
@@ -281,7 +280,6 @@
     "Index/Програмирование/BD/0 InfluxDB.md",
     "Index/Програмирование/BD/0 LevelDB.md",
     "Index/Програмирование/BD/0 Memcached.md",
-    "Index/Програмирование/BD/0 MongoDB.md",
     "Node",
     "Index/Програмирование/LeetCode",
     "Index/Програмирование/Языки",
