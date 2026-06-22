@@ -103,7 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "10c93912025d4c44",
@@ -205,7 +205,7 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "ee5726ef0630605a",
+  "active": "f67018b2079cc136",
   "lastOpenFiles": [
     "08-Quest/Rewards/Благодарные ученики.md",
     "08-Quest/Skills/Преподавание.md",
