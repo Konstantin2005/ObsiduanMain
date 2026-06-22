@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08-Quest/Skills/Преподавание.md",
+                "file": "08-Quest/Rewards/Благодарные ученики.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Преподавание"
+              "title": "Благодарные ученики"
             }
           }
         ],
@@ -193,6 +193,7 @@
   },
   "active": "d6b1a38875463f21",
   "lastOpenFiles": [
+    "08-Quest/Skills/Преподавание.md",
     "08-Quest/Quests/Стать ментором.md",
     "08-Quest/Skills/Эмоциональный интеллект.md",
     "08-Quest/Quests/Пройти эмоциональный курс.md",
