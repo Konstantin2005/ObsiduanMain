@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "43ad759dad80f576",
+    "type": "split",
+    "children": [
+      {
+        "id": "51af6693deef0a99",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "86cffe83a4a77434",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "26.03/Оплата OpenRouter и DeepSeek рублями через Alipay.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Оплата OpenRouter и DeepSeek рублями через Alipay"
+            }
+          },
+          {
+            "id": "4314b446c089ecac",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e05272351b3fe928",
+    "type": "split",
+    "children": [
+      {
+        "id": "c26329cf5c01addf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "38cd61dd4eaa9327",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "358ee508a6165d2e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "6a56f05e81bad1ce",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 201.5
+  },
+  "right": {
+    "id": "84e46f8335182b14",
+    "type": "split",
+    "children": [
+      {
+        "id": "a481b8550c47ef94",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "545842a2676c9712",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d70cadc5e1a06d01",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Как ИИ учится проигрывать код в уме.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Как ИИ учится проигрывать код в уме"
+            }
+          },
+          {
+            "id": "d8cb2a8b2a7beec6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Навигация/Вводная.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Вводная"
+            }
+          },
+          {
+            "id": "fc8c006877c3d7df",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "курс по ИИ.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of курс по ИИ"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "daily-notes:Open today's daily note": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "command-palette:Open command palette": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false
+    }
+  },
+  "active": "38cd61dd4eaa9327",
+  "lastOpenFiles": [
+    "25.10/Амбиции Кремля против технологической блокады.md",
+    "Навигация/поиск по Zero links.md",
+    "26.05",
+    "05.26",
+    "Новая папка",
+    "26.01/Шейн Легг предсказывает появление AGI к 2028 году.md",
+    "Zero links/0 Бизнес-процессы и стратегии.md",
+    "25.09/1 ИИ-гуманоид приносит $200,000 прибыли в год.md",
+    "26.04/Автономный робот-гуманоид обогнал человека на марафоне в Пекине.md",
+    "26.03/Агро-киберпанк.md",
+    "26.04/Архитекторы ведущих IT-компаний.md",
+    "Files/2026/Pasted image 20260428142859.png",
+    "Files/2026/Pasted image 20260428140639.png",
+    "Files/2026/Pasted image 20260428124427.png",
+    "Files/2026/Pasted image 20260428124310.png",
+    "Files/2026/Pasted image 20260428124141.png",
+    "Files/2026/Pasted image 20260427151451.png",
+    "Files/2026/Pasted image 20260427114327.png",
+    "Files/2026/Pasted image 20260427114209.png",
+    "Files/2026/Pasted image 20260427114134.png",
+    "Files/2026/Pasted image 20260427114109.png",
+    "26.04/Claude Opus превосходит NotebookLM в автоматическом анализе курса по GRACE.md",
+    "26.04/Anthropic ставит под угрозу суверенитет российских нейросетей.md",
+    "26.04/AI предпочитает XML и JSON формату YAML.md",
+    "26.04/AI превратил один тренинг в 130-страничную книгу.md",
+    "26.04/51 миллион токенов DeepSeek V4 Pro дешевле 1$.md",
+    "26.04/$60 млрд в 25 лет.md",
+    "26.04/Ученые доказали, что нейросети способны увеличить участие в протестах на 20%.md",
+    "26.04/Успех Qwen 3.6 Plus.md",
+    "26.04/Успех Gemma от Google.md",
+    "26.04/Угроза дронов оставит Москву.md",
+    "26.04/Угроза для Claude Opus.md",
+    "26.04/Увольнение Тима Кука.md",
+    "26.04/Триллионы в искусственный интеллект.md",
+    "26.04/Трамп требует возможность экстренного отключения ИИ.md",
+    "26.04/Только неудачники не умеют в выравнивание.md",
+    "26.04/Токен think и гибкие семантики.md",
+    "26.04/Тест нового Opus против Qwen.md",
+    "26.04/Теоретический потолок GPT.md",
+    "Zero links",
+    "Files/2026",
+    "Files/Новая папка",
+    "26.04",
+    "Files/2025",
+    "Навигация",
+    "НАВИГАЦИЯ"
+  ]
+}
