@@ -134,18 +134,15 @@ created: 2026-06-22
 
 | Граф | Нод | Статус |
 |------|-----|--------|
-| Quests | 81 | ✅ |
+| GameSystem | 80 | ✅ |
 | Skills | 41 | ✅ |
 | Emotions | 40 | ✅ |
-| Obstacles | 31 | ✅ |
-| Rewards | 31 | ✅ |
 | Traits | 30 | ✅ |
 | Fears | 30 | ✅ |
 | Habits | 25 | ✅ |
 | Goals | 22 | ✅ |
 | Desires | 22 | ✅ |
 | Values | 22 | ✅ |
-| Bosses | 21 | ✅ |
 
 ---
 
