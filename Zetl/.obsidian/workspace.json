@@ -225,6 +225,8 @@
   },
   "active": "02209ca3e92389b6",
   "lastOpenFiles": [
+    "SmallGraphs1",
+    "SmallGraphs2",
     "KnowledgeGraphs_Core/04-Psyche/Traits/Trait_Spontaneous.md",
     "KnowledgeGraphs_Core/04-Psyche/Traits/Trait_Risk-taking.md",
     "KnowledgeGraphs_Core/04-Psyche/Traits/Trait_Risk-averse.md",
@@ -250,7 +252,6 @@
     "KnowledgeGraphs_Core/04-Psyche/Traits/Trait_Detail-oriented.md",
     "KnowledgeGraphs_Core/04-Psyche/Traits/Trait_Decisive.md",
     "KnowledgeGraphs_Core/04-Psyche/Traits/Trait_Curious.md",
-    "KnowledgeGraphs_Core/04-Psyche/Traits/Trait_Creative.md",
     "KnowledgeGraphs_Core/04-Psyche/Traits",
     "KnowledgeGraphs_Core/04-Psyche/Skills",
     "KnowledgeGraphs_Core/04-Psyche/Habits",
@@ -259,7 +260,6 @@
     "KnowledgeGraphs_Core/04-Psyche/Fears",
     "KnowledgeGraphs_Core/04-Psyche/Emotions",
     "KnowledgeGraphs_Core/04-Psyche/Desires",
-    "KnowledgeGraphs_Core/04-Psyche",
-    "KnowledgeGraphs_Core/03-Kairos/Scenarios"
+    "KnowledgeGraphs_Core/04-Psyche"
   ]
 }
