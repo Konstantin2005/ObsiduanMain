@@ -1,3 +1,41 @@
+---
+type: person
+name: "Nett"
+tags:
+  - дальний_круг
+interests:
+  - поиск людей
+  - программирование
+  - поиск людей
+  - программирование
+hobbies:
+values:
+  - сообщество
+  - рост
+  - сообщество
+  - рост
+expertise:
+  - поиск людей
+  - автоматизация
+  - поиск людей
+  - автоматизация
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+  - спам
+  - LeetCode
+  - спам
+  - LeetCode
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, мастер поиска людей
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

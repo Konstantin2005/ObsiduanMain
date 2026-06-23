@@ -1,3 +1,25 @@
+---
+type: person
+name: "Temozarela"
+tags:
+  - дальний_круг
+interests: программирование
+hobbies:
+values: синхронизация
+expertise:
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, ценит синхронизацию
+
 #Особенные
 ---
 ## Упоминания в дневниках

@@ -1,3 +1,25 @@
+---
+type: person
+name: "DeenMarchal"
+tags:
+  - дальний_круг
+interests: программирование
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, программист
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

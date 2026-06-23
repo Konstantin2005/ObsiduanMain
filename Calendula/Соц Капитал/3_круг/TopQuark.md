@@ -1,3 +1,25 @@
+---
+type: person
+name: "TopQuark"
+tags:
+  - дальний_круг
+interests:
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник сообщества
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

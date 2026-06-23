@@ -1,3 +1,29 @@
+---
+type: person
+name: "Romio"
+tags:
+  - познакомились
+interests:
+  - программирование
+  - LeetCode
+  - программирование
+  - LeetCode
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: познакомились
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Программист, LeetCode
+
 #Дальний_Круг "
 ---
 ## Упоминания в дневниках

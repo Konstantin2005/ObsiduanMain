@@ -1,3 +1,29 @@
+---
+type: person
+name: "Obsidian"
+tags:
+  - особенные
+interests:
+  - базы знаний
+  - Zettelkasten
+  - базы знаний
+  - Zettelkasten
+hobbies:
+values:
+expertise: заметковедение
+gender:
+city:
+country:
+circle: особенные
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] База знаний, Zettelkasten
+
 #Развитие
 ---
 ## Упоминания в дневниках

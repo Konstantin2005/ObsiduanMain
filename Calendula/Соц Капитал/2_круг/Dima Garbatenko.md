@@ -1,3 +1,25 @@
+---
+type: person
+name: "Dima Garbatenko"
+tags:
+  - средний_круг
+interests: программирование
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: средний_круг
+trust:
+closeness:
+skills: презентации
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, интересуется программированием
+
 #Средний_Круг
 ---
 ## Упоминания в дневниках

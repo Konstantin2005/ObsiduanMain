@@ -1,3 +1,25 @@
+---
+type: person
+name: "REDIKAN"
+tags:
+  - познакомились
+interests: сообщество
+hobbies:
+values:
+expertise:
+gender:
+city:
+country:
+circle: познакомились
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Интересуется сообществом
+
 #Познакомились
 ---
 ## Упоминания в дневниках

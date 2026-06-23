@@ -1,3 +1,33 @@
+---
+type: person
+name: "Lirik"
+tags:
+  - дальний_круг
+interests:
+  - System Design
+  - Go
+  - System Design
+  - Go
+hobbies:
+values:
+expertise:
+  - Go
+  - System Design
+  - Go
+  - System Design
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, специалист по Go и System Design
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

@@ -1,3 +1,29 @@
+---
+type: person
+name: "Almaz"
+tags:
+  - познакомились
+interests:
+  - сообщество
+  - бизнес
+  - сообщество
+  - бизнес
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: познакомились
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Интересуется сообществом и бизнесом
+
 #Познакомились
 ---
 ## Упоминания в дневниках

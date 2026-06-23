@@ -1,3 +1,25 @@
+---
+type: person
+name: "Denis Groas"
+tags:
+  - дальний_круг
+interests: поиск людей
+hobbies:
+values: совместная работа
+expertise:
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, ценит совместную работу
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

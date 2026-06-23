@@ -1,3 +1,29 @@
+---
+type: person
+name: "Marakya"
+tags:
+  - дальний_круг
+interests:
+  - Java
+  - программирование
+  - Java
+  - программирование
+hobbies:
+values:
+expertise: Java
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills: LeetCode
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, программист на Java
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

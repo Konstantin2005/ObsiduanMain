@@ -1,3 +1,33 @@
+---
+type: person
+name: "Delta"
+tags:
+  - особенные
+interests:
+  - сообщество
+  - программирование
+  - сообщество
+  - программирование
+hobbies:
+values:
+  - братство
+  - рост
+  - братство
+  - рост
+expertise: построение сообществ
+gender:
+city:
+country:
+circle: особенные
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Сообщество, братство
+
 #Особенные
 ---
 ## Упоминания в дневниках

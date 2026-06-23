@@ -1,3 +1,25 @@
+---
+type: person
+name: "Danil"
+tags:
+  - средний_круг
+interests: сообщества
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: средний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник сообщества
+
 #Средний_Круг
 ---
 ## Упоминания в дневниках

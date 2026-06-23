@@ -1,3 +1,29 @@
+---
+type: person
+name: "Alexander B"
+tags:
+  - познакомились
+interests:
+  - английский
+  - преподавание
+  - английский
+  - преподавание
+hobbies:
+values:
+expertise: английский язык
+gender: male
+city:
+country:
+circle: познакомились
+trust:
+closeness:
+skills: репетиторство
+can_help_with:
+looking_for:
+---
+
+> [!info] Репетитор английского
+
 #Дальний_Круг 
 
 Мой репититор по анлискому

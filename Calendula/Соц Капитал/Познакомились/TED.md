@@ -1,3 +1,25 @@
+---
+type: person
+name: "TED"
+tags:
+  - познакомились
+interests: спорт
+hobbies: жим лежа
+values:
+expertise:
+gender: male
+city:
+country:
+circle: познакомились
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Спортсмен, жим лежа
+
 #Познакомились
 Федор
 

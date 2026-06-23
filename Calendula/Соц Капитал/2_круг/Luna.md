@@ -1,3 +1,29 @@
+---
+type: person
+name: "Luna"
+tags:
+  - средний_круг
+interests:
+  - лор сообщества
+  - воркаут
+  - лор сообщества
+  - воркаут
+hobbies: воркаут
+values:
+expertise: история сообщества
+gender: female
+city:
+country:
+circle: средний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участница, знаток истории сообщества
+
 #Средний_Круг
 ---
 ## Упоминания в дневниках

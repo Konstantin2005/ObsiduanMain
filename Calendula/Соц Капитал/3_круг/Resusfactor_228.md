@@ -1,3 +1,33 @@
+---
+type: person
+name: "Resusfactor_228"
+tags:
+  - дальний_круг
+interests:
+  - споры
+  - сообщество
+  - споры
+  - сообщество
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+  - душность
+  - защита позиции
+  - душность
+  - защита позиции
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, любитель споров
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

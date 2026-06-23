@@ -1,3 +1,29 @@
+---
+type: person
+name: "WoodieDudy"
+tags:
+  - познакомились
+interests:
+  - путешествия
+  - знакомства
+  - путешествия
+  - знакомства
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country: Италия (сейчас)
+circle: познакомились
+trust:
+closeness:
+skills: коммуникация
+can_help_with:
+looking_for:
+---
+
+> [!info] Путешественник
+
 #Познакомились
 ---
 ## Упоминания в дневниках

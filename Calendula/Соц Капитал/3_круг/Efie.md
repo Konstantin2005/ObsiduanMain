@@ -1,3 +1,25 @@
+---
+type: person
+name: "Efie"
+tags:
+  - дальний_круг
+interests: сообщество
+hobbies:
+values:
+expertise:
+gender:
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник сообщества
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

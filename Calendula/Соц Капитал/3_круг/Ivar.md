@@ -1,3 +1,29 @@
+---
+type: person
+name: "Ivar"
+tags:
+  - дальний_круг
+interests:
+  - System Design
+  - LeetCode
+  - System Design
+  - LeetCode
+hobbies:
+values: нестабильность
+expertise:
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, интересуется System Design
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

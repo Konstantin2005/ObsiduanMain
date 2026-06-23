@@ -1,3 +1,25 @@
+---
+type: person
+name: "Paul"
+tags:
+  - познакомились
+interests: сообщество
+hobbies:
+values:
+expertise:
+gender: male
+city:
+country:
+circle: познакомились
+trust:
+closeness:
+skills: задавать вопросы
+can_help_with:
+looking_for:
+---
+
+> [!info] Мастер задавать вопросы
+
 #Познакомились
 ---
 ## Упоминания в дневниках

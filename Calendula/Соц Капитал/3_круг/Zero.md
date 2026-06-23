@@ -1,3 +1,29 @@
+---
+type: person
+name: "Zero"
+tags:
+  - дальний_круг
+interests:
+  - сообщество
+  - кот
+  - сообщество
+  - кот
+hobbies:
+values: независимость
+expertise:
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills: поиск людей
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, ценит независимость
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

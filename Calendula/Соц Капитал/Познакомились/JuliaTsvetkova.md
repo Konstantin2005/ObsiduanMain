@@ -1,3 +1,29 @@
+---
+type: person
+name: "JuliaTsvetkova"
+tags:
+  - познакомились
+interests:
+  - сообщество
+  - знакомства
+  - сообщество
+  - знакомства
+hobbies:
+values:
+expertise:
+gender: female
+city:
+country:
+circle: познакомились
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Интересуется знакомствами
+
 #Познакомились
 ---
 ## Упоминания в дневниках

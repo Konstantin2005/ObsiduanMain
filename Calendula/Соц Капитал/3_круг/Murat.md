@@ -1,3 +1,29 @@
+---
+type: person
+name: "Murat"
+tags:
+  - дальний_круг
+interests:
+  - программирование
+  - Java
+  - программирование
+  - Java
+hobbies:
+values: семья
+expertise:
+gender: male
+city:
+country: Кыргызстан
+circle: дальний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник из Кыргызстана, программист
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках

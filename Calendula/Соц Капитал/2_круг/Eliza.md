@@ -1,3 +1,29 @@
+---
+type: person
+name: "Eliza"
+tags:
+  - средний_круг
+interests:
+  - танцы
+  - воркаут
+  - танцы
+  - воркаут
+hobbies: воркаут
+values:
+expertise:
+gender: female
+city:
+country:
+circle: средний_круг
+trust:
+closeness:
+skills:
+can_help_with:
+looking_for:
+---
+
+> [!info] Участница, интересуется танцами и воркаутом
+
 #Средний_Круг
 ---
 ## Упоминания в дневниках

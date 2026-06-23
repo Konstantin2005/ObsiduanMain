@@ -1,3 +1,29 @@
+---
+type: person
+name: "Ashard"
+tags:
+  - дальний_круг
+interests:
+  - программирование
+  - Golang
+  - программирование
+  - Golang
+hobbies:
+values:
+expertise: Golang
+gender: male
+city:
+country:
+circle: дальний_круг
+trust:
+closeness:
+skills: поиск людей
+can_help_with:
+looking_for:
+---
+
+> [!info] Участник, программист на Go
+
 #Дальний_Круг
 ---
 ## Упоминания в дневниках
