@@ -37,8 +37,17 @@ created: 2026-06-22
 | 21 | [[Goals]] | 22 | Жизненная |
 | 22 | [[Desires]] | 22 | Психология |
 | 23 | [[Values]] | 22 | Жизненная |
+| 24 | [[FractalGraph]] | 620 | Фракталы |
+| 25 | [[SystemsGraph]] | 250 | Системы |
+| 26 | [[EvolutionGraph]] | 328 | Эволюция |
+| 27 | [[MythologyGraph]] | 155 | Мифология |
+| 28 | [[MetaGraph]] | 159 | Мета |
+| 29 | [[DreamscapeGraph]] | 145 | Сны |
+| 30 | [[ConstellationGraph]] | 135 | Космос |
+| 31 | [[ParadoxGraph]] | 124 | Парадоксы |
+| 32 | [[LabyrinthGraph]] | 160 | Лабиринт |
 
-**ИТОГО: 15 701 нода**
+**ИТОГО: 18 242 ноды**
 
 ---
 
@@ -93,6 +102,51 @@ created: 2026-06-22
 | Habits | 25 |
 | Goals | 22 |
 
+### Фракталы (620 нод)
+| Граф | Нод |
+|------|-----|
+| FractalGraph | 620 |
+
+### Системы (250 нод)
+| Граф | Нод |
+|------|-----|
+| SystemsGraph | 250 |
+
+### Эволюция (328 нод)
+| Граф | Нод |
+|------|-----|
+| EvolutionGraph | 328 |
+
+### Мифология (155 нод)
+| Граф | Нод |
+|------|-----|
+| MythologyGraph | 155 |
+
+### Мета (159 нод)
+| Граф | Нод |
+|------|-----|
+| MetaGraph | 159 |
+
+### Сны (145 нод)
+| Граф | Нод |
+|------|-----|
+| DreamscapeGraph | 145 |
+
+### Космос (135 нод)
+| Граф | Нод |
+|------|-----|
+| ConstellationGraph | 135 |
+
+### Парадоксы (124 ноды)
+| Граф | Нод |
+|------|-----|
+| ParadoxGraph | 124 |
+
+### Лабиринт (160 нод)
+| Граф | Нод |
+|------|-----|
+| LabyrinthGraph | 160 |
+
 ---
 
 ## Графы больше 1000 нод
@@ -112,6 +166,7 @@ created: 2026-06-22
 | Граф | Нод | Статус |
 |------|-----|--------|
 | QuestionFractal | 647 | ✅ |
+| FractalGraph | 620 | ✅ |
 
 ---
 
@@ -119,14 +174,22 @@ created: 2026-06-22
 
 | Граф | Нод | Статус |
 |------|-----|--------|
+| EvolutionGraph | 328 | ✅ |
 | PersonalityGraph | 310 | ✅ |
+| SystemsGraph | 250 | ✅ |
 | BiasGraph | 267 | ✅ |
 | IdeaEcosystem | 260 | ✅ |
 | ConflictGraph | 260 | ✅ |
 | ShadowValueSystem | 257 | ✅ |
 | IntellectualNetwork | 172 | ✅ |
+| LabyrinthGraph | 160 | ✅ |
+| MetaGraph | 159 | ✅ |
 | CausalLoop | 158 | ✅ |
+| MythologyGraph | 155 | ✅ |
+| DreamscapeGraph | 145 | ✅ |
 | WorldModelGraph | 136 | ✅ |
+| ConstellationGraph | 135 | ✅ |
+| ParadoxGraph | 124 | ✅ |
 
 ---
 
