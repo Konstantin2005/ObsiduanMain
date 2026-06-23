@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MOC - Graph Analytics and Visualization.md",
+                "file": "MOC Global.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MOC - Graph Analytics and Visualization"
+              "title": "MOC Global"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MOC - Graph Analytics and Visualization.md",
+                "file": "MOC Global.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для MOC - Graph Analytics and Visualization"
+              "title": "Обратные ссылки для MOC Global"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MOC - Graph Analytics and Visualization.md",
+                "file": "MOC Global.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из MOC - Graph Analytics and Visualization"
+              "title": "Исходящие ссылки из MOC Global"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MOC - Graph Analytics and Visualization.md",
+                "file": "MOC Global.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура MOC - Graph Analytics and Visualization"
+              "title": "Структура MOC Global"
             }
           }
         ]
@@ -184,5 +184,7 @@
     }
   },
   "active": "4ce9f31d6d575a05",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "MOC - Graph Analytics and Visualization.md"
+  ]
 }
