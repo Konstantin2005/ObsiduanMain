@@ -6,11 +6,16 @@ tags: [moc, map-of-content]
 # MOC Causes
 
 ## Description
-Map of Content for Causes cluster in CausalLoop
+Map of Content for Causes cluster in CausalLoop - причинно-следственные связи.
 
-## Notes (1 per category)
+## Notes (3)
+- [[Индустриализация]]
 - [[Инфляция]]
+- [[Улучшение]]
 
 ## Connected MOCs
-- [[MOC Global]]
+- [[MOC CausalLoop]]
+- [[MOC Effects]]
 - [[MOC Events]]
+- [[MOC FeedbackLoops]]
+- [[MOC Global]]
