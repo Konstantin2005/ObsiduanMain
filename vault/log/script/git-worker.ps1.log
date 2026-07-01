@@ -1,0 +1,5 @@
+[2026-07-01 14:00:01] [INFO] Mode: commit (one-shot)
+[2026-07-01 14:00:01] [INFO] Found 0 files changed (0 lines)
+[2026-07-01 14:00:02] [ERROR] git add failed: fatal: not a git repository (or any of the parent directories): .git
+[2026-07-01 14:00:02] [INFO] Commit mode finished
+[2026-07-01 14:00:02] [INFO] Mode 'commit' completed
