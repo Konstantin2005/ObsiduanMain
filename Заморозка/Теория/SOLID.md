@@ -1,1 +1,0 @@
- #SOLID [[Single respondility]] [[Open closed]]  [[Liscov substitution]] [[Interface segrefation]] [[Dependecy inversion]] 

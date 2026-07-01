@@ -1,5 +1,0 @@
-[[Atomity]]
-
-[[С]]
-[[Ilotation]]
-[[Durability]]

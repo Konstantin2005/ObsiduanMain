@@ -1,6 +1,0 @@
-[[Remember]]
-[[Understand]]
-[[Apply]]
-[[Analyze]]
-[[Evaluate]] 
-[[Create]]

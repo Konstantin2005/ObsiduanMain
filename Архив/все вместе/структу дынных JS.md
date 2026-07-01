@@ -1,3 +1,0 @@
-#javaSctipt 
-[[Map]]
-[[Set]]

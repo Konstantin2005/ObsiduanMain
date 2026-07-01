@@ -1,2 +1,0 @@
-[[typeORM]] 
-[[seqlize]]

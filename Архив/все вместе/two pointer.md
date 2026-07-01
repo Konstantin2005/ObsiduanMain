@@ -1,1 +1,0 @@
- [[slading window]] #подузел
