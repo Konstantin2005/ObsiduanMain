@@ -1,0 +1,9 @@
+# Dual-Workflow: exclude reference system from indexing
+ai-dev-orchestration-system/
+
+# Exclude runtime output
+.work/issues/*/logs/
+.work/issues/*/shared/*.json
+
+# Exclude generated artifacts
+**/*.log

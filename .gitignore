@@ -1,0 +1,61 @@
+# Logs
+*.log
+Technical/Scripts/Logs/
+vault/log/
+
+# Temp
+Temp/
+
+# Obsidian system
+.obsidian/
+.trash/
+
+# Archives
+vault/**/archive/
+
+# Binaries
+*.apk
+*.zip
+*.7z
+*.rar
+*.tar
+*.exe
+*.iso
+*.mp4
+*.mov
+*.db
+*.sqlite
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Nested git
+Algoritm/.git/
+
+# Agent temp files
+.work/*.tmp
+.work/*.log
+*_agent_*
+
+# AI raw responses (may contain secrets)
+.work/**/ai-raw-response.json
+
+# AI Orchestrator (submodule removed, now ignored)
+ai-dev-orchestration-system/
+
+# AI Orchestrator local config
+.ai-orchestrator/
+
+# Calendula vault (separate context)  
+Calendula/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Transient health status (regenerated every 5 min)
+Technical/Scripts/system/health-status.json

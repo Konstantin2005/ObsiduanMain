@@ -1,0 +1,3 @@
+[submodule "ai-dev-orchestration-system"]
+	path = ai-dev-orchestration-system
+	url = https://github.com/Konstantin2005/ai-dev-orchestration-system

@@ -1,0 +1,6 @@
+#Paradigmatic 
+процесс
+
+
+[[went]]
+[[became]]

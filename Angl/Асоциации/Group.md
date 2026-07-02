@@ -1,0 +1,5 @@
+
+#Paradigmatic 
+Группа
+
+[[order]]

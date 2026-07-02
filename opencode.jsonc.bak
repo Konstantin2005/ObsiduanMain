@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/schema.json",
+  "indexing": {
+    "exclude": [
+      "ai-dev-orchestration-system/**",
+      ".work/issues/*/logs/**",
+      ".work/issues/*/shared/*.json",
+      "**/*.log"
+    ]
+  },
+  "agents": {
+    "allow_workspace_edits": true,
+    "restrict_to": [
+      "agent-core/**",
+      "Main/**",
+      ".work/**"
+    ]
+  }
+}

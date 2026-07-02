@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "output": {
+    "backend": ".",
+    "frontend": ".",
+    "qa": ".work/tests",
+    "docs": "docs/"
+  },
+  "language": "markdown",
+  "testFramework": "none"
+}

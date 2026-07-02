@@ -1,0 +1,5 @@
+#Paradigmatic 
+
+[[move]]
+[[adventure]]
+[[target]]

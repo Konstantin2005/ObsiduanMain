@@ -1,0 +1,73 @@
+name: Sync to Orchestrator
+
+on:
+  issues:
+    types: [opened, edited, closed, labeled]
+  push:
+    paths:
+      - '.work/issues/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+
+env:
+  ORCHESTRATOR_REPO: Konstantin2005/ai-dev-orchestration-system
+  WORK_DIR: .work/issues
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect work data
+        id: collect
+        run: |
+          ISSUE_NUM="${{ github.event.issue.number || 'unknown' }}"
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "timestamp=$TIMESTAMP" >> "$GITHUB_OUTPUT"
+          echo "issue=$ISSUE_NUM" >> "$GITHUB_OUTPUT"
+
+          # Build summary of all .work/issues/
+          SUMMARY="{\"timestamp\":\"$TIMESTAMP\",\"issue\":\"$ISSUE_NUM\",\"event\":\"${{ github.event_name }}.${{ github.event.action }}\",\"dirs\":["
+
+          FIRST=true
+          for dir in "$WORK_DIR"/*/; do
+            [ -d "$dir" ] || continue
+            NAME=$(basename "$dir")
+            FILE_COUNT=$(find "$dir" -type f | wc -l)
+            LOG_COUNT=$(find "$dir" -name "*.log" -type f | wc -l)
+            LOG_FILES=$(find "$dir" -name "*.log" -type f -exec basename {} \; | tr '\n' ',' | sed 's/,$//')
+            ERRORS=$(grep -ri "error\|fail\|crash\|exception\|fatal" "$dir" --include="*.log" -l 2>/dev/null | wc -l)
+
+            [ "$FIRST" = "true" ] && FIRST=false || SUMMARY+=","
+            SUMMARY+="{\"name\":\"$NAME\",\"files\":$FILE_COUNT,\"logs\":$LOG_COUNT,\"logFiles\":\"$LOG_FILES\",\"errors\":$ERRORS}"
+          done
+          SUMMARY+="]}"
+
+          echo "summary=$SUMMARY" >> "$GITHUB_OUTPUT"
+          echo "$SUMMARY" > /tmp/sync-summary.json
+
+      - name: Sync via repository_dispatch
+        if: env.ORCHESTRATOR_PAT != ''
+        env:
+          ORCHESTRATOR_PAT: ${{ secrets.ORCHESTRATOR_PAT }}
+        run: |
+          SUMMARY=$(cat /tmp/sync-summary.json)
+          gh api -X POST "/repos/${{ env.ORCHESTRATOR_REPO }}/dispatches" \
+            -f event_type="sync-from-obsidian" \
+            -F "client_payload=$SUMMARY" \
+            --header "Authorization: Bearer $ORCHESTRATOR_PAT"
+          echo "Dispatched to ${{ env.ORCHESTRATOR_REPO }}"
+
+      - name: Log sync
+        run: |
+          echo "=== SYNC SUMMARY ==="
+          echo "Event: ${{ github.event_name }}.${{ github.event.action }}"
+          echo "Issue: ${{ steps.collect.outputs.issue }}"
+          echo "Time: ${{ steps.collect.outputs.timestamp }}"
+          cat /tmp/sync-summary.json | python3 -m json.tool 2>/dev/null || cat /tmp/sync-summary.json

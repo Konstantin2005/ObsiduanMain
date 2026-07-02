@@ -1,0 +1,136 @@
+/* Frontend: Storage Panel Styles — Issue #27 */
+
+.storage-panel {
+  padding: 16px;
+  background: var(--background-primary);
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.storage-panel.loading,
+.storage-panel.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.storage-panel.error {
+  flex-direction: column;
+  gap: 12px;
+  color: #721c24;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h2 { margin: 0; }
+
+.compacting-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  background: #fff3cd;
+  color: #856404;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.summary-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.summary-card {
+  background: var(--background-secondary);
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-card label {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+.summary-card span {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.actions-section {
+  display: flex;
+  gap: 8px;
+}
+
+.actions-section button {
+  padding: 6px 12px;
+  border: 1px solid var(--interactive-accent);
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions-section button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.shards-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 1em;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.shards-table {
+  background: var(--background-secondary);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.shards-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 8px 12px;
+  background: var(--background-modifier-border);
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.shard-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 8px 12px;
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.9em;
+}
+
+.shard-id {
+  font-family: monospace;
+  color: var(--interactive-accent);
+}
+
+.has-tombstones { color: #dc3545; font-weight: 600; }

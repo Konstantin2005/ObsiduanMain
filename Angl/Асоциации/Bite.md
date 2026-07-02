@@ -1,0 +1,6 @@
+#Syntagmatic 
+кусать
+
+[[food]]
+[[eat]]
+

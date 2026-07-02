@@ -1,0 +1,4 @@
+#Paradigmatic 
+Выстрел
+[[kill]]
+[[flash]]

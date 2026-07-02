@@ -1,0 +1,5 @@
+#Paradigmatic 
+
+[[became]] 
+[[feel]] 
+Восприятие

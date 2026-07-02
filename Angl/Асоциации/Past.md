@@ -1,0 +1,5 @@
+#Paradigmatic 
+Прошлое
+
+[[was]]
+[[went]]

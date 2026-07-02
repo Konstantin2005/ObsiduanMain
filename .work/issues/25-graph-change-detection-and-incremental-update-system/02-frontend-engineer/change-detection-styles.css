@@ -1,0 +1,153 @@
+/* Frontend: Change Detection Panel Styles — Issue #25 */
+
+.change-detection-panel {
+  padding: 16px;
+  background: var(--background-primary);
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.status-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.status-badge.idle { background: #eee; color: #666; }
+.status-badge.monitoring { background: #d4edda; color: #155724; }
+.status-badge.updating { background: #fff3cd; color: #856404; }
+.status-badge.error { background: #f8d7da; color: #721c24; }
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.controls button {
+  padding: 6px 12px;
+  border: 1px solid var(--interactive-accent);
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controls button:last-child {
+  background: transparent;
+  color: var(--interactive-accent);
+}
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.update-result {
+  background: var(--background-secondary);
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.update-result h3 {
+  margin: 0 0 8px 0;
+  font-size: 1em;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric label {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+.metric span { font-weight: 600; }
+.metric .success { color: #28a745; }
+.metric .failure { color: #dc3545; }
+
+.recent-changes {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.recent-changes h3 {
+  margin: 0 0 8px 0;
+  font-size: 1em;
+}
+
+.empty-state {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 24px;
+  font-style: italic;
+}
+
+.recent-changes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.change-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+  font-size: 0.9em;
+}
+
+.change-type {
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-width: 60px;
+  text-align: center;
+}
+
+.change-item.added .change-type { background: #d4edda; color: #155724; }
+.change-item.modified .change-type { background: #fff3cd; color: #856404; }
+.change-item.deleted .change-type { background: #f8d7da; color: #721c24; }
+.change-item.renamed .change-type { background: #cce5ff; color: #004085; }
+
+.change-path { flex: 1; }
+.change-time { color: var(--text-muted); font-size: 0.85em; }

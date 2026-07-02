@@ -1,0 +1,4 @@
+#Paradigmatic 
+
+[[forever]]
+[[red]]

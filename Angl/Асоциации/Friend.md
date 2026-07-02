@@ -1,0 +1,4 @@
+#Paradigmatic 
+Друг
+
+[[be]] 

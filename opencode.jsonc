@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "default_agent": "orchestrator",
+
+  "instructions": [
+    "AGENTS.md"
+  ],
+
+  "command": {
+    "process-issues": {
+      "description": "Run the orchestrator pipeline on open issues. Usage: /process-issues [limit=N] [start=N]",
+
+      "agent": "orchestrator",
+
+      "model": "opencode/deepseek-v4-flash-free",
+
+      "template": "Process issues using orchestrator. Optional params: limit={{limit}}, start={{start}}"
+    }
+  },
+
+  "logLevel": "DEBUG"
+}

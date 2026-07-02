@@ -1,0 +1,3 @@
+#Paradigmatic
+Камень
+

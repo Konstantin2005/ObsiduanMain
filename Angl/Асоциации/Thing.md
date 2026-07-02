@@ -1,0 +1,6 @@
+#Paradigmatic 
+
+вещь
+
+[[tea]] 
+[[skateboard]]

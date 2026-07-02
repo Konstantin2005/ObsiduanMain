@@ -1,0 +1,5 @@
+#Paradigmatic 
+cнижение
+
+[[become]]
+[[fall]]
