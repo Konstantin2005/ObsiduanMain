@@ -8,26 +8,7 @@ try {
     $t::ShowWindow((Get-Process -Id $pid).MainWindowHandle, 0) | Out-Null
 } catch {}
 
-# ====== DUMB-USER BOOTSTRAP ======
-if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    Write-Host "FATAL: Git not installed"
-    exit 99
-}
-$mutexName = "Global\ObsidianHealthMonitor-$([System.Environment]::UserName)"
-try {
-    $script:Mutex = New-Object System.Threading.Mutex($false, $mutexName)
-    if (-not $script:Mutex.WaitOne(0)) { exit 0 }
-} catch {}
-
-# Source core module (with fallback)
-$corePath = Join-Path $PSScriptRoot "core.ps1"
-if (Test-Path $corePath) {
-    . $corePath
-} else {
-    Write-Host "FATAL: core.ps1 not found"
-    if ($script:Mutex) { $script:Mutex.ReleaseMutex(); $script:Mutex.Dispose() }
-    exit 97
-}
+. (Join-Path $PSScriptRoot "core.ps1")
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
@@ -98,11 +79,6 @@ $healthData = @{
 Set-Content -Path $healthFile -Value $healthData -Encoding UTF8
 
 Write-Log "Health monitor complete. Status: $($globalHealth.Status)" "MONITOR"
-
-# Cleanup mutex
-if ($script:Mutex) {
-    try { $script:Mutex.ReleaseMutex(); $script:Mutex.Dispose() } catch {}
-}
 
 if ($globalHealth.Status -eq "CRITICAL") { exit 2 }
 if ($globalHealth.Status -eq "ERROR") { exit 1 }

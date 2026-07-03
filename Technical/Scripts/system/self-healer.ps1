@@ -1,5 +1,4 @@
 ﻿# self-healer.ps1 - Diagnoses and repairs common git automation failures
-
 param([string]$Scope = "all", [switch]$Force)
 
 try {
@@ -7,53 +6,7 @@ try {
     $t::ShowWindow((Get-Process -Id $pid).MainWindowHandle, 0) | Out-Null
 } catch {}
 
-# ====== SELF-CONTAINED BOOTSTRAP ======
-# If core.ps1 is missing, restore from backup or embedded template
-$corePath = Join-Path $PSScriptRoot "core.ps1"
-$backupPath = "C:\obsidian\Main\Technical\Scripts\Logs\core.ps1.backup"
-
-if (-not (Test-Path $corePath)) {
-    Write-Host "[BOOTSTRAP] core.ps1 missing - attempting recovery..." -ForegroundColor Yellow
-    if (Test-Path $backupPath) {
-        Copy-Item $backupPath $corePath -Force
-        Write-Host "[BOOTSTRAP] core.ps1 restored from backup" -ForegroundColor Green
-    } else {
-        Write-Host "[BOOTSTRAP] No backup found, creating minimal core..." -ForegroundColor Yellow
-        # Embedded minimal template (last resort)
-        $minimalCore = @'
-$script:CONFIG = @{ RepoPath = "C:\obsidian\Main"; RepoPath2 = "C:\obsidian"; LogDir = "C:\obsidian\Main\Technical\Scripts\Logs" }
-$script:LOG_FILE = "$($script:CONFIG.LogDir)\system.log"
-function Write-Log { param($msg,$lvl) { $t = Get-Date -f "yyyy-MM-dd HH:mm:ss"; $l = "[$t] [$lvl] $msg"; Write-Host $l } }
-function Get-GitDir { param($rp); Join-Path $rp ".git" }
-function Test-GitRepo { param($rp); Test-Path "$rp\.git\HEAD" }
-function Test-LockFile { param($rp); $l = "$(Get-GitDir $rp)\index.lock"; if (Test-Path $l) { return @{ Status = "STALE" } }; return @{ Status = "OK" } }
-function Test-Rebase { param($rp); if (Test-Path "$(Get-GitDir $rp)\rebase-merge") { return @{ Status = "STALE" } ; return @{ Status = "OK" } }
-function Repair-LockFile { param($rp); $l = "$(Get-GitDir $rp)\index.lock"; if (Test-Path $l) { Remove-Item $l -Force; return $true }; return $false }
-function Repair-Rebase { param($rp); $g = Get-GitDir $rp; if (Test-Path "$g\rebase-merge") { Remove-Item "$g\rebase-merge" -Recurse -Force; return $true }; return $false }
-function Test-Credential { return @{ Status = "OK" } }
-function Repair-Credential { git config --global credential.helper "manager"; return $true }
-function Test-Remote { param($rp); $u = git -C $rp remote get-url origin; if ($u -like "git@*") { return @{ Status = "OK" } }; return @{ Status = "FAIL" } }
-function Repair-SshRemote { param($rp,$r="origin"); $u = git -C $rp remote get-url $r; if ($u -match "^https://") { $s = $u -replace '^https://github\.com/', 'git@github.com:'; git -C $rp remote set-url $r $s; return $true }; return $false }
-function Get-AheadCount { param($rp,$b); git -C $rp rev-list --count origin/$b..HEAD 2>$null }
-function Invoke-Git { param($rp,$args); git -C $rp @args 2>$null }
-'@
-        Set-Content -Path $corePath -Value $minimalCore -Encoding UTF8
-        Write-Host "[BOOTSTRAP] Minimal core.ps1 created" -ForegroundColor Yellow
-    }
-}
-. $corePath
-Write-Host "[BOOTSTRAP] core.ps1 loaded" -ForegroundColor Green
-
-# Mutex to prevent concurrent runs
-$mutexName = "Global\ObsidianSelfHealer-$([System.Environment]::UserName)"
-try {
-    $script:Mutex = New-Object System.Threading.Mutex($false, $mutexName)
-    if (-not $script:Mutex.WaitOne(0)) {
-        Write-Host "Another self-healer instance running. Exiting."
-        exit 0
-    }
-} catch {}
-
+. (Join-Path $PSScriptRoot "core.ps1")
 Write-Log "=== SELF-HEALER STARTED (scope: ${Scope}) ===" "HEAL"
 $repairs = @()
 
@@ -204,16 +157,6 @@ $scopes = @{
 $toRun = $scopes[$Scope]
 if (-not $toRun) { $toRun = $scopes["all"] }
 
-# Special: Check for deleted .git first (can't rely on functions in core.ps1 for this)
-foreach ($repo in @($script:CONFIG.RepoPath, $script:CONFIG.RepoPath2)) {
-    $gitDir = Join-Path $repo ".git"
-    if (-not (Test-Path $gitDir)) {
-        $remote = git -C $repo remote get-url origin 2>$null
-        if ($remote -like "git@*") { $branch = "main" } else { $branch = "master" }
-        Repair-DeletedGit -RepoPath $repo -RemoteUrl $remote -Branch $branch | Out-Null
-    }
-}
-
 foreach ($func in $toRun) {
     try { & $func } catch { Write-Log "Error in ${func}: $_" "ERROR" }
 }
@@ -224,10 +167,5 @@ if ($repairs.Count -eq 0) {
 } else {
     Write-Log "Repairs performed:" "HEAL"
     foreach ($r in $repairs) { Write-Log "  OK $r" "HEAL" }
-}
-
-# Cleanup mutex
-if ($script:Mutex) {
-    try { $script:Mutex.ReleaseMutex(); $script:Mutex.Dispose() } catch {}
 }
 exit 0

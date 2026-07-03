@@ -147,7 +147,6 @@ function Write-Exit {
     } else {
         Write-ErrorLog $Message
     }
-    # Cleanup lock files
     $lockFiles = @($WatchLockFile, $MonitorLockFile)
     foreach ($lf in $lockFiles) {
         if (Test-Path $lf) {
@@ -156,13 +155,6 @@ function Write-Exit {
                 Remove-Item $lf -Force -ErrorAction SilentlyContinue
             }
         }
-    }
-    # Cleanup mutex
-    if ($script:Mutex) {
-        try {
-            $script:Mutex.ReleaseMutex()
-            $script:Mutex.Dispose()
-        } catch {}
     }
     exit $ExitCode
 }

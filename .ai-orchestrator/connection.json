@@ -1,0 +1,11 @@
+{
+  "repositories": [
+    {
+      "url": "https://github.com/Konstantin2005/ObsiduanMain",
+      "adapter": "github",
+      "addedAt": "2026-06-27T04:23:37.066Z"
+    }
+  ],
+  "defaultAdapter": "github",
+  "syncInterval": 30000
+}
