@@ -17,3 +17,10 @@
 ## Blueprint
 
 See `docs/vault-blueprint-v1.md`
+
+## Active Experiments
+
+| Note | Status | End Date |
+|------|--------|----------|
+| [[vault/note/weekly-hypothesis-2026-07-04]] | ❓ In progress | 12-07-2026 |
+| [[vault/note/experiment-control-week-2026-07-05]] | ▶️ Running | 11-07-2026 |
