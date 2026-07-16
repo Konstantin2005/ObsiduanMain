@@ -365,8 +365,9 @@ function Get-AheadBehind {
     $ahead = 0
     $behind = 0
     
-    # Get ahead count
-    $r = Invoke-Git -Arguments @("rev-list", "--count", "${branch}@\{u\}..${branch}", "--")
+    # Get ahead count (use @{u} for upstream reference)
+    $upstreamRef = "${branch}@{u}"
+    $r = Invoke-Git -Arguments @("rev-list", "--count", "${upstreamRef}..${branch}", "--")
     if ($r.Success -and $r.Output.Count -gt 0) {
         $line = $r.Output[0] -replace '\D', ''
         if ($line -match '^\d+$') { $ahead = [int]$line }
