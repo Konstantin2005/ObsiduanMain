@@ -308,7 +308,8 @@ function Invoke-Git {
         } catch {
             $lastError = @{ Output = @($_.Exception.Message); ExitCode = -1; Success = $false }
             if ($attempt -lt $Retries) {
-                Write-Warn "Git error on attempt $attempt/$Retries: $_"
+                $errMsg = $_.Exception.Message
+                Write-Warn "Git error on attempt $attempt/$Retries`: $errMsg"
                 Start-Sleep -Seconds 1
                 continue
             }
