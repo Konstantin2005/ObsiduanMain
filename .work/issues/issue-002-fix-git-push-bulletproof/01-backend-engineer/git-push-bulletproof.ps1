@@ -257,34 +257,35 @@ function Invoke-Git {
     Write-Log "git $argStr" "DEBUG"
     
     $lastError = $null
+    $prevPrompt = $env:GIT_TERMINAL_PROMPT
+    $prevGcm = $env:GCM_INTERACTIVE
     
     for ($attempt = 1; $attempt -le $Retries; $attempt++) {
         try {
-            # Set env for non-interactive
-            $prevNoPrompt = $env:GIT_TERMINAL_PROMPT
-            $prevGcmInt = $env:GCM_INTERACTIVE
             $env:GIT_TERMINAL_PROMPT = "0"
             $env:GCM_INTERACTIVE = "never"
             
-            # Capture output using & operator (most reliable)
-            $output = @()
-            $stderrOutput = @()
-            $exitCode = 0
+            # Use temp files via cmd.exe to safely capture output with timeout
+            $tmpDir = [System.IO.Path]::GetTempPath()
+            $tmpOut = [System.IO.Path]::GetRandomFileName()
+            $tmpErr = [System.IO.Path]::GetRandomFileName()
+            $outPath = Join-Path $tmpDir $tmpOut
+            $errPath = Join-Path $tmpDir $tmpErr
             
-            $tmpFile = [System.IO.Path]::GetTempFileName()
-            $tmpFile2 = [System.IO.Path]::GetTempFileName()
-            Remove-Item $tmpFile -Force -ErrorAction SilentlyContinue
-            Remove-Item $tmpFile2 -Force -ErrorAction SilentlyContinue
-            $tmpFile = $tmpFile -replace '\.tmp$', '-out.tmp'
-            $tmpFile2 = $tmpFile2 -replace '\.tmp$', '-err.tmp'
+            # Build argument string for cmd.exe
+            $cmdArgs = @("/c", "git")
+            foreach ($a in $Arguments) {
+                if ($a -match '[\s"]') {
+                    $cmdArgs += "`"$($a -replace '"', '""')`""
+                } else {
+                    $cmdArgs += $a
+                }
+            }
+            $cmdArgs += @(">", $outPath, "2>", $errPath)
             
-            # Use cmd.exe to redirect and capture
             $psi = New-Object System.Diagnostics.ProcessStartInfo
             $psi.FileName = "cmd.exe"
-            $quoteArgs = $Arguments | ForEach-Object {
-                if ($_ -match '[\s"]') { "`"$($_.Replace('"', '\"'))`"" } else { $_ }
-            }
-            $psi.Arguments = @("/c", "git", $quoteArgs) + ">" + $tmpFile + "2>" + $tmpFile2
+            $psi.Arguments = $cmdArgs
             $psi.UseShellExecute = $false
             $psi.CreateNoWindow = $true
             
@@ -293,38 +294,35 @@ function Invoke-Git {
             $null = $proc.Start()
             $exited = $proc.WaitForExit($TimeoutSec * 1000)
             
-            # Restore env
-            $env:GIT_TERMINAL_PROMPT = $prevNoPrompt
-            $env:GCM_INTERACTIVE = $prevGcmInt
-            
             if (-not $exited) {
                 $proc.Kill()
                 throw "Timeout after ${TimeoutSec}s"
             }
             
             $exitCode = $proc.ExitCode
+            $lines = @()
             
-            # Read from temp files
-            if (Test-Path $tmpFile) {
-                $outText = [System.IO.File]::ReadAllText($tmpFile, [System.Text.Encoding]::UTF8)
-                Remove-Item $tmpFile -Force -ErrorAction SilentlyContinue
-                if ($outText.Trim()) { $output = ($outText.Trim() -split "`r`n|`n") }
+            if (Test-Path $outPath) {
+                $text = [System.IO.File]::ReadAllText($outPath, [System.Text.Encoding]::UTF8).Trim()
+                Remove-Item $outPath -Force -ErrorAction SilentlyContinue
+                if ($text) { $lines += $text -split "`r`n|`n" }
             }
-            if (Test-Path $tmpFile2) {
-                $errText = [System.IO.File]::ReadAllText($tmpFile2, [System.Text.Encoding]::UTF8)
-                Remove-Item $tmpFile2 -Force -ErrorAction SilentlyContinue
-                if ($errText.Trim()) { $stderrOutput = ($errText.Trim() -split "`r`n|`n") }
+            if (Test-Path $errPath) {
+                $text = [System.IO.File]::ReadAllText($errPath, [System.Text.Encoding]::UTF8).Trim()
+                Remove-Item $errPath -Force -ErrorAction SilentlyContinue
+                if ($text) { $lines += $text -split "`r`n|`n" }
             }
             
-            $allOutput = $output + $stderrOutput
+            $env:GIT_TERMINAL_PROMPT = $prevPrompt
+            $env:GCM_INTERACTIVE = $prevGcm
             
             if ($exitCode -eq 0) {
-                return @{ Output = $allOutput; ExitCode = 0; Success = $true }
+                return @{ Output = $lines; ExitCode = 0; Success = $true }
             }
             
-            $lastError = @{ Output = $allOutput; ExitCode = $exitCode; Success = $false }
+            $lastError = @{ Output = $lines; ExitCode = $exitCode; Success = $false }
             
-            $outputStr = ($allOutput -join ' ')
+            $outputStr = $lines -join ' '
             if ($outputStr -match "index\.lock|Unable to create") {
                 if ($attempt -lt $Retries) {
                     Write-Warn "Lock conflict - retry after delay"
@@ -332,9 +330,10 @@ function Invoke-Git {
                     continue
                 }
             }
-            
             break
         } catch {
+            $env:GIT_TERMINAL_PROMPT = $prevPrompt
+            $env:GCM_INTERACTIVE = $prevGcm
             $lastError = @{ Output = @($_.Exception.Message); ExitCode = -1; Success = $false }
             if ($attempt -lt $Retries) {
                 $errMsg = $_.Exception.Message
