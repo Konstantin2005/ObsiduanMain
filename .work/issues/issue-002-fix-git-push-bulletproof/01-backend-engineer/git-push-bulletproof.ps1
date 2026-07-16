@@ -260,60 +260,43 @@ function Invoke-Git {
     
     for ($attempt = 1; $attempt -le $Retries; $attempt++) {
         try {
-            # Build argument string
-            $escapedArgs = $Arguments | ForEach-Object {
-                if ($_ -match '[\s"]') {
-                    "`"$($_.Replace('"', '`"'))`""
-                } else {
-                    $_
-                }
-            }
-            $fullArgStr = $escapedArgs -join ' '
-            
-            # Set env for non-interactive
+            # Set env for non-interactive (save/restore to avoid side effects)
             $prevNoPrompt = $env:GIT_TERMINAL_PROMPT
             $prevGcmInt = $env:GCM_INTERACTIVE
+            $prevSshCmd = $env:GIT_SSH_COMMAND
             $env:GIT_TERMINAL_PROMPT = "0"
             $env:GCM_INTERACTIVE = "never"
+            if (-not $env:GIT_SSH_COMMAND) {
+                $env:GIT_SSH_COMMAND = "ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
+            }
+            
+            # Temporary file for output to avoid deadlock
+            $tmpOut = [System.IO.Path]::GetTempFileName()
+            $tmpErr = [System.IO.Path]::GetTempFileName()
             
             $psi = New-Object System.Diagnostics.ProcessStartInfo
-            $psi.FileName = "git"
-            $psi.Arguments = $fullArgStr
-            $psi.RedirectStandardOutput = $true
-            $psi.RedirectStandardError = $true
+            $psi.FileName = "git.exe"
+            $psi.Arguments = $Arguments
+            $psi.RedirectStandardOutput = $false
+            $psi.RedirectStandardError = $false
             $psi.UseShellExecute = $false
             $psi.CreateNoWindow = $true
             $psi.StandardOutputEncoding = [System.Text.Encoding]::UTF8
             $psi.StandardErrorEncoding = [System.Text.Encoding]::UTF8
+            $psi.Arguments = $Arguments
+            # Redirect to temp files to avoid deadlock
+            $psi.FileName = "cmd.exe"
+            $psi.Arguments = @("/c", "git.exe", $Arguments, ">", $tmpOut, "2>", $tmpErr)
             
             $proc = New-Object System.Diagnostics.Process
             $proc.StartInfo = $psi
-            
-            # Use events to avoid deadlock
-            $stdoutBuilder = New-Object System.Text.StringBuilder
-            $stderrBuilder = New-Object System.Text.StringBuilder
-            $stdoutEvent = Register-ObjectEvent -InputObject $proc -EventName OutputDataReceived -Action {
-                param($sender, $e)
-                if ($e.Data) { $stdoutBuilder.AppendLine($e.Data) | Out-Null }
-            } | Out-Null
-            $stderrEvent = Register-ObjectEvent -InputObject $proc -EventName ErrorDataReceived -Action {
-                param($sender, $e)
-                if ($e.Data) { $stderrBuilder.AppendLine($e.Data) | Out-Null }
-            } | Out-Null
-            
             $null = $proc.Start()
-            $proc.BeginOutputReadLine()
-            $proc.BeginErrorReadLine()
-            
             $exited = $proc.WaitForExit($TimeoutSec * 1000)
-            
-            # Clean up events
-            try { Unregister-Event -SourceIdentifier $stdoutEvent.Name -ErrorAction SilentlyContinue } catch {}
-            try { Unregister-Event -SourceIdentifier $stderrEvent.Name -ErrorAction SilentlyContinue } catch {}
             
             # Restore env
             $env:GIT_TERMINAL_PROMPT = $prevNoPrompt
             $env:GCM_INTERACTIVE = $prevGcmInt
+            $env:GIT_SSH_COMMAND = $prevSshCmd
             
             if (-not $exited) {
                 $proc.Kill()
@@ -321,13 +304,16 @@ function Invoke-Git {
             }
             
             $exitCode = $proc.ExitCode
-            $stdout = $stdoutBuilder.ToString().Trim()
-            $stderr = $stderrBuilder.ToString().Trim()
+            
+            # Read from temp files
+            $stdout = ""
+            $stderr = ""
+            if (Test-Path $tmpOut) { $stdout = [System.IO.File]::ReadAllText($tmpOut, [System.Text.Encoding]::UTF8); Remove-Item $tmpOut -Force -ErrorAction SilentlyContinue }
+            if (Test-Path $tmpErr) { $stderr = [System.IO.File]::ReadAllText($tmpErr, [System.Text.Encoding]::UTF8); Remove-Item $tmpErr -Force -ErrorAction SilentlyContinue }
             
             $output = @()
-            if ($stdout) { $output += $stdout -split "`r`n|`n" }
-            if ($stderr) { $output += $stderr -split "`r`n|`n" }
-            $output = $output | Where-Object { $_ -ne '' }
+            if ($stdout.Trim()) { $output += ($stdout.Trim() -split "`r`n|`n") }
+            if ($stderr.Trim()) { $output += ($stderr.Trim() -split "`r`n|`n") }
             
             if ($exitCode -eq 0) {
                 return @{ Output = $output; ExitCode = 0; Success = $true }
