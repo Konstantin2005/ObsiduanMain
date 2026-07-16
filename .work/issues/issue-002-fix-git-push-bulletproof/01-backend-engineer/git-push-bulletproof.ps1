@@ -1,6 +1,6 @@
-﻿<#
+<#
 .SYNOPSIS
-    Bulletproof Git Push вЂ" never falls, self-heals, 3-layer push.
+    Bulletproof Git Push ??" never falls, self-heals, 3-layer push.
 
 .DESCRIPTION
     A comprehensive git push system designed for non-interactive environments
@@ -8,7 +8,7 @@
     
     - Pre-flight self-healing (stale locks, stuck rebase, stale processes)
     - git fetch + pull --rebase before push (prevents rejection)
-    - 3-layer push: HTTPS+token в†' SSH в†' gh CLI
+    - 3-layer push: HTTPS+token ??' SSH ??' gh CLI
     - Comprehensive logging
     - Idempotent (safe to run repeatedly)
     - Non-interactive by design
@@ -116,7 +116,7 @@ function Release-Mutex {
 }
 
 # ============================================================
-# SELF-HEALING вЂ" Pre-flight checks
+# SELF-HEALING ??" Pre-flight checks
 # ============================================================
 
 function Test-GitInstalled {
@@ -159,7 +159,7 @@ function Repair-StaleLock {
                 }
             }
         } else {
-            Write-Warn "index.lock is recent ($([math]::Round($age.TotalSeconds,0))s old) вЂ" might be in use"
+            Write-Warn "index.lock is recent ($([math]::Round($age.TotalSeconds,0))s old) ??" might be in use"
         }
     }
 }
@@ -252,7 +252,7 @@ function Invoke-Git {
             $outputStr = "$output"
             $lastError = @{ Output = $output; ExitCode = $exitCode; Success = $false }
             
-            # Lock conflict вЂ" retry after delay
+            # Lock conflict ??" retry after delay
             if ($outputStr -match "index\.lock|Unable to create") {
                 if ($attempt -lt $Retries) {
                     Write-Warn "Lock conflict (attempt $attempt/$Retries), retrying in ${RETRY_DELAY_MS}ms..."
@@ -261,7 +261,7 @@ function Invoke-Git {
                 }
             }
             
-            # Other errors вЂ" break immediately
+            # Other errors ??" break immediately
             break
         } catch {
             $lastError = @{ Output = @($_.Exception.Message); ExitCode = -1; Success = $false }
@@ -322,7 +322,7 @@ function Get-ChangeStats {
 }
 
 # ============================================================
-# SYNC вЂ" Fetch and pull before push
+# SYNC ??" Fetch and pull before push
 # ============================================================
 
 function Invoke-Sync {
@@ -349,7 +349,7 @@ function Invoke-Sync {
     # Check ahead/behind
     $ab = Get-AheadBehind
     if (-not $ab) {
-        Write-Warn "Could not determine ahead/behind вЂ" no upstream?"
+        Write-Warn "Could not determine ahead/behind ??" no upstream?"
         return $true
     }
     
@@ -413,7 +413,7 @@ function Invoke-Sync {
 
 function Invoke-Commit {
     if ($PushOnly) {
-        Write-Log "PushOnly mode вЂ" skipping commit"
+        Write-Log "PushOnly mode ??" skipping commit"
         return $true
     }
     
@@ -462,7 +462,7 @@ function Invoke-Commit {
 }
 
 # ============================================================
-# PUSH вЂ" Triple-layer fallback
+# PUSH ??" Triple-layer fallback
 # ============================================================
 
 function Push-Https {
@@ -558,7 +558,7 @@ function Push-GhCli {
     # Get gh token
     $ghToken = & gh auth token 2>$null
     if (-not $ghToken) {
-        Write-Warn "gh CLI not authenticated вЂ" cannot use Layer 3"
+        Write-Warn "gh CLI not authenticated ??" cannot use Layer 3"
         return $false
     }
     
@@ -631,7 +631,7 @@ function Invoke-Push {
                 "gh CLI" { $success = Push-GhCli $branch }
             }
             if ($success) {
-                # Success вЂ" restore preferred remote URL (SSH for normal use)
+                # Success ??" restore preferred remote URL (SSH for normal use)
                 Invoke-Git -Arguments @("remote", "set-url", $REMOTE_NAME, $REMOTE_SSH) | Out-Null
                 return $true
             }
