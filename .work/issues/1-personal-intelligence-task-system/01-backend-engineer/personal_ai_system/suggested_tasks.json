@@ -1,0 +1,359 @@
+[
+  {
+    "title": "Вообще по дедлайнам",
+    "description": "Task signal in text: \"не успеваю вообще по дедлайнам\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "С едой и какой маршрут выбрать",
+    "description": "Task signal in text: \"сделать с едой и какой маршрут выбрать\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "Маршрут в Армении",
+    "description": "Task signal in text: \"сделать маршрут в Армении\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "Меню или просто после сделать одинаковые порции эт",
+    "description": "Task signal in text: \"сделать меню или просто после сделать одинаковые порции эт\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "Вывод то что отпуск это чистка",
+    "description": "Task signal in text: \"сделать вывод то что отпуск это чистка\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "1-2 занятие в неделю для обычных диалогов",
+    "description": "Task signal in text: \"сделать 1-2 занятие в неделю для обычных диалогов\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "И уже от них отходить и еще какие списки нужны из",
+    "description": "Task signal in text: \"списки и уже от них отходить и еще какие списки нужны из\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "Вообще как я понял почти ни у кого не куплены",
+    "description": "Task signal in text: \"Билеты вообще как я понял почти ни у кого не куплены\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "Обновлялись",
+    "description": "Task signal in text: \"списки обновлялись\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "To translate my OS into English",
+    "description": "Task signal in text: \"I need to translate my OS into English\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "More bug practice",
+    "description": "Task signal in text: \"I need more bug practice\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "Lessons with a teacher",
+    "description": "Task signal in text: \"take a few lessons with a teacher\"\nCreate task and schedule in project",
+    "priority": "medium",
+    "confidence": 65,
+    "source": "diary"
+  },
+  {
+    "title": "Родилась по тому почему люди становятся такими какие они ест",
+    "description": "Idea mentioned: \"Мысль родилась по тому почему люди становятся такими какие о\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Была создать свое английское сообщество, но только пока для",
+    "description": "Idea mentioned: \"Идея была создать свое английское сообщество, но только пока\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Проследить со мной",
+    "description": "Idea mentioned: \"можно проследить со мной\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Будет это сделать, но будет проблема людей",
+    "description": "Idea mentioned: \"можно будет это сделать, но будет проблема людей\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Более интересно сделать меню или просто после сделать одинак",
+    "description": "Idea mentioned: \"можно более интересно сделать меню или просто после сделать\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Самим все организовать",
+    "description": "Idea mentioned: \"можно самим все организовать\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Тем то что на 3-4 занятие уже привыкаешь и просто ходишь пог",
+    "description": "Idea mentioned: \"хороший вариант тем то что на 3-4 занятие уже привыкаешь и п\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "In English",
+    "description": "Idea mentioned: \"thought in English\"\nSave for future reference",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Сюда все писать и только потом уже куда-то перекидывать",
+    "description": "Goal identified: \"хочу сюда все писать и только потом уже куда-то перекидывать\"\nBreak into actionable milestones",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Habit",
+    "description": "Goal identified: \"building a new habit\"\nBreak into actionable milestones",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Количества клещей и медведей",
+    "description": "Problem detected: \"проблема количества клещей и медведей\"\nAnalyze root cause, create resolution plan",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "My bad English and my lack of experience",
+    "description": "Problem detected: \"problem is my bad English and my lack of experience\"\nAnalyze root cause, create resolution plan",
+    "priority": "medium",
+    "confidence": 60,
+    "source": "diary"
+  },
+  {
+    "title": "Просто поменять то что ты из себя будешь выдавать",
+    "description": "Task signal in text: \"надо просто поменять то что ты из себя будешь выдавать\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Было искать людей и искал людей в дневниках было очень много про людей",
+    "description": "Task signal in text: \"надо было искать людей и искал людей в дневниках было очень\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Еще будет решить с вопросом, что вообще брать с собой в поход и Питер",
+    "description": "Task signal in text: \"Надо еще будет решить с вопросом, что вообще брать с собой в\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "В расинхрон делать",
+    "description": "Task signal in text: \"надо в расинхрон делать\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Будет думать либо менять страну и тогда будет проблема количества клещей и медве",
+    "description": "Task signal in text: \"надо будет думать либо менять страну и тогда будет проблема\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Будет отказываться от плота и какое-то другое испытание делать",
+    "description": "Task signal in text: \"надо будет отказываться от плота и какое-то другое испытание\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Считать еду на человека день потому что разные отрезки времени у всех будут",
+    "description": "Task signal in text: \"надо считать еду на человека день потому что разные отрезки\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Блоками готовить еду",
+    "description": "Task signal in text: \"надо блоками готовить еду\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Мин набор",
+    "description": "Task signal in text: \"надо мин набор\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Вообще от маршрута отталкиваться и только потом уже делать инвентарь",
+    "description": "Task signal in text: \"надо вообще от маршрута отталкиваться и только потом уже дел\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Было в первую очередь именно от маршрутов отталкиваться а после уже выбирать стр",
+    "description": "Task signal in text: \"надо было в первую очередь именно от маршрутов отталкиваться\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Каждый день чиститься от него и регулярно",
+    "description": "Task signal in text: \"надо каждый день чиститься от него и регулярно\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Делать такую чистку, чтобы на тебя вообще ничего старого не попадало и ты полнос",
+    "description": "Task signal in text: \"надо делать такую чистку, чтобы на тебя вообще ничего старог\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Показывать, чтобы угодить или что-то подобное",
+    "description": "Task signal in text: \"надо показывать, чтобы угодить или что-то подобное\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Менять и делать говно таски",
+    "description": "Task signal in text: \"надо менять и делать говно таски\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Еще время убить на изучения этого новой технологии",
+    "description": "Task signal in text: \"надо еще время убить на изучения этого новой технологии\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "За все технологии шарить и уже только ими манипулировать",
+    "description": "Task signal in text: \"Надо за все технологии шарить и уже только ими манипулироват\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Теперь сделать чтобы нейронка это все смотрела и обновляла мой список задач на д",
+    "description": "Task signal in text: \"Надо теперь сделать чтобы нейронка это все смотрела и обновл\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Как она устроена именно в этом проекте и только уже после эт",
+    "description": "Task signal in text: \"разобраться как она устроена именно в этом проекте и только\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Translate all my Obsidian into English",
+    "description": "Task signal in text: \"need to translate all my Obsidian into English\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Understand how it works",
+    "description": "Task signal in text: \"need to understand how it works\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Write and speak simple English every day",
+    "description": "Task signal in text: \"need to write and speak simple English every day\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Find problems and fix them",
+    "description": "Task signal in text: \"need to find problems and fix them\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Balance thinking and doing",
+    "description": "Task signal in text: \"need to balance thinking and doing\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Focus on execution",
+    "description": "Task signal in text: \"need to focus on execution\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Dialogues with ChatGPT and writing my daily diary",
+    "description": "Task signal in text: \"next step is dialogues with ChatGPT and writing my daily dia\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  },
+  {
+    "title": "Important task",
+    "description": "Task signal in text: \"important task\"\nCreate task and schedule in project",
+    "priority": "high",
+    "confidence": 85,
+    "source": "diary"
+  }
+]

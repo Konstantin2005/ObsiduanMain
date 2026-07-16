@@ -1,0 +1,448 @@
+{
+  "source": "C:\\obsidian\\Main\\Calendula\\Calendula\\2026\\Июль\\13-07-26\\13-07-26.md",
+  "date": "2026-07-13",
+  "found_items": [
+    {
+      "type": "task",
+      "title": "Просто поменять то что ты из себя будешь выдавать",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо просто поменять то что ты из себя будешь выдавать\"",
+      "evidence": "Task signal in text: \"надо просто поменять то что ты из себя будешь выдавать\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Было искать людей и искал людей в дневниках было очень много про людей",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо было искать людей и искал людей в дневниках было очень\"",
+      "evidence": "Task signal in text: \"надо было искать людей и искал людей в дневниках было очень\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Еще будет решить с вопросом, что вообще брать с собой в поход и Питер",
+      "confidence": 85,
+      "reason": "Task signal in text: \"Надо еще будет решить с вопросом, что вообще брать с собой в\"",
+      "evidence": "Task signal in text: \"Надо еще будет решить с вопросом, что вообще брать с собой в\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "В расинхрон делать",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо в расинхрон делать\"",
+      "evidence": "Task signal in text: \"надо в расинхрон делать\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Будет думать либо менять страну и тогда будет проблема количества клещей и медве",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо будет думать либо менять страну и тогда будет проблема\"",
+      "evidence": "Task signal in text: \"надо будет думать либо менять страну и тогда будет проблема\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Будет отказываться от плота и какое-то другое испытание делать",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо будет отказываться от плота и какое-то другое испытание\"",
+      "evidence": "Task signal in text: \"надо будет отказываться от плота и какое-то другое испытание\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Считать еду на человека день потому что разные отрезки времени у всех будут",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо считать еду на человека день потому что разные отрезки\"",
+      "evidence": "Task signal in text: \"надо считать еду на человека день потому что разные отрезки\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Блоками готовить еду",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо блоками готовить еду\"",
+      "evidence": "Task signal in text: \"надо блоками готовить еду\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Мин набор",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо мин набор\"",
+      "evidence": "Task signal in text: \"надо мин набор\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Вообще от маршрута отталкиваться и только потом уже делать инвентарь",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо вообще от маршрута отталкиваться и только потом уже дел\"",
+      "evidence": "Task signal in text: \"надо вообще от маршрута отталкиваться и только потом уже дел\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Будет посмотреть",
+      "confidence": 85,
+      "reason": "Task signal in text: \"Надо будет посмотреть\"",
+      "evidence": "Task signal in text: \"Надо будет посмотреть\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Было в первую очередь именно от маршрутов отталкиваться а после уже выбирать стр",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо было в первую очередь именно от маршрутов отталкиваться\"",
+      "evidence": "Task signal in text: \"надо было в первую очередь именно от маршрутов отталкиваться\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Каждый день чиститься от него и регулярно",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо каждый день чиститься от него и регулярно\"",
+      "evidence": "Task signal in text: \"надо каждый день чиститься от него и регулярно\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Делать такую чистку, чтобы на тебя вообще ничего старого не попадало и ты полнос",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо делать такую чистку, чтобы на тебя вообще ничего старог\"",
+      "evidence": "Task signal in text: \"надо делать такую чистку, чтобы на тебя вообще ничего старог\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Показывать, чтобы угодить или что-то подобное",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо показывать, чтобы угодить или что-то подобное\"",
+      "evidence": "Task signal in text: \"надо показывать, чтобы угодить или что-то подобное\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Будет хотя бы до минимума все закрыть",
+      "confidence": 85,
+      "reason": "Task signal in text: \"Надо будет хотя бы до минимума все закрыть\"",
+      "evidence": "Task signal in text: \"Надо будет хотя бы до минимума все закрыть\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Менять и делать говно таски",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо менять и делать говно таски\"",
+      "evidence": "Task signal in text: \"надо менять и делать говно таски\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Еще время убить на изучения этого новой технологии",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо еще время убить на изучения этого новой технологии\"",
+      "evidence": "Task signal in text: \"надо еще время убить на изучения этого новой технологии\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "За все технологии шарить и уже только ими манипулировать",
+      "confidence": 85,
+      "reason": "Task signal in text: \"Надо за все технологии шарить и уже только ими манипулироват\"",
+      "evidence": "Task signal in text: \"Надо за все технологии шарить и уже только ими манипулироват\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Теперь сделать чтобы нейронка это все смотрела и обновляла мой список задач на д",
+      "confidence": 85,
+      "reason": "Task signal in text: \"Надо теперь сделать чтобы нейронка это все смотрела и обновл\"",
+      "evidence": "Task signal in text: \"Надо теперь сделать чтобы нейронка это все смотрела и обновл\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Будет идти в нужном направление",
+      "confidence": 85,
+      "reason": "Task signal in text: \"надо будет идти в нужном направление\"",
+      "evidence": "Task signal in text: \"надо будет идти в нужном направление\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Как она устроена именно в этом проекте и только уже после эт",
+      "confidence": 85,
+      "reason": "Task signal in text: \"разобраться как она устроена именно в этом проекте и только\"",
+      "evidence": "Task signal in text: \"разобраться как она устроена именно в этом проекте и только\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Translate all my Obsidian into English",
+      "confidence": 85,
+      "reason": "Task signal in text: \"need to translate all my Obsidian into English\"",
+      "evidence": "Task signal in text: \"need to translate all my Obsidian into English\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Understand how it works",
+      "confidence": 85,
+      "reason": "Task signal in text: \"need to understand how it works\"",
+      "evidence": "Task signal in text: \"need to understand how it works\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Write and speak simple English every day",
+      "confidence": 85,
+      "reason": "Task signal in text: \"need to write and speak simple English every day\"",
+      "evidence": "Task signal in text: \"need to write and speak simple English every day\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Use English",
+      "confidence": 85,
+      "reason": "Task signal in text: \"need to use English\"",
+      "evidence": "Task signal in text: \"need to use English\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Find problems and fix them",
+      "confidence": 85,
+      "reason": "Task signal in text: \"need to find problems and fix them\"",
+      "evidence": "Task signal in text: \"need to find problems and fix them\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Balance thinking and doing",
+      "confidence": 85,
+      "reason": "Task signal in text: \"need to balance thinking and doing\"",
+      "evidence": "Task signal in text: \"need to balance thinking and doing\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Focus on execution",
+      "confidence": 85,
+      "reason": "Task signal in text: \"need to focus on execution\"",
+      "evidence": "Task signal in text: \"need to focus on execution\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Dialogues with ChatGPT and writing my daily diary",
+      "confidence": 85,
+      "reason": "Task signal in text: \"next step is dialogues with ChatGPT and writing my daily dia\"",
+      "evidence": "Task signal in text: \"next step is dialogues with ChatGPT and writing my daily dia\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Important task",
+      "confidence": 85,
+      "reason": "Task signal in text: \"important task\"",
+      "evidence": "Task signal in text: \"important task\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Вообще по дедлайнам",
+      "confidence": 65,
+      "reason": "Task signal in text: \"не успеваю вообще по дедлайнам\"",
+      "evidence": "Task signal in text: \"не успеваю вообще по дедлайнам\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "С едой и какой маршрут выбрать",
+      "confidence": 65,
+      "reason": "Task signal in text: \"сделать с едой и какой маршрут выбрать\"",
+      "evidence": "Task signal in text: \"сделать с едой и какой маршрут выбрать\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Маршрут в Армении",
+      "confidence": 65,
+      "reason": "Task signal in text: \"сделать маршрут в Армении\"",
+      "evidence": "Task signal in text: \"сделать маршрут в Армении\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Меню или просто после сделать одинаковые порции эт",
+      "confidence": 65,
+      "reason": "Task signal in text: \"сделать меню или просто после сделать одинаковые порции эт\"",
+      "evidence": "Task signal in text: \"сделать меню или просто после сделать одинаковые порции эт\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Вывод то что отпуск это чистка",
+      "confidence": 65,
+      "reason": "Task signal in text: \"сделать вывод то что отпуск это чистка\"",
+      "evidence": "Task signal in text: \"сделать вывод то что отпуск это чистка\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "1-2 занятие в неделю для обычных диалогов",
+      "confidence": 65,
+      "reason": "Task signal in text: \"сделать 1-2 занятие в неделю для обычных диалогов\"",
+      "evidence": "Task signal in text: \"сделать 1-2 занятие в неделю для обычных диалогов\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "И уже от них отходить и еще какие списки нужны из",
+      "confidence": 65,
+      "reason": "Task signal in text: \"списки и уже от них отходить и еще какие списки нужны из\"",
+      "evidence": "Task signal in text: \"списки и уже от них отходить и еще какие списки нужны из\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Вообще как я понял почти ни у кого не куплены",
+      "confidence": 65,
+      "reason": "Task signal in text: \"Билеты вообще как я понял почти ни у кого не куплены\"",
+      "evidence": "Task signal in text: \"Билеты вообще как я понял почти ни у кого не куплены\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Обновлялись",
+      "confidence": 65,
+      "reason": "Task signal in text: \"списки обновлялись\"",
+      "evidence": "Task signal in text: \"списки обновлялись\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "To translate my OS into English",
+      "confidence": 65,
+      "reason": "Task signal in text: \"I need to translate my OS into English\"",
+      "evidence": "Task signal in text: \"I need to translate my OS into English\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "More bug practice",
+      "confidence": 65,
+      "reason": "Task signal in text: \"I need more bug practice\"",
+      "evidence": "Task signal in text: \"I need more bug practice\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "task",
+      "title": "Lessons with a teacher",
+      "confidence": 65,
+      "reason": "Task signal in text: \"take a few lessons with a teacher\"",
+      "evidence": "Task signal in text: \"take a few lessons with a teacher\"",
+      "recommended_action": "Create task and schedule in project"
+    },
+    {
+      "type": "idea",
+      "title": "Родилась по тому почему люди становятся такими какие они ест",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"Мысль родилась по тому почему люди становятся такими какие о\"",
+      "evidence": "Idea mentioned: \"Мысль родилась по тому почему люди становятся такими какие о\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "idea",
+      "title": "Была создать свое английское сообщество, но только пока для",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"Идея была создать свое английское сообщество, но только пока\"",
+      "evidence": "Idea mentioned: \"Идея была создать свое английское сообщество, но только пока\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "idea",
+      "title": "Проследить со мной",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"можно проследить со мной\"",
+      "evidence": "Idea mentioned: \"можно проследить со мной\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "idea",
+      "title": "Будет это сделать, но будет проблема людей",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"можно будет это сделать, но будет проблема людей\"",
+      "evidence": "Idea mentioned: \"можно будет это сделать, но будет проблема людей\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "idea",
+      "title": "Более интересно сделать меню или просто после сделать одинак",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"можно более интересно сделать меню или просто после сделать\"",
+      "evidence": "Idea mentioned: \"можно более интересно сделать меню или просто после сделать\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "idea",
+      "title": "Самим все организовать",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"можно самим все организовать\"",
+      "evidence": "Idea mentioned: \"можно самим все организовать\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "idea",
+      "title": "Тем то что на 3-4 занятие уже привыкаешь и просто ходишь пог",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"хороший вариант тем то что на 3-4 занятие уже привыкаешь и п\"",
+      "evidence": "Idea mentioned: \"хороший вариант тем то что на 3-4 занятие уже привыкаешь и п\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "idea",
+      "title": "In English",
+      "confidence": 60,
+      "reason": "Idea mentioned: \"thought in English\"",
+      "evidence": "Idea mentioned: \"thought in English\"",
+      "recommended_action": "Save for future reference"
+    },
+    {
+      "type": "goal",
+      "title": "Сюда все писать и только потом уже куда-то перекидывать",
+      "confidence": 60,
+      "reason": "Goal identified: \"хочу сюда все писать и только потом уже куда-то перекидывать\"",
+      "evidence": "Goal identified: \"хочу сюда все писать и только потом уже куда-то перекидывать\"",
+      "recommended_action": "Break into actionable milestones"
+    },
+    {
+      "type": "goal",
+      "title": "Habit",
+      "confidence": 60,
+      "reason": "Goal identified: \"building a new habit\"",
+      "evidence": "Goal identified: \"building a new habit\"",
+      "recommended_action": "Break into actionable milestones"
+    },
+    {
+      "type": "problem",
+      "title": "Количества клещей и медведей",
+      "confidence": 60,
+      "reason": "Problem detected: \"проблема количества клещей и медведей\"",
+      "evidence": "Problem detected: \"проблема количества клещей и медведей\"",
+      "recommended_action": "Analyze root cause, create resolution plan"
+    },
+    {
+      "type": "problem",
+      "title": "My bad English and my lack of experience",
+      "confidence": 60,
+      "reason": "Problem detected: \"problem is my bad English and my lack of experience\"",
+      "evidence": "Problem detected: \"problem is my bad English and my lack of experience\"",
+      "recommended_action": "Analyze root cause, create resolution plan"
+    }
+  ],
+  "ignored_items": [],
+  "memory_updates": []
+}
