@@ -62,7 +62,8 @@ function Write-Log {
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $line = "[$timestamp] [$Level] $Message"
     
-    if ($Verbose -or $Level -ne "DEBUG") {
+    $isVerbose = $PSBoundParameters.ContainsKey('Verbose')
+    if ($isVerbose -or $Level -ne "DEBUG") {
         try { Add-Content -Path $LOG_FILE -Value $line -Encoding UTF8 -ErrorAction Stop } catch {}
     }
     
@@ -687,7 +688,7 @@ function Invoke-Push {
 
 try {
     Write-Step "Starting $SCRIPT_NAME"
-    Write-Log "Args: PushOnly=$PushOnly DryRun=$DryRun Verbose=$Verbose"
+    Write-Log "Args: PushOnly=$PushOnly DryRun=$DryRun Verbose=$isVerbose"
     Write-Log "Params: Remote=$REMOTE_NAME HTTPS=$REMOTE_HTTPS SSH=$REMOTE_SSH"
     Write-Log "Stale process threshold: ${STALE_PROCESS_MINUTES}m, Max ahead push: $MAX_AHEAD_PUSH"
     
