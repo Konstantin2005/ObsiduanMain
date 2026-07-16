@@ -619,22 +619,24 @@ function Invoke-Push {
     }
     
     # Try layers in sequence
-    $pushLayers = @(
-        @{ Name = "HTTPS"; Function = ${function:Push-Https} },
-        @{ Name = "SSH"; Function = ${function:Push-Ssh} },
-        @{ Name = "gh CLI"; Function = ${function:Push-GhCli} }
-    )
+    $layers = @("HTTPS", "SSH", "gh CLI")
     
-    foreach ($layer in $pushLayers) {
-        Write-Log "Attempting push via $($layer.Name)..."
+    foreach ($layerName in $layers) {
+        Write-Log "Attempting push via $layerName..."
         try {
-            if (& $layer.Function $branch) {
+            $success = $false
+            switch ($layerName) {
+                "HTTPS" { $success = Push-Https $branch }
+                "SSH" { $success = Push-Ssh $branch }
+                "gh CLI" { $success = Push-GhCli $branch }
+            }
+            if ($success) {
                 # Success — restore preferred remote URL (SSH for normal use)
                 Invoke-Git -Arguments @("remote", "set-url", $REMOTE_NAME, $REMOTE_SSH) | Out-Null
                 return $true
             }
         } catch {
-            Write-Warn "$($layer.Name) threw exception: $_"
+            Write-Warn "$layerName threw exception: $_"
         }
     }
     
