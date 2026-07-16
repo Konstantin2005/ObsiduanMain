@@ -260,33 +260,33 @@ function Invoke-Git {
     
     for ($attempt = 1; $attempt -le $Retries; $attempt++) {
         try {
-            # Set env for non-interactive (save/restore to avoid side effects)
+            # Set env for non-interactive
             $prevNoPrompt = $env:GIT_TERMINAL_PROMPT
             $prevGcmInt = $env:GCM_INTERACTIVE
-            $prevSshCmd = $env:GIT_SSH_COMMAND
             $env:GIT_TERMINAL_PROMPT = "0"
             $env:GCM_INTERACTIVE = "never"
-            if (-not $env:GIT_SSH_COMMAND) {
-                $env:GIT_SSH_COMMAND = "ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
-            }
             
-            # Temporary file for output to avoid deadlock
-            $tmpOut = [System.IO.Path]::GetTempFileName()
-            $tmpErr = [System.IO.Path]::GetTempFileName()
+            # Capture output using & operator (most reliable)
+            $output = @()
+            $stderrOutput = @()
+            $exitCode = 0
             
+            $tmpFile = [System.IO.Path]::GetTempFileName()
+            $tmpFile2 = [System.IO.Path]::GetTempFileName()
+            Remove-Item $tmpFile -Force -ErrorAction SilentlyContinue
+            Remove-Item $tmpFile2 -Force -ErrorAction SilentlyContinue
+            $tmpFile = $tmpFile -replace '\.tmp$', '-out.tmp'
+            $tmpFile2 = $tmpFile2 -replace '\.tmp$', '-err.tmp'
+            
+            # Use cmd.exe to redirect and capture
             $psi = New-Object System.Diagnostics.ProcessStartInfo
-            $psi.FileName = "git.exe"
-            $psi.Arguments = $Arguments
-            $psi.RedirectStandardOutput = $false
-            $psi.RedirectStandardError = $false
+            $psi.FileName = "cmd.exe"
+            $quoteArgs = $Arguments | ForEach-Object {
+                if ($_ -match '[\s"]') { "`"$($_.Replace('"', '\"'))`"" } else { $_ }
+            }
+            $psi.Arguments = @("/c", "git", $quoteArgs) + ">" + $tmpFile + "2>" + $tmpFile2
             $psi.UseShellExecute = $false
             $psi.CreateNoWindow = $true
-            $psi.StandardOutputEncoding = [System.Text.Encoding]::UTF8
-            $psi.StandardErrorEncoding = [System.Text.Encoding]::UTF8
-            $psi.Arguments = $Arguments
-            # Redirect to temp files to avoid deadlock
-            $psi.FileName = "cmd.exe"
-            $psi.Arguments = @("/c", "git.exe", $Arguments, ">", $tmpOut, "2>", $tmpErr)
             
             $proc = New-Object System.Diagnostics.Process
             $proc.StartInfo = $psi
@@ -296,7 +296,6 @@ function Invoke-Git {
             # Restore env
             $env:GIT_TERMINAL_PROMPT = $prevNoPrompt
             $env:GCM_INTERACTIVE = $prevGcmInt
-            $env:GIT_SSH_COMMAND = $prevSshCmd
             
             if (-not $exited) {
                 $proc.Kill()
@@ -306,22 +305,26 @@ function Invoke-Git {
             $exitCode = $proc.ExitCode
             
             # Read from temp files
-            $stdout = ""
-            $stderr = ""
-            if (Test-Path $tmpOut) { $stdout = [System.IO.File]::ReadAllText($tmpOut, [System.Text.Encoding]::UTF8); Remove-Item $tmpOut -Force -ErrorAction SilentlyContinue }
-            if (Test-Path $tmpErr) { $stderr = [System.IO.File]::ReadAllText($tmpErr, [System.Text.Encoding]::UTF8); Remove-Item $tmpErr -Force -ErrorAction SilentlyContinue }
-            
-            $output = @()
-            if ($stdout.Trim()) { $output += ($stdout.Trim() -split "`r`n|`n") }
-            if ($stderr.Trim()) { $output += ($stderr.Trim() -split "`r`n|`n") }
-            
-            if ($exitCode -eq 0) {
-                return @{ Output = $output; ExitCode = 0; Success = $true }
+            if (Test-Path $tmpFile) {
+                $outText = [System.IO.File]::ReadAllText($tmpFile, [System.Text.Encoding]::UTF8)
+                Remove-Item $tmpFile -Force -ErrorAction SilentlyContinue
+                if ($outText.Trim()) { $output = ($outText.Trim() -split "`r`n|`n") }
+            }
+            if (Test-Path $tmpFile2) {
+                $errText = [System.IO.File]::ReadAllText($tmpFile2, [System.Text.Encoding]::UTF8)
+                Remove-Item $tmpFile2 -Force -ErrorAction SilentlyContinue
+                if ($errText.Trim()) { $stderrOutput = ($errText.Trim() -split "`r`n|`n") }
             }
             
-            $lastError = @{ Output = $output; ExitCode = $exitCode; Success = $false }
+            $allOutput = $output + $stderrOutput
             
-            $outputStr = ($output -join ' ')
+            if ($exitCode -eq 0) {
+                return @{ Output = $allOutput; ExitCode = 0; Success = $true }
+            }
+            
+            $lastError = @{ Output = $allOutput; ExitCode = $exitCode; Success = $false }
+            
+            $outputStr = ($allOutput -join ' ')
             if ($outputStr -match "index\.lock|Unable to create") {
                 if ($attempt -lt $Retries) {
                     Write-Warn "Lock conflict - retry after delay"
