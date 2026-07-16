@@ -194,9 +194,11 @@ function Repair-StaleProcesses {
 }
 
 function Repair-StuckRebase {
+    $repoRoot = & git rev-parse --show-toplevel 2>$null
+    if (-not $repoRoot) { return }
     $rebaseDirs = @(
-        Join-Path $PSScriptRoot "..\..\..\.git\rebase-merge",
-        Join-Path $PSScriptRoot "..\..\..\.git\rebase-apply"
+        (Join-Path $repoRoot ".git\rebase-merge"),
+        (Join-Path $repoRoot ".git\rebase-apply")
     )
     
     foreach ($path in $rebaseDirs) {
