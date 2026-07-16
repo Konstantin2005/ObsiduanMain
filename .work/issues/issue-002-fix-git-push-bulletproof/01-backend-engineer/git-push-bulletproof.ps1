@@ -418,8 +418,23 @@ function Invoke-Sync {
     # Set to SSH for fetch (SSH key works in non-interactive)
     Invoke-Git -Arguments @("remote", "set-url", $REMOTE_NAME, $REMOTE_SSH) | Out-Null
     
-    # Ensure SSH env is set for non-interactive
-    $env:GIT_SSH_COMMAND = "ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
+    # Configure SSH with explicit key for non-interactive
+    $sshKeyPaths = @(
+        "$env:USERPROFILE\.ssh\id_ed25519",
+        "$env:USERPROFILE\.ssh\id_rsa",
+        "$env:USERPROFILE\.ssh\id_ecdsa",
+        "$env:USERPROFILE\.ssh\id_ed25519_sk",
+        "$env:USERPROFILE\.ssh\id_ecdsa_sk"
+    )
+    $foundKey = $null
+    foreach ($keyPath in $sshKeyPaths) {
+        if (Test-Path $keyPath) { $foundKey = $keyPath; break }
+    }
+    if ($foundKey) {
+        $env:GIT_SSH_COMMAND = "ssh -i `"$foundKey`" -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
+    } else {
+        $env:GIT_SSH_COMMAND = "ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
+    }
     
     Write-Log "Fetching from remote..."
     $fetchResult = Invoke-Git -Arguments @("fetch", $REMOTE_NAME) -TimeoutSec 120
