@@ -425,18 +425,28 @@ function Invoke-Sync {
         }
     }
     
-    # Set to HTTPS for fetch (more reliable in non-interactive)
-    Invoke-Git -Arguments @("remote", "set-url", $REMOTE_NAME, $REMOTE_HTTPS) | Out-Null
+    # Set to SSH for fetch (SSH key works in non-interactive)
+    Invoke-Git -Arguments @("remote", "set-url", $REMOTE_NAME, $REMOTE_SSH) | Out-Null
+    
+    # Ensure SSH env is set for non-interactive
+    $env:GIT_SSH_COMMAND = "ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
     
     Write-Log "Fetching from remote..."
     $fetchResult = Invoke-Git -Arguments @("fetch", $REMOTE_NAME) -TimeoutSec 120
+    $env:GIT_SSH_COMMAND = $null
     
     if (-not $fetchResult.Success) {
-        Write-Error "Fetch failed: $($fetchResult.Output -join '; ')"
-        return $false
-    } else {
-        Write-OK "Fetch successful"
+        # Retry with HTTPS (credential manager)
+        Write-Warn "SSH fetch failed, retrying with HTTPS..."
+        Invoke-Git -Arguments @("remote", "set-url", $REMOTE_NAME, $REMOTE_HTTPS) | Out-Null
+        $fetchResult = Invoke-Git -Arguments @("fetch", $REMOTE_NAME) -TimeoutSec 120
+        if (-not $fetchResult.Success) {
+            Write-Error "Fetch failed (both SSH and HTTPS): $($fetchResult.Output -join '; ')"
+            return $false
+        }
     }
+    
+    Write-OK "Fetch successful"
     
     # Check ahead/behind
     $ab = Get-AheadBehind
