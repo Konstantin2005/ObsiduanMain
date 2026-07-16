@@ -604,7 +604,7 @@ function Invoke-Push {
     # Check ahead count
     $ab = Get-AheadBehind
     if ($ab -and $ab.Ahead -eq 0) {
-        Write-Log "Nothing to push (0 commits ahead)"
+        Write-Log "Nothing to push - 0 commits ahead"
         return $true
     }
     
