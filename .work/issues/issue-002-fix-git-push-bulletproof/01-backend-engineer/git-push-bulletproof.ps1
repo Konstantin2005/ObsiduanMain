@@ -362,13 +362,22 @@ function Get-AheadBehind {
     $branch = Get-CurrentBranch
     if (-not $branch) { return $null }
     
+    $ahead = 0
+    $behind = 0
+    
     # Get ahead count
     $r = Invoke-Git -Arguments @("rev-list", "--count", "${branch}@\{u\}..${branch}", "--")
-    if ($r.Success -and $r.Output -match '(\d+)') { $ahead = [int]$Matches[1] }
+    if ($r.Success -and $r.Output.Count -gt 0) {
+        $line = $r.Output[0] -replace '\D', ''
+        if ($line -match '^\d+$') { $ahead = [int]$line }
+    }
     
     # Get behind count
     $r = Invoke-Git -Arguments @("rev-list", "--count", "${branch}..${branch}@\{u\}", "--")
-    if ($r.Success -and $r.Output -match '(\d+)') { $behind = [int]$Matches[1] }
+    if ($r.Success -and $r.Output.Count -gt 0) {
+        $line = $r.Output[0] -replace '\D', ''
+        if ($line -match '^\d+$') { $behind = [int]$line }
+    }
     
     return @{ Ahead = $ahead; Behind = $behind; Branch = $branch }
 }
