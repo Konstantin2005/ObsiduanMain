@@ -155,7 +155,9 @@ function Test-GitDir {
 }
 
 function Repair-StaleLock {
-    $lockFile = Join-Path $PSScriptRoot "..\..\..\.git\index.lock"
+    $gitDir = & git rev-parse --git-dir 2>$null
+    if (-not $gitDir) { return }
+    $lockFile = Join-Path $gitDir "index.lock"
     if (Test-Path $lockFile) {
         $age = (Get-Date) - (Get-Item $lockFile).CreationTime
         if ($age.TotalMinutes -gt 1) {
