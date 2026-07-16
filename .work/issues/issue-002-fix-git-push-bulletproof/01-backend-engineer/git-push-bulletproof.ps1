@@ -609,7 +609,7 @@ function Invoke-Push {
     }
     
     if ($ab -and $ab.Ahead -gt $MAX_AHEAD_PUSH) {
-        Write-Error "Too many commits ahead ($($ab.Ahead) > $MAX_AHEAD_PUSH). Push manually."
+        Write-Error "Too many commits ahead: $($ab.Ahead) > $MAX_AHEAD_PUSH. Push manually."
         return $false
     }
     
