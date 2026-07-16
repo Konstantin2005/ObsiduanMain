@@ -260,35 +260,73 @@ function Invoke-Git {
     
     for ($attempt = 1; $attempt -le $Retries; $attempt++) {
         try {
+            # Build argument string
+            $escapedArgs = $Arguments | ForEach-Object {
+                if ($_ -match '[\s"]') {
+                    "`"$($_.Replace('"', '`"'))`""
+                } else {
+                    $_
+                }
+            }
+            $fullArgStr = $escapedArgs -join ' '
+            
+            # Set env for non-interactive
+            $prevNoPrompt = $env:GIT_TERMINAL_PROMPT
+            $prevGcmInt = $env:GCM_INTERACTIVE
+            $env:GIT_TERMINAL_PROMPT = "0"
+            $env:GCM_INTERACTIVE = "never"
+            
             $psi = New-Object System.Diagnostics.ProcessStartInfo
             $psi.FileName = "git"
-            $psi.Arguments = $Arguments
+            $psi.Arguments = $fullArgStr
             $psi.RedirectStandardOutput = $true
             $psi.RedirectStandardError = $true
             $psi.UseShellExecute = $false
             $psi.CreateNoWindow = $true
-            $envVars = @{
-                "GIT_TERMINAL_PROMPT" = "0"
-                "GCM_INTERACTIVE" = "never"
-            }
-            foreach ($kv in $envVars.GetEnumerator()) {
-                $psi.EnvironmentVariables[$kv.Key] = $kv.Value
-            }
+            $psi.StandardOutputEncoding = [System.Text.Encoding]::UTF8
+            $psi.StandardErrorEncoding = [System.Text.Encoding]::UTF8
             
             $proc = New-Object System.Diagnostics.Process
             $proc.StartInfo = $psi
+            
+            # Use events to avoid deadlock
+            $stdoutBuilder = New-Object System.Text.StringBuilder
+            $stderrBuilder = New-Object System.Text.StringBuilder
+            $stdoutEvent = Register-ObjectEvent -InputObject $proc -EventName OutputDataReceived -Action {
+                param($sender, $e)
+                if ($e.Data) { $stdoutBuilder.AppendLine($e.Data) | Out-Null }
+            } | Out-Null
+            $stderrEvent = Register-ObjectEvent -InputObject $proc -EventName ErrorDataReceived -Action {
+                param($sender, $e)
+                if ($e.Data) { $stderrBuilder.AppendLine($e.Data) | Out-Null }
+            } | Out-Null
+            
             $null = $proc.Start()
+            $proc.BeginOutputReadLine()
+            $proc.BeginErrorReadLine()
             
-            $stdout = $proc.StandardOutput.ReadToEnd()
-            $stderr = $proc.StandardError.ReadToEnd()
+            $exited = $proc.WaitForExit($TimeoutSec * 1000)
             
-            if (-not $proc.WaitForExit($TimeoutSec * 1000)) {
+            # Clean up events
+            try { Unregister-Event -SourceIdentifier $stdoutEvent.Name -ErrorAction SilentlyContinue } catch {}
+            try { Unregister-Event -SourceIdentifier $stderrEvent.Name -ErrorAction SilentlyContinue } catch {}
+            
+            # Restore env
+            $env:GIT_TERMINAL_PROMPT = $prevNoPrompt
+            $env:GCM_INTERACTIVE = $prevGcmInt
+            
+            if (-not $exited) {
                 $proc.Kill()
                 throw "Timeout after ${TimeoutSec}s"
             }
             
             $exitCode = $proc.ExitCode
-            $output = @($stdout -split "`r`n|`n") + @($stderr -split "`r`n|`n")
+            $stdout = $stdoutBuilder.ToString().Trim()
+            $stderr = $stderrBuilder.ToString().Trim()
+            
+            $output = @()
+            if ($stdout) { $output += $stdout -split "`r`n|`n" }
+            if ($stderr) { $output += $stderr -split "`r`n|`n" }
             $output = $output | Where-Object { $_ -ne '' }
             
             if ($exitCode -eq 0) {
