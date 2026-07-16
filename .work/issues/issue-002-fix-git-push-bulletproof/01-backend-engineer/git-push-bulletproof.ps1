@@ -35,8 +35,7 @@ Preview mode with full debug output.
 [CmdletBinding()]
 param(
     [switch]$PushOnly,
-    [switch]$DryRun,
-    [switch]$Verbose
+    [switch]$DryRun
 )
 
 # ============================================================
