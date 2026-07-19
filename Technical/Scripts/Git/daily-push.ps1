@@ -152,7 +152,7 @@ function Push-Changes {
                 Write-Log "WARNING: fetch failed, will retry"
                 $script:fetchOk = $false
             }
-            # Continue anyway — push may still work
+            # Continue anyway - push may still work
         } else {
             $script:fetchOk = $true
         }
