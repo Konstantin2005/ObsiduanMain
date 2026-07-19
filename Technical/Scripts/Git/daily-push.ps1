@@ -1,12 +1,24 @@
 param(
     [string]$RepoPath = "C:\obsidian\Main",
     [string]$Branch = "main",
+    [string]$RepoName = "",
     [string]$GitPath = "git",
-    [string]$LogPath = (Join-Path $RepoPath "Technical\Scripts\Logs\daily-push.log"),
+    [string]$LogPath = "",
     [int]$CommitIntervalSeconds = 0,
     [int]$PushIntervalMinutes = 60,
     [switch]$DryRun
 )
+
+# Auto-detect repo name and log path if not specified
+if (-not $RepoName) {
+    $parentName = Split-Path -Leaf (Split-Path -Parent $RepoPath)
+    $leafName = Split-Path -Leaf $RepoPath
+    $RepoName = if ($parentName -and $parentName -ne $leafName) { "$parentName-$leafName" } else { $leafName }
+}
+if (-not $LogPath) {
+    $logDir = "C:\obsidian\Main\Technical\Scripts\Logs"
+    $LogPath = Join-Path $logDir "daily-push-$RepoName.log"
+}
 
 $ErrorActionPreference = 'Continue'
 
