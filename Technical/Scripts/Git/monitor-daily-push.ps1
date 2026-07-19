@@ -32,7 +32,7 @@ function Get-ObsidianRepos {
     
     Write-MonitorLog "Scanning for git repositories under: $RootPath"
     
-    # Find all .git directories (not files — skip submodules)
+    # Find all .git directories (not files - skip submodules)
     $gitDirs = Get-ChildItem -Path $RootPath -Recurse -Depth 5 -Directory -Force -ErrorAction SilentlyContinue `
         | Where-Object { $_.Name -eq '.git' -and $_.PSIsContainer -and -not $visited.ContainsKey($_.Parent.FullName) }
     
@@ -328,7 +328,7 @@ foreach ($repo in $repos) {
             $allOk = $false
         }
     } else {
-        Write-MonitorLog "Repo:    $repoName — NO INSTANCE"
+        Write-MonitorLog "Repo:    $repoName - NO INSTANCE"
         $allOk = $false
     }
 }
