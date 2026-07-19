@@ -96,7 +96,7 @@ function Commit-Changes {
         
         if (-not (Test-HasChanges)) { return }
         
-        # There are changes — commit them
+        # There are changes - commit them
         & $GitPath add -A 2>&1 | Out-Null
         $addCode = $LASTEXITCODE
         if ($addCode -ne 0) {
