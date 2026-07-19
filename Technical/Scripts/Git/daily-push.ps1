@@ -190,7 +190,7 @@ if ($currentBranch -ne $Branch) {
 Write-Log "Starting (check: ${CheckIntervalSeconds}s, push: ${PushIntervalMinutes}m)"
 
 if ($DryRun) {
-    Write-Log "DryRun mode — exiting"
+    Write-Log "DryRun mode - exiting"
     Remove-Item -LiteralPath $lockFile -Force -ErrorAction SilentlyContinue
     exit 0
 }
