@@ -111,7 +111,7 @@ function Commit-Changes {
         if ($commitCode -eq 0) {
             # Extract short hash from output
             $hash = if ($commitOut -match '\[main [a-f0-9]+') { $matches[0] } else { "???" }
-            Write-Log "Committed: $hash — $msg"
+            Write-Log "Committed: $hash - $msg"
         }
         # When nothing to commit, just silently skip
     }
