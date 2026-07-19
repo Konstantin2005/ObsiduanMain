@@ -60,7 +60,7 @@ function Write-Log {
     } catch {}
 }
 
-# === GIT WRAPPER (silent — only log errors) ===
+# === GIT WRAPPER (silent - only log errors) ===
 function Invoke-Git-Silent {
     param([string[]]$Args, [switch]$ThrowOnError)
     $prevEAP = $ErrorActionPreference
