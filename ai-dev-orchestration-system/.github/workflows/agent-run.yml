@@ -1,0 +1,230 @@
+name: AI Agent Pipeline
+
+on:
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      use_submodule:
+        description: 'Run as submodule inside another repository'
+        required: true
+        default: false
+        type: boolean
+      target_owner:
+        description: 'Target repository owner (for two-repo mode)'
+        required: false
+        default: ''
+        type: string
+      target_repo:
+        description: 'Target repository name (for two-repo mode)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  WORK_DIR: workspace/issues
+  BRANCH_PREFIX: ai-issue
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          path: engine
+
+      - name: Detect mode
+        id: mode
+        run: |
+          TARGET_OWNER="${{ github.event.inputs.target_owner || '' }}"
+          TARGET_REPO="${{ github.event.inputs.target_repo || '' }}"
+          if [ -f "engine/.ai-system/VERSION" ] || [ "${{ github.event.inputs.use_submodule }}" == "true" ]; then
+            echo "is_submodule=true" >> "$GITHUB_OUTPUT"
+            echo "engine_root=engine/.ai-system" >> "$GITHUB_OUTPUT"
+          elif [ -n "$TARGET_OWNER" ] && [ -n "$TARGET_REPO" ]; then
+            echo "is_two_repo=true" >> "$GITHUB_OUTPUT"
+            echo "engine_root=engine" >> "$GITHUB_OUTPUT"
+            echo "target_owner=$TARGET_OWNER" >> "$GITHUB_OUTPUT"
+            echo "target_repo=$TARGET_REPO" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_two_repo=false" >> "$GITHUB_OUTPUT"
+            echo "engine_root=engine" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout target repository
+        if: steps.mode.outputs.is_two_repo == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.mode.outputs.target_owner }}/${{ steps.mode.outputs.target_repo }}
+          token: ${{ secrets.TARGET_REPO_TOKEN || github.token }}
+          path: target
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: ${{ steps.mode.outputs.engine_root }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ${{ steps.mode.outputs.engine_root }}
+
+      - name: Bootstrap engine (submodule mode)
+        if: steps.mode.outputs.is_submodule == 'true'
+        run: |
+          bash "${{ steps.mode.outputs.engine_root }}/engine/bootstrap.sh"
+
+      - name: Sanitize input
+        id: parse
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          [ -z "$ISSUE_TITLE" ] && ISSUE_TITLE="workflow-dispatch-${{ github.run_id }}"
+          SLUG=$(echo "$ISSUE_TITLE" \
+            | tr '[:upper:]' '[:lower:]' \
+            | tr -d '/\\..~' \
+            | sed 's/[^a-z0-9]/-/g;s/--*/-/g;s/^-//;s/-$//' \
+            | head -c 80)
+          [ -z "$SLUG" ] && SLUG="issue-${{ github.event.issue.number }}"
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "id=${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
+          echo "branch=${BRANCH_PREFIX}-${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
+
+      - name: Check idempotency
+        id: idem
+        run: |
+          BRANCH="${{ steps.parse.outputs.branch }}"
+          if [ "${{ steps.mode.outputs.is_two_repo }}" == "true" ]; then
+            cd target
+            if git ls-remote --heads origin "$BRANCH" 2>/dev/null | grep -q .; then
+              echo "skip=true" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+          else
+            if git ls-remote --heads origin "$BRANCH" 2>/dev/null | grep -q .; then
+              echo "skip=true" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+          fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+      - name: Bootstrap workspace
+        if: steps.idem.outputs.skip != 'true'
+        run: |
+          DIR="${WORK_DIR}/${{ steps.parse.outputs.id }}-${{ steps.parse.outputs.slug }}"
+          for role in 00-architect 01-backend-engineer 02-frontend-engineer 03-qa-engineer 04-code-reviewer shared logs; do
+            mkdir -p "$DIR/$role"
+          done
+          echo "dir=$DIR" >> "$GITHUB_ENV"
+
+      - name: Autonomous Orchestrator Execution
+        id: orchestrator
+        if: steps.idem.outputs.skip != 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ISSUE_ID: ${{ steps.parse.outputs.id }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          WORKSPACE_DIR: ${{ env.dir }}
+          ENGINE_ROOT: ${{ steps.mode.outputs.engine_root }}
+        run: |
+          node -e "
+            const path = require('path');
+            const fs = require('fs');
+            const engine = process.env.ENGINE_ROOT || 'engine';
+            const runner = require(path.resolve(engine, 'runtime/orchestration/autonomous-runner.js'));
+            runner.runFullPipeline({
+              number: parseInt(process.env.ISSUE_ID),
+              title: process.env.ISSUE_TITLE,
+              body: process.env.ISSUE_BODY || ''
+            }).then(result => {
+              console.log('Pipeline complete:', JSON.stringify(result));
+              const tracePath = path.resolve(process.env.WORKSPACE_DIR || '.', 'execution-trace.json');
+              fs.mkdirSync(path.dirname(tracePath), { recursive: true });
+              fs.writeFileSync(tracePath, JSON.stringify(result, null, 2), 'utf-8');
+              process.exit(0);
+            }).catch(err => {
+              console.error('Pipeline failed:', err.message);
+              process.exit(1);
+            });
+          "
+
+      - name: Generate files to target repo
+        if: steps.idem.outputs.skip != 'true' && steps.mode.outputs.is_two_repo == 'true'
+        env:
+          WORKSPACE_DIR: ${{ env.dir }}
+          TARGET_DIR: target
+        run: |
+          echo "Generated files would be placed in target/ from workspace/"
+          ls -la "$WORKSPACE_DIR/"
+
+      - name: Commit and PR (standalone)
+        if: steps.idem.outputs.skip != 'true' && steps.mode.outputs.is_two_repo != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "${{ steps.parse.outputs.branch }}"
+          git add -A
+          git diff --staged --quiet && exit 0
+          git commit -m "AI orchestration for #${{ steps.parse.outputs.id }}"
+          git push origin "${{ steps.parse.outputs.branch }}"
+          gh pr create --title "AI Implementation for #${{ steps.parse.outputs.id }}" \
+            --body "Auto-generated by AI Dev Orchestration System" \
+            --base main --head "${{ steps.parse.outputs.branch }}" || echo "PR creation failed"
+
+      - name: Commit and PR (two-repo)
+        if: steps.idem.outputs.skip != 'true' && steps.mode.outputs.is_two_repo == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.TARGET_REPO_TOKEN || github.token }}
+        run: |
+          cd target
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "${{ steps.parse.outputs.branch }}"
+          git add -A
+          git diff --staged --quiet && exit 0
+          git commit -m "AI orchestration for #${{ steps.parse.outputs.id }}"
+          git push origin "${{ steps.parse.outputs.branch }}"
+          gh pr create --title "AI Implementation for #${{ steps.parse.outputs.id }}" \
+            --body "Auto-generated by AI Dev Orchestration System\ni\nSee orchestration repo for details" \
+            --base main --head "${{ steps.parse.outputs.branch }}" || echo "PR creation failed"
+
+      - name: Post success comment
+        if: success() && steps.idem.outputs.skip != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const tracePath = process.env.WORKSPACE_DIR + '/execution-trace.json';
+            let traceInfo = '';
+            try {
+              const trace = JSON.parse(fs.readFileSync(tracePath, 'utf-8'));
+              traceInfo = '\n**Run ID:** ' + (trace.runId || trace.issue || 'N/A');
+            } catch (e) {}
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '## ✅ Pipeline executed successfully\n' +
+                'See `workspace/issues/${{ steps.parse.outputs.id }}-${{ steps.parse.outputs.slug }}/`\n' +
+                traceInfo +
+                '\n**Engine:** Autonomous Orchestrator'
+            });
+
+      - name: Post failure comment
+        if: failure() && steps.idem.outputs.skip != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '## ❌ Pipeline failed\n\nSee workflow logs for details.'
+            });

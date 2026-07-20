@@ -1,0 +1,32 @@
+# Architect Log — Issue #11
+
+## Date: 2026-06-27
+
+## Decisions & Reasoning
+
+### 1. Web Workers API
+**Reasoning**: The app runs in Electron/Obsidian plugin context. Web Workers are universally available and well-suited for computation offloading.
+
+### 2. Priority queue with preemption
+**Reasoning**: Users perceive UI-related tasks as urgent. Layout or precomputation can wait. Preemption ensures critical tasks bypass queues.
+
+### 3. Versioned graph snapshots
+**Reasoning**: Without versioning, workers might compute on stale data and overwrite fresh results. Version checks prevent this.
+
+### 4. Pool size = CPU cores - 1
+**Reasoning**: Leaving one core for the UI thread prevents jank. Min pool of 2 ensures at least some parallelism.
+
+### 5. Transferable objects
+**Reasoning**: Structured clone of 50K nodes (~5MB) is expensive. Transferable objects enable zero-copy transfer.
+
+## Alternatives Considered
+- **Single worker**: Rejected — no parallelism; one slow task blocks all others.
+- **Thread pool via Node.js worker_threads**: Rejected — Electron context prefers Web Workers.
+- **No backpressure**: Rejected — unlimited queuing leads to memory exhaustion.
+
+## Files Created
+- 00-architect/plan.md
+- 00-architect/architecture.md
+- 00-architect/decisions.md
+- shared/architecture.md
+- shared/decisions-log.md

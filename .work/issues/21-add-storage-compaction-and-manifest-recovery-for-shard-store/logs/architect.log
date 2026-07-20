@@ -1,0 +1,13 @@
+[2026-06-27T10:00:00Z] ARCHITECT START - Issue #21: DEV: Add storage compaction and manifest recovery for shard store
+[2026-06-27T10:00:00Z] Analysis: Shard store needs compaction and manifest recovery to prevent stale data accumulation
+[2026-06-27T10:00:00Z] Decision: Copy-on-write compaction for safe failure mode
+[2026-06-27T10:00:00Z] Decision: Checksum-verified manifest recovery with auto-repair
+[2026-06-27T10:00:00Z] Decision: Dry-run mode for safe validation before live operations
+[2026-06-27T10:00:00Z] Files created:
+  - 00-architect/plan.md — phased implementation plan
+  - 00-architect/architecture.md — component diagram and API contract
+  - 00-architect/decisions.md — ADR log
+  - shared/architecture.md — system context
+  - shared/decisions-log.md — high-level decisions
+[2026-06-27T10:00:00Z] Reasoning: CoW chosen over in-place compaction to prevent data loss during crashes. Checksums enable automatic corruption detection without manual intervention. Dry-run mode critical for safe production rollout.
+[2026-06-27T10:00:00Z] ARCHITECT DONE

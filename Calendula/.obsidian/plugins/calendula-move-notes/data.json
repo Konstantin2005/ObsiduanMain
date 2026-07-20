@@ -1,0 +1,28 @@
+{
+  "basePath": "C:\\obsidian\\Main\\Calendula",
+  "year": 2026,
+  "dryRun": false,
+  "categories": [
+    {
+      "name": "Личное",
+      "filter": "*Личное*",
+      "dest": "Вечно зеленные действия",
+      "enabled": true,
+      "movedTotal": 0
+    },
+    {
+      "name": "Соц",
+      "filter": "*Соц*",
+      "dest": "CRM",
+      "enabled": true,
+      "movedTotal": 0
+    },
+    {
+      "name": "Мысли",
+      "filter": "*Мысли*",
+      "dest": "Маслины",
+      "enabled": true,
+      "movedTotal": 0
+    }
+  ]
+}

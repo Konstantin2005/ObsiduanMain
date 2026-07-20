@@ -1,0 +1,15 @@
+[2026-06-26 12:21] 🧭 ARCHITECT: Получена задача. Анализ требований.
+[2026-06-26 12:21] ARCHITECT: Требования: регистрация + логин, mock, без БД, fake JWT
+[2026-06-26 12:21] ARCHITECT: Выбор архитектуры:
+  - In-memory Map<username, User> вместо базы данных
+  - Fake JWT: base64({username, role, exp})
+  - Почему: задача тестовая, нужна простота, не production
+  - Альтернатива: SQLite — избыточно для mock
+[2026-06-26 12:21] ARCHITECT: Auth flow:
+  1. POST /register { username, password } → создаёт пользователя → 201
+  2. POST /login { username, password } → проверяет → { token }
+  3. GET /me { Authorization: Bearer <token> } → { user }
+[2026-06-26 12:21] ARCHITECT: Структура данных:
+  User { username, passwordHash, role, createdAt }
+  Token: fake-jwt-<username>-<timestamp>
+[2026-06-26 12:21] ARCHITECT: API контракт зафиксирован. Передано Backend + Frontend.

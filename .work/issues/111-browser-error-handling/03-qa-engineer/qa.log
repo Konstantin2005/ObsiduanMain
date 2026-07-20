@@ -1,0 +1,4 @@
+[2026-06-26 13:12] QA: Created test cases for browser opening error handling
+[2026-06-26 13:12] QA: Verified change follows existing codebase patterns
+[2026-06-26 13:12] QA: Change is minimal — only openBrowser helper modified
+[2026-06-26 13:12] QA: All test cases documented in test-cases.md

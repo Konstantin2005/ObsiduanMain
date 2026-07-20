@@ -1,0 +1,35 @@
+[2026-06-26 12:47] ⚙️ BACKEND: Получена архитектура (Version Vector + Merge)
+[2026-06-26 12:47] BACKEND: Анализ data model:
+  Task: { id, title, description, status, version, versions: {}, history: [], locked: boolean }
+  Sync: endpoint GET /api/sync?since=<timestamp> returns changes since last sync
+  Conflict: POST /api/tasks/{id}/merge { versions: {}, resolved: {} }
+
+[2026-06-26 12:47] BACKEND: REST API Design:
+  GET    /api/tasks              → list all tasks
+  POST   /api/tasks              → create task { title, description }
+  GET    /api/tasks/{id}         → get single task with version info
+  PUT    /api/tasks/{id}         → update task (with version check)
+  DELETE /api/tasks/{id}         → delete task (soft)
+  POST   /api/tasks/{id}/merge   → manual conflict resolution
+  GET    /api/sync               → get changes since timestamp
+  POST   /api/sync/push          → push offline changes
+
+[2026-06-26 12:47] BACKEND: Conflict Engine (conflict-engine.md):
+  - On PUT: проверка версии (если version < current → conflict)
+  - Conflict response: 409 { conflict: true, currentVersion, userVersion, diff }
+  - Merge: POST /merge принимает resolved version (пользователь выбрал)
+  - Last-write-wins per field: если не указано поле → берётся из нового запроса
+  - История: все версии сохраняются в history[]
+
+[2026-06-26 12:47] BACKEND: Data Model Reasoning:
+  - In-memory: Map<taskId, Task> как единственное хранилище
+  - Почему: требование задачи (in-memory only)
+  - Trade-off: данные теряются при перезапуске, но stress test это не проблема
+  - Sync: polling-based (push + pull), каждые 3 секунды
+  - Offline queue: массив actions { type, payload, timestamp }, replay on sync
+
+[2026-06-26 12:47] BACKEND: Reasoning по conflict resolution:
+  - Version vector выбран так как позволяет точно знать кто и когда изменил
+  - Альтернатива: просто timestamp — неточный, race condition
+  - Альтернатива: CRDT — сложный для mock, избыточный
+  - Version vector даёт: детектирование + возможность ручного merge

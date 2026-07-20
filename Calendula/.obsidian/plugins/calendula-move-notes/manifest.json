@@ -1,0 +1,11 @@
+{
+	"id": "calendula-move-notes",
+	"name": "Calendula Move Notes",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Переносит заметки из дневника (Личное, Соц, Мысли) в графы по категориям. Настраиваемый. Горячие клавиши.",
+	"author": "Calendula",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": true
+}

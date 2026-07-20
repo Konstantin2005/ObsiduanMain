@@ -1,0 +1,34 @@
+﻿[2026-07-20 00:00:51] [MONITOR] ========================================
+[2026-07-20 00:00:51] [MONITOR] OBSIDIAN GIT MONITOR STARTED
+[2026-07-20 00:00:51] [MONITOR] Base path: C:\obsidian
+[2026-07-20 00:00:51] [MONITOR] Check interval: 10s
+[2026-07-20 00:00:51] [MONITOR] Duration: 1440m
+[2026-07-20 00:00:51] [MONITOR] ========================================
+[2026-07-20 00:00:51] [MONITOR] Scanning for git repositories under: C:\obsidian
+[2026-07-20 00:00:51] [MONITOR]   Found repo: obsidian | C:\obsidian | branch: master | changes: 0
+[2026-07-20 00:00:51] [MONITOR]   Found repo: obsidian-Main | C:\obsidian\Main | branch: main | changes: 1
+[2026-07-20 00:00:51] [MONITOR] Found 2 repositories to monitor
+[2026-07-20 00:00:51] [MONITOR] 
+[2026-07-20 00:00:51] [MONITOR] Started daily-push for 'obsidian' (PID: 27808)
+[2026-07-20 00:00:52] [MONITOR] Started daily-push for 'obsidian-Main' (PID: 29380)
+[2026-07-20 00:00:53] [MONITOR] STATUS: [obsidian(0 ch, 0 ahead) | obsidian-Main(0 ch, 1 ahead)]
+[2026-07-20 00:00:53] [MONITOR] TOTALS: Commits=0 | Pushes=0
+[2026-07-20 00:01:09] [MONITOR] ========================================
+[2026-07-20 00:01:09] [MONITOR] OBSIDIAN GIT MONITOR STARTED
+[2026-07-20 00:01:09] [MONITOR] Base path: C:\obsidian
+[2026-07-20 00:01:09] [MONITOR] Check interval: 15s
+[2026-07-20 00:01:09] [MONITOR] Duration: 1440m
+[2026-07-20 00:01:09] [MONITOR] ========================================
+[2026-07-20 00:01:09] [MONITOR] Scanning for git repositories under: C:\obsidian
+[2026-07-20 00:01:09] [MONITOR]   Found repo: obsidian | C:\obsidian | branch: master | changes: 0
+[2026-07-20 00:01:09] [MONITOR]   Found repo: obsidian-Main | C:\obsidian\Main | branch: main | changes: 0
+[2026-07-20 00:01:09] [MONITOR] Found 2 repositories to monitor
+[2026-07-20 00:01:09] [MONITOR] 
+[2026-07-20 00:01:09] [MONITOR] Started daily-push for 'obsidian' (PID: 5364)
+[2026-07-20 00:01:10] [MONITOR] Started daily-push for 'obsidian-Main' (PID: 21012)
+[2026-07-20 00:01:11] [MONITOR] STATUS: [obsidian(0 ch, 0 ahead) | obsidian-Main(0 ch, 1 ahead)]
+[2026-07-20 00:01:11] [MONITOR] TOTALS: Commits=0 | Pushes=0
+[2026-07-20 00:01:26] [MONITOR] RESTART [obsidian] Process died, restarting...
+[2026-07-20 00:01:26] [MONITOR] Started daily-push for 'obsidian' (PID: 20944)
+[2026-07-20 00:01:26] [MONITOR] PUSH  [obsidian] #1 at 2026-07-20 00:01:26
+[2026-07-20 00:01:26] [MONITOR] PUSH  [obsidian-Main] #1 at 2026-07-20 00:01:26

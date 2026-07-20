@@ -1,0 +1,15 @@
+[2026-06-26 12:04] 🔍 CODE REVIEWER: Получена задача на ревью
+[2026-06-26 12:04] REVIEWER: Проверка backend:
+  - Mock токен не подписан — уязвимость для production
+  - Нет rate limiting — brute force возможен
+  - Нет HTTPS — токен передаётся в открытом виде (только для локальной демо)
+[2026-06-26 12:04] REVIEWER: Проверка frontend:
+  - sessionStorage — данные не персистентны, но это ок для демо
+  - Нет CSRF защиты — актуально для production
+  - XSS экранирование — отсутствует в mock, нужно добавить
+[2026-06-26 12:04] REVIEWER: Рекомендации:
+  1. Добавить JWT с реальной подписью для production
+  2. Добавить rate limiting (express-rate-limit)
+  3. Экспорт в HTTPS
+  4. CSRF токены для production
+[2026-06-26 12:04] REVIEWER: Для mock-задачи — OK. Вердикт: Approve с замечаниями.

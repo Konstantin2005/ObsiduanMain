@@ -1,0 +1,32 @@
+# Architect Log — Issue #9
+
+## Date: 2026-06-27
+
+## Decisions & Reasoning
+
+### 1. Batch-based diff with 500ms window
+**Reasoning**: Individual FS events are unreliable and expensive to process one-by-one. Batching reduces overhead and allows coalescing of rapid changes.
+
+### 2. Manifest snapshot as diff baseline
+**Reasoning**: FS events alone can miss changes (e.g., if watcher restarts). A persisted manifest provides a reliable reference point.
+
+### 3. 20% threshold for full rebuild fallback
+**Reasoning**: For large-scale changes, the incremental path becomes as expensive as full rebuild. The 20% threshold is a heuristic — tunable.
+
+### 4. Atomic batch commits
+**Reasoning**: Partial updates risk graph inconsistency (dangling edges, missing nodes). Atomic commits guarantee all-or-nothing consistency.
+
+### 5. Stable node IDs across renames
+**Reasoning**: Content-hash-based IDs preserve graph topology when files are renamed. Prevents edge breakage.
+
+## Alternatives Considered
+- **Event-per-change approach**: Rejected due to overhead and complexity of handling burst events.
+- **Full rebuild always**: Rejected — defeats the purpose of the optimization.
+- **SQLite-based diff**: Rejected — overkill for this use case; in-memory diff is sufficient.
+
+## Files Created
+- 00-architect/plan.md
+- 00-architect/architecture.md
+- 00-architect/decisions.md
+- shared/architecture.md
+- shared/decisions-log.md

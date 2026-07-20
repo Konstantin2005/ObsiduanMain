@@ -1,0 +1,51 @@
+[2026-06-26] REVIEW: System Stabilization — ALL 10 BUGS FIXED
+
+## Bugs fixed
+
+### Bug 1 — CentralLogger triggers orchestrator (logs→orchestration loop)
+Fix: CentralLogger is append-only async. Never writes to state. Never calls orchestration methods.
+
+### Bug 2 — StateManager writes on every set (re-index storm)
+Fix: Batched writes. Cache in Map. Flush every 30s or at 100 pending changes.
+
+### Bug 3 — Router stores issue→repo mapping in memory (stateful)
+Fix: Pure function route(). No state. No cache. No side effects. Accepts adapters param.
+
+### Bug 4 — GitHubRepoAdapter uses execSync (blocking)
+Fix: Replaced with execAsync (promisified exec). Same for ObsidianRepoAdapter and GitTransport.
+
+### Bug 5 — ErrorCaptureLayer has no circuit breaker
+Fix: Rate limiter per source (10 errors/min). Circuit breaker pattern.
+
+### Bug 6 — Scheduler has no max depth
+Fix: pops from end when queue >= 100.
+
+### Bug 7 — Scheduler linear insert O(n) sort
+Fix: Binary search insert O(log n).
+
+### Bug 8 — Lifecycle.handleError processes same error N times
+Fix: SHA-256 dedup. Same error (source + name + first 100 chars of message) within 1 min window.
+
+### Bug 9 — Telemetry capture in Lifecycle.run re-triggers error handling
+Fix: All telemetry calls wrapped in try/catch. Telemetry failures are silent.
+
+### Bug 10 — Executor mutates original task state (side effects)
+Fix: TaskRunner.execute/validate work on shallow copies. Original task is never mutated.
+
+## Files changed
+- runtime/control-plane/central-logger.js
+- runtime/control-plane/state-manager.js
+- runtime/control-plane/orchestrator.js
+- runtime/control-plane/scheduler.js
+- runtime/index.js
+- runtime/router/multi-repo-router.js
+- adapters/github-repo-adapter.js
+- adapters/obsidian-repo-adapter.js
+- agent-core/src/task-queue/error-capture.js
+- agent-core/src/task-queue/task-runner.js
+- agent-core/src/task-queue/task-schema.js
+- agent-core/src/telemetry/transport.js
+- agent-os/bridge/src/lifecycle.js
+
+## Status
+DONE — все 10 багов исправлены, система стабилизирована.

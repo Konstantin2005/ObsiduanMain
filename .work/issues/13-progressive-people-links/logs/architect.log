@@ -1,0 +1,32 @@
+# Architect Log — Issue #13
+
+## Date: 2026-06-27
+
+## Decisions & Reasoning
+
+### 1. Weight-based prioritization with interaction boost
+**Reasoning**: Strongest connections are most meaningful to users. Interaction boost ensures that when a user hovers/clicks a node, its edges appear immediately regardless of position in queue.
+
+### 2. requestAnimationFrame batching
+**Reasoning**: Adding hundreds of DOM/Canvas elements in one frame causes jank. One batch per rAF (~16ms intervals) ensures smooth progressive loading.
+
+### 3. Nodes first, edges progressive
+**Reasoning**: Nodes (circles/labels) are cheap to render and give immediate graph structure. Edges (lines/arrows) are the expensive part. This split optimizes perceived performance.
+
+### 4. Threshold-based activation
+**Reasoning**: For small graphs (<500 edges), progressive loading adds complexity without benefit. The threshold ensures simple path for simple cases.
+
+### 5. Pre-emption on user interaction
+**Reasoning**: Users who hover a node want to see its connections NOW. Pre-empting the current batch for the interacted node's edges provides instant feedback.
+
+## Alternatives Considered
+- **Eager loading always**: Rejected — causes jank on dense graphs.
+- **Virtual scrolling for edges**: Rejected — edges are interconnected; virtual scrolling doesn't apply well.
+- **Fixed batch order**: Rejected — doesn't adapt to user behavior.
+
+## Files Created
+- 00-architect/plan.md
+- 00-architect/architecture.md
+- 00-architect/decisions.md
+- shared/architecture.md
+- shared/decisions-log.md

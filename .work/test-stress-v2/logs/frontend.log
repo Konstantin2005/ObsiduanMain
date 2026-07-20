@@ -1,0 +1,67 @@
+[2026-06-26 13:03] 🎨 FRONTEND: === FRONTEND ENGINEERING STARTED ===
+[2026-06-26 13:03] FRONTEND: Architecture: block-based editor with CRDT state + optimistic UI
+
+[2026-06-26 13:03] FRONTEND: === UI STATE MODEL ===
+  Local CRDT State:
+    blocks: Map<blockId, Block>
+    positions: OrderMap<blockId, fractionalIndex>
+    pendingEvents: Event[]
+    appliedHlc: HLC watermark
+    syncStatus: 'synced' | 'syncing' | 'error' | 'offline'
+
+  UI State:
+    selectedBlock: blockId | null
+    editingBlock: blockId | null
+    collaborators: Map<userId, { name, cursor }>
+    workspace: { id, name, role }
+    error: string | null
+
+[2026-06-26 13:03] FRONTEND: === OPTIMISTIC RENDERING LOGIC ===
+  User action → create CRDT event locally
+  1. Apply event to local state IMMEDIATELY
+  2. Render updated UI
+  3. Push event to server (async)
+  4. Server responds with confirmed HLC
+  5. If server HLC differs → reconcile
+
+  Rollback strategy:
+    - Если server error → revert local state
+    - Keep pending events in queue
+    - Retry with exponential backoff (1s, 2s, 4s, max 30s)
+
+  Rendering order:
+    - blocks sorted by position (fractional index)
+    - deleted blocks (tombstone) are hidden
+    - conflict indicator if local != server state
+
+[2026-06-26 13:03] FRONTEND: === BLOCK-BASED EDITOR COMPONENTS ===
+  WorkspaceView:
+    - Header: name, collaborators list, sync status
+    - BlockList: sortable, draggable blocks
+
+  BlockRenderer:
+    - by type: text, image, checklist, divider
+    - Editable on click
+    - Shows cursor for collaborators
+
+  CollaboratorCursor:
+    - Colored cursor per user
+    - Position synced via events
+
+  SyncVisualizer:
+    - Status indicator: ✅ 🔄 ❌ 📴
+    - Pending events count
+    - Last synced timestamp
+    - Conflict count badge
+
+  OfflineBanner:
+    - Shows pending changes count
+    - "Changes will sync when online"
+
+[2026-06-26 13:03] FRONTEND: === SYNC VISUALIZATION STRATEGY ===
+  - Green: all events confirmed up to last HLC
+  - Yellow: events pending, retrying
+  - Red: retry failed after max backoff
+  - Gray: offline
+  - Badge: number of unconfirmed events
+  - Click indicator → shows detailed sync log

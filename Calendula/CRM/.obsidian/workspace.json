@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "8a4e58f8a600464a",
+    "type": "split",
+    "children": [
+      {
+        "id": "9727e532cf70c300",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "802dc7f412c5085c",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "81f6a9588981dad9",
+    "type": "split",
+    "children": [
+      {
+        "id": "52089524ab25f815",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5aa0d453b7e8bab7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "3bd37ce78abc8d54",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "89ae95f9b4aabcda",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "063eb94b3768be22",
+    "type": "split",
+    "children": [
+      {
+        "id": "ccf744fa03405ddb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd0f32b9cb80c223",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Соц Капитал/1_круг/Hold.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для Hold"
+            }
+          },
+          {
+            "id": "dc3010fa2c06be72",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Соц Капитал/1_круг/Hold.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из Hold"
+            }
+          },
+          {
+            "id": "1e8fa74dd76ac545",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "17e6200fce32f069",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "c23f1ed91cf24a26",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Соц Капитал/1_круг/Hold.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура Hold"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "802dc7f412c5085c",
+  "lastOpenFiles": [
+    "Соц Капитал/1_круг/Vano.md",
+    "Соц Капитал/Познакомились/Ren.md",
+    "Соц Капитал/Познакомились/Stanislav.md",
+    "2026/Июнь/30-06-26/30-06-26 Соц.md",
+    "2026/Июнь/29-06-26/29-06-26 Соц.md",
+    "2026/Июнь/28-06-26/28-06-26 Соц.md",
+    "2026/Июнь/27-06-26/27.1-06-26 Соц.md",
+    "2026/Июнь/27-06-26/27-06-26 Соц.md",
+    "2026/Июнь/26-06-26/26.1-06-26 Соц.md",
+    "2026/Июнь/26-06-26/26-06-26 Соц.md",
+    "2026/Июнь/25-06-26/25-06-26 Соц.md",
+    "2026/Июнь/24-06-26/24.1-06-26 Соц.md",
+    "2026/Июнь/24-06-26/24-06-26 Соц.md",
+    "2026/Июнь/23-06-26/23.1-06-26 Соц.md",
+    "2026/Июнь/23-06-26/23-06-26 Соц.md",
+    "2026/Июнь/22-06-26/22-06-26 Соц.md",
+    "2026/Июнь/15-06-26/15.1-06-26 Соц.md",
+    "2026/Июнь/14-06-26/14.1-06-26 Соц.md",
+    "2026/Июнь/07-06-26/07.1-06-26 Соц.md",
+    "2026/Июнь/02-06-26/02.1-06-26 Соц.md",
+    "2026/Январь/19-01-26/19.1-01-26 Соц.md",
+    "2026/Январь/18-01-26/18.1-01-26 Соц.md",
+    "2026/Январь/15-01-26/15.1-01-26 Соц.md",
+    "2026/Январь/14-01-26/14.1-01-26 Соц.md",
+    "2026/Январь/13-01-26/13.1-01-26 Соц.md",
+    "2026/Январь/12-01-26/12.1-01-26 Соц.md"
+  ]
+}

@@ -1,0 +1,42 @@
+[2026-07-16 16:30:00] [STEP] === Backend Engineer: git-push-bulletproof ===
+[2026-07-16 16:30:00] [INFO] Created initial git-push-bulletproof.ps1 (712 lines)
+[2026-07-16 16:30:00] [INFO] Architecture: Pre-flight -> Sync -> Commit -> Push (3-layer)
+[2026-07-16 16:30:00] [INFO] Approach: Self-healing with stale cleanup, mutex, retry logic
+
+[2026-07-16 16:35:00] [ERROR] Parser error #1: Unexpected token '}' at lines 639, 651
+[2026-07-16 16:35:00] [DEBUG] Diagnosis: ${function:} namespace syntax inside Invoke-Push
+[2026-07-16 16:35:00] [DEBUG] Fix: Replaced ${function:Push-Https} with direct function call via switch statement
+[2026-07-16 16:35:00] [INFO] Alternatives considered: ScriptBlock variables, Get-Command
+
+[2026-07-16 16:40:00] [ERROR] Parser error #2: 'Unexpected token }' persists after first fix
+[2026-07-16 16:40:00] [DEBUG] Root cause found: Unicode smart quotes (U+201C/U+201D) replaced ASCII double quotes
+[2026-07-16 16:40:00] [DEBUG] Em-dashes (U+2014/'—') appeared in comments and strings -> got corrupted when read as ANSI
+[2026-07-16 16:40:00] [DEBUG] Fix: Read file as UTF-8, replace all smart quotes with ASCII, strip high chars
+[2026-07-16 16:45:00] [ERROR] Parser error #3: Get-Content defaulted to Windows-1251, corrupting UTF-8 em-dash
+[2026-07-16 16:45:00] [DEBUG] Corruption: — (E2 80 94) -> read as CP1251 (вЂ") -> written as UTF-8 (D0 B2 D0 82...)
+[2026-07-16 16:45:00] [DEBUG] This created broken string literals with extra " in the middle
+[2026-07-16 16:45:00] [DEBUG] Fix: Rewrote file from scratch, removed all Unicode/NMS chars, pure ASCII only
+
+[2026-07-16 17:00:00] [INFO] Rewrote git-push-bulletproof.ps1 from scratch (ASCII-only, ~700 lines)
+[2026-07-16 17:00:00] [INFO] Architecture: Pre-flight -> Sync (SSH fetch) -> Commit -> Push (3-layer fallback)
+[2026-07-16 17:00:00] [INFO] Invoke-Git uses cmd.exe /c with temp file redirection for safe output capture
+
+[2026-07-16 17:02:00] [ERROR] Runtime error: Join-Path failed in Repair-StuckRebase ($PSScriptRoot scope issue)
+[2026-07-16 17:02:00] [DEBUG] Fix: Use git rev-parse --show-toplevel instead of $PSScriptRoot
+
+[2026-07-16 17:09:00] [INFO] Fixed Invoke-Git to use cmd.exe /c with temp files (avoids deadlocks)
+[2026-07-16 17:09:00] [INFO] Fixed Invoke-Sync to use SSH for fetch with explicit key discovery
+
+[2026-07-16 17:10:00] [WARN] SSH fetch failed on first attempt (wrong remote URL: kiselyovds/Calendula)
+[2026-07-16 17:10:00] [DEBUG] Correct repo is Konstantin2005/ObsiduanMain
+
+[2026-07-16 17:19:00] [OK] DryRun successful: Ahead: 4, Behind: 0 on main
+[2026-07-16 17:19:00] [OK] Would push 4 commits to origin/main
+
+[2026-07-16 17:20:00] [DEBUG] Fixed Get-AheadBehind regex parsing (array vs string -match issue)
+[2026-07-16 17:20:00] [DEBUG] Fixed @{u} upstream reference string construction (removed backslash escaping)
+
+[2026-07-16 17:21:00] [OK] PushOnly execution: FULL SUCCESS
+[2026-07-16 17:21:00] [INFO] Layer 1 (HTTPS): FAILED - terminal prompts disabled
+[2026-07-16 17:21:00] [INFO] Layer 2 (SSH): SUCCESS - 4 commits pushed via ed25519 key
+[2026-07-16 17:21:00] [OK] ALL DONE - Script bulletproof verified

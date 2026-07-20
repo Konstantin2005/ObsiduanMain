@@ -1,0 +1,14 @@
+[2026-06-26 12:01] 🧭 ARCHITECT: Получена задача от оркестратора
+[2026-06-26 12:01] ARCHITECT: Анализ требований: простая авторизация с login + mock token
+[2026-06-26 12:01] ARCHITECT: Решение: Stateless JWT-like mock токен
+[2026-06-26 12:01] ARCHITECT: Flow авторизации:
+  1. Frontend отправляет { username, password } на /api/login
+  2. Backend проверяет credentials (mock: admin/admin123)
+  3. Backend возвращает { token: "mock-token-<timestamp>" }
+  4. Frontend хранит токен в sessionStorage
+  5. Каждый запрос проверяет наличие токена
+[2026-06-26 12:01] ARCHITECT: Структура данных:
+  - POST /api/login → { username, password }
+  - Ответ: { token, user: { name, role } }
+  - GET /api/me → Authorization: Bearer <token>
+[2026-06-26 12:01] ARCHITECT: Решение записано в system/architecture.md

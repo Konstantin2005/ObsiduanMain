@@ -1,0 +1,32 @@
+# Architect Log — Issue #12
+
+## Date: 2026-06-27
+
+## Decisions & Reasoning
+
+### 1. IndexedDB as primary cache store
+**Reasoning**: Layout snapshots can reach ~1.2MB for 50K nodes. IndexedDB provides persistent, random-access storage with sufficient capacity. In-memory LRU hot cache reduces latency for frequent layouts.
+
+### 2. Float32Array binary serialization
+**Reasoning**: JSON representation of positions is ~100 bytes/node (string keys, object overhead). Float32Array achieves 24 bytes/node with packed binary format.
+
+### 3. Composite cache key
+**Reasoning**: Layout depends on graph structure + algorithm parameters + viewport. Three-part hash ensures precise cache matching.
+
+### 4. Incremental updates for <10% change
+**Reasoning**: Full re-layout for 1-2 node changes is wasteful. Position interpolation for new nodes and deletion for removed ones is sufficient for small deltas.
+
+### 5. LRU eviction with 100MB budget
+**Reasoning**: Without limits, cache could grow to gigabytes. 100MB allows ~80 full 50K-node layouts while preventing unbounded growth.
+
+## Alternatives Considered
+- **JSON serialization**: Rejected — too large (5MB vs 1.2MB for 50K nodes).
+- **localStorage**: Rejected — 5-10MB limit insufficient.
+- **SQLite**: Rejected — overkill; key-value store is sufficient.
+
+## Files Created
+- 00-architect/plan.md
+- 00-architect/architecture.md
+- 00-architect/decisions.md
+- shared/architecture.md
+- shared/decisions-log.md

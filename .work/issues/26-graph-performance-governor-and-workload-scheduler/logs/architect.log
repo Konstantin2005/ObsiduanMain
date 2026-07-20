@@ -1,0 +1,27 @@
+[ARCHITECT] 2026-06-27T00:00:00Z — Starting Architect step for Issue #26
+
+Analysis:
+- Feature requires CPU, memory, and throughput governor
+- System must self-limit load for stable behavior
+- Need adaptive thresholds that work across different hardware
+- Two workload classes: background and interactive
+
+Decisions:
+1. ADR-1: Adaptive thresholds over fixed limits — works across hardware
+2. ADR-2: Priority preemptive scheduling — interactive preempts background
+3. ADR-3: Backpressure via Promise-based signaling — callers defer gracefully
+4. ADR-4: Marker-based resource tracking — lightweight, cross-platform
+
+Alternatives considered:
+- Fixed thresholds: Rejected — unusable across diverse hardware
+- Cooperative scheduling: Rejected — background could starve interactivity
+- Throw-based backpressure: Rejected — forces callers to catch; less graceful
+
+Files created:
+- 00-architect/plan.md — 3-phase implementation plan
+- 00-architect/architecture.md — module structure and API types
+- 00-architect/decisions.md — 4 architecture decisions
+- shared/architecture.md — system context diagram
+- shared/decisions-log.md — decision log entry
+
+[ARCHITECT] 2026-06-27T00:00:00Z — Architect step complete

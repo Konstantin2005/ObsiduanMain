@@ -1,0 +1,35 @@
+[2026-06-26 12:48] 🎨 FRONTEND: Получена архитектура. Анализ UI требований.
+[2026-06-26 12:48] FRONTEND: Ключевые UI компоненты:
+  - TaskDashboard: список задач + sync status
+  - TaskCard: карточка задачи с версией и статусом
+  - TaskEditor: редактирование + version info
+  - ConflictResolver: диалог разрешения конфликта
+  - SyncIndicator: иконка статуса синхронизации
+  - OfflineBanner: уведомление офлайн-режима
+
+[2026-06-26 12:48] FRONTEND: State Model (state-model.md):
+  - tasks: Map<id, Task>
+  - syncStatus: 'synced' | 'syncing' | 'error' | 'offline'
+  - offlineQueue: Action[]
+  - conflicts: Map<id, ConflictInfo>
+  - selectedTask: id | null
+
+[2026-06-26 12:48] FRONTEND: Offline Mode (offline-mode.md):
+  - Detected: navigator.onLine === false или sync error
+  - Queue: все изменения сохраняются в localStorage
+  - Sync on reconnect: POST /api/sync/push
+  - Conflict on sync: получаем 409 → показываем ConflictResolver
+  - Rollback: если sync failed → возвращаем state до изменения
+  - Optimistic update: UI обновляется сразу, rollback при ошибке
+
+[2026-06-26 12:48] FRONTEND: Optimistic UI strategy:
+  - Изменение → сразу обновить state → запрос к API
+  - API успех → подтвердить, обновить version
+  - API ошибка → rollback state, показать ошибку
+  - Offline → queue + optimistic update, sync позже
+
+[2026-06-26 12:48] FRONTEND: Sync visualization:
+  - SyncIndicator: зелёный (synced), жёлтый (syncing), красный (error), серый (offline)
+  - Last synced timestamp
+  - Push/pull counter
+  - OfflineBanner: "You are offline. Changes will sync when connection is restored."

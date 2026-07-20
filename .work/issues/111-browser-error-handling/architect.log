@@ -1,0 +1,7 @@
+[2026-06-26 13:11] ARCHITECT: Analyzed issue #111 from anomalyco/opencode
+[2026-06-26 13:11] ARCHITECT: Identified openBrowser in packages/opencode/src/cli/cmd/account.ts
+[2026-06-26 13:11] ARCHITECT: Current code: open(url).catch(() => undefined) — silently swallows errors
+[2026-06-26 13:11] ARCHITECT: Reasoning: On headless servers (Hetzner VPS), open() throws because no display/browser
+[2026-06-26 13:11] ARCHITECT: Found existing pattern in github.handler.ts using prompts.log.warn
+[2026-06-26 13:11] ARCHITECT: Decision: Use Prompt.log.warn, keep non-blocking, minimal change
+[2026-06-26 13:11] ARCHITECT: plan.md, architecture.md, decisions.md created

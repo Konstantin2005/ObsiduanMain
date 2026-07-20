@@ -1,0 +1,110 @@
+﻿[2026-07-19 23:41:26] [obsidian-Main] Starting (check: 5s, push: 60m)
+[2026-07-19 23:41:26] [obsidian-Main] DryRun mode - exiting
+[2026-07-19 23:41:34] [obsidian-Main] Starting (check: 5s, push: 60m)
+[2026-07-19 23:41:34] [obsidian-Main] DryRun mode - exiting
+[2026-07-20 00:00:52] [obsidian-Main] Starting (check: 5s, push: 5m)
+[2026-07-20 00:00:52] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 00:00:52] [obsidian-Main] Pushing to origin/main ...
+[2026-07-20 00:01:10] [obsidian-Main] Starting (check: 5s, push: 5m)
+[2026-07-20 00:01:10] [obsidian-Main] Pushing to origin/main ...
+[2026-07-20 00:01:20] [obsidian-Main] Push completed successfully
+[2026-07-20 16:45:09] [obsidian-Main] Starting (check: 5s, push: 5m)
+[2026-07-20 16:45:09] [obsidian-Main] Pushing to origin/main ...
+[2026-07-20 16:45:19] [obsidian-Main] Push completed successfully
+[2026-07-20 16:50:13] [obsidian-Main] Pushing to origin/main ...
+[2026-07-20 16:50:23] [obsidian-Main] Push completed successfully
+[2026-07-20 16:53:51] [obsidian-Main] Heartbeat: 0 file(s) changed
+[2026-07-20 16:55:17] [obsidian-Main] Pushing to origin/main ...
+[2026-07-20 16:55:27] [obsidian-Main] Push completed successfully
+[2026-07-20 17:00:21] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:00:28] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:00:28] [obsidian-Main] Pushing to origin/main ...
+[2026-07-20 17:01:28] [obsidian-Main] Push failed: git.exe : remote: warning: File Calendula/╨Ь╨░╤Б╨╗╨╕╨╜╤Л/vanilla-ayuGram-lite-universal-20260329.apk is 93.09 MB; this 
+is larger than GitHub's recommended maximum file size of 50.00 MB        
+At C:\obsidian\Main\Technical\Scripts\Git\daily-push.ps1:167 char:20
++         $pushOut = & $GitPath push origin $Branch 2>&1
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (remote: warning...0.00 MB        :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+remote: error: Trace: 2ecaae609c37d4aa91e92bae1777eeb8cc9416e4f85e695d844d5f8d3d9a0037        
+remote: error: See https://gh.io/lfs for more information.        
+remote: error: File Technical/Scripts/Logs/daily-push.log is 990.15 MB; this exceeds GitHub's file size limit of 
+100.00 MB        
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.   
+     
+To github.com:Konstantin2005/ObsiduanMain.git
+ ! [remote rejected]   main -> main (pre-receive hook declined)
+error: failed to push some refs to 'github.com:Konstantin2005/ObsiduanMain.git'
+[2026-07-20 17:01:34] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:01:39] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:01:44] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:01:50] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:01:55] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:00] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:06] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:19] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:24] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:30] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:35] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:40] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:46] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:51] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:02:56] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:02] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:07] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:13] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:18] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:23] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:29] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:34] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:39] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:45] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:50] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:03:56] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:01] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:01] [obsidian-Main] Heartbeat: 1 file(s) changed
+[2026-07-20 17:04:06] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:12] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:17] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:22] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:28] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:33] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:38] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:44] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:49] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:04:54] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:00] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:05] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:10] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:16] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:21] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:26] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:32] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:05:32] [obsidian-Main] Pushing to origin/main ...
+[2026-07-20 17:07:08] [obsidian-Main] Push failed: git.exe : remote: warning: File Calendula/╨Ь╨░╤Б╨╗╨╕╨╜╤Л/vanilla-ayuGram-lite-universal-20260329.apk is 93.09 MB; this 
+is larger than GitHub's recommended maximum file size of 50.00 MB        
+At C:\obsidian\Main\Technical\Scripts\Git\daily-push.ps1:167 char:20
++         $pushOut = & $GitPath push origin $Branch 2>&1
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (remote: warning...0.00 MB        :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+remote: error: Trace: 6435b280eb1ccde7f9d0ec46e5daf6c739d233bf5e0efc856d27482e4822685f        
+remote: error: See https://gh.io/lfs for more information.        
+remote: error: File Technical/Scripts/Logs/daily-push.log is 990.15 MB; this exceeds GitHub's file size limit of 
+100.00 MB        
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.   
+     
+To github.com:Konstantin2005/ObsiduanMain.git
+ ! [remote rejected]   main -> main (pre-receive hook declined)
+error: failed to push some refs to 'github.com:Konstantin2005/ObsiduanMain.git'
+[2026-07-20 17:07:14] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:19] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:25] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:30] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:36] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:41] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:46] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:52] [obsidian-Main] Commit error: Cannot index into a null array.
+[2026-07-20 17:07:57] [obsidian-Main] Commit error: Cannot index into a null array.

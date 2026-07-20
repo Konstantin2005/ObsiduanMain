@@ -1,0 +1,36 @@
+[2026-06-26 12:46] 🧭 ARCHITECT: Анализ требований Distributed Task Management System
+[2026-06-26 12:46] ARCHITECT: Ключевые требования: real-time sync, offline mode, conflict resolution, version history
+[2026-06-26 12:46] ARCHITECT: === АЛЬТЕРНАТИВА A: Event Sourcing + CQRS ===
+  - Все изменения — события, хранятся в event log
+  - CQRS: отдельная модель для чтения и записи
+  - Conflict resolution: последнее событие побеждает (last-write-wins)
+  - Pros: полная история, легко откатить, сильная консистентность
+  - Cons: сложность имплементации, память (in-memory не масштабируется)
+  - Trade-off: избыточно для mock-системы
+
+[2026-06-26 12:46] ARCHITECT: === АЛЬТЕРНАТИВА B: Version Vector + Merge ===
+  - Каждая задача имеет version vector { user: version }
+  - При конфликте: manual resolve (пользователь выбирает)
+  - Pros: настоящая CRDT-подобная логика, детектирование конфликтов
+  - Cons: сложный merge UI, нужно хранить все версии
+  - Trade-off: лучший выбор для демо conflict resolution
+
+[2026-06-26 12:46] ARCHITECT: === АЛЬТЕРНАТИВА C: Simple Lock + Timestamp ===
+  - Задача блокируется при редактировании
+  - При попытке редактирования — 423 Locked
+  - Timestamp-based conflict detection
+  - Pros: простота, понятный UX
+  - Cons: не масштабируется, нет реальной sync
+  - Trade-off: слишком простой для stress test
+
+[2026-06-26 12:46] ARCHITECT: ВЫБОР: Альтернатива B (Version Vector + Merge)
+  - Почему: лучший баланс сложности и демонстрации conflict resolution
+  - Позволяет показать: параллельное редактирование, детектирование, ручной merge
+  - Покрывает требования stress test: real-time sync simulation, conflict resolution, version history
+
+[2026-06-26 12:46] ARCHITECT: Архитектура:
+  - Task: { id, title, description, status, versions: Map<userId, version>, merged: boolean }
+  - Sync: polling-based (каждые 3s), simulated real-time
+  - Offline: localStorage queue + sync on reconnect
+  - Conflict: version mismatch → manual resolve dialog
+  - Merge: last-write-wins per field или manual pick

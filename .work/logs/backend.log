@@ -1,0 +1,101 @@
+﻿[2026-07-16 17:02:20] [STEP] === Pre-flight checks ===
+[2026-07-16 17:02:20] [ERROR] Unhandled exception: Cannot convert 'System.Object[]' to the type 'System.String' required by parameter 'ChildPath'. Specified method is not supported.
+[2026-07-16 17:03:45] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:03:45] [INFO] Args: PushOnly=False DryRun=True Verbose=
+[2026-07-16 17:03:45] [INFO] Params: Remote=origin HTTPS=https://github.com/kiselyovds/Calendula.git SSH=git@github.com:kiselyovds/Calendula.git
+[2026-07-16 17:03:45] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:03:45] [STEP] === Pre-flight checks ===
+[2026-07-16 17:03:45] [ERROR] Unhandled exception: Cannot convert 'System.Object[]' to the type 'System.String' required by parameter 'ChildPath'. Specified method is not supported.
+[2026-07-16 17:04:28] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:04:28] [INFO] Args: PushOnly=False DryRun=True Verbose=
+[2026-07-16 17:04:28] [INFO] Params: Remote=origin HTTPS=https://github.com/kiselyovds/Calendula.git SSH=git@github.com:kiselyovds/Calendula.git
+[2026-07-16 17:04:28] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:04:28] [STEP] === Pre-flight checks ===
+[2026-07-16 17:04:28] [STEP] === Syncing with remote ===
+[2026-07-16 17:04:29] [WARN] Unexpected remote URL: g (expected HTTPS or SSH)
+[2026-07-16 17:04:29] [INFO] Fetching from remote...
+[2026-07-16 17:04:34] [ERROR] Fetch failed: fatal: Cannot prompt because user interactivity has been disabled.; fatal: Cannot prompt because user interactivity has been disabled.; fatal: could not read Username for 'https://github.com': terminal prompts disabled
+[2026-07-16 17:04:34] [ERROR] Sync failed - cannot push without syncing
+[2026-07-16 17:09:14] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:09:14] [INFO] Args: PushOnly=False DryRun=True Verbose=
+[2026-07-16 17:09:14] [INFO] Params: Remote=origin HTTPS=https://github.com/kiselyovds/Calendula.git SSH=git@github.com:kiselyovds/Calendula.git
+[2026-07-16 17:09:14] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:09:14] [STEP] === Pre-flight checks ===
+[2026-07-16 17:09:14] [STEP] === Syncing with remote ===
+[2026-07-16 17:09:14] [INFO] Fetching from remote...
+[2026-07-16 17:09:29] [WARN] SSH fetch failed, retrying with HTTPS...
+[2026-07-16 17:09:37] [ERROR] Fetch failed (both SSH and HTTPS): fatal: Cannot prompt because user interactivity has been disabled.; fatal: Cannot prompt because user interactivity has been disabled.; fatal: could not read Username for 'https://github.com': terminal prompts disabled
+[2026-07-16 17:09:37] [ERROR] Sync failed - cannot push without syncing
+[2026-07-16 17:10:01] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:10:01] [INFO] Args: PushOnly=False DryRun=True Verbose=
+[2026-07-16 17:10:01] [INFO] Params: Remote=origin HTTPS=https://github.com/kiselyovds/Calendula.git SSH=git@github.com:kiselyovds/Calendula.git
+[2026-07-16 17:10:01] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:10:01] [STEP] === Pre-flight checks ===
+[2026-07-16 17:10:01] [STEP] === Syncing with remote ===
+[2026-07-16 17:10:01] [INFO] Fetching from remote...
+[2026-07-16 17:10:17] [WARN] SSH fetch failed, retrying with HTTPS...
+[2026-07-16 17:10:23] [ERROR] Fetch failed (both SSH and HTTPS): fatal: Cannot prompt because user interactivity has been disabled.; fatal: Cannot prompt because user interactivity has been disabled.; fatal: could not read Username for 'https://github.com': terminal prompts disabled
+[2026-07-16 17:10:23] [ERROR] Sync failed - cannot push without syncing
+[2026-07-16 17:11:11] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:11:11] [INFO] Args: PushOnly=False DryRun=True Verbose=
+[2026-07-16 17:11:11] [INFO] Params: Remote=origin HTTPS=https://github.com/kiselyovds/Calendula.git SSH=git@github.com:kiselyovds/Calendula.git
+[2026-07-16 17:11:11] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:11:11] [STEP] === Pre-flight checks ===
+[2026-07-16 17:11:11] [STEP] === Syncing with remote ===
+[2026-07-16 17:11:11] [INFO] Fetching from remote...
+[2026-07-16 17:11:24] [WARN] SSH fetch failed, retrying with HTTPS...
+[2026-07-16 17:11:30] [ERROR] Fetch failed (both SSH and HTTPS): fatal: Cannot prompt because user interactivity has been disabled.; fatal: Cannot prompt because user interactivity has been disabled.; fatal: could not read Username for 'https://github.com': terminal prompts disabled
+[2026-07-16 17:11:30] [ERROR] Sync failed - cannot push without syncing
+[2026-07-16 17:19:14] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:19:14] [INFO] Args: PushOnly=False DryRun=True Verbose=
+[2026-07-16 17:19:14] [INFO] Params: Remote=origin HTTPS=https://github.com/Konstantin2005/ObsiduanMain.git SSH=git@github.com:Konstantin2005/ObsiduanMain.git
+[2026-07-16 17:19:14] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:19:14] [STEP] === Pre-flight checks ===
+[2026-07-16 17:19:14] [STEP] === Syncing with remote ===
+[2026-07-16 17:19:15] [INFO] Fetching from remote...
+[2026-07-16 17:19:18] [OK] Fetch successful
+[2026-07-16 17:19:18] [INFO] Ahead: , Behind:  on main
+[2026-07-16 17:19:18] [INFO] Already up to date (0 commits behind)
+[2026-07-16 17:19:18] [STEP] === Committing changes ===
+[2026-07-16 17:19:18] [INFO] Nothing to commit
+[2026-07-16 17:19:18] [STEP] === Pushing to remote ===
+[2026-07-16 17:19:18] [INFO] Current branch: main
+[2026-07-16 17:19:19] [INFO] [DRY-RUN] Would push  commits to origin/main
+[2026-07-16 17:19:19] [STEP] === DONE - All operations completed successfully ===
+[2026-07-16 17:20:36] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:20:36] [INFO] Args: PushOnly=False DryRun=True Verbose=
+[2026-07-16 17:20:36] [INFO] Params: Remote=origin HTTPS=https://github.com/Konstantin2005/ObsiduanMain.git SSH=git@github.com:Konstantin2005/ObsiduanMain.git
+[2026-07-16 17:20:36] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:20:36] [STEP] === Pre-flight checks ===
+[2026-07-16 17:20:36] [STEP] === Syncing with remote ===
+[2026-07-16 17:20:36] [INFO] Fetching from remote...
+[2026-07-16 17:20:39] [OK] Fetch successful
+[2026-07-16 17:20:40] [INFO] Ahead: 4, Behind: 0 on main
+[2026-07-16 17:20:40] [INFO] Already up to date (0 commits behind)
+[2026-07-16 17:20:40] [STEP] === Committing changes ===
+[2026-07-16 17:20:40] [INFO] Nothing to commit
+[2026-07-16 17:20:40] [STEP] === Pushing to remote ===
+[2026-07-16 17:20:40] [INFO] Current branch: main
+[2026-07-16 17:20:40] [INFO] [DRY-RUN] Would push 4 commits to origin/main
+[2026-07-16 17:20:40] [STEP] === DONE - All operations completed successfully ===
+[2026-07-16 17:21:00] [STEP] === Starting git-push-bulletproof ===
+[2026-07-16 17:21:00] [INFO] Args: PushOnly=True DryRun=False Verbose=
+[2026-07-16 17:21:00] [INFO] Params: Remote=origin HTTPS=https://github.com/Konstantin2005/ObsiduanMain.git SSH=git@github.com:Konstantin2005/ObsiduanMain.git
+[2026-07-16 17:21:00] [INFO] Stale process threshold: 5m, Max ahead push: 500
+[2026-07-16 17:21:00] [STEP] === Pre-flight checks ===
+[2026-07-16 17:21:00] [INFO] Removed stale index.lock (age: 3.9 min)
+[2026-07-16 17:21:00] [STEP] === Syncing with remote ===
+[2026-07-16 17:21:00] [INFO] Fetching from remote...
+[2026-07-16 17:21:04] [OK] Fetch successful
+[2026-07-16 17:21:04] [INFO] Ahead: 4, Behind: 0 on main
+[2026-07-16 17:21:04] [INFO] Already up to date (0 commits behind)
+[2026-07-16 17:21:04] [INFO] PushOnly mode -- skipping commit
+[2026-07-16 17:21:04] [STEP] === Pushing to remote ===
+[2026-07-16 17:21:04] [INFO] Current branch: main
+[2026-07-16 17:21:04] [INFO] Attempting push via HTTPS...
+[2026-07-16 17:21:04] [INFO] Push Layer 1: HTTPS + credential manager...
+[2026-07-16 17:21:05] [WARN] HTTPS push failed: fatal: Cannot prompt because user interactivity has been disabled.; fatal: Cannot prompt because user interactivity has been disabled.; fatal: could not read Username for 'https://github.com': terminal prompts disabled
+[2026-07-16 17:21:05] [INFO] Attempting push via SSH...
+[2026-07-16 17:21:05] [INFO] Push Layer 2: SSH with explicit identity...
+[2026-07-16 17:21:09] [OK] Push via SSH successful
+[2026-07-16 17:21:09] [STEP] === DONE - All operations completed successfully ===

@@ -1,0 +1,4 @@
+[2026-06-26 13:12] FRONTEND: Reviewed user-facing message for browser failure
+[2026-06-26 13:12] FRONTEND: Message: "Could not open browser automatically. If you are on a headless server, copy the URL above into a browser on another machine."
+[2026-06-26 13:12] FRONTEND: Reasoning: Clear, actionable, non-technical. Uses same Prompt.log.warn style as rest of CLI.
+[2026-06-26 13:12] FRONTEND: The URL and code are already printed before openBrowser call, so user has fallback info.

@@ -1,0 +1,13 @@
+[2026-06-27T10:00:00Z] ARCHITECT START - Issue #22: DEV: Add worker-based planning for graph queries and layout
+[2026-06-27T10:00:00Z] Analysis: Graph planning and layout should run in workers to avoid blocking UI thread
+[2026-06-27T10:00:00Z] Decision: Fixed-size worker pool for predictable resource usage
+[2026-06-27T10:00:00Z] Decision: Deterministic result merging based on node ID ordering
+[2026-06-27T10:00:00Z] Decision: Cancellation tokens with timeout-based forced cleanup
+[2026-06-27T10:00:00Z] Files created:
+  - 00-architect/plan.md — phased implementation plan
+  - 00-architect/architecture.md — component diagram and API
+  - 00-architect/decisions.md — ADR log
+  - shared/architecture.md — system context
+  - shared/decisions-log.md — high-level decisions
+[2026-06-27T10:00:00Z] Reasoning: Fixed pool chosen over dynamic spawning to avoid startup latency and unbounded resource growth. Deterministic merge ensures reproducibility for debugging. Cancellation tokens provide structured cleanup over abort signals.
+[2026-06-27T10:00:00Z] ARCHITECT DONE

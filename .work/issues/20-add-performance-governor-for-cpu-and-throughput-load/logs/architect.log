@@ -1,0 +1,13 @@
+[2026-06-27T10:00:00Z] ARCHITECT START - Issue #20: DEV: Add performance governor for CPU and throughput load
+[2026-06-27T10:00:00Z] Analysis: Issue requires a governor to prevent load spikes from overwhelming user experience
+[2026-06-27T10:00:00Z] Decision: Policy-based governor with configurable thresholds
+[2026-06-27T10:00:00Z] Decision: Four-state model (Normal → Warning → Critical → Fallback)
+[2026-06-27T10:00:00Z] Decision: Structured logging for all state transitions
+[2026-06-27T10:00:00Z] Files created:
+  - 00-architect/plan.md — phased implementation plan
+  - 00-architect/architecture.md — component diagram and API contract
+  - 00-architect/decisions.md — ADR log with rationale
+  - shared/architecture.md — system context and data flow
+  - shared/decisions-log.md — high-level decisions
+[2026-06-27T10:00:00Z] Reasoning: Policy-based approach chosen over fixed limiter for flexibility across variable workloads. Structured logging adopted to avoid separate telemetry pipeline.
+[2026-06-27T10:00:00Z] ARCHITECT DONE

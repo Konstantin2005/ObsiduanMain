@@ -1,0 +1,222 @@
+﻿[2026-07-01 17:05:21] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:05:21] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:05:38] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:05:38] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:07:45] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:07:45] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:08:17] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:08:17] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:19:40] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:19:40] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:20:59] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:20:59] [MONITOR] vault/Cred: credential.helper=manager but no credentialStore set (may fail from Task Scheduler)
+[2026-07-01 17:20:59] [MONITOR] vault is 2 ahead - can push
+[2026-07-01 17:20:59] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:21:00] [MONITOR] parent/Cred: credential.helper=manager but no credentialStore set (may fail from Task Scheduler)
+[2026-07-01 17:21:00] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:21:00] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-01 17:21:00] [HEAL] Repaired: set credential.credentialStore=plaintext
+[2026-07-01 17:21:00] [HEAL] Stored gh token in plaintext store
+[2026-07-01 17:21:01] [HEAL] Re/creating task: AutoCommitNotes
+[2026-07-01 17:21:01] [ERROR] Error in Repair-TaskScheduler: Parameter set cannot be resolved using the specified named parameters.
+[2026-07-01 17:21:01] [HEAL] Large .git: 1,165MB - running gc...
+[2026-07-01 17:21:01] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:21:01] [HEAL] Repairs performed:
+[2026-07-01 17:21:01] [HEAL]   OK Fixed credential store
+[2026-07-01 17:21:01] [HEAL]   OK GC on C:\obsidian\Main: freed 0MB
+[2026-07-01 17:22:43] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:22:44] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:22:45] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:22:45] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:22:45] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:23:01] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:23:01] [MONITOR] vault is 1 ahead - can push
+[2026-07-01 17:23:01] [PUSH] Pushing to origin/main via SSH...
+[2026-07-01 17:23:05] [PUSH] Push SUCCESS (origin/main)
+[2026-07-01 17:23:05] [MONITOR] vault push initiated
+[2026-07-01 17:23:05] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:23:05] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:23:14] [HEAL] === SELF-HEALER STARTED (scope: tasks) ===
+[2026-07-01 17:23:14] [HEAL] Re/creating task: AutoCommitNotes
+[2026-07-01 17:23:14] [HEAL] Re/creating task: GitWorker
+[2026-07-01 17:23:14] [HEAL] Re/creating task: HealthMonitor
+[2026-07-01 17:23:14] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:23:14] [HEAL] Repairs performed:
+[2026-07-01 17:23:14] [HEAL]   OK Task AutoCommitNotes registered
+[2026-07-01 17:23:14] [HEAL]   OK Task GitWorker registered
+[2026-07-01 17:23:14] [HEAL]   OK Task HealthMonitor registered
+[2026-07-01 17:23:32] [HEAL] === SELF-HEALER STARTED (scope: tasks) ===
+[2026-07-01 17:23:32] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:23:32] [HEAL] No repairs needed - all systems OK
+[2026-07-01 17:23:40] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:23:40] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:23:41] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-01 17:23:42] [HEAL] Large .git: 1,165MB - running gc...
+[2026-07-01 17:23:42] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:23:42] [HEAL] Repairs performed:
+[2026-07-01 17:23:42] [HEAL]   OK GC on C:\obsidian\Main: freed 0MB
+[2026-07-01 17:23:42] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:23:42] [MONITOR] vault is 3 ahead - can push
+[2026-07-01 17:23:42] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:23:42] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:25:13] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:25:13] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:25:14] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-01 17:25:14] [HEAL] Large .git: 1,072MB - running gc...
+[2026-07-01 17:25:15] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:25:15] [HEAL] Repairs performed:
+[2026-07-01 17:25:15] [HEAL]   OK GC on C:\obsidian\Main: freed 0MB
+[2026-07-01 17:25:15] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:25:15] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:25:15] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:28:01] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:28:02] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:28:02] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:33:02] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:33:03] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:33:03] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:37:32] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:37:32] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:37:33] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:37:33] [MONITOR] vault/Lock: Lock file present (0.9 min old)
+[2026-07-01 17:37:33] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:37:34] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:37:34] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-01 17:37:34] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:37:34] [HEAL] No repairs needed - all systems OK
+[2026-07-01 17:38:02] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:38:02] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:38:02] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:43:01] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:43:02] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:43:02] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:44:06] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:44:06] [MONITOR] vault/Rebase: Stuck rebase at C:\obsidian\Main\.git\rebase-merge
+[2026-07-01 17:44:06] [MONITOR] vault/Lock: Stale lock file (120.3 min old)
+[2026-07-01 17:44:06] [MONITOR] vault is 2 ahead - can push
+[2026-07-01 17:44:06] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:44:06] [MONITOR] parent/Rebase: Stuck rebase at C:\obsidian\.git\rebase-merge
+[2026-07-01 17:44:06] [MONITOR] parent/Lock: Stale lock file (120.3 min old)
+[2026-07-01 17:44:06] [MONITOR] Health monitor complete. Status: WARN
+[2026-07-01 17:44:28] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-01 17:44:28] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:44:28] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:44:28] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:44:28] [HEAL] Repaired: removed stuck rebase
+[2026-07-01 17:44:29] [HEAL] Repaired: switched remote to SSH
+[2026-07-01 17:44:29] [HEAL] Repaired: switched remote to SSH
+[2026-07-01 17:44:29] [HEAL] Re/creating task: AutoCommitNotes
+[2026-07-01 17:44:29] [HEAL] Re/creating task: GitWorker
+[2026-07-01 17:44:29] [HEAL] Re/creating task: HealthMonitor
+[2026-07-01 17:44:29] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:44:29] [HEAL] Repairs performed:
+[2026-07-01 17:44:29] [HEAL]   OK Removed stale lock: C:\obsidian\Main
+[2026-07-01 17:44:29] [HEAL]   OK Removed stale lock: C:\obsidian
+[2026-07-01 17:44:29] [HEAL]   OK Removed stuck rebase: C:\obsidian\Main
+[2026-07-01 17:44:29] [HEAL]   OK Removed stuck rebase: C:\obsidian
+[2026-07-01 17:44:29] [HEAL]   OK Switched System.Collections.Hashtable to SSH
+[2026-07-01 17:44:29] [HEAL]   OK Switched System.Collections.Hashtable to SSH
+[2026-07-01 17:44:29] [HEAL]   OK Task AutoCommitNotes registered
+[2026-07-01 17:44:29] [HEAL]   OK Task GitWorker registered
+[2026-07-01 17:44:29] [HEAL]   OK Task HealthMonitor registered
+[2026-07-01 17:46:24] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-01 17:46:24] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:46:24] [HEAL] Repaired: removed stuck rebase (C:\obsidian\Main\.git\rebase-merge)
+[2026-07-01 17:46:24] [HEAL] Repaired: removed stuck rebase (C:\obsidian\Main\.git\rebase-apply)
+[2026-07-01 17:46:24] [HEAL] Repaired: removed stuck rebase (C:\obsidian\.git\rebase-merge)
+[2026-07-01 17:46:24] [HEAL] Repaired: removed stuck rebase (C:\obsidian\.git\rebase-apply)
+[2026-07-01 17:46:24] [HEAL] Repaired: restored credential.helper from broken to manager
+[2026-07-01 17:46:24] [HEAL] Repaired: set credential.credentialStore=plaintext
+[2026-07-01 17:46:24] [HEAL] Stored gh token in plaintext store
+[2026-07-01 17:46:25] [HEAL] Repaired: switched remote to SSH
+[2026-07-01 17:46:25] [HEAL] Repaired: switched remote to SSH
+[2026-07-01 17:46:25] [HEAL] Re/creating task: AutoCommitNotes
+[2026-07-01 17:46:25] [HEAL] Re/creating task: GitWorker
+[2026-07-01 17:46:25] [HEAL] Re/creating task: HealthMonitor
+[2026-07-01 17:46:25] [ERROR] Error in Repair-GitGC: The term 'Repair-GitGC' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2026-07-01 17:46:25] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:46:25] [HEAL] Repairs performed:
+[2026-07-01 17:46:25] [HEAL]   OK Removed stale lock: C:\obsidian\Main
+[2026-07-01 17:46:25] [HEAL]   OK Removed stuck rebase: C:\obsidian\Main
+[2026-07-01 17:46:25] [HEAL]   OK Removed stuck rebase: C:\obsidian
+[2026-07-01 17:46:25] [HEAL]   OK Fixed credential store
+[2026-07-01 17:46:25] [HEAL]   OK Switched vault remote to SSH
+[2026-07-01 17:46:25] [HEAL]   OK Switched parent remote to SSH
+[2026-07-01 17:46:25] [HEAL]   OK Restored branch.main.remote=origin
+[2026-07-01 17:46:25] [HEAL]   OK Restored branch.main.merge=refs/heads/main
+[2026-07-01 17:46:25] [HEAL]   OK Removed stale PID: gc.pid
+[2026-07-01 17:46:25] [HEAL]   OK Removed garbage dir: lfs
+[2026-07-01 17:46:25] [HEAL]   OK Removed garbage dir: modules
+[2026-07-01 17:46:25] [HEAL]   OK Removed stale PID: gc.pid
+[2026-07-01 17:46:25] [HEAL]   OK Task AutoCommitNotes registered
+[2026-07-01 17:46:25] [HEAL]   OK Task GitWorker registered
+[2026-07-01 17:46:25] [HEAL]   OK Task HealthMonitor registered
+[2026-07-01 17:47:21] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:47:21] [HEAL] Repaired: removed stuck rebase (C:\Users\kisel\AppData\Local\Temp\obsidian-test-135304376\heal\.git\rebase-merge)
+[2026-07-01 17:47:51] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:47:51] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:47:51] [MONITOR] parent/Lock: Lock file present (1.7 min old)
+[2026-07-01 17:47:51] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:48:20] [HEAL] === SELF-HEALER STARTED (scope: garbage) ===
+[2026-07-01 17:48:20] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-01 17:48:20] [HEAL] Repairs performed:
+[2026-07-01 17:48:20] [HEAL]   OK Removed garbage from .git/objects: chaos
+[2026-07-01 17:48:20] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-01 17:48:20] [MONITOR] vault is 2 ahead - can push
+[2026-07-01 17:48:20] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-01 17:48:20] [MONITOR] Health monitor complete. Status: OK
+[2026-07-01 17:48:22] [HEAL] Repaired: removed stale lock file
+[2026-07-01 17:48:22] [HEAL] Repaired: removed stuck rebase (C:\Users\kisel\AppData\Local\Temp\obsidian-test-636413240\heal\.git\rebase-merge)
+[2026-07-02 20:10:19] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-02 20:10:19] [ERROR] Error in Repair-StuckRebase: A parameter cannot be found that matches parameter name 'or'.
+[2026-07-02 20:10:19] [HEAL] Repaired: restored credential.helper to manager
+[2026-07-02 20:10:19] [HEAL] Repaired: set credential.credentialStore=plaintext
+[2026-07-02 20:10:19] [HEAL] Stored gh token in plaintext store
+[2026-07-02 20:10:19] [HEAL] Repaired: switched remote to SSH
+[2026-07-02 20:10:20] [HEAL] Re/creating task: AutoCommitNotes
+[2026-07-02 20:10:20] [HEAL] Re/creating task: GitWorker
+[2026-07-02 20:10:20] [HEAL] Re/creating task: HealthMonitor
+[2026-07-02 20:10:21] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-02 20:10:21] [HEAL] Repairs performed:
+[2026-07-02 20:10:21] [HEAL]   OK Fixed credential store
+[2026-07-02 20:10:21] [HEAL]   OK Switched vault remote to SSH
+[2026-07-02 20:10:21] [HEAL]   OK Restored branch.main.remote=origin
+[2026-07-02 20:10:21] [HEAL]   OK Restored branch.main.merge=refs/heads/main
+[2026-07-02 20:10:21] [HEAL]   OK Restored branch.master.remote=origin
+[2026-07-02 20:10:21] [HEAL]   OK Restored branch.master.merge=refs/heads/master
+[2026-07-02 20:10:21] [HEAL]   OK Task AutoCommitNotes registered
+[2026-07-02 20:10:21] [HEAL]   OK Task GitWorker registered
+[2026-07-02 20:10:21] [HEAL]   OK Task HealthMonitor registered
+[2026-07-02 20:15:01] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-02 20:15:01] [MONITOR] CRITICAL: vault - .git not found!
+[2026-07-02 20:15:01] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-02 20:15:01] [MONITOR] parent/Repo: 
+[2026-07-02 20:15:02] [MONITOR] Health monitor complete. Status: CRITICAL
+[2026-07-02 20:15:49] [HEAL] === SELF-HEALER STARTED (scope: all) ===
+[2026-07-02 20:15:49] [HEAL] Repaired: reinitialized .git for C:\obsidian\Main
+[2026-07-02 20:15:51] [ERROR] Error in Repair-StuckRebase: A parameter cannot be found that matches parameter name 'or'.
+[2026-07-02 20:15:51] [HEAL] Repaired: restored credential.helper to manager
+[2026-07-02 20:15:51] [HEAL] Repaired: set credential.credentialStore=plaintext
+[2026-07-02 20:15:51] [HEAL] Stored gh token in plaintext store
+[2026-07-02 20:15:51] [HEAL] Repaired: switched remote to SSH
+[2026-07-02 20:15:51] [HEAL] Repaired: switched remote to SSH
+[2026-07-02 20:15:51] [HEAL] Re/creating task: AutoCommitNotes
+[2026-07-02 20:15:51] [HEAL] Re/creating task: GitWorker
+[2026-07-02 20:15:51] [HEAL] Re/creating task: HealthMonitor
+[2026-07-02 20:15:52] [HEAL] === SELF-HEALER COMPLETE ===
+[2026-07-02 20:15:52] [HEAL] Repairs performed:
+[2026-07-02 20:15:52] [HEAL]   OK Fixed credential store
+[2026-07-02 20:15:52] [HEAL]   OK Switched vault remote to SSH
+[2026-07-02 20:15:52] [HEAL]   OK Switched parent remote to SSH
+[2026-07-02 20:15:52] [HEAL]   OK Restored branch.main.remote=origin
+[2026-07-02 20:15:52] [HEAL]   OK Restored branch.main.merge=refs/heads/main
+[2026-07-02 20:15:52] [HEAL]   OK Restored branch.master.remote=origin
+[2026-07-02 20:15:52] [HEAL]   OK Restored branch.master.merge=refs/heads/master
+[2026-07-02 20:15:52] [HEAL]   OK Task AutoCommitNotes registered
+[2026-07-02 20:15:52] [HEAL]   OK Task GitWorker registered
+[2026-07-02 20:15:52] [HEAL]   OK Task HealthMonitor registered
+[2026-07-03 19:30:01] [MONITOR] Health check: vault (C:\obsidian\Main)
+[2026-07-03 19:30:02] [MONITOR] vault/Repo: 
+[2026-07-03 19:30:02] [MONITOR] Health check: parent (C:\obsidian)
+[2026-07-03 19:30:02] [MONITOR] parent/Repo: 
+[2026-07-03 19:30:02] [MONITOR] Health monitor complete. Status: OK

@@ -1,0 +1,31 @@
+[2026-06-26 12:49] 🧪 QA: STRESS TEST QA PHASE STARTED
+[2026-06-26 12:49] QA: Анализ системы: Distributed Task Management, Version Vector, Optimistic UI, Offline Mode
+[2026-06-26 12:49] QA: 15+ тест-кейсов составлено (см. test-cases.md)
+[2026-06-26 12:49] QA: 7 edge cases identified (см. edge-cases.md)
+[2026-06-26 12:49] QA: 5 stress scenarios подготовлены (см. stress-tests.md)
+
+[2026-06-26 12:49] QA: Failure simulation:
+  - Server down при sync → клиент переходит в offline, queue сохраняется
+  - Conflict при параллельном редактировании → 409, диалог resolver
+  - Network loss при push → retry 3 раза, потом offline
+  - Race condition: два PUT одновременно → version check спасает
+
+[2026-06-26 12:49] QA: Race condition analysis:
+  - User A и User B редактируют задачу X
+  - A: PUT /tasks/X (версия 1) → success (версия 2)
+  - B: PUT /tasks/X (версия 1) → 409 conflict
+  - B получает текущую версию, делает merge → POST /merge
+  - Результат: корректная обработка race condition
+
+[2026-06-26 12:49] QA: Stress scenarios:
+  - S-1: 10 пользователей редактируют одну задачу (конфликт лавина)
+  - S-2: Offline → 20 изменений → sync → конфликты
+  - S-3: Network flip-flop (on/off каждые 2s)
+  - S-4: Большой task list (1000 задач) через bulk create
+  - S-5: Zero network + full offline queue flush
+
+[2026-06-26 12:49] QA: Найденные проблемы:
+  - CRITICAL: При offline queue > 100 элементов sync может быть медленным
+  - MEDIUM: Нет garbage collection для истории версий
+  - LOW: SyncIndicator не показывает pending count
+  - INFO: In-memory storage — все данные потеряются при restart

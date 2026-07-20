@@ -1,0 +1,74 @@
+[2026-06-26 13:01] 🧭 ARCHITECT: === ARCHITECTURE ANALYSIS STARTED ===
+[2026-06-26 13:01] ARCHITECT: Requirements: multi-tenant, real-time collab, block-based docs, conflict resolution, version history
+[2026-06-26 13:01] ARCHITECT: System type: distributed collaborative workspace (Notion + Trello + Google Docs hybrid)
+[2026-06-26 13:01] ARCHITECT: Constraint: eventual consistency only, no real WebSocket, in-memory
+
+[2026-06-26 13:01] ARCHITECT: === ALTERNATIVE 1: EVENT-DRIVEN MODEL ❌ ===
+  Как работает: все изменения → события в event log, subscribers apply events in order
+  Pros: полный audit trail, easy to replay, familiar pattern
+  Cons:
+    - Total order requirement → single point of failure
+    - Невозможно гарантировать order при network partitions
+    - Conflict resolution: только last-write-wins (теряет данные)
+    - Не подходит для offline-first (события могут прийти в любом порядке)
+  Trade-off: хорошо для audit, плохо для collaborative editing
+  Вердикт: ❌ REJECTED — не подходит для offline и concurrent editing
+
+[2026-06-26 13:01] ARCHITECT: === ALTERNATIVE 2: CRDT-BASED MODEL ✅ ===
+  Как работает: Conflict-free Replicated Data Type — каждый блок — CRDT
+    - LWW-Register для text content
+    - OR-Set для блоков документа
+    - MV-Register для version tracking
+  Pros:
+    - No conflict resolution needed (mathematical guarantee)
+    - Offline-first by design
+    - Eventual consistency without coordination
+    - Perfect for block-based editors
+  Cons:
+    - Сложность имплементации CRDT merge logic
+    - Memory overhead (tomstone deletion)
+    - Нужен garbage collection для deleted blocks
+  Trade-off: сложность реализации vs математическая гарантия consistency
+  Вердикт: ✅ SELECTED — единственный правильный выбор для collaborative editing
+
+[2026-06-26 13:01] ARCHITECT: === ALTERNATIVE 3: LOCK-BASED MODEL ❌ ===
+  Как работает: pessimistic locking — блок блокируется при редактировании
+  Pros: простота, no conflicts
+  Cons:
+    - Невозможна real-time коллаборация
+    - Deadlock risk
+    - Плохой UX (wait for lock)
+    - Offline невозможен
+  Вердикт: ❌ REJECTED — антипаттерн для collaborative systems
+
+[2026-06-26 13:01] ARCHITECT: === CRDT DEEP DIVE ===
+  Block CRDT (position-based):
+    - Block ID: UUID (уникальный, не зависит от порядка)
+    - Position: fractional index (между соседями)
+    - Content: LWW-Register (last-write-wins per character)
+    - Deletion: tomstone (soft delete, GC later)
+
+  Document CRDT:
+    - OR-Set of blocks
+    - Add: block appears
+    - Remove: block tomstoned
+    - Merge: union of sets
+
+  Version tracking:
+    - Hybrid Logical Clock (HLC) вместо Lamport
+    - HLC = physical time + logical counter
+    - Позволяет определить "happens-before" без синхронизации
+
+[2026-06-26 13:01] ARCHITECT: === DATA MODEL ===
+  Workspace: { id, name, tenants: [userId], blocks: Map<blockId, Block> }
+  Block: { id, type, position, content, version, createdBy, createdAt, updatedAt, deleted }
+  Tenant: { id, name, users: Map<userId, Role> }
+  User: { id, name, role: 'owner' | 'editor' | 'viewer' }
+  Event: { id, type, blockId, data, timestamp, userId, hlc }
+
+[2026-06-26 13:01] ARCHITECT: === TRADE-OFFS ANALYSIS ===
+  1. CRDT complexity vs eventual consistency guarantee → CRDT wins for collab
+  2. Tombstone memory vs deletion simplicity → tomstone with periodic GC
+  3. HLC vs Lamport clock → HLC gives physical time context
+  4. Fractional index vs sequential → fractional allows O(1) insert
+  5. In-memory vs persistent → in-memory ok for mock (requirement)

@@ -1,0 +1,28 @@
+[ARCHITECT] 2026-06-27T00:00:00Z — Starting Architect step for Issue #27
+
+Analysis:
+- Feature requires storage layer with compaction, recovery, and atomic updates
+- Must protect graph data from corruption and unbounded growth
+- Manifest as source of truth pattern
+- Compaction and recovery strongly coupled — cannot design separately
+
+Decisions:
+1. ADR-1: WAL + atomic rename over journaling — simpler, ext4/NTFS safe
+2. ADR-2: Tombstone-based deletion — mark deleted, purge on compaction
+3. ADR-3: Idle-triggered compaction with thresholds — avoid impacting interactive use
+4. ADR-4: Checksum-verified recovery — detect silent corruption
+
+Alternatives considered:
+- Full journaling: Rejected — too complex for single-machine storage
+- In-place deletion: Rejected — fragmentation and complex recovery
+- Time-based compaction: Rejected — doesn't guarantee bounded growth
+- No checksums: Rejected — silent corruption undetectable
+
+Files created:
+- 00-architect/plan.md — 3-phase implementation plan
+- 00-architect/architecture.md — module structure and API types
+- 00-architect/decisions.md — 4 architecture decisions
+- shared/architecture.md — system context diagram
+- shared/decisions-log.md — decision log entry
+
+[ARCHITECT] 2026-06-27T00:00:00Z — Architect step complete

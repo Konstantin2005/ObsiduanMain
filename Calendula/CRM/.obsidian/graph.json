@@ -1,0 +1,100 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "#Дальний_Круг",
+      "color": {
+        "a": 1,
+        "rgb": 6021202
+      }
+    },
+    {
+      "query": "#Ближний_круг",
+      "color": {
+        "a": 1,
+        "rgb": 5431413
+      }
+    },
+    {
+      "query": "#Средний_Круг",
+      "color": {
+        "a": 1,
+        "rgb": 5431394
+      }
+    },
+    {
+      "query": "#Особенные",
+      "color": {
+        "a": 1,
+        "rgb": 5431380
+      }
+    },
+    {
+      "query": "#Познакомились",
+      "color": {
+        "a": 1,
+        "rgb": 6479954
+      }
+    },
+    {
+      "query": "#Дни",
+      "color": {
+        "a": 1,
+        "rgb": 0
+      }
+    },
+    {
+      "query": "#Ядро",
+      "color": {
+        "a": 1,
+        "rgb": 14729554
+      }
+    },
+    {
+      "query": "#Принадлежность",
+      "color": {
+        "a": 1,
+        "rgb": 14708306
+      }
+    },
+    {
+      "query": "#Взаимодействие",
+      "color": {
+        "a": 1,
+        "rgb": 14715730
+      }
+    },
+    {
+      "query": "#Контакт",
+      "color": {
+        "a": 1,
+        "rgb": 14718802
+      }
+    },
+    {
+      "query": "#Изоляция",
+      "color": {
+        "a": 1,
+        "rgb": 14706514
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0.6,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 0.431770833333333,
+  "collapse-forces": false,
+  "centerStrength": 0.0208333333333333,
+  "repelStrength": 15.3125,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.09392927902846841,
+  "close": false
+}

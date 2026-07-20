@@ -1,0 +1,13 @@
+[2026-06-27T10:00:00Z] ARCHITECT START - Issue #23: DEV: Remove full vault traversal from Live Graph render loop
+[2026-06-27T10:00:00Z] Analysis: Live Graph render loop traverses entire vault each frame, causing performance pressure
+[2026-06-27T10:00:00Z] Decision: Off-thread precompute triggered by vault change events
+[2026-06-27T10:00:00Z] Decision: Immutable snapshots for safe concurrent access
+[2026-06-27T10:00:00Z] Decision: Passive timing monitor for zero-overhead metrics
+[2026-06-27T10:00:00Z] Files created:
+  - 00-architect/plan.md — phased implementation plan
+  - 00-architect/architecture.md — before/after architecture diagrams
+  - 00-architect/decisions.md — ADR log
+  - shared/architecture.md — system context
+  - shared/decisions-log.md — high-level decisions
+[2026-06-27T10:00:00Z] Reasoning: Off-thread precompute completely removes traversal cost from frame budget. Immutable snapshots provide lock-free thread safety. Passive timing monitor avoids adding overhead to the very path we're trying to optimize.
+[2026-06-27T10:00:00Z] ARCHITECT DONE

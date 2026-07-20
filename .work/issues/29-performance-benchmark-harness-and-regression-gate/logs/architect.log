@@ -1,0 +1,28 @@
+[ARCHITECT] 2026-06-27T00:00:00Z — Starting Architect step for Issue #29
+
+Analysis:
+- Feature requires unified benchmark harness and regression gate
+- Need to measure render time, update time, memory, worker load, interaction latency
+- Key risk: noisy measurements and optimizing the test instead of the product
+- Must have reproducible benchmarks with clear thresholds
+
+Decisions:
+1. ADR-1: Statistical comparison over absolute thresholds — accounts for variance
+2. ADR-2: Dedicated test dataset over live data — reproducibility
+3. ADR-3: Warmup runs to reduce noise — stabilize JIT/cache
+4. ADR-4: Markdown reports with ASCII trend charts — PR-compatible
+
+Alternatives considered:
+- Absolute threshold gates: Rejected — too noisy in CI
+- Live data datasets: Rejected — not reproducible
+- No warmup: Rejected — first runs not representative
+- HTML dashboard: Rejected — external dependency
+
+Files created:
+- 00-architect/plan.md — 3-phase implementation plan
+- 00-architect/architecture.md — module structure and API types
+- 00-architect/decisions.md — 4 architecture decisions
+- shared/architecture.md — system context diagram
+- shared/decisions-log.md — decision log entry
+
+[ARCHITECT] 2026-06-27T00:00:00Z — Architect step complete

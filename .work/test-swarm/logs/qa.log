@@ -1,0 +1,17 @@
+[2026-06-26 12:03] 🧪 QA: Получена задача на тестирование
+[2026-06-26 12:03] QA: Анализ требований и API спецификации
+[2026-06-26 12:03] QA: Тест-кейсы:
+  TC-01: Успешный вход (admin/admin123) → 200 + token
+  TC-02: Неверный пароль → 401 + error
+  TC-03: Пустой username → 400 + validation error
+  TC-04: Пустой password → 400 + validation error
+  TC-05: GET /api/me без токена → 401
+  TC-06: GET /api/me с валидным токеном → 200 + user
+  TC-07: GET /api/me с истёкшим токеном → 401
+  TC-08: XSS в username → экранирование
+[2026-06-26 12:03] QA: Edge cases:
+  - SQL injection в username (mock — безопасно)
+  - Token в query string (не поддерживается)
+  - Logout → удаление токена на клиенте
+[2026-06-26 12:03] QA: Найдена потенциальная проблема: нет rate limiting на /api/login
+[2026-06-26 12:04] QA: Готово. Тесты описаны в tests.md.

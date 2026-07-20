@@ -1,0 +1,7 @@
+[2026-06-26 15:34] START Issue #16 — Shard Compaction
+[2026-06-26 15:34] Architect: план, архитектура, ADR (5 decisions)
+[2026-06-26 15:34] Backend: shard-compaction.js — compactStore + recoverManifest
+[2026-06-26 15:34] Frontend: SAFE MODE diagram + 10 constraints
+[2026-06-26 15:34] QA: 10 test cases + 6 edge cases + 4 failure scenarios
+[2026-06-26 15:34] Code Review: approved
+[2026-06-26 15:34] DONE Issue #16

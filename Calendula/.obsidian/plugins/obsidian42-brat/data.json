@@ -1,0 +1,29 @@
+{
+  "pluginList": [
+    "HananoshikaYomaru/obsidian-3d-graph",
+    "delta-dashed/obsidianella-delink"
+  ],
+  "pluginSubListFrozenVersion": [
+    {
+      "repo": "HananoshikaYomaru/obsidian-3d-graph",
+      "version": ""
+    },
+    {
+      "repo": "delta-dashed/obsidianella-delink",
+      "version": ""
+    }
+  ],
+  "themesList": [],
+  "updateAtStartup": false,
+  "updateThemesAtStartup": false,
+  "enableAfterInstall": false,
+  "loggingEnabled": false,
+  "loggingPath": "BRAT-log",
+  "loggingVerboseEnabled": false,
+  "debuggingMode": false,
+  "notificationsEnabled": false,
+  "globalTokenName": "",
+  "personalAccessToken": "",
+  "selectLatestPluginVersionByDefault": false,
+  "allowIncompatiblePlugins": false
+}

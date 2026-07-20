@@ -1,0 +1,77 @@
+[2026-06-26 13:02] ⚙️ BACKEND: === BACKEND ENGINEERING STARTED ===
+[2026-06-26 13:02] BACKEND: Architecture: CRDT-based event system with multi-tenant isolation
+
+[2026-06-26 13:02] BACKEND: === EVENT MODEL DESIGN ===
+  Event Types:
+    - BLOCK_INSERT: { blockId, position, type, content, userId, hlc }
+    - BLOCK_UPDATE: { blockId, content, version, userId, hlc }
+    - BLOCK_DELETE: { blockId, userId, hlc }
+    - BLOCK_MOVE: { blockId, newPosition, userId, hlc }
+    - WORKSPACE_JOIN: { userId, role }
+    - WORKSPACE_LEAVE: { userId }
+
+  Event Queue:
+    - In-memory queue per workspace
+    - Events are CRDT operations (commutative)
+    - No ordering required (CRDT property)
+
+[2026-06-26 13:02] BACKEND: === SYNC STRATEGY ===
+  Pull-based (simulated real-time):
+    - GET /api/workspaces/{id}/sync?since={hlc}
+    - Returns events since given HLC
+    - Client merges events into local state
+
+  Push:
+    - POST /api/workspaces/{id}/events
+    - Array of CRDT operations
+    - Server applies to in-memory state
+    - Returns updated HLC watermark
+
+  Offline:
+    - Queue events locally
+    - Push on reconnect
+    - CRDT guarantees correct merge
+
+[2026-06-26 13:02] BACKEND: === CONFLICT LOGIC (CRDT) ===
+  Block Update Conflict:
+    - Два пользователя редактируют один блок
+    - LWW-Register: per-character last-write-wins
+    - HLC определяет "last"
+    - No data loss (characters may interleave)
+
+  Position Conflict:
+    - Два пользователя вставляют блок в одну позицию
+    - Fractional index: insert between
+    - Оба блока существуют, порядок определён дробным индексом
+
+  Delete-Update Conflict:
+    - User A удаляет блок, User B обновляет
+    - Delete wins (tombstone)
+    - Update игнорируется для tomstoned block
+
+[2026-06-26 13:02] BACKEND: === MULTI-TENANT ISOLATION ===
+  Data isolation:
+    - Every query scoped by workspaceId
+    - No cross-workspace access in data layer
+    - Tenant ID in all event headers
+
+  Permission check:
+    - Every API call validates user role in workspace
+    - viewer: read only
+    - editor: read + write
+    - owner: read + write + manage users
+
+  Attempt simulation:
+    - Tenant A user tries to access Tenant B workspace → 403
+    - Viewer tries to edit → 403
+    - Escalation attempt → logged, rejected
+
+[2026-06-26 13:02] BACKEND: === API ENDPOINTS ===
+  POST   /api/workspaces                    → create workspace
+  GET    /api/workspaces/{id}               → get workspace
+  POST   /api/workspaces/{id}/events        → push events
+  GET    /api/workspaces/{id}/sync          → pull events
+  POST   /api/workspaces/{id}/users         → add user
+  PUT    /api/workspaces/{id}/users/{uid}   → change role
+  GET    /api/workspaces/{id}/blocks        → get all blocks
+  POST   /api/workspaces/{id}/blocks        → insert block

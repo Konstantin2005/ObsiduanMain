@@ -1,0 +1,15 @@
+[2026-06-26 12:00] 🧭 ORCHESTRATOR: Инициализация системы
+[2026-06-26 12:00] ORCHESTRATOR: Создана структура .work/test-swarm/
+[2026-06-26 12:00] ORCHESTRATOR: Задача: "Добавить простую систему авторизации (login + token mock)"
+[2026-06-26 12:01] ORCHESTRATOR: Назначение ролей:
+  - 🧭 Architect → 00-architect (план, архитектура)
+  - ⚙️ Backend → 01-backend-engineer (API, логика)
+  - 🎨 Frontend → 02-frontend-engineer (UI, компоненты)
+  - 🧪 QA → 03-qa-engineer (тесты, edge cases)
+  - 🔍 Code Reviewer → 04-code-reviewer (ревью, безопасность)
+[2026-06-26 12:01] ORCHESTRATOR: Задача разбита на 5 шагов
+[2026-06-26 12:01] ORCHESTRATOR: Шаг 1 — архитектура. Назначен Architect.
+[2026-06-26 12:02] ORCHESTRATOR: Шаг 2 — разработка. Назначены Backend + Frontend (параллельно).
+[2026-06-26 12:03] ORCHESTRATOR: Шаг 3 — тестирование. Назначен QA.
+[2026-06-26 12:04] ORCHESTRATOR: Шаг 4 — ревью. Назначен Code Reviewer.
+[2026-06-26 12:05] ORCHESTRATOR: Все шаги завершены. Система готова к PR.

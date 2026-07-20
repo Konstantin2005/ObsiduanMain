@@ -1,0 +1,15 @@
+[2026-06-26 12:02] ⚙️ BACKEND: Получена задача от архитектора
+[2026-06-26 12:02] BACKEND: Создаю mock API для авторизации
+[2026-06-26 12:02] BACKEND: Эндпоинты:
+  POST /api/login
+    - Валидация: username и password обязательны
+    - Mock user: admin / admin123
+    - Успех: { token: "mock-token-1719388800", user: { name: "Admin", role: "admin" } }
+    - Ошибка: { error: "Invalid credentials" }, 401
+  GET /api/me
+    - Проверка Authorization header
+    - Успех: { user: { name: "Admin", role: "admin" } }
+    - Ошибка: { error: "Unauthorized" }, 401
+[2026-06-26 12:02] BACKEND: Токен — base64(username + ":" + timestamp). Не security-grade, только для демо.
+[2026-06-26 12:02] BACKEND: CORS разрешён для локального frontend.
+[2026-06-26 12:02] BACKEND: Готово. API описан в api.md.

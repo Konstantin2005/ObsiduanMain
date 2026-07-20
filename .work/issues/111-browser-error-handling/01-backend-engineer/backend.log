@@ -1,0 +1,6 @@
+[2026-06-26 13:12] BACKEND: Modified openBrowser helper in account.ts
+[2026-06-26 13:12] BACKEND: BEFORE: const openBrowser = (url: string) => Effect.promise(() => open(url).catch(() => undefined))
+[2026-06-26 13:12] BACKEND: AFTER: Effect.promise(() => open(url)).pipe(Effect.catchAll(() => Prompt.log.warn(...)))
+[2026-06-26 13:12] BACKEND: Reasoning: Silent catch swallowed all errors, making headless server failures invisible
+[2026-06-26 13:12] BACKEND: Change uses Effect.catchAll to properly integrate with Effect system
+[2026-06-26 13:12] BACKEND: No changes to OAuth logic, service layer, or data flow

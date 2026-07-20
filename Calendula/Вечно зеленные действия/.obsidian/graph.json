@@ -1,0 +1,114 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "#Делаю",
+      "color": {
+        "a": 1,
+        "rgb": 10192151
+      }
+    },
+    {
+      "query": "#Востанавливаюсь",
+      "color": {
+        "a": 1,
+        "rgb": 10514968
+      }
+    },
+    {
+      "query": "#Развитие",
+      "color": {
+        "a": 1,
+        "rgb": 12688666
+      }
+    },
+    {
+      "query": "#Созерцание",
+      "color": {
+        "a": 1,
+        "rgb": 14598935
+      }
+    },
+    {
+      "query": "#Исследование",
+      "color": {
+        "a": 1,
+        "rgb": 13812244
+      }
+    },
+    {
+      "query": "#Дни",
+      "color": {
+        "a": 1,
+        "rgb": 0
+      }
+    },
+    {
+      "query": "#Трансформация",
+      "color": {
+        "a": 1,
+        "rgb": 5427424
+      }
+    },
+    {
+      "query": "#Прорыв",
+      "color": {
+        "a": 1,
+        "rgb": 5431518
+      }
+    },
+    {
+      "query": "#Прогресс",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "#Движение ",
+      "color": {
+        "a": 1,
+        "rgb": 5425632
+      }
+    },
+    {
+      "query": "#Стоп",
+      "color": {
+        "a": 1,
+        "rgb": 5397472
+      }
+    },
+    {
+      "query": "#Перегруз",
+      "color": {
+        "a": 1,
+        "rgb": 5417696
+      }
+    },
+    {
+      "query": "#Разрушение",
+      "color": {
+        "a": 1,
+        "rgb": 5399264
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0.9,
+  "nodeSizeMultiplier": 0.865625,
+  "lineSizeMultiplier": 0.202083333333333,
+  "collapse-forces": true,
+  "centerStrength": 0.171875,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.18462326225857836,
+  "close": false
+}

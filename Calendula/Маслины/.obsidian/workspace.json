@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "3d9b2c3ffb218fec",
+    "type": "split",
+    "children": [
+      {
+        "id": "4877a685b291877a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "44347a7dafd43fd2",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "52c70b4f3b5952b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "80e3a6565e0f2361",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fe49e0f00d3c0cf5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "071161f90435ea5e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "f37ba789a2adc2f7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bb0fd57ced4f5620",
+    "type": "split",
+    "children": [
+      {
+        "id": "bbc3dbcde40d5332",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d554cadcfa1063f0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2026/Апрель/01-04-26/01.3-04-26 Мысли.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для 01.3-04-26 Мысли"
+            }
+          },
+          {
+            "id": "c5e429669797a42d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2026/Апрель/01-04-26/01.3-04-26 Мысли.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из 01.3-04-26 Мысли"
+            }
+          },
+          {
+            "id": "d7df3a9f116b48b0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "7c9009a8946663c8",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "4ca38c83606847f1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2026/Апрель/01-04-26/01.3-04-26 Мысли.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура 01.3-04-26 Мысли"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "44347a7dafd43fd2",
+  "lastOpenFiles": [
+    "думание в процессе.md",
+    "Книга и страницы.md",
+    "Кластеры.md",
+    "Индексы и транзакции.md",
+    "Дыхательные практики.md",
+    "Вечно зеленые заметки.md",
+    "Валютная удаленка.md",
+    "Бипланарность.md",
+    "База данных.md",
+    "Автор Юрий Левитанский.md",
+    "usernames.md",
+    "systemd.md",
+    "proc.md",
+    "interfase.md",
+    "int.md",
+    "for each.md",
+    "final.md",
+    "etcd.md",
+    "edgoNode.md",
+    "Zettel Castem.md",
+    "Ubuntu.md",
+    "Tmux.md",
+    "TMPFS.md",
+    "Redis.md",
+    "Raid 5.md",
+    "Normal Mode.md",
+    "Алгоритм написания людям.canvas",
+    "2025/Июль/08-07-25",
+    "2025/Июль",
+    "2025/Январь/19-01-25",
+    "2025/Январь",
+    "2025",
+    "vanilla-ayuGram-lite-universal-20260329.apk",
+    "Pasted Image 20260524162947_768.png",
+    "nick-s-system-design_0.excalidrawlib",
+    "nick-s-system-design.excalidrawlib",
+    "members_Чат_Простых_Мыслей_2026_05_02_16_34_42_username_column.txt",
+    "members_Чат_Простых_Мыслей_2026_05_02_16_34_42_username_column 1.txt",
+    "pichers/photo_2026-05-06_20-16-01.jpg",
+    "pichers/photo_2026-04-22_02-11-22.jpg",
+    "pichers/Pasted Image 20260529021426_423.png",
+    "pichers/Pasted Image 20260524163118_139.png",
+    "pichers/Pasted Image 20260524163053_109.png",
+    "pichers/Pasted Image 20260522225004_395.png",
+    "pichers/Pasted Image 20260522225004_380.png",
+    "pichers/Pasted Image 20260522225004_339.png",
+    "pichers/Pasted Image 20260522212641_333.png",
+    "Algoritm/0 Indox/Алгоритм написания людям.canvas"
+  ]
+}

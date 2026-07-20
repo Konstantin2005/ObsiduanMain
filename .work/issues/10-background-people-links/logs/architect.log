@@ -1,0 +1,43 @@
+# Architect Log — Issue #10
+
+## Date: 2026-06-27
+
+## Pipeline Completion Status
+**Phase 1 (Architect) COMPLETED** ✅
+
+## Decisions & Reasoning
+
+### 1. Dedicated worker vs idle-time processing
+**Reasoning**: requestIdleCallback is unreliable for large workloads. A dedicated worker provides guaranteed processing time.
+
+### 2. Manifest hash + config version as cache key
+**Reasoning**: Two-part key ensures cache is invalidated only when content OR rules change. Precise invalidation reduces unnecessary re-computation.
+
+### 3. Empty graph on cache miss
+**Reasoning**: Users see the graph immediately. Links appear as they're generated. Better UX than blocking on generation.
+
+### 4. 2s debounce on re-generation
+**Reasoning**: Prevents cascading re-generations during rapid note edits. The 2s window balances freshness vs churn.
+
+### 5. Structured cloning for worker communication
+**Reasoning**: SharedArrayBuffer requires special headers. Structured clone is universally available and sufficient for ~MB-sized link graphs.
+
+## Alternatives Considered
+- **Idle-time processing**: Rejected — unreliable for large graphs.
+- **All-at-once generation**: Rejected — blocks UI.
+- **LocalStorage cache**: Rejected — size limits (5-10MB) insufficient for large graphs.
+
+## Files Created
+- 00-architect/plan.md
+- 00-architect/architecture.md
+- 00-architect/decisions.md
+- shared/architecture.md
+- shared/decisions-log.md
+
+## Architect Pipeline Step Completion
+✅ **Step 1 Complete**: Architecture design and planning finished
+✅ **Plan Documentation**: plan.md - Implementation roadmap
+✅ **Architecture Documentation**: architecture.md - System overview
+✅ **Decision Log**: decisions.md - Key architectural decisions
+✅ **Shared Architecture**: Updated system overview in shared/
+✅ **Log Files**: architect.log - Complete with all decisions and reasoning

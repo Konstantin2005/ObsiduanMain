@@ -1,0 +1,18 @@
+[2026-06-26 12:02] 🎨 FRONTEND: Получена задача от архитектора
+[2026-06-26 12:02] FRONTEND: Создаю LoginForm компонент
+[2026-06-26 12:02] FRONTEND: Состояние:
+  - username: string
+  - password: string
+  - loading: boolean
+  - error: string | null
+  - token: string | null
+[2026-06-26 12:02] FRONTEND: Логика:
+  - При сабмите → POST /api/login
+  - Успех → сохранить токен в sessionStorage, редирект на /
+  - Ошибка → показать сообщение об ошибке
+  - Если токен есть → показать Dashboard, иначе LoginForm
+[2026-06-26 12:02] FRONTEND: Компоненты:
+  - App.vue → проверяет токен, рендерит LoginForm или Dashboard
+  - LoginForm.vue → форма входа, валидация, API call
+  - Dashboard.vue → приветствие с именем пользователя, кнопка logout
+[2026-06-26 12:02] FRONTEND: Готово. Компоненты описаны в components.md.

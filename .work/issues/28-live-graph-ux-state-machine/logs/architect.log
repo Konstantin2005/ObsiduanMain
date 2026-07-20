@@ -1,0 +1,27 @@
+[ARCHITECT] 2026-06-27T00:00:00Z — Starting Architect step for Issue #28
+
+Analysis:
+- Feature requires formalizing Live Graph panel states and transitions
+- Must make UI understandable, controllable, and safe
+- Key risk: confusion between UI state and runtime state
+- Need synchronization between user actions and background processes
+
+Decisions:
+1. ADR-1: Explicit FSM over ad-hoc tracking — testable, verifiable
+2. ADR-2: Event queue with total ordering — prevents race conditions
+3. ADR-3: Guards as async predicates — depends on backend state
+4. ADR-4: Visual state indicator in header — user awareness
+
+Alternatives considered:
+- Ad-hoc boolean flags: Rejected — illegal states possible
+- Lock-based synchronization: Rejected — deadlock risk
+- Sync-only guards: Rejected — can't check runtime state
+
+Files created:
+- 00-architect/plan.md — 3-phase implementation plan
+- 00-architect/architecture.md — module structure, state map, API types
+- 00-architect/decisions.md — 4 architecture decisions
+- shared/architecture.md — system context diagram
+- shared/decisions-log.md — decision log entry
+
+[ARCHITECT] 2026-06-27T00:00:00Z — Architect step complete

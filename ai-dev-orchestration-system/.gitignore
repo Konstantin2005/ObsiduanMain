@@ -1,0 +1,23 @@
+workspace/**/ai-raw-response.json
+*.log
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+workspace/traces/
+
+# Workspace
+workspace/
+.ai-workspace/
+
+# Project-specific
+.ai-project-context.json
+
+# Orchestrator work directories
+.work/
+
+# Research notes
+research/

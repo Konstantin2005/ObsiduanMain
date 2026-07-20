@@ -1,0 +1,221 @@
+﻿Diagnose log at 2026-07-01T04:35:56Z
+
+AppPath: C:\Program Files\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Git\mingw64\bin\
+Version: 2.7.3+5fa7116896c82164996a609accd1c5ad90fe730a
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26100)
+Reading environment variables... OK
+ Variables:
+SESSIONNAME=Console
+ProgramFiles(x86)=C:\Program Files (x86)
+MSYSTEM=MINGW64
+ProgramW6432=C:\Program Files
+ChocolateyInstall=C:\ProgramData\chocolatey
+AQUA_VM_OPTIONS=C:\Users\kisel\Downloads\jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095\jetbra\vmoptions\aqua.vmoptions
+TMP=C:\Users\kisel\AppData\Local\Temp
+PROCESSOR_ARCHITECTURE=AMD64
+Path=C:/Program Files/Git/mingw64/libexec/git-core;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\kisel\bin;C:\Program Files\Eclipse Adoptium\jdk-25.0.3.9-hotspot\bin;C:\Python314\Scripts\;C:\Python314\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Go\bin;C:\Program Files\Go\bin;C:\Program Files\PuTTY\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Zero Install;C:\Program Files\Neovim\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\kisel\.jdks\openjdk-26;C:\Users\kisel\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin;C:\Program Files\Git\cmd;C:\Users\kisel\.local\bin;C:\Program Files\GitHub CLI\;C:\Program Files\Eclipse Adoptium\jdk-25.0.3.9-hotspot\bin;C:\Python314\Scripts\;C:\Python314\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Go\bin;C:\Program Files\Go\bin;C:\Program Files\PuTTY\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Zero Install;C:\Program Files\Neovim\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\kisel\.jdks\openjdk-26;C:\Users\kisel\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin;C:\Program Files\Git\cmd;C:\Users\kisel\.local\bin;C:\Program Files\GitHub CLI\;C:\Users\kisel\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kisel\AppData\Local\Programs\Python\Python311\;C:\Users\kisel\AppData\Local\Programs\OpenAI\Codex\bin;C:\Python314\Scripts\;C:\P;C:\Users\kisel\AppData\Roaming\npm
+WSLENV=WT_SESSION:WT_PROFILE_ID:
+WT_SESSION=20667a5b-f596-43d2-9f97-4de313ca5f92
+PROCESSOR_REVISION=9702
+ChocolateyLastPathUpdate=134231563414224610
+USERPROFILE=C:\Users\kisel
+LOGONSERVER=\\GOVNOKILLEL228
+TEMP=C:\Users\kisel\AppData\Local\Temp
+USERNAME=kisel
+SystemRoot=C:\WINDOWS
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+HOME=C:\Users\kisel
+PLINK_PROTOCOL=ssh
+JETBRAINSCLIENT_VM_OPTIONS=C:\Users\kisel\Downloads\jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095\jetbra\vmoptions\jetbrainsclient.vmoptions
+DEVECOSTUDIO_VM_OPTIONS=C:\Users\kisel\Downloads\jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095\jetbra\vmoptions\devecostudio.vmoptions
+WEBIDE_VM_OPTIONS=C:\Users\kisel\Downloads\jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095\jetbra\vmoptions\webide.vmoptions
+OneDrive=C:\Users\kisel\OneDrive
+USERDOMAIN_ROAMINGPROFILE=GOVNOKILLEL228
+JETBRAINS_CLIENT_VM_OPTIONS=C:\Users\kisel\Downloads\jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095\jetbra\vmoptions\jetbrains_client.vmoptions
+CommonProgramFiles=C:\Program Files\Common Files
+SystemDrive=C:
+WT_PROFILE_ID={61c54bbd-c2c6-5271-96e7-009a87ff44bf}
+PROCESSOR_LEVEL=6
+ProgramData=C:\ProgramData
+LC_CTYPE=C.UTF-8
+HOMEPATH=\Users\kisel
+GRADLE_HOME=C:\ProgramData\chocolatey\lib\gradle\tools\gradle-9.5.0
+npm_config_user_agent=npm/undefined node/v24.3.0 win32 x64 workspaces/false
+ALLUSERSPROFILE=C:\ProgramData
+CommonProgramW6432=C:\Program Files\Common Files
+TERM=xterm-256color
+MAVEN_HOME=C:\Users\kisel\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16
+GIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core
+STUDIO_VM_OPTIONS=C:\Users\kisel\Downloads\jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095\jetbra\vmoptions\studio.vmoptions
+DriverData=C:\Windows\System32\Drivers\DriverData
+HOMEDRIVE=C:
+windir=C:\WINDOWS
+GIT_TRACE2_PARENT_SID=931aba72-5051-4d7a-9d81-a071fd2c10ed
+ANTHROPIC_API_KEY=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
+NUMBER_OF_PROCESSORS=20
+OS=Windows_NT
+OPENAI_API_KEY=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
+ProgramFiles=C:\Program Files
+ComSpec=C:\WINDOWS\system32\cmd.exe
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.CPL
+GATEWAY_VM_OPTIONS=C:\Users\kisel\Downloads\jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095\jetbra\vmoptions\gateway.vmoptions
+JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-25.0.3.9-hotspot
+PSModulePath=C:\Users\kisel\OneDrive\Документы\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+TMPDIR=C:\Users\kisel\AppData\Local\Temp
+APPDATA=C:\Users\kisel\AppData\Roaming
+USERDOMAIN=GOVNOKILLEL228
+COMPUTERNAME=GOVNOKILLEL228
+LOCALAPPDATA=C:\Users\kisel\AppData\Local
+CLion=C:\Program Files\JetBrains\CLion 2025.3.2\bin
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+COLORTERM=truecolor
+PUBLIC=C:\Users\Public
+GOPATH=C:\Users\kisel\go
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\kisel\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\kisel\AppData\Local\Temp\275e450faffdbbb401c24506'... OK
+Reading from temporary file 'C:\Users\kisel\AppData\Local\Temp\275e450faffdbbb401c24506'... OK
+Deleting temporary file 'C:\Users\kisel\AppData\Local\Temp\275e450faffdbbb401c24506'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\kisel
+UserDataDirectoryPath: C:\Users\kisel\.gcm
+GetCurrentDirectory(): C:\obsidian\Main
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:55146/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.54.0.windows.1'
+Locating current repository...Git repository at 'C:/obsidian/Main/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=schannel
+file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/kisel/.gitconfig	user.name=Konstantin
+file:C:/Users/kisel/.gitconfig	user.email=Kiselevk1001@gmail.com
+file:C:/Users/kisel/.gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Users/kisel/.gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Users/kisel/.gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Users/kisel/.gitconfig	filter.lfs.required=true
+file:C:/Users/kisel/.gitconfig	core.autocrlf=false
+file:C:/Users/kisel/.gitconfig	safe.directory=C:/Users/kisel/GolandProjects/url-shortener-postgres-docker
+file:C:/Users/kisel/.gitconfig	safe.directory=C:/Users/kisel/GolandProjects/Morze
+file:C:/Users/kisel/.gitconfig	safe.directory=C:/BeatufulGit
+file:C:/Users/kisel/.gitconfig	safe.directory=C:/BeatufulGit/task-tracker-java
+file:C:/Users/kisel/.gitconfig	credential.helper=manager
+file:C:/Users/kisel/.gitconfig	credential.gitHub.com.interactive=never
+file:C:/Users/kisel/.gitconfig	credential.github.com.interactive=never
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/Konstantin2005/ObsiduanMain.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.feature-branch.remote=origin
+file:.git/config	branch.feature-branch.merge=refs/heads/main
+file:.git/config	lfs.repositoryformatversion=0
+file:.git/config	lfs.https://github.com/Konstantin2005/ObsiduanMain.git/info/lfs.access=basic
+file:.git/config	branch.english-vocab-generation.remote=origin
+file:.git/config	branch.english-vocab-generation.merge=refs/heads/english-vocab-generation
+file:.git/config	branch.codex-19-move-git-automation.remote=origin
+file:.git/config	branch.codex-19-move-git-automation.merge=refs/heads/codex-19-move-git-automation
+file:.git/config	branch.codex/3-repo-bloat-cleanup.remote=origin
+file:.git/config	branch.codex/3-repo-bloat-cleanup.merge=refs/heads/codex/3-repo-bloat-cleanup
+file:.git/config	branch.fix/19-consolidate-git-automation.remote=origin
+file:.git/config	branch.fix/19-consolidate-git-automation.merge=refs/heads/fix/19-consolidate-git-automation
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	branch.feature/new-graphs-75-84.remote=origin
+file:.git/config	branch.feature/new-graphs-75-84.merge=refs/heads/feature/new-graphs-75-84
+file:.git/config	submodule.ai-dev-orchestration-system.url=https://github.com/Konstantin2005/ai-dev-orchestration-system
+file:.git/config	submodule.ai-dev-orchestration-system.active=true
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\kisel\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\kisel\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

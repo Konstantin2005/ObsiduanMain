@@ -1,0 +1,566 @@
+2026-07-14 02:52:43 [I] nirvana_bridge:142 Logging initialized
+2026-07-14 02:52:43 [I] nirvana_bridge:66 ============================================================
+2026-07-14 02:52:43 [I] nirvana_bridge:67 Nirvana Bridge starting
+2026-07-14 02:52:43 [I] nirvana_bridge:68 DB: C:\obsidian\Main\Calendula\nirvana_bridge\data\bridge.db
+2026-07-14 02:52:43 [I] nirvana_bridge:69 MCP: https://mcp.nirvanahq.com/mcp
+2026-07-14 02:52:43 [I] nirvana_bridge:70 HTTP: 127.0.0.1:8712
+2026-07-14 02:52:43 [I] nirvana_bridge:71 ============================================================
+2026-07-14 02:52:43 [I] nirvana_bridge.mcp:412 Reconnecting in 1s (circuit: closed)
+2026-07-14 02:52:44 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:52:44 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:52:44 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:52:44 [I] nirvana_bridge.queue:45 Queue manager started
+2026-07-14 02:52:44 [I] nirvana_bridge:91 HTTP API at http://127.0.0.1:8712
+2026-07-14 02:52:44 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:52:44 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:52:44 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:52:55 [I] nirvana_bridge.queue:329 Enqueued task acee3ed6: Bridge Full Pipeline Test
+2026-07-14 02:52:55 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:52:56 [I] nirvana_bridge.queue:78 Processing task acee3ed6 (status=PENDING, retry=0)
+2026-07-14 02:52:57 [I] nirvana_bridge.queue:134 Task acee3ed6 sent -> nirvana_id=019f5c65-678f-7773-8039-df8acb83953e
+2026-07-14 02:52:58 [I] nirvana_bridge.queue:140 Task acee3ed6 CONFIRMED
+2026-07-14 02:53:03 [I] nirvana_bridge.http:74 GET /stats -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task 403ed8ec: Stress 1
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task f0bb150d: Stress 2
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task b65c86e5: Stress 3
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task 60f582ff: Stress 4
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task d54cd2bc: Stress 5
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task 68b1766d: Stress 6
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task 28636fc1: Stress 7
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task 0e867de9: Stress 8
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task 233062d2: Stress 9
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:16 [I] nirvana_bridge.queue:329 Enqueued task e91d32ee: Stress 10
+2026-07-14 02:53:16 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:17 [I] nirvana_bridge.queue:78 Processing task 403ed8ec (status=PENDING, retry=0)
+2026-07-14 02:53:17 [I] nirvana_bridge.queue:134 Task 403ed8ec sent -> nirvana_id=019f5c65-b649-7773-8039-e1946f83cd0b
+2026-07-14 02:53:18 [I] nirvana_bridge.queue:140 Task 403ed8ec CONFIRMED
+2026-07-14 02:53:19 [I] nirvana_bridge.queue:78 Processing task f0bb150d (status=PENDING, retry=0)
+2026-07-14 02:53:19 [I] nirvana_bridge.queue:134 Task f0bb150d sent -> nirvana_id=019f5c65-be14-7773-8039-eec961efc0f3
+2026-07-14 02:53:20 [I] nirvana_bridge.queue:140 Task f0bb150d CONFIRMED
+2026-07-14 02:53:21 [I] nirvana_bridge.queue:78 Processing task b65c86e5 (status=PENDING, retry=0)
+2026-07-14 02:53:21 [I] nirvana_bridge.queue:134 Task b65c86e5 sent -> nirvana_id=019f5c65-c5e6-7dd4-b3e6-06fded11ea3d
+2026-07-14 02:53:22 [I] nirvana_bridge.queue:140 Task b65c86e5 CONFIRMED
+2026-07-14 02:53:23 [I] nirvana_bridge.queue:78 Processing task 60f582ff (status=PENDING, retry=0)
+2026-07-14 02:53:23 [I] nirvana_bridge.queue:134 Task 60f582ff sent -> nirvana_id=019f5c65-cdad-7773-8039-f1448edb7dcb
+2026-07-14 02:53:24 [I] nirvana_bridge.queue:140 Task 60f582ff CONFIRMED
+2026-07-14 02:53:25 [I] nirvana_bridge.queue:78 Processing task d54cd2bc (status=PENDING, retry=0)
+2026-07-14 02:53:25 [I] nirvana_bridge.queue:134 Task d54cd2bc sent -> nirvana_id=019f5c65-d56c-7773-8039-fa4aa44435b3
+2026-07-14 02:53:26 [I] nirvana_bridge.queue:140 Task d54cd2bc CONFIRMED
+2026-07-14 02:53:27 [I] nirvana_bridge.queue:78 Processing task 68b1766d (status=PENDING, retry=0)
+2026-07-14 02:53:27 [I] nirvana_bridge.queue:134 Task 68b1766d sent -> nirvana_id=019f5c65-dd1f-7dd4-b3e6-0fd8010c6210
+2026-07-14 02:53:28 [I] nirvana_bridge.queue:140 Task 68b1766d CONFIRMED
+2026-07-14 02:53:29 [I] nirvana_bridge.queue:78 Processing task 28636fc1 (status=PENDING, retry=0)
+2026-07-14 02:53:29 [I] nirvana_bridge.queue:134 Task 28636fc1 sent -> nirvana_id=019f5c65-e4e8-7dd4-b3e6-12ea3b291e15
+2026-07-14 02:53:30 [I] nirvana_bridge.queue:140 Task 28636fc1 CONFIRMED
+2026-07-14 02:53:31 [I] nirvana_bridge.queue:78 Processing task 0e867de9 (status=PENDING, retry=0)
+2026-07-14 02:53:31 [I] nirvana_bridge.queue:134 Task 0e867de9 sent -> nirvana_id=019f5c65-ecd2-7ffe-999b-bc1ac81bcf8a
+2026-07-14 02:53:31 [I] nirvana_bridge.http:74 GET /stats -> 200
+2026-07-14 02:53:32 [I] nirvana_bridge.queue:140 Task 0e867de9 CONFIRMED
+2026-07-14 02:53:33 [I] nirvana_bridge.queue:78 Processing task 233062d2 (status=PENDING, retry=0)
+2026-07-14 02:53:33 [I] nirvana_bridge.queue:134 Task 233062d2 sent -> nirvana_id=019f5c65-f48d-7773-803a-038bd5feca7d
+2026-07-14 02:53:34 [I] nirvana_bridge.queue:140 Task 233062d2 CONFIRMED
+2026-07-14 02:53:35 [I] nirvana_bridge.queue:78 Processing task e91d32ee (status=PENDING, retry=0)
+2026-07-14 02:53:35 [I] nirvana_bridge.queue:134 Task e91d32ee sent -> nirvana_id=019f5c65-fc41-7ffe-999b-c22df9944b09
+2026-07-14 02:53:36 [I] nirvana_bridge.queue:140 Task e91d32ee CONFIRMED
+2026-07-14 02:53:45 [I] nirvana_bridge.http:74 GET /stats -> 200
+2026-07-14 02:53:54 [I] nirvana_bridge.queue:329 Enqueued task 2cd9b6ed: Survive restart 1
+2026-07-14 02:53:54 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:54 [I] nirvana_bridge.queue:329 Enqueued task ae6759ad: Survive restart 2
+2026-07-14 02:53:54 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:54 [I] nirvana_bridge.queue:329 Enqueued task fa66fd10: Survive restart 3
+2026-07-14 02:53:54 [I] nirvana_bridge.http:74 POST /task -> 200
+2026-07-14 02:53:57 [I] nirvana_bridge:142 Logging initialized
+2026-07-14 02:53:57 [I] nirvana_bridge:66 ============================================================
+2026-07-14 02:53:57 [I] nirvana_bridge:67 Nirvana Bridge starting
+2026-07-14 02:53:57 [I] nirvana_bridge:68 DB: C:\obsidian\Main\Calendula\nirvana_bridge\data\bridge.db
+2026-07-14 02:53:57 [I] nirvana_bridge:69 MCP: https://mcp.nirvanahq.com/mcp
+2026-07-14 02:53:57 [I] nirvana_bridge:70 HTTP: 127.0.0.1:8712
+2026-07-14 02:53:57 [I] nirvana_bridge:71 ============================================================
+2026-07-14 02:53:57 [I] nirvana_bridge.mcp:412 Reconnecting in 1s (circuit: closed)
+2026-07-14 02:53:58 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:53:58 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:53:58 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:53:58 [I] nirvana_bridge.queue:45 Queue manager started
+2026-07-14 02:53:58 [I] nirvana_bridge:91 HTTP API at http://127.0.0.1:8712
+2026-07-14 02:53:58 [I] nirvana_bridge.queue:78 Processing task 2cd9b6ed (status=PENDING, retry=0)
+2026-07-14 02:53:58 [I] nirvana_bridge.queue:134 Task 2cd9b6ed sent -> nirvana_id=019f5c66-56b7-7773-803a-0b3a4055ae79
+2026-07-14 02:53:59 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:53:59 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:53:59 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:53:59 [I] nirvana_bridge.queue:140 Task 2cd9b6ed CONFIRMED
+2026-07-14 02:54:00 [I] nirvana_bridge.queue:78 Processing task ae6759ad (status=PENDING, retry=0)
+2026-07-14 02:54:00 [I] nirvana_bridge.queue:134 Task ae6759ad sent -> nirvana_id=019f5c66-5e92-7dd4-b3e6-1f4867d63042
+2026-07-14 02:54:01 [I] nirvana_bridge.queue:140 Task ae6759ad CONFIRMED
+2026-07-14 02:54:02 [I] nirvana_bridge.queue:78 Processing task fa66fd10 (status=PENDING, retry=0)
+2026-07-14 02:54:02 [I] nirvana_bridge.queue:134 Task fa66fd10 sent -> nirvana_id=019f5c66-666e-7ffe-999b-c8f56f42fa2d
+2026-07-14 02:54:03 [I] nirvana_bridge.queue:140 Task fa66fd10 CONFIRMED
+2026-07-14 02:54:06 [I] nirvana_bridge.http:74 GET /stats -> 200
+2026-07-14 02:54:26 [I] nirvana_bridge:142 Logging initialized
+2026-07-14 02:54:26 [I] nirvana_bridge:66 ============================================================
+2026-07-14 02:54:26 [I] nirvana_bridge:67 Nirvana Bridge starting
+2026-07-14 02:54:26 [I] nirvana_bridge:68 DB: C:\obsidian\Main\Calendula\nirvana_bridge\data\bridge.db
+2026-07-14 02:54:26 [I] nirvana_bridge:69 MCP: https://mcp.nirvanahq.com/mcp
+2026-07-14 02:54:26 [I] nirvana_bridge:70 HTTP: 127.0.0.1:8712
+2026-07-14 02:54:26 [I] nirvana_bridge:71 ============================================================
+2026-07-14 02:54:27 [I] nirvana_bridge.mcp:412 Reconnecting in 1s (circuit: closed)
+2026-07-14 02:54:27 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:54:27 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:54:27 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:54:27 [I] nirvana_bridge.queue:45 Queue manager started
+2026-07-14 02:54:27 [I] nirvana_bridge:91 HTTP API at http://127.0.0.1:8712
+2026-07-14 02:54:28 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:54:28 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:54:28 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:54:56 [I] nirvana_bridge.http:74 GET /stats -> 200
+2026-07-14 02:58:28 [I] nirvana_bridge:142 Logging initialized
+2026-07-14 02:58:28 [I] nirvana_bridge:66 ============================================================
+2026-07-14 02:58:28 [I] nirvana_bridge:67 Nirvana Bridge starting
+2026-07-14 02:58:28 [I] nirvana_bridge:68 DB: C:\obsidian\Main\Calendula\nirvana_bridge\data\bridge.db
+2026-07-14 02:58:28 [I] nirvana_bridge:69 MCP: https://mcp.nirvanahq.com/mcp
+2026-07-14 02:58:28 [I] nirvana_bridge:70 HTTP: 127.0.0.1:8712
+2026-07-14 02:58:28 [I] nirvana_bridge:71 ============================================================
+2026-07-14 02:58:28 [I] nirvana_bridge.mcp:412 Reconnecting in 1s (circuit: closed)
+2026-07-14 02:58:29 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:58:29 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:58:29 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:58:29 [I] nirvana_bridge.queue:45 Queue manager started
+2026-07-14 02:58:29 [I] nirvana_bridge:91 HTTP API at http://127.0.0.1:8712
+2026-07-14 02:58:30 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 02:58:30 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 02:58:30 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 02:58:44 [I] nirvana_bridge.http:117 GET /api/tags -> 200
+2026-07-14 02:58:44 [I] nirvana_bridge.http:117 GET /api/task-counts -> 200
+2026-07-14 02:58:49 [I] nirvana_bridge.queue:333 Enqueued task 549ef5ed: Learn Neural Nets
+2026-07-14 02:58:49 [I] nirvana_bridge.http:117 POST /api/tasks -> 200
+2026-07-14 02:58:49 [I] nirvana_bridge.queue:351 Enqueued project e9e3e779: AI Learning
+2026-07-14 02:58:49 [I] nirvana_bridge.http:117 POST /api/projects -> 200
+2026-07-14 02:58:49 [I] nirvana_bridge.queue:78 Processing task 549ef5ed (status=PENDING, retry=0)
+2026-07-14 02:58:50 [I] nirvana_bridge.queue:134 Task 549ef5ed sent -> nirvana_id=019f5c6a-cbb5-7dd4-b3e6-35e4a0540f59
+2026-07-14 02:58:51 [I] nirvana_bridge.queue:140 Task 549ef5ed CONFIRMED
+2026-07-14 02:58:52 [I] nirvana_bridge.queue:78 Processing task e9e3e779 (status=PENDING, retry=0)
+2026-07-14 02:58:52 [I] nirvana_bridge.queue:134 Task e9e3e779 sent -> nirvana_id=019f5c6a-d38a-7773-803a-1083ba5d56b2
+2026-07-14 02:58:53 [W] nirvana_bridge.queue:303 Task 019f5c6a-d38 not found in get_tasks results
+2026-07-14 02:58:53 [W] nirvana_bridge.queue:142 Task e9e3e779 sent but confirmation failed
+2026-07-14 02:59:01 [I] nirvana_bridge.http:117 GET /stats -> 200
+2026-07-14 02:59:11 [I] nirvana_bridge.http:117 GET /stats -> 200
+2026-07-14 02:59:24 [I] nirvana_bridge.http:117 POST /api/mcp/get_tasks -> 200
+2026-07-14 02:59:24 [I] nirvana_bridge.http:117 POST /api/mcp/get_tasks -> 200
+2026-07-14 02:59:32 [I] nirvana_bridge.http:117 PUT /api/tasks/019f5c6a-cbb5-7dd4-b3e6-35e4a0540f59/energy -> 200
+2026-07-14 02:59:33 [I] nirvana_bridge.http:117 PUT /api/tasks/019f5c6a-cbb5-7dd4-b3e6-35e4a0540f59/schedule -> 200
+2026-07-14 02:59:33 [I] nirvana_bridge.http:117 PUT /api/tasks/019f5c6a-cbb5-7dd4-b3e6-35e4a0540f59/move -> 200
+2026-07-14 02:59:40 [I] nirvana_bridge.http:117 PUT /api/tasks/019f5c6a-cbb5-7dd4-b3e6-35e4a0540f59/star -> 200
+2026-07-14 02:59:40 [I] nirvana_bridge.http:117 PUT /api/tasks -> 400
+2026-07-14 03:00:10 [I] nirvana_bridge:142 Logging initialized
+2026-07-14 03:00:10 [I] nirvana_bridge:66 ============================================================
+2026-07-14 03:00:10 [I] nirvana_bridge:67 Nirvana Bridge starting
+2026-07-14 03:00:10 [I] nirvana_bridge:68 DB: C:\obsidian\Main\Calendula\nirvana_bridge\data\bridge.db
+2026-07-14 03:00:10 [I] nirvana_bridge:69 MCP: https://mcp.nirvanahq.com/mcp
+2026-07-14 03:00:10 [I] nirvana_bridge:70 HTTP: 127.0.0.1:8712
+2026-07-14 03:00:10 [I] nirvana_bridge:71 ============================================================
+2026-07-14 03:00:10 [I] nirvana_bridge.mcp:412 Reconnecting in 1s (circuit: closed)
+2026-07-14 03:00:11 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 03:00:11 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 03:00:11 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 03:00:11 [I] nirvana_bridge.queue:45 Queue manager started
+2026-07-14 03:00:11 [I] nirvana_bridge:91 HTTP API at http://127.0.0.1:8712
+2026-07-14 03:00:11 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 03:00:11 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 03:00:11 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 03:00:24 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:00:24 [I] nirvana_bridge.http:114 POST /api/tasks/019f5c6a-cbb5-7dd4-b3e6-35e4a0540f59/complete -> 200
+2026-07-14 03:00:30 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6a-cbb5-7dd4-b3e6-35e4a0540f59 -> 200
+2026-07-14 03:02:04 [I] nirvana_bridge:142 Logging initialized
+2026-07-14 03:02:04 [I] nirvana_bridge:66 ============================================================
+2026-07-14 03:02:04 [I] nirvana_bridge:67 Nirvana Bridge starting
+2026-07-14 03:02:04 [I] nirvana_bridge:68 DB: C:\obsidian\Main\Calendula\nirvana_bridge\data\bridge.db
+2026-07-14 03:02:04 [I] nirvana_bridge:69 MCP: https://mcp.nirvanahq.com/mcp
+2026-07-14 03:02:04 [I] nirvana_bridge:70 HTTP: 127.0.0.1:8712
+2026-07-14 03:02:04 [I] nirvana_bridge:71 ============================================================
+2026-07-14 03:02:04 [I] nirvana_bridge.mcp:412 Reconnecting in 1s (circuit: closed)
+2026-07-14 03:02:05 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 03:02:05 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 03:02:05 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 03:02:05 [I] nirvana_bridge.queue:45 Queue manager started
+2026-07-14 03:02:05 [I] nirvana_bridge:91 HTTP API at http://127.0.0.1:8712
+2026-07-14 03:02:06 [I] nirvana_bridge.mcp:352 Connected to nirvana v1.0.0 (protocol 2025-03-26)
+2026-07-14 03:02:06 [I] nirvana_bridge.mcp:357 Server: Manage your Nirvana tasks and projects from your AI assistant. Capture to inbox,
+2026-07-14 03:02:06 [I] nirvana_bridge:57 MCP connected — queue processing active
+2026-07-14 03:02:16 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:02:18 [I] nirvana_bridge.http:114 POST /api/mcp/get_tasks -> 200
+2026-07-14 03:02:19 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c59-1b8e-7773-8039-91d347a289e8 -> 200
+2026-07-14 03:02:19 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c65-678f-7773-8039-df8acb83953e -> 200
+2026-07-14 03:02:19 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c65-d56c-7773-8039-fa4aa44435b3 -> 200
+2026-07-14 03:02:20 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c65-dd1f-7dd4-b3e6-0fd8010c6210 -> 200
+2026-07-14 03:02:20 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c65-e4e8-7dd4-b3e6-12ea3b291e15 -> 200
+2026-07-14 03:02:20 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c65-ecd2-7ffe-999b-bc1ac81bcf8a -> 200
+2026-07-14 03:02:21 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c65-f48d-7773-803a-038bd5feca7d -> 200
+2026-07-14 03:02:21 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c65-fc41-7ffe-999b-c22df9944b09 -> 200
+2026-07-14 03:02:21 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c66-56b7-7773-803a-0b3a4055ae79 -> 200
+2026-07-14 03:02:22 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c66-5e92-7dd4-b3e6-1f4867d63042 -> 200
+2026-07-14 03:02:22 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c66-666e-7ffe-999b-c8f56f42fa2d -> 200
+2026-07-14 03:02:29 [I] nirvana_bridge.http:114 POST /api/mcp/get_tasks -> 200
+2026-07-14 03:02:35 [I] nirvana_bridge.http:114 POST /api/mcp/get_tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 759ad456: Вообще по дедлайнам
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task a3fccb70: С едой и какой маршрут выбрать
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task b0abb766: Маршрут в Армении
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task d8489a63: Меню или просто после сделать одинаковые порции эт
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 27d39cf4: Вывод то что отпуск это чистка
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task e5db9a6c: 1-2 занятие в неделю для обычных диалогов
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 577b6d98: И уже от них отходить и еще какие списки нужны из
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task e453fe07: Вообще как я понял почти ни у кого не куплены
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 9698bb3f: Обновлялись
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task bd00ab9f: To translate my OS into English
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 4b587777: More bug practice
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 5048a17f: Lessons with a teacher
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task e4d5f642: Родилась по тому почему люди становятся такими какие они ест
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task ce263db1: Была создать свое английское сообщество, но только пока для
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task b07f66f6: Проследить со мной
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task ba3d1cc1: Будет это сделать, но будет проблема людей
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 433e7149: Более интересно сделать меню или просто после сделать одинак
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task bdc7ae96: Самим все организовать
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 6b75f39d: Тем то что на 3-4 занятие уже привыкаешь и просто ходишь пог
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 1bdebf18: In English
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task ae29c531: Сюда все писать и только потом уже куда-то перекидывать
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task ca55b6c1: Habit
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task c129db3e: Количества клещей и медведей
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 825cd199: My bad English and my lack of experience
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task ba32fd75: Просто поменять то что ты из себя будешь выдавать
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task fa3bce99: Было искать людей и искал людей в дневниках было очень много про людей
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 527ff48d: Еще будет решить с вопросом, что вообще брать с собой в поход и Питер
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task b1d5e4e1: В расинхрон делать
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task de22669f: Будет думать либо менять страну и тогда будет проблема количества клещей и медве
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task fdf77d83: Будет отказываться от плота и какое-то другое испытание делать
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 1c0082f5: Считать еду на человека день потому что разные отрезки времени у всех будут
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 429dd2cf: Блоками готовить еду
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 15c26a5c: Мин набор
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 723a4582: Вообще от маршрута отталкиваться и только потом уже делать инвентарь
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 4252b1ad: Было в первую очередь именно от маршрутов отталкиваться а после уже выбирать стр
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task be5bfc19: Каждый день чиститься от него и регулярно
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task 1fb44c69: Делать такую чистку, чтобы на тебя вообще ничего старого не попадало и ты полнос
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:38 [I] nirvana_bridge.queue:335 Enqueued task bb940a2d: Показывать, чтобы угодить или что-то подобное
+2026-07-14 03:02:38 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task b3fb8b20: Менять и делать говно таски
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:78 Processing task 759ad456 (status=PENDING, retry=0)
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task 6d56c1ae: Еще время убить на изучения этого новой технологии
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task ee27412e: За все технологии шарить и уже только ими манипулировать
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task 71a0fbee: Теперь сделать чтобы нейронка это все смотрела и обновляла мой список задач на д
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task ae3260c9: Как она устроена именно в этом проекте и только уже после эт
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task e0a1809b: Translate all my Obsidian into English
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task aa33cf6d: Understand how it works
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task f52c8aa5: Write and speak simple English every day
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task 656defc6: Find problems and fix them
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task e830b26e: Balance thinking and doing
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task 80c3acae: Focus on execution
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task 6b4a886f: Dialogues with ChatGPT and writing my daily diary
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:335 Enqueued task 97a7e1f8: Important task
+2026-07-14 03:02:39 [I] nirvana_bridge.http:114 POST /api/tasks -> 200
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:134 Task 759ad456 sent -> nirvana_id=019f5c6e-48b4-7ffe-999b-f2c204d8d667
+2026-07-14 03:02:39 [I] nirvana_bridge.queue:140 Task 759ad456 CONFIRMED
+2026-07-14 03:02:40 [I] nirvana_bridge.queue:78 Processing task a3fccb70 (status=PENDING, retry=0)
+2026-07-14 03:02:41 [I] nirvana_bridge.queue:134 Task a3fccb70 sent -> nirvana_id=019f5c6e-507a-7ffe-999b-fa07bc2c5d68
+2026-07-14 03:02:41 [I] nirvana_bridge.queue:140 Task a3fccb70 CONFIRMED
+2026-07-14 03:02:42 [I] nirvana_bridge.queue:78 Processing task b0abb766 (status=PENDING, retry=0)
+2026-07-14 03:02:43 [I] nirvana_bridge.queue:134 Task b0abb766 sent -> nirvana_id=019f5c6e-582f-7773-803a-1e6d37ea67e6
+2026-07-14 03:02:43 [I] nirvana_bridge.queue:140 Task b0abb766 CONFIRMED
+2026-07-14 03:02:44 [I] nirvana_bridge.queue:78 Processing task d8489a63 (status=PENDING, retry=0)
+2026-07-14 03:02:45 [I] nirvana_bridge.queue:134 Task d8489a63 sent -> nirvana_id=019f5c6e-5ff0-7dd4-b3e6-40611371983d
+2026-07-14 03:02:45 [I] nirvana_bridge.queue:140 Task d8489a63 CONFIRMED
+2026-07-14 03:02:46 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:02:46 [I] nirvana_bridge.queue:78 Processing task 27d39cf4 (status=PENDING, retry=0)
+2026-07-14 03:02:47 [I] nirvana_bridge.queue:134 Task 27d39cf4 sent -> nirvana_id=019f5c6e-67b2-7773-803a-261ba6046ae1
+2026-07-14 03:02:47 [I] nirvana_bridge.queue:140 Task 27d39cf4 CONFIRMED
+2026-07-14 03:02:48 [I] nirvana_bridge.queue:78 Processing task e5db9a6c (status=PENDING, retry=0)
+2026-07-14 03:02:49 [I] nirvana_bridge.queue:134 Task e5db9a6c sent -> nirvana_id=019f5c6e-6fa5-7dd4-b3e6-4bb866b8e6a6
+2026-07-14 03:02:50 [I] nirvana_bridge.queue:140 Task e5db9a6c CONFIRMED
+2026-07-14 03:02:51 [I] nirvana_bridge.queue:78 Processing task 577b6d98 (status=PENDING, retry=0)
+2026-07-14 03:02:51 [I] nirvana_bridge.queue:134 Task 577b6d98 sent -> nirvana_id=019f5c6e-77e0-7dd4-b3e6-5791d899eaa9
+2026-07-14 03:02:51 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:02:52 [I] nirvana_bridge.queue:140 Task 577b6d98 CONFIRMED
+2026-07-14 03:02:53 [I] nirvana_bridge.queue:78 Processing task e453fe07 (status=PENDING, retry=0)
+2026-07-14 03:02:53 [I] nirvana_bridge.queue:134 Task e453fe07 sent -> nirvana_id=019f5c6e-7f9e-7ffe-999c-01fdb52961d6
+2026-07-14 03:02:53 [I] nirvana_bridge.queue:140 Task e453fe07 CONFIRMED
+2026-07-14 03:02:54 [I] nirvana_bridge.queue:78 Processing task 9698bb3f (status=PENDING, retry=0)
+2026-07-14 03:02:55 [I] nirvana_bridge.queue:134 Task 9698bb3f sent -> nirvana_id=019f5c6e-873d-7dd4-b3e6-5e3f4153e9db
+2026-07-14 03:02:55 [I] nirvana_bridge.queue:140 Task 9698bb3f CONFIRMED
+2026-07-14 03:02:56 [I] nirvana_bridge.queue:78 Processing task bd00ab9f (status=PENDING, retry=0)
+2026-07-14 03:02:57 [I] nirvana_bridge.queue:134 Task bd00ab9f sent -> nirvana_id=019f5c6e-8ece-7ffe-999c-0d7dd727ef26
+2026-07-14 03:02:57 [I] nirvana_bridge.queue:140 Task bd00ab9f CONFIRMED
+2026-07-14 03:02:58 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:02:58 [I] nirvana_bridge.queue:78 Processing task 4b587777 (status=PENDING, retry=0)
+2026-07-14 03:02:59 [I] nirvana_bridge.queue:134 Task 4b587777 sent -> nirvana_id=019f5c6e-9666-7773-803a-2a172966f062
+2026-07-14 03:02:59 [I] nirvana_bridge.queue:140 Task 4b587777 CONFIRMED
+2026-07-14 03:03:00 [I] nirvana_bridge.queue:78 Processing task 5048a17f (status=PENDING, retry=0)
+2026-07-14 03:03:01 [I] nirvana_bridge.queue:134 Task 5048a17f sent -> nirvana_id=019f5c6e-9e20-7dd4-b3e6-600abf85399a
+2026-07-14 03:03:01 [I] nirvana_bridge.queue:140 Task 5048a17f CONFIRMED
+2026-07-14 03:03:02 [I] nirvana_bridge.queue:78 Processing task e4d5f642 (status=PENDING, retry=0)
+2026-07-14 03:03:03 [I] nirvana_bridge.queue:134 Task e4d5f642 sent -> nirvana_id=019f5c6e-a601-7dd4-b3e6-6ac28fa5fedb
+2026-07-14 03:03:03 [I] nirvana_bridge.queue:140 Task e4d5f642 CONFIRMED
+2026-07-14 03:03:04 [I] nirvana_bridge.queue:78 Processing task ce263db1 (status=PENDING, retry=0)
+2026-07-14 03:03:05 [I] nirvana_bridge.queue:134 Task ce263db1 sent -> nirvana_id=019f5c6e-ad99-7dd4-b3e6-77103417127d
+2026-07-14 03:03:05 [I] nirvana_bridge.queue:140 Task ce263db1 CONFIRMED
+2026-07-14 03:03:06 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:03:06 [I] nirvana_bridge.queue:78 Processing task b07f66f6 (status=PENDING, retry=0)
+2026-07-14 03:03:07 [I] nirvana_bridge.queue:134 Task b07f66f6 sent -> nirvana_id=019f5c6e-b56a-7773-803a-327c4271de2c
+2026-07-14 03:03:07 [I] nirvana_bridge.queue:140 Task b07f66f6 CONFIRMED
+2026-07-14 03:03:08 [I] nirvana_bridge.queue:78 Processing task ba3d1cc1 (status=PENDING, retry=0)
+2026-07-14 03:03:09 [I] nirvana_bridge.queue:134 Task ba3d1cc1 sent -> nirvana_id=019f5c6e-bd3d-7773-803a-3b74b25141f5
+2026-07-14 03:03:09 [I] nirvana_bridge.queue:140 Task ba3d1cc1 CONFIRMED
+2026-07-14 03:03:10 [I] nirvana_bridge.queue:78 Processing task 433e7149 (status=PENDING, retry=0)
+2026-07-14 03:03:11 [I] nirvana_bridge.queue:134 Task 433e7149 sent -> nirvana_id=019f5c6e-c4ff-7dd4-b3e6-7ba1da06a2fd
+2026-07-14 03:03:11 [I] nirvana_bridge.queue:140 Task 433e7149 CONFIRMED
+2026-07-14 03:03:12 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:03:12 [I] nirvana_bridge.queue:78 Processing task bdc7ae96 (status=PENDING, retry=0)
+2026-07-14 03:03:13 [I] nirvana_bridge.queue:134 Task bdc7ae96 sent -> nirvana_id=019f5c6e-cca7-7ffe-999c-15db2b5ae31e
+2026-07-14 03:03:13 [I] nirvana_bridge.queue:140 Task bdc7ae96 CONFIRMED
+2026-07-14 03:03:14 [I] nirvana_bridge.queue:78 Processing task 6b75f39d (status=PENDING, retry=0)
+2026-07-14 03:03:15 [I] nirvana_bridge.queue:134 Task 6b75f39d sent -> nirvana_id=019f5c6e-d492-7dd4-b3e6-84cf29f454af
+2026-07-14 03:03:15 [I] nirvana_bridge.queue:140 Task 6b75f39d CONFIRMED
+2026-07-14 03:03:16 [I] nirvana_bridge.queue:78 Processing task 1bdebf18 (status=PENDING, retry=0)
+2026-07-14 03:03:17 [I] nirvana_bridge.queue:134 Task 1bdebf18 sent -> nirvana_id=019f5c6e-dc40-7773-803a-4240feaec154
+2026-07-14 03:03:17 [I] nirvana_bridge.queue:140 Task 1bdebf18 CONFIRMED
+2026-07-14 03:03:18 [I] nirvana_bridge.queue:78 Processing task ae29c531 (status=PENDING, retry=0)
+2026-07-14 03:03:19 [I] nirvana_bridge.queue:134 Task ae29c531 sent -> nirvana_id=019f5c6e-e3e4-7773-803a-4e083985ab17
+2026-07-14 03:03:19 [I] nirvana_bridge.queue:140 Task ae29c531 CONFIRMED
+2026-07-14 03:03:20 [I] nirvana_bridge.queue:78 Processing task ca55b6c1 (status=PENDING, retry=0)
+2026-07-14 03:03:21 [I] nirvana_bridge.queue:134 Task ca55b6c1 sent -> nirvana_id=019f5c6e-eb9a-7ffe-999c-196609cc5267
+2026-07-14 03:03:21 [I] nirvana_bridge.queue:140 Task ca55b6c1 CONFIRMED
+2026-07-14 03:03:22 [I] nirvana_bridge.queue:78 Processing task c129db3e (status=PENDING, retry=0)
+2026-07-14 03:03:23 [I] nirvana_bridge.queue:134 Task c129db3e sent -> nirvana_id=019f5c6e-f359-7dd4-b3e6-8c2cea70b1f1
+2026-07-14 03:03:23 [I] nirvana_bridge.queue:140 Task c129db3e CONFIRMED
+2026-07-14 03:03:24 [I] nirvana_bridge.queue:78 Processing task 825cd199 (status=PENDING, retry=0)
+2026-07-14 03:03:24 [I] nirvana_bridge.queue:134 Task 825cd199 sent -> nirvana_id=019f5c6e-fb14-7ffe-999c-26aefe4886b6
+2026-07-14 03:03:25 [I] nirvana_bridge.queue:140 Task 825cd199 CONFIRMED
+2026-07-14 03:03:26 [I] nirvana_bridge.queue:78 Processing task ba32fd75 (status=PENDING, retry=0)
+2026-07-14 03:03:26 [I] nirvana_bridge.queue:134 Task ba32fd75 sent -> nirvana_id=019f5c6f-02ad-7ffe-999c-2b193240f2c4
+2026-07-14 03:03:27 [I] nirvana_bridge.queue:140 Task ba32fd75 CONFIRMED
+2026-07-14 03:03:28 [I] nirvana_bridge.queue:78 Processing task fa3bce99 (status=PENDING, retry=0)
+2026-07-14 03:03:28 [I] nirvana_bridge.queue:134 Task fa3bce99 sent -> nirvana_id=019f5c6f-0a88-7773-803a-512157a70ac7
+2026-07-14 03:03:29 [I] nirvana_bridge.queue:140 Task fa3bce99 CONFIRMED
+2026-07-14 03:03:30 [I] nirvana_bridge.queue:78 Processing task 527ff48d (status=PENDING, retry=0)
+2026-07-14 03:03:30 [I] nirvana_bridge.queue:134 Task 527ff48d sent -> nirvana_id=019f5c6f-124c-7dd4-b3e6-976074c79292
+2026-07-14 03:03:31 [I] nirvana_bridge.queue:140 Task 527ff48d CONFIRMED
+2026-07-14 03:03:32 [I] nirvana_bridge.queue:78 Processing task b1d5e4e1 (status=PENDING, retry=0)
+2026-07-14 03:03:32 [I] nirvana_bridge.queue:134 Task b1d5e4e1 sent -> nirvana_id=019f5c6f-1a01-7773-803a-64e41fa1d344
+2026-07-14 03:03:33 [I] nirvana_bridge.queue:140 Task b1d5e4e1 CONFIRMED
+2026-07-14 03:03:34 [I] nirvana_bridge.queue:78 Processing task de22669f (status=PENDING, retry=0)
+2026-07-14 03:03:34 [I] nirvana_bridge.queue:134 Task de22669f sent -> nirvana_id=019f5c6f-21a8-7ffe-999c-38c0193a317f
+2026-07-14 03:03:35 [I] nirvana_bridge.queue:140 Task de22669f CONFIRMED
+2026-07-14 03:03:36 [I] nirvana_bridge.queue:78 Processing task fdf77d83 (status=PENDING, retry=0)
+2026-07-14 03:03:36 [I] nirvana_bridge.queue:134 Task fdf77d83 sent -> nirvana_id=019f5c6f-2968-7773-803a-6e857543c0fe
+2026-07-14 03:03:37 [I] nirvana_bridge.queue:140 Task fdf77d83 CONFIRMED
+2026-07-14 03:03:38 [I] nirvana_bridge.queue:78 Processing task 1c0082f5 (status=PENDING, retry=0)
+2026-07-14 03:03:38 [I] nirvana_bridge.queue:134 Task 1c0082f5 sent -> nirvana_id=019f5c6f-3137-7ffe-999c-436a5fe1d997
+2026-07-14 03:03:39 [I] nirvana_bridge.queue:140 Task 1c0082f5 CONFIRMED
+2026-07-14 03:03:40 [I] nirvana_bridge.queue:78 Processing task 429dd2cf (status=PENDING, retry=0)
+2026-07-14 03:03:40 [I] nirvana_bridge.queue:134 Task 429dd2cf sent -> nirvana_id=019f5c6f-392f-7773-803a-70a7d1d492f9
+2026-07-14 03:03:41 [I] nirvana_bridge.queue:140 Task 429dd2cf CONFIRMED
+2026-07-14 03:03:42 [I] nirvana_bridge.queue:78 Processing task 15c26a5c (status=PENDING, retry=0)
+2026-07-14 03:03:42 [I] nirvana_bridge.queue:134 Task 15c26a5c sent -> nirvana_id=019f5c6f-40e5-7ffe-999c-4c5f53aae31e
+2026-07-14 03:03:43 [I] nirvana_bridge.queue:140 Task 15c26a5c CONFIRMED
+2026-07-14 03:03:44 [I] nirvana_bridge.queue:78 Processing task 723a4582 (status=PENDING, retry=0)
+2026-07-14 03:03:44 [I] nirvana_bridge.queue:134 Task 723a4582 sent -> nirvana_id=019f5c6f-4892-7773-803a-787752abea89
+2026-07-14 03:03:45 [I] nirvana_bridge.queue:140 Task 723a4582 CONFIRMED
+2026-07-14 03:03:46 [I] nirvana_bridge.queue:78 Processing task 4252b1ad (status=PENDING, retry=0)
+2026-07-14 03:03:46 [I] nirvana_bridge.queue:134 Task 4252b1ad sent -> nirvana_id=019f5c6f-5044-7dd4-b3e6-9df8dc4f2d31
+2026-07-14 03:03:47 [I] nirvana_bridge.queue:140 Task 4252b1ad CONFIRMED
+2026-07-14 03:03:48 [I] nirvana_bridge.queue:78 Processing task be5bfc19 (status=PENDING, retry=0)
+2026-07-14 03:03:48 [I] nirvana_bridge.queue:134 Task be5bfc19 sent -> nirvana_id=019f5c6f-57f5-7773-803a-88b86b1b0880
+2026-07-14 03:03:49 [I] nirvana_bridge.queue:140 Task be5bfc19 CONFIRMED
+2026-07-14 03:03:50 [I] nirvana_bridge.queue:78 Processing task 1fb44c69 (status=PENDING, retry=0)
+2026-07-14 03:03:50 [I] nirvana_bridge.queue:134 Task 1fb44c69 sent -> nirvana_id=019f5c6f-5fd1-7ffe-999c-540b421b02cb
+2026-07-14 03:03:51 [I] nirvana_bridge.queue:140 Task 1fb44c69 CONFIRMED
+2026-07-14 03:03:52 [I] nirvana_bridge.queue:78 Processing task bb940a2d (status=PENDING, retry=0)
+2026-07-14 03:03:52 [I] nirvana_bridge.queue:134 Task bb940a2d sent -> nirvana_id=019f5c6f-677d-7ffe-999c-5dbfbe1d437e
+2026-07-14 03:03:53 [I] nirvana_bridge.queue:140 Task bb940a2d CONFIRMED
+2026-07-14 03:03:54 [I] nirvana_bridge.queue:78 Processing task b3fb8b20 (status=PENDING, retry=0)
+2026-07-14 03:03:54 [I] nirvana_bridge.queue:134 Task b3fb8b20 sent -> nirvana_id=019f5c6f-6f31-7dd4-b3e6-a301dec40aaa
+2026-07-14 03:03:55 [I] nirvana_bridge.queue:140 Task b3fb8b20 CONFIRMED
+2026-07-14 03:03:56 [I] nirvana_bridge.queue:78 Processing task 6d56c1ae (status=PENDING, retry=0)
+2026-07-14 03:03:56 [I] nirvana_bridge.queue:134 Task 6d56c1ae sent -> nirvana_id=019f5c6f-76d7-7dd4-b3e6-a89b7778f948
+2026-07-14 03:03:57 [I] nirvana_bridge.queue:140 Task 6d56c1ae CONFIRMED
+2026-07-14 03:03:58 [I] nirvana_bridge.queue:78 Processing task ee27412e (status=PENDING, retry=0)
+2026-07-14 03:03:58 [I] nirvana_bridge.queue:134 Task ee27412e sent -> nirvana_id=019f5c6f-7e8e-7dd4-b3e6-b1a435ea5b4f
+2026-07-14 03:03:59 [I] nirvana_bridge.queue:140 Task ee27412e CONFIRMED
+2026-07-14 03:04:00 [I] nirvana_bridge.queue:78 Processing task 71a0fbee (status=PENDING, retry=0)
+2026-07-14 03:04:00 [I] nirvana_bridge.queue:134 Task 71a0fbee sent -> nirvana_id=019f5c6f-8639-7dd4-b3e6-bc15d376445e
+2026-07-14 03:04:01 [I] nirvana_bridge.queue:140 Task 71a0fbee CONFIRMED
+2026-07-14 03:04:02 [I] nirvana_bridge.queue:78 Processing task ae3260c9 (status=PENDING, retry=0)
+2026-07-14 03:04:02 [I] nirvana_bridge.queue:134 Task ae3260c9 sent -> nirvana_id=019f5c6f-8de8-7ffe-999c-676e23ba71ea
+2026-07-14 03:04:03 [I] nirvana_bridge.queue:140 Task ae3260c9 CONFIRMED
+2026-07-14 03:04:04 [I] nirvana_bridge.queue:78 Processing task e0a1809b (status=PENDING, retry=0)
+2026-07-14 03:04:04 [I] nirvana_bridge.queue:134 Task e0a1809b sent -> nirvana_id=019f5c6f-959d-7ffe-999c-6d81a03da3e5
+2026-07-14 03:04:05 [I] nirvana_bridge.queue:140 Task e0a1809b CONFIRMED
+2026-07-14 03:04:06 [I] nirvana_bridge.queue:78 Processing task aa33cf6d (status=PENDING, retry=0)
+2026-07-14 03:04:06 [I] nirvana_bridge.queue:134 Task aa33cf6d sent -> nirvana_id=019f5c6f-9d62-7ffe-999c-7164cdda5ecf
+2026-07-14 03:04:07 [I] nirvana_bridge.queue:140 Task aa33cf6d CONFIRMED
+2026-07-14 03:04:08 [I] nirvana_bridge.queue:78 Processing task f52c8aa5 (status=PENDING, retry=0)
+2026-07-14 03:04:08 [I] nirvana_bridge.queue:134 Task f52c8aa5 sent -> nirvana_id=019f5c6f-a51a-7773-803a-95d8d38c81bd
+2026-07-14 03:04:08 [I] nirvana_bridge.http:114 GET /api/tasks -> 422
+2026-07-14 03:04:09 [I] nirvana_bridge.queue:140 Task f52c8aa5 CONFIRMED
+2026-07-14 03:04:10 [I] nirvana_bridge.queue:78 Processing task 656defc6 (status=PENDING, retry=0)
+2026-07-14 03:04:10 [I] nirvana_bridge.queue:134 Task 656defc6 sent -> nirvana_id=019f5c6f-ad23-7773-803a-9aa2e76ad821
+2026-07-14 03:04:11 [I] nirvana_bridge.queue:140 Task 656defc6 CONFIRMED
+2026-07-14 03:04:12 [I] nirvana_bridge.queue:78 Processing task e830b26e (status=PENDING, retry=0)
+2026-07-14 03:04:12 [I] nirvana_bridge.queue:134 Task e830b26e sent -> nirvana_id=019f5c6f-b4e0-7773-803a-a37183d7cc00
+2026-07-14 03:04:13 [I] nirvana_bridge.queue:140 Task e830b26e CONFIRMED
+2026-07-14 03:04:14 [I] nirvana_bridge.queue:78 Processing task 80c3acae (status=PENDING, retry=0)
+2026-07-14 03:04:14 [I] nirvana_bridge.queue:134 Task 80c3acae sent -> nirvana_id=019f5c6f-bc81-7dd4-b3e6-c706e2d72294
+2026-07-14 03:04:15 [I] nirvana_bridge.queue:140 Task 80c3acae CONFIRMED
+2026-07-14 03:04:16 [I] nirvana_bridge.queue:78 Processing task 6b4a886f (status=PENDING, retry=0)
+2026-07-14 03:04:16 [I] nirvana_bridge.queue:134 Task 6b4a886f sent -> nirvana_id=019f5c6f-c468-7dd4-b3e6-ce9f6d9046cf
+2026-07-14 03:04:17 [I] nirvana_bridge.queue:140 Task 6b4a886f CONFIRMED
+2026-07-14 03:04:18 [I] nirvana_bridge.queue:78 Processing task 97a7e1f8 (status=PENDING, retry=0)
+2026-07-14 03:04:18 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:04:19 [I] nirvana_bridge.queue:134 Task 97a7e1f8 sent -> nirvana_id=019f5c6f-ce6f-7dd4-b3e6-d46c61ce264d
+2026-07-14 03:04:19 [I] nirvana_bridge.queue:140 Task 97a7e1f8 CONFIRMED
+2026-07-14 03:04:50 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:04:58 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:05:38 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:05:38 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-8ece-7ffe-999c-0d7dd727ef26 -> 200
+2026-07-14 03:05:38 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-9e20-7dd4-b3e6-600abf85399a -> 200
+2026-07-14 03:05:39 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-dc40-7773-803a-4240feaec154 -> 200
+2026-07-14 03:05:39 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-eb9a-7ffe-999c-196609cc5267 -> 200
+2026-07-14 03:05:39 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-fb14-7ffe-999c-26aefe4886b6 -> 200
+2026-07-14 03:05:40 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-959d-7ffe-999c-6d81a03da3e5 -> 200
+2026-07-14 03:05:40 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-9d62-7ffe-999c-7164cdda5ecf -> 200
+2026-07-14 03:05:40 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-a51a-7773-803a-95d8d38c81bd -> 200
+2026-07-14 03:05:41 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-ad23-7773-803a-9aa2e76ad821 -> 200
+2026-07-14 03:05:41 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-b4e0-7773-803a-a37183d7cc00 -> 200
+2026-07-14 03:05:42 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-bc81-7dd4-b3e6-c706e2d72294 -> 200
+2026-07-14 03:05:42 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-c468-7dd4-b3e6-ce9f6d9046cf -> 200
+2026-07-14 03:05:42 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-ce6f-7dd4-b3e6-d46c61ce264d -> 200
+2026-07-14 03:05:46 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:07:22 [I] nirvana_bridge.http:114 GET /stats -> 200
+2026-07-14 03:07:23 [I] nirvana_bridge.http:114 GET /api/task-counts -> 200
+2026-07-14 03:07:24 [I] nirvana_bridge.http:114 GET /api/tags -> 200
+2026-07-14 03:08:34 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:08:35 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5406-a385-76b3-8d44-610abad67f1a -> 200
+2026-07-14 03:08:35 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5407-2f53-7330-a006-e6f3f11b3350 -> 200
+2026-07-14 03:08:35 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5407-6e9e-74ea-9f0f-c931daebfe8d -> 200
+2026-07-14 03:08:36 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5982-9031-777d-97f3-464e2269202b -> 200
+2026-07-14 03:08:36 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5983-2053-75ed-8254-9a08eae64a16 -> 200
+2026-07-14 03:08:36 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5983-7ca6-7797-aabc-2c8f43626f0b -> 200
+2026-07-14 03:08:37 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5986-b552-719b-bb79-e46ecee4a519 -> 200
+2026-07-14 03:08:37 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-48b4-7ffe-999b-f2c204d8d667 -> 200
+2026-07-14 03:08:37 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-507a-7ffe-999b-fa07bc2c5d68 -> 200
+2026-07-14 03:08:38 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-582f-7773-803a-1e6d37ea67e6 -> 200
+2026-07-14 03:08:38 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-5ff0-7dd4-b3e6-40611371983d -> 200
+2026-07-14 03:08:38 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-67b2-7773-803a-261ba6046ae1 -> 200
+2026-07-14 03:08:39 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-6fa5-7dd4-b3e6-4bb866b8e6a6 -> 200
+2026-07-14 03:08:39 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-77e0-7dd4-b3e6-5791d899eaa9 -> 200
+2026-07-14 03:08:39 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-7f9e-7ffe-999c-01fdb52961d6 -> 200
+2026-07-14 03:08:40 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-873d-7dd4-b3e6-5e3f4153e9db -> 200
+2026-07-14 03:08:40 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-a601-7dd4-b3e6-6ac28fa5fedb -> 200
+2026-07-14 03:08:41 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-ad99-7dd4-b3e6-77103417127d -> 200
+2026-07-14 03:08:41 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-b56a-7773-803a-327c4271de2c -> 200
+2026-07-14 03:08:41 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-bd3d-7773-803a-3b74b25141f5 -> 200
+2026-07-14 03:08:42 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-c4ff-7dd4-b3e6-7ba1da06a2fd -> 200
+2026-07-14 03:08:42 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-cca7-7ffe-999c-15db2b5ae31e -> 200
+2026-07-14 03:08:42 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-d492-7dd4-b3e6-84cf29f454af -> 200
+2026-07-14 03:08:43 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-e3e4-7773-803a-4e083985ab17 -> 200
+2026-07-14 03:08:43 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6e-f359-7dd4-b3e6-8c2cea70b1f1 -> 200
+2026-07-14 03:08:43 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-02ad-7ffe-999c-2b193240f2c4 -> 200
+2026-07-14 03:08:44 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-0a88-7773-803a-512157a70ac7 -> 200
+2026-07-14 03:08:44 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-124c-7dd4-b3e6-976074c79292 -> 200
+2026-07-14 03:08:44 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-1a01-7773-803a-64e41fa1d344 -> 200
+2026-07-14 03:08:45 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-21a8-7ffe-999c-38c0193a317f -> 200
+2026-07-14 03:08:45 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-2968-7773-803a-6e857543c0fe -> 200
+2026-07-14 03:08:45 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-3137-7ffe-999c-436a5fe1d997 -> 200
+2026-07-14 03:08:46 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-392f-7773-803a-70a7d1d492f9 -> 200
+2026-07-14 03:08:46 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-40e5-7ffe-999c-4c5f53aae31e -> 200
+2026-07-14 03:08:46 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-4892-7773-803a-787752abea89 -> 200
+2026-07-14 03:08:47 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-5044-7dd4-b3e6-9df8dc4f2d31 -> 200
+2026-07-14 03:08:47 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-57f5-7773-803a-88b86b1b0880 -> 200
+2026-07-14 03:08:47 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-5fd1-7ffe-999c-540b421b02cb -> 200
+2026-07-14 03:08:48 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-677d-7ffe-999c-5dbfbe1d437e -> 200
+2026-07-14 03:08:48 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-6f31-7dd4-b3e6-a301dec40aaa -> 200
+2026-07-14 03:08:48 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-76d7-7dd4-b3e6-a89b7778f948 -> 200
+2026-07-14 03:08:49 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-7e8e-7dd4-b3e6-b1a435ea5b4f -> 200
+2026-07-14 03:08:49 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-8639-7dd4-b3e6-bc15d376445e -> 200
+2026-07-14 03:08:49 [I] nirvana_bridge.http:114 DELETE /api/tasks/019f5c6f-8de8-7ffe-999c-676e23ba71ea -> 200
+2026-07-14 03:09:07 [I] nirvana_bridge.http:114 GET /stats -> 200
+2026-07-14 03:09:08 [I] nirvana_bridge.http:114 GET /api/task-counts -> 200
+2026-07-14 03:09:08 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:09:09 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:09:42 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:10:06 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:10:07 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:07 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:07 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:08 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:08 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:08 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:09 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:09 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:09 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:10 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:10 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:10 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:11 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:11 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:11 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:12 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:12 [I] nirvana_bridge.http:114 PUT /api/tasks -> 200
+2026-07-14 03:10:16 [I] nirvana_bridge.http:114 GET /stats -> 200
+2026-07-14 03:10:16 [I] nirvana_bridge.http:114 GET /api/task-counts -> 200
+2026-07-14 03:10:16 [I] nirvana_bridge.http:114 GET /api/tasks -> 200
+2026-07-14 03:10:17 [I] nirvana_bridge.http:114 GET /api/tasks -> 200

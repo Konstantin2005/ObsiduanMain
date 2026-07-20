@@ -1,0 +1,19 @@
+[2026-06-26 12:23] 🎨 FRONTEND: Получена архитектура. Разработка UI.
+[2026-06-26 12:23] FRONTEND: Выбор: Vue 3 SPA (псевдокод)
+[2026-06-26 12:23] FRONTEND: Компоненты:
+  App.vue:
+    - Состояние: isLoggedIn, currentUser
+    - Рендерит LoginPage или Dashboard
+  RegisterForm.vue:
+    - Поля: username, password, confirmPassword
+    - Валидация: password === confirmPassword
+    - POST /register → сообщение об успехе/ошибке
+  LoginForm.vue:
+    - Поля: username, password
+    - POST /login → сохранить token в localStorage
+  Dashboard.vue:
+    - GET /me → показать username, role
+    - Кнопка Logout (очистить token)
+[2026-06-26 12:23] FRONTEND: Почему localStorage вместо sessionStorage: данные сохраняются между вкладками
+[2026-06-26 12:23] FRONTEND: Альтернативы: React — не используется в vault; Vue — уже есть
+[2026-06-26 12:23] FRONTEND: Готово. 4 компонента, состояние, API integration.

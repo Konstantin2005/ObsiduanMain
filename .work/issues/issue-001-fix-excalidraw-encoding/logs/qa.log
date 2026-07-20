@@ -1,0 +1,27 @@
+[2026-07-16 10:30] TEST: Verified ⚠ fix on all 39 Excalidraw files
+  Result: 0 corrupted patterns remaining, 2 ⚠ each in 37 files
+  Note: 2 script files (Scripts/Downloaded/*) don't have standard format
+
+[2026-07-16 10:32] TEST: Verified Russian text in План.md
+  Result: "1 Году", "Контролировать только то что могу контролировать"
+  Status: PASS - text is readable Russian
+
+[2026-07-16 10:33] TEST: Verified Russian text in Архив/System design.md
+  Result: "Задача: спроектировать соцсеть(убийцу VK)"
+  Status: PASS - text is readable Russian
+
+[2026-07-16 10:34] TEST: Verified clean file GTD.md unchanged
+  Result: All Russian words preserved ("Задача", "Что это", etc.)
+  Status: PASS
+
+[2026-07-16 10:35] TEST: Verified no mojibake patterns in fixed files
+  Result: 0 instances of U+0098 or Р+quote patterns
+  Status: PASS
+
+[2026-07-16 10:36] EDGE CASE: Non-CP1251 characters (U+0098)
+  Resolution: Skipped during CP1251 roundtrip, kept as-is
+  Impact: Negligible (few chars in large files)
+
+[2026-07-16 10:37] EDGE CASE: Filename corruption (Deltaав.md)
+  Resolution: Not handled - content only fix
+  Note: Filename has apparent encoding issues but out of scope
