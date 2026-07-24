@@ -1,5 +1,6 @@
 {
   "enabledCssSnippets": [
     "hide-graph-reset"
-  ]
+  ],
+  "theme": "obsidian"
 }

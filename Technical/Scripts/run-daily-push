@@ -1,0 +1,175 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ============================================================
+# run-daily-push — Cross-OS launcher
+# Auto-detects the OS and runs the correct daily-push script
+# ============================================================
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+GIT_SCRIPTS_DIR="$SCRIPT_DIR/Git"
+OS_TYPE=""
+
+# --- OS Detection ---
+case "$(uname -s)" in
+    Linux*)     OS_TYPE="linux" ;;
+    Darwin*)    OS_TYPE="macos" ;;
+    CYGWIN*|MINGW*|MSYS*|Windows*) OS_TYPE="windows" ;;
+    *)          OS_TYPE="unknown" ;;
+esac
+
+# Also check if we're on Windows via WSL
+if [[ "$OS_TYPE" == "linux" ]] && grep -qi microsoft /proc/version 2>/dev/null; then
+    OS_TYPE="wsl"
+fi
+
+# --- Help ---
+show_help() {
+    cat <<EOF
+Usage: run-daily-push [options]
+
+Cross-OS launcher for automatic git commit & push monitoring.
+
+Options:
+  --repo PATH       Repository path (default: current dir)
+  --branch NAME     Git branch (default: main)
+  --name NAME       Repo display name (auto-detected)
+  --log PATH        Log file path (auto-generated)
+  --check SECS      Check interval in seconds (default: 5)
+  --push MIN        Push interval in minutes (default: 60)
+  --max-log MB      Max log size in MB before rotation (default: 100)
+  --duration MIN    Monitor duration in minutes (default: 1440 = 24h)
+  --monitor         Run in monitor mode (auto-detect all repos)
+  --dry-run         Test mode - no actual git ops
+  --help            Show this help
+
+OS auto-detection:
+  Linux/macOS  → uses daily-push.sh (bash)
+  Windows      → uses daily-push.ps1 (PowerShell)
+  WSL          → can run either; prefers bash version
+
+Examples:
+  run-daily-push
+  run-daily-push --repo /path/to/repo --push 30 --monitor
+  run-daily-push --dry-run
+EOF
+    exit 0
+}
+
+# --- Parse args ---
+REPO_PATH=""
+BRANCH="main"
+REPO_NAME=""
+LOG_PATH=""
+CHECK_INTERVAL=5
+PUSH_INTERVAL=60
+MAX_LOG_MB=100
+DURATION_MINUTES=1440
+MONITOR_MODE=false
+DRY_RUN=false
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --repo)     REPO_PATH="$2"; shift 2 ;;
+        --branch)   BRANCH="$2"; shift 2 ;;
+        --name)     REPO_NAME="$2"; shift 2 ;;
+        --log)      LOG_PATH="$2"; shift 2 ;;
+        --check)    CHECK_INTERVAL="$2"; shift 2 ;;
+        --push)     PUSH_INTERVAL="$2"; shift 2 ;;
+        --max-log)  MAX_LOG_MB="$2"; shift 2 ;;
+        --duration) DURATION_MINUTES="$2"; shift 2 ;;
+        --monitor)  MONITOR_MODE=true; shift ;;
+        --dry-run)  DRY_RUN=true; shift ;;
+        --help|-h)  show_help ;;
+        *)          echo "Unknown option: $1"; show_help ;;
+    esac
+done
+
+# --- Select & run ---
+run_linux() {
+    local script="$GIT_SCRIPTS_DIR/daily-push.sh"
+    if [[ ! -f "$script" ]]; then
+        echo "ERROR: $script not found"
+        exit 1
+    fi
+    chmod +x "$script" 2>/dev/null || true
+
+    if $MONITOR_MODE; then
+        local monitor_script="$GIT_SCRIPTS_DIR/monitor-daily-push.sh"
+        if [[ ! -f "$monitor_script" ]]; then
+            echo "ERROR: $monitor_script not found"
+            exit 1
+        fi
+        chmod +x "$monitor_script" 2>/dev/null || true
+        exec bash "$monitor_script" \
+            "${REPO_PATH:-$HOME/obsidian}" \
+            "" \
+            "" \
+            "$CHECK_INTERVAL" \
+            "$DURATION_MINUTES"
+    else
+        exec bash "$script" \
+            "${REPO_PATH:-$PWD}" \
+            "$BRANCH" \
+            "$REPO_NAME" \
+            "$LOG_PATH" \
+            "$CHECK_INTERVAL" \
+            "$PUSH_INTERVAL" \
+            "$MAX_LOG_MB" \
+            "$DRY_RUN"
+    fi
+}
+
+run_windows() {
+    local script="$GIT_SCRIPTS_DIR/daily-push.ps1"
+    if [[ ! -f "$script" ]]; then
+        echo "ERROR: $script not found"
+        exit 1
+    fi
+
+    local ps_args=()
+    if [[ -n "$REPO_PATH" ]]; then
+        ps_args+=("-RepoPath" "$REPO_PATH")
+    fi
+    ps_args+=("-Branch" "$BRANCH")
+    if [[ -n "$REPO_NAME" ]]; then
+        ps_args+=("-RepoName" "$REPO_NAME")
+    fi
+    if [[ -n "$LOG_PATH" ]]; then
+        ps_args+=("-LogPath" "$LOG_PATH")
+    fi
+    ps_args+=("-CheckIntervalSeconds" "$CHECK_INTERVAL")
+    ps_args+=("-PushIntervalMinutes" "$PUSH_INTERVAL")
+    ps_args+=("-MaxLogSizeMB" "$MAX_LOG_MB")
+    if $DRY_RUN; then
+        ps_args+=("-DryRun")
+    fi
+
+    if $MONITOR_MODE; then
+        local monitor_script="$GIT_SCRIPTS_DIR/monitor-daily-push.ps1"
+        if [[ ! -f "$monitor_script" ]]; then
+            echo "ERROR: $monitor_script not found"
+            exit 1
+        fi
+        exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$monitor_script" \
+            -BasePath "${REPO_PATH:-C:\\obsidian}" \
+            -CheckIntervalSeconds "$CHECK_INTERVAL" \
+            -DurationMinutes "$DURATION_MINUTES"
+    else
+        exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$script" @ps_args
+    fi
+}
+
+# --- Main dispatch ---
+case "$OS_TYPE" in
+    linux|macos|wsl)
+        run_linux
+        ;;
+    windows)
+        run_windows
+        ;;
+    *)
+        echo "WARNING: Unknown OS ($(uname -s)), trying bash version..."
+        run_linux
+        ;;
+esac
