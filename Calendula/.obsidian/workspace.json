@@ -4,27 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "5c73df61e19c38f5",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "03f290e54b8cca4c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Calendula/2026/Июль/23-07-26/23.5-07-26 Мысли.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "23.5-07-26 Мысли"
-            }
-          }
-        ]
-      },
-      {
-        "id": "4f36348340d6b756",
+        "id": "9eeb048d4751f784",
         "type": "tabs",
         "children": [
           {
@@ -33,12 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Calendula/2026/Июль/23-07-26/23-07-26.md",
+                "file": "маршрут.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "23-07-26"
+              "title": "маршрут"
+            }
+          },
+          {
+            "id": "42c3ebd4ca8b91b3",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Проекты/Drawing 2026-07-27 18.03.33.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-07-27 18.03.33.excalidraw"
             }
           }
         ]
@@ -187,36 +179,38 @@
   },
   "active": "87688056ecd662a3",
   "lastOpenFiles": [
-    "test-push-file.md",
+    "Без названия.md",
+    "Calendula/2026/Июль/27-07-26/27-07-26.md",
+    "Excalidraw/Проекты/Drawing 2026-07-27 18.03.33.excalidraw.md",
+    "Без названия 1.md",
+    "маршрут.md",
+    "Calendula/2026/Июль/26-07-26/26-07-26.md",
+    "Excalidraw/Проекты/Поход.md",
+    "Excalidraw/Проекты/План.md",
+    "Excalidraw/Проекты/Переезд.md",
+    "Excalidraw/pichers/Pasted Image 20260724190018_237.png",
+    "Вечно зеленные действия/Прогулка по Владивостоку.md",
+    "Вечно зеленные действия/2026/Апрель/02-04-26/02.2-04-26 Личное.md",
+    "Поход_бюджет.md",
+    "Поход.md",
+    "Calendula/2026/Июль/25-07-26/25-07-26.md",
+    "Calendula/2026/Июль/25-07-26/25.2-07-26 Личное.md",
+    "Calendula/2026/Июль/25-07-26/25-07-26 Соц.md",
+    "Calendula/2026/Июль/24-07-26/24-07-26.md",
+    "Calendula/2026/Июль/24-07-26/24.1-07-26 мысли.md",
+    "Calendula/2026/Июль/24-07-26/24.2-07-26 Личное.md",
+    "Calendula/2026/Июль/24-07-26/24.3-07-26 Личное.md",
+    "Calendula/2026/Июль/24-07-26/24.4-07-26 Мысли.md",
+    "Calendula/2026/Июль/24-07-26/24.5-07-26 Мысли.md",
+    "Calendula/2026/Июль/22-07-26/22-07-26.md",
+    "Calendula/2026/Июль/23-07-26/23-07-26.md",
+    "Calendula/2026/Июль/23-07-26/23-07-26 Соц.md",
+    "Поход_логистика.md",
+    "Excalidraw/pichers/Pasted Image 20260724190049_504.png",
     "Technical/Scripts/Logs/daily-push-ObsiduanMain-Calendula.log",
     "Technical/Scripts/Logs",
     "Technical/Scripts",
     "Technical",
-    "Calendula/2026/Июль/22-07-26/22-07-26.md",
-    "Calendula/2026/Июль/23-07-26/23-07-26.md",
-    "Calendula/2026/Июнь/24-06-26/24-06-26.md",
-    "Calendula/2026/Июль/23-07-26/23.5-07-26 Мысли.md",
-    "Calendula/2026/Июль/23-07-26/23.4-07-26 Мысли.md",
-    "Calendula/2026/Июль/23-07-26/23.1-07-26 Соц.md",
-    "Calendula/2026/Июль/23-07-26/23.2-07-26 Личное.md",
-    "Поход.md",
-    "Excalidraw/Проекты/Поход.md",
-    "Excalidraw/Проекты/Переезд.md",
-    "Excalidraw/Общаться с людьми.md",
-    "Excalidraw/Доскаd.md",
-    "Excalidraw/Алгоритмы.md",
-    "Calendula/2026/Июль/22-07-26/22.5-07-26 Мысли.md",
-    "Calendula/2026/Июль/22-07-26/22.4-07-26 Мысли.md",
-    "Calendula/2026/Июль/22-07-26/22.3-07-26 Личное.md",
-    "Calendula/2026/Июль/22-07-26/22.2-07-26 Личное.md",
-    "Calendula/2026/Июль/22-07-26/22-07-26 Соц.md",
-    "Вечно зеленные действия/Гребанные Андроиды.md",
-    "Вечно зеленные действия/Прикольная женщина в поезде.md",
-    "Маслины/Все меня хотят накормить.md",
-    "Без названия 1.md",
-    "Calendula/2026/Июль/19-07-26/19.2-07-26 Личное.md",
-    "Без названия.md",
-    "Маслины/Консультант.md",
     "Маслины/Z Picters/Pasted image 20260619203426.png",
     "Маслины/Z Picters/Pasted image 20260619203420.png",
     "Маслины/Z Picters/Pasted image 20260619203414.png",
@@ -225,8 +219,6 @@
     "Маслины/Z Picters/Pasted image 20260619203228.png",
     "Маслины/Z Picters/Pasted image 20260619202159.png",
     "Маслины/Z Picters/Pasted image 20260619202140.png",
-    "Маслины/Z Picters/Pasted image 20260619202118.png",
-    "Маслины/Pasted Image 20260524162947_768.png",
     "Excalidraw/Баги",
     "Excalidraw/Фрейм ворки",
     "Excalidraw/Проекты",
