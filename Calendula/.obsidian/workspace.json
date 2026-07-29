@@ -13,24 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "маршрут.md",
+                "file": "Calendula/2026/Июль/28-07-26/28-07-26.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "маршрут"
-            }
-          },
-          {
-            "id": "42c3ebd4ca8b91b3",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Проекты/Drawing 2026-07-27 18.03.33.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-07-27 18.03.33.excalidraw"
+              "title": "28-07-26"
             }
           }
         ]
@@ -90,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 263.5
+    "width": 263.5,
+    "collapsed": true
   },
   "right": {
     "id": "c4aff5f6efb7a44b",
@@ -179,11 +168,11 @@
   },
   "active": "87688056ecd662a3",
   "lastOpenFiles": [
+    "маршрут.md",
+    "Excalidraw/Проекты/Drawing 2026-07-27 18.03.33.excalidraw.md",
     "Без названия.md",
     "Calendula/2026/Июль/27-07-26/27-07-26.md",
-    "Excalidraw/Проекты/Drawing 2026-07-27 18.03.33.excalidraw.md",
     "Без названия 1.md",
-    "маршрут.md",
     "Calendula/2026/Июль/26-07-26/26-07-26.md",
     "Excalidraw/Проекты/Поход.md",
     "Excalidraw/Проекты/План.md",
